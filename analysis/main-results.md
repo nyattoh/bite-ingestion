@@ -1,50 +1,63 @@
-# Main results (BITE-15b pilot scope) — billed N_pilot stop
+# Main results — BITE-15b billed pilot **v2** (Gate C = pivot)
 
-- **Scope**: Gate C **pilot** only (`N_pilot=24` / family). Not full `N_full=100` matrix.
-- **Source**: `artifacts/pilot/bite15b_billed_summary.json` @ `e44b5bd`
-- **Recompute**: `analysis/bite15b_pilot_recompute.json`（summary からの再集計のみ）
+- **Authoritative pilot record**: `artifacts/pilot/bite15b_billed_summary_v2.json` @ [`967ec0b`](https://github.com/nyattoh/bite-ingestion/commit/967ec0b)
+- **Recompute**: `analysis/bite15b_pilot_recompute_v2.json`
 - **Stance**: Pivot-to-bench. **No Survive. No Go.**
 
-## Decision
+## Decision (v2)
 
 | Field | Value |
 | --- | --- |
-| decision | **stop** |
-| reason | `c1=False c2=False c3=False` |
+| decision | **pivot** |
+| reason | `c1=False c2=True c3=False` |
 | paid_api | true |
 | estimate_source | `provider_usage_billed`（384/384） |
+| empty answers | **0/384**（minimal smoke も 0/12） |
 | sample_meets_n_pilot | true |
-| constraints_ok_rate | 0.078125（30/384） |
+| constraints_ok_rate | **0.880208**（338/384） |
+| rate_limit / timeout | none |
 
-Confirmatory C1–C3 are all false under billed usage at pilot scale → **stop** per `decide_gate_c`. This is a **negative result**, reported at the same granularity as a positive would be.
+C2 is a **runner placeholder**（compressed constraints_ok_rate ≥ raw）. It is **not** a true morphology-vs-length-only contrast. Partial confirmatory → **pivot**, not go.
 
-## Descriptive tallies (no invented CIs)
+## v1 superseded (not final science)
+
+| | v1 (`e44b5bd`) | v2 (`967ec0b`) |
+| --- | --- | --- |
+| decision | stop | **pivot** |
+| empty answers | 354/384 | **0/384** |
+| T_completion | always 64 | min 2 / max 5 / mean ≈ 2.86 |
+| confounder | thinking/empty content | mitigated（thinking disabled） |
+
+## Descriptive tallies (v2; no invented CIs)
 
 | Metric | Value |
 | --- | --- |
-| rows | 384 |
-| paired instances (raw vs compressed) | 192 |
-| T_total sum / min / max | 62489 / 106 / 240 |
-| mean (T_raw − T_comp) | ≈ −2.19 |
-| median (T_raw − T_comp) | −2.0 |
-| fraction compressed lower T | ≈ 1.6% |
-| mean Q raw / compressed | ≈ 0.089 / 0.068 |
-| mean Q_baseline | ≈ 1.0 |
+| paired instances | 192 |
+| mean / median (T_raw − T_comp) | **-2 / -2** |
+| fraction compressed lower T | **0** |
+| mean Q raw / compressed | **0.880 / 0.880** |
+| failure `Q < Q_baseline − δ` | **46**（ほぼ `dependency_chain`） |
 
-Primary failure mode: **`Q < Q_baseline − δ`** (354 rows). Token “savings” from `compressed_passthrough` are **not** observed on average; quality collapses relative to baseline.
+## Family constraints_ok_rate (v2)
 
-## Domain / family
-
-See `per_family` in summary and recompute JSON. Only `texture_swap` has non-trivial constraint pass rate (0.5625); most families are 0.
+| family | rate |
+| --- | ---: |
+| clean_local | 1.0 |
+| repeated_records | 1.0 |
+| sparse_anomaly | 1.0 |
+| **dependency_chain** | **0.0417** |
+| malformed_mixed | 1.0 |
+| dense_cross_reference | 1.0 |
+| adversarial_omission | 1.0 |
+| texture_swap | 1.0 |
 
 ## What this is not
 
-- Not matched-quality Pareto on full experiment matrix（`output/main/aggregates.parquet` 未存在）
-- Not formal Holm-adjusted confirmatory tests beyond the pilot decision label
-- Not a claim that morphology-aware ingestion fails in general — only that **this billed pilot arm** did not support C1–C3
+- Not Go（C1∧C3 false; C2 placeholder）
+- Not full `N_full` matrix / `output/main/aggregates.parquet`
+- Not Survive architecture claim
 
-## Next artifacts
+## Next
 
-- `analysis/error-atlas.md`
-- `analysis/pareto-data.csv`（pilot paired descriptive only）
-- `docs/hand_over/BITE-16.md`
+- Error atlas: concentrate on `dependency_chain` Q failures
+- BITE-16 continues under **pivot** standing; do not promote post-hoc subgroups to primary

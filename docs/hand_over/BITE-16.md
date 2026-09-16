@@ -1,46 +1,49 @@
-# BITE-16 handover — pilot stop からの解析ブートストラップ
+# BITE-16 handover — billed pilot **v2 pivot** からの解析
 
 - **Date**: 2026-09-17 (UTC+9)
-- **Depends on**: BITE-15 / BITE-15b（[`e44b5bd`](https://github.com/nyattoh/bite-ingestion/commit/e44b5bd)）
-- **Tone**: Pivot-to-bench; **負の結果を同粒度で記録**; Go/Survive 禁止
+- **Depends on**: BITE-15b v2 @ [`967ec0b`](https://github.com/nyattoh/bite-ingestion/commit/967ec0b)
+- **Tone**: Pivot-to-bench; **pivot / 負の部分結果を同粒度で記録**; Go/Survive 禁止
 
-## 現状
+## Gate C 現状（権威ある記録）
 
 | 項目 | 状態 |
 | --- | --- |
-| 有料 N_pilot | **完走** → decision **`stop`** |
-| `output/main/aggregates.parquet` | **未作成**（full matrix 未実行） |
-| `output/main/failures.jsonl` | **未作成** |
-| pilot 解析ブートストラップ | **本ブランチで追加** |
+| 有料 N_pilot v2 | **完走** → **`pivot`**（`c1=False c2=True c3=False`） |
+| empty answers | **0/384**（v1 confounder 解消） |
+| constraints_ok_rate | **0.880208**；弱点は `dependency_chain`（≈0.0417） |
+| `output/main/aggregates.parquet` | **未作成** |
+| 解析ブートストラップ | v2 向けに更新 |
 
-## 本スライスで追加した成果物
+v1 `stop`（`e44b5bd`）は履歴として残すが、**最終判定には使わない**。
+
+## 本スライス成果物
 
 | Path | Role |
 | --- | --- |
-| `docs/hand_over/BITE-15b.md` | stop 決定・384 完走の確定記録 |
-| `analysis/main-results.md` | pilot-scoped 主結果（stop） |
-| `analysis/error-atlas.md` | 失敗インベントリ |
-| `analysis/pareto-data.csv` | raw vs compressed 対の記述 CSV |
-| `figures/data/pareto-data-pilot.csv` | 同上コピー |
-| `analysis/hypothesis-tests.json` | C1–C3 false / stop（CI は TBD） |
-| `analysis/claim-evidence-draft.csv` | 主張↔証拠ドラフト |
-| `analysis/bite15b_pilot_recompute.json` | summary からの再集計 |
+| `analysis/main-results.md` | v2 pivot 主結果 |
+| `analysis/error-atlas.md` | v2 失敗インベントリ |
+| `analysis/bite15b_pilot_recompute_v2.json` | v2 再集計 |
+| `analysis/pareto-data-v2.csv` | paired CSV |
+| `figures/data/pareto-data-pilot-v2.csv` | 同上 |
+| `analysis/hypothesis-tests.json` | C1/C2/C3 + pivot |
+| `analysis/claim-evidence-draft.csv` | 主張↔証拠 |
 
 ## 検証
 
 ```bash
-python3 -c "import json; json.load(open('artifacts/pilot/bite15b_billed_summary.json')); json.load(open('analysis/bite15b_pilot_recompute.json'))"
-# decision == stop, n_rows == 384
+python3 -c "import json; d=json.load(open('artifacts/pilot/bite15b_billed_summary_v2.json')); assert d['decision']=='pivot'; assert len(d['results'])==384"
 ```
 
 ## 未解決（次の最小スライス）
 
-1. **【優先】** 空応答 confounder: 354/384 が `answer_text=""` かつ `T_completion=64`。Z.ai thinking / 抽出バグ疑い。クライアント修正後、**ローカル Path B で `--no-resume` 再課金**して stop を再評価（Cloud では再課金しない）。
-2. full `output/main/*` が無い前提で、BITE-16 完了条件を **pilot-stop 文書化**に縮小するか、再アームするか人間判断
-3. formal CI / Holm 数値は **捏造せず** TBD のまま
+1. `dependency_chain` の Q 失敗メカニズム（gold 不一致の型）をコード＋数例で文書化（再課金なし）
+2. C2 placeholder を length-only arm へ置き換える設計メモ（実装は別タスク）
+3. full matrix / `output/main/*` を走らせるか、pilot-pivot で Gate C 文書を閉じるか人間判断
+4. CI / Holm は TBD（捏造しない）
 
 ## Do-not
 
-- stop を見て閾値を動かして Go 化しない
-- `texture_swap` を primary に昇格しない
-- 平均 token だけで 354 件の Q 失敗を隠さない
+- pivot を見て閾値を動かして Go 化しない
+- `dependency_chain` 以外の family 成功を primary に昇格しない
+- 平均 token だけで 46 件の Q 失敗を隠さない
+- C2 placeholder を「形態素が勝った」と主張しない

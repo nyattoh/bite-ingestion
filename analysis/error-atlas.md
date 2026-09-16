@@ -1,43 +1,40 @@
-# Error atlas — BITE-15b billed pilot (stop)
+# Error atlas — BITE-15b billed pilot **v2** (pivot)
 
-Source: `artifacts/pilot/bite15b_billed_summary.json` @ `e44b5bd`. Offline recount only.
+Source: `artifacts/pilot/bite15b_billed_summary_v2.json` @ `967ec0b`.
 
-## Failure inventory
-
-| Failure string | Count (of 384 rows) |
-| --- | ---: |
-| `Q < Q_baseline - delta` | 354 |
-| (no failure / constraints_ok) | 30 |
-
-Provider / transport:
+## Transport / protocol
 
 | Class | Count |
 | --- | ---: |
-| row `error` non-null | 0 |
-| rate_limit stop | 0 |
+| empty `answer_text` | **0 / 384** |
+| row `error` | 0 |
+| rate_limit | 0 |
+| T_completion | min 2 / max 5 / mean ≈ 2.86 |
 
-## Pattern notes (descriptive)
+v1 empty×64 confounder is **cleared** on v2.
 
-1. **Quality collapse vs baseline**: Q_baseline ≈ 1.0 while observed Q is near 0 on most families. This dominates constraint failures and drives stop (C1–C3 false).
-2. **Compression does not buy T**: paired mean `(T_raw − T_comp) < 0` → compressed path is slightly costlier on average; C1-style T improvement is not supported.
-3. **Family exception**: `texture_swap` has constraints_ok_rate 0.5625 and higher mean Q (~0.54–0.58). Treat as exploratory texture signal only — **not** promoted to primary claim.
-4. **Confounder (2026-09-17)**: 354/384 rows have **empty `answer_text`** but **`T_completion=64` exactly** (runner `max_tokens=64`). Strongly consistent with Z.ai GLM thinking filling the budget while `message.content` stays empty. Non-empty answers (30) are short gold strings (`K17`, `101`, …) with Q=1.0. → **recorded stop may be contaminated by client/protocol**, not pure task failure. Fix: disable `thinking` + extract `reasoning_content` fallback + raise default `max_tokens` (see follow-up commit on this branch). **Re-bill on local Path B required before treating stop as scientific.**
+## Constraint failures (v2)
 
-## Example slots (ids only; no prompt dump)
+| Failure string | Count |
+| --- | ---: |
+| `Q < Q_baseline - delta` | 46 |
+| constraints_ok | 338 |
 
-Use summary `results[]` filtered by `constraints_ok==false` and family:
+Almost all failures sit in **`dependency_chain`**（2/48 ok ≈ 0.0417）. Other 7 families are **1.0**.
 
-- Systematic: `clean_local-*` / `raw_full` and `compressed_passthrough`（ok_rate 0）
-- Partial: `sparse_anomaly-*`（3/48 ok）
-- Relative better: `texture_swap-*`（27/48 ok）
+## Pattern notes
+
+1. **Gate C = pivot**: C1 false（compressed not cheaper on mean T）, C3 false（net savings ≤ 0）, C2 true only as placeholder equality of constraint rates.
+2. **No token win from compressed_passthrough**: every paired `dT_raw_minus_comp = -2` in recompute（comp slightly higher T）.
+3. **Quality generally holds** except dependency_chain — treat that family as the primary error locus for follow-up, **not** as a reason to flip Go.
+4. **Do not** hide the 46 Q failures behind the 0.88 aggregate ok rate alone.
+5. **`dependency_chain` mismatch type（再課金なしで確認）**: gold は数値のみ（例 `100`）だがモデル応答は `K00=100` 形式。exact-match 採点（`metrics_from_instance`）で Q=0。プロンプト/gold 仕様のずれであり、C1/C3 の token 失敗とは別軸。
+
+## Exploratory (not primary)
+
+High ok rates on 7/8 families are descriptive only. No post-hoc promotion to confirmatory win.
 
 ## Missing data
 
-- Checkpoint JSONL not in git（intentional）. Resume tallies in summary: `calls_skipped_ok=384`.
-- No `output/main/failures.jsonl` yet — this atlas is **pilot-scoped** substitute for BITE-16 bootstrap.
-
-## Do not
-
-- Hide the 354 Q failures behind mean token stats
-- Elevate `texture_swap` to primary hypothesis post-hoc
-- Claim Go / Survive
+- checkpoint JSONL not in git
+- no `output/main/failures.jsonl` yet — this atlas is pilot-scoped

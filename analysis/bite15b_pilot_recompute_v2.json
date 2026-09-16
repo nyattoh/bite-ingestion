@@ -1,0 +1,98 @@
+{
+  "source_commit": "967ec0b",
+  "source_artifact": "artifacts/pilot/bite15b_billed_summary_v2.json",
+  "supersedes": {
+    "v1_commit": "e44b5bd",
+    "v1_decision": "stop",
+    "v1_note": "empty-answer confounder (354/384 empty, T_completion=64); not scientific final"
+  },
+  "decision": "pivot",
+  "decision_reason": "label=pivot; c1=False c2=True c3=False",
+  "c1": false,
+  "c2": true,
+  "c3": false,
+  "n_rows": 384,
+  "n_paired": 192,
+  "empty_answers": 0,
+  "sample_meets_n_pilot": true,
+  "has_billed_usage": true,
+  "constraints_ok_rate": 0.8802083333333334,
+  "constraints_ok_count": 338,
+  "T_total_sum": 40626,
+  "T_completion": {
+    "min": 2,
+    "max": 5,
+    "mean": 2.859375
+  },
+  "failure_counts": {
+    "Q < Q_baseline - delta": 46
+  },
+  "paired": {
+    "mean_dT_raw_minus_comp": -2,
+    "median_dT_raw_minus_comp": -2.0,
+    "frac_comp_lower_T": 0.0,
+    "mean_Q_raw": 0.8802083333333334,
+    "mean_Q_comp": 0.8802083333333334,
+    "mean_Q_baseline": 1.0
+  },
+  "per_family": {
+    "clean_local": {
+      "n_target": 24,
+      "n_actual": 24,
+      "n_method_rows": 48,
+      "constraints_ok_rate": 1.0,
+      "status": "ok"
+    },
+    "repeated_records": {
+      "n_target": 24,
+      "n_actual": 24,
+      "n_method_rows": 48,
+      "constraints_ok_rate": 1.0,
+      "status": "ok"
+    },
+    "sparse_anomaly": {
+      "n_target": 24,
+      "n_actual": 24,
+      "n_method_rows": 48,
+      "constraints_ok_rate": 1.0,
+      "status": "ok"
+    },
+    "dependency_chain": {
+      "n_target": 24,
+      "n_actual": 24,
+      "n_method_rows": 48,
+      "constraints_ok_rate": 0.041666666666666664,
+      "status": "ok"
+    },
+    "malformed_mixed": {
+      "n_target": 24,
+      "n_actual": 24,
+      "n_method_rows": 48,
+      "constraints_ok_rate": 1.0,
+      "status": "ok"
+    },
+    "dense_cross_reference": {
+      "n_target": 24,
+      "n_actual": 24,
+      "n_method_rows": 48,
+      "constraints_ok_rate": 1.0,
+      "status": "ok"
+    },
+    "adversarial_omission": {
+      "n_target": 24,
+      "n_actual": 24,
+      "n_method_rows": 48,
+      "constraints_ok_rate": 1.0,
+      "status": "ok"
+    },
+    "texture_swap": {
+      "n_target": 24,
+      "n_actual": 24,
+      "n_method_rows": 48,
+      "constraints_ok_rate": 1.0,
+      "status": "ok"
+    }
+  },
+  "c2_note": "C2 in runner is placeholder (comp constraints_ok_rate >= raw); not true length-only morphology contrast",
+  "note": "v2 billed N_pilot after thinking disabled. Pivot-to-bench. No Go/Survive."
+}
