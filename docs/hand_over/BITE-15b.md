@@ -1,122 +1,62 @@
-# BITE-15b handover — billed N_pilot 完走と stop 決定
+# BITE-15b handover — billed N_pilot（v2 = **pivot**）
 
 - **Date**: 2026-09-17 (UTC+9)
-- **Phase**: Gate C billed N_pilot（checkpoint / resume 硬化 → 親機完走）
+- **Phase**: Gate C billed N_pilot（checkpoint / resume → thinking 修正 → v2 再課金）
 - **Tone**: Pivot-to-bench; no Survive; **Go 捏造禁止**
-- **Standing**: 有料呼び出しはローカル（raytrek / Path B）。Cloud は mock 検証と文書のみ。
+- **Standing**: 有料はローカル（raytrek / Path B）。Cloud は mock / 文書のみ。
+- **Authoritative Gate C record**: **v2 @ [`967ec0b`](https://github.com/nyattoh/bite-ingestion/commit/967ec0b)** → **`pivot`**
 
-## 結果サマリ（検証済み）
+## 権威ある結果（v2）
 
 | 項目 | 値 |
 | --- | --- |
-| 記録コミット | [`e44b5bd`](https://github.com/nyattoh/bite-ingestion/commit/e44b5bd)（`main`） |
-| summary | `artifacts/pilot/bite15b_billed_summary.json` |
-| partial | `artifacts/pilot/bite15b_billed_partial.json` |
-| checkpoint JSONL | **未コミット**（`.gitignore` どおり） |
-| 規模 | 8 families × 24 × 2 methods = **384** rows |
-| `estimate_source` | 全行 `provider_usage_billed` |
-| error / rate_limit | **0** / **false** |
-| `sample_meets_n_pilot` | **true** |
-| **decision** | **`stop`**（`c1=False c2=False c3=False`） |
-| `constraints_ok_rate` | **0.078125**（30/384） |
-| 主失敗 | `Q < Q_baseline - delta`（354） |
-| `T_total` | sum **62489**（min 106 / max 240） |
-| resume 痕跡 | `calls_skipped_ok=384`, `calls_attempted=0`（checkpoint から復元して summary 生成） |
+| コミット | [`967ec0b`](https://github.com/nyattoh/bite-ingestion/commit/967ec0b) |
+| summary | `artifacts/pilot/bite15b_billed_summary_v2.json` |
+| partial | `artifacts/pilot/bite15b_billed_partial_v2.json` |
+| checkpoint | 未コミット（`bite15b_checkpoint_v2.jsonl`） |
+| 規模 | 384/384 billed rows |
+| empty answers | **0/384**（minimal 0/12） |
+| T_completion | min 2 / max 5 / mean ≈ 2.86 |
+| **decision** | **`pivot`**（`c1=False c2=True c3=False`）— **Go ではない** |
+| constraints_ok_rate | **0.880208**（338/384） |
+| 弱点 family | `dependency_chain` ≈ 0.0417；他 7 family = 1.0 |
+| 429 / timeout | なし |
 
-再計算（summary JSON のみ・オフライン）: `analysis/bite15b_pilot_recompute.json`
+再計算: `analysis/bite15b_pilot_recompute_v2.json`
 
-### family 別（constraints_ok）
+## v1（履歴・非最終）
 
-| family | n_method_rows | constraints_ok_rate |
-| --- | ---: | ---: |
-| clean_local | 48 | 0.0 |
-| repeated_records | 48 | 0.0 |
-| sparse_anomaly | 48 | 0.0625 |
-| dependency_chain | 48 | 0.0 |
-| malformed_mixed | 48 | 0.0 |
-| dense_cross_reference | 48 | 0.0 |
-| adversarial_omission | 48 | 0.0 |
-| texture_swap | 48 | 0.5625 |
+| 項目 | 値 |
+| --- | --- |
+| コミット | [`e44b5bd`](https://github.com/nyattoh/bite-ingestion/commit/e44b5bd) |
+| decision | `stop`（empty-answer confounder 付き） |
+| empty / T_completion | 354/384 empty；T_completion 常に 64 |
 
-### 対 raw の粗い記述統計（192 paired; 捏造 CI なし）
+v1 は thinking/抽出バグ込み。科学的最終判定には使わない。
 
-- mean / median `(T_raw - T_comp)` ≈ **-2.19 / -2.0**（圧縮側が概ねわずかに高い T）
-- `compressed` の方が T が低い割合 ≈ **1.6%**
-- mean Q: raw ≈ **0.089**, compressed ≈ **0.068**（Q_baseline は概ね **1.0**）
+## なぜ BITE-15b があったか
 
-→ confirmatory C1–C3 が全て false であることと整合。**Go ではない。stop。**
+初回フルランが `TimeoutError` で集計喪失 → checkpoint/resume/timeout 硬化。その後 v1 完走が empty×64 で汚染 → thinking disabled + 抽出 fallback + max_tokens=256 で v2 再課金。
 
-## なぜ BITE-15b があったか（失敗モード）
-
-初回フル N_pilot が約51分後に `TimeoutError: The read operation timed out` で落ち、summary/partial が残らなかった。
-
-根因:
-
-1. bare `TimeoutError` がクライアント外へ未捕捉で伝播
-2. 呼び出し単位 checkpoint が無く、途中失敗で集計が消える
-3. resume が無く、再実行が二重課金しうる
-
-## Fix summary（実装済み・main に含まれる）
+## Fix summary（main に含まれる）
 
 | Area | Change |
 | --- | --- |
-| `zai_client.py` | `ProviderTimeoutError`; 有限指数バックオフ; 429 再試行なし |
-| `billed_runner.py` | JSONL checkpoint + atomic partial; resume 方針 |
-| `run_billed_pilot.py` | `--checkpoint`, `--resume`（既定 True） |
-| `configs/pilot_bite15_billed.json` | retry / checkpoint 既定 |
-| Tests | mock のみ（Cloud で 26 passed） |
+| `zai_client.py` | timeout retry；`thinking: disabled`；`reasoning_content` fallback |
+| `billed_runner.py` | checkpoint/resume；pilot `max_tokens=256` |
+| CLI / config | bite15b パス・retry・thinking 注記 |
+| Tests | mock（thinking disabled / reasoning fallback 含む） |
 
 ## Resume policy
 
-- **Skip** latest=`ok`（二重課金禁止）
-- **Retry once** prior `timeout`/`error`
-- **Skip** prior `rate_limit`（429 storm 回避）
-
-## CLI（親機・完走済み参照）
-
-```powershell
-cd D:\develop\works\bite-ingestion
-# ZAI_API_KEY via bw-env（値は出さない）
-
-python scripts/run_billed_pilot.py --no-minimal --n-per-family 24 `
-  --families clean_local repeated_records sparse_anomaly dependency_chain `
-             malformed_mixed dense_cross_reference adversarial_omission texture_swap `
-  --checkpoint artifacts/pilot\bite15b_checkpoint.jsonl `
-  --partial-out artifacts/pilot\bite15b_billed_partial.json `
-  --out artifacts/pilot\bite15b_billed_summary.json `
-  --resume
-```
-
-## Cloud verification（2026-09-16 UTC・有料なし）
-
-| Check | Result |
-| --- | --- |
-| `pytest tests/eval/test_billed_pilot_mock.py` | 26 passed |
-| `pytest tests/eval/` | 54 passed |
-| CLI KEY_ABSENT | exit 2 |
-
-有料実行は Cloud では行わない（ローカル Path B）。
-
-## v2 再課金（thinking disabled / max_tokens=256）
-
-- **Date**: 2026-09-17 (UTC+9)
-- **Path**: ローカル raytrek / Path B。v1 checkpoint は未使用（`--no-resume` + `*_v2*` パス）
-- **Smoke**: `--minimal` 12/12、empty **0/12**、Q すべて 1.0、`decision=pivot`（Go ではない）
-- **Full**: 8×24×2 = **384/384** succeeded、empty **0/384**、`T_completion` min 2 / max 5 / mean ≈ 2.86
-- **decision**: **`pivot`**（`c1=False c2=True c3=False`）。Go ではない。
-- `constraints_ok_rate`: **0.880208**（338/384）。`dependency_chain` のみ 0.0417、他 family は 1.0
-- `sample_meets_n_pilot`: true / `rate_limited`: false
-- summary: `artifacts/pilot/bite15b_billed_summary_v2.json`
-- partial: `artifacts/pilot/bite15b_billed_partial_v2.json`
-- checkpoint JSONL: 未コミット（`bite15b_checkpoint_v2.jsonl`）
-
-v1 `stop` は empty-answer confounder 込み。v2 は空答えが消えたあとの記録で **pivot**。閾値は動かしていない。
+- Skip `ok`；retry `timeout`/`error` once；skip `rate_limit`
+- v2 再課金は `--no-resume` + 新パス。以降の再開は **v2 checkpoint のみ**
 
 ## 未解決 / 次
 
-1. v1 `stop` は empty-answer confounder 付きとして残す。v2 の Gate C 記録は **pivot**（C1/C3 不成立）
-2. BITE-16: 負結果・pivot の記述を継続。Go / Survive は主張しない
-3. 再課金中に `--no-resume` が二重起動した（同一 v2 パス）。unique 384 は揃ったが行数は 529。以降は v2 checkpoint の `--resume` のみ
+1. Gate C 記録は **pivot**（確定）。Go ではない
+2. BITE-16: `dependency_chain` 失敗の記述、C2 placeholder の限界明記
+3. full matrix 実施可否は人間判断
 
 ## Do-not
 
