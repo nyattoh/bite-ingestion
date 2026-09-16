@@ -133,7 +133,14 @@ def _iter_family(family: str, n: int) -> Iterator[dict[str, object]]:
                 family,
                 i,
                 document=doc,
-                query="Resolve fact along dependency chain.",
+                # Gold is the bare value (e.g. "100"). Ask explicitly so the
+                # model does not echo "K00=100" and fail exact-match scoring.
+                query=(
+                    f"Follow the dependency chain to unit_u2. "
+                    f"What is the numeric value of {code}? "
+                    f"Reply with only that number (example: {val}), "
+                    f"not the key=value form."
+                ),
                 gold_answer=str(val),
                 gold_evidence_ids=[eid, eid2],
                 visible_evidence=[eid, eid2],

@@ -36,9 +36,9 @@ python3 -c "import json; d=json.load(open('artifacts/pilot/bite15b_billed_summar
 
 ## 未解決（次の最小スライス）
 
-1. `dependency_chain` の Q 失敗メカニズム（gold 不一致の型）をコード＋数例で文書化（再課金なし）
-2. C2 placeholder を length-only arm へ置き換える設計メモ（実装は別タスク）
-3. full matrix / `output/main/*` を走らせるか、pilot-pivot で Gate C 文書を閉じるか人間判断
+1. **Path B**: `dependency_chain` 質問修正後、ローカルで family 単独の小さく再課金（48 calls）
+2. C2 placeholder を length-only arm へ置き換える設計は後回し
+3. full matrix / `output/main/*` は Go が出るまで急がない
 4. CI / Holm は TBD（捏造しない）
 
 ## Do-not
