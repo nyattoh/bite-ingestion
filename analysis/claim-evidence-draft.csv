@@ -1,0 +1,5 @@
+scope,claim_id,claim_text,evidence_path,status,notes
+pilot,GATEC-STOP,"Billed N_pilot supports stop (C1∧C2∧C3 all false)",artifacts/pilot/bite15b_billed_summary.json,supported,e44b5bd; no Go
+pilot,Q-COLLAPSE,"Dominant failure is Q < Q_baseline - delta (354/384)",analysis/error-atlas.md,supported,descriptive
+pilot,NO-T-SAVE,"compressed_passthrough not cheaper on average vs raw_full",analysis/pareto-data.csv,supported,mean dT raw-comp ≈ -2.19
+pilot,FULL-MATRIX,Full BITE-15 aggregates.parquet / ablations,output/main/aggregates.parquet,missing,Pivot-to-bench; do not invent

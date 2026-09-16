@@ -1,0 +1,32 @@
+{
+  "scope": "bite15b_billed_pilot_N24",
+  "source_commit": "e44b5bd",
+  "source_artifact": "artifacts/pilot/bite15b_billed_summary.json",
+  "alpha": 0.05,
+  "multiple_comparison_plan": "confirmatory Holm on C1/C2/C3 (lock). Pilot decision uses decide_gate_c boolean conjunction; no additional p-values invented here.",
+  "missing_data": {
+    "checkpoint_jsonl_in_git": false,
+    "output_main_aggregates_parquet": false,
+    "note": "Pilot summary/partial only; full BITE-15 matrix outputs absent."
+  },
+  "confirmatory": {
+    "C1_t_total_improves_vs_raw_and_best_single": false,
+    "C2_morphology_beats_length_only": false,
+    "C3_net_savings_positive": false,
+    "decision_label": "stop",
+    "sample_meets_n_pilot": true,
+    "has_billed_usage": true
+  },
+  "descriptive_effect_snapshots": {
+    "constraints_ok_rate": 0.078125,
+    "mean_dT_raw_minus_comp": -2.1927083333333335,
+    "mean_Q_raw": 0.08854166666666667,
+    "mean_Q_comp": 0.06770833333333333,
+    "ci_or_credible_intervals": "TBD — not computed; do not invent"
+  },
+  "primary_vs_exploratory": {
+    "primary": "pilot Gate-C decision stop under billed T_total",
+    "exploratory_not_promoted": ["texture_swap higher constraints_ok_rate"]
+  },
+  "claims": []
+}
