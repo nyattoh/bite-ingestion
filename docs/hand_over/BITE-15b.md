@@ -97,11 +97,26 @@ python scripts/run_billed_pilot.py --no-minimal --n-per-family 24 `
 
 有料実行は Cloud では行わない（ローカル Path B）。
 
+## v2 再課金（thinking disabled / max_tokens=256）
+
+- **Date**: 2026-09-17 (UTC+9)
+- **Path**: ローカル raytrek / Path B。v1 checkpoint は未使用（`--no-resume` + `*_v2*` パス）
+- **Smoke**: `--minimal` 12/12、empty **0/12**、Q すべて 1.0、`decision=pivot`（Go ではない）
+- **Full**: 8×24×2 = **384/384** succeeded、empty **0/384**、`T_completion` min 2 / max 5 / mean ≈ 2.86
+- **decision**: **`pivot`**（`c1=False c2=True c3=False`）。Go ではない。
+- `constraints_ok_rate`: **0.880208**（338/384）。`dependency_chain` のみ 0.0417、他 family は 1.0
+- `sample_meets_n_pilot`: true / `rate_limited`: false
+- summary: `artifacts/pilot/bite15b_billed_summary_v2.json`
+- partial: `artifacts/pilot/bite15b_billed_partial_v2.json`
+- checkpoint JSONL: 未コミット（`bite15b_checkpoint_v2.jsonl`）
+
+v1 `stop` は empty-answer confounder 込み。v2 は空答えが消えたあとの記録で **pivot**。閾値は動かしていない。
+
 ## 未解決 / 次
 
-1. **記録上の stop は確定**だが、**科学的最終判定ではない**（下記 confounder）
-2. **Confounder**: 354/384 empty answers + `T_completion=64` → thinking/抽出。クライアント修正後にローカル再課金
-3. BITE-16: 負結果の記述は継続。再課金後に decision を更新
+1. v1 `stop` は empty-answer confounder 付きとして残す。v2 の Gate C 記録は **pivot**（C1/C3 不成立）
+2. BITE-16: 負結果・pivot の記述を継続。Go / Survive は主張しない
+3. 再課金中に `--no-resume` が二重起動した（同一 v2 パス）。unique 384 は揃ったが行数は 529。以降は v2 checkpoint の `--resume` のみ
 
 ## Do-not
 

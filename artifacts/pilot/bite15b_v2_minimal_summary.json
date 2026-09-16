@@ -1,0 +1,539 @@
+{
+  "pilot_id": "bite15_billed_synthetic_v0.1",
+  "paid_api": true,
+  "estimate_source": "provider_usage_billed",
+  "estimate_source_note": "T_total from provider usage only (prompt/completion/total/cached); T_logical_char4_proxy recorded separately — never mixed into T_total",
+  "model": "glm-4.5-flash",
+  "minimal": true,
+  "resume": false,
+  "checkpoint_path": "artifacts\\pilot\\bite15b_v2_minimal_checkpoint.jsonl",
+  "partial_path": "artifacts\\pilot\\bite15b_v2_minimal_partial.json",
+  "resume_policy": "skip ok; retry prior timeout/error once under this run's retry budget; skip prior rate_limit keys (no 429 storm)",
+  "lock": {
+    "delta": 0.05,
+    "rho_visible": 0.5,
+    "rho_recoverable": 0.9,
+    "eta": 0.95,
+    "J": 3,
+    "N_pilot": 24,
+    "N_full": 100,
+    "n_per_family_requested": 3,
+    "alpha": 0.05,
+    "confirmatory": [
+      "C1",
+      "C2",
+      "C3"
+    ]
+  },
+  "families_requested": [
+    "clean_local",
+    "adversarial_omission"
+  ],
+  "methods": [
+    "raw_full",
+    "compressed_passthrough"
+  ],
+  "per_family": {
+    "clean_local": {
+      "n_target": 3,
+      "n_actual": 3,
+      "n_method_rows": 6,
+      "constraints_ok_rate": 1.0,
+      "status": "ok"
+    },
+    "adversarial_omission": {
+      "n_target": 3,
+      "n_actual": 3,
+      "n_method_rows": 6,
+      "constraints_ok_rate": 1.0,
+      "status": "ok"
+    }
+  },
+  "n_instance_rows": 12,
+  "calls_attempted": 12,
+  "calls_succeeded": 12,
+  "calls_skipped_ok": 0,
+  "calls_resumed_retry": 0,
+  "constraints_ok_rate": 1.0,
+  "has_billed_usage": true,
+  "rate_limited": false,
+  "rate_limit_at": null,
+  "sample_meets_n_pilot": false,
+  "c1": false,
+  "c2": true,
+  "c3": false,
+  "decision": "pivot",
+  "decision_reason": "minimal/incomplete sample (n_per_family=3, families=2; N_pilot=24); prefer pivot — do not claim Go",
+  "http_trace_redacted": [
+    {
+      "url": "https://api.z.ai/api/paas/v4/chat/completions",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "Authorization": "***REDACTED***",
+        "Content-Type": "application/json",
+        "Accept-Language": "en-US,en"
+      },
+      "usage": {
+        "prompt_tokens": 68,
+        "completion_tokens": 2,
+        "total_tokens": 70,
+        "cached_tokens": 5
+      },
+      "model": "glm-4.5-flash"
+    },
+    {
+      "url": "https://api.z.ai/api/paas/v4/chat/completions",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "Authorization": "***REDACTED***",
+        "Content-Type": "application/json",
+        "Accept-Language": "en-US,en"
+      },
+      "usage": {
+        "prompt_tokens": 70,
+        "completion_tokens": 2,
+        "total_tokens": 72,
+        "cached_tokens": 7
+      },
+      "model": "glm-4.5-flash"
+    },
+    {
+      "url": "https://api.z.ai/api/paas/v4/chat/completions",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "Authorization": "***REDACTED***",
+        "Content-Type": "application/json",
+        "Accept-Language": "en-US,en"
+      },
+      "usage": {
+        "prompt_tokens": 68,
+        "completion_tokens": 2,
+        "total_tokens": 70,
+        "cached_tokens": 21
+      },
+      "model": "glm-4.5-flash"
+    },
+    {
+      "url": "https://api.z.ai/api/paas/v4/chat/completions",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "Authorization": "***REDACTED***",
+        "Content-Type": "application/json",
+        "Accept-Language": "en-US,en"
+      },
+      "usage": {
+        "prompt_tokens": 70,
+        "completion_tokens": 2,
+        "total_tokens": 72,
+        "cached_tokens": 33
+      },
+      "model": "glm-4.5-flash"
+    },
+    {
+      "url": "https://api.z.ai/api/paas/v4/chat/completions",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "Authorization": "***REDACTED***",
+        "Content-Type": "application/json",
+        "Accept-Language": "en-US,en"
+      },
+      "usage": {
+        "prompt_tokens": 68,
+        "completion_tokens": 2,
+        "total_tokens": 70,
+        "cached_tokens": 31
+      },
+      "model": "glm-4.5-flash"
+    },
+    {
+      "url": "https://api.z.ai/api/paas/v4/chat/completions",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "Authorization": "***REDACTED***",
+        "Content-Type": "application/json",
+        "Accept-Language": "en-US,en"
+      },
+      "usage": {
+        "prompt_tokens": 70,
+        "completion_tokens": 2,
+        "total_tokens": 72,
+        "cached_tokens": 33
+      },
+      "model": "glm-4.5-flash"
+    },
+    {
+      "url": "https://api.z.ai/api/paas/v4/chat/completions",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "Authorization": "***REDACTED***",
+        "Content-Type": "application/json",
+        "Accept-Language": "en-US,en"
+      },
+      "usage": {
+        "prompt_tokens": 143,
+        "completion_tokens": 2,
+        "total_tokens": 145,
+        "cached_tokens": 23
+      },
+      "model": "glm-4.5-flash"
+    },
+    {
+      "url": "https://api.z.ai/api/paas/v4/chat/completions",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "Authorization": "***REDACTED***",
+        "Content-Type": "application/json",
+        "Accept-Language": "en-US,en"
+      },
+      "usage": {
+        "prompt_tokens": 145,
+        "completion_tokens": 2,
+        "total_tokens": 147,
+        "cached_tokens": 25
+      },
+      "model": "glm-4.5-flash"
+    },
+    {
+      "url": "https://api.z.ai/api/paas/v4/chat/completions",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "Authorization": "***REDACTED***",
+        "Content-Type": "application/json",
+        "Accept-Language": "en-US,en"
+      },
+      "usage": {
+        "prompt_tokens": 143,
+        "completion_tokens": 2,
+        "total_tokens": 145,
+        "cached_tokens": 29
+      },
+      "model": "glm-4.5-flash"
+    },
+    {
+      "url": "https://api.z.ai/api/paas/v4/chat/completions",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "Authorization": "***REDACTED***",
+        "Content-Type": "application/json",
+        "Accept-Language": "en-US,en"
+      },
+      "usage": {
+        "prompt_tokens": 145,
+        "completion_tokens": 2,
+        "total_tokens": 147,
+        "cached_tokens": 31
+      },
+      "model": "glm-4.5-flash"
+    },
+    {
+      "url": "https://api.z.ai/api/paas/v4/chat/completions",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "Authorization": "***REDACTED***",
+        "Content-Type": "application/json",
+        "Accept-Language": "en-US,en"
+      },
+      "usage": {
+        "prompt_tokens": 143,
+        "completion_tokens": 2,
+        "total_tokens": 145,
+        "cached_tokens": 29
+      },
+      "model": "glm-4.5-flash"
+    },
+    {
+      "url": "https://api.z.ai/api/paas/v4/chat/completions",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "Authorization": "***REDACTED***",
+        "Content-Type": "application/json",
+        "Accept-Language": "en-US,en"
+      },
+      "usage": {
+        "prompt_tokens": 145,
+        "completion_tokens": 2,
+        "total_tokens": 147,
+        "cached_tokens": 31
+      },
+      "model": "glm-4.5-flash"
+    }
+  ],
+  "results": [
+    {
+      "instance_id": "clean_local-000",
+      "family": "clean_local",
+      "method_id": "raw_full",
+      "Q": 1.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 1.0,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": true,
+      "T_total": 70,
+      "T_prompt": 68,
+      "T_completion": 2,
+      "T_cached": 5,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 24,
+      "B_r_cap": 11,
+      "model": "glm-4.5-flash",
+      "failures": [],
+      "answer_text": "100",
+      "error": null
+    },
+    {
+      "instance_id": "clean_local-000",
+      "family": "clean_local",
+      "method_id": "compressed_passthrough",
+      "Q": 1.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 1.0,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": true,
+      "T_total": 72,
+      "T_prompt": 70,
+      "T_completion": 2,
+      "T_cached": 7,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 24,
+      "B_r_cap": 11,
+      "model": "glm-4.5-flash",
+      "failures": [],
+      "answer_text": "100",
+      "error": null
+    },
+    {
+      "instance_id": "clean_local-001",
+      "family": "clean_local",
+      "method_id": "raw_full",
+      "Q": 1.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 1.0,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": true,
+      "T_total": 70,
+      "T_prompt": 68,
+      "T_completion": 2,
+      "T_cached": 21,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 24,
+      "B_r_cap": 11,
+      "model": "glm-4.5-flash",
+      "failures": [],
+      "answer_text": "101",
+      "error": null
+    },
+    {
+      "instance_id": "clean_local-001",
+      "family": "clean_local",
+      "method_id": "compressed_passthrough",
+      "Q": 1.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 1.0,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": true,
+      "T_total": 72,
+      "T_prompt": 70,
+      "T_completion": 2,
+      "T_cached": 33,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 24,
+      "B_r_cap": 11,
+      "model": "glm-4.5-flash",
+      "failures": [],
+      "answer_text": "101",
+      "error": null
+    },
+    {
+      "instance_id": "clean_local-002",
+      "family": "clean_local",
+      "method_id": "raw_full",
+      "Q": 1.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 1.0,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": true,
+      "T_total": 70,
+      "T_prompt": 68,
+      "T_completion": 2,
+      "T_cached": 31,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 24,
+      "B_r_cap": 11,
+      "model": "glm-4.5-flash",
+      "failures": [],
+      "answer_text": "102",
+      "error": null
+    },
+    {
+      "instance_id": "clean_local-002",
+      "family": "clean_local",
+      "method_id": "compressed_passthrough",
+      "Q": 1.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 1.0,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": true,
+      "T_total": 72,
+      "T_prompt": 70,
+      "T_completion": 2,
+      "T_cached": 33,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 24,
+      "B_r_cap": 11,
+      "model": "glm-4.5-flash",
+      "failures": [],
+      "answer_text": "102",
+      "error": null
+    },
+    {
+      "instance_id": "adversarial_omission-000",
+      "family": "adversarial_omission",
+      "method_id": "raw_full",
+      "Q": 1.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 0.5,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": true,
+      "T_total": 145,
+      "T_prompt": 143,
+      "T_completion": 2,
+      "T_cached": 23,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 86,
+      "B_r_cap": 42,
+      "model": "glm-4.5-flash",
+      "failures": [],
+      "answer_text": "100",
+      "error": null
+    },
+    {
+      "instance_id": "adversarial_omission-000",
+      "family": "adversarial_omission",
+      "method_id": "compressed_passthrough",
+      "Q": 1.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 0.5,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": true,
+      "T_total": 147,
+      "T_prompt": 145,
+      "T_completion": 2,
+      "T_cached": 25,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 86,
+      "B_r_cap": 42,
+      "model": "glm-4.5-flash",
+      "failures": [],
+      "answer_text": "100",
+      "error": null
+    },
+    {
+      "instance_id": "adversarial_omission-001",
+      "family": "adversarial_omission",
+      "method_id": "raw_full",
+      "Q": 1.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 0.5,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": true,
+      "T_total": 145,
+      "T_prompt": 143,
+      "T_completion": 2,
+      "T_cached": 29,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 86,
+      "B_r_cap": 42,
+      "model": "glm-4.5-flash",
+      "failures": [],
+      "answer_text": "101",
+      "error": null
+    },
+    {
+      "instance_id": "adversarial_omission-001",
+      "family": "adversarial_omission",
+      "method_id": "compressed_passthrough",
+      "Q": 1.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 0.5,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": true,
+      "T_total": 147,
+      "T_prompt": 145,
+      "T_completion": 2,
+      "T_cached": 31,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 86,
+      "B_r_cap": 42,
+      "model": "glm-4.5-flash",
+      "failures": [],
+      "answer_text": "101",
+      "error": null
+    },
+    {
+      "instance_id": "adversarial_omission-002",
+      "family": "adversarial_omission",
+      "method_id": "raw_full",
+      "Q": 1.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 0.5,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": true,
+      "T_total": 145,
+      "T_prompt": 143,
+      "T_completion": 2,
+      "T_cached": 29,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 86,
+      "B_r_cap": 42,
+      "model": "glm-4.5-flash",
+      "failures": [],
+      "answer_text": "102",
+      "error": null
+    },
+    {
+      "instance_id": "adversarial_omission-002",
+      "family": "adversarial_omission",
+      "method_id": "compressed_passthrough",
+      "Q": 1.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 0.5,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": true,
+      "T_total": 147,
+      "T_prompt": 145,
+      "T_completion": 2,
+      "T_cached": 31,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 86,
+      "B_r_cap": 42,
+      "model": "glm-4.5-flash",
+      "failures": [],
+      "answer_text": "102",
+      "error": null
+    }
+  ]
+}
