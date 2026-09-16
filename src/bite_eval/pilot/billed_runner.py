@@ -106,6 +106,8 @@ class BilledInstanceResult:
     failures: tuple[str, ...] = ()
     answer_text: str = ""
     error: str | None = None
+    # Baseline status: ok | missing_pair | timeout | rate_limit
+    baseline_status: str = "ok"
 
 
 @dataclass
@@ -157,6 +159,7 @@ def _row_from_dict(d: Mapping[str, Any]) -> BilledInstanceResult:
         failures=tuple(failures),
         answer_text=str(d.get("answer_text") or ""),
         error=d.get("error"),
+        baseline_status=str(d.get("baseline_status") or "ok"),
     )
 
 
@@ -315,8 +318,15 @@ def evaluate_billed_instance(
     http_trace: list[dict[str, Any]] | None = None,
     max_tokens: int = 256,
     retry_max: int | None = None,
+    raw_baseline_q: float | None = None,
+    baseline_status: str | None = None,
 ) -> BilledInstanceResult:
-    """One billed target call; T_total from provider usage only."""
+    """One billed target call; T_total from provider usage only.
+    
+    Q_baseline comes from paired raw_full response when provided via
+    raw_baseline_q. For raw_full itself, uses self-pairing (Q_baseline = Q).
+    Never uses gold answer as baseline.
+    """
     messages = _build_messages(packet, method_id)
     model_name = getattr(client, "model", DEFAULT_MODEL)
     try:
@@ -337,7 +347,7 @@ def evaluate_billed_instance(
             family=str(packet.get("family")),
             method_id=method_id,
             Q=0.0,
-            Q_baseline=1.0,
+            Q_baseline=raw_baseline_q if raw_baseline_q is not None else 0.0,
             recall_vis=0.0,
             recall_rec=0.0,
             provenance=0.0,
@@ -352,6 +362,7 @@ def evaluate_billed_instance(
             model=str(model_name),
             failures=("provider_timeout",),
             error=str(exc),
+            baseline_status=baseline_status or ("timeout" if method_id == "raw_full" else "ok"),
         )
     except (ZaiClientError, TimeoutError) as exc:
         # TimeoutError should already be ProviderTimeoutError from ZaiClient,
@@ -363,7 +374,7 @@ def evaluate_billed_instance(
             family=str(packet.get("family")),
             method_id=method_id,
             Q=0.0,
-            Q_baseline=1.0,
+            Q_baseline=raw_baseline_q if raw_baseline_q is not None else 0.0,
             recall_vis=0.0,
             recall_rec=0.0,
             provenance=0.0,
@@ -378,6 +389,7 @@ def evaluate_billed_instance(
             model=str(model_name),
             failures=("provider_timeout",) if is_timeout else ("provider_error",),
             error=str(exc),
+            baseline_status=baseline_status or ("timeout" if method_id == "raw_full" and is_timeout else "ok"),
         )
 
     answer = str(getattr(result, "text", "") or "").strip()
@@ -393,10 +405,18 @@ def evaluate_billed_instance(
     vis = _visible_for_method(packet, method_id)
     m = metrics_from_instance(packet, vis, answer=answer)
 
-    # Baseline Q: gold-matched offline for constraint check (same packet)
-    gold = str(packet.get("gold_answer", ""))
-    m_base = metrics_from_instance(packet, vis, answer=gold)
-    Q_baseline = float(m_base["quality"])
+    # Q_baseline: from paired raw_full response, or self-pairing for raw_full
+    if raw_baseline_q is not None:
+        Q_baseline = raw_baseline_q
+        actual_baseline_status = baseline_status or "ok"
+    elif method_id == "raw_full":
+        # Self-pairing: raw_full uses its own Q as baseline
+        Q_baseline = float(m["quality"])
+        actual_baseline_status = "ok"
+    else:
+        # No paired raw_full provided — should not happen in proper workflow
+        Q_baseline = 0.0
+        actual_baseline_status = "missing_pair"
 
     text = str(packet.get("document") or "")
     t_logical = estimate_tokens_char4(text) + estimate_tokens_char4(answer)
@@ -439,6 +459,7 @@ def evaluate_billed_instance(
         failures=cr.failures,
         answer_text=answer,
         error=None,
+        baseline_status=actual_baseline_status,
     )
 
 
@@ -517,6 +538,9 @@ def run_billed_pilot(
     per_family: dict[str, Any] = {}
     stopped_early = False
 
+    # Lookup for raw_full Q values by instance_id (for pairing)
+    raw_baseline_lookup: dict[str, tuple[float, str]] = {}
+
     prior = load_checkpoint(checkpoint_path) if resume and checkpoint_path else {}
     skip_ok: dict[tuple[str, str, str], dict[str, Any]] = {}
     skip_rate: set[tuple[str, str, str]] = set()
@@ -542,6 +566,9 @@ def run_billed_pilot(
                 if row.error is None and row.T_total is not None:
                     state.calls_succeeded += 1
                 state.calls_skipped_ok += 1
+                # Populate raw_baseline_lookup for restored raw_full rows
+                if row.method_id == "raw_full":
+                    raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
         if partial_path and Path(partial_path).is_file():
             try:
                 partial = json.loads(Path(partial_path).read_text(encoding="utf-8"))
@@ -560,6 +587,9 @@ def run_billed_pilot(
                         if row.error is None and row.T_total is not None:
                             state.calls_succeeded += 1
                         state.calls_skipped_ok += 1
+                        # Populate raw_baseline_lookup for restored raw_full rows
+                        if row.method_id == "raw_full":
+                            raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
             except (json.JSONDecodeError, OSError):
                 pass
 
@@ -620,12 +650,24 @@ def run_billed_pilot(
 
                 state.calls_attempted += 1
                 try:
+                    # Look up paired raw_full Q for non-raw methods
+                    raw_baseline_q = None
+                    baseline_status = None
+                    instance_id = str(pkt.get("instance_id"))
+                    if mid != "raw_full" and instance_id in raw_baseline_lookup:
+                        raw_baseline_q, baseline_status = raw_baseline_lookup[instance_id]
+                    elif mid != "raw_full":
+                        # No raw_full pair available yet
+                        baseline_status = "missing_pair"
+                    
                     row = evaluate_billed_instance(
                         pkt,
                         mid,
                         client,
                         http_trace=state.http_trace,
                         retry_max=call_retry_max,
+                        raw_baseline_q=raw_baseline_q,
+                        baseline_status=baseline_status,
                     )
                 except RateLimitError:
                     state.rate_limited = True
@@ -642,6 +684,10 @@ def run_billed_pilot(
 
                 fam_results.append(row)
                 state.results.append(row)
+                
+                # Populate raw_baseline_lookup for raw_full rows
+                if row.method_id == "raw_full":
+                    raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
 
                 if row.error is None and row.T_total is not None:
                     state.calls_succeeded += 1
