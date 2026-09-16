@@ -9,7 +9,7 @@
 | Field | Value |
 | --- | --- |
 | decision | **pivot** |
-| reason | `c1=False c2=True c3=False` |
+| reason | `c1=False c2=not_evaluated c3=False` |
 | paid_api | true |
 | estimate_source | `provider_usage_billed`（384/384） |
 | empty answers | **0/384**（minimal smoke も 0/12） |
@@ -17,7 +17,7 @@
 | constraints_ok_rate | **0.880208**（338/384） |
 | rate_limit / timeout | none |
 
-C2 is a **runner placeholder**（compressed constraints_ok_rate ≥ raw）. It is **not** a true morphology-vs-length-only contrast. Partial confirmatory → **pivot**, not go.
+C2 is **not_evaluated**（length-only arm not connected to billed pilot; compressed constraints_ok_rate ≥ raw was a runner placeholder only）. It is **not** a true morphology-vs-length-only contrast. Partial confirmatory → **pivot**, not go.
 
 ## v1 superseded (not final science)
 
@@ -53,7 +53,7 @@ C2 is a **runner placeholder**（compressed constraints_ok_rate ≥ raw）. It i
 
 ## What this is not
 
-- Not Go（C1∧C3 false; C2 placeholder）
+- Not Go（C1∧C3 false; C2 not_evaluated）
 - Not full `N_full` matrix / `output/main/aggregates.parquet`
 - Not Survive architecture claim
 

@@ -15,8 +15,8 @@
   },
   "confirmatory": {
     "C1_t_total_improves_vs_raw_and_best_single": false,
-    "C2_morphology_beats_length_only": true,
-    "C2_caveat": "placeholder: compressed constraints_ok_rate >= raw; not length-only arm",
+    "C2_morphology_beats_length_only": "not_evaluated",
+    "C2_reason": "length-only arm not connected to billed pilot",
     "C3_net_savings_positive": false,
     "decision_label": "pivot",
     "sample_meets_n_pilot": true,
