@@ -99,9 +99,9 @@ python scripts/run_billed_pilot.py --no-minimal --n-per-family 24 `
 
 ## 未解決 / 次
 
-1. **BITE-15b 本体（有料完走＋決定記録）はクローズ可**
-2. **BITE-16**: pilot stop を負の結果として記述統計・error atlas 化（full matrix / Survive 主張はしない）
-3. Q≈0 かつ Q_baseline≈1 の系統的崩れの切り分け（評価ハーネス vs モデル応答）は BITE-16 / 後続で文書化
+1. **記録上の stop は確定**だが、**科学的最終判定ではない**（下記 confounder）
+2. **Confounder**: 354/384 empty answers + `T_completion=64` → thinking/抽出。クライアント修正後にローカル再課金
+3. BITE-16: 負結果の記述は継続。再課金後に decision を更新
 
 ## Do-not
 

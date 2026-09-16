@@ -129,6 +129,64 @@ def test_redact_authorization() -> None:
     assert h["Content-Type"] == "application/json"
 
 
+def test_extract_text_falls_back_to_reasoning_content() -> None:
+    from bite_eval.providers.zai_client import _extract_text
+
+    payload = {
+        "choices": [
+            {
+                "message": {
+                    "role": "assistant",
+                    "content": "",
+                    "reasoning_content": "K17",
+                }
+            }
+        ]
+    }
+    assert _extract_text(payload) == "K17"
+
+
+def test_chat_sends_thinking_disabled(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Pilot client must disable Z.ai thinking so content is populated."""
+    monkeypatch.setenv(ENV_KEY, "test-key-not-real")
+    captured: dict[str, Any] = {}
+
+    payload = {
+        "choices": [{"message": {"role": "assistant", "content": "ok"}}],
+        "usage": {
+            "prompt_tokens": 1,
+            "completion_tokens": 1,
+            "total_tokens": 2,
+            "cached_tokens": 0,
+        },
+    }
+    raw = json.dumps(payload).encode("utf-8")
+
+    class _Resp:
+        status = 200
+
+        def read(self) -> bytes:
+            return raw
+
+        def __enter__(self) -> Self:
+            return self
+
+        def __exit__(self, *args: object) -> None:
+            return None
+
+    def _urlopen(req: object, timeout: float = 0) -> _Resp:
+        data = getattr(req, "data", b"") or b""
+        captured["body"] = json.loads(data.decode("utf-8"))
+        return _Resp()
+
+    import urllib.request
+
+    monkeypatch.setattr(urllib.request, "urlopen", _urlopen)
+    client = ZaiClient(model="glm-4.5-flash", retry_max=0)
+    client.chat_completion([{"role": "user", "content": "x"}])
+    assert captured["body"]["thinking"] == {"type": "disabled"}
+
+
 # ---------------------------------------------------------------------------
 # mocked HTTP client path
 # ---------------------------------------------------------------------------

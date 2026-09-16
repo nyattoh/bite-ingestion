@@ -21,7 +21,7 @@ Provider / transport:
 1. **Quality collapse vs baseline**: Q_baseline ≈ 1.0 while observed Q is near 0 on most families. This dominates constraint failures and drives stop (C1–C3 false).
 2. **Compression does not buy T**: paired mean `(T_raw − T_comp) < 0` → compressed path is slightly costlier on average; C1-style T improvement is not supported.
 3. **Family exception**: `texture_swap` has constraints_ok_rate 0.5625 and higher mean Q (~0.54–0.58). Treat as exploratory texture signal only — **not** promoted to primary claim.
-4. **Empty / weak answers**: many rows store empty `answer_text` in artifacts; atlas does not invent content. Investigate whether scoring treats empty replies as Q=0 systematically（harness vs model）.
+4. **Confounder (2026-09-17)**: 354/384 rows have **empty `answer_text`** but **`T_completion=64` exactly** (runner `max_tokens=64`). Strongly consistent with Z.ai GLM thinking filling the budget while `message.content` stays empty. Non-empty answers (30) are short gold strings (`K17`, `101`, …) with Q=1.0. → **recorded stop may be contaminated by client/protocol**, not pure task failure. Fix: disable `thinking` + extract `reasoning_content` fallback + raise default `max_tokens` (see follow-up commit on this branch). **Re-bill on local Path B required before treating stop as scientific.**
 
 ## Example slots (ids only; no prompt dump)
 

@@ -115,7 +115,29 @@ def parse_usage(payload: Mapping[str, Any] | None) -> dict[str, int | None]:
     }
 
 
+def _coerce_content_field(content: Any) -> str:
+    """Normalize message.content which may be str or list-of-parts."""
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        parts: list[str] = []
+        for p in content:
+            if isinstance(p, Mapping) and isinstance(p.get("text"), str):
+                parts.append(p["text"])
+            elif isinstance(p, str):
+                parts.append(p)
+        return "".join(parts)
+    return ""
+
+
 def _extract_text(payload: Mapping[str, Any]) -> str:
+    """Extract assistant text from an OpenAI-compatible chat payload.
+
+    Z.ai GLM thinking mode may leave ``content`` empty while spending
+    completion tokens on ``reasoning_content``. Prefer ``content`` when
+    non-empty; otherwise fall back to ``reasoning_content`` so pilots do
+    not silently score empty answers after a billed call.
+    """
     choices = payload.get("choices")
     if not isinstance(choices, list) or not choices:
         return ""
@@ -124,18 +146,13 @@ def _extract_text(payload: Mapping[str, Any]) -> str:
         return ""
     msg = first.get("message")
     if isinstance(msg, Mapping):
-        content = msg.get("content")
-        if isinstance(content, str):
-            return content
-        # Multimodal / list content — join text parts only
-        if isinstance(content, list):
-            parts: list[str] = []
-            for p in content:
-                if isinstance(p, Mapping) and isinstance(p.get("text"), str):
-                    parts.append(p["text"])
-                elif isinstance(p, str):
-                    parts.append(p)
-            return "".join(parts)
+        text = _coerce_content_field(msg.get("content")).strip()
+        if text:
+            return text
+        reasoning = msg.get("reasoning_content")
+        if isinstance(reasoning, str) and reasoning.strip():
+            return reasoning.strip()
+        return ""
     # Legacy text field
     text = first.get("text")
     return str(text) if text is not None else ""
@@ -253,11 +270,14 @@ class ZaiClient:
     ) -> ChatResult:
         use_model = model or self.model
         url = self.base_url + "chat/completions"
+        # Z.ai GLM: default thinking can fill reasoning_content and leave
+        # content empty under small max_tokens — disable for pilot target calls.
         body = {
             "model": use_model,
             "messages": messages,
             "temperature": temperature,
             "max_tokens": max_tokens,
+            "thinking": {"type": "disabled"},
         }
         data = json.dumps(body).encode("utf-8")
         headers = {

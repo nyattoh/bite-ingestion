@@ -35,9 +35,9 @@ python3 -c "import json; json.load(open('artifacts/pilot/bite15b_billed_summary.
 
 ## 未解決（次の最小スライス）
 
-1. Q≈0 / Q_baseline≈1 の採点経路をコードで追跡（harness が空応答を Q=0 にしているか）
-2. full `output/main/*` が無い前提で、BITE-16 完了条件を **pilot-stop 文書化**に縮小するか、別アームを再設計するか人間判断
-3. formal CI / Holm 数値は **捏造せず** TBD のまま（必要なら offline bootstrap を別タスクで）
+1. **【優先】** 空応答 confounder: 354/384 が `answer_text=""` かつ `T_completion=64`。Z.ai thinking / 抽出バグ疑い。クライアント修正後、**ローカル Path B で `--no-resume` 再課金**して stop を再評価（Cloud では再課金しない）。
+2. full `output/main/*` が無い前提で、BITE-16 完了条件を **pilot-stop 文書化**に縮小するか、再アームするか人間判断
+3. formal CI / Holm 数値は **捏造せず** TBD のまま
 
 ## Do-not
 
