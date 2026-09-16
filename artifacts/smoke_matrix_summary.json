@@ -1,0 +1,43 @@
+{
+  "n": 4,
+  "n_failed": 0,
+  "results": [
+    {
+      "fixture": "force_fail",
+      "method_id": "raw_full",
+      "status": "ok",
+      "T_total": 16,
+      "run_id": "run_223e97124b94ad87",
+      "resumed": false,
+      "reason": null
+    },
+    {
+      "fixture": "force_fail",
+      "method_id": "synthetic_passthrough",
+      "status": "ok",
+      "T_total": 16,
+      "run_id": "run_80c24319260a213b",
+      "resumed": false,
+      "reason": null
+    },
+    {
+      "fixture": "prose_smoke",
+      "method_id": "raw_full",
+      "status": "ok",
+      "T_total": 26,
+      "run_id": "run_36e119a66c66ab43",
+      "resumed": false,
+      "reason": null
+    },
+    {
+      "fixture": "prose_smoke",
+      "method_id": "synthetic_passthrough",
+      "status": "ok",
+      "T_total": 26,
+      "run_id": "run_312691ea9855ad14",
+      "resumed": false,
+      "reason": null
+    }
+  ],
+  "note": "Smoke only; thresholds TBD; no Go/Pivot/Stop"
+}

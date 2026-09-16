@@ -1,0 +1,12 @@
+{
+  "policy_name": "oracle-Π",
+  "eval_only": true,
+  "require_allow_eval_use": true,
+  "note": "Fixture route table only — never for profiler. Synthetic task_ids.",
+  "route_table": {
+    "fixture-cut-only": ["CUT"],
+    "fixture-cut-reduce": ["CUT", "REDUCE"],
+    "fixture-full": ["CUT", "UNTANGLE", "REDUCE", "INTEGRATE"],
+    "fixture-untangle-integrate": ["UNTANGLE", "INTEGRATE"]
+  }
+}

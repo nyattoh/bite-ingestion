@@ -1,0 +1,16 @@
+{
+  "packet_id": "fix-cut-line",
+  "visible_evidence": [
+    {
+      "text": "row-a\nrow-b\nrow-c\nrow-d",
+      "role": "log"
+    }
+  ],
+  "provenance": {
+    "unit_id": "src1",
+    "source_uri": "synthetic://lines",
+    "byte_or_token_span": null,
+    "renderer_id": null
+  },
+  "op_last_touch": "NONE"
+}

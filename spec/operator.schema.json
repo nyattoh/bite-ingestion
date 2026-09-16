@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bite-ingestion://schemas/operator.schema.json",
+  "title": "OperatorApplyIO",
+  "description": "JSON Schema for operator apply I/O, trace, recovery handles, and loss ledger (BITE-09 working packet).",
+  "type": "object",
+  "required": ["packet_id", "visible_evidence", "provenance", "op_last_touch"],
+  "properties": {
+    "packet_id": { "type": "string", "minLength": 1 },
+    "visible_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text"],
+        "properties": {
+          "text": { "type": "string" },
+          "role": { "type": ["string", "null"] },
+          "unit_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["unit_id"],
+      "properties": {
+        "unit_id": { "type": "string" },
+        "source_uri": { "type": ["string", "null"] },
+        "byte_or_token_span": { "type": ["string", "null"] },
+        "renderer_id": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "op_last_touch": {
+      "type": "string",
+      "enum": ["CUT", "UNTANGLE", "REDUCE", "INTEGRATE", "NONE"]
+    },
+    "op_status": {
+      "type": "string",
+      "enum": ["ok", "failed", "degraded"]
+    },
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["unit_id", "text", "span"],
+        "properties": {
+          "unit_id": { "type": "string" },
+          "text": { "type": "string" },
+          "span": {
+            "type": "object",
+            "required": ["start", "end", "unit"],
+            "properties": {
+              "start": { "type": "integer" },
+              "end": { "type": "integer" },
+              "unit": { "type": "string", "enum": ["char", "byte", "line"] }
+            }
+          },
+          "source_uri": { "type": ["string", "null"] },
+          "version": { "type": ["string", "null"] },
+          "media_type": { "type": ["string", "null"] }
+        },
+        "additionalProperties": true
+      }
+    },
+    "R": {
+      "type": "object",
+      "required": ["entries"],
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["r_id", "unit_id", "reason", "recoverable"],
+            "properties": {
+              "r_id": { "type": "string" },
+              "unit_id": { "type": "string" },
+              "reason": { "type": "string" },
+              "recoverable": { "type": "boolean" },
+              "locator": { "type": "object" },
+              "aggregate_parent": { "type": ["string", "null"] },
+              "extra": { "type": "object" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "tau": {
+      "type": "object",
+      "required": ["sequence", "steps"],
+      "properties": {
+        "sequence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["CUT", "UNTANGLE", "REDUCE", "INTEGRATE"]
+          }
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["op", "mode", "inputs_ref", "outputs_ref", "omitted_ref", "errors"],
+            "properties": {
+              "op": {
+                "type": "string",
+                "enum": ["CUT", "UNTANGLE", "REDUCE", "INTEGRATE"]
+              },
+              "mode": { "type": "string", "const": "deterministic" },
+              "inputs_ref": { "type": "array", "items": { "type": "string" } },
+              "outputs_ref": { "type": "array", "items": { "type": "string" } },
+              "omitted_ref": { "type": "array", "items": { "type": "string" } },
+              "errors": { "type": "array" },
+              "extra": { "type": "object" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "recovery_handles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["handle_id", "r_ids", "op"],
+        "properties": {
+          "handle_id": { "type": "string" },
+          "r_ids": { "type": "array", "items": { "type": "string" } },
+          "op": {
+            "type": "string",
+            "enum": ["CUT", "UNTANGLE", "REDUCE", "INTEGRATE"]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "irreversible_loss_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["loss_id", "op", "declared", "kind", "unit_ids", "note"],
+        "properties": {
+          "loss_id": { "type": "string" },
+          "op": { "type": "string" },
+          "declared": { "type": "boolean" },
+          "kind": { "type": "string" },
+          "unit_ids": { "type": "array", "items": { "type": "string" } },
+          "note": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "cut": { "type": "object" },
+    "untangle": { "type": "object" },
+    "reduce": { "type": "object" },
+    "integrate": { "type": "object" },
+    "morphology": {
+      "type": ["object", "null"],
+      "additionalProperties": { "type": "number" }
+    },
+    "hidden_index_ref": { "type": ["string", "null"] }
+  },
+  "additionalProperties": true
+}

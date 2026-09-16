@@ -1,0 +1,37 @@
+{
+  "pilot_id": "bite14_offline_synthetic_v0.1",
+  "lock_ref": "configs/d2_lock_v0.1.json",
+  "paid_api": false,
+  "estimate_source": "local_char4_proxy",
+  "estimate_source_limitation": "T_total is local_char4_proxy not provider billed; confirmatory C1–C3 cannot be honestly evaluated offline → prefer insufficient_offline",
+  "N_pilot_target": 24,
+  "N_full_recorded": 100,
+  "methods": ["raw_full", "synthetic_passthrough"],
+  "families": [
+    "clean_local",
+    "repeated_records",
+    "sparse_anomaly",
+    "dependency_chain",
+    "malformed_mixed",
+    "dense_cross_reference",
+    "adversarial_omission",
+    "texture_swap"
+  ],
+  "constraints": {
+    "delta": 0.05,
+    "rho_visible": 0.50,
+    "rho_recoverable": 0.90,
+    "eta": 0.95
+  },
+  "decision": {
+    "fn": "decide_gate_c",
+    "allowed_labels": ["go", "pivot", "stop", "insufficient_offline"],
+    "offline_expected": "insufficient_offline"
+  },
+  "do_not": [
+    "auto_ingest_gemini_local_only",
+    "call_paid_api",
+    "claim_Survive",
+    "invent_extra_calibrated_numbers"
+  ]
+}

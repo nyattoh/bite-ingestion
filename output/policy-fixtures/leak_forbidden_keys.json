@@ -1,0 +1,14 @@
+{
+  "id": "leak_forbidden_keys",
+  "rule_id": "leak_guard",
+  "morphology": {
+    "b": 0.2,
+    "r": 0.1,
+    "gold_route": [
+      "CUT"
+    ],
+    "eval_visible_recall": 0.99
+  },
+  "budget": {},
+  "expect_leak_error": true
+}

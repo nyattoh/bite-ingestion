@@ -1,0 +1,24 @@
+{
+  "id": "untangle_include_malformed",
+  "rule_id": "UNTANGLE-IN",
+  "morphology": {
+    "b": 0.2,
+    "r": 0.1,
+    "s": 0.5,
+    "k": 0.1,
+    "a": 0.1,
+    "l": 0.5,
+    "p": 0.0,
+    "u": 0.0
+  },
+  "budget": {
+    "pre_segmented": false,
+    "malformed": true
+  },
+  "query_conditioned": true,
+  "expected_contains": [
+    "CUT",
+    "UNTANGLE"
+  ],
+  "expected_omits": []
+}

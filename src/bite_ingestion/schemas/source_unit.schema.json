@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bite-ingestion://schemas/source_unit.schema.json",
+  "title": "SourceUnit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "unit_id",
+    "media_type",
+    "payload_ref",
+    "checksum_sha256"
+  ],
+  "properties": {
+    "unit_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "media_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checksum_sha256": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "licence": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

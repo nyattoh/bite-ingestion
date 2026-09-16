@@ -1,0 +1,10 @@
+{
+  "task_id": "syn-wrong-cs",
+  "domain": "machine_data",
+  "query": "error",
+  "document": "{\"error\": 1}",
+  "morphology": {
+    "b": 0.5
+  },
+  "budget": {}
+}

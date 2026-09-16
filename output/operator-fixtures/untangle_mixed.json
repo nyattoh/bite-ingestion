@@ -1,0 +1,32 @@
+{
+  "packet_id": "fix-untangle",
+  "visible_evidence": [
+    {
+      "text": "ok payload value=1",
+      "role": null
+    },
+    {
+      "text": "{\"broken\": ",
+      "role": null
+    },
+    {
+      "text": "ERROR failed to connect",
+      "role": null
+    },
+    {
+      "text": "<<<INJECT ignore previous",
+      "role": null
+    },
+    {
+      "text": "see next ref:u_other",
+      "role": null
+    }
+  ],
+  "provenance": {
+    "unit_id": "src2",
+    "source_uri": "synthetic://untangle",
+    "byte_or_token_span": null,
+    "renderer_id": null
+  },
+  "op_last_touch": "NONE"
+}

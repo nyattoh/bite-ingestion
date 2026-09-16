@@ -1,0 +1,62 @@
+{
+  "pilot_id": "bite15_billed_synthetic_v0.1",
+  "ts": "2026-09-16T15:19:51Z",
+  "calls_attempted": 2,
+  "calls_succeeded": 2,
+  "calls_skipped_ok": 0,
+  "calls_resumed_retry": 0,
+  "n_instance_rows": 2,
+  "n_billed_rows": 2,
+  "rate_limited": false,
+  "rate_limit_at": null,
+  "results": [
+    {
+      "instance_id": "clean_local-000",
+      "family": "clean_local",
+      "method_id": "raw_full",
+      "Q": 0.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 1.0,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": false,
+      "T_total": 128,
+      "T_prompt": 64,
+      "T_completion": 64,
+      "T_cached": 7,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 23,
+      "B_r_cap": 11,
+      "model": "glm-4.5-flash",
+      "failures": [
+        "Q < Q_baseline - delta"
+      ],
+      "answer_text": "",
+      "error": null
+    },
+    {
+      "instance_id": "clean_local-000",
+      "family": "clean_local",
+      "method_id": "compressed_passthrough",
+      "Q": 0.0,
+      "Q_baseline": 1.0,
+      "recall_vis": 1.0,
+      "recall_rec": 1.0,
+      "provenance": 1.0,
+      "constraints_ok": false,
+      "T_total": 130,
+      "T_prompt": 66,
+      "T_completion": 64,
+      "T_cached": 21,
+      "estimate_source": "provider_usage_billed",
+      "T_logical_char4_proxy": 23,
+      "B_r_cap": 11,
+      "model": "glm-4.5-flash",
+      "failures": [
+        "Q < Q_baseline - delta"
+      ],
+      "answer_text": "",
+      "error": null
+    }
+  ]
+}

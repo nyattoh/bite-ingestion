@@ -1,0 +1,20 @@
+{
+  "version": "0.1.0-synthetic",
+  "pivot": "Pivot-to-bench",
+  "families": [
+    "prose_narrative",
+    "table_csv",
+    "nested_json",
+    "event_logs",
+    "code_config",
+    "mixed_payload"
+  ],
+  "identity_fields": [
+    "facts",
+    "question",
+    "answer",
+    "required_evidence_ids"
+  ],
+  "real_dataset": "TBD",
+  "notes": "Synthetic only for BITE-06. Real workload names deferred to BITE-07."
+}

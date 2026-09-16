@@ -1,0 +1,6 @@
+{
+  "request_type": "fetch_quarantine",
+  "unit_id": "u_inject",
+  "reason": "quarantined",
+  "request_id": "req_inj"
+}

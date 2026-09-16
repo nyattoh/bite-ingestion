@@ -1,0 +1,18 @@
+{
+  "task_id": "syn-md-001",
+  "domain": "machine_data",
+  "query": "error_code latency",
+  "document": "{\n  \"records\": [\n    {\n      \"id\": 1,\n      \"error_code\": \"E42\",\n      \"latency_ms\": 12,\n      \"host\": \"a\"\n    },\n    {\n      \"id\": 2,\n      \"error_code\": \"OK\",\n      \"latency_ms\": 5,\n      \"host\": \"b\"\n    },\n    {\n      \"id\": 3,\n      \"error_code\": \"E42\",\n      \"latency_ms\": 900,\n      \"host\": \"c\"\n    }\n  ],\n  \"meta\": {\n    \"source\": \"synthetic\",\n    \"pii\": false\n  }\n}",
+  "morphology": {
+    "b": 0.8,
+    "a": 0.2,
+    "r": 0.6,
+    "k": 0.3,
+    "l": 0.4,
+    "u": 0.1
+  },
+  "budget": {
+    "n_tokens": 80,
+    "pre_segmented": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "baseline_id": "rule_pi_rebite",
+  "version": "0.1-synthetic",
+  "licence": "project-internal",
+  "wraps": "RulePolicy + optional RecoverEngine hook",
+  "rebite_enabled": true,
+  "note": "Empty re-bite hook if RecoverEngine missing; interface always exposed."
+}

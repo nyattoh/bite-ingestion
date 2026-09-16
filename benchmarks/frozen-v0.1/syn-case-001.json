@@ -1,0 +1,106 @@
+{
+  "generator_version": "0.1.0-synthetic",
+  "seed": 1,
+  "identity_sha256": "94618270e3e5dbd230de0334955f32763b5ccf156ff2697bbb4799c7159e4ac4",
+  "canonical": {
+    "case_id": "syn-case-001",
+    "question": "What qty is recorded for item widget?",
+    "answer": "3",
+    "required_evidence_ids": [
+      "syn-e1",
+      "syn-e2"
+    ],
+    "facts": [
+      {
+        "fact_id": "syn-e1",
+        "key": "item",
+        "value": "widget"
+      },
+      {
+        "fact_id": "syn-e2",
+        "key": "qty",
+        "value": "3"
+      },
+      {
+        "fact_id": "syn-e3",
+        "key": "warehouse",
+        "value": "W1"
+      }
+    ],
+    "task_family": "texture_swap"
+  },
+  "textures": {
+    "prose_narrative": {
+      "renderer_id": "prose_narrative@0.1.0-synthetic",
+      "text": "Question: What qty is recorded for item widget?\n\nRecord syn-e1: item is widget.\nRecord syn-e2: qty is 3.\nRecord syn-e3: warehouse is W1.\n\nCanonical answer label: 3",
+      "surface_sha256": "c0cf5684de2468e83d2418583e7238da45e9c515da13bc130417813a9e63ca1a",
+      "char_len": 163
+    },
+    "table_csv": {
+      "renderer_id": "table_csv@0.1.0-synthetic",
+      "text": "# question: What qty is recorded for item widget?\n# answer: 3\nfact_id,key,value\r\nsyn-e1,item,widget\r\nsyn-e2,qty,3\r\nsyn-e3,warehouse,W1\r\n",
+      "surface_sha256": "309ce90e5f0489a4ae945fba780e5fad0cc4630f6e80a622ef581f98d7066eb9",
+      "char_len": 136
+    },
+    "nested_json": {
+      "renderer_id": "nested_json@0.1.0-synthetic",
+      "text": "{\n  \"query\": \"What qty is recorded for item widget?\",\n  \"answer\": \"3\",\n  \"graph\": {\n    \"nodes\": [\n      {\n        \"id\": \"syn-e1\",\n        \"attrs\": {\n          \"key\": \"item\",\n          \"value\": \"widget\"\n        }\n      },\n      {\n        \"id\": \"syn-e2\",\n        \"attrs\": {\n          \"key\": \"qty\",\n          \"value\": \"3\"\n        }\n      },\n      {\n        \"id\": \"syn-e3\",\n        \"attrs\": {\n          \"key\": \"warehouse\",\n          \"value\": \"W1\"\n        }\n      }\n    ]\n  },\n  \"required_evidence_ids\": [\n    \"syn-e1\",\n    \"syn-e2\"\n  ]\n}",
+      "surface_sha256": "4a5cb6f58d9b2ba28d860dd91cd6fc765a1ac840f7344f19d00034aa8b83787f",
+      "char_len": 534
+    },
+    "event_logs": {
+      "renderer_id": "event_logs@0.1.0-synthetic",
+      "text": "INFO query=What qty is recorded for item widget?\nINFO unit=syn-e1 key=item value=widget\nDEBUG heartbeat unit=syn-e1 ok=1\nDEBUG heartbeat unit=syn-e1 ok=1\nINFO unit=syn-e2 key=qty value=3\nDEBUG heartbeat unit=syn-e2 ok=1\nDEBUG heartbeat unit=syn-e2 ok=1\nINFO unit=syn-e3 key=warehouse value=W1\nDEBUG heartbeat unit=syn-e3 ok=1\nDEBUG heartbeat unit=syn-e3 ok=1\nINFO gold_answer=3",
+      "surface_sha256": "e3913cc7bb4bfc49ca57544edce80293d0f51150b6281d32320c3cab37a2c509",
+      "char_len": 377
+    },
+    "code_config": {
+      "renderer_id": "code_config@0.1.0-synthetic",
+      "text": "# synthetic config; not a real service\nquery = 'What qty is recorded for item widget?'\nrecords = {\n    'syn-e1': {'item': 'widget'},\n    'syn-e2': {'qty': '3'},\n    'syn-e3': {'warehouse': 'W1'},\n}\nanswer = '3'",
+      "surface_sha256": "526c9263f51b48d52425c763d1eafb7ceb4268e4060836594d3c085331238d3d",
+      "char_len": 210
+    },
+    "mixed_payload": {
+      "renderer_id": "mixed_payload@0.1.0-synthetic",
+      "text": "\n--- PROSE ---\nQuestion: What qty is recorded for item widget?\n\nRecord syn-e1: item is widget.\nRecord syn-e2: qty is 3.\nRecord syn-e3: warehouse is W1.\n\nCanonical answer label: 3\n--- TABLE ---\n# question: What qty is recorded for item widget?\n# answer: 3\nfact_id,key,value\r\nsyn-e1,item,widget\r\nsyn-e2,qty,3\r\nsyn-e3,warehouse,W1\r\n\n--- LOGS ---\nINFO query=What qty is recorded for item widget?\nINFO unit=syn-e1 key=item value=widget\nINFO unit=syn-e2 key=qty value=3\nINFO unit=syn-e3 key=warehouse value=W1\nINFO gold_answer=3",
+      "surface_sha256": "63e7ffb231386cf27fcbae813fc4573acd01b620d5d5f0335ccd2f09805bc611",
+      "char_len": 522
+    }
+  },
+  "contrast_pair": {
+    "short_dense": {
+      "renderer_id": "prose_narrative_dense@0.1.0-synthetic",
+      "text": "Question: What qty is recorded for item widget?\n\nRecord syn-e1: item is widget.\nRecord syn-e2: qty is 3.\nRecord syn-e3: warehouse is W1.\n\nCanonical answer label: 3\n# pad ................\n# pad ................\n# pad ................\n# pad ................\n# pad ................\n# pad ................\n# pad ................\n# pad ................\n# pad ................\n# pad ",
+      "surface_sha256": "572f3635a208784b80719b576561050a2d64233ef6f6d60b901dbfaa49d06978",
+      "char_len": 377
+    },
+    "long_repetitive": {
+      "renderer_id": "event_logs_repetitive@0.1.0-synthetic",
+      "text": "INFO query=What qty is recorded for item widget?\nINFO unit=syn-e1 key=item value=widget\nDEBUG heartbeat unit=syn-e1 ok=1\nDEBUG heartbeat unit=syn-e1 ok=1\nINFO unit=syn-e2 key=qty value=3\nDEBUG heartbeat unit=syn-e2 ok=1\nDEBUG heartbeat unit=syn-e2 ok=1\nINFO unit=syn-e3 key=warehouse value=W1\nDEBUG heartbeat unit=syn-e3 ok=1\nDEBUG heartbeat unit=syn-e3 ok=1\nINFO gold_answer=3",
+      "surface_sha256": "e3913cc7bb4bfc49ca57544edce80293d0f51150b6281d32320c3cab37a2c509",
+      "char_len": 377
+    },
+    "length_matched": true
+  },
+  "harness_hooks": {
+    "full_cost_contract": "T_total",
+    "token_meter_event_stub": {
+      "kind": "bitebench_render",
+      "case_id": "syn-case-001",
+      "textures": [
+        "prose_narrative",
+        "table_csv",
+        "nested_json",
+        "event_logs",
+        "code_config",
+        "mixed_payload"
+      ]
+    }
+  },
+  "notes": {
+    "pivot": "Pivot-to-bench",
+    "real_dataset": "TBD",
+    "fact_identity_human_lock": "TBD"
+  },
+  "bundle_fingerprint": "62994c4e3f9c7659b25be538ecc6b5caae7842a78a53163a6a43c90bb796c3ec"
+}

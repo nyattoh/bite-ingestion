@@ -1,0 +1,15 @@
+{
+  "baseline_id": "fixed_chunk_topk",
+  "version": "0.1-synthetic",
+  "licence": "stub-offline",
+  "params": {
+    "chunk_chars": 128,
+    "overlap": 16,
+    "top_k": 3
+  },
+  "cutpoints": "TBD_CALIBRATE",
+  "note": "Fixed-size char chunk + lexical top-k; offline heuristic only.",
+  "fairness_limits": [
+    "Not a learned retriever; cutpoints TBD."
+  ]
+}

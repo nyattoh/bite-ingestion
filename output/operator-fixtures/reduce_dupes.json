@@ -1,0 +1,36 @@
+{
+  "packet_id": "fix-reduce",
+  "visible_evidence": [
+    {
+      "text": "status=ok",
+      "role": null
+    },
+    {
+      "text": "status=ok",
+      "role": null
+    },
+    {
+      "text": "status=ok",
+      "role": null
+    },
+    {
+      "text": "name=alice",
+      "role": null
+    },
+    {
+      "text": "name=alice",
+      "role": null
+    },
+    {
+      "text": "  spaced   text  ",
+      "role": null
+    }
+  ],
+  "provenance": {
+    "unit_id": "src3",
+    "source_uri": "synthetic://reduce",
+    "byte_or_token_span": null,
+    "renderer_id": null
+  },
+  "op_last_touch": "NONE"
+}

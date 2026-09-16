@@ -1,0 +1,186 @@
+{
+  "packet_id": "pkt_rebite_demo",
+  "visible_evidence": [
+    {
+      "text": "visible only alpha",
+      "role": null,
+      "unit_ids": [
+        "u_alpha"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "u_alpha",
+      "text": "visible only alpha",
+      "span": {
+        "start": 0,
+        "end": 18,
+        "unit": "char"
+      },
+      "source_uri": "synthetic://doc",
+      "version": "v1"
+    }
+  ],
+  "provenance": {
+    "unit_id": "u_alpha",
+    "source_uri": "synthetic://doc",
+    "byte_or_token_span": null,
+    "renderer_id": null
+  },
+  "op_last_touch": "REDUCE",
+  "R": {
+    "entries": [
+      {
+        "r_id": "r_beta",
+        "unit_id": "u_beta",
+        "reason": "omitted_by_reduce",
+        "recoverable": true,
+        "locator": {
+          "source_uri": "synthetic://doc",
+          "version": "v1",
+          "span": {
+            "start": 0,
+            "end": 20,
+            "unit": "char"
+          }
+        },
+        "aggregate_parent": null
+      },
+      {
+        "r_id": "r_gamma",
+        "unit_id": "u_gamma",
+        "reason": "omitted_by_reduce",
+        "recoverable": true,
+        "locator": {
+          "source_uri": "synthetic://doc",
+          "version": "v1",
+          "span": {
+            "start": 0,
+            "end": 40,
+            "unit": "char"
+          }
+        },
+        "aggregate_parent": "agg_1"
+      },
+      {
+        "r_id": "r_delta",
+        "unit_id": "u_delta",
+        "reason": "omitted_by_reduce",
+        "recoverable": true,
+        "locator": {
+          "source_uri": "synthetic://doc",
+          "version": "v1",
+          "span": {
+            "start": 0,
+            "end": 40,
+            "unit": "char"
+          }
+        },
+        "aggregate_parent": "agg_1"
+      },
+      {
+        "r_id": "r_quar",
+        "unit_id": "u_quar",
+        "reason": "quarantined",
+        "recoverable": true,
+        "locator": {
+          "source_uri": "synthetic://doc",
+          "version": "v1",
+          "span": {
+            "start": 0,
+            "end": 12,
+            "unit": "char"
+          }
+        },
+        "aggregate_parent": null,
+        "extra": {
+          "reason_tags": [
+            "malformed"
+          ]
+        }
+      },
+      {
+        "r_id": "r_inject",
+        "unit_id": "u_inject",
+        "reason": "quarantined",
+        "recoverable": true,
+        "locator": {
+          "source_uri": "synthetic://doc",
+          "version": "v1",
+          "span": {
+            "start": 0,
+            "end": 30,
+            "unit": "char"
+          }
+        },
+        "aggregate_parent": null,
+        "extra": {
+          "reason_tags": [
+            "injection_suspect"
+          ]
+        }
+      },
+      {
+        "r_id": "r_withdrawn",
+        "unit_id": "u_withdrawn",
+        "reason": "not_selected",
+        "recoverable": true,
+        "locator": {
+          "source_uri": "synthetic://doc",
+          "version": "v1",
+          "span": {
+            "start": 0,
+            "end": 10,
+            "unit": "char"
+          }
+        },
+        "aggregate_parent": null
+      },
+      {
+        "r_id": "r_stale",
+        "unit_id": "u_stale",
+        "reason": "budget_truncated",
+        "recoverable": true,
+        "locator": {
+          "source_uri": "synthetic://doc",
+          "version": "v1",
+          "span": {
+            "start": 0,
+            "end": 10,
+            "unit": "char"
+          },
+          "stale": true
+        },
+        "aggregate_parent": null
+      }
+    ]
+  },
+  "recovery_handles": [
+    {
+      "handle_id": "h_beta",
+      "r_ids": [
+        "r_beta"
+      ],
+      "op": "REDUCE"
+    },
+    {
+      "handle_id": "h_agg",
+      "r_ids": [
+        "r_gamma",
+        "r_delta"
+      ],
+      "op": "REDUCE"
+    }
+  ],
+  "tau": {
+    "sequence": [
+      "CUT",
+      "REDUCE"
+    ],
+    "steps": []
+  },
+  "accounting": {
+    "rebite_tokens": 0
+  }
+}

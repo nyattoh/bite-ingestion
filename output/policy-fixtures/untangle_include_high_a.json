@@ -1,0 +1,25 @@
+{
+  "id": "untangle_include_high_a",
+  "rule_id": "UNTANGLE-IN",
+  "morphology": {
+    "b": 0.9,
+    "r": 0.1,
+    "s": 0.5,
+    "k": 0.1,
+    "a": 0.8,
+    "l": 0.5,
+    "p": 0.0,
+    "u": 0.0
+  },
+  "budget": {
+    "pre_segmented": true,
+    "malformed": false
+  },
+  "query_conditioned": true,
+  "expected_contains": [
+    "UNTANGLE"
+  ],
+  "expected_omits": [
+    "CUT"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "pilot_id": "bite15_billed_synthetic_v0.1",
+  "lock_ref": "configs/d2_lock_v0.1.json",
+  "paid_api": true,
+  "estimate_source": "provider_usage_billed",
+  "estimate_source_note": "T_total from response.usage (prompt_tokens, completion_tokens, total_tokens, cached_tokens); logical char4 recorded separately — never mixed into T_total",
+  "provider": {
+    "name": "z.ai",
+    "base_url": "https://api.z.ai/api/paas/v4/",
+    "model": "glm-4.5-flash",
+    "model_rationale": "Documented cheap/flash model on Z.ai paas/v4 chat-completion enum (docs.z.ai); prefer over larger glm-4.5 / glm-5.x for pilot cost",
+    "env_key": "ZAI_API_KEY",
+    "openai_compatible": true,
+    "timeout_s": 120
+  },
+  "retry": {
+    "timeout_s": 120,
+    "retry_max": 3,
+    "retry_backoff_base_s": 2.0,
+    "retry_backoff_factor": 2.0,
+    "attempts_total": 4,
+    "note": "On TimeoutError / URL read timeout: sleep base * factor^attempt between tries (2s, 4s, 8s) then fail that call; checkpoint status=timeout. HTTP 429 is NEVER retried — immediate stop + flush partial/checkpoint (decision pivot / rate_limit_partial)."
+  },
+  "checkpoint": {
+    "jsonl_default": "artifacts/pilot/bite15b_checkpoint.jsonl",
+    "partial_default": "artifacts/pilot/bite15b_billed_partial.json",
+    "summary_default": "artifacts/pilot/bite15b_billed_summary.json",
+    "resume_default": true,
+    "resume_policy": "skip ok (no duplicate billing); retry prior timeout/error once under this run's retry budget; skip prior rate_limit keys (avoid 429 storm)"
+  },
+  "minimal": {
+    "enabled_default": true,
+    "families": ["clean_local", "adversarial_omission"],
+    "n_per_family": 3,
+    "methods": ["raw_full", "compressed_passthrough"],
+    "target_calls": 12,
+    "rationale": "Cost control for first billed smoke; expand toward N_pilot=24/family later via --n-per-family / --families"
+  },
+  "N_pilot_target": 24,
+  "N_full_recorded": 100,
+  "methods": ["raw_full", "compressed_passthrough"],
+  "constraints": {
+    "delta": 0.05,
+    "rho_visible": 0.50,
+    "rho_recoverable": 0.90,
+    "eta": 0.95,
+    "J": 3,
+    "alpha": 0.05
+  },
+  "decision": {
+    "fn": "decide_gate_c",
+    "allowed_labels": ["go", "pivot", "stop", "insufficient_offline"],
+    "minimal_expected": "pivot",
+    "go_requires": ["paid_api", "provider_usage_billed", "C1", "C2", "C3", "sample_meets_n_pilot"],
+    "rate_limit_partial": "pivot or insufficient_offline with reason rate_limit_partial"
+  },
+  "do_not": [
+    "auto_ingest_gemini_local_only",
+    "mix_char4_proxy_into_T_total",
+    "print_or_log_api_key",
+    "claim_Go_on_minimal_n",
+    "push_publish_purchase",
+    "retry_storm_on_429"
+  ]
+}

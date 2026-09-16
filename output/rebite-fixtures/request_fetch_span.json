@@ -1,0 +1,10 @@
+{
+  "request_type": "fetch_span",
+  "unit_id": "u_beta",
+  "span": {
+    "start": 0,
+    "end": 4,
+    "unit": "char"
+  },
+  "request_id": "req_span"
+}

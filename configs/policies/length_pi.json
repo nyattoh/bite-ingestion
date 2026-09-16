@@ -1,0 +1,23 @@
+{
+  "policy_name": "length-Π",
+  "thresholds_namespace": "TBD_CALIBRATE",
+  "note": "Cutpoints are synthetic TBD placeholders — not empirical.",
+  "length_source_priority": ["n_tokens", "char_len"],
+  "bands": {
+    "short": {
+      "n_tokens_max": 64,
+      "char_len_max": 256,
+      "sequence": ["CUT"]
+    },
+    "medium": {
+      "n_tokens_max": 256,
+      "char_len_max": 1024,
+      "sequence": ["CUT", "REDUCE"]
+    },
+    "long": {
+      "n_tokens_max": null,
+      "char_len_max": null,
+      "sequence": ["CUT", "REDUCE", "INTEGRATE"]
+    }
+  }
+}

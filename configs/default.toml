@@ -1,0 +1,28 @@
+# Placeholders only. Do not invent production values.
+
+[project]
+name = "bite-ingestion"
+codename = "TBD"
+phase = "gate-b-scaffold"
+
+[paths]
+artifacts_dir = "artifacts"
+seeds_dir = "seeds"
+bitebench_dir = "bitebench"
+harness_dir = "harness"
+schemas_dir = "src/bite_ingestion/schemas"
+
+[models]
+target_model_id = "TBD"
+target_effort = "TBD"
+allow_network = false
+allow_paid_api = false
+
+[budget]
+max_paid_usd = "TBD"
+max_total_tokens = "TBD"
+
+[evaluation]
+primary_metric = "TBD"
+full_cost_contract = "T_total"
+seed = "TBD"

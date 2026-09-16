@@ -1,0 +1,14 @@
+{
+  "baseline_id": "query_aware_compress_like",
+  "version": "0.1-synthetic",
+  "licence": "stub-offline",
+  "params": {
+    "max_sentences": 5
+  },
+  "note": "Irreversible keep-query-overlap sentences stub.",
+  "fairness_limits": [
+    "NOT LongLLMLingua / CompAct reimplementation",
+    "Declares irreversible_loss=True",
+    "Deterministic offline; compressor LLM tokens=0"
+  ]
+}

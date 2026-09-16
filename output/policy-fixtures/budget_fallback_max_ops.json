@@ -1,0 +1,27 @@
+{
+  "id": "budget_fallback_max_ops",
+  "rule_id": "BUDGET-MAX-OPS",
+  "morphology": {
+    "b": 0.2,
+    "r": 0.9,
+    "s": 0.5,
+    "k": 0.9,
+    "a": 0.8,
+    "l": 0.1,
+    "p": 0.0,
+    "u": 0.0
+  },
+  "budget": {
+    "n_tokens": 500,
+    "pre_segmented": false,
+    "max_ops": 2,
+    "malformed": false
+  },
+  "query_conditioned": true,
+  "expected_contains": [
+    "CUT",
+    "UNTANGLE"
+  ],
+  "expected_max_len": 2,
+  "note": "full would be CUT,UNTANGLE,REDUCE,INTEGRATE; max_ops=2 keeps first two"
+}

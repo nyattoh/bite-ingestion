@@ -1,0 +1,7 @@
+{
+  "document": "Synthetic prose for BITE-13 smoke. The codeword ALPHA equals 42. Irrelevant filler text repeats calmly.",
+  "query": "What is ALPHA?",
+  "domain": "prose",
+  "gold_answer": "42",
+  "visible_evidence": ["ALPHA equals 42"]
+}

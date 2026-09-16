@@ -1,0 +1,27 @@
+{
+  "id": "length_matched_pair_A",
+  "rule_id": "length-vs-rule",
+  "morphology": {
+    "b": 0.2,
+    "r": 0.1,
+    "s": 0.5,
+    "k": 0.1,
+    "a": 0.1,
+    "l": 0.5,
+    "p": 0.0,
+    "u": 0.0
+  },
+  "budget": {
+    "n_tokens": 200,
+    "pre_segmented": false
+  },
+  "query_conditioned": true,
+  "expected_rule": [
+    "CUT"
+  ],
+  "expected_length": [
+    "CUT",
+    "REDUCE"
+  ],
+  "note": "same token length as pair B; morphology differs"
+}

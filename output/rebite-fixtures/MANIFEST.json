@@ -1,0 +1,17 @@
+{
+  "note": "Synthetic fixtures only \u2014 no real datasets.",
+  "files": [
+    "packet_base.json",
+    "request_aggregate.json",
+    "request_bypass.json",
+    "request_clarify.json",
+    "request_fetch_span.json",
+    "request_fetch_unit.json",
+    "request_injection.json",
+    "request_invalid.json",
+    "request_quarantine.json",
+    "request_stale.json",
+    "request_withdrawn.json",
+    "source_store.json"
+  ]
+}

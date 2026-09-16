@@ -1,0 +1,15 @@
+{
+  "baseline_id": "adaptive_chunk_like",
+  "version": "0.1-synthetic",
+  "licence": "stub-offline",
+  "params": {
+    "max_chars": 200,
+    "top_k": 3
+  },
+  "note": "Simple offline adaptive-ish boundary heuristics.",
+  "fairness_limits": [
+    "NOT a port of Adaptive Chunking paper code",
+    "Labelled -like for fairness contrast only",
+    "Cutpoints TBD_CALIBRATE"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "description": "Synthetic morphology vectors + expected routes for BITE-10 counterexamples",
+  "thresholds": "TBD_CALIBRATE placeholders only",
+  "files": [
+    "budget_fallback_max_ops.json",
+    "cut_include_low_b.json",
+    "cut_omit_high_b_preseg.json",
+    "empty_fallback_cut.json",
+    "integrate_include_noqc_ignores_l.json",
+    "integrate_include_qc.json",
+    "integrate_omit_high_l.json",
+    "leak_forbidden_keys.json",
+    "length_matched_pair_A.json",
+    "length_matched_pair_B.json",
+    "reduce_include_high_r.json",
+    "reduce_omit_low_r.json",
+    "untangle_include_high_a.json",
+    "untangle_include_malformed.json",
+    "untangle_omit_low_a.json"
+  ]
+}

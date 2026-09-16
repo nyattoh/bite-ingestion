@@ -1,0 +1,13 @@
+family,baseline_id,prior_art_pointer,reimplementation,status,notes
+raw,raw_full,full-context baseline,n/a,scaffold,pass-through
+length_router,length_pi,length-only ablations,wrap LengthOnlyPolicy,scaffold,TBD cutpoints
+chunk_retrieve,fixed_chunk_topk,fixed-size chunk + lexical top-k,offline heuristic,scaffold,TBD cutpoints
+adaptive_chunk,adaptive_chunk_like,Adaptive Chunking (pointer only),NOT reimplemented — -like stub,scaffold,fairness contrast
+universal_reduce,universal_reduce,single-operator reduce,FixedPolicy REDUCE,scaffold,
+query_compress,query_aware_compress_like,LongLLMLingua/CompAct (pointer only),NOT reimplemented — -like stub,scaffold,irreversible loss declared
+domain_machine,hyve_like,HYVE (pointer only),NOT reimplemented — -like stub,scaffold,machine_data only
+domain_code,contextsniper_like,ContextSniper (pointer only),NOT reimplemented — -like stub,scaffold,code only
+rule,rule_pi,morphology-aware candidate,wrap RulePolicy,scaffold,TBD thresholds
+rule_rebite,rule_pi_rebite,bounded re-bite,RulePolicy + optional RecoverEngine,scaffold,
+oracle,oracle_pi,gold route upper bound,wrap OraclePolicy,scaffold,eval-only
+fixed,fixed_pi,fixed sequence,wrap FixedPolicy,scaffold,H5 counterfactual

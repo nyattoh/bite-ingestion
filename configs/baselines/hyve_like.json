@@ -1,0 +1,12 @@
+{
+  "baseline_id": "hyve_like",
+  "version": "0.1-synthetic",
+  "licence": "stub-offline",
+  "applicable_domain": "machine_data",
+  "note": "JSON/CSV field projection stub.",
+  "fairness_limits": [
+    "NO full HYVE reimplementation",
+    "Trademark-safe -like label only",
+    "not_applicable on wrong domain"
+  ]
+}

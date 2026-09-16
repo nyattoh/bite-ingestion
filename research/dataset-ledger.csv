@@ -1,0 +1,10 @@
+adapter_id,domain,dataset_name,licence,download_source,version,checksum_sha256,redistributable,pii_risk,ground_truth_method,human_approval,status
+synthetic_observability_logs,observability_logs,synthetic-observability_logs,CC0-1.0-synthetic-placeholder,local://synthetic,0.1.0,SEE_ADAPTER_MANIFEST,true,none-synthetic,authored_synthetic_spans,not_required_for_synthetic,fixed_synthetic
+synthetic_structured_machine_data,tabular_nested_machine_data,synthetic-tabular_nested_machine_data,CC0-1.0-synthetic-placeholder,local://synthetic,0.1.0,SEE_ADAPTER_MANIFEST,true,none-synthetic,authored_synthetic_spans,not_required_for_synthetic,fixed_synthetic
+synthetic_repository_code,repository_code,synthetic-repository_code,CC0-1.0-synthetic-placeholder,local://synthetic,0.1.0,SEE_ADAPTER_MANIFEST,true,none-synthetic,authored_synthetic_spans,not_required_for_synthetic,fixed_synthetic
+synthetic_mixed_agent_tools,mixed_agent_tool_outputs,synthetic-mixed_agent_tool_outputs,CC0-1.0-synthetic-placeholder,local://synthetic,0.1.0,SEE_ADAPTER_MANIFEST,true,none-synthetic,authored_synthetic_spans,not_required_for_synthetic,fixed_synthetic
+TBD_observability_logs,observability_logs,TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,pending_human,blocked_pending_human
+TBD_tabular_nested,tabular_nested_machine_data,TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,pending_human,blocked_pending_human
+TBD_repository_code,repository_code,TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,pending_human,blocked_pending_human
+TBD_long_documents,long_technical_or_legal,TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,pending_human,blocked_pending_human
+TBD_mixed_agent_tools,mixed_agent_tool_outputs,TBD,TBD,TBD,TBD,TBD,TBD,TBD,TBD,pending_human,blocked_pending_human

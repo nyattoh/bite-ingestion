@@ -1,0 +1,32 @@
+{
+  "packet_id": "fix-integrate",
+  "visible_evidence": [
+    {
+      "text": "id=42 name=alpha",
+      "role": null
+    },
+    {
+      "text": "id=42 city=kyoto",
+      "role": null
+    },
+    {
+      "text": "id=7 solo",
+      "role": null
+    },
+    {
+      "text": "key=zz left",
+      "role": null
+    },
+    {
+      "text": "key=zz right",
+      "role": null
+    }
+  ],
+  "provenance": {
+    "unit_id": "src4",
+    "source_uri": "synthetic://integrate",
+    "byte_or_token_span": null,
+    "renderer_id": null
+  },
+  "op_last_touch": "NONE"
+}

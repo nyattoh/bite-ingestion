@@ -1,0 +1,49 @@
+{
+  "lock_id": "d2_lock_v0.1",
+  "lock_ref": "research/d2-threshold-lock-2026-09-16.md",
+  "lock_date": "2026-09-16",
+  "paid_api": false,
+  "Q": {
+    "definition": "task_accuracy",
+    "scale": [0, 1],
+    "Q_baseline": "raw_full_same_task_model_effort"
+  },
+  "delta": 0.05,
+  "rho_visible": 0.50,
+  "rho_recoverable": 0.90,
+  "eta": 0.95,
+  "J": 3,
+  "B_r": {
+    "formula": "min(4096, floor(0.5 * T_in(raw)))",
+    "cap": 4096,
+    "fraction_of_raw_Tin": 0.5
+  },
+  "N_pilot": 24,
+  "N_full": 100,
+  "alpha": 0.05,
+  "multiple_comparison": "confirmatory_Holm",
+  "confirmatory_set": ["C1", "C2", "C3"],
+  "oracle_budget_max_evals_per_instance": 15,
+  "tie_break": [
+    "constraints_satisfied",
+    "smaller_T_total",
+    "shorter_pi_op_count",
+    "lexicographic_CUT_UNTANGLE_REDUCE_INTEGRATE"
+  ],
+  "cache": {
+    "primary_T_total": "billed_provider_when_available",
+    "logical_separate": true,
+    "offline_pilot_estimate": "local_char4_proxy",
+    "dc3_note": "offline-proxy labeled; provider cache billing not confirmed"
+  },
+  "synthetic_families": [
+    "clean_local",
+    "repeated_records",
+    "sparse_anomaly",
+    "dependency_chain",
+    "malformed_mixed",
+    "dense_cross_reference",
+    "adversarial_omission",
+    "texture_swap"
+  ]
+}

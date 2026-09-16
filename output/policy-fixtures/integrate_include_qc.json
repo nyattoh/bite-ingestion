@@ -1,0 +1,26 @@
+{
+  "id": "integrate_include_qc",
+  "rule_id": "INTEGRATE-IN-QC",
+  "morphology": {
+    "b": 0.2,
+    "r": 0.1,
+    "s": 0.5,
+    "k": 0.8,
+    "a": 0.1,
+    "l": 0.2,
+    "p": 0.0,
+    "u": 0.0
+  },
+  "budget": {
+    "pre_segmented": false
+  },
+  "query_conditioned": true,
+  "expected_contains": [
+    "CUT",
+    "INTEGRATE"
+  ],
+  "expected_omits": [
+    "UNTANGLE",
+    "REDUCE"
+  ]
+}

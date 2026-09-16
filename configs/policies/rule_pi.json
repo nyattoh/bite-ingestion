@@ -1,0 +1,99 @@
+{
+  "policy_name": "rule-Π",
+  "query_conditioned_default": true,
+  "thresholds_namespace": "TBD_CALIBRATE",
+  "note": "Synthetic placeholders for tests only — NOT empirical. Do not report as calibrated science.",
+  "thresholds": {
+    "HIGH": 0.66,
+    "LOW": 0.34,
+    "LENGTH_SHORT_MAX": 64,
+    "LENGTH_MEDIUM_MAX": 256
+  },
+  "decision_table": [
+    {
+      "rule_id": "CUT-IN",
+      "feature": "b,pre_segmented",
+      "comparison": "b < HIGH OR pre_segmented=False",
+      "effect": "include CUT"
+    },
+    {
+      "rule_id": "CUT-OMIT",
+      "feature": "b,pre_segmented",
+      "comparison": "b >= HIGH AND pre_segmented=True",
+      "effect": "omit CUT"
+    },
+    {
+      "rule_id": "UNTANGLE-IN",
+      "feature": "a,malformed",
+      "comparison": "a >= HIGH OR malformed=True",
+      "effect": "include UNTANGLE"
+    },
+    {
+      "rule_id": "UNTANGLE-OMIT",
+      "feature": "a,malformed",
+      "comparison": "a < HIGH AND malformed=False",
+      "effect": "omit UNTANGLE"
+    },
+    {
+      "rule_id": "REDUCE-IN",
+      "feature": "r",
+      "comparison": "r >= HIGH",
+      "effect": "include REDUCE"
+    },
+    {
+      "rule_id": "REDUCE-OMIT",
+      "feature": "r",
+      "comparison": "r < HIGH",
+      "effect": "omit REDUCE"
+    },
+    {
+      "rule_id": "INTEGRATE-IN-QC",
+      "feature": "k,l",
+      "comparison": "query_conditioned AND k >= HIGH AND l <= LOW",
+      "effect": "include INTEGRATE"
+    },
+    {
+      "rule_id": "INTEGRATE-OMIT-QC",
+      "feature": "k,l",
+      "comparison": "query_conditioned AND NOT (k >= HIGH AND l <= LOW)",
+      "effect": "omit INTEGRATE"
+    },
+    {
+      "rule_id": "INTEGRATE-IN-NOQC",
+      "feature": "k",
+      "comparison": "NOT query_conditioned AND k >= HIGH",
+      "effect": "include INTEGRATE"
+    },
+    {
+      "rule_id": "INTEGRATE-OMIT-NOQC",
+      "feature": "k",
+      "comparison": "NOT query_conditioned AND k < HIGH",
+      "effect": "omit INTEGRATE"
+    },
+    {
+      "rule_id": "EMPTY-FALLBACK",
+      "feature": "all_omit",
+      "comparison": "no op included",
+      "effect": "fallback to CUT (or REDUCE if pre_segmented and long)"
+    },
+    {
+      "rule_id": "BUDGET-MAX-OPS",
+      "feature": "budget.max_ops",
+      "comparison": "len(sequence) > max_ops",
+      "effect": "drop later ops (INTEGRATE→REDUCE→UNTANGLE) keep ≥1"
+    },
+    {
+      "rule_id": "BUDGET-TOKEN",
+      "feature": "budget.token_budget",
+      "comparison": "token_budget < LENGTH_SHORT_MAX",
+      "effect": "keep first op only"
+    },
+    {
+      "rule_id": "QC-OFF",
+      "feature": "l,u",
+      "comparison": "query_conditioned=False",
+      "effect": "zero-out l and u for routing"
+    }
+  ],
+  "empty_fallback_doc": "Default empty fallback is CUT. If pre_segmented=True and n_tokens > LENGTH_SHORT_MAX, use REDUCE instead."
+}

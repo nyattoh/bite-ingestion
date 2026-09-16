@@ -1,0 +1,120 @@
+{
+  "status": "d2_locked_v0.1",
+  "lock_ref": "research/d2-threshold-lock-2026-09-16.md",
+  "lock_date": "2026-09-16",
+  "pivot": "Pivot-to-bench",
+  "name_plan": "B",
+  "notes": "BITE-14: D-2 threshold lock v0.1 applied. Offline pilot uses local_char4_proxy; DC-3 cache policy remains offline-proxy labeled (provider billed not available). No Survive claims. Gate C confirmatory C1–C3 require billed T_total — offline proxy alone → insufficient_offline.",
+  "Q_definition": {
+    "symbol": "Q",
+    "definition": "task accuracy vs gold y_star; mean of binary correct",
+    "scale": "[0,1]",
+    "baseline": "Q_baseline = Raw full context same task/model/effort",
+    "rubric": "report separately if present; NOT used in Q(pi) >= Q_baseline - delta",
+    "composite_with_rubric_or_csr": false
+  },
+  "policy_thresholds": {
+    "namespace": "d2_lock_v0.1",
+    "delta": 0.05,
+    "rho_visible": 0.50,
+    "rho_recoverable": 0.90,
+    "eta": 0.95,
+    "J": 3,
+    "B_r": {
+      "formula": "min(4096, floor(0.5 * T_in(raw)))",
+      "unit": "cumulative recover in+out tokens",
+      "cap": 4096,
+      "fraction_of_raw_Tin": 0.5
+    },
+    "N_pilot": 24,
+    "N_full": 100,
+    "N_real": "licence-cleared; separate registration (synthetic preferred in v0.1)",
+    "alpha": 0.05,
+    "multiple_comparison": "confirmatory Holm; exploratory separate/unadjusted or FDR with explicit split",
+    "confirmatory_set": ["C1", "C2", "C3"],
+    "confirmatory_detail": {
+      "C1": "H2: under constraints, T_total improves vs Raw and one pre-specified best single-strategy baseline (adaptive chunking OR universal REDUCE, fixed pre-analysis)",
+      "C2": "H1: transparent m increments sequence prediction vs length-only",
+      "C3": "H6: net savings including overhead have positive sign"
+    },
+    "oracle_budget": {
+      "max_T_total_evals_per_instance": 15,
+      "note": "legal sequences enumerate to at most 15 (ops at most once, non-empty)"
+    },
+    "tie_break": [
+      "constraints_satisfied",
+      "smaller_T_total",
+      "shorter_pi_op_count",
+      "lexicographic_sequence_CUT_UNTANGLE_REDUCE_INTEGRATE"
+    ],
+    "cache_accounting": {
+      "primary_T_total": "billed/provider when available",
+      "logical_presented_tokens": "separate column",
+      "offline_pilot_estimate": "local_char4_proxy",
+      "dc3_status": "offline-proxy labeled; provider cache billing behavior not confirmed",
+      "mixing_cache_policies_across_conditions": "forbidden"
+    },
+    "gate_c_decision_labels": ["go", "pivot", "stop", "insufficient_offline"],
+    "offline_default": "insufficient_offline when paid_api=false or T_total is local_char4_proxy (cannot honestly evaluate C1–C3)"
+  },
+  "constraints": {
+    "formula": "min_pi T_total(pi) s.t. Q(pi)>=Q_baseline-delta; Recall_vis>=rho_visible; Recall_rec>=rho_recoverable; Prov(pi)>=eta",
+    "symbols": {
+      "delta": 0.05,
+      "rho_visible": 0.50,
+      "rho_recoverable": 0.90,
+      "eta": 0.95
+    },
+    "Prov_definition": "fraction of E items + R entries with required provenance fields complete (source_uri/version/span for E; locator+unit_id for R)",
+    "Recall_vis_definition": "fraction of gold Ev_star units present in visible E",
+    "Recall_rec_definition": "fraction of gold Ev_star in E or recoverable via R (recoverable=true + valid locator); note potential vs realized"
+  },
+  "primary_metrics": [
+    "quality",
+    "T_total",
+    "evidence_recall_visible",
+    "evidence_recall_recoverable",
+    "provenance",
+    "latency"
+  ],
+  "full_cost": {
+    "symbol": "T_total",
+    "formula": "T_total = T_profiler + T_router + sum_c(T_in_c + T_out_c)",
+    "buckets": [
+      "T_profiler",
+      "T_router",
+      "T_target_in",
+      "T_target_out",
+      "T_rebite",
+      "T_baseline",
+      "T_calls_other",
+      "sum_calls_in_out"
+    ],
+    "includes": [
+      "model_visible_input_tokens",
+      "model_visible_output_tokens",
+      "router_or_policy_overhead_tokens",
+      "profiler_overhead_tokens",
+      "re_bite_tokens",
+      "integrate_tokens"
+    ],
+    "forbidden_aliases": [
+      "target_input_only_as_T_total"
+    ],
+    "double_counting": "forbidden",
+    "double_counting_rules": ["DC-1", "DC-2", "DC-3", "DC-4", "DC-5", "DC-6"],
+    "dc_summary": {
+      "DC-1": "one API call = one ledger row",
+      "DC-2": "deterministic preprocess tokens=0; CPU/wall separate",
+      "DC-3": "cache policy consistent; offline pilot labels local_char4_proxy (provider billed TBD)",
+      "DC-4": "count only actually sent text; no dual-use double count",
+      "DC-5": "baselines same T_total contract",
+      "DC-6": "INTEGRATE/Recover/profiler(LLM)/router(LLM) all counted"
+    },
+    "estimate_sources": {
+      "provider_usage": "preferred when available; primary for confirmatory T_total",
+      "local_char4_proxy": "offline pilot ONLY; MUST label; not billed provider usage; cannot alone support Go"
+    },
+    "numeric_thresholds": "locked_d2_v0.1_see_policy_thresholds"
+  }
+}

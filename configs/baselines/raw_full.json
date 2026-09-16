@@ -1,0 +1,12 @@
+{
+  "baseline_id": "raw_full",
+  "version": "0.1-synthetic",
+  "licence": "project-internal",
+  "note": "Pass-through full context; overflow when max_chars exceeded.",
+  "params": {
+    "max_chars": null
+  },
+  "fairness_limits": [
+    "No compression; may overflow context window."
+  ]
+}
