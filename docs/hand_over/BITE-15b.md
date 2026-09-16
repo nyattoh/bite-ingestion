@@ -127,6 +127,46 @@ PR #1（`cursor/bite-15b-cloud-verify-1ee6`）時点の記録。有料フル実�
 - **変えないもの**: δ / ρ / η、採点関数、Go 条件
 - **再課金**: まず `dependency_chain` だけ（24×2=48 calls）。全体 384 の即再実行はしない
 
+### Path B 公式結果（48 call 再課金）— **完了**
+
+**重要**: この Path B 結果（A）と v2 フルパイロット文脈（B）は**別実行**。混同禁止。
+
+#### A) Path B 48-call 再課金（公式 Gate 結果）
+
+| 項目 | 値 |
+| --- | --- |
+| 実行日時 | 2026-09-17 05:48:59–05:49:29 JST |
+| スコープ | `dependency_chain` **のみ**（24 instances × 2 methods = 48 billed calls） |
+| ホスト | raytrek ローカル |
+| モデル | glm-4.5-flash |
+| 成功/失敗 | **48/48 成功**；empty=0 |
+| **constraints_ok_rate** | **1.0**（48/48） |
+| **decision** | **`pivot`**（`c1=False c2=True c3=False`）— **Go ではない** |
+| Artifacts | `artifacts/pilot/bite15b_pathb_depchain_summary.json`<br>`artifacts/pilot/bite15b_pathb_depchain_partial.json`<br>`artifacts/pilot/bite15b_pathb_depchain_checkpoint.jsonl` |
+
+#### B) v2 フルパイロット文脈の dependency_chain（**別実行・参考**）
+
+| 項目 | 値 |
+| --- | --- |
+| スコープ | 384 全 billed rows（v2 @ `967ec0b`） |
+| dependency_chain family | constraints_ok ≈ **0.0417**（1/24） |
+| 注意 | Path B の constraints_ok_rate=**1.0** と**混同しない**こと |
+
+#### C) 不変の事項
+
+- **Path A**: 追加課金なし
+- **Cloud 有料実行**: hold
+- **閾値**: 変更なし（δ / ρ / η 維持）
+- **384 全 re-run**: 未実施
+- **decision**: **`pivot`**（Go ではない）
+
+#### Path B 解釈
+
+1. 質問修正（数値のみ答えよ）により、`dependency_chain` family の constraints_ok_rate は **0.0417 → 1.0** に改善
+2. しかし **C2 条件**（全 family で 0.9 以上）を満たすには **全 384 行の再実行が必要**
+3. 現時点で再実行していないため、decision は **`pivot`** のまま
+4. full 384 再実行は人間判断（コスト vs 情報）
+
 ## Do-not
 
 - Go / Survive 捏造禁止
