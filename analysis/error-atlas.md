@@ -28,6 +28,7 @@ Almost all failures sit in **`dependency_chain`**（2/48 ok ≈ 0.0417）. Other
 2. **No token win from compressed_passthrough**: every paired `dT_raw_minus_comp = -2` in recompute（comp slightly higher T）.
 3. **Quality generally holds** except dependency_chain — treat that family as the primary error locus for follow-up, **not** as a reason to flip Go.
 4. **Do not** hide the 46 Q failures behind the 0.88 aggregate ok rate alone.
+5. **`dependency_chain` mismatch type（再課金なしで確認）**: gold は数値のみ（例 `100`）だがモデル応答は `K00=100` 形式。exact-match 採点（`metrics_from_instance`）で Q=0。プロンプト/gold 仕様のずれであり、C1/C3 の token 失敗とは別軸。
 
 ## Exploratory (not primary)
 
