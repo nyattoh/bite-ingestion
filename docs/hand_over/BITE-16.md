@@ -42,7 +42,7 @@ python3 -c "import json; d=json.load(open('artifacts/pilot/bite15b_billed_summar
    - decision: **`pivot`** 継続（全 384 re-run は未実施）
    - 詳細: BITE-15b.md § Path B 公式結果 参照
 2. **全 384 行 re-run**: 保留（人間判断・コスト vs 情報）
-3. C2 placeholder を length-only arm へ置き換える設計は後回し
+3. C2 placeholder を length-only arm へ置き換える設計は後回し → **設計完了**（[`docs/design/C2_length_only_arm.md`](../design/C2_length_only_arm.md)）、実装は later
 4. full matrix / `output/main/*` は Go が出るまで急がない
 5. CI / Holm は TBD（捏造しない）
 
