@@ -37,7 +37,7 @@ python3 -c "import json; d=json.load(open('artifacts/pilot/bite15b_billed_summar
 ## 未解決（次の最小スライス）
 
 1. **Path B**: `dependency_chain` 質問修正後、ローカルで family 単独の小さく再課金（48 calls）
-2. C2 placeholder を length-only arm へ置き換える設計は後回し
+2. C2 placeholder を length-only arm へ置き換える設計は後回し → **設計完了**（[`docs/design/C2_length_only_arm.md`](../design/C2_length_only_arm.md)）、実装は later
 3. full matrix / `output/main/*` は Go が出るまで急がない
 4. CI / Holm は TBD（捏造しない）
 
