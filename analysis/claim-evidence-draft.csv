@@ -1,0 +1,7 @@
+scope,claim_id,claim_text,evidence_path,status,notes
+pilot_v2,GATEC-PIVOT,"Billed N_pilot v2 supports pivot (c1=False c2=True c3=False)",artifacts/pilot/bite15b_billed_summary_v2.json,supported,967ec0b; not Go
+pilot_v2,EMPTY-CLEARED,"Empty-answer confounder cleared (0/384 empty; T_completion 2-5)",analysis/error-atlas.md,supported,thinking disabled rebill
+pilot_v2,NO-T-SAVE,"compressed_passthrough not cheaper vs raw_full (mean dT=-2)",analysis/pareto-data-v2.csv,supported,C1/C3 false
+pilot_v2,DEP-CHAIN,"dependency_chain dominates Q failures (ok_rate≈0.0417)",analysis/error-atlas.md,supported,exploratory locus only
+pilot_v1,GATEC-STOP-CONTAMINATED,"v1 stop contaminated by empty answers",artifacts/pilot/bite15b_billed_summary.json,superseded,e44b5bd keep as history
+pilot,FULL-MATRIX,Full BITE-15 aggregates.parquet / ablations,output/main/aggregates.parquet,missing,Pivot-to-bench

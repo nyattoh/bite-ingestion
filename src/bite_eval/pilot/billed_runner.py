@@ -313,7 +313,7 @@ def evaluate_billed_instance(
     rho_recoverable: float = RHO_RECOVERABLE,
     eta: float = ETA,
     http_trace: list[dict[str, Any]] | None = None,
-    max_tokens: int = 64,
+    max_tokens: int = 256,
     retry_max: int | None = None,
 ) -> BilledInstanceResult:
     """One billed target call; T_total from provider usage only."""

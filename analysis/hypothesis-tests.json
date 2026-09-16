@@ -1,0 +1,42 @@
+{
+  "scope": "bite15b_billed_pilot_N24_v2",
+  "source_commit": "967ec0b",
+  "source_artifact": "artifacts/pilot/bite15b_billed_summary_v2.json",
+  "supersedes_v1": {
+    "commit": "e44b5bd",
+    "decision": "stop",
+    "reason": "empty-answer confounder"
+  },
+  "alpha": 0.05,
+  "multiple_comparison_plan": "confirmatory Holm on C1/C2/C3 (lock). Pilot uses decide_gate_c booleans; no extra p-values invented.",
+  "missing_data": {
+    "checkpoint_jsonl_in_git": false,
+    "output_main_aggregates_parquet": false
+  },
+  "confirmatory": {
+    "C1_t_total_improves_vs_raw_and_best_single": false,
+    "C2_morphology_beats_length_only": true,
+    "C2_caveat": "placeholder: compressed constraints_ok_rate >= raw; not length-only arm",
+    "C3_net_savings_positive": false,
+    "decision_label": "pivot",
+    "sample_meets_n_pilot": true,
+    "has_billed_usage": true,
+    "empty_answers": 0
+  },
+  "descriptive_effect_snapshots": {
+    "constraints_ok_rate": 0.8802083333333334,
+    "mean_dT_raw_minus_comp": -2.0,
+    "mean_Q_raw": 0.8802083333333334,
+    "mean_Q_comp": 0.8802083333333334,
+    "dependency_chain_constraints_ok_rate": 0.041666666666666664,
+    "ci_or_credible_intervals": "TBD — not computed; do not invent"
+  },
+  "primary_vs_exploratory": {
+    "primary": "Gate-C pilot decision pivot under billed T_total (v2)",
+    "exploratory_not_promoted": [
+      "7/8 families constraints_ok_rate=1.0",
+      "dependency_chain as sole weak family"
+    ]
+  },
+  "claims": []
+}

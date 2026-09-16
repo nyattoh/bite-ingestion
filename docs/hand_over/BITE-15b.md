@@ -1,67 +1,71 @@
-# BITE-15b handover — billed runner checkpoint / resume / timeout fix
+# BITE-15b handover — billed N_pilot（v2 = **pivot**）
 
 - **Date**: 2026-09-17 (UTC+9)
-- **Phase**: Gate C billed N_pilot hardening (after BITE-15 overlay)
-- **Tone**: Pivot-to-bench; no Survive claims; no Go invention
-- **Artifact**: `bite15b-fix-dist.zip` overlays onto `D:\develop\works\bite-ingestion`
-- **Standing**: Box builds/tests with mocks only. Parent (raytrek) resumes billed with key via bw-env.
+- **Phase**: Gate C billed N_pilot（checkpoint / resume → thinking 修正 → v2 再課金）
+- **Tone**: Pivot-to-bench; no Survive; **Go 捏造禁止**
+- **Standing**: 有料はローカル（raytrek / Path B）。Cloud は mock / 文書のみ。Cloud 移行は hold。
+- **Authoritative Gate C record**: **v2 @ [`967ec0b`](https://github.com/nyattoh/bite-ingestion/commit/967ec0b)** → **`pivot`**
 
-## Failure mode (why this fix)
+## 権威ある結果（v2）
 
-Full `N_pilot` billed run failed with:
+| 項目 | 値 |
+| --- | --- |
+| コミット | [`967ec0b`](https://github.com/nyattoh/bite-ingestion/commit/967ec0b) |
+| summary | `artifacts/pilot/bite15b_billed_summary_v2.json` |
+| partial | `artifacts/pilot/bite15b_billed_partial_v2.json` |
+| checkpoint | 未コミット（`bite15b_checkpoint_v2.jsonl`） |
+| 規模 | 384/384 billed rows |
+| empty answers | **0/384**（minimal 0/12） |
+| T_completion | min 2 / max 5 / mean ≈ 2.86 |
+| **decision** | **`pivot`**（`c1=False c2=True c3=False`）— **Go ではない** |
+| constraints_ok_rate | **0.880208**（338/384） |
+| 弱点 family | `dependency_chain` ≈ 0.0417；他 7 family = 1.0 |
+| 429 / timeout | なし |
 
-```text
-TimeoutError: The read operation timed out
-```
+再計算: `analysis/bite15b_pilot_recompute_v2.json`
 
-after ~51 minutes and wrote **no** `bite15b` summary/partial — measured call counts were lost.
+## v1（履歴・非最終）
 
-Root causes:
+| 項目 | 値 |
+| --- | --- |
+| コミット | [`e44b5bd`](https://github.com/nyattoh/bite-ingestion/commit/e44b5bd) |
+| decision | `stop`（empty-answer confounder 付き） |
+| empty / T_completion | 354/384 empty；T_completion 常に 64 |
 
-1. Bare `TimeoutError` from `urllib` / socket read was not mapped to a caught client error, so it bubbled out of the runner uncaught.
-2. No per-call checkpoint — a crash mid-run left zero durable tallies.
-3. No resume path — a restart would have re-billed already-successful calls.
+v1 は thinking/抽出バグ込み。科学的最終判定には使わない。
 
-## Fix summary
+## なぜ BITE-15b があったか
+
+初回フルランが `TimeoutError` で集計喪失 → checkpoint/resume/timeout 硬化。その後 v1 完走が empty×64 で汚染 → thinking disabled + 抽出 fallback + max_tokens=256 で v2 再課金。
+
+## Fix summary（main に含まれる）
 
 | Area | Change |
 | --- | --- |
-| `zai_client.py` | `ProviderTimeoutError`; catch TimeoutError / URL timeout; finite exponential backoff retries; 429 never retried; no key logging |
-| `billed_runner.py` | JSONL checkpoint after every attempt + atomic partial rewrite; resume skips `ok`; retries prior `timeout`/`error` once; skips prior `rate_limit` |
-| `run_billed_pilot.py` | `--checkpoint`, `--resume/--no-resume` (default True), bite15b default paths, config-driven timeout/retry |
-| `pilot_bite15_billed.json` | `retry.*` + `checkpoint.*` documented defaults |
-| Tests | checkpoint write, resume skips ok, timeout retries then fail, 429 stops without retry storm |
+| `zai_client.py` | timeout retry；`thinking: disabled`；`reasoning_content` fallback |
+| `billed_runner.py` | checkpoint/resume；pilot `max_tokens=256` |
+| CLI / config | bite15b パス・retry・thinking 注記 |
+| Tests | mock（thinking disabled / reasoning fallback 含む） |
+| `scripts/run_billed_pilot.py` | executable bit（Cloud verify PR） |
 
-## Retry defaults (config)
+## Resume policy
 
-| Field | Default | Meaning |
-| --- | --- | --- |
-| `timeout_s` | **120** | Per-call read timeout |
-| `retry_max` | **3** | Retries after first attempt → **4 attempts total** |
-| `retry_backoff_base_s` | **2.0** | First backoff sleep |
-| `retry_backoff_factor` | **2.0** | Sleeps: 2s, 4s, 8s between attempts |
+- Skip `ok`；retry `timeout`/`error` once；skip `rate_limit`
+- v2 再課金は `--no-resume` + 新パス。以降の再開は **v2 checkpoint のみ**
 
-429: immediate stop + flush checkpoint/partial → decision `pivot` / `rate_limit_partial`. **No retry storm.**
-
-## Resume policy (documented choice)
-
-- **Skip** `(family, instance_id, method)` whose latest checkpoint status is `ok` — **no duplicate billing**.
-- **Retry once** prior `timeout` / `error` under the **new run's** client retry budget.
-- **Skip** prior `rate_limit` keys (avoid immediate 429 storm). Delete those JSONL lines (or use `--no-resume`) to force a later re-attempt after cooling down.
-
-## CLI (parent / raytrek — resume full N_pilot)
+## CLI（親機 / raytrek — 有料のみ）
 
 ```powershell
 cd D:\develop\works\bite-ingestion
-# Expand-Archive .\bite15b-fix-dist.zip -DestinationPath . -Force
 # Inject ZAI_API_KEY via bw-env (human finger) — do not echo the value
 
+# Example: resume on v2 paths (prefer these over v1 filenames)
 python scripts/run_billed_pilot.py --no-minimal --n-per-family 24 `
   --families clean_local repeated_records sparse_anomaly dependency_chain `
              malformed_mixed dense_cross_reference adversarial_omission texture_swap `
-  --checkpoint artifacts/pilot/bite15b_checkpoint.jsonl `
-  --partial-out artifacts/pilot/bite15b_billed_partial.json `
-  --out artifacts/pilot/bite15b_billed_summary.json `
+  --checkpoint artifacts/pilot/bite15b_checkpoint_v2.jsonl `
+  --partial-out artifacts/pilot/bite15b_billed_partial_v2.json `
+  --out artifacts/pilot/bite15b_billed_summary_v2.json `
   --resume
 ```
 
@@ -84,7 +88,7 @@ One object per line:
 }
 ```
 
-## Verify (box — mocks only)
+## Verify (box / Cloud — mocks only)
 
 ```bash
 cd /workspace
@@ -94,29 +98,33 @@ python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"
 env -u ZAI_API_KEY .venv/bin/python scripts/run_billed_pilot.py --minimal ; echo exit=$?
 ```
 
-## Cloud verification (2026-09-16 UTC)
+## Cloud verification (2026-09-16 UTC・有料なし)
+
+PR #1（`cursor/bite-15b-cloud-verify-1ee6`）時点の記録。有料フル実行は後にローカル v2 で完了（上表）。Cloud 側の方針は不変。
 
 | Check | Result |
 | --- | --- |
-| `pytest tests/eval/test_billed_pilot_mock.py` | **26 passed** |
-| `pytest tests/eval/` | **54 passed** |
+| `pytest tests/eval/test_billed_pilot_mock.py` | **26 passed**（当時；現行 suite は追加テストあり） |
+| `pytest tests/eval/` | **54 passed**（当時） |
 | `compileall src/bite_eval` | OK |
 | CLI `ZAI_API_KEY` absent | exit **2** + `KEY_ABSENT` |
 | Env key presence | **ABSENT**（length 非公開） |
-| Egress | unrestricted（`api.z.ai` 到達可否はキー注入後に確認） |
-| `bite15b_checkpoint.jsonl` | **未作成**（有料フル実行未着手） |
-| `bite15b_billed_partial.json` | 既存・2 calls のみ |
+| Egress | unrestricted（到達確認はキー注入後） |
+| 有料実行 | **Cloud では行わない**（ローカル Path B） |
 
-**ブロッカー**: Cloud Agent 環境に `ZAI_API_KEY` が無い。有料 N_pilot（8×24×2≒384 calls）はキー注入後に `--resume` で再開する。注入は人間 / Path B。
+**ブロッカー（Cloud）**: `ZAI_API_KEY` 無し。有料 N_pilot は人間 / Path B のローカル実行。Cloud 移行 hold。
 
-**次の最小実行スライス（キー注入後）**:
+## 未解決 / 次
 
-1. `--minimal`（12 calls）で smoke
-2. 問題なければ handover 記載のフル N_pilot CLI（`--resume`）
+1. Gate C 記録は **pivot**（確定）。Go ではない
+2. BITE-16: `dependency_chain` 失敗の記述、C2 placeholder の限界明記
+3. full matrix 実施可否は人間判断
 
-## Do-not reminders
+## Do-not
 
-- No real Z.ai without injected key / human Path B approval
-- No Gemini ingest; no push/publish
-- No key values in artifacts/logs (presence/length only)
-- Do not invent Go numbers
+- Go / Survive 捏造禁止
+- checkpoint JSONL・キー値をコミットしない
+- Cloud から再課金しない / Cloud 移行 hold
+- No Gemini ingest; no push/publish of secrets
+- post-hoc で閾値を動かして Go にしない
+- キー値は PRESENT/ABSENT（+任意 length）のみ

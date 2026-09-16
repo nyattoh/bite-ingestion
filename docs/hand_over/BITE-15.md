@@ -123,4 +123,7 @@ env -u ZAI_API_KEY PYTHONPATH=bite15-dist/src \
 
 ## BITE-15b follow-up (2026-09-17 UTC+9)
 
-Full N_pilot billed run hit `TimeoutError: The read operation timed out` after ~51min with **no** summary/partial written. See **`docs/hand_over/BITE-15b.md`** for checkpoint + resume + timeout retry fix (`bite15b-fix-dist.zip`).
+Full N_pilot billed run initially hit `TimeoutError` with no summary. Checkpoint/resume: **`docs/hand_over/BITE-15b.md`**.
+
+**v1** [`e44b5bd`](https://github.com/nyattoh/bite-ingestion/commit/e44b5bd): `stop` but empty-answer confounder.  
+**v2** [`967ec0b`](https://github.com/nyattoh/bite-ingestion/commit/967ec0b): thinking-disabled rebill → **`pivot`** (`c1=False c2=True c3=False`). **Not Go.** Artifacts: `bite15b_billed_summary_v2.json`. Next: BITE-16 (`docs/hand_over/BITE-16.md`).
