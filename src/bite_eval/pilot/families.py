@@ -133,12 +133,12 @@ def _iter_family(family: str, n: int) -> Iterator[dict[str, object]]:
                 family,
                 i,
                 document=doc,
-                # Gold is the bare value (e.g. "100"). Ask explicitly so the
-                # model does not echo "K00=100" and fail exact-match scoring.
+                # Gold is the bare value. Ask for digits only so the model does
+                # not echo "Kxx=val". Do NOT embed gold in the query (leak).
                 query=(
                     f"Follow the dependency chain to unit_u2. "
                     f"What is the numeric value of {code}? "
-                    f"Reply with only that number (example: {val}), "
+                    f"Reply with only that number (example format: 42), "
                     f"not the key=value form."
                 ),
                 gold_answer=str(val),
