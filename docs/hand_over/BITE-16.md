@@ -36,10 +36,15 @@ python3 -c "import json; d=json.load(open('artifacts/pilot/bite15b_billed_summar
 
 ## 未解決（次の最小スライス）
 
-1. **Path B**: `dependency_chain` 質問修正後、ローカルで family 単独の小さく再課金（48 calls）
-2. C2 placeholder を length-only arm へ置き換える設計は後回し → **設計完了**（[`docs/design/C2_length_only_arm.md`](../design/C2_length_only_arm.md)）、実装は later
-3. full matrix / `output/main/*` は Go が出るまで急がない
-4. CI / Holm は TBD（捏造しない）
+1. **Path B**: ✅ **完了**（2026-09-17 05:48:59–05:49:29 JST）
+   - `dependency_chain` family 単独 48 calls 再課金済
+   - constraints_ok_rate: **0.0417 → 1.0**（改善）
+   - decision: **`pivot`** 継続（全 384 re-run は未実施）
+   - 詳細: BITE-15b.md § Path B 公式結果 参照
+2. **全 384 行 re-run**: 保留（人間判断・コスト vs 情報）
+3. C2 placeholder を length-only arm へ置き換える設計は後回し → **設計完了**（[`docs/design/C2_length_only_arm.md`](../design/C2_length_only_arm.md)）、実装は later
+4. full matrix / `output/main/*` は Go が出るまで急がない
+5. CI / Holm は TBD（捏造しない）
 
 ## Do-not
 
