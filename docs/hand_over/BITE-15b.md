@@ -87,14 +87,36 @@ One object per line:
 ## Verify (box — mocks only)
 
 ```bash
-cd /workspace/path-a/bite-ingestion
-PYTHONPATH=bite15-dist/src \
-  .venv-bite09/bin/python -m pytest bite15-dist/tests/eval/test_billed_pilot_mock.py -q
+cd /workspace
+python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"
+.venv/bin/python -m pytest tests/eval/test_billed_pilot_mock.py -q
+# KEY_ABSENT path (exit 2):
+env -u ZAI_API_KEY .venv/bin/python scripts/run_billed_pilot.py --minimal ; echo exit=$?
 ```
+
+## Cloud verification (2026-09-16 UTC)
+
+| Check | Result |
+| --- | --- |
+| `pytest tests/eval/test_billed_pilot_mock.py` | **26 passed** |
+| `pytest tests/eval/` | **54 passed** |
+| `compileall src/bite_eval` | OK |
+| CLI `ZAI_API_KEY` absent | exit **2** + `KEY_ABSENT` |
+| Env key presence | **ABSENT**（length 非公開） |
+| Egress | unrestricted（`api.z.ai` 到達可否はキー注入後に確認） |
+| `bite15b_checkpoint.jsonl` | **未作成**（有料フル実行未着手） |
+| `bite15b_billed_partial.json` | 既存・2 calls のみ |
+
+**ブロッカー**: Cloud Agent 環境に `ZAI_API_KEY` が無い。有料 N_pilot（8×24×2≒384 calls）はキー注入後に `--resume` で再開する。注入は人間 / Path B。
+
+**次の最小実行スライス（キー注入後）**:
+
+1. `--minimal`（12 calls）で smoke
+2. 問題なければ handover 記載のフル N_pilot CLI（`--resume`）
 
 ## Do-not reminders
 
-- No real Z.ai from box; parent runs billed
+- No real Z.ai without injected key / human Path B approval
 - No Gemini ingest; no push/publish
 - No key values in artifacts/logs (presence/length only)
 - Do not invent Go numbers
