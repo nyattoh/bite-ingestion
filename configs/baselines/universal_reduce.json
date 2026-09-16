@@ -1,7 +1,0 @@
-{
-  "baseline_id": "universal_reduce",
-  "version": "0.1-synthetic",
-  "licence": "project-internal",
-  "wraps": "FixedPolicy(sequence=[REDUCE])",
-  "note": "Always propose/apply REDUCE only."
-}

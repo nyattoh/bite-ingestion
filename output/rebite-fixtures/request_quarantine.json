@@ -1,6 +1,0 @@
-{
-  "request_type": "fetch_quarantine",
-  "unit_id": "u_quar",
-  "reason": "quarantined",
-  "request_id": "req_quar"
-}

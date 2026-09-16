@@ -1,8 +1,0 @@
-{
-  "baseline_id": "rule_pi",
-  "version": "0.1-synthetic",
-  "licence": "project-internal",
-  "wraps": "bite_ingestion.policies.RulePolicy",
-  "thresholds_namespace": "TBD_CALIBRATE",
-  "note": "Morphology-aware ingestion candidate (rule-\u03a0)."
-}

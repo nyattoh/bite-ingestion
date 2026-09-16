@@ -1,7 +1,0 @@
-{
-  "request_type": "fetch_unit",
-  "unit_id": "u_stale",
-  "version": "v1",
-  "stale": true,
-  "request_id": "req_stale"
-}

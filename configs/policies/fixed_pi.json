@@ -1,5 +1,0 @@
-{
-  "policy_name": "fixed-Π",
-  "sequence": ["CUT", "REDUCE"],
-  "note": "Same legal normal-form sequence for every task (H5 counterfactual)."
-}

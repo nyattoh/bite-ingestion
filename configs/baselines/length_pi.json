@@ -1,8 +1,0 @@
-{
-  "baseline_id": "length_pi",
-  "version": "0.1-synthetic",
-  "licence": "project-internal",
-  "wraps": "bite_ingestion.policies.LengthOnlyPolicy",
-  "thresholds_namespace": "TBD_CALIBRATE",
-  "note": "Length-only router; morphology ignored."
-}
