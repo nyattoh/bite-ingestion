@@ -18,6 +18,23 @@ def test_eight_families_generate_n24() -> None:
         assert packets[0].get("paid_api") is False
 
 
+def test_dependency_chain_asks_for_bare_numeric_gold() -> None:
+    """Path B: bare-number ask; gold must not leak into the query."""
+    packets = generate_family_instances("dependency_chain", 3)
+    assert len(packets) == 3
+    for p in packets:
+        gold = str(p["gold_answer"])
+        assert gold.isdigit(), gold
+        q = str(p["query"])
+        q_l = q.lower()
+        assert "only that number" in q_l or "only the number" in q_l
+        assert "key=value" in q_l
+        # Document still contains key=value form for the model to read
+        assert f"={gold}" in str(p["document"])
+        # Gold numeric answer must not appear in the query (Bugbot High)
+        assert gold not in q, f"gold leaked into query: {q!r}"
+
+
 def test_unknown_family_empty() -> None:
     assert generate_family_instances("not_a_real_family", 24) == []
 

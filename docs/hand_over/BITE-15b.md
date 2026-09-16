@@ -117,8 +117,15 @@ PR #1（`cursor/bite-15b-cloud-verify-1ee6`）時点の記録。有料フル実�
 ## 未解決 / 次
 
 1. Gate C 記録は **pivot**（確定）。Go ではない
-2. BITE-16: `dependency_chain` 失敗の記述、C2 placeholder の限界明記
+2. **Path B（進行中）**: `dependency_chain` の質問を「数字だけ答えよ」に明確化（gold は元から数字）。閾値は動かさない。小さく再課金して ok_rate を見る
 3. full matrix 実施可否は人間判断
+
+## Path B — dependency_chain 質問修正
+
+- **問題**: gold=`100`、モデルが `K00=100` と返して exact-match で落とされていた
+- **修正**: `families.py` の query を「{code} の数値だけ答えよ（key=value 禁止）」に変更
+- **変えないもの**: δ / ρ / η、採点関数、Go 条件
+- **再課金**: まず `dependency_chain` だけ（24×2=48 calls）。全体 384 の即再実行はしない
 
 ## Do-not
 
