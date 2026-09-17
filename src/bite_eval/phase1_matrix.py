@@ -30,6 +30,7 @@ OUTPUT_CONSTRAINT = "Answer with only the final value/string, no explanation."
 
 ROW_KEYS: tuple[str, ...] = (
     "case_id",
+    "case_kind",
     "facts_id",
     "texture",
     "method",
@@ -66,6 +67,98 @@ FAIRNESS = {
         "Offline has no second model call."
     ),
 }
+
+
+#: What each negative control must produce, stated from the design before the
+#: numbers were measured. ``rebite`` is compared as ">0" or "==0".
+#:
+#: These are assertions about the *instrument*, not about BITE: they say that a
+#: lost unit shows up as a lost unit, that R and an actual recovery are
+#: distinguishable, and that missing provenance is visible.
+NEGATIVE_EXPECTATIONS: dict[tuple[str, str], dict[str, Any]] = {
+    # Half the gold evidence is on an ERROR line -> UNTANGLE quarantines it.
+    ("neg_gold_quarantined", "raw_full"): {"recall_vis": 1.0, "recall_rec": 1.0, "rebite": "==0"},
+    ("neg_gold_quarantined", "length_pi"): {"recall_vis": 1.0, "recall_rec": 1.0, "rebite": "==0"},
+    ("neg_gold_quarantined", "rule_pi"): {"recall_vis": 0.5, "recall_rec": 1.0, "rebite": "==0"},
+    ("neg_gold_quarantined", "rule_pi_rebite"): {
+        "recall_vis": 1.0,
+        "recall_rec": 1.0,
+        "rebite": ">0",
+    },
+    # Same quarantine, but recovery cannot form a request -> stays lost.
+    ("neg_unrecoverable_gold", "raw_full"): {"recall_vis": 1.0, "recall_rec": 1.0, "rebite": "==0"},
+    ("neg_unrecoverable_gold", "length_pi"): {
+        "recall_vis": 1.0,
+        "recall_rec": 1.0,
+        "rebite": "==0",
+    },
+    ("neg_unrecoverable_gold", "rule_pi"): {"recall_vis": 0.5, "recall_rec": 1.0, "rebite": "==0"},
+    ("neg_unrecoverable_gold", "rule_pi_rebite"): {
+        "recall_vis": 0.5,
+        "recall_rec": 1.0,
+        "rebite": "==0",
+    },
+    # One unit has no recorded origin -> provenance below 1.0 for every arm.
+    ("neg_missing_provenance", "raw_full"): {"provenance": 0.5},
+    ("neg_missing_provenance", "length_pi"): {"provenance": 0.5},
+    ("neg_missing_provenance", "rule_pi"): {"provenance": 0.5},
+    ("neg_missing_provenance", "rule_pi_rebite"): {"provenance": 0.5},
+}
+
+
+def negative_control_report(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+    """Compare negative-control rows against their declared expectations.
+
+    A violation means the measurement instrument failed to report a failure it
+    was supposed to report — that is a blocker, not a metric movement.
+    """
+    observed: dict[str, dict[str, Any]] = {}
+    violations: list[str] = []
+    checked = 0
+    for row in rows:
+        if str(row.get("case_kind")) != "negative_control":
+            continue
+        family = str(row.get("case_id", "")).rsplit("-", 1)[0]
+        method = str(row.get("method"))
+        key = (family, method)
+        observed.setdefault(family, {})[method] = {
+            "recall_vis": row.get("evidence_recall_visible"),
+            "recall_rec": row.get("evidence_recall_recoverable"),
+            "provenance": row.get("provenance"),
+            "T_rebite": row.get("T_rebite"),
+            "status": row.get("status"),
+        }
+        expect = NEGATIVE_EXPECTATIONS.get(key)
+        if expect is None:
+            continue
+        checked += 1
+        for field in ("recall_vis", "recall_rec", "provenance"):
+            if field not in expect:
+                continue
+            actual = row.get(
+                {
+                    "recall_vis": "evidence_recall_visible",
+                    "recall_rec": "evidence_recall_recoverable",
+                    "provenance": "provenance",
+                }[field]
+            )
+            if not isinstance(actual, (int, float)) or abs(float(actual) - expect[field]) > 1e-9:
+                violations.append(f"{family}/{method}: {field} expected {expect[field]}, got {actual}")
+        if "rebite" in expect:
+            tok = int(row.get("T_rebite") or 0)
+            if expect["rebite"] == ">0" and tok <= 0:
+                violations.append(f"{family}/{method}: expected T_rebite > 0, got {tok}")
+            if expect["rebite"] == "==0" and tok != 0:
+                violations.append(f"{family}/{method}: expected T_rebite == 0, got {tok}")
+    return {
+        "n_checked": checked,
+        "violations": violations,
+        "observed": observed,
+        "note": (
+            "negative controls prove the instrument reports failure; they are not "
+            "workload results and must never be averaged into workload numbers"
+        ),
+    }
 
 
 def metrics_from_transformed(
@@ -184,7 +277,17 @@ def _row_status(arm: str, baseline_status: str, is_no_op: bool) -> str:
 
 
 def summarize_rows(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
-    n_total = len(rows)
+    """Counts cover every row; means and arm differentiation cover workload only.
+
+    Negative controls are deliberately kept out of the workload means: they are
+    built to fail, so averaging them in would corrupt the workload numbers.
+    They are not hidden — every control row is reported with its actual values
+    by :func:`negative_control_report`.
+    """
+    all_rows = list(rows)
+    workload = [r for r in all_rows if str(r.get("case_kind", "workload")) != "negative_control"]
+    controls = [r for r in all_rows if str(r.get("case_kind", "workload")) == "negative_control"]
+    n_total = len(all_rows)
     n_failed = sum(1 for r in rows if r.get("failed") or r.get("status") == "failed")
     n_no_op = sum(1 for r in rows if r.get("no_op") or r.get("status") == "no_op")
     n_excluded = sum(
@@ -194,16 +297,26 @@ def summarize_rows(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     )
     n_measured = n_total - n_excluded
     by_case: dict[str, dict[str, Mapping[str, Any]]] = {}
-    for row in rows:
+    for row in all_rows:
         by_case.setdefault(str(row.get("case_id")), {})[str(row.get("method"))] = row
     complete_cases = [cid for cid, arms in by_case.items() if set(PHASE1_ARMS) <= set(arms)]
-    paired_rows = [r for r in rows if str(r.get("case_id")) in set(complete_cases)]
+    paired_rows = [r for r in all_rows if str(r.get("case_id")) in set(complete_cases)]
+
+    # Arm differentiation and means describe the workload, never the controls.
+    workload_cases = [
+        cid
+        for cid in complete_cases
+        if str(next(iter(by_case[cid].values())).get("case_kind", "workload")) != "negative_control"
+    ]
 
     def _mean(vals: list[float]) -> float | None:
         return sum(vals) / len(vals) if vals else None
 
     measured = [
-        r for r in paired_rows if r.get("status") not in {"timeout", "error", "missing_pair"}
+        r
+        for r in paired_rows
+        if r.get("status") not in {"timeout", "error", "missing_pair"}
+        and str(r.get("case_kind", "workload")) != "negative_control"
     ]
 
     # Failed rows stay in the denominator of rates; means skip only missing numbers.
@@ -225,7 +338,7 @@ def summarize_rows(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     length_vs_rule: set[str] = set()
     raw_vs_cand_diff = 0
     raw_vs_cand_same = 0
-    for cid in complete_cases:
+    for cid in workload_cases:
         arms = by_case[cid]
         raw = arms.get("raw_full")
         for m in ("length_pi", "rule_pi", "rule_pi_rebite"):
@@ -258,6 +371,9 @@ def summarize_rows(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
         "n_transformed": sum(1 for r in rows if r.get("status") == "transformed"),
         "n_complete_cases": len(complete_cases),
         "n_paired_rows": len(paired_rows),
+        "n_workload_rows": len(workload),
+        "n_negative_control_rows": len(controls),
+        "n_workload_cases": len(workload_cases),
         "no_op_rate": n_no_op / n_total if n_total else 0.0,
         "failure_rate": n_failed / n_total if n_total else 0.0,
         "n_missing_payload_metric": n_missing_payload,
@@ -272,7 +388,10 @@ def summarize_rows(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
         "rule_pi_distinct_sequences": len(rule_seqs),
         "rule_pi_sequences": [list(s) for s in sorted(rule_seqs)],
         "average_rule": (
-            "rates use n_total (failed rows stay in the denominator). "
+            "counts and rates use n_total (failed rows stay in the denominator). "
+            "means and arm differentiation use WORKLOAD rows only — negative "
+            "controls are built to fail and would corrupt them; their actual "
+            "values are reported in negative_control_report. "
             "means skip only missing numeric fields; n_missing_* is reported."
         ),
     }
@@ -285,11 +404,27 @@ def run_phase1_matrix(
     summary_path: str | Path | None = None,
 ) -> dict[str, Any]:
     from bite_eval.baselines import get_baseline
-    from bite_eval.pilot.families import SYNTHETIC_FAMILIES, generate_family_instances
+    from bite_eval.pilot.families import (
+        NEGATIVE_FAMILIES,
+        SYNTHETIC_FAMILIES,
+        generate_family_instances,
+        generate_negative_instances,
+    )
+
+    # Workload families first, then negative controls. Controls run through the
+    # identical four arms and the identical wrapper — they are ordinary rows
+    # tagged case_kind=negative_control, not a separate code path.
+    plan: list[tuple[str, str, list[dict[str, object]]]] = [
+        ("workload", f, generate_family_instances(f, n_per_family)) for f in SYNTHETIC_FAMILIES
+    ]
+    plan += [
+        ("negative_control", f, generate_negative_instances(f, n_per_family))
+        for f in NEGATIVE_FAMILIES
+    ]
 
     rows: list[dict[str, Any]] = []
-    for family in SYNTHETIC_FAMILIES:
-        for packet in generate_family_instances(family, n_per_family):
+    for case_kind, family, packets in plan:
+        for packet in packets:
             prepared, report = attach_morphology(packet)
             case_id = str(prepared.get("instance_id") or "")
             facts_id = str(prepared.get("facts_id") or case_id)
@@ -362,6 +497,8 @@ def run_phase1_matrix(
                 rows.append(
                     {
                         "case_id": case_id,
+                        "case_kind": case_kind,
+                        "family": family,
                         "facts_id": facts_id,
                         "texture": texture,
                         "method": arm,
@@ -399,6 +536,7 @@ def run_phase1_matrix(
                 )
 
     summary = summarize_rows(rows)
+    controls = negative_control_report(rows)
     doc: dict[str, Any] = {
         "schema": SCHEMA_ID,
         "offline": True,
@@ -410,6 +548,7 @@ def run_phase1_matrix(
         "fairness": FAIRNESS,
         "n_rows": len(rows),
         "summary": summary,
+        "negative_control_report": controls,
         "rows": rows,
     }
     if artifact_path is not None:
@@ -428,6 +567,8 @@ def run_phase1_matrix(
 def render_summary_md(doc: Mapping[str, Any]) -> str:
     rows = list(doc.get("rows") or [])
     summary = dict(doc.get("summary") or {})
+    raw_ctrl = doc.get("negative_control_report")
+    ctrl: Mapping[str, Any] = raw_ctrl if isinstance(raw_ctrl, Mapping) else {}
     by_case: dict[str, dict[str, Mapping[str, Any]]] = {}
     for row in rows:
         if isinstance(row, Mapping):
@@ -445,6 +586,29 @@ def render_summary_md(doc: Mapping[str, Any]) -> str:
         f"- no_op_rate={summary.get('no_op_rate')} failure_rate={summary.get('failure_rate')}",
         f"- rule_pi sequences: {summary.get('rule_pi_sequences')}",
         f"- length_pi ≠ rule_pi: {summary.get('length_vs_rule_diff_families')}",
+        (
+            f"- workload rows={summary.get('n_workload_rows')} "
+            f"negative-control rows={summary.get('n_negative_control_rows')} "
+            f"(means and arm differentiation above use WORKLOAD rows only)"
+        ),
+        "",
+        "## Negative controls (instrument check, must report failure)",
+        "",
+        f"- checked={ctrl.get('n_checked')} violations={ctrl.get('violations') or 'none'}",
+        "",
+        "| family | method | recall_vis | recall_rec | provenance | T_rebite |",
+        "|---|---|---:|---:|---:|---:|",
+    ]
+    for fam in sorted(ctrl.get("observed") or {}):
+        for method in PHASE1_ARMS:
+            obs = (ctrl["observed"][fam] or {}).get(method)
+            if not isinstance(obs, Mapping):
+                continue
+            lines.append(
+                f"| {fam} | {method} | {obs.get('recall_vis')} | {obs.get('recall_rec')} | "
+                f"{obs.get('provenance')} | {obs.get('T_rebite')} |"
+            )
+    lines += [
         "",
         "| case_id | method | status | sequence | payload_sha256 | T_rebite | T_total |",
         "|---|---|---|---|---|---:|---:|",
@@ -500,6 +664,15 @@ def validate_matrix_doc(doc: Mapping[str, Any]) -> list[str]:
         goldish = [x for x in rec if str(x).startswith("gold_")]
         if goldish:
             errs.append(f"row {i} recoverable ids look like gold labels: {goldish}")
+    raw_ctrl = doc.get("negative_control_report")
+    if isinstance(raw_ctrl, Mapping):
+        if int(raw_ctrl.get("n_checked") or 0) <= 0:
+            errs.append("negative_control_report checked 0 rows")
+        for v in raw_ctrl.get("violations") or []:
+            errs.append(f"negative control did not report the failure it must: {v}")
+    else:
+        errs.append("missing negative_control_report")
+
     raw_summary = doc.get("summary")
     summary: Mapping[str, Any] = raw_summary if isinstance(raw_summary, Mapping) else {}
     if int(summary.get("n_total") or -1) != len(rows):
@@ -509,11 +682,13 @@ def validate_matrix_doc(doc: Mapping[str, Any]) -> list[str]:
 
 __all__ = [
     "FAIRNESS",
+    "NEGATIVE_EXPECTATIONS",
     "OFFLINE_WRAPPER",
     "OUTPUT_CONSTRAINT",
     "ROW_KEYS",
     "SCHEMA_ID",
     "metrics_from_transformed",
+    "negative_control_report",
     "render_summary_md",
     "run_phase1_matrix",
     "summarize_rows",
