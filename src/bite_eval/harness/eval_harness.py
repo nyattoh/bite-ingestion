@@ -88,9 +88,7 @@ class EvalHarness:
     ) -> None:
         self.artifact_root = Path(artifact_root) if artifact_root else Path(".")
         self.persist = persist
-        self._artifact_ledger = (
-            ArtifactLedger(self.artifact_root) if persist else None
-        )
+        self._artifact_ledger = ArtifactLedger(self.artifact_root) if persist else None
 
     def run_smoke(
         self,
@@ -138,15 +136,19 @@ class EvalHarness:
                 status = str(out.get("status", "ok"))
                 reason = out.get("reason") if isinstance(out.get("reason"), str) else None
                 acc = out.get("accounting")
+                acc_rebite = 0
+                acc_declares_target = False
                 if isinstance(acc, Mapping):
                     ledger.merge_baseline_accounting(acc)
+                    acc_rebite = _as_int(acc.get("rebite_tokens"), 0)
+                    acc_declares_target = bool(_as_int(acc.get("baseline_target_tokens"), 0))
                 # Synthetic target call: visible evidence as local estimate (proxy)
                 visible = out.get("visible_evidence", "")
                 vis_text = visible if isinstance(visible, str) else str(visible)
-                # Only count target if not already counted via baseline accounting
-                # Represent as one synthetic target call (offline stub — not paid)
+                # DC-1: never add a second row for a call the adapter already
+                # accounted for as target tokens.
                 call_id = f"smoke_target:{method_id}:{text_hash[:12]}"
-                tin = estimate_tokens_char4(vis_text)
+                tin = 0 if acc_declares_target else estimate_tokens_char4(vis_text)
                 # Synthetic stub "response" tokens from context if provided
                 stub_out = _as_int(ctx.get("stub_target_out_tokens"), 0)
                 ledger.record(
@@ -160,9 +162,10 @@ class EvalHarness:
                         "note": "offline smoke; not provider usage",
                     }
                 )
-                # Re-bite placeholder from accounting / context
+                # Re-bite: adapter accounting wins; ctx stub only fills the gap
+                # so the same recovery cost is never counted twice (DC-1).
                 if method_id.endswith("rebite") or ctx.get("rebite"):
-                    rebite_tokens = _as_int(ctx.get("stub_rebite_tokens"), 0)
+                    rebite_tokens = 0 if acc_rebite else _as_int(ctx.get("stub_rebite_tokens"), 0)
                     if rebite_tokens:
                         ledger.record(
                             {
@@ -234,6 +237,7 @@ class EvalHarness:
             "token_buckets": {
                 "T_profiler": totals.get("T_profiler"),
                 "T_router": totals.get("T_router"),
+                "T_operator": totals.get("T_operator"),
                 "T_target_in": totals.get("T_target_in"),
                 "T_target_out": totals.get("T_target_out"),
                 "T_rebite": totals.get("T_rebite"),

@@ -154,7 +154,7 @@ def generate_family_instances(
     return list(_iter_family(family, n))
 
 
-def _iter_family(family: str, n: int) -> Iterator[dict[str, object]]:  # noqa: C901
+def _iter_family(family: str, n: int) -> Iterator[dict[str, object]]:
     for i in range(n):
         code = f"K{i:02d}"
         val = 100 + i

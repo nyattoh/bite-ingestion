@@ -12,6 +12,7 @@ _LLM_CATEGORIES = frozenset(
     {
         "profiler",
         "router",
+        "operator",
         "target",
         "rebite",
         "integrate",
@@ -92,6 +93,7 @@ def validate_ledger_totals(
         expected = (
             _as_nonneg_int(totals.get("T_profiler", 0))
             + _as_nonneg_int(totals.get("T_router", 0))
+            + _as_nonneg_int(totals.get("T_operator", 0))
             + _as_nonneg_int(totals.get("T_target_in", 0))
             + _as_nonneg_int(totals.get("T_target_out", 0))
             + _as_nonneg_int(totals.get("T_rebite", 0))
@@ -106,9 +108,7 @@ def validate_ledger_totals(
                 + _as_nonneg_int(totals.get("sum_calls_in_out", 0))
             )
         if int(t_total) != int(expected):
-            violations.append(
-                f"T_total_mismatch:recorded={t_total} expected={expected}"
-            )
+            violations.append(f"T_total_mismatch:recorded={t_total} expected={expected}")
 
     # Forbid labeling target-input-only as T_total
     if totals.get("T_total_is_target_input_only") is True:

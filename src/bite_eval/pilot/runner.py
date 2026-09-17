@@ -22,16 +22,11 @@ from bite_eval.accounting.estimate import LOCAL_ESTIMATE_LABEL, estimate_tokens_
 from bite_eval.pilot.constraints import check_constraints, metrics_from_instance
 from bite_eval.pilot.decide import decide_gate_c
 from bite_eval.pilot.families import SYNTHETIC_FAMILIES, generate_family_instances
-
-
-def _as_str_list(value: object, default: list[str] | None = None) -> list[str]:
-    if default is None:
-        default = []
-    if value is None:
-        return list(default)
-    if isinstance(value, (list, tuple, set)):
-        return [str(x) for x in value]
-    return list(default)
+from bite_ingestion.packet_contract import (
+    provenance_completeness,
+    resolve_packet_units,
+    split_units_by_char_limit,
+)
 
 
 # Locked thresholds (d2_lock_v0.1) — do not invent extras.
@@ -67,25 +62,24 @@ def _br_cap(t_in_raw: int) -> int:
     return min(4096, int(0.5 * t_in_raw))
 
 
-def _synthetic_method_answer(packet: Mapping[str, object], method_id: str) -> tuple[str | None, list[str]]:
+def _synthetic_method_answer(
+    packet: Mapping[str, object], method_id: str
+) -> tuple[str | None, list[str]]:
     """Deterministic offline 'methods' for smoke/pilot — no LLM.
 
-    - raw_full: uses full gold answer if visible evidence non-empty OR omission
-      family with recoverable ids (simulates recover within J).
-    - synthetic_passthrough: same as raw for offline; visible = packet visible
-      or recoverable for adversarial_omission.
+    Visible unit ids are **derived from the unit graph**, never read from a
+    pre-authored ``visible_evidence`` id list. Both offline methods send the
+    whole document, so every unit whose span lies in the document is visible;
+    that is the honest value, including for ``adversarial_omission`` where the
+    "hidden" span is in fact part of the payload.
     """
     gold = str(packet.get("gold_answer", ""))
-    vis = _as_str_list(packet.get("visible_evidence"))
-    rec = _as_str_list(packet.get("recoverable_evidence_ids"))
-    family = str(packet.get("family", ""))
+    doc = str(packet.get("document") or "")
+    units = resolve_packet_units(packet, document=doc)
+    visible_units, _omitted = split_units_by_char_limit(units, limit=len(doc))
+    vis = [str(u["unit_id"]) for u in visible_units]
 
     if method_id in {"raw_full", "synthetic_passthrough"}:
-        if vis:
-            return gold, vis
-        # adversarial_omission: simulate bounded recover using recoverable ids
-        if family == "adversarial_omission" and rec:
-            return gold, list(vis)  # visible stays empty; recall_rec uses rec
         return gold, vis
     return None, vis
 
@@ -100,12 +94,19 @@ def evaluate_instance(
     eta: float = ETA,
 ) -> InstanceResult:
     answer, vis = _synthetic_method_answer(packet, method_id)
-    m = metrics_from_instance(packet, vis, answer=answer)
+    working_packet = dict(packet)
+    doc = str(packet.get("document") or "")
+    visible_units, _omitted = split_units_by_char_limit(
+        resolve_packet_units(packet, document=doc), limit=len(doc)
+    )
+    # Measured provenance over the units actually shown (not self-declared).
+    working_packet["provenance_complete_rate"] = provenance_completeness(visible_units)
+    m = metrics_from_instance(working_packet, vis, answer=answer)
 
     # Q_gold_oracle: offline gold answer quality (not actual baseline)
     # For offline synthetic runner only. Billed runner uses actual raw_full Q.
     base_answer, base_vis = _synthetic_method_answer(packet, "raw_full")
-    m_base = metrics_from_instance(packet, base_vis, answer=base_answer)
+    m_base = metrics_from_instance(working_packet, base_vis, answer=base_answer)
     Q_gold_oracle = float(m_base["quality"])
 
     text = str(packet.get("document") or "")
@@ -185,9 +186,7 @@ def run_pilot(
         )
         status = "ok" if n_actual >= n_per_family else "insufficient_offline"
         if n_actual < n_per_family:
-            insufficient_offline_notes.append(
-                f"{fam}:n_actual={n_actual}<n_target={n_per_family}"
-            )
+            insufficient_offline_notes.append(f"{fam}:n_actual={n_actual}<n_target={n_per_family}")
         per_family[fam] = {
             "n_target": n_per_family,
             "n_actual": n_actual,

@@ -41,7 +41,11 @@ CATEGORY_PROFILER = "profiler"
 CATEGORY_ROUTER = "router"
 CATEGORY_TARGET = "target"
 CATEGORY_REBITE = "rebite"
+CATEGORY_OPERATOR = "operator"
 CATEGORY_BASELINE_PREFIX = "baseline_"
+
+#: Categories folded into the T_operator (operator / compressor) bucket.
+OPERATOR_CATEGORIES = frozenset({CATEGORY_OPERATOR, "compressor"})
 
 KNOWN_CATEGORIES = frozenset(
     {
@@ -49,6 +53,8 @@ KNOWN_CATEGORIES = frozenset(
         CATEGORY_ROUTER,
         CATEGORY_TARGET,
         CATEGORY_REBITE,
+        CATEGORY_OPERATOR,
+        "compressor",
         "integrate",
         "recover",
         "baseline_router",
@@ -98,7 +104,8 @@ class TokenLedger:
         """Return bucket totals + T_total + estimate metadata."""
         buckets = self._bucket_sums()
         sum_calls = (
-            buckets["T_target_in"]
+            buckets["T_operator"]
+            + buckets["T_target_in"]
             + buckets["T_target_out"]
             + buckets["T_rebite"]
             + buckets["T_baseline"]
@@ -108,6 +115,7 @@ class TokenLedger:
         out: dict[str, int | float | str] = {
             "T_profiler": buckets["T_profiler"],
             "T_router": buckets["T_router"],
+            "T_operator": buckets["T_operator"],
             "T_target_in": buckets["T_target_in"],
             "T_target_out": buckets["T_target_out"],
             "T_rebite": buckets["T_rebite"],
@@ -121,7 +129,10 @@ class TokenLedger:
             "wall_ms": self._wall_ms,
             "cache_policy": self._cache_policy,
             "local_estimate_label": LOCAL_ESTIMATE_LABEL,
-            "formula": "T_total = T_profiler + T_router + sum_c(T_in_c + T_out_c)",
+            "formula": (
+                "T_total = T_profiler + T_router + T_operator + T_target_in "
+                "+ T_target_out + T_rebite + T_baseline + T_calls_other"
+            ),
         }
         return out
 
@@ -166,9 +177,7 @@ class TokenLedger:
             event["call_id"] = call_id
         if provider_usage:
             tin = provider_usage.get("tokens_in", provider_usage.get("prompt_tokens", 0))
-            tout = provider_usage.get(
-                "tokens_out", provider_usage.get("completion_tokens", 0)
-            )
+            tout = provider_usage.get("tokens_out", provider_usage.get("completion_tokens", 0))
             event["tokens_in"] = _as_int(tin, 0)
             event["tokens_out"] = _as_int(tout, 0)
             event["estimate_source"] = "provider_usage"
@@ -184,9 +193,26 @@ class TokenLedger:
         self.record(event)
 
     def merge_baseline_accounting(self, accounting: Mapping[str, object]) -> None:
-        """Fold baseline adapter accounting into baseline_* buckets (DC-5)."""
+        """Fold baseline adapter accounting into baseline_*/rebite buckets (DC-5).
+
+        ``rebite_tokens`` (written by ``RecoverEngine._finish``) must reach the
+        ``rebite`` bucket, otherwise a re-bite arm gets its extra evidence for
+        free and the arm comparison is unfair (DC-6).
+        """
         router = _as_int(accounting.get("baseline_router_tokens"), 0)
         compressor = _as_int(accounting.get("baseline_compressor_tokens"), 0)
+        rebite = _as_int(accounting.get("rebite_tokens"), 0)
+        if rebite:
+            self.record(
+                {
+                    "category": CATEGORY_REBITE,
+                    "kind": "baseline",
+                    "tokens_in": rebite,
+                    "tokens_out": 0,
+                    "call_id": f"baseline_rebite:{len(self._rows)}",
+                    "estimate_source": "baseline_accounting",
+                }
+            )
         if router:
             self.record(
                 {
@@ -263,6 +289,7 @@ class TokenLedger:
     def _bucket_sums(self) -> dict[str, int]:
         t_profiler = 0
         t_router = 0
+        t_operator = 0
         t_target_in = 0
         t_target_out = 0
         t_rebite = 0
@@ -281,6 +308,8 @@ class TokenLedger:
                 t_profiler += total
             elif cat == CATEGORY_ROUTER:
                 t_router += total
+            elif cat in OPERATOR_CATEGORIES:
+                t_operator += total
             elif cat == CATEGORY_TARGET:
                 t_target_in += tin
                 t_target_out += tout
@@ -296,6 +325,7 @@ class TokenLedger:
         return {
             "T_profiler": t_profiler,
             "T_router": t_router,
+            "T_operator": t_operator,
             "T_target_in": t_target_in,
             "T_target_out": t_target_out,
             "T_rebite": t_rebite,
@@ -327,10 +357,12 @@ def _int(value: object) -> int:
 
 __all__ = [
     "CATEGORY_BASELINE_PREFIX",
+    "CATEGORY_OPERATOR",
     "CATEGORY_PROFILER",
     "CATEGORY_REBITE",
     "CATEGORY_ROUTER",
     "CATEGORY_TARGET",
     "KNOWN_CATEGORIES",
+    "OPERATOR_CATEGORIES",
     "TokenLedger",
 ]
