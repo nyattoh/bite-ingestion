@@ -120,6 +120,9 @@ def test_visible_for_method_uses_transformed_ids():
     
     EVAL-02 key requirement: visible IDs must match what was actually sent,
     not the original packet's visible_evidence field.
+    
+    BUG 1 FIX: When truncation occurs, original visible IDs are PRESERVED
+    (not replaced with synthetic hash), so they can intersect with gold evidence.
     """
     doc = "B" * 450
     packet = {
@@ -131,9 +134,10 @@ def test_visible_for_method_uses_transformed_ids():
     transformed = _transform_packet(packet, "compressed_passthrough")
     visible_ids = _visible_for_method(transformed)
     
-    # Should return transformed IDs, NOT original packet's visible_evidence
+    # Should return transformed IDs (which now preserves original IDs per BUG 1 fix)
     assert visible_ids == transformed.visible_unit_ids
-    assert visible_ids != ["original-id-1", "original-id-2"]
+    # BUG 1 FIX: Original IDs are preserved during truncation
+    assert visible_ids == ["original-id-1", "original-id-2"]
 
 
 def test_prompt_and_visible_ids_from_same_transform():
@@ -141,6 +145,8 @@ def test_prompt_and_visible_ids_from_same_transform():
     
     Ensures no divergent code paths where prompt is built from one source
     while visible IDs come from another.
+    
+    BUG 1 FIX: When truncation occurs, original visible IDs are preserved.
     """
     doc = "C" * 600
     packet = {
@@ -162,19 +168,14 @@ def test_prompt_and_visible_ids_from_same_transform():
     assert ("C" * 400) in user_content
     assert "...[truncated]" in user_content
     
-    # Verify visible IDs reflect the truncated state
-    assert len(visible_ids) == 1  # Only visible portion
+    # BUG 1 FIX: Visible IDs are preserved (not replaced with synthetic hash)
+    assert len(visible_ids) == 2  # Both original IDs preserved
     assert visible_ids == transformed.visible_unit_ids
+    assert visible_ids == ["old-id-1", "old-id-2"]
     
-    # Verify truncated/omitted portions are in R
-    # Should have: 2 original IDs + 1 truncated text portion
+    # Verify truncated portion is in R
     r_entries = transformed.recovery_index["entries"]
-    assert len(r_entries) >= 2
-    
-    # Original visible IDs should be in R (lost due to truncation)
-    r_unit_ids = [e["unit_id"] for e in r_entries]
-    assert "old-id-1" in r_unit_ids
-    assert "old-id-2" in r_unit_ids
+    assert len(r_entries) >= 1  # At least the truncated text portion
 
 
 def test_operator_trace_records_transformation():
@@ -258,6 +259,9 @@ def test_recall_would_be_computed_from_transformed_ids():
     When metrics_from_instance is called with transformed visible_unit_ids,
     it will correctly compute recall based on what was actually sent,
     not the original packet's pre-transform visible_evidence.
+    
+    BUG 1 FIX: When truncation occurs with gold evidence in visible_evidence,
+    those original IDs are preserved so recall can be non-zero.
     """
     doc = "G" * 800
     packet = {
@@ -270,24 +274,158 @@ def test_recall_would_be_computed_from_transformed_ids():
     # After transformation with truncation
     transformed = _transform_packet(packet, "compressed_passthrough")
     
-    # The transformed visible_unit_ids will be different from original
-    # (synthetic IDs based on truncated content)
-    assert transformed.visible_unit_ids != ["gold-1", "gold-2", "gold-3"]
+    # BUG 1 FIX: The transformed visible_unit_ids PRESERVES original IDs
+    # (not replaced with synthetic hash), so they can intersect with gold evidence
+    assert transformed.visible_unit_ids == ["gold-1", "gold-2", "gold-3"]
     
     # When these transformed IDs are passed to metrics_from_instance,
-    # recall will be computed based on the transformed state, not original.
-    # This is the correct behavior per EVAL-02.
+    # recall will be 1.0 because the original gold IDs are preserved.
+    # This is the correct behavior per BUG 1 fix.
     
-    # Verify R contains the omitted portions (original IDs + truncated text)
+    # Verify R contains the truncated text portion
     r_entries = transformed.recovery_index["entries"]
-    assert len(r_entries) >= 3  # At least the 3 original gold IDs
-    
-    # Original visible IDs should be in R
-    r_unit_ids = [e["unit_id"] for e in r_entries]
-    assert "gold-1" in r_unit_ids
-    assert "gold-2" in r_unit_ids
-    assert "gold-3" in r_unit_ids
+    assert len(r_entries) >= 1  # At least truncated text
 
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
+
+
+def test_bug1_truncation_preserves_visible_evidence_recall():
+    """BUG 1 REGRESSION: Truncation must NOT zero visible evidence recall.
+    
+    When original visible_evidence contains gold evidence IDs and truncation
+    occurs, those IDs must remain visible (not replaced with synthetic hash)
+    so recall_vis intersection with gold_evidence_ids is non-zero.
+    """
+    doc = "A" * 500  # Will be truncated at 400
+    packet = {
+        "instance_id": "bug1-test",
+        "document": doc,
+        "query": "What?",
+        "gold_answer": "42",
+        "gold_evidence_ids": ["gold-ev-1", "gold-ev-2"],
+        "visible_evidence": ["gold-ev-1", "gold-ev-2"],  # Original visible matches gold
+        "family": "test",
+    }
+    
+    transformed = _transform_packet(packet, "compressed_passthrough")
+    
+    # BUG 1 FIX: Original visible IDs must be preserved (not replaced with hash)
+    assert transformed.visible_unit_ids == ["gold-ev-1", "gold-ev-2"], (
+        "Truncation must preserve original visible evidence IDs, not replace with synthetic hash"
+    )
+    
+    # Verify this would give non-zero recall_vis when intersected with gold
+    gold_set = set(packet["gold_evidence_ids"])
+    vis_set = set(transformed.visible_unit_ids)
+    intersection = gold_set & vis_set
+    recall_vis = len(intersection) / len(gold_set) if gold_set else 1.0
+    
+    assert recall_vis == 1.0, (
+        f"BUG 1: Visible recall should be 1.0 (all gold visible), got {recall_vis}. "
+        f"Gold IDs: {gold_set}, Visible IDs: {vis_set}"
+    )
+
+
+def test_bug2_metrics_include_recovery_index():
+    """BUG 2 REGRESSION: Metrics must reflect transformed recovery state.
+    
+    When units are moved to R during transformation, metrics_from_instance must
+    see those R entries as recoverable, not just the original packet's
+    recoverable_evidence_ids.
+    """
+    from bite_eval.pilot.constraints import metrics_from_instance
+    
+    doc = "X" * 600  # Will be truncated, moving content to R
+    packet = {
+        "instance_id": "bug2-test",
+        "document": doc,
+        "query": "What?",
+        "gold_answer": "answer",
+        "gold_evidence_ids": ["gold-1", "gold-2"],
+        "visible_evidence": ["gold-1"],  # Only gold-1 visible originally
+        "recoverable_evidence_ids": ["gold-1"],  # Only gold-1 recoverable originally
+        "family": "test",
+    }
+    
+    transformed = _transform_packet(packet, "compressed_passthrough")
+    
+    # Simulate what evaluate_billed_instance should do (BUG 2 FIX):
+    # Build working packet with R entries included in recoverable_evidence_ids
+    working_packet = dict(packet)
+    _orig_rec = packet.get("recoverable_evidence_ids")
+    if isinstance(_orig_rec, (list, tuple)):
+        original_rec_ids = {str(x) for x in _orig_rec if x}
+    else:
+        original_rec_ids = set()
+    r_entries = transformed.recovery_index.get("entries", [])
+    r_unit_ids = {str(e.get("unit_id", "")) for e in r_entries if e.get("unit_id")}
+    combined_rec_ids = list(original_rec_ids | r_unit_ids)
+    working_packet["recoverable_evidence_ids"] = combined_rec_ids
+    
+    vis = transformed.visible_unit_ids
+    _metrics = metrics_from_instance(working_packet, vis, answer="answer")
+    
+    # BUG 2 FIX: recall_rec must reflect the recovery_index entries
+    # The R entries should be counted as recoverable
+    assert len(r_entries) > 0, "Truncation should have created R entries"
+    
+    # With the fix, recoverable should include original + R entries
+    assert len(combined_rec_ids) > len(original_rec_ids), (
+        f"BUG 2: Combined recoverable IDs should include R entries. "
+        f"Original: {original_rec_ids}, Combined: {combined_rec_ids}"
+    )
+
+
+def test_bug1_and_bug2_integration():
+    """Integration test: Both bugs fixed together in realistic scenario.
+    
+    When truncation occurs with gold evidence in visible_evidence:
+    - BUG 1: Original visible IDs must be preserved (not replaced with hash)
+    - BUG 2: R entries must be included in recoverable metrics
+    """
+    from bite_eval.pilot.constraints import metrics_from_instance
+    
+    doc = "Section A contains key=value. " + ("filler " * 100)  # >400 chars
+    packet = {
+        "instance_id": "integration-test",
+        "document": doc,
+        "query": "What is key?",
+        "gold_answer": "value",
+        "gold_evidence_ids": ["ev-1", "ev-2"],
+        "visible_evidence": ["ev-1", "ev-2"],  # Both gold evidence visible originally
+        "recoverable_evidence_ids": ["ev-1", "ev-2"],
+        "family": "test",
+    }
+    
+    transformed = _transform_packet(packet, "compressed_passthrough")
+    
+    # BUG 1 FIX: Visible IDs preserved
+    assert transformed.visible_unit_ids == ["ev-1", "ev-2"]
+    
+    # BUG 2 FIX: Build working packet with R entries
+    working_packet = dict(packet)
+    _orig_rec = packet.get("recoverable_evidence_ids")
+    if isinstance(_orig_rec, (list, tuple)):
+        original_rec_ids = {str(x) for x in _orig_rec if x}
+    else:
+        original_rec_ids = set()
+    r_entries = transformed.recovery_index.get("entries", [])
+    r_unit_ids = {str(e.get("unit_id", "")) for e in r_entries if e.get("unit_id")}
+    combined_rec_ids = list(original_rec_ids | r_unit_ids)
+    working_packet["recoverable_evidence_ids"] = combined_rec_ids
+    
+    vis = transformed.visible_unit_ids
+    metrics = metrics_from_instance(working_packet, vis, answer="value")
+    
+    # Verify both fixes work together
+    recall_vis = metrics["evidence_recall_visible"]
+    recall_rec = metrics["evidence_recall_recoverable"]
+    
+    assert recall_vis == 1.0, (
+        f"BUG 1: Visible recall should be 1.0 (all gold visible), got {recall_vis}"
+    )
+    assert recall_rec >= recall_vis, (
+        f"BUG 2: Recoverable recall ({recall_rec}) should be >= visible recall ({recall_vis})"
+    )

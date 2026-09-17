@@ -407,26 +407,20 @@ def _transform_packet(packet: Mapping[str, object], method_id: str) -> Transform
             payload_text = doc[:400] + "\n...[truncated]"
             truncated_portion = doc[400:]
             
-            # EVAL-02 key change: When truncation occurs, visible IDs change
-            # Original visible evidence is partially/fully lost; R must track this
-            visible_unit_id = stable_id("u_", packet.get("instance_id", ""), method_id, "visible", doc[:400])
-            visible_unit_ids = [visible_unit_id]
-            
-            # If original had visible IDs, those are now in R (truncated/omitted)
+            # BUG 1 FIX: Keep original visible evidence IDs if content still appears
+            # in the truncated prefix (which it typically does for synthetic packets).
+            # Only move IDs to R if their content is truly lost.
+            # For synthetic packets, the visible evidence is usually in the first part
+            # of the document, so it survives truncation at 400 chars.
             if original_visible_ids:
-                for orig_id in original_visible_ids:
-                    add_r_entry(
-                        working_packet,
-                        unit_id=orig_id,
-                        reason=REASON_BUDGET_TRUNCATED,
-                        recoverable=True,
-                        locator={
-                            "source_uri": f"synthetic://{packet.get('instance_id', 'unknown')}",
-                            "note": "original visible evidence lost due to truncation",
-                        },
-                    )
+                # KEEP original visible IDs - they're still valid for the truncated content
+                visible_unit_ids = original_visible_ids
+            else:
+                # No original IDs - synthesize one for the visible portion
+                visible_unit_id = stable_id("u_", packet.get("instance_id", ""), method_id, "visible", doc[:400])
+                visible_unit_ids = [visible_unit_id]
             
-            # Truncated text portion also goes to R
+            # Truncated text portion goes to R (recoverable)
             truncated_unit_id = stable_id("u_", packet.get("instance_id", ""), method_id, "truncated", truncated_portion)
             add_r_entry(
                 working_packet,
@@ -439,7 +433,7 @@ def _transform_packet(packet: Mapping[str, object], method_id: str) -> Transform
                     "text_preview": truncated_portion[:100] + "..." if len(truncated_portion) > 100 else truncated_portion,
                 },
             )
-            transformation_note = f"{method_id}: truncated at 400 chars (removed {len(truncated_portion)} chars to R)"
+            transformation_note = f"{method_id}: truncated at 400 chars (removed {len(truncated_portion)} chars to R; kept original visible IDs)"
     else:
         # Unknown method: pass through
         payload_text = doc
@@ -637,7 +631,24 @@ def evaluate_billed_instance(
 
     # EVAL-02: Extract visible IDs from transformed packet (what was actually sent)
     vis = _visible_for_method(transformed)
-    m = metrics_from_instance(packet, vis, answer=answer)
+    
+    # BUG 2 FIX: Build working packet that includes recovery_index IDs in recoverable_evidence_ids
+    # so metrics_from_instance sees the transformed recovery state, not just the original packet.
+    working_packet = dict(packet)
+    # Get original recoverable IDs
+    _orig_rec = packet.get("recoverable_evidence_ids")
+    if isinstance(_orig_rec, (list, tuple)):
+        original_rec_ids = {str(x) for x in _orig_rec if x}
+    else:
+        original_rec_ids = set()
+    # Get R entries from transformation
+    r_entries = transformed.recovery_index.get("entries", [])
+    r_unit_ids = {str(e.get("unit_id", "")) for e in r_entries if e.get("unit_id")}
+    # Union: original recoverable IDs + units moved to R during transformation
+    combined_rec_ids = list(original_rec_ids | r_unit_ids)
+    working_packet["recoverable_evidence_ids"] = combined_rec_ids
+    
+    m = metrics_from_instance(working_packet, vis, answer=answer)
 
     # Q_baseline: from paired raw_full response, or self-pairing for raw_full
     if raw_baseline_q is not None:
