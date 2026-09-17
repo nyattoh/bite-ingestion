@@ -10,6 +10,22 @@
 
 ---
 
+> **2026-09-17 レビュー追記（Claude）.** 本書の記述は
+> [`docs/reviews/2026-09-17-phase1-wiring-review.md`](../reviews/2026-09-17-phase1-wiring-review.md)
+> で訂正されている。要点:
+>
+> - P0 2 件（raw_full の provenance=0.0、全 quarantine 時に payload へ本文残留）と
+>   P1/P2 4 件を修正済み（commit `a145bf5`）。
+> - 下表「offline matrix summary」の数値は修正前のもの。実測は
+>   **n_transformed 16→4、n_no_op 8→20、mean_provenance 0.75→1.0**。
+>   空白差を transformed と誤判定していた。
+> - 「`TBD_CALIBRATE`: 未変更」は dataclass については正しいが、profiler の
+>   `a`（anomaly）に `malformed_json` +0.8 を**新規追加**しており routing 挙動は
+>   変わっている。rule-Π の差別化はこの 1 ルール由来で **1/8 family** のみ発火する。
+> - **REDUCE / INTEGRATE は rule_pi で未発火、re-bite は matrix 上で未発火。**
+>
+> 判定 `PHASE1_OFFLINE_READY` は修正後も支持されるが、上記を結果解釈の前提とすること。
+
 ## 判定
 
 ```text
