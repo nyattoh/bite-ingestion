@@ -154,7 +154,7 @@ def _extract_text(payload: Mapping[str, Any]) -> str:
             return reasoning.strip()
         return ""
     # Legacy text field
-    text = first.get("text")
+    text: str | None = first.get("text")  # type: ignore[assignment]
     return str(text) if text is not None else ""
 
 
