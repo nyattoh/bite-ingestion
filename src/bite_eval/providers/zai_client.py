@@ -154,8 +154,8 @@ def _extract_text(payload: Mapping[str, Any]) -> str:
             return reasoning.strip()
         return ""
     # Legacy text field
-    text = first.get("text")
-    return str(text) if text is not None else ""
+    legacy_text = first.get("text")
+    return str(legacy_text) if legacy_text is not None else ""
 
 
 def _is_timeout_exc(exc: BaseException) -> bool:
