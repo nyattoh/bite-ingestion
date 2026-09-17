@@ -28,7 +28,6 @@ from bite_ingestion.packet_contract import (
     split_units_by_char_limit,
 )
 
-
 # Locked thresholds (d2_lock_v0.1) — do not invent extras.
 DELTA = 0.05
 RHO_VISIBLE = 0.50
