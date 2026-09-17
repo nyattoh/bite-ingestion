@@ -153,6 +153,24 @@ PR #11 の Bugbot が検出した 3 件の baseline 処理バグを修正:
 - `rate_limit`: raw_full が rate limit された
 - `error`: raw_full でプロバイダーエラーが発生した（非タイムアウト）
 
+### Bugbot PR#11 2nd round fixes (2026-09-17 追加)
+
+2件の checkpoint 永続化バグを修正:
+
+#### Bug 1 — High: Checkpoint rewrite clobbers rate_limit status
+**問題**: Successful `raw_full` 後の checkpoint rewrite で、compressed 行の `status=rate_limit` が `status=error` に上書きされていた（error field が非 null のため）。Resume 時に rate_limit 行が retryable と判断され、再度 429 を引き起こす可能性。
+
+**修正**: Checkpoint rewrite 時に explicit status (`rate_limit` 等) を保持。`baseline_status == "rate_limit"` の場合は `status=rate_limit` を書き込む。
+
+**テスト**: `test_bug1_checkpoint_rewrite_preserves_rate_limit_status`
+
+#### Bug 2 — Medium: Restore refresh skips checkpoint rewrite
+**問題**: Restore-only path で stale baseline を in-memory 更新するが、checkpoint JSONL に永続化されない。次回 resume で stale baseline のまま実行される。
+
+**修正**: Post-restore refresh 後、live success path と同様に updated compressed 行を checkpoint に append。
+
+**テスト**: `test_bug2_restore_refresh_persists_to_checkpoint`, `test_bug2_restore_with_rate_limit_sibling`
+
 ## Out of scope (意図的に除外)
 
 以下は Phase 1+ の課題として残した:

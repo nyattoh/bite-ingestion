@@ -660,6 +660,30 @@ def run_billed_pilot(
         for row in state.results:
             if row.method_id == "raw_full" and row.error is None and row.baseline_status == "ok":
                 _refresh_stale_baselines(state.results, row.instance_id, row.Q, row.baseline_status)
+                # Bug 2 fix: Persist refreshed compressed rows to checkpoint after restore
+                if checkpoint_path is not None:
+                    for refreshed_row in state.results:
+                        if (
+                            refreshed_row.instance_id == row.instance_id
+                            and refreshed_row.method_id != "raw_full"
+                        ):
+                            # Bug 1 fix: Preserve explicit statuses (rate_limit, etc)
+                            if refreshed_row.baseline_status == "rate_limit":
+                                status = "rate_limit"
+                            elif refreshed_row.error is None:
+                                status = "ok"
+                            else:
+                                status = "error"
+                            append_checkpoint(
+                                checkpoint_path,
+                                _checkpoint_record(
+                                    family=refreshed_row.family,
+                                    instance_id=refreshed_row.instance_id,
+                                    method=refreshed_row.method_id,
+                                    status=status,
+                                    row=refreshed_row,
+                                ),
+                            )
 
     def _record_attempt(
         *,
@@ -805,12 +829,19 @@ def run_billed_pilot(
                                     refreshed_row.instance_id == row.instance_id
                                     and refreshed_row.method_id != "raw_full"
                                 ):
+                                    # Bug 1 fix: Preserve explicit statuses (rate_limit, etc)
+                                    if refreshed_row.baseline_status == "rate_limit":
+                                        status = "rate_limit"
+                                    elif refreshed_row.error is None:
+                                        status = "ok"
+                                    else:
+                                        status = "error"
                                     # Rewrite checkpoint with updated baseline and constraints
                                     _record_attempt(
                                         family=refreshed_row.family,
                                         instance_id=refreshed_row.instance_id,
                                         method=refreshed_row.method_id,
-                                        status="ok" if refreshed_row.error is None else "error",
+                                        status=status,
                                         row=refreshed_row,
                                     )
 
