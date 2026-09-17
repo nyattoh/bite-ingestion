@@ -313,7 +313,8 @@ def test_run_billed_pilot_rate_limit_partial() -> None:
     assert summary["rate_limited"] is True
     assert summary["decision"] == "pivot"
     assert "rate_limit" in summary["decision_reason"]
-    assert summary["n_instance_rows"] == 3  # stopped after 3 successes
+    # Bug 2 fix: rate_limit now creates a row, so 3 successes + 1 rate_limit = 4 rows
+    assert summary["n_instance_rows"] == 4
     assert summary["calls_succeeded"] == 3
 
 

@@ -106,7 +106,7 @@ class BilledInstanceResult:
     failures: tuple[str, ...] = ()
     answer_text: str = ""
     error: str | None = None
-    # Baseline status: ok | missing_pair | timeout | rate_limit
+    # Baseline status: ok | missing_pair | timeout | rate_limit | error
     baseline_status: str = "ok"
 
 
@@ -132,6 +132,28 @@ def _utc_ts() -> str:
 
 def _call_key(family: str, instance_id: str, method: str) -> tuple[str, str, str]:
     return (str(family), str(instance_id), str(method))
+
+
+def _refresh_stale_baselines(
+    results: list[BilledInstanceResult],
+    instance_id: str,
+    new_baseline_q: float,
+    new_baseline_status: str,
+) -> None:
+    """Bug 1 fix: After successful raw_full, refresh stale compressed baselines.
+    
+    When raw_full times out then succeeds on resume retry, compressed rows
+    already written with stale Q_baseline=0.0 / baseline_status=timeout must
+    be updated to use the new raw_full Q.
+    """
+    for row in results:
+        if (
+            row.instance_id == instance_id
+            and row.method_id != "raw_full"
+            and row.baseline_status in ("timeout", "error", "missing_pair")
+        ):
+            row.Q_baseline = new_baseline_q
+            row.baseline_status = new_baseline_status
 
 
 def _row_from_dict(d: Mapping[str, Any]) -> BilledInstanceResult:
@@ -369,6 +391,15 @@ def evaluate_billed_instance(
         # but catch bare TimeoutError if a duck-typed client raises it.
         text_proxy = str(packet.get("document") or "")
         is_timeout = isinstance(exc, TimeoutError) or "timed out" in str(exc).lower()
+        # Bug 3 fix: provider errors must NOT set baseline_status=ok
+        if baseline_status:
+            status = baseline_status
+        elif method_id == "raw_full":
+            # raw_full: timeout → "timeout", non-timeout error → "error"
+            status = "timeout" if is_timeout else "error"
+        else:
+            # Non-raw method: inherit from paired raw_full if available, else error
+            status = "error"
         return BilledInstanceResult(
             instance_id=str(packet.get("instance_id")),
             family=str(packet.get("family")),
@@ -389,7 +420,7 @@ def evaluate_billed_instance(
             model=str(model_name),
             failures=("provider_timeout",) if is_timeout else ("provider_error",),
             error=str(exc),
-            baseline_status=baseline_status or ("timeout" if method_id == "raw_full" and is_timeout else "ok"),
+            baseline_status=status,
         )
 
     answer = str(getattr(result, "text", "") or "").strip()
@@ -543,7 +574,7 @@ def run_billed_pilot(
 
     prior = load_checkpoint(checkpoint_path) if resume and checkpoint_path else {}
     skip_ok: dict[tuple[str, str, str], dict[str, Any]] = {}
-    skip_rate: set[tuple[str, str, str]] = set()
+    skip_rate: dict[tuple[str, str, str], dict[str, Any]] = {}
     retry_once: set[tuple[str, str, str]] = set()
     if resume and prior:
         for key, rec in prior.items():
@@ -551,13 +582,15 @@ def run_billed_pilot(
             if status == "ok":
                 skip_ok[key] = rec
             elif status == "rate_limit":
-                skip_rate.add(key)
+                # Bug 2 fix: Keep rate_limit records to restore into state
+                skip_rate[key] = rec
             elif status in RESUME_RETRY_STATUSES:
                 retry_once.add(key)
 
-        # Restore ok rows into state (from checkpoint row or partial file)
+        # Restore ok and rate_limit rows into state (from checkpoint row or partial file)
         restored_keys: set[tuple[str, str, str]] = set()
-        for key, rec in skip_ok.items():
+        # Bug 2 fix: Restore rate_limit rows so they populate raw_baseline_lookup
+        for key, rec in {**skip_ok, **skip_rate}.items():
             row_data = rec.get("row")
             if isinstance(row_data, dict):
                 row = _row_from_dict(row_data)
@@ -569,6 +602,9 @@ def run_billed_pilot(
                 # Populate raw_baseline_lookup for restored raw_full rows
                 if row.method_id == "raw_full":
                     raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
+                    # Bug 1 fix: Refresh stale compressed baselines when restoring successful raw_full
+                    if row.error is None and row.baseline_status == "ok":
+                        _refresh_stale_baselines(state.results, row.instance_id, row.Q, row.baseline_status)
         if partial_path and Path(partial_path).is_file():
             try:
                 partial = json.loads(Path(partial_path).read_text(encoding="utf-8"))
@@ -590,6 +626,9 @@ def run_billed_pilot(
                         # Populate raw_baseline_lookup for restored raw_full rows
                         if row.method_id == "raw_full":
                             raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
+                            # Bug 1 fix: Refresh stale compressed baselines when restoring successful raw_full
+                            if row.error is None and row.baseline_status == "ok":
+                                _refresh_stale_baselines(state.results, row.instance_id, row.Q, row.baseline_status)
             except (json.JSONDecodeError, OSError):
                 pass
 
@@ -638,6 +677,7 @@ def run_billed_pilot(
                     continue
                 if key in skip_rate:
                     # Prior 429 on this key — skip to avoid storm
+                    # (rate_limit rows already restored into state above)
                     continue
 
                 # Resume retry: prior timeout/error gets one more attempt under
@@ -649,16 +689,22 @@ def run_billed_pilot(
                     call_retry_max = None
 
                 state.calls_attempted += 1
+                
+                # Look up paired raw_full Q for non-raw methods
+                raw_baseline_q = None
+                baseline_status = None
+                instance_id = str(pkt.get("instance_id"))
+                if mid != "raw_full" and instance_id in raw_baseline_lookup:
+                    raw_baseline_q, baseline_status = raw_baseline_lookup[instance_id]
+                    # Bug 2 fix: Skip compressed if paired raw_full was rate-limited
+                    if baseline_status == "rate_limit":
+                        # Don't attempt compressed when paired raw_full hit rate limit
+                        continue
+                elif mid != "raw_full":
+                    # No raw_full pair available yet
+                    baseline_status = "missing_pair"
+                
                 try:
-                    # Look up paired raw_full Q for non-raw methods
-                    raw_baseline_q = None
-                    baseline_status = None
-                    instance_id = str(pkt.get("instance_id"))
-                    if mid != "raw_full" and instance_id in raw_baseline_lookup:
-                        raw_baseline_q, baseline_status = raw_baseline_lookup[instance_id]
-                    elif mid != "raw_full":
-                        # No raw_full pair available yet
-                        baseline_status = "missing_pair"
                     
                     row = evaluate_billed_instance(
                         pkt,
@@ -669,16 +715,47 @@ def run_billed_pilot(
                         raw_baseline_q=raw_baseline_q,
                         baseline_status=baseline_status,
                     )
-                except RateLimitError:
+                except RateLimitError as exc:
+                    # Bug 2 fix: Record rate_limit row so it's tracked in state
                     state.rate_limited = True
                     state.rate_limit_at = f"{pkt.get('instance_id')}:{mid}"
                     stopped_early = True
+                    text_proxy = str(pkt.get("document") or "")
+                    model_name = getattr(client, "model", "glm-4.5-flash")
+                    row = BilledInstanceResult(
+                        instance_id=str(pkt.get("instance_id")),
+                        family=str(pkt.get("family")),
+                        method_id=mid,
+                        Q=0.0,
+                        Q_baseline=0.0,
+                        recall_vis=0.0,
+                        recall_rec=0.0,
+                        provenance=0.0,
+                        constraints_ok=False,
+                        T_total=None,
+                        T_prompt=None,
+                        T_completion=None,
+                        T_cached=None,
+                        estimate_source=BILLED_USAGE_LABEL,
+                        T_logical_char4_proxy=estimate_tokens_char4(text_proxy),
+                        B_r_cap=_br_cap(estimate_tokens_char4(text_proxy)),
+                        model=str(model_name),
+                        failures=("rate_limit",),
+                        error=str(exc),
+                        baseline_status="rate_limit",
+                    )
+                    fam_results.append(row)
+                    state.results.append(row)
+                    # For raw_full, populate lookup so compressed methods see rate_limit status
+                    if mid == "raw_full":
+                        raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
                     _record_attempt(
                         family=str(pkt.get("family")),
                         instance_id=str(pkt.get("instance_id")),
                         method=mid,
                         status="rate_limit",
                         error_type="RateLimitError",
+                        row=row,
                     )
                     break
 
@@ -688,6 +765,9 @@ def run_billed_pilot(
                 # Populate raw_baseline_lookup for raw_full rows
                 if row.method_id == "raw_full":
                     raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
+                    # Bug 1 fix: Refresh stale compressed baselines after successful raw_full
+                    if row.error is None and row.baseline_status == "ok":
+                        _refresh_stale_baselines(state.results, row.instance_id, row.Q, row.baseline_status)
 
                 if row.error is None and row.T_total is not None:
                     state.calls_succeeded += 1

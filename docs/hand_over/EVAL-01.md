@@ -25,7 +25,7 @@
 
 #### 変更内容:
 - `BilledInstanceResult` に `baseline_status` field を追加
-  - 値: `ok` | `missing_pair` | `timeout` | `rate_limit`
+  - 値: `ok` | `missing_pair` | `timeout` | `rate_limit` | `error`
 - `evaluate_billed_instance` に `raw_baseline_q` および `baseline_status` パラメータを追加
 - Q_baseline の計算ロジックを変更:
   - **raw_full method**: 自己ペアリング (`Q_baseline = Q`)
@@ -118,6 +118,40 @@ elif raw_baseline_q is not None:
 else:
     Q_baseline = 0.0, baseline_status = "missing_pair"
 ```
+
+## Bugbot findings fixes (2026-09-16 追加)
+
+PR #11 の Bugbot が検出した 3 件の baseline 処理バグを修正:
+
+### Bug 1 — High: Stale baseline after resume retry
+**問題**: `raw_full` がタイムアウト後に resume retry で成功しても、既に書き込まれた compressed 行の `Q_baseline=0.0` / `baseline_status=timeout` が更新されず、gate metrics が誤る。
+
+**修正**: `_refresh_stale_baselines()` 関数を追加し、`raw_full` 成功時（resume retry 含む）に同 instance_id の compressed 行の stale baseline を更新。
+
+**テスト**: `test_bug1_stale_baseline_refreshed_after_resume`, `test_bug1_multiple_compressed_rows_refreshed`
+
+### Bug 2 — Medium: Rate-limit skip unpaired compressed
+**問題**: `raw_full` が rate limit された時、checkpoint に記録されるが row は作成されず。resume 時に compressed が `missing_pair` / `Q_baseline=0.0` で実行される。また `baseline_status=rate_limit` が記録されていなかった。
+
+**修正**: 
+- Rate limit 時に row を作成し `baseline_status=rate_limit` を記録
+- Resume 時に paired raw_full が rate_limit の場合、compressed をスキップ
+
+**テスト**: `test_bug2_rate_limit_records_baseline_status`, `test_bug2_compressed_skipped_when_raw_rate_limited`
+
+### Bug 3 — Medium: Provider errors marked baseline ok
+**問題**: 非タイムアウトの `ZaiClientError` が `raw_full` で発生した時、`baseline_status=ok` / `Q=0.0` が記録され、失敗した呼び出しが valid baseline として扱われる。
+
+**修正**: Provider/client エラー時は `baseline_status=error` を設定（`ok` ではない）。タイムアウトは引き続き `timeout`。
+
+**テスト**: `test_bug3_provider_error_not_baseline_ok`, `test_bug3_timeout_still_marked_timeout`
+
+### baseline_status 値の完全な定義:
+- `ok`: 成功した baseline (raw_full が正常に実行された)
+- `missing_pair`: paired raw_full がまだ実行されていない
+- `timeout`: raw_full がタイムアウトした
+- `rate_limit`: raw_full が rate limit された
+- `error`: raw_full でプロバイダーエラーが発生した（非タイムアウト）
 
 ## Out of scope (意図的に除外)
 
