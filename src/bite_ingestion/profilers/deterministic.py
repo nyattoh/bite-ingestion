@@ -136,10 +136,23 @@ class DeterministicMorphologyProfiler:
         anom = 0.0
         if fail_closed:
             anom += 0.8
-        anom += 0.2 * min(1.0, len(re.findall(r"traceback|exception|malformed|parse.?error", text, re.IGNORECASE)) / 3.0)
+        anom += 0.2 * min(
+            1.0,
+            len(re.findall(r"traceback|exception|malformed|parse.?error", text, re.IGNORECASE))
+            / 3.0,
+        )
         if not stripped:
             anom += 0.4
             uncertain = True
+        # Broken JSON-like payload is an anomaly (not a family/oracle label).
+        lead = text.lstrip()
+        jsonish = lead.startswith("{") or (lead.startswith("[") and (":" in text or '"' in text))
+        if jsonish:
+            try:
+                json.loads(text)
+            except (json.JSONDecodeError, TypeError, ValueError):
+                anom += 0.8
+                notes.append("malformed_json")
         a = _clamp01(anom)
         evidence["a"] = f"anom_raw={anom:.3f}"
 
@@ -154,7 +167,7 @@ class DeterministicMorphologyProfiler:
                 total = sum(hits) or 1
                 top = sorted(hits, reverse=True)[: max(1, min(3, len(hits)))]
                 l = _clamp01(sum(top) / total)
-                evidence["l"] = f"query_tokens={len(q_tokens)};top_mass={sum(top)/total:.3f}"
+                evidence["l"] = f"query_tokens={len(q_tokens)};top_mass={sum(top) / total:.3f}"
             else:
                 l = 0.5
                 uncertain = True
@@ -164,12 +177,23 @@ class DeterministicMorphologyProfiler:
             evidence["l"] = "no_query_prior_0.5"
 
         # p: provenance sensitivity proxy — paths, versions, line numbers
-        prov_hits = len(re.findall(r"(line\s*\d+|v?\d+\.\d+\.\d+|/[A-Za-z0-9_.-]+|unit_id|version=)", text, re.IGNORECASE))
+        prov_hits = len(
+            re.findall(
+                r"(line\s*\d+|v?\d+\.\d+\.\d+|/[A-Za-z0-9_.-]+|unit_id|version=)",
+                text,
+                re.IGNORECASE,
+            )
+        )
         p = _clamp01(min(1.0, prov_hits / 6.0))
         evidence["p"] = f"prov_hits={prov_hits}"
 
         # u: uncertainty — high when anomalous / empty / weak locality without structure
-        u = _clamp01(0.5 * a + 0.3 * (1.0 - l) + (0.4 if uncertain or fail_closed else 0.0) + (0.2 if n < 8 else 0.0))
+        u = _clamp01(
+            0.5 * a
+            + 0.3 * (1.0 - l)
+            + (0.4 if uncertain or fail_closed else 0.0)
+            + (0.2 if n < 8 else 0.0)
+        )
         if uncertain or fail_closed:
             u = max(u, 0.6)
         evidence["u"] = f"uncertain={uncertain};fail_closed={fail_closed}"

@@ -369,7 +369,11 @@ class RecoverEngine:
                 locator=loc if isinstance(loc, Mapping) else None,
             )
             # Special case: if request pins a version and store mismatches → fail
-            if req.version is not None and rec.version is not None and str(req.version) != str(rec.version):
+            if (
+                req.version is not None
+                and rec.version is not None
+                and str(req.version) != str(rec.version)
+            ):
                 return self._finish(
                     packet,
                     state,
@@ -459,7 +463,9 @@ class RecoverEngine:
                     recovery_success=0,
                 )
 
-            eid = self._add_evidence(packet, unit_id=uid, text=text, record=rec, span=span or req.span)
+            eid = self._add_evidence(
+                packet, unit_id=uid, text=text, record=rec, span=span or req.span
+            )
             returned.append(eid)
             total_tokens += tok
             dedupe.add(key)
@@ -467,14 +473,18 @@ class RecoverEngine:
                 state.seen_fetch_keys.append(key)
             last_outcome = OutcomeCode.SUCCESS.value
             messages.append("ok")
-            self._append_tau_recover(packet, inputs_ref=[str(entry.get("r_id", uid))], outputs_ref=[eid])
+            self._append_tau_recover(
+                packet, inputs_ref=[str(entry.get("r_id", uid))], outputs_ref=[eid]
+            )
 
         if not returned:
             return self._finish(
                 packet,
                 state,
                 req,
-                last_outcome if last_outcome != OutcomeCode.SUCCESS.value else OutcomeCode.RECOVER_MISS.value,
+                last_outcome
+                if last_outcome != OutcomeCode.SUCCESS.value
+                else OutcomeCode.RECOVER_MISS.value,
                 message="; ".join(messages) or "recover_miss",
                 recovery_success=0,
             )
@@ -507,7 +517,15 @@ class RecoverEngine:
             entry_by_uid = {str(e.get("unit_id")): e for e in targets}
             for m in members:
                 if m.unit_id in r_uids or m.unit_id in entry_by_uid:
-                    member_entries.append(entry_by_uid.get(m.unit_id) or {"unit_id": m.unit_id, "r_id": f"r_synth_{m.unit_id}", "locator": {}, "recoverable": True})
+                    member_entries.append(
+                        entry_by_uid.get(m.unit_id)
+                        or {
+                            "unit_id": m.unit_id,
+                            "r_id": f"r_synth_{m.unit_id}",
+                            "locator": {},
+                            "recoverable": True,
+                        }
+                    )
         if not member_entries:
             # targets themselves are the members listed under aggregate_parent in R
             member_entries = targets
@@ -569,7 +587,9 @@ class RecoverEngine:
             eid = self._add_evidence(packet, unit_id=uid, text=rec.text, record=rec, span=None)
             returned.append(eid)
             total_tokens += tok
-            self._append_tau_recover(packet, inputs_ref=[str(entry.get("r_id", uid))], outputs_ref=[eid])
+            self._append_tau_recover(
+                packet, inputs_ref=[str(entry.get("r_id", uid))], outputs_ref=[eid]
+            )
 
         if returned:
             dedupe.add(key)
@@ -623,7 +643,12 @@ class RecoverEngine:
             ver = loc.get("version") if isinstance(loc, Mapping) else None
             uid = str(e.get("unit_id", ""))
             rec = store.get(uid)
-            if rec is not None and str(rec.version) == str(req.version) or ver is not None and str(ver) == str(req.version):
+            if (
+                rec is not None
+                and str(rec.version) == str(req.version)
+                or ver is not None
+                and str(ver) == str(req.version)
+            ):
                 matched.append(e)
         if not matched:
             # version mismatch on requested unit → stale path if unit in R
@@ -698,14 +723,30 @@ class RecoverEngine:
 
         units = list(packet.get("units") or [])
         if not any(isinstance(u, Mapping) and u.get("unit_id") == unit_id for u in units):
+            span_d = (
+                dict(span)
+                if span
+                else (
+                    dict(record.span)
+                    if record.span
+                    else {"start": 0, "end": len(text), "unit": "char"}
+                )
+            )
             units.append(
                 {
                     "unit_id": unit_id,
                     "text": text,
-                    "span": dict(span) if span else (dict(record.span) if record.span else {"start": 0, "end": len(text), "unit": "char"}),
+                    "span": span_d,
                     "source_uri": record.uri,
                     "version": record.version,
                     "media_type": record.media_type,
+                    "parent_unit_id": unit_id,
+                    "provenance": {
+                        "unit_id": unit_id,
+                        "source_uri": record.uri,
+                        "byte_or_token_span": (f"char:{span_d.get('start')}-{span_d.get('end')}"),
+                        "renderer_id": "recover",
+                    },
                 }
             )
             units.sort(key=lambda u: str(u.get("unit_id", "")) if isinstance(u, Mapping) else "")

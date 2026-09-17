@@ -11,6 +11,7 @@ from typing import Any
 
 from bite_eval.accounting.estimate import LOCAL_ESTIMATE_LABEL, estimate_tokens_char4
 from bite_eval.accounting.ledger import TokenLedger
+from bite_eval.arm_runtime import attach_morphology
 from bite_eval.artifacts.ledger import ArtifactLedger, sha256_hex
 
 
@@ -125,13 +126,14 @@ class EvalHarness:
             }
         )
 
-        # Optional profiler/router LLM stubs from context (synthetic counts only)
-        self._record_overhead_stubs(ledger, ctx)
+        # Profiler at the eval entrance: payload+query only, tokens=0, cpu_ms recorded.
+        working_packet, profile_report = attach_morphology(packet, ctx)
+        self._record_overhead_stubs(ledger, ctx, profiler_cpu_ms=profile_report.cpu_ms)
 
         try:
             adapter = _soft_get_baseline(method_id)
             if adapter is not None and hasattr(adapter, "run"):
-                out = dict(adapter.run(packet, ctx))
+                out = dict(adapter.run(working_packet, ctx))
                 method_output = out
                 status = str(out.get("status", "ok"))
                 reason = out.get("reason") if isinstance(out.get("reason"), str) else None
@@ -179,7 +181,7 @@ class EvalHarness:
                         )
             else:
                 # Pure synthetic path without baseline adapters
-                method_output = self._synthetic_method(method_id, packet, ctx, ledger)
+                method_output = self._synthetic_method(method_id, working_packet, ctx, ledger)
                 status = str(method_output.get("status", "ok"))
                 raw_reason = method_output.get("reason")
                 reason = raw_reason if isinstance(raw_reason, str) else None
@@ -309,7 +311,13 @@ class EvalHarness:
 
         return manifest
 
-    def _record_overhead_stubs(self, ledger: TokenLedger, ctx: Mapping[str, object]) -> None:
+    def _record_overhead_stubs(
+        self,
+        ledger: TokenLedger,
+        ctx: Mapping[str, object],
+        *,
+        profiler_cpu_ms: float = 0.0,
+    ) -> None:
         """Optional synthetic profiler/router LLM overhead from context (DC-6)."""
         prof = _as_int(ctx.get("stub_profiler_tokens"), 0)
         if prof:
@@ -325,14 +333,14 @@ class EvalHarness:
                 }
             )
         else:
-            # Deterministic profiler path: 0 tokens
+            cpu = profiler_cpu_ms or _as_float(ctx.get("stub_profiler_cpu_ms"), 0.0)
             ledger.record(
                 {
                     "category": "profiler",
                     "kind": "deterministic",
                     "tokens_in": 0,
                     "tokens_out": 0,
-                    "cpu_ms": _as_float(ctx.get("stub_profiler_cpu_ms"), 0.0),
+                    "cpu_ms": cpu,
                     "note": "DC-2 deterministic profiler",
                 }
             )

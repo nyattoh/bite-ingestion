@@ -22,7 +22,13 @@ from .base import (
 )
 
 # Structural markers only — TBD-calibrate for richer detectors; no magic score thresholds.
-_INJECT_MARKERS = ("<<<INJECT", ">>>INJECT", "{{INJECTION", "<script>", "IGNORE PREVIOUS INSTRUCTIONS")
+_INJECT_MARKERS = (
+    "<<<INJECT",
+    ">>>INJECT",
+    "{{INJECTION",
+    "<script>",
+    "IGNORE PREVIOUS INSTRUCTIONS",
+)
 _ANOMALY_MARKERS = re.compile(r"\b(ERROR|FATAL|EXCEPTION|TRACEBACK|PANIC)\b", re.IGNORECASE)
 _DEP_REF = re.compile(r"(?:ref:|#see\s+)([A-Za-z0-9_\-./]+)", re.IGNORECASE)
 
@@ -155,7 +161,13 @@ class UntangleOperator:
                 reasons_map[uid] = reasons
                 primary = reasons[0]
                 # Prefer strongest quarantine label order
-                for preferred in ("injection_suspect", "malformed", "anomaly_candidate", "dependency_cycle", "dependency_edge"):
+                for preferred in (
+                    "injection_suspect",
+                    "malformed",
+                    "anomaly_candidate",
+                    "dependency_cycle",
+                    "dependency_edge",
+                ):
                     if preferred in reasons:
                         primary = preferred
                         break
@@ -166,7 +178,12 @@ class UntangleOperator:
                     reason=REASON_QUARANTINED,
                     recoverable=True,
                     locator=unit_locator(u),
-                    extra={"reason_codes": reasons, "primary_reason": primary, "text": u.get("text")},
+                    extra={
+                        "reason_codes": reasons,
+                        "primary_reason": primary,
+                        "text": u.get("text"),
+                        "parent_unit_id": u.get("parent_unit_id"),
+                    },
                 )
                 r_ids.append(rid)
             else:
@@ -187,7 +204,10 @@ class UntangleOperator:
         out["visible_evidence"] = rebuild_visible_from_units(residual)
         out["untangle"] = {
             "isolated": [
-                {"unit_id": str(u["unit_id"]), "reasons": reasons_map.get(str(u["unit_id"]), u.get("untangle_reasons", []))}
+                {
+                    "unit_id": str(u["unit_id"]),
+                    "reasons": reasons_map.get(str(u["unit_id"]), u.get("untangle_reasons", [])),
+                }
                 for u in isolated
             ],
             "residual_ids": [str(u["unit_id"]) for u in residual],

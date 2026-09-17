@@ -13,6 +13,8 @@ from __future__ import annotations
 from collections.abc import Mapping
 from dataclasses import dataclass
 
+from bite_ingestion.packet_contract import root_ids_of
+
 
 def _as_str_list(value: object, default: list[str] | None = None) -> list[str]:
     if default is None:
@@ -22,7 +24,6 @@ def _as_str_list(value: object, default: list[str] | None = None) -> list[str]:
     if isinstance(value, (list, tuple, set)):
         return [str(x) for x in value]
     return list(default)
-
 
 
 @dataclass(frozen=True)
@@ -99,9 +100,23 @@ def metrics_from_instance(
     q = 1.0 if (answer is not None and str(answer).strip() == gold.strip()) else 0.0
 
     gold_ids = _as_str_list(packet.get("gold_evidence_ids"))
-    rec_ids = set(_as_str_list(packet.get("recoverable_evidence_ids"), gold_ids))
+    rec_ids = set(_as_str_list(packet.get("recoverable_evidence_ids"), []))
     vis = set(_as_str_list(method_visible))
     gold_set = set(gold_ids)
+    raw_units = packet.get("units")
+    units = [u for u in raw_units if isinstance(u, Mapping)] if isinstance(raw_units, list) else []
+    raw_r = packet.get("R")
+    r: Mapping[str, object] = raw_r if isinstance(raw_r, Mapping) else {}
+    raw_entries = r.get("entries")
+    r_ids = {
+        str(e.get("unit_id"))
+        for e in (raw_entries if isinstance(raw_entries, list) else [])
+        if isinstance(e, Mapping) and e.get("unit_id")
+    }
+    rec_ids |= r_ids
+    if units:
+        vis = vis | root_ids_of(list(vis), units)
+        rec_ids = rec_ids | root_ids_of(list(rec_ids), units)
 
     if gold_set:
         recall_vis = len(gold_set & vis) / len(gold_set)

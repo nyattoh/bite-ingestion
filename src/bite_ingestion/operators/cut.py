@@ -42,9 +42,12 @@ class CutOperator:
         if boundary not in {"paragraph", "line", "record"}:
             boundary = "paragraph"
         max_units = ctx.get("max_units")
-        max_n: int | None = int(max_units) if isinstance(max_units, int) or (
-            isinstance(max_units, str) and str(max_units).isdigit()
-        ) else None
+        max_n: int | None = (
+            int(max_units)
+            if isinstance(max_units, int)
+            or (isinstance(max_units, str) and str(max_units).isdigit())
+            else None
+        )
         if isinstance(max_units, float) and max_units == int(max_units):
             max_n = int(max_units)
 
@@ -59,7 +62,11 @@ class CutOperator:
 
         for parent in units_in:
             text = str(parent.get("text", ""))
-            parent_span = parent.get("span") if isinstance(parent.get("span"), Mapping) else {"start": 0, "end": len(text), "unit": "char"}
+            parent_span = (
+                parent.get("span")
+                if isinstance(parent.get("span"), Mapping)
+                else {"start": 0, "end": len(text), "unit": "char"}
+            )
             segments = split_fn(text)
             for local_start, local_end, seg in segments:
                 # Skip pure empty segments from leading/trailing blank splits unless sole content
@@ -74,6 +81,11 @@ class CutOperator:
                     span["end"],
                     seg,
                 )
+                parent_prov = (
+                    parent.get("provenance")
+                    if isinstance(parent.get("provenance"), Mapping)
+                    else {}
+                )
                 produced.append(
                     {
                         "unit_id": uid,
@@ -83,6 +95,21 @@ class CutOperator:
                         "version": parent.get("version"),
                         "media_type": parent.get("media_type"),
                         "parent_unit_id": parent.get("unit_id"),
+                        "provenance": {
+                            "unit_id": uid,
+                            "source_uri": parent.get("source_uri")
+                            or (
+                                parent_prov.get("source_uri")
+                                if isinstance(parent_prov, Mapping)
+                                else None
+                            ),
+                            "byte_or_token_span": f"char:{span['start']}-{span['end']}",
+                            "renderer_id": (
+                                parent_prov.get("renderer_id")
+                                if isinstance(parent_prov, Mapping)
+                                else None
+                            ),
+                        },
                     }
                 )
 
@@ -101,7 +128,11 @@ class CutOperator:
                 reason=REASON_BUDGET_TRUNCATED,
                 recoverable=True,
                 locator=unit_locator(om),
-                extra={"text": om.get("text"), "boundary": boundary},
+                extra={
+                    "text": om.get("text"),
+                    "boundary": boundary,
+                    "parent_unit_id": om.get("parent_unit_id"),
+                },
             )
             r_ids.append(rid)
 
@@ -113,7 +144,11 @@ class CutOperator:
         # Update top-level provenance to first selected unit when present
         if selected:
             first = selected[0]
-            prov = dict(out.get("provenance") or {}) if isinstance(out.get("provenance"), Mapping) else {}
+            prov = (
+                dict(out.get("provenance") or {})
+                if isinstance(out.get("provenance"), Mapping)
+                else {}
+            )
             prov["unit_id"] = first["unit_id"]
             if first.get("source_uri") is not None:
                 prov["source_uri"] = first.get("source_uri")

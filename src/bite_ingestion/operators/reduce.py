@@ -85,11 +85,14 @@ class ReduceOperator:
                 raw = str(u.get("text", ""))
                 canon = _canonical_ws(raw)
                 if canon != raw:
-                    new_id = stable_id("u_", out.get("packet_id", ""), "ws", u.get("unit_id", ""), canon)
+                    new_id = stable_id(
+                        "u_", out.get("packet_id", ""), "ws", u.get("unit_id", ""), canon
+                    )
                     new_u = {
                         **u,
                         "unit_id": new_id,
                         "text": canon,
+                        "parent_unit_id": u.get("unit_id"),
                         "derived_from": u.get("unit_id"),
                     }
                     rid = add_r_entry(
@@ -99,7 +102,11 @@ class ReduceOperator:
                         recoverable=True,
                         locator=unit_locator(u),
                         aggregate_parent=new_id,
-                        extra={"original_text": raw, "canonical_text": canon},
+                        extra={
+                            "original_text": raw,
+                            "canonical_text": canon,
+                            "parent_unit_id": u.get("parent_unit_id") or u.get("unit_id"),
+                        },
                     )
                     r_ids.append(rid)
                     add_loss_ledger_entry(
@@ -133,7 +140,11 @@ class ReduceOperator:
                         recoverable=True,
                         locator=unit_locator(u),
                         aggregate_parent=kept_id,
-                        extra={"duplicate_of": kept_id, "text": u.get("text")},
+                        extra={
+                            "duplicate_of": kept_id,
+                            "text": u.get("text"),
+                            "parent_unit_id": u.get("parent_unit_id") or u.get("unit_id"),
+                        },
                     )
                     r_ids.append(rid)
                     add_loss_ledger_entry(
@@ -200,6 +211,7 @@ class ReduceOperator:
                     "source_uri": repr_u.get("source_uri"),
                     "version": repr_u.get("version"),
                     "media_type": repr_u.get("media_type"),
+                    "parent_unit_id": members[0],
                     "aggregate_members": sorted(members),
                     "aggregate_count": count,
                 }
@@ -212,7 +224,11 @@ class ReduceOperator:
                         recoverable=True,
                         locator={},
                         aggregate_parent=agg_id,
-                        extra={"bucket": bkey, "count": count},
+                        extra={
+                            "bucket": bkey,
+                            "count": count,
+                            "parent_unit_id": repr_u.get("parent_unit_id") or mid,
+                        },
                     )
                     r_ids.append(rid)
                     omit_map[mid] = agg_id

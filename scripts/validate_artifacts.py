@@ -89,9 +89,7 @@ def _check_ledger_sums(manifest: dict) -> list[str]:
     t_prof = int(totals.get("T_profiler", buckets.get("T_profiler", 0)) or 0)
     t_rout = int(totals.get("T_router", buckets.get("T_router", 0)) or 0)
     if "sum_calls_in_out" in totals or "sum_calls_in_out" in buckets:
-        sum_calls = int(
-            totals.get("sum_calls_in_out", buckets.get("sum_calls_in_out", 0)) or 0
-        )
+        sum_calls = int(totals.get("sum_calls_in_out", buckets.get("sum_calls_in_out", 0)) or 0)
         expected = t_prof + t_rout + sum_calls
     else:
         expected = (
@@ -151,34 +149,58 @@ def main(argv: list[str] | None = None) -> int:
 
     schema = _load_schema(args.root)
     runs_dir = args.runs or (args.root / "artifacts" / "runs")
-    if not runs_dir.is_dir():
-        print(f"No runs dir: {runs_dir}", file=sys.stderr)
-        return 1
-
-    manifests = sorted(runs_dir.glob("*/manifest.json"))
-    if not manifests:
-        print(f"No manifests under {runs_dir}", file=sys.stderr)
-        return 1
-
     failed = 0
-    for path in manifests:
-        data = json.loads(path.read_text(encoding="utf-8"))
-        errs = []
-        errs.extend(_validate_struct(data, schema))
-        errs.extend(_check_ledger_sums(data))
+    n_checked = 0
+
+    if runs_dir.is_dir():
+        manifests = sorted(runs_dir.glob("*/manifest.json"))
+        n_checked += len(manifests)
+        for path in manifests:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            errs = []
+            errs.extend(_validate_struct(data, schema))
+            errs.extend(_check_ledger_sums(data))
+            errs.extend(_scan_secrets(data))
+            if errs:
+                failed += 1
+                print(f"FAIL {path}:")
+                for e in errs:
+                    print(f"  - {e}")
+            else:
+                print(f"OK   {path} status={data.get('status')} T_total={data.get('T_total')}")
+    else:
+        print(f"No runs dir: {runs_dir}")
+
+    phase1 = args.root / "artifacts" / "phase1" / "arm_differentiation.json"
+    if phase1.is_file():
+        n_checked += 1
+        data = json.loads(phase1.read_text(encoding="utf-8"))
+        from bite_eval.phase1_matrix import validate_matrix_doc
+
+        errs = list(validate_matrix_doc(data))
         errs.extend(_scan_secrets(data))
-        # Failed runs must be retained — presence is success for that criterion
-        if data.get("status") in {"failed", "error"} and "status" not in str(errs):
-            pass
+        schema_path = args.root / "spec" / "phase1-offline-matrix.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase1 jsonschema: {exc}")
         if errs:
             failed += 1
-            print(f"FAIL {path}:")
+            print(f"FAIL {phase1}:")
             for e in errs:
                 print(f"  - {e}")
         else:
-            print(f"OK   {path} status={data.get('status')} T_total={data.get('T_total')}")
+            print(f"OK   {phase1} rows={data.get('n_rows')}")
 
-    print(f"Validated {len(manifests)} manifests; failures={failed}")
+    if n_checked == 0:
+        print("No artifacts to validate", file=sys.stderr)
+        return 1
+    print(f"Validated {n_checked} artifacts; failures={failed}")
     return 1 if failed else 0
 
 

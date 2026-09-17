@@ -13,6 +13,7 @@ from .base import (
     append_tau_step,
     deep_copy_packet,
     ensure_units,
+    rebuild_visible_from_units,
     sort_units,
     stable_id,
 )
@@ -170,6 +171,7 @@ class IntegrateOperator:
                     "source_uri": first.get("source_uri"),
                     "version": first.get("version"),
                     "media_type": first.get("media_type"),
+                    "parent_unit_id": members[0],
                     "joined_from": members,
                     "join_key": join_key,
                 }
@@ -188,18 +190,9 @@ class IntegrateOperator:
         used_evidence_ids = sorted(set(used))
 
         out["units"] = integrated_units
-        # Visible items keep provenance pointers to input unit_ids
-        visible: list[dict[str, Any]] = []
-        for u in integrated_units:
-            src_ids = list(u.get("joined_from") or [u.get("unit_id")])
-            visible.append(
-                {
-                    "text": str(u.get("text", "")),
-                    "role": None,
-                    "unit_ids": [str(x) for x in src_ids],
-                }
-            )
-        out["visible_evidence"] = visible
+        # Same ID convention as CUT/UNTANGLE/REDUCE: visible unit_ids == units[].unit_id.
+        # Source ids remain reachable via parent_unit_id / joined_from.
+        out["visible_evidence"] = rebuild_visible_from_units(integrated_units)
         out["integrate"] = {
             "integrate_mode": "deterministic_join",
             "join_plan": join_plan,

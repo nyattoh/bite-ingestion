@@ -224,6 +224,108 @@ def provenance_completeness(units: Sequence[Mapping[str, Any]]) -> float:
     return complete / len(units)
 
 
+def lineage_parent_ids(unit: Mapping[str, Any]) -> list[str]:
+    """Immediate ancestors of a derived unit (CUT / REDUCE / INTEGRATE)."""
+    parents: list[str] = []
+    for key in ("parent_unit_id", "derived_from"):
+        v = unit.get(key)
+        if v:
+            parents.append(str(v))
+    for key in ("joined_from", "aggregate_members"):
+        v = unit.get(key)
+        if isinstance(v, Sequence) and not isinstance(v, (str, bytes)):
+            parents.extend(str(x) for x in v if x)
+    seen: set[str] = set()
+    out: list[str] = []
+    for p in parents:
+        if p not in seen:
+            seen.add(p)
+            out.append(p)
+    return out
+
+
+def _walk_roots(uid: str, by_id: Mapping[str, Mapping[str, Any]]) -> set[str]:
+    """Walk parent/join links until a unit with no parent (or a missing id)."""
+    seen: set[str] = set()
+    stack = [uid]
+    roots: set[str] = set()
+    while stack:
+        cur = stack.pop()
+        if cur in seen:
+            continue
+        seen.add(cur)
+        unit = by_id.get(cur)
+        if unit is None:
+            roots.add(cur)
+            continue
+        parents = lineage_parent_ids(unit)
+        if not parents:
+            roots.add(cur)
+            continue
+        stack.extend(parents)
+    return roots
+
+
+def root_ids_of(
+    unit_ids: Sequence[str],
+    units: Sequence[Mapping[str, Any]],
+) -> set[str]:
+    """Resolve visible/derived ids to source (gold-comparable) unit ids."""
+    by_id = {str(u.get("unit_id")): u for u in units if isinstance(u, Mapping) and u.get("unit_id")}
+    roots: set[str] = set()
+    for uid in unit_ids:
+        if uid:
+            roots |= _walk_roots(str(uid), by_id)
+    return roots
+
+
+def conservation_untraced(
+    input_ids: Sequence[str],
+    *,
+    visible_units: Sequence[Mapping[str, Any]],
+    r_entries: Sequence[Mapping[str, Any]],
+    loss_ledger: Sequence[Mapping[str, Any]],
+) -> list[str]:
+    """Input ids not covered by visible lineage, R, or declared irreversible loss.
+
+    Count equality can fail when CUT splits 1→N or INTEGRATE joins N→1.
+    Lineage coverage is the conservation proof in those cases.
+    """
+    lineage: list[Mapping[str, Any]] = [u for u in visible_units if isinstance(u, Mapping)]
+    for e in r_entries:
+        if not isinstance(e, Mapping):
+            continue
+        raw_extra = e.get("extra")
+        extra: Mapping[str, Any] = raw_extra if isinstance(raw_extra, Mapping) else {}
+        uid = e.get("unit_id")
+        if uid:
+            lineage.append(
+                {
+                    "unit_id": str(uid),
+                    "parent_unit_id": extra.get("parent_unit_id") or e.get("parent_unit_id"),
+                    "derived_from": extra.get("derived_from"),
+                    "joined_from": extra.get("joined_from"),
+                    "aggregate_members": extra.get("aggregate_members"),
+                }
+            )
+    by_id = {
+        str(u.get("unit_id")): u for u in lineage if isinstance(u, Mapping) and u.get("unit_id")
+    }
+    accounted: set[str] = set()
+    for u in lineage:
+        uid = str(u.get("unit_id", ""))
+        if uid:
+            accounted.add(uid)
+            accounted |= _walk_roots(uid, by_id)
+    for row in loss_ledger:
+        if not isinstance(row, Mapping):
+            continue
+        for uid in row.get("unit_ids") or []:
+            accounted.add(str(uid))
+            accounted |= _walk_roots(str(uid), by_id)
+    return [str(i) for i in input_ids if str(i) not in accounted]
+
+
 def visible_evidence_from_units(
     units: Sequence[Mapping[str, Any]],
 ) -> list[dict[str, Any]]:
@@ -318,10 +420,13 @@ __all__ = [
     "PacketContractError",
     "assert_evidence_ids_resolve",
     "assert_units_in_payload",
+    "conservation_untraced",
+    "lineage_parent_ids",
     "make_span",
     "make_unit",
     "provenance_completeness",
     "resolve_packet_units",
+    "root_ids_of",
     "split_units_by_char_limit",
     "synth_unit_id",
     "units_from_document",
