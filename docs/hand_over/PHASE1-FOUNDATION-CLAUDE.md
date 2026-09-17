@@ -172,20 +172,30 @@ T_total =
 加えて `fact_id`（`syn-e1` 等）も surface から除去した。評価専用の識別子であり
 shortcut feature になりうるため。unit は span で紐づく。
 
-### 仕様判断（重要・要確認）
+### answer leakage test の意味（2026-09-17 合意済み）
 
-指示の必須 test は `case.answer not in rendered_surface` だったが、**これを文字どおり
-適用すると答えが本文から消え、extractive QA として解答不能になる**
-（`answer="E42"` は required evidence `Fact("syn-e2","error_code","E42")` の値そのもの）。
+`case.answer not in rendered_surface` は**文字どおりの禁止ではない**。禁止すべきは
+gold answer が「それが答えである」ことを示すメタ情報・ラベルとして surface に出る
+ことであって、値そのものの存在ではない。`answer="E42"` は required evidence
+`Fact("syn-e2","error_code","E42")` の値そのものなので、文字どおり除去すると
+extractive QA として解答不能になる。
 
-そこで次の解釈で実装した:
+したがって test は次の 2 点を検査する:
 
-> **answer は required evidence unit の span 内にのみ出現してよい。それ以外の位置に
-> 出現したら漏洩。answer を「答え」としてラベル付けするフィールドは一切禁止。**
+> 1. **answer が許可された evidence span の外側に出現しないこと**
+> 2. **answer を正解としてラベル付けする構造が存在しないこと**
+>    （`answer=` / `gold_answer=` / `Canonical answer label:` / `# answer:` /
+>    正解を特別扱いする JSON field / answer を直接指示・強調する marker）
 
-`assert_no_surface_leakage()` が生成時に強制し、`question` / evidence ID の混入も
-同時に拒否する。test は全 renderer × seed 0–5 で実行。
-**この解釈が意図と違う場合は差し戻してほしい。**
+| 出現の仕方 | 判定 |
+|---|---|
+| required evidence の自然な本文・値として存在 | OK |
+| 上記のラベル・専用 field・強調 marker として存在 | NG |
+
+`assert_no_surface_leakage()` が生成時にこれを強制する。あわせて
+**required evidence ID は surface に出さず metadata / provenance 側にのみ保持**し、
+**question も surface 本文へ重複させず wrapper から 1 回だけ渡す**。
+test は全 renderer × seed 0–5 で実行している。
 
 ### counterfactual pair
 
@@ -326,13 +336,16 @@ scripts/checksums.py                  実行可（下記の注意あり）
    修正に限定したため未着手。
 2. **token-length matching 未実装。** tokenizer ベースの matcher が無いため
    `length_matched=False` を明示する対処に留めた。
-3. **`frozen-v0.1/` を残置。** gold を漏洩しているが、削除は破壊的操作なので
-   実施していない。使用禁止であることを test と本書で明示。判断は人間に委ねる。
-4. **`adversarial_omission` の意味が変わった。** 旧実装は `visible_evidence=[eid]` で
-   `recall_vis=0.5` を宣言していたが、`HIDDEN:` 本文は document に平文で入っており
-   raw_full では実際に可視だった。新契約では raw_full の `recall_vis=1.0` が正しい値。
-   H4（R 経由の回復）を検証したい場合は、**truncation か operator で実際に落とす arm**
-   が必要。family 定義自体は変えていない。
+3. **`frozen-v0.1/` を残置**（2026-09-17 合意: 今は削除しない）。gold を漏洩しているが、
+   legacy / superseded として現行 generator から隔離されていれば十分。test で
+   「現行 generator と一致しないこと」を固定済み。削除・archive は Grok 側の作業か
+   公開整理の段階で判断する。
+4. **`adversarial_omission` の意味変更**（2026-09-17 合意済み）。旧実装は
+   `visible_evidence=[eid]` で `recall_vis=0.5` を宣言していたが、`HIDDEN:` 本文は
+   document に平文で入っており raw_full では実際に可視だった。raw_full で本文に
+   存在するものを "hidden" と見なすのはやめ、新契約では `recall_vis=1.0` が正しい値。
+   H4（R 経由の回復）は、**Grok 側で実際に evidence を R へ落とす変換経路を接続した後**
+   に検証する。family 定義自体は変えていない。
 5. **`constraints_ok_rate` の除外件数が summary に出ない**（review P1-2）。
    `measured_rows` は失敗行を除外するが `n_measured` / `n_excluded` が無い。
    metric 集計の範囲なので今回の担当外。
@@ -394,9 +407,11 @@ FOUNDATION_READY_FOR_WIRING
 | counterfactual identity が成立 | ✅ | `assert_counterfactual_identity` + `texture_swap` 修正 |
 | `T_total` 契約が一意 | ✅ | `T_target_call` / `T_total` 分離、bucket 合計検証、legacy checkpoint の写像 |
 
-ただし **§6「仕様判断」の answer 漏洩の解釈**と **§10 の未解決 7 件**は判断待ち。
-特に (1) case pool 2 件と (4) `adversarial_omission` の意味変更は、Phase 1 の
-実験設計に影響する。
+§6 の answer leakage 解釈、§10 の (3) `frozen-v0.1` 残置、(4)
+`adversarial_omission` の意味変更は **2026-09-17 に合意済み**。
+残る判断待ちは §10 の (1) case pool 2 件、(2) token-length matching 未実装、
+(5)–(7) の metric 集計・operator 配線時の課題。特に (1) は Phase 1 の N 確保に
+直接効く。
 
 **この判定は「配線してよい」であって「Phase 1 の比較が成立する」ではない。**
 P0-1（operator 未実行）と P0-2（profiler 未接続）が残っている限り、4 arm は
