@@ -10,6 +10,7 @@ from collections.abc import Mapping, MutableMapping, Sequence
 from typing import Any
 
 from bite_ingestion.interfaces.operator import OperatorId
+from bite_ingestion.packet_contract import PacketContractError
 
 OP_MODE = "deterministic"
 
@@ -66,7 +67,12 @@ def ensure_extended_fields(packet: MutableMapping[str, Any]) -> MutableMapping[s
     if "visible_evidence" not in packet or packet["visible_evidence"] is None:
         packet["visible_evidence"] = []
     if "provenance" not in packet or not isinstance(packet["provenance"], Mapping):
-        packet["provenance"] = {"unit_id": "unknown", "source_uri": None, "byte_or_token_span": None, "renderer_id": None}
+        packet["provenance"] = {
+            "unit_id": "unknown",
+            "source_uri": None,
+            "byte_or_token_span": None,
+            "renderer_id": None,
+        }
     if "op_last_touch" not in packet:
         packet["op_last_touch"] = "NONE"
     if "R" not in packet or not isinstance(packet["R"], Mapping):
@@ -96,15 +102,28 @@ def synthesize_units_from_evidence(packet: MutableMapping[str, Any]) -> list[dic
 
     Virtual concat joins evidence texts with a single newline between items so spans
     remain contiguous and reconstructible. Documented for CUT span round-trips.
+
+    Fail-closed: non-Mapping evidence entries (e.g. bare string ids) are a
+    packet-contract violation, not something to skip silently. Skipping them
+    used to turn a populated packet into an empty unit list, which the
+    operators then reported as a clean no-loss run.
     """
     evidence = packet.get("visible_evidence") or []
+    bad = [
+        (i, type(item).__name__) for i, item in enumerate(evidence) if not isinstance(item, Mapping)
+    ]
+    if bad:
+        raise PacketContractError(
+            "visible_evidence entries must be Mappings carrying 'text'; "
+            f"non-Mapping entries at {bad}. A list of bare evidence ids cannot "
+            "be turned into units — anchor them to document spans first "
+            "(see bite_ingestion.packet_contract)."
+        )
     units: list[dict[str, Any]] = []
     cursor = 0
     prov = packet.get("provenance") if isinstance(packet.get("provenance"), Mapping) else {}
     source_uri = prov.get("source_uri") if isinstance(prov, Mapping) else None
     for i, item in enumerate(evidence):
-        if not isinstance(item, Mapping):
-            continue
         text = item.get("text")
         if text is None:
             text = ""
@@ -130,12 +149,25 @@ def synthesize_units_from_evidence(packet: MutableMapping[str, Any]) -> list[dic
 
 
 def ensure_units(packet: MutableMapping[str, Any]) -> list[dict[str, Any]]:
-    """Return units list; synthesize from evidence when missing/empty."""
+    """Return units list; synthesize from evidence when missing/empty.
+
+    Fail-closed: if the packet declares evidence but synthesis yields zero
+    units, raise instead of returning ``[]``. An empty unit list makes every
+    downstream operator report "nothing to omit", which silently converts
+    total evidence loss into a clean run.
+    """
     ensure_extended_fields(packet)
     units = packet.get("units")
     if isinstance(units, list) and len(units) > 0:
         return [dict(u) if isinstance(u, Mapping) else u for u in units]
+    evidence = packet.get("visible_evidence") or []
     synth = synthesize_units_from_evidence(packet)
+    if evidence and not synth:
+        raise PacketContractError(
+            f"packet {packet.get('packet_id', '<no id>')!r} declares "
+            f"{len(evidence)} visible_evidence entries but produced 0 units; "
+            "refusing to continue with an empty unit graph"
+        )
     packet["units"] = synth
     return synth
 
@@ -215,7 +247,11 @@ def add_recovery_handle(
     sorted_r = sorted(r_ids)
     handle_id = stable_id("h_", op_s, *sorted_r)
     handle = {"handle_id": handle_id, "r_ids": sorted_r, "op": op_s}
-    handles = [h for h in (packet.get("recovery_handles") or []) if isinstance(h, Mapping) and h.get("handle_id") != handle_id]
+    handles = [
+        h
+        for h in (packet.get("recovery_handles") or [])
+        if isinstance(h, Mapping) and h.get("handle_id") != handle_id
+    ]
     handles.append(handle)
     handles.sort(key=lambda h: str(h.get("handle_id", "")))
     packet["recovery_handles"] = handles
@@ -243,7 +279,11 @@ def add_loss_ledger_entry(
         "unit_ids": sorted_uids,
         "note": note,
     }
-    ledger = [x for x in (packet.get("irreversible_loss_ledger") or []) if isinstance(x, Mapping) and x.get("loss_id") != loss_id]
+    ledger = [
+        x
+        for x in (packet.get("irreversible_loss_ledger") or [])
+        if isinstance(x, Mapping) and x.get("loss_id") != loss_id
+    ]
     ledger.append(row)
     ledger.sort(key=lambda x: str(x.get("loss_id", "")))
     packet["irreversible_loss_ledger"] = ledger
@@ -423,7 +463,7 @@ def _split_json_array_records(text: str) -> list[tuple[int, int, str]]:
             end2 = start + len(seg)
             records.append((start, end2, seg))
             start = None
-        elif depth == 0 and ch not in ",]" and start is not None and ch in "0123456789n\"t-[":
+        elif depth == 0 and ch not in ",]" and start is not None and ch in '0123456789n"t-[':
             pass
         i += 1
     if not records and data:
@@ -438,7 +478,9 @@ def _split_json_array_records(text: str) -> list[tuple[int, int, str]]:
     return records
 
 
-def absolute_span(parent_span: Mapping[str, Any] | None, local_start: int, local_end: int) -> dict[str, Any]:
+def absolute_span(
+    parent_span: Mapping[str, Any] | None, local_start: int, local_end: int
+) -> dict[str, Any]:
     base = int(parent_span.get("start", 0)) if isinstance(parent_span, Mapping) else 0
     return {"start": base + local_start, "end": base + local_end, "unit": "char"}
 

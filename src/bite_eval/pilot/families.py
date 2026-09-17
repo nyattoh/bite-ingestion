@@ -2,11 +2,35 @@
 
 Generates N_pilot instances per family procedurally. No network, no paid API,
 no Gemini ingest. Content is authored synthetic only.
+
+Packet contract (Phase 1 foundation)
+------------------------------------
+Every packet carries a **unit graph** anchored to ``document`` character
+spans. ``gold_evidence_ids`` name real units, so evidence recall can be
+derived from the payload instead of being declared up front.
+
+- ``units``: contract-compliant source units (see
+  :mod:`bite_ingestion.packet_contract`)
+- ``gold_evidence_ids``: unit ids required to answer
+- ``visible_evidence``: operator-facing rendering of the same units
+- ``recoverable_evidence_ids``: **empty by construction** — recoverability is
+  earned by an operator putting a unit into ``R``, never pre-declared
+
+The document strings are byte-identical to the previous revision; only the
+evidence representation changed.
 """
 
 from __future__ import annotations
 
-from collections.abc import Iterator
+from collections.abc import Iterator, Sequence
+from dataclasses import dataclass
+from typing import Any
+
+from bite_ingestion.packet_contract import (
+    make_unit,
+    provenance_completeness,
+    visible_evidence_from_units,
+)
 
 # Locked family ids from bite-04 / d2_lock configs (8 synthetic families).
 SYNTHETIC_FAMILIES: tuple[str, ...] = (
@@ -20,34 +44,94 @@ SYNTHETIC_FAMILIES: tuple[str, ...] = (
     "texture_swap",
 )
 
+FAMILIES_RENDERER_ID = "pilot_families@v0.2"
+
+
+@dataclass(frozen=True)
+class _Seg:
+    """One document segment that becomes a unit."""
+
+    text: str
+    unit_id: str | None = None
+    gold: bool = False
+    role: str | None = None
+
+
+def _build_document(
+    pieces: Sequence[_Seg | str],
+    *,
+    source_uri: str,
+    filler_prefix: str,
+) -> tuple[str, list[dict[str, Any]], list[str]]:
+    """Concatenate pieces, tracking exact char spans for every unit.
+
+    Plain ``str`` pieces are separators/joiners and belong to no unit.
+    """
+    parts: list[str] = []
+    units: list[dict[str, Any]] = []
+    gold_ids: list[str] = []
+    pos = 0
+    filler_n = 0
+    for piece in pieces:
+        if isinstance(piece, str):
+            parts.append(piece)
+            pos += len(piece)
+            continue
+        start = pos
+        end = start + len(piece.text)
+        parts.append(piece.text)
+        pos = end
+        uid = piece.unit_id
+        if uid is None:
+            uid = f"{filler_prefix}-f{filler_n}"
+            filler_n += 1
+        units.append(
+            make_unit(
+                unit_id=uid,
+                text=piece.text,
+                start=start,
+                end=end,
+                source_uri=source_uri,
+                renderer_id=FAMILIES_RENDERER_ID,
+                role=piece.role,
+            )
+        )
+        if piece.gold:
+            gold_ids.append(uid)
+    return "".join(parts), units, gold_ids
+
 
 def _base(
     family: str,
     idx: int,
     *,
-    document: str,
+    pieces: Sequence[_Seg | str],
     query: str,
     gold_answer: str,
-    gold_evidence_ids: list[str],
-    visible_evidence: list[str],
-    recoverable_evidence_ids: list[str] | None = None,
     domain: str = "synthetic",
-    provenance_complete_rate: float = 1.0,
     extra: dict | None = None,
 ) -> dict[str, object]:
+    instance_id = f"{family}-{idx:03d}"
+    source_uri = f"synthetic://{instance_id}"
+    document, units, gold_ids = _build_document(
+        pieces, source_uri=source_uri, filler_prefix=instance_id
+    )
     packet: dict[str, object] = {
-        "instance_id": f"{family}-{idx:03d}",
+        "instance_id": instance_id,
         "family": family,
         "domain": domain,
+        "source_uri": source_uri,
         "document": document,
         "query": query,
         "gold_answer": gold_answer,
-        "gold_evidence_ids": gold_evidence_ids,
-        "visible_evidence": visible_evidence,
-        "recoverable_evidence_ids": recoverable_evidence_ids
-        if recoverable_evidence_ids is not None
-        else list(gold_evidence_ids),
-        "provenance_complete_rate": provenance_complete_rate,
+        "units": units,
+        "gold_evidence_ids": gold_ids,
+        # Operator-facing rendering of the same unit graph.
+        "visible_evidence": visible_evidence_from_units(units),
+        # Recoverability is earned via R, never declared on the packet.
+        "recoverable_evidence_ids": [],
+        # Measured from the unit graph, not self-reported.
+        "provenance_complete_rate": provenance_completeness(units),
         "synthetic": True,
         "paid_api": False,
     }
@@ -70,7 +154,7 @@ def generate_family_instances(
     return list(_iter_family(family, n))
 
 
-def _iter_family(family: str, n: int) -> Iterator[dict[str, object]]:
+def _iter_family(family: str, n: int) -> Iterator[dict[str, object]]:  # noqa: C901
     for i in range(n):
         code = f"K{i:02d}"
         val = 100 + i
@@ -78,61 +162,67 @@ def _iter_family(family: str, n: int) -> Iterator[dict[str, object]]:
         eid2 = f"{family}-e{i}b"
 
         if family == "clean_local":
-            doc = (
-                f"Section A. The codeword {code} equals {val}. "
-                f"Section B filler about weather and unrelated notes."
-            )
             yield _base(
                 family,
                 i,
-                document=doc,
+                pieces=[
+                    _Seg(f"Section A. The codeword {code} equals {val}.", eid, gold=True),
+                    " ",
+                    _Seg("Section B filler about weather and unrelated notes."),
+                ],
                 query=f"What is {code}?",
                 gold_answer=str(val),
-                gold_evidence_ids=[eid],
-                visible_evidence=[eid],
                 domain="prose",
             )
 
         elif family == "repeated_records":
-            rows = "\n".join(
-                f"rec={j},key=item,value=widget{j % 3}" for j in range(8)
-            )
-            rows += f"\nrec=rare,key=codeword,value={code}:{val}"
+            pieces: list[_Seg | str] = [_Seg("schema=kv"), "\n"]
+            for j in range(8):
+                pieces.append(_Seg(f"rec={j},key=item,value=widget{j % 3}"))
+                pieces.append("\n")
+            pieces.append(_Seg(f"rec=rare,key=codeword,value={code}:{val}", eid, gold=True))
+            pieces.append("\n")
             yield _base(
                 family,
                 i,
-                document=f"schema=kv\n{rows}\n",
+                pieces=pieces,
                 query="What is the rare codeword value?",
                 gold_answer=f"{code}:{val}",
-                gold_evidence_ids=[eid],
-                visible_evidence=[eid],
                 domain="tabular_nested_machine_data",
             )
 
         elif family == "sparse_anomaly":
-            noise = "\n".join(f"OK heartbeat={j}" for j in range(12))
-            doc = f"{noise}\nALERT anomaly_id={code} severity={val}\n{noise}"
+            pieces = []
+            for j in range(12):
+                pieces.append(_Seg(f"OK heartbeat={j}"))
+                pieces.append("\n")
+            pieces.append(_Seg(f"ALERT anomaly_id={code} severity={val}", eid, gold=True))
+            pieces.append("\n")
+            for j in range(12):
+                pieces.append(_Seg(f"OK heartbeat={j}"))
+                if j < 11:
+                    pieces.append("\n")
             yield _base(
                 family,
                 i,
-                document=doc,
+                pieces=pieces,
                 query="What is the anomaly_id?",
                 gold_answer=code,
-                gold_evidence_ids=[eid],
-                visible_evidence=[eid],
                 domain="observability_logs",
             )
 
         elif family == "dependency_chain":
-            doc = (
-                f"unit_u0 depends_on=u1\n"
-                f"unit_u1 depends_on=u2\n"
-                f"unit_u2 fact={code}={val}\n"
-            )
             yield _base(
                 family,
                 i,
-                document=doc,
+                pieces=[
+                    _Seg("unit_u0 depends_on=u1"),
+                    "\n",
+                    _Seg("unit_u1 depends_on=u2", eid, gold=True),
+                    "\n",
+                    _Seg(f"unit_u2 fact={code}={val}", eid2, gold=True),
+                    "\n",
+                ],
                 # Gold is the bare value. Ask for digits only so the model does
                 # not echo "Kxx=val". Do NOT embed gold in the query (leak).
                 query=(
@@ -142,81 +232,97 @@ def _iter_family(family: str, n: int) -> Iterator[dict[str, object]]:
                     f"not the key=value form."
                 ),
                 gold_answer=str(val),
-                gold_evidence_ids=[eid, eid2],
-                visible_evidence=[eid, eid2],
                 domain="mixed_agent_tool_outputs",
             )
 
         elif family == "malformed_mixed":
-            doc = (
-                "{broken_json: true, trailing\n"
-                f"NOTE: salvage codeword {code} is {val}.\n"
-                "more}}garbage"
-            )
             yield _base(
                 family,
                 i,
-                document=doc,
+                pieces=[
+                    _Seg("{broken_json: true, trailing"),
+                    "\n",
+                    _Seg(f"NOTE: salvage codeword {code} is {val}.", eid, gold=True),
+                    "\n",
+                    _Seg("more}}garbage"),
+                ],
                 query=f"Salvage value of {code}.",
                 gold_answer=str(val),
-                gold_evidence_ids=[eid],
-                visible_evidence=[eid],
                 domain="mixed_agent_tool_outputs",
             )
 
         elif family == "dense_cross_reference":
-            doc = (
-                f"[1] see [2]. [2] defines {code}. [3] {code}={val}. "
-                f"[4] cites [3]."
-            )
             yield _base(
                 family,
                 i,
-                document=doc,
+                pieces=[
+                    _Seg("[1] see [2]."),
+                    " ",
+                    _Seg(f"[2] defines {code}.", eid, gold=True),
+                    " ",
+                    _Seg(f"[3] {code}={val}.", eid2, gold=True),
+                    " ",
+                    _Seg("[4] cites [3]."),
+                ],
                 query=f"Value of {code}?",
                 gold_answer=str(val),
-                gold_evidence_ids=[eid, eid2],
-                visible_evidence=[eid, eid2],
                 domain="prose",
             )
 
         elif family == "adversarial_omission":
-            # Half of gold Ev* kept visible (meets rho_visible=0.50); half omitted
-            # but recoverable via R (tests H4 / Recover within J).
+            # Both halves are gold. Under raw_full both are genuinely in the
+            # payload, so recall_vis=1.0 is the honest value; an arm that drops
+            # the HIDDEN span must move that unit id into R to keep recall_rec.
             filler = " ".join(f"noise{j}" for j in range(20))
-            doc = (
-                f"VISIBLE: hint_token={code}\n"
-                f"{filler}\nHIDDEN: {code}={val}\n{filler}"
-            )
             yield _base(
                 family,
                 i,
-                document=doc,
+                pieces=[
+                    _Seg(f"VISIBLE: hint_token={code}", eid, gold=True),
+                    "\n",
+                    _Seg(filler),
+                    "\n",
+                    _Seg(f"HIDDEN: {code}={val}", eid2, gold=True),
+                    "\n",
+                    _Seg(filler),
+                ],
                 query=f"Recover {code}.",
                 gold_answer=str(val),
-                gold_evidence_ids=[eid, eid2],
-                visible_evidence=[eid],  # 1/2 visible → recall_vis=0.50
-                recoverable_evidence_ids=[eid, eid2],
                 domain="prose",
                 extra={"omission": True},
             )
 
         elif family == "texture_swap":
-            # Same facts; alternate surface every other index.
+            # Counterfactual pair: index 2p and 2p+1 share one canonical fact,
+            # one question, one answer and one required-evidence identity.
+            # Only the surface texture differs.
+            pair = i // 2
+            p_code = f"K{pair:02d}"
+            p_val = 100 + pair
+            pair_eid = f"{family}-p{pair}-e0"
             if i % 2 == 0:
-                doc = f"JSON-ish: {{\"{code}\": {val}}}"
+                surface = f'JSON-ish: {{"{p_code}": {p_val}}}'
+                texture = "json"
             else:
-                doc = f"Prose texture: the symbol {code} maps to {val}."
+                surface = f"Prose texture: the symbol {p_code} maps to {p_val}."
+                texture = "prose"
             yield _base(
                 family,
                 i,
-                document=doc,
-                query=f"Map {code}.",
-                gold_answer=str(val),
-                gold_evidence_ids=[eid],
-                visible_evidence=[eid],
+                pieces=[_Seg(surface, pair_eid, gold=True)],
+                query=f"Map {p_code}.",
+                gold_answer=str(p_val),
                 domain="prose",
-                extra={"texture": "json" if i % 2 == 0 else "prose", "facts_id": f"facts-{i // 2}"},
+                extra={
+                    "texture": texture,
+                    "facts_id": f"facts-{pair}",
+                    "canonical_facts": {"code": p_code, "value": p_val},
+                    # Char lengths differ between textures; this pair is NOT
+                    # token-length matched and must not enter a matched-pair
+                    # analysis as if it were.
+                    "length_matched": False,
+                    "length_match_basis": "not_matched",
+                },
             )
 
         else:  # pragma: no cover — guarded by SYNTHETIC_FAMILIES
