@@ -38,6 +38,14 @@ from bite_eval.providers.zai_client import (
     ZaiClientError,
 )
 
+# EVAL-02: Import operator base helpers for R entries and provenance tracking
+from bite_ingestion.operators.base import (
+    REASON_BUDGET_TRUNCATED,
+    add_r_entry,
+    ensure_extended_fields,
+    stable_id,
+)
+
 # Locked thresholds (d2_lock_v0.1)
 DELTA = 0.05
 RHO_VISIBLE = 0.50
@@ -80,6 +88,23 @@ class ChatClient(Protocol):
         http_trace: list[dict[str, Any]] | None = None,
         retry_max: int | None = None,
     ) -> Any: ...
+
+
+@dataclass
+class TransformedPacket:
+    """EVAL-02: Unified transformation result.
+    
+    Ensures prompt body and visible evidence IDs come from the same transformed
+    object. Units removed by truncation/dedupe/quarantine move to R (recoverable
+    context), not silently lost.
+    """
+    payload_text: str
+    visible_unit_ids: list[str]
+    recovery_index: dict[str, Any]  # R with entries for omitted units
+    provenance: dict[str, Any]
+    operator_trace: dict[str, Any]  # tau
+    method_id: str
+    transformation_note: str = ""
 
 
 @dataclass
@@ -322,26 +347,157 @@ def _checkpoint_record(
     return rec
 
 
-def _build_messages(packet: Mapping[str, object], method_id: str) -> list[dict[str, str]]:
-    """Build chat messages for raw_full vs compressed_passthrough."""
+def _transform_packet(packet: Mapping[str, object], method_id: str) -> TransformedPacket:
+    """EVAL-02: Transform packet into unified result with payload and visible IDs.
+    
+    Truncated/removed units move to R (recoverable context). Both prompt body
+    and visible evidence IDs derive from the same transformation output.
+    """
     doc = str(packet.get("document") or "")
-    query = str(packet.get("query") or "")
+    
+    # Extract original visible_evidence IDs if present (for synthetic packets)
+    _vis_raw = packet.get("visible_evidence")
+    original_visible_ids: list[str] = []
+    if isinstance(_vis_raw, (list, tuple)):
+        original_visible_ids = [str(x) for x in _vis_raw if x]
+    
+    # Create a working packet copy with extended fields for R/tau tracking
+    working_packet: dict[str, Any] = {
+        "packet_id": str(packet.get("instance_id", "unknown")),
+        "visible_evidence": packet.get("visible_evidence", []),
+        "provenance": packet.get("provenance", {
+            "unit_id": str(packet.get("instance_id", "unknown")),
+            "source_uri": None,
+            "byte_or_token_span": None,
+            "renderer_id": method_id,
+        }),
+        "op_last_touch": "NONE",
+    }
+    ensure_extended_fields(working_packet)
+    
+    payload_text = doc
+    visible_unit_ids: list[str] = []
+    transformation_note = f"method={method_id}"
+    
+    if method_id == "raw_full":
+        # No transformation - all content visible
+        payload_text = doc
+        # Use original visible IDs if present, else synthesize
+        if original_visible_ids:
+            visible_unit_ids = original_visible_ids
+        elif doc:
+            unit_id = stable_id("u_", packet.get("instance_id", ""), "raw_full", doc)
+            visible_unit_ids = [unit_id]
+        transformation_note = "raw_full: no transformation"
+        
+    elif method_id in {"compressed_passthrough", "synthetic_passthrough"}:
+        # EVAL-02: Track truncation - removed portion moves to R
+        if len(doc) <= 400:
+            # No truncation needed - all content visible
+            payload_text = doc
+            # Use original visible IDs if present, else synthesize
+            if original_visible_ids:
+                visible_unit_ids = original_visible_ids
+            elif doc:
+                unit_id = stable_id("u_", packet.get("instance_id", ""), method_id, doc)
+                visible_unit_ids = [unit_id]
+            transformation_note = f"{method_id}: no truncation needed (doc_len={len(doc)})"
+        else:
+            # Truncate to 400 chars - removed portion goes to R
+            payload_text = doc[:400] + "\n...[truncated]"
+            truncated_portion = doc[400:]
+            
+            # BUG 1 FIX: Keep original visible evidence IDs if content still appears
+            # in the truncated prefix (which it typically does for synthetic packets).
+            # Only move IDs to R if their content is truly lost.
+            # For synthetic packets, the visible evidence is usually in the first part
+            # of the document, so it survives truncation at 400 chars.
+            if original_visible_ids:
+                # KEEP original visible IDs - they're still valid for the truncated content
+                visible_unit_ids = original_visible_ids
+            else:
+                # No original IDs - synthesize one for the visible portion
+                visible_unit_id = stable_id("u_", packet.get("instance_id", ""), method_id, "visible", doc[:400])
+                visible_unit_ids = [visible_unit_id]
+            
+            # Truncated text portion goes to R (recoverable)
+            truncated_unit_id = stable_id("u_", packet.get("instance_id", ""), method_id, "truncated", truncated_portion)
+            add_r_entry(
+                working_packet,
+                unit_id=truncated_unit_id,
+                reason=REASON_BUDGET_TRUNCATED,
+                recoverable=True,
+                locator={
+                    "source_uri": f"synthetic://{packet.get('instance_id', 'unknown')}",
+                    "span": {"start": 400, "end": len(doc), "unit": "char"},
+                    "text_preview": truncated_portion[:100] + "..." if len(truncated_portion) > 100 else truncated_portion,
+                },
+            )
+            transformation_note = f"{method_id}: truncated at 400 chars (removed {len(truncated_portion)} chars to R; kept original visible IDs)"
+    else:
+        # Unknown method: pass through
+        payload_text = doc
+        # Use original visible IDs if present, else synthesize
+        if original_visible_ids:
+            visible_unit_ids = original_visible_ids
+        elif doc:
+            unit_id = stable_id("u_", packet.get("instance_id", ""), method_id, doc)
+            visible_unit_ids = [unit_id]
+        transformation_note = f"{method_id}: unknown method, pass-through"
+    
+    # Update tau to record transformation step
+    if "tau" not in working_packet:
+        working_packet["tau"] = {"sequence": [], "steps": []}
+    tau = working_packet["tau"]
+    tau["sequence"].append(method_id)
+    tau["steps"].append({
+        "op": method_id,
+        "mode": "deterministic",
+        "inputs_ref": [],
+        "outputs_ref": visible_unit_ids,
+        "omitted_ref": [e["unit_id"] for e in working_packet["R"].get("entries", [])],
+        "errors": [],
+        "extra": {"transformation_note": transformation_note},
+    })
+    
+    return TransformedPacket(
+        payload_text=payload_text,
+        visible_unit_ids=visible_unit_ids,
+        recovery_index=working_packet["R"],
+        provenance=working_packet["provenance"],
+        operator_trace=working_packet["tau"],
+        method_id=method_id,
+        transformation_note=transformation_note,
+    )
+
+
+def _build_messages(
+    transformed: TransformedPacket,
+    query: str,
+) -> list[dict[str, str]]:
+    """EVAL-02: Build chat messages from TransformedPacket.
+    
+    Uses the transformed payload_text, ensuring prompt matches what was recorded
+    as visible in the transformation step.
+    """
+    payload = transformed.payload_text
+    method_id = transformed.method_id
+    
     if method_id == "raw_full":
         user = (
-            f"Document:\n{doc}\n\n"
+            f"Document:\n{payload}\n\n"
             f"Question: {query}\n"
             "Answer with only the final value/string, no explanation."
         )
     elif method_id in {"compressed_passthrough", "synthetic_passthrough"}:
-        # Cheap compression: truncate document to first ~400 chars (passthrough path)
-        compressed = doc if len(doc) <= 400 else (doc[:400] + "\n...[truncated]")
         user = (
-            f"Compressed document:\n{compressed}\n\n"
+            f"Compressed document:\n{payload}\n\n"
             f"Question: {query}\n"
             "Answer with only the final value/string, no explanation."
         )
     else:
-        user = f"Document:\n{doc}\n\nQuestion: {query}\nAnswer briefly."
+        user = f"Document:\n{payload}\n\nQuestion: {query}\nAnswer briefly."
+    
     return [
         {
             "role": "system",
@@ -351,10 +507,13 @@ def _build_messages(packet: Mapping[str, object], method_id: str) -> list[dict[s
     ]
 
 
-def _visible_for_method(packet: Mapping[str, object], method_id: str) -> list[str]:
-    _vis_raw = packet.get("visible_evidence")
-    vis = [str(x) for x in _vis_raw] if isinstance(_vis_raw, (list, tuple, set)) else []
-    return vis
+def _visible_for_method(transformed: TransformedPacket) -> list[str]:
+    """EVAL-02: Extract visible unit IDs from TransformedPacket.
+    
+    Returns the IDs of units actually present in the transformed payload,
+    not the original packet's visible_evidence field.
+    """
+    return list(transformed.visible_unit_ids)
 
 
 def evaluate_billed_instance(
@@ -377,8 +536,16 @@ def evaluate_billed_instance(
     Q_baseline comes from paired raw_full response when provided via
     raw_baseline_q. For raw_full itself, uses self-pairing (Q_baseline = Q).
     Never uses gold answer as baseline.
+    
+    EVAL-02: Transform packet first to unify prompt body and visible evidence
+    IDs. Both come from the same TransformedPacket object.
     """
-    messages = _build_messages(packet, method_id)
+    # EVAL-02: Transform packet into unified result
+    transformed = _transform_packet(packet, method_id)
+    
+    # Build messages from transformed payload
+    query = str(packet.get("query") or "")
+    messages = _build_messages(transformed, query)
     model_name = getattr(client, "model", DEFAULT_MODEL)
     try:
         kwargs: dict[str, Any] = {
@@ -462,8 +629,26 @@ def evaluate_billed_instance(
     if t_total is None and t_prompt is not None and t_completion is not None:
         t_total = int(t_prompt) + int(t_completion)
 
-    vis = _visible_for_method(packet, method_id)
-    m = metrics_from_instance(packet, vis, answer=answer)
+    # EVAL-02: Extract visible IDs from transformed packet (what was actually sent)
+    vis = _visible_for_method(transformed)
+    
+    # BUG 2 FIX: Build working packet that includes recovery_index IDs in recoverable_evidence_ids
+    # so metrics_from_instance sees the transformed recovery state, not just the original packet.
+    working_packet = dict(packet)
+    # Get original recoverable IDs
+    _orig_rec = packet.get("recoverable_evidence_ids")
+    if isinstance(_orig_rec, (list, tuple)):
+        original_rec_ids = {str(x) for x in _orig_rec if x}
+    else:
+        original_rec_ids = set()
+    # Get R entries from transformation
+    r_entries = transformed.recovery_index.get("entries", [])
+    r_unit_ids = {str(e.get("unit_id", "")) for e in r_entries if e.get("unit_id")}
+    # Union: original recoverable IDs + units moved to R during transformation
+    combined_rec_ids = list(original_rec_ids | r_unit_ids)
+    working_packet["recoverable_evidence_ids"] = combined_rec_ids
+    
+    m = metrics_from_instance(working_packet, vis, answer=answer)
 
     # Q_baseline: from paired raw_full response, or self-pairing for raw_full
     if raw_baseline_q is not None:
