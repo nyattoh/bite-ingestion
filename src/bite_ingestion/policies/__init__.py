@@ -21,7 +21,7 @@ from .leak_guard import (
 )
 from .length_policy import LengthOnlyPolicy
 from .oracle_policy import OracleEvalForbiddenError, OraclePolicy
-from .rule_policy import RulePolicy
+from .rule_policy import MorphologyRequiredError, RulePolicy
 from .thresholds import TBD_CALIBRATE, TBDCalibrate
 
 try:
@@ -36,6 +36,7 @@ __all__ = [
     "FixedPolicy",
     "GrammarError",
     "LengthOnlyPolicy",
+    "MorphologyRequiredError",
     "OracleEvalForbiddenError",
     "OracleLeakError",
     "OraclePolicy",

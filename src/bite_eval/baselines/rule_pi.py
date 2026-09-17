@@ -19,6 +19,14 @@ def _policy(**kwargs: object):
     return RulePolicy(**kwargs)  # type: ignore[arg-type]
 
 
+try:  # pragma: no cover - import shape only
+    from bite_ingestion.policies import MorphologyRequiredError
+except ImportError:  # pragma: no cover
+
+    class MorphologyRequiredError(ValueError):  # type: ignore[no-redef]
+        """Fallback when bite_ingestion.policies is unavailable."""
+
+
 class RulePiBaseline:
     baseline_id: str = "rule_pi"
 
@@ -61,6 +69,17 @@ class RulePiBaseline:
                 visible_evidence="",
                 accounting=empty_accounting(),
                 reason=f"rule_pi requires bite_ingestion.policies: {exc}",
+            )
+        except MorphologyRequiredError as exc:
+            # Fail closed: routing on an all-zero default vector would make
+            # rule-Π morphology-blind while still reporting status=ok.
+            return make_output(
+                baseline_id=self.baseline_id,
+                status="failed",
+                visible_evidence="",
+                accounting=empty_accounting(),
+                baseline_trace={"reason_code": "morphology_missing"},
+                reason=f"rule_pi morphology_missing: {exc}",
             )
         except Exception as exc:  # noqa: BLE001
             return make_output(

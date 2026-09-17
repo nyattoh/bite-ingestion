@@ -16,6 +16,13 @@ from bite_eval.interface import (
     make_output,
 )
 
+try:  # pragma: no cover - import shape only
+    from bite_ingestion.policies import MorphologyRequiredError
+except ImportError:  # pragma: no cover
+
+    class MorphologyRequiredError(ValueError):  # type: ignore[no-redef]
+        """Fallback when bite_ingestion.policies is unavailable."""
+
 
 def _try_recover_engine():
     try:
@@ -38,6 +45,19 @@ class RulePiRebiteBaseline:
         self._policy = policy
         self.rebite_enabled: bool = True
         self._recover_cls = _try_recover_engine()
+        #: Cumulative recovery cost observed via :meth:`rebite`. Reported in
+        #: ``accounting["rebite_tokens"]`` so the ledger can bill T_rebite —
+        #: a re-bite arm must never get its extra evidence for free.
+        self.rebite_tokens: int = 0
+
+    def _record_rebite_cost(self, result: object) -> None:
+        tokens = getattr(result, "estimated_tokens", None)
+        if tokens is None and isinstance(result, Mapping):
+            tokens = result.get("estimated_tokens")
+        try:
+            self.rebite_tokens += int(tokens or 0)
+        except (TypeError, ValueError):  # pragma: no cover - defensive
+            pass
 
     def rebite(
         self,
@@ -74,7 +94,9 @@ class RulePiRebiteBaseline:
                 "reason": "RecoverEngine has no recover()",
             }
         try:
-            return recover(packet, request or {}, source_store, state)  # type: ignore[misc]
+            result = recover(packet, request or {}, source_store, state)  # type: ignore[misc]
+            self._record_rebite_cost(result)
+            return result
         except TypeError as exc:
             return {
                 "status": "failed",
@@ -114,7 +136,7 @@ class RulePiRebiteBaseline:
                 baseline_id=self.baseline_id,
                 status="ok",
                 visible_evidence=text,
-                accounting=empty_accounting(extra={"rebite_tokens": 0}),
+                accounting=empty_accounting(extra={"rebite_tokens": self.rebite_tokens}),
                 tau=[
                     {"op": "POLICY", "policy": "rule-Π", "sequence": seq},
                     {"op": "REBITE_HOOK", "enabled": True, "engine_bound": recover_available},
@@ -130,6 +152,15 @@ class RulePiRebiteBaseline:
                     "proposed_sequence": seq,
                     "rebite_enabled": True,
                 },
+            )
+        except MorphologyRequiredError as exc:
+            return make_output(
+                baseline_id=self.baseline_id,
+                status="failed",
+                visible_evidence="",
+                accounting=empty_accounting(),
+                baseline_trace={"reason_code": "morphology_missing"},
+                reason=f"rule_pi_rebite morphology_missing: {exc}",
             )
         except Exception as exc:  # noqa: BLE001 — baseline fail-closed
             return make_output(
