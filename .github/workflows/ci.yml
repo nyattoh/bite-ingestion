@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      
+      - name: Lint with ruff
+        run: |
+          python -m ruff check src tests
+      
+      - name: Type check with mypy
+        run: |
+          python -m mypy src
+      
+      - name: Run pytest
+        run: |
+          python -m pytest
+      
+      - name: Validate schema files
+        run: |
+          python -c "from pathlib import Path; import json; root=Path('src/bite_ingestion/schemas'); [json.loads((root/n).read_text(encoding='utf-8')) for n in ('source_unit.schema.json','evidence_packet.schema.json')]; print('schema files: ok')"
+      
+      - name: Check checksums
+        run: |
+          python scripts/checksums.py
+      
+      - name: Validate artifacts (if present)
+        run: |
+          if [ -d "artifacts/runs" ]; then
+            python scripts/validate_artifacts.py
+          else
+            echo "No artifacts/runs directory found, skipping validation"
+          fi
