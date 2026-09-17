@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 
+from bite_eval.arm_runtime import payload_hash
 from bite_eval.interface import (
     _coerce_int,
     empty_accounting,
@@ -48,6 +49,13 @@ class RawFullBaseline:
                         },
                         reason=f"context overflow: char_len={len(text)} > max_chars={limit}",
                     )
+            raw_units = packet.get("units")
+            units = [
+                dict(u)
+                for u in (raw_units if isinstance(raw_units, list) else [])
+                if isinstance(u, Mapping) and u.get("unit_id")
+            ]
+            unit_ids = [str(u["unit_id"]) for u in units]
             return make_output(
                 baseline_id=self.baseline_id,
                 status="ok",
@@ -55,6 +63,21 @@ class RawFullBaseline:
                 accounting=empty_accounting(),
                 tau=[{"op": "RAW_FULL", "status": "ok"}],
                 baseline_trace={"char_len": len(text), "pass_through": True},
+                extra={
+                    "proposed_sequence": [],
+                    "payload_text": text,
+                    "payload_hash": payload_hash(text),
+                    "transformation_status": "pass_through",
+                    "is_no_op": True,
+                    "visible_unit_ids": unit_ids,
+                    # The baseline must expose the same unit graph as the
+                    # candidate arms. Omitting it made provenance score 0.0
+                    # for raw_full and 1.0 for every candidate — an arm
+                    # difference caused by adapter fields, not by the arm.
+                    "units": units,
+                    "R": {"entries": []},
+                    "irreversible_loss_ledger": [],
+                },
             )
         except Exception as exc:  # noqa: BLE001 — surface as failed, never silent
             return make_output(

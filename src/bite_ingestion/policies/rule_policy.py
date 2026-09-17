@@ -18,6 +18,34 @@ from .thresholds import TBD_CALIBRATE, TBDCalibrate
 
 POLICY_NAME = "rule-Π"
 
+#: Features rule-Π actually routes on. At least one must be supplied.
+ROUTING_FEATURES: tuple[str, ...] = ("b", "a", "r", "k", "l", "u")
+
+
+class MorphologyRequiredError(ValueError):
+    """Raised when rule-Π is asked to route without morphology.
+
+    Defaulting every missing feature to 0.0 silently collapses rule-Π to the
+    constant sequence ``[CUT]`` for every input, which looks like a working
+    morphology-aware arm while being morphology-blind. Fail closed instead.
+    """
+
+
+def _assert_morphology_present(
+    morphology: Mapping[str, float] | None, *, where: str = "rule-Π"
+) -> None:
+    if not morphology:
+        raise MorphologyRequiredError(
+            f"{where} requires a morphology vector; got "
+            f"{'None' if morphology is None else 'an empty mapping'}. "
+            "Run the profiler and attach packet['morphology'] before routing."
+        )
+    if not any(k in morphology for k in ROUTING_FEATURES):
+        raise MorphologyRequiredError(
+            f"{where} requires at least one of {list(ROUTING_FEATURES)}; "
+            f"got keys {sorted(morphology)}"
+        )
+
 
 def _f(morphology: Mapping[str, float], key: str, default: float = 0.0) -> float:
     v = morphology.get(key, default)
@@ -71,6 +99,8 @@ class RulePolicy:
     ) -> PolicyDecision:
         # Hard leak check — raise if oracle/eval keys present.
         assert_no_oracle_leak(morphology, budget, where="rule-Π morphology/budget")
+        # Fail closed: never route on an all-zero default vector.
+        _assert_morphology_present(morphology, where=self.policy_name)
 
         thr = self.thresholds
         fires: list[RuleFire] = []
@@ -241,12 +271,16 @@ class RulePolicy:
                 )
 
         # Build sequence in normal order
-        seq_list = [op for op in (
-            OperatorId.CUT,
-            OperatorId.UNTANGLE,
-            OperatorId.REDUCE,
-            OperatorId.INTEGRATE,
-        ) if include[op]]
+        seq_list = [
+            op
+            for op in (
+                OperatorId.CUT,
+                OperatorId.UNTANGLE,
+                OperatorId.REDUCE,
+                OperatorId.INTEGRATE,
+            )
+            if include[op]
+        ]
 
         fallback_reason: str | None = None
         notes: list[str] = []
@@ -267,9 +301,8 @@ class RulePolicy:
                     pass
             fb = OperatorId.REDUCE if use_reduce else self.empty_fallback
             seq_list = [fb]
-            fallback_reason = (
-                f"all_ops_omitted→{fb.value}"
-                + (";pre_segmented_long→REDUCE" if use_reduce else ";default→CUT")
+            fallback_reason = f"all_ops_omitted→{fb.value}" + (
+                ";pre_segmented_long→REDUCE" if use_reduce else ";default→CUT"
             )
             fires.append(
                 RuleFire(
@@ -291,16 +324,17 @@ class RulePolicy:
                     before = list(seq_list)
                     seq_list = list(drop_later_ops(seq_list, mo))
                     reason = f"budget.max_ops={mo} truncated {before}→{seq_list}"
-                    fallback_reason = (
-                        f"{fallback_reason};{reason}" if fallback_reason else reason
-                    )
+                    fallback_reason = f"{fallback_reason};{reason}" if fallback_reason else reason
                     fires.append(
                         RuleFire(
                             rule_id="BUDGET-MAX-OPS",
                             feature="budget.max_ops",
                             comparison=f"len>{mo} → drop later ops",
                             effect="fallback",
-                            observed={"before": [o.value for o in before], "after": [o.value for o in seq_list]},
+                            observed={
+                                "before": [o.value for o in before],
+                                "after": [o.value for o in seq_list],
+                            },
                             threshold=mo,
                         )
                     )
@@ -317,16 +351,17 @@ class RulePolicy:
                     before = list(seq_list)
                     seq_list = list(drop_later_ops(seq_list, 1))
                     reason = f"budget.token_budget={tb}<SHORT→keep1"
-                    fallback_reason = (
-                        f"{fallback_reason};{reason}" if fallback_reason else reason
-                    )
+                    fallback_reason = f"{fallback_reason};{reason}" if fallback_reason else reason
                     fires.append(
                         RuleFire(
                             rule_id="BUDGET-TOKEN",
                             feature="budget.token_budget",
                             comparison=f"token_budget<{thr.LENGTH_SHORT_MAX} → max 1 op",
                             effect="fallback",
-                            observed={"before": [o.value for o in before], "after": [o.value for o in seq_list]},
+                            observed={
+                                "before": [o.value for o in before],
+                                "after": [o.value for o in seq_list],
+                            },
                             threshold=thr.LENGTH_SHORT_MAX,
                         )
                     )
@@ -346,4 +381,4 @@ class RulePolicy:
         return decision
 
 
-__all__ = ["POLICY_NAME", "RulePolicy"]
+__all__ = ["POLICY_NAME", "ROUTING_FEATURES", "MorphologyRequiredError", "RulePolicy"]

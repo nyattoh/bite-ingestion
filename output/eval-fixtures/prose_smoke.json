@@ -3,5 +3,10 @@
   "query": "What is ALPHA?",
   "domain": "prose",
   "gold_answer": "42",
-  "visible_evidence": ["ALPHA equals 42"]
+  "visible_evidence": [
+    {
+      "text": "The codeword ALPHA equals 42.",
+      "role": null
+    }
+  ]
 }

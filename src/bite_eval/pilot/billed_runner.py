@@ -1,10 +1,18 @@
 """Billed synthetic pilot runner (BITE-15 / BITE-15b).
 
 Calls target model via Z.ai for methods that need LLM (raw_full vs
-compressed/passthrough). T_total for billed rows comes ONLY from provider
-usage (prompt/completion/total/cached tokens). Never mixes char4 proxy into
-the T_total field (DC-3: billed primary; logical/proxy recorded separately
-if needed).
+compressed/passthrough).
+
+Token accounting (one definition each — see docs/token-accounting.md):
+
+``T_target_call``
+    Provider usage for the ONE target call (prompt/completion/total/cached).
+``T_total``
+    Full-cost ledger sum: profiler + router + operator + target in/out +
+    rebite + other recorded calls. Never an alias for the target call.
+
+Never mixes char4 proxy into either field (DC-3: billed primary; logical/proxy
+recorded separately as ``T_logical_char4_proxy``).
 
 BITE-15b: per-call checkpoint + resume so a mid-run TimeoutError cannot
 erase measured call counts. Prefer skip already-ok triples (no duplicate
@@ -26,6 +34,7 @@ from pathlib import Path
 from typing import Any, Protocol
 
 from bite_eval.accounting.estimate import LOCAL_ESTIMATE_LABEL, estimate_tokens_char4
+from bite_eval.accounting.ledger import TokenLedger
 from bite_eval.pilot.constraints import check_constraints, metrics_from_instance
 from bite_eval.pilot.decide import BILLED_PROVIDER, decide_gate_c
 from bite_eval.pilot.families import SYNTHETIC_FAMILIES, generate_family_instances
@@ -43,7 +52,15 @@ from bite_ingestion.operators.base import (
     REASON_BUDGET_TRUNCATED,
     add_r_entry,
     ensure_extended_fields,
-    stable_id,
+    unit_locator,
+)
+from bite_ingestion.packet_contract import (
+    PacketContractError,
+    assert_units_in_payload,
+    provenance_completeness,
+    resolve_packet_units,
+    split_units_by_char_limit,
+    visible_evidence_from_units,
 )
 
 # Locked thresholds (d2_lock_v0.1)
@@ -92,19 +109,24 @@ class ChatClient(Protocol):
 
 @dataclass
 class TransformedPacket:
-    """EVAL-02: Unified transformation result.
-    
-    Ensures prompt body and visible evidence IDs come from the same transformed
-    object. Units removed by truncation/dedupe/quarantine move to R (recoverable
-    context), not silently lost.
+    """Unified transformation result (EVAL-02, span-corrected).
+
+    Prompt body, visible evidence ids and R all derive from one unit graph.
+    ``visible_unit_ids`` lists only units whose span survived into
+    ``payload_text``; everything cut appears in ``omitted_unit_ids`` and in
+    ``recovery_index`` under its original unit_id.
     """
+
     payload_text: str
     visible_unit_ids: list[str]
     recovery_index: dict[str, Any]  # R with entries for omitted units
     provenance: dict[str, Any]
     operator_trace: dict[str, Any]  # tau
     method_id: str
+    omitted_unit_ids: list[str] = field(default_factory=list)
+    provenance_complete_rate: float = 1.0
     transformation_note: str = ""
+    is_no_op: bool = False
 
 
 @dataclass
@@ -118,8 +140,9 @@ class BilledInstanceResult:
     recall_rec: float
     provenance: float
     constraints_ok: bool
-    # Billed T_total ONLY from provider usage — never char4 proxy mixed here
-    T_total: int | None
+    # Provider usage for the ONE target call — never char4 proxy mixed here.
+    # This is NOT T_total: see docs/token-accounting.md.
+    T_target_call: int | None
     T_prompt: int | None
     T_completion: int | None
     T_cached: int | None
@@ -133,6 +156,14 @@ class BilledInstanceResult:
     error: str | None = None
     # Baseline status: ok | missing_pair | timeout | rate_limit | error
     baseline_status: str = "ok"
+    # Full-cost T_total from the ledger (profiler + router + operator + target
+    # in/out + rebite + other). The ONLY field allowed to be called T_total.
+    T_total: int | None = None
+    token_buckets: dict[str, Any] = field(default_factory=dict)
+    # no_op | transformed — distinguishes "compressed nothing" from "compressed"
+    transformation_status: str = "unknown"
+    transformation_note: str = ""
+    omitted_unit_ids: tuple[str, ...] = ()
 
 
 @dataclass
@@ -171,11 +202,11 @@ def _refresh_stale_baselines(
     eta: float = ETA,
 ) -> None:
     """Bug 1 fix: After successful raw_full, refresh stale compressed baselines.
-    
+
     When raw_full times out then succeeds on resume retry, compressed rows
     already written with stale Q_baseline=0.0 / baseline_status=timeout must
     be updated to use the new raw_full Q and constraints recomputed.
-    
+
     Bug 1 (new): Also refresh rows with "unknown" baseline_status (from
     missing/empty checkpoint field) to replace gold-derived baselines.
     """
@@ -203,6 +234,84 @@ def _refresh_stale_baselines(
             row.failures = cr.failures
 
 
+def _legacy_target_call(d: Mapping[str, Any]) -> Any:
+    """Read the target-call usage, accepting pre-rename checkpoint rows.
+
+    Checkpoints written before the T_total split stored the single target
+    call's provider usage under ``T_total``. Map it to ``T_target_call`` so a
+    resumed run never silently reinterprets it as a full-cost total.
+    """
+    if d.get("T_target_call") is not None:
+        return d.get("T_target_call")
+    return d.get("T_total")
+
+
+def _full_cost_buckets(
+    *,
+    t_prompt: int | None,
+    t_completion: int | None,
+    call_id: str,
+    rebite_tokens: int = 0,
+) -> tuple[int | None, dict[str, Any]]:
+    """Build the full-cost ledger for one billed instance.
+
+    Profiler / router / operator are deterministic on the billed path, so they
+    contribute 0 tokens (DC-2) but are recorded explicitly so ``T_total`` is
+    always a bucket sum rather than an alias for the target call.
+    """
+    if t_prompt is None and t_completion is None:
+        return None, {}
+    ledger = TokenLedger()
+    for category in ("profiler", "router", "operator"):
+        ledger.record(
+            {
+                "category": category,
+                "kind": "deterministic",
+                "tokens_in": 0,
+                "tokens_out": 0,
+                "note": "DC-2 deterministic stage on billed path",
+            }
+        )
+    ledger.record(
+        {
+            "category": "target",
+            "kind": "api",
+            "call_id": call_id,
+            "tokens_in": int(t_prompt or 0),
+            "tokens_out": int(t_completion or 0),
+            "estimate_source": "provider_usage",
+        }
+    )
+    if rebite_tokens:
+        ledger.record(
+            {
+                "category": "rebite",
+                "kind": "api",
+                "call_id": f"{call_id}:rebite",
+                "tokens_in": int(rebite_tokens),
+                "tokens_out": 0,
+                "estimate_source": "provider_usage",
+            }
+        )
+    totals = dict(ledger.totals())
+    buckets: dict[str, Any] = {
+        k: totals.get(k)
+        for k in (
+            "T_profiler",
+            "T_router",
+            "T_operator",
+            "T_target_in",
+            "T_target_out",
+            "T_rebite",
+            "T_baseline",
+            "T_calls_other",
+            "sum_calls_in_out",
+        )
+    }
+    buckets["dc_violations"] = ledger.violations()
+    return int(totals["T_total"]), buckets
+
+
 def _row_from_dict(d: Mapping[str, Any]) -> BilledInstanceResult:
     failures = d.get("failures") or ()
     if isinstance(failures, list):
@@ -224,7 +333,7 @@ def _row_from_dict(d: Mapping[str, Any]) -> BilledInstanceResult:
         recall_rec=float(d.get("recall_rec") or 0.0),
         provenance=float(d.get("provenance") or 0.0),
         constraints_ok=bool(d.get("constraints_ok")),
-        T_total=d.get("T_total"),
+        T_target_call=_legacy_target_call(d),
         T_prompt=d.get("T_prompt"),
         T_completion=d.get("T_completion"),
         T_cached=d.get("T_cached"),
@@ -236,6 +345,11 @@ def _row_from_dict(d: Mapping[str, Any]) -> BilledInstanceResult:
         answer_text=str(d.get("answer_text") or ""),
         error=d.get("error"),
         baseline_status=baseline_status,
+        T_total=d.get("T_total") if d.get("T_target_call") is not None else None,
+        token_buckets=dict(d.get("token_buckets") or {}),
+        transformation_status=str(d.get("transformation_status") or "unknown"),
+        transformation_note=str(d.get("transformation_note") or ""),
+        omitted_unit_ids=tuple(d.get("omitted_unit_ids") or ()),
     )
 
 
@@ -301,7 +415,7 @@ def write_summary(summary: Mapping[str, Any], path: str | Path) -> Path:
 
 
 def _partial_tallies(state: BilledRunState) -> dict[str, Any]:
-    billed = [r for r in state.results if r.T_total is not None]
+    billed = [r for r in state.results if r.T_target_call is not None]
     return {
         "pilot_id": "bite15_billed_synthetic_v0.1",
         "ts": _utc_ts(),
@@ -347,127 +461,109 @@ def _checkpoint_record(
     return rec
 
 
+#: Payload character budget for the passthrough/compressed arm.
+COMPRESSED_CHAR_LIMIT = 400
+TRUNCATION_MARKER = "\n...[truncated]"
+
+
 def _transform_packet(packet: Mapping[str, object], method_id: str) -> TransformedPacket:
-    """EVAL-02: Transform packet into unified result with payload and visible IDs.
-    
-    Truncated/removed units move to R (recoverable context). Both prompt body
-    and visible evidence IDs derive from the same transformation output.
+    """Transform a packet into payload + visible unit ids from one unit graph.
+
+    Visibility is **derived from spans**, never declared. A unit is visible
+    only when its span survives entirely into the payload; anything that is
+    cut moves to ``R`` under its **original** unit_id so recoverable recall
+    can credit it.
     """
     doc = str(packet.get("document") or "")
-    
-    # Extract original visible_evidence IDs if present (for synthetic packets)
-    _vis_raw = packet.get("visible_evidence")
-    original_visible_ids: list[str] = []
-    if isinstance(_vis_raw, (list, tuple)):
-        original_visible_ids = [str(x) for x in _vis_raw if x]
-    
-    # Create a working packet copy with extended fields for R/tau tracking
+    units = resolve_packet_units(packet, document=doc)
+
     working_packet: dict[str, Any] = {
         "packet_id": str(packet.get("instance_id", "unknown")),
-        "visible_evidence": packet.get("visible_evidence", []),
-        "provenance": packet.get("provenance", {
-            "unit_id": str(packet.get("instance_id", "unknown")),
-            "source_uri": None,
-            "byte_or_token_span": None,
-            "renderer_id": method_id,
-        }),
+        "visible_evidence": visible_evidence_from_units(units),
+        "units": [dict(u) for u in units],
+        "provenance": packet.get(
+            "provenance",
+            {
+                "unit_id": str(packet.get("instance_id", "unknown")),
+                "source_uri": packet.get("source_uri"),
+                "byte_or_token_span": f"char:0-{len(doc)}",
+                "renderer_id": method_id,
+            },
+        ),
         "op_last_touch": "NONE",
     }
     ensure_extended_fields(working_packet)
-    
-    payload_text = doc
-    visible_unit_ids: list[str] = []
-    transformation_note = f"method={method_id}"
-    
-    if method_id == "raw_full":
-        # No transformation - all content visible
-        payload_text = doc
-        # Use original visible IDs if present, else synthesize
-        if original_visible_ids:
-            visible_unit_ids = original_visible_ids
-        elif doc:
-            unit_id = stable_id("u_", packet.get("instance_id", ""), "raw_full", doc)
-            visible_unit_ids = [unit_id]
-        transformation_note = "raw_full: no transformation"
-        
-    elif method_id in {"compressed_passthrough", "synthetic_passthrough"}:
-        # EVAL-02: Track truncation - removed portion moves to R
-        if len(doc) <= 400:
-            # No truncation needed - all content visible
-            payload_text = doc
-            # Use original visible IDs if present, else synthesize
-            if original_visible_ids:
-                visible_unit_ids = original_visible_ids
-            elif doc:
-                unit_id = stable_id("u_", packet.get("instance_id", ""), method_id, doc)
-                visible_unit_ids = [unit_id]
-            transformation_note = f"{method_id}: no truncation needed (doc_len={len(doc)})"
-        else:
-            # Truncate to 400 chars - removed portion goes to R
-            payload_text = doc[:400] + "\n...[truncated]"
-            truncated_portion = doc[400:]
-            
-            # BUG 1 FIX: Keep original visible evidence IDs if content still appears
-            # in the truncated prefix (which it typically does for synthetic packets).
-            # Only move IDs to R if their content is truly lost.
-            # For synthetic packets, the visible evidence is usually in the first part
-            # of the document, so it survives truncation at 400 chars.
-            if original_visible_ids:
-                # KEEP original visible IDs - they're still valid for the truncated content
-                visible_unit_ids = original_visible_ids
-            else:
-                # No original IDs - synthesize one for the visible portion
-                visible_unit_id = stable_id("u_", packet.get("instance_id", ""), method_id, "visible", doc[:400])
-                visible_unit_ids = [visible_unit_id]
-            
-            # Truncated text portion goes to R (recoverable)
-            truncated_unit_id = stable_id("u_", packet.get("instance_id", ""), method_id, "truncated", truncated_portion)
-            add_r_entry(
-                working_packet,
-                unit_id=truncated_unit_id,
-                reason=REASON_BUDGET_TRUNCATED,
-                recoverable=True,
-                locator={
-                    "source_uri": f"synthetic://{packet.get('instance_id', 'unknown')}",
-                    "span": {"start": 400, "end": len(doc), "unit": "char"},
-                    "text_preview": truncated_portion[:100] + "..." if len(truncated_portion) > 100 else truncated_portion,
-                },
-            )
-            transformation_note = f"{method_id}: truncated at 400 chars (removed {len(truncated_portion)} chars to R; kept original visible IDs)"
+
+    if (
+        method_id in {"compressed_passthrough", "synthetic_passthrough"}
+        and len(doc) > COMPRESSED_CHAR_LIMIT
+    ):
+        keep_limit = COMPRESSED_CHAR_LIMIT
+        payload_text = doc[:COMPRESSED_CHAR_LIMIT] + TRUNCATION_MARKER
     else:
-        # Unknown method: pass through
+        # raw_full, unknown methods, and any short document: no transformation.
+        keep_limit = len(doc)
         payload_text = doc
-        # Use original visible IDs if present, else synthesize
-        if original_visible_ids:
-            visible_unit_ids = original_visible_ids
-        elif doc:
-            unit_id = stable_id("u_", packet.get("instance_id", ""), method_id, doc)
-            visible_unit_ids = [unit_id]
-        transformation_note = f"{method_id}: unknown method, pass-through"
-    
-    # Update tau to record transformation step
-    if "tau" not in working_packet:
-        working_packet["tau"] = {"sequence": [], "steps": []}
+
+    visible_units, omitted_units = split_units_by_char_limit(units, limit=keep_limit)
+    is_no_op = not omitted_units and payload_text == doc
+
+    for omitted in omitted_units:
+        # Original unit_id — never a fresh synthetic id, or recoverable recall
+        # can never intersect gold_evidence_ids.
+        add_r_entry(
+            working_packet,
+            unit_id=str(omitted["unit_id"]),
+            reason=REASON_BUDGET_TRUNCATED,
+            recoverable=True,
+            locator=unit_locator(omitted),
+            extra={"text": omitted.get("text"), "cut_at_char": keep_limit},
+        )
+
+    visible_unit_ids = [str(u["unit_id"]) for u in visible_units]
+    # Fail-closed self-check: an id may not be visible unless its body is in
+    # the payload we are about to send.
+    assert_units_in_payload(visible_units, payload_text, where=f"{method_id} visible units")
+
+    if omitted_units:
+        transformation_note = (
+            f"{method_id}: kept chars [0,{keep_limit}); "
+            f"{len(omitted_units)} unit(s) moved to R under original ids"
+        )
+    elif is_no_op:
+        transformation_note = f"{method_id}: no_op (doc_len={len(doc)}, nothing removed)"
+    else:
+        transformation_note = f"{method_id}: payload rewritten, no units removed"
+
     tau = working_packet["tau"]
     tau["sequence"].append(method_id)
-    tau["steps"].append({
-        "op": method_id,
-        "mode": "deterministic",
-        "inputs_ref": [],
-        "outputs_ref": visible_unit_ids,
-        "omitted_ref": [e["unit_id"] for e in working_packet["R"].get("entries", [])],
-        "errors": [],
-        "extra": {"transformation_note": transformation_note},
-    })
-    
+    tau["steps"].append(
+        {
+            "op": method_id,
+            "mode": "deterministic",
+            "inputs_ref": [str(u["unit_id"]) for u in units],
+            "outputs_ref": visible_unit_ids,
+            "omitted_ref": [str(u["unit_id"]) for u in omitted_units],
+            "errors": [],
+            "extra": {
+                "transformation_note": transformation_note,
+                "no_op": is_no_op,
+                "keep_limit": keep_limit,
+            },
+        }
+    )
+
     return TransformedPacket(
         payload_text=payload_text,
         visible_unit_ids=visible_unit_ids,
+        omitted_unit_ids=[str(u["unit_id"]) for u in omitted_units],
         recovery_index=working_packet["R"],
         provenance=working_packet["provenance"],
+        provenance_complete_rate=provenance_completeness(visible_units),
         operator_trace=working_packet["tau"],
         method_id=method_id,
         transformation_note=transformation_note,
+        is_no_op=is_no_op,
     )
 
 
@@ -476,15 +572,15 @@ def _build_messages(
     query: str,
 ) -> list[dict[str, str]]:
     """EVAL-02/04: Build chat messages from TransformedPacket.
-    
+
     Uses the transformed payload_text, ensuring prompt matches what was recorded
     as visible in the transformation step.
-    
+
     EVAL-04: Unified wrapper across all arms (raw, compressed, etc.) to eliminate
     wrapper bias. All arms use "Document:" prefix, not "Compressed document:".
     """
     payload = transformed.payload_text
-    
+
     # EVAL-04: Unified wrapper template for all arms
     # Previously: raw used "Document:", compressed used "Compressed document:"
     # This caused a systematic 2-token bias (delta=-2 in BITE-15b pilot).
@@ -494,7 +590,7 @@ def _build_messages(
         f"Question: {query}\n"
         "Answer with only the final value/string, no explanation."
     )
-    
+
     return [
         {
             "role": "system",
@@ -506,7 +602,7 @@ def _build_messages(
 
 def _visible_for_method(transformed: TransformedPacket) -> list[str]:
     """EVAL-02: Extract visible unit IDs from TransformedPacket.
-    
+
     Returns the IDs of units actually present in the transformed payload,
     not the original packet's visible_evidence field.
     """
@@ -528,18 +624,51 @@ def evaluate_billed_instance(
     raw_baseline_q: float | None = None,
     baseline_status: str | None = None,
 ) -> BilledInstanceResult:
-    """One billed target call; T_total from provider usage only.
-    
+    """One billed target call.
+
+    ``T_target_call`` is the provider usage of this one call; ``T_total`` is
+    the full-cost ledger sum. They are different fields on purpose.
+
     Q_baseline comes from paired raw_full response when provided via
     raw_baseline_q. For raw_full itself, uses self-pairing (Q_baseline = Q).
     Never uses gold answer as baseline.
-    
+
     EVAL-02: Transform packet first to unify prompt body and visible evidence
     IDs. Both come from the same TransformedPacket object.
+
+    Fail-closed: a packet-contract violation is reported as a failed row with
+    a reason code — never billed and never silently downgraded.
     """
     # EVAL-02: Transform packet into unified result
-    transformed = _transform_packet(packet, method_id)
-    
+    try:
+        transformed = _transform_packet(packet, method_id)
+    except PacketContractError as exc:
+        text_proxy = str(packet.get("document") or "")
+        return BilledInstanceResult(
+            instance_id=str(packet.get("instance_id")),
+            family=str(packet.get("family")),
+            method_id=method_id,
+            Q=0.0,
+            Q_baseline=raw_baseline_q if raw_baseline_q is not None else 0.0,
+            recall_vis=0.0,
+            recall_rec=0.0,
+            provenance=0.0,
+            constraints_ok=False,
+            T_target_call=None,
+            T_prompt=None,
+            T_completion=None,
+            T_cached=None,
+            estimate_source=BILLED_USAGE_LABEL,
+            T_logical_char4_proxy=estimate_tokens_char4(text_proxy),
+            B_r_cap=_br_cap(estimate_tokens_char4(text_proxy)),
+            model=str(getattr(client, "model", DEFAULT_MODEL)),
+            failures=("packet_contract_violation",),
+            error=str(exc),
+            baseline_status=baseline_status or "error",
+            transformation_status="failed",
+            transformation_note=f"packet_contract_violation: {exc}",
+        )
+
     # Build messages from transformed payload
     query = str(packet.get("query") or "")
     messages = _build_messages(transformed, query)
@@ -567,7 +696,7 @@ def evaluate_billed_instance(
             recall_rec=0.0,
             provenance=0.0,
             constraints_ok=False,
-            T_total=None,
+            T_target_call=None,
             T_prompt=None,
             T_completion=None,
             T_cached=None,
@@ -603,7 +732,7 @@ def evaluate_billed_instance(
             recall_rec=0.0,
             provenance=0.0,
             constraints_ok=False,
-            T_total=None,
+            T_target_call=None,
             T_prompt=None,
             T_completion=None,
             T_cached=None,
@@ -620,15 +749,22 @@ def evaluate_billed_instance(
     usage = getattr(result, "usage", {}) or {}
     t_prompt = usage.get("prompt_tokens")
     t_completion = usage.get("completion_tokens")
-    t_total = usage.get("total_tokens")
+    t_target_call = usage.get("total_tokens")
     t_cached = usage.get("cached_tokens")
     # If total missing but prompt+completion present, sum (still billed fields only)
-    if t_total is None and t_prompt is not None and t_completion is not None:
-        t_total = int(t_prompt) + int(t_completion)
+    if t_target_call is None and t_prompt is not None and t_completion is not None:
+        t_target_call = int(t_prompt) + int(t_completion)
+
+    # Full-cost T_total from the ledger (single definition, DC-5).
+    t_total, token_buckets = _full_cost_buckets(
+        t_prompt=t_prompt,
+        t_completion=t_completion,
+        call_id=f"target:{packet.get('instance_id')}:{method_id}",
+    )
 
     # EVAL-02: Extract visible IDs from transformed packet (what was actually sent)
     vis = _visible_for_method(transformed)
-    
+
     # BUG 2 FIX: Build working packet that includes recovery_index IDs in recoverable_evidence_ids
     # so metrics_from_instance sees the transformed recovery state, not just the original packet.
     working_packet = dict(packet)
@@ -644,7 +780,10 @@ def evaluate_billed_instance(
     # Union: original recoverable IDs + units moved to R during transformation
     combined_rec_ids = list(original_rec_ids | r_unit_ids)
     working_packet["recoverable_evidence_ids"] = combined_rec_ids
-    
+    # Measured provenance over the units actually shown, not a self-declared
+    # constant from the packet.
+    working_packet["provenance_complete_rate"] = transformed.provenance_complete_rate
+
     m = metrics_from_instance(working_packet, vis, answer=answer)
 
     # Q_baseline: from paired raw_full response, or self-pairing for raw_full
@@ -676,7 +815,7 @@ def evaluate_billed_instance(
     )
 
     est_src = str(getattr(result, "estimate_source", BILLED_USAGE_LABEL))
-    if t_total is None:
+    if t_target_call is None:
         # No billed usage → caller / decide will treat as insufficient
         est_src = BILLED_USAGE_LABEL  # still labeled billed path; has_billed_usage=False
 
@@ -690,7 +829,7 @@ def evaluate_billed_instance(
         recall_rec=cr.recall_rec,
         provenance=cr.provenance,
         constraints_ok=cr.ok,
-        T_total=int(t_total) if t_total is not None else None,
+        T_target_call=int(t_target_call) if t_target_call is not None else None,
         T_prompt=int(t_prompt) if t_prompt is not None else None,
         T_completion=int(t_completion) if t_completion is not None else None,
         T_cached=int(t_cached) if t_cached is not None else None,
@@ -702,10 +841,17 @@ def evaluate_billed_instance(
         answer_text=answer,
         error=None,
         baseline_status=actual_baseline_status,
+        T_total=t_total,
+        token_buckets=token_buckets,
+        transformation_status="no_op" if transformed.is_no_op else "transformed",
+        transformation_note=transformed.transformation_note,
+        omitted_unit_ids=tuple(transformed.omitted_unit_ids),
     )
 
 
-def _estimate_c123(results: Sequence[BilledInstanceResult]) -> tuple[bool | None, bool | None, bool | None]:
+def _estimate_c123(
+    results: Sequence[BilledInstanceResult],
+) -> tuple[bool | None, bool | None, bool | None]:
     """Rough confirmatory signals from billed rows (pilot-scale, not Holm).
 
     C1: mean T_total(compressed) < mean T_total(raw_full) when both present
@@ -818,7 +964,7 @@ def run_billed_pilot(
                 row = _row_from_dict(row_data)
                 state.results.append(row)
                 restored_keys.add(key)
-                if row.error is None and row.T_total is not None:
+                if row.error is None and row.T_target_call is not None:
                     state.calls_succeeded += 1
                 state.calls_skipped_ok += 1
                 # Populate raw_baseline_lookup for restored raw_full rows
@@ -826,7 +972,9 @@ def run_billed_pilot(
                     raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
                     # Bug 1 fix: Refresh stale compressed baselines when restoring successful raw_full
                     if row.error is None and row.baseline_status == "ok":
-                        _refresh_stale_baselines(state.results, row.instance_id, row.Q, row.baseline_status)
+                        _refresh_stale_baselines(
+                            state.results, row.instance_id, row.Q, row.baseline_status
+                        )
         if partial_path and Path(partial_path).is_file():
             try:
                 partial = json.loads(Path(partial_path).read_text(encoding="utf-8"))
@@ -842,7 +990,7 @@ def run_billed_pilot(
                         row = _row_from_dict(rd)
                         state.results.append(row)
                         restored_keys.add(key)
-                        if row.error is None and row.T_total is not None:
+                        if row.error is None and row.T_target_call is not None:
                             state.calls_succeeded += 1
                         state.calls_skipped_ok += 1
                         # Populate raw_baseline_lookup for restored raw_full rows
@@ -850,7 +998,9 @@ def run_billed_pilot(
                             raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
                             # Bug 1 fix: Refresh stale compressed baselines when restoring successful raw_full
                             if row.error is None and row.baseline_status == "ok":
-                                _refresh_stale_baselines(state.results, row.instance_id, row.Q, row.baseline_status)
+                                _refresh_stale_baselines(
+                                    state.results, row.instance_id, row.Q, row.baseline_status
+                                )
             except (json.JSONDecodeError, OSError):
                 pass
 
@@ -918,9 +1068,7 @@ def run_billed_pilot(
             }
             continue
         packets = generate_family_instances(fam, n_per_family)
-        fam_results: list[BilledInstanceResult] = [
-            r for r in state.results if r.family == fam
-        ]
+        fam_results: list[BilledInstanceResult] = [r for r in state.results if r.family == fam]
         for pkt in packets:
             for mid in methods:
                 key = _call_key(str(pkt.get("family")), str(pkt.get("instance_id")), mid)
@@ -939,7 +1087,7 @@ def run_billed_pilot(
                     state.calls_resumed_retry += 1
                     # Still use client's full retry budget for the re-attempt.
                     call_retry_max = None
-                
+
                 # Look up paired raw_full Q for non-raw methods
                 raw_baseline_q = None
                 baseline_status = None
@@ -953,12 +1101,11 @@ def run_billed_pilot(
                 elif mid != "raw_full":
                     # No raw_full pair available yet
                     baseline_status = "missing_pair"
-                
+
                 # Bug 4 fix: Increment calls_attempted only after skip checks
                 state.calls_attempted += 1
-                
+
                 try:
-                    
                     row = evaluate_billed_instance(
                         pkt,
                         mid,
@@ -985,7 +1132,7 @@ def run_billed_pilot(
                         recall_rec=0.0,
                         provenance=0.0,
                         constraints_ok=False,
-                        T_total=None,
+                        T_target_call=None,
                         T_prompt=None,
                         T_completion=None,
                         T_cached=None,
@@ -1014,13 +1161,15 @@ def run_billed_pilot(
 
                 fam_results.append(row)
                 state.results.append(row)
-                
+
                 # Populate raw_baseline_lookup for raw_full rows
                 if row.method_id == "raw_full":
                     raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
                     # Bug 1 fix: Refresh stale compressed baselines after successful raw_full
                     if row.error is None and row.baseline_status == "ok":
-                        _refresh_stale_baselines(state.results, row.instance_id, row.Q, row.baseline_status)
+                        _refresh_stale_baselines(
+                            state.results, row.instance_id, row.Q, row.baseline_status
+                        )
                         # Bug 2 fix (b): Rewrite checkpoint for refreshed compressed rows
                         if checkpoint_path is not None:
                             for refreshed_row in state.results:
@@ -1044,12 +1193,12 @@ def run_billed_pilot(
                                         row=refreshed_row,
                                     )
 
-                if row.error is None and row.T_total is not None:
+                if row.error is None and row.T_target_call is not None:
                     state.calls_succeeded += 1
                     usage = {
                         "prompt_tokens": row.T_prompt,
                         "completion_tokens": row.T_completion,
-                        "total_tokens": row.T_total,
+                        "total_tokens": row.T_target_call,
                         "cached_tokens": row.T_cached,
                     }
                     _record_attempt(
@@ -1073,9 +1222,9 @@ def run_billed_pilot(
                         instance_id=row.instance_id,
                         method=row.method_id,
                         status=status,
-                        error_type=type(err).__name__ if not isinstance(err, str) else (
-                            "ProviderTimeoutError" if is_timeout else "ZaiClientError"
-                        ),
+                        error_type=type(err).__name__
+                        if not isinstance(err, str)
+                        else ("ProviderTimeoutError" if is_timeout else "ZaiClientError"),
                         row=row,
                     )
             if stopped_early:
@@ -1084,8 +1233,10 @@ def run_billed_pilot(
         # Rows with baseline_status in (timeout, error, missing_pair, unknown) use Q_baseline=0.0
         # so quality constraint passes vacuously — must not inflate constraint rate
         measured_fam_results = [
-            r for r in fam_results
-            if r.baseline_status not in ("rate_limit", "timeout", "error", "missing_pair", "unknown")
+            r
+            for r in fam_results
+            if r.baseline_status
+            not in ("rate_limit", "timeout", "error", "missing_pair", "unknown")
             and r.error is None
         ]
         ok_rate = (
@@ -1095,7 +1246,9 @@ def run_billed_pilot(
         )
         per_family[fam] = {
             "n_target": n_per_family,
-            "n_actual": len(packets) if not stopped_early else len({r.instance_id for r in fam_results}),
+            "n_actual": len(packets)
+            if not stopped_early
+            else len({r.instance_id for r in fam_results}),
             "n_method_rows": len(fam_results),
             "constraints_ok_rate": ok_rate,
             "status": "rate_limit_partial" if stopped_early else "ok",
@@ -1111,7 +1264,8 @@ def run_billed_pilot(
     # Rows with baseline_status in (timeout, error, missing_pair, unknown) use Q_baseline=0.0
     # so quality constraint passes vacuously — must not inflate constraint rate
     measured_rows = [
-        r for r in state.results
+        r
+        for r in state.results
         if r.baseline_status not in ("rate_limit", "timeout", "error", "missing_pair", "unknown")
         and r.error is None
     ]
@@ -1122,13 +1276,15 @@ def run_billed_pilot(
     )
     systematic_fail = len(measured_rows) > 0 and constraints_ok_rate < 0.5
 
-    billed_rows = [r for r in state.results if r.T_total is not None]
+    billed_rows = [r for r in state.results if r.T_target_call is not None]
     has_billed = len(billed_rows) > 0
 
     # Sample size vs lock N_pilot: minimal 2×3 does NOT meet N_pilot=24/family
-    sample_meets = (not minimal) and all(
-        per_family.get(f, {}).get("n_actual", 0) >= N_PILOT_DEFAULT for f in fams
-    ) and n_per_family >= N_PILOT_DEFAULT
+    sample_meets = (
+        (not minimal)
+        and all(per_family.get(f, {}).get("n_actual", 0) >= N_PILOT_DEFAULT for f in fams)
+        and n_per_family >= N_PILOT_DEFAULT
+    )
 
     c1, c2, c3 = _estimate_c123(state.results)
     if state.rate_limited:
@@ -1139,9 +1295,9 @@ def run_billed_pilot(
 
     decision = decide_gate_c(
         paid_api=paid_api,
-        t_total_estimate_source=BILLED_PROVIDER if has_billed else (
-            BILLED_PROVIDER if paid_api else LOCAL_ESTIMATE_LABEL
-        ),
+        t_total_estimate_source=BILLED_PROVIDER
+        if has_billed
+        else (BILLED_PROVIDER if paid_api else LOCAL_ESTIMATE_LABEL),
         constraints_ok_rate=constraints_ok_rate,
         systematic_constraint_fail=systematic_fail,
         c1_t_total_improves_vs_raw_and_best_single=c1,
@@ -1181,8 +1337,9 @@ def run_billed_pilot(
         "paid_api": paid_api,
         "estimate_source": BILLED_USAGE_LABEL if has_billed else "none",
         "estimate_source_note": (
-            "T_total from provider usage only (prompt/completion/total/cached); "
-            "T_logical_char4_proxy recorded separately — never mixed into T_total"
+            "T_target_call = provider usage for one target call; "
+            "T_total = full-cost ledger sum (profiler+router+operator+target+rebite); "
+            "T_logical_char4_proxy recorded separately — never mixed into either"
         ),
         "model": model,
         "minimal": minimal,

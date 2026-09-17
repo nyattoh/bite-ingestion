@@ -2,6 +2,14 @@
 
 Condensed from BITE-03 §3. Pivot-to-bench; no Survive claims; no invented eval numbers.
 
+> **2026-09-17 update (Phase 1 foundation).** Evidence units are anchored to
+> document character spans and validated by `bite_ingestion.packet_contract`.
+> Visibility is *derived*, never declared: a unit is visible only when its
+> span survives entirely into the payload; anything cut moves to `R` under its
+> **original** `unit_id`. Non-Mapping evidence entries and evidence ids with no
+> unit body raise `PacketContractError` instead of being skipped.
+> See `docs/hand_over/PHASE1-FOUNDATION-CLAUDE.md`.
+
 ## Conceptual fields
 
 | Symbol | Name | Role |

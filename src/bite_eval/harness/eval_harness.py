@@ -11,6 +11,7 @@ from typing import Any
 
 from bite_eval.accounting.estimate import LOCAL_ESTIMATE_LABEL, estimate_tokens_char4
 from bite_eval.accounting.ledger import TokenLedger
+from bite_eval.arm_runtime import attach_morphology
 from bite_eval.artifacts.ledger import ArtifactLedger, sha256_hex
 
 
@@ -88,9 +89,7 @@ class EvalHarness:
     ) -> None:
         self.artifact_root = Path(artifact_root) if artifact_root else Path(".")
         self.persist = persist
-        self._artifact_ledger = (
-            ArtifactLedger(self.artifact_root) if persist else None
-        )
+        self._artifact_ledger = ArtifactLedger(self.artifact_root) if persist else None
 
     def run_smoke(
         self,
@@ -127,26 +126,31 @@ class EvalHarness:
             }
         )
 
-        # Optional profiler/router LLM stubs from context (synthetic counts only)
-        self._record_overhead_stubs(ledger, ctx)
+        # Profiler at the eval entrance: payload+query only, tokens=0, cpu_ms recorded.
+        working_packet, profile_report = attach_morphology(packet, ctx)
+        self._record_overhead_stubs(ledger, ctx, profiler_cpu_ms=profile_report.cpu_ms)
 
         try:
             adapter = _soft_get_baseline(method_id)
             if adapter is not None and hasattr(adapter, "run"):
-                out = dict(adapter.run(packet, ctx))
+                out = dict(adapter.run(working_packet, ctx))
                 method_output = out
                 status = str(out.get("status", "ok"))
                 reason = out.get("reason") if isinstance(out.get("reason"), str) else None
                 acc = out.get("accounting")
+                acc_rebite = 0
+                acc_declares_target = False
                 if isinstance(acc, Mapping):
                     ledger.merge_baseline_accounting(acc)
+                    acc_rebite = _as_int(acc.get("rebite_tokens"), 0)
+                    acc_declares_target = bool(_as_int(acc.get("baseline_target_tokens"), 0))
                 # Synthetic target call: visible evidence as local estimate (proxy)
                 visible = out.get("visible_evidence", "")
                 vis_text = visible if isinstance(visible, str) else str(visible)
-                # Only count target if not already counted via baseline accounting
-                # Represent as one synthetic target call (offline stub — not paid)
+                # DC-1: never add a second row for a call the adapter already
+                # accounted for as target tokens.
                 call_id = f"smoke_target:{method_id}:{text_hash[:12]}"
-                tin = estimate_tokens_char4(vis_text)
+                tin = 0 if acc_declares_target else estimate_tokens_char4(vis_text)
                 # Synthetic stub "response" tokens from context if provided
                 stub_out = _as_int(ctx.get("stub_target_out_tokens"), 0)
                 ledger.record(
@@ -160,9 +164,10 @@ class EvalHarness:
                         "note": "offline smoke; not provider usage",
                     }
                 )
-                # Re-bite placeholder from accounting / context
+                # Re-bite: adapter accounting wins; ctx stub only fills the gap
+                # so the same recovery cost is never counted twice (DC-1).
                 if method_id.endswith("rebite") or ctx.get("rebite"):
-                    rebite_tokens = _as_int(ctx.get("stub_rebite_tokens"), 0)
+                    rebite_tokens = 0 if acc_rebite else _as_int(ctx.get("stub_rebite_tokens"), 0)
                     if rebite_tokens:
                         ledger.record(
                             {
@@ -176,7 +181,7 @@ class EvalHarness:
                         )
             else:
                 # Pure synthetic path without baseline adapters
-                method_output = self._synthetic_method(method_id, packet, ctx, ledger)
+                method_output = self._synthetic_method(method_id, working_packet, ctx, ledger)
                 status = str(method_output.get("status", "ok"))
                 raw_reason = method_output.get("reason")
                 reason = raw_reason if isinstance(raw_reason, str) else None
@@ -234,6 +239,7 @@ class EvalHarness:
             "token_buckets": {
                 "T_profiler": totals.get("T_profiler"),
                 "T_router": totals.get("T_router"),
+                "T_operator": totals.get("T_operator"),
                 "T_target_in": totals.get("T_target_in"),
                 "T_target_out": totals.get("T_target_out"),
                 "T_rebite": totals.get("T_rebite"),
@@ -305,7 +311,13 @@ class EvalHarness:
 
         return manifest
 
-    def _record_overhead_stubs(self, ledger: TokenLedger, ctx: Mapping[str, object]) -> None:
+    def _record_overhead_stubs(
+        self,
+        ledger: TokenLedger,
+        ctx: Mapping[str, object],
+        *,
+        profiler_cpu_ms: float = 0.0,
+    ) -> None:
         """Optional synthetic profiler/router LLM overhead from context (DC-6)."""
         prof = _as_int(ctx.get("stub_profiler_tokens"), 0)
         if prof:
@@ -321,14 +333,14 @@ class EvalHarness:
                 }
             )
         else:
-            # Deterministic profiler path: 0 tokens
+            cpu = profiler_cpu_ms or _as_float(ctx.get("stub_profiler_cpu_ms"), 0.0)
             ledger.record(
                 {
                     "category": "profiler",
                     "kind": "deterministic",
                     "tokens_in": 0,
                     "tokens_out": 0,
-                    "cpu_ms": _as_float(ctx.get("stub_profiler_cpu_ms"), 0.0),
+                    "cpu_ms": cpu,
                     "note": "DC-2 deterministic profiler",
                 }
             )

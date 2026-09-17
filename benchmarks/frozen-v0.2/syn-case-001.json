@@ -1,0 +1,1067 @@
+{
+  "generator_version": "0.2.0-synthetic",
+  "seed": 1,
+  "identity_sha256": "94618270e3e5dbd230de0334955f32763b5ccf156ff2697bbb4799c7159e4ac4",
+  "canonical": {
+    "case_id": "syn-case-001",
+    "question": "What qty is recorded for item widget?",
+    "answer": "3",
+    "required_evidence_ids": [
+      "syn-e1",
+      "syn-e2"
+    ],
+    "facts": [
+      {
+        "fact_id": "syn-e1",
+        "key": "item",
+        "value": "widget"
+      },
+      {
+        "fact_id": "syn-e2",
+        "key": "qty",
+        "value": "3"
+      },
+      {
+        "fact_id": "syn-e3",
+        "key": "warehouse",
+        "value": "W1"
+      }
+    ],
+    "task_family": "texture_swap"
+  },
+  "facts_id": "syn-case-001",
+  "textures": {
+    "prose_narrative": {
+      "renderer_id": "prose_narrative@0.2.0-synthetic",
+      "text": "The item is widget.\nThe qty is 3.\nThe warehouse is W1.",
+      "surface_sha256": "9bd5f4b298a0f670054c2737449125f77b0aca2d90ef0ea08b47fe027b02b373",
+      "char_len": 54,
+      "units": [
+        {
+          "unit_id": "syn-e1",
+          "text": "The item is widget.",
+          "span": {
+            "start": 0,
+            "end": 19,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/prose_narrative",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e1",
+            "source_uri": "bitebench://syn-case-001/prose_narrative",
+            "byte_or_token_span": "char:0-19",
+            "renderer_id": "prose_narrative@v0"
+          },
+          "fact_id": "syn-e1"
+        },
+        {
+          "unit_id": "syn-e2",
+          "text": "The qty is 3.",
+          "span": {
+            "start": 20,
+            "end": 33,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/prose_narrative",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e2",
+            "source_uri": "bitebench://syn-case-001/prose_narrative",
+            "byte_or_token_span": "char:20-33",
+            "renderer_id": "prose_narrative@v0"
+          },
+          "fact_id": "syn-e2"
+        },
+        {
+          "unit_id": "syn-e3",
+          "text": "The warehouse is W1.",
+          "span": {
+            "start": 34,
+            "end": 54,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/prose_narrative",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e3",
+            "source_uri": "bitebench://syn-case-001/prose_narrative",
+            "byte_or_token_span": "char:34-54",
+            "renderer_id": "prose_narrative@v0"
+          },
+          "fact_id": "syn-e3"
+        }
+      ],
+      "unit_ids": [
+        "syn-e1",
+        "syn-e2",
+        "syn-e3"
+      ]
+    },
+    "table_csv": {
+      "renderer_id": "table_csv@0.2.0-synthetic",
+      "text": "key,value\nitem,widget\nqty,3\nwarehouse,W1\n",
+      "surface_sha256": "34100298a5814f801f42f1b1380723b56f4da83f164f4629d42f50cea203d0e1",
+      "char_len": 41,
+      "units": [
+        {
+          "unit_id": "table_csv-filler-0",
+          "text": "key,value",
+          "span": {
+            "start": 0,
+            "end": 9,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/table_csv",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "table_csv-filler-0",
+            "source_uri": "bitebench://syn-case-001/table_csv",
+            "byte_or_token_span": "char:0-9",
+            "renderer_id": "table_csv@v0"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "syn-e1",
+          "text": "item,widget",
+          "span": {
+            "start": 10,
+            "end": 21,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/table_csv",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e1",
+            "source_uri": "bitebench://syn-case-001/table_csv",
+            "byte_or_token_span": "char:10-21",
+            "renderer_id": "table_csv@v0"
+          },
+          "fact_id": "syn-e1"
+        },
+        {
+          "unit_id": "syn-e2",
+          "text": "qty,3",
+          "span": {
+            "start": 22,
+            "end": 27,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/table_csv",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e2",
+            "source_uri": "bitebench://syn-case-001/table_csv",
+            "byte_or_token_span": "char:22-27",
+            "renderer_id": "table_csv@v0"
+          },
+          "fact_id": "syn-e2"
+        },
+        {
+          "unit_id": "syn-e3",
+          "text": "warehouse,W1",
+          "span": {
+            "start": 28,
+            "end": 40,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/table_csv",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e3",
+            "source_uri": "bitebench://syn-case-001/table_csv",
+            "byte_or_token_span": "char:28-40",
+            "renderer_id": "table_csv@v0"
+          },
+          "fact_id": "syn-e3"
+        }
+      ],
+      "unit_ids": [
+        "table_csv-filler-0",
+        "syn-e1",
+        "syn-e2",
+        "syn-e3"
+      ]
+    },
+    "nested_json": {
+      "renderer_id": "nested_json@0.2.0-synthetic",
+      "text": "{\n  \"graph\": {\n    \"nodes\": [\n      {\"attrs\": {\"key\": \"item\", \"value\": \"widget\"}},\n      {\"attrs\": {\"key\": \"qty\", \"value\": \"3\"}},\n      {\"attrs\": {\"key\": \"warehouse\", \"value\": \"W1\"}}\n    ]\n  }\n}",
+      "surface_sha256": "40da35335359b341aa946975f6ae0d3164789d25829668c840c3b2ee7361810e",
+      "char_len": 194,
+      "units": [
+        {
+          "unit_id": "syn-e1",
+          "text": "      {\"attrs\": {\"key\": \"item\", \"value\": \"widget\"}}",
+          "span": {
+            "start": 30,
+            "end": 81,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/nested_json",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e1",
+            "source_uri": "bitebench://syn-case-001/nested_json",
+            "byte_or_token_span": "char:30-81",
+            "renderer_id": "nested_json@v0"
+          },
+          "fact_id": "syn-e1"
+        },
+        {
+          "unit_id": "syn-e2",
+          "text": "      {\"attrs\": {\"key\": \"qty\", \"value\": \"3\"}}",
+          "span": {
+            "start": 83,
+            "end": 128,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/nested_json",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e2",
+            "source_uri": "bitebench://syn-case-001/nested_json",
+            "byte_or_token_span": "char:83-128",
+            "renderer_id": "nested_json@v0"
+          },
+          "fact_id": "syn-e2"
+        },
+        {
+          "unit_id": "syn-e3",
+          "text": "      {\"attrs\": {\"key\": \"warehouse\", \"value\": \"W1\"}}",
+          "span": {
+            "start": 130,
+            "end": 182,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/nested_json",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e3",
+            "source_uri": "bitebench://syn-case-001/nested_json",
+            "byte_or_token_span": "char:130-182",
+            "renderer_id": "nested_json@v0"
+          },
+          "fact_id": "syn-e3"
+        }
+      ],
+      "unit_ids": [
+        "syn-e1",
+        "syn-e2",
+        "syn-e3"
+      ]
+    },
+    "event_logs": {
+      "renderer_id": "event_logs@0.2.0-synthetic",
+      "text": "INFO key=item value=widget\nDEBUG heartbeat ok=1\nDEBUG heartbeat ok=1\nINFO key=qty value=3\nDEBUG heartbeat ok=1\nDEBUG heartbeat ok=1\nINFO key=warehouse value=W1\nDEBUG heartbeat ok=1\nDEBUG heartbeat ok=1",
+      "surface_sha256": "78202459994fd923dee7325b7c1640ca5335e1b04be7b3f6b9f1b2a2fa279255",
+      "char_len": 201,
+      "units": [
+        {
+          "unit_id": "syn-e1",
+          "text": "INFO key=item value=widget",
+          "span": {
+            "start": 0,
+            "end": 26,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e1",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:0-26",
+            "renderer_id": "event_logs@v0"
+          },
+          "fact_id": "syn-e1"
+        },
+        {
+          "unit_id": "event_logs-filler-0",
+          "text": "DEBUG heartbeat ok=1",
+          "span": {
+            "start": 27,
+            "end": 47,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "event_logs-filler-0",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:27-47",
+            "renderer_id": "event_logs@v0"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "event_logs-filler-1",
+          "text": "DEBUG heartbeat ok=1",
+          "span": {
+            "start": 48,
+            "end": 68,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "event_logs-filler-1",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:48-68",
+            "renderer_id": "event_logs@v0"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "syn-e2",
+          "text": "INFO key=qty value=3",
+          "span": {
+            "start": 69,
+            "end": 89,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e2",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:69-89",
+            "renderer_id": "event_logs@v0"
+          },
+          "fact_id": "syn-e2"
+        },
+        {
+          "unit_id": "event_logs-filler-2",
+          "text": "DEBUG heartbeat ok=1",
+          "span": {
+            "start": 90,
+            "end": 110,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "event_logs-filler-2",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:90-110",
+            "renderer_id": "event_logs@v0"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "event_logs-filler-3",
+          "text": "DEBUG heartbeat ok=1",
+          "span": {
+            "start": 111,
+            "end": 131,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "event_logs-filler-3",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:111-131",
+            "renderer_id": "event_logs@v0"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "syn-e3",
+          "text": "INFO key=warehouse value=W1",
+          "span": {
+            "start": 132,
+            "end": 159,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e3",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:132-159",
+            "renderer_id": "event_logs@v0"
+          },
+          "fact_id": "syn-e3"
+        },
+        {
+          "unit_id": "event_logs-filler-4",
+          "text": "DEBUG heartbeat ok=1",
+          "span": {
+            "start": 160,
+            "end": 180,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "event_logs-filler-4",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:160-180",
+            "renderer_id": "event_logs@v0"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "event_logs-filler-5",
+          "text": "DEBUG heartbeat ok=1",
+          "span": {
+            "start": 181,
+            "end": 201,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "event_logs-filler-5",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:181-201",
+            "renderer_id": "event_logs@v0"
+          },
+          "fact_id": null
+        }
+      ],
+      "unit_ids": [
+        "syn-e1",
+        "event_logs-filler-0",
+        "event_logs-filler-1",
+        "syn-e2",
+        "event_logs-filler-2",
+        "event_logs-filler-3",
+        "syn-e3",
+        "event_logs-filler-4",
+        "event_logs-filler-5"
+      ]
+    },
+    "code_config": {
+      "renderer_id": "code_config@0.2.0-synthetic",
+      "text": "# synthetic config; not a real service\nrecords = {\n    'item': 'widget',\n    'qty': '3',\n    'warehouse': 'W1',\n}",
+      "surface_sha256": "84715d58c56d0ef88a7dda633038f34ac9190e4ec497fcaad48bdbf3db0aba9b",
+      "char_len": 113,
+      "units": [
+        {
+          "unit_id": "code_config-filler-0",
+          "text": "# synthetic config; not a real service",
+          "span": {
+            "start": 0,
+            "end": 38,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/code_config",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "code_config-filler-0",
+            "source_uri": "bitebench://syn-case-001/code_config",
+            "byte_or_token_span": "char:0-38",
+            "renderer_id": "code_config@v0"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "code_config-filler-1",
+          "text": "records = {",
+          "span": {
+            "start": 39,
+            "end": 50,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/code_config",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "code_config-filler-1",
+            "source_uri": "bitebench://syn-case-001/code_config",
+            "byte_or_token_span": "char:39-50",
+            "renderer_id": "code_config@v0"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "syn-e1",
+          "text": "    'item': 'widget',",
+          "span": {
+            "start": 51,
+            "end": 72,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/code_config",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e1",
+            "source_uri": "bitebench://syn-case-001/code_config",
+            "byte_or_token_span": "char:51-72",
+            "renderer_id": "code_config@v0"
+          },
+          "fact_id": "syn-e1"
+        },
+        {
+          "unit_id": "syn-e2",
+          "text": "    'qty': '3',",
+          "span": {
+            "start": 73,
+            "end": 88,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/code_config",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e2",
+            "source_uri": "bitebench://syn-case-001/code_config",
+            "byte_or_token_span": "char:73-88",
+            "renderer_id": "code_config@v0"
+          },
+          "fact_id": "syn-e2"
+        },
+        {
+          "unit_id": "syn-e3",
+          "text": "    'warehouse': 'W1',",
+          "span": {
+            "start": 89,
+            "end": 111,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/code_config",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e3",
+            "source_uri": "bitebench://syn-case-001/code_config",
+            "byte_or_token_span": "char:89-111",
+            "renderer_id": "code_config@v0"
+          },
+          "fact_id": "syn-e3"
+        },
+        {
+          "unit_id": "code_config-filler-2",
+          "text": "}",
+          "span": {
+            "start": 112,
+            "end": 113,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/code_config",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "code_config-filler-2",
+            "source_uri": "bitebench://syn-case-001/code_config",
+            "byte_or_token_span": "char:112-113",
+            "renderer_id": "code_config@v0"
+          },
+          "fact_id": null
+        }
+      ],
+      "unit_ids": [
+        "code_config-filler-0",
+        "code_config-filler-1",
+        "syn-e1",
+        "syn-e2",
+        "syn-e3",
+        "code_config-filler-2"
+      ]
+    },
+    "mixed_payload": {
+      "renderer_id": "mixed_payload@0.2.0-synthetic",
+      "text": "\n--- PROSE ---\nThe item is widget.\nThe qty is 3.\nThe warehouse is W1.\n--- TABLE ---\nkey,value\nitem,widget\nqty,3\nwarehouse,W1\n\n--- LOGS ---\nINFO key=item value=widget\nINFO key=qty value=3\nINFO key=warehouse value=W1",
+      "surface_sha256": "078dd9560bc921c85db2088618105059d94077ec57faabaab104f307f5067e46",
+      "char_len": 214,
+      "units": [
+        {
+          "unit_id": "syn-e1",
+          "text": "The item is widget.",
+          "span": {
+            "start": 15,
+            "end": 34,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/mixed_payload",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e1",
+            "source_uri": "bitebench://syn-case-001/mixed_payload",
+            "byte_or_token_span": "char:15-34",
+            "renderer_id": "mixed_payload@v0"
+          },
+          "fact_id": "syn-e1"
+        },
+        {
+          "unit_id": "syn-e2",
+          "text": "The qty is 3.",
+          "span": {
+            "start": 35,
+            "end": 48,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/mixed_payload",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e2",
+            "source_uri": "bitebench://syn-case-001/mixed_payload",
+            "byte_or_token_span": "char:35-48",
+            "renderer_id": "mixed_payload@v0"
+          },
+          "fact_id": "syn-e2"
+        },
+        {
+          "unit_id": "syn-e3",
+          "text": "The warehouse is W1.",
+          "span": {
+            "start": 49,
+            "end": 69,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/mixed_payload",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e3",
+            "source_uri": "bitebench://syn-case-001/mixed_payload",
+            "byte_or_token_span": "char:49-69",
+            "renderer_id": "mixed_payload@v0"
+          },
+          "fact_id": "syn-e3"
+        },
+        {
+          "unit_id": "mixed_payload-filler-0",
+          "text": "key,value",
+          "span": {
+            "start": 84,
+            "end": 93,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/mixed_payload",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "mixed_payload-filler-0",
+            "source_uri": "bitebench://syn-case-001/mixed_payload",
+            "byte_or_token_span": "char:84-93",
+            "renderer_id": "mixed_payload@v0"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "syn-e1#1",
+          "text": "item,widget",
+          "span": {
+            "start": 94,
+            "end": 105,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/mixed_payload",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e1#1",
+            "source_uri": "bitebench://syn-case-001/mixed_payload",
+            "byte_or_token_span": "char:94-105",
+            "renderer_id": "mixed_payload@v0"
+          },
+          "fact_id": "syn-e1"
+        },
+        {
+          "unit_id": "syn-e2#1",
+          "text": "qty,3",
+          "span": {
+            "start": 106,
+            "end": 111,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/mixed_payload",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e2#1",
+            "source_uri": "bitebench://syn-case-001/mixed_payload",
+            "byte_or_token_span": "char:106-111",
+            "renderer_id": "mixed_payload@v0"
+          },
+          "fact_id": "syn-e2"
+        },
+        {
+          "unit_id": "syn-e3#1",
+          "text": "warehouse,W1",
+          "span": {
+            "start": 112,
+            "end": 124,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/mixed_payload",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e3#1",
+            "source_uri": "bitebench://syn-case-001/mixed_payload",
+            "byte_or_token_span": "char:112-124",
+            "renderer_id": "mixed_payload@v0"
+          },
+          "fact_id": "syn-e3"
+        },
+        {
+          "unit_id": "syn-e1#2",
+          "text": "INFO key=item value=widget",
+          "span": {
+            "start": 139,
+            "end": 165,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/mixed_payload",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e1#2",
+            "source_uri": "bitebench://syn-case-001/mixed_payload",
+            "byte_or_token_span": "char:139-165",
+            "renderer_id": "mixed_payload@v0"
+          },
+          "fact_id": "syn-e1"
+        },
+        {
+          "unit_id": "syn-e2#2",
+          "text": "INFO key=qty value=3",
+          "span": {
+            "start": 166,
+            "end": 186,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/mixed_payload",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e2#2",
+            "source_uri": "bitebench://syn-case-001/mixed_payload",
+            "byte_or_token_span": "char:166-186",
+            "renderer_id": "mixed_payload@v0"
+          },
+          "fact_id": "syn-e2"
+        },
+        {
+          "unit_id": "syn-e3#2",
+          "text": "INFO key=warehouse value=W1",
+          "span": {
+            "start": 187,
+            "end": 214,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/mixed_payload",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e3#2",
+            "source_uri": "bitebench://syn-case-001/mixed_payload",
+            "byte_or_token_span": "char:187-214",
+            "renderer_id": "mixed_payload@v0"
+          },
+          "fact_id": "syn-e3"
+        }
+      ],
+      "unit_ids": [
+        "syn-e1",
+        "syn-e2",
+        "syn-e3",
+        "mixed_payload-filler-0",
+        "syn-e1#1",
+        "syn-e2#1",
+        "syn-e3#1",
+        "syn-e1#2",
+        "syn-e2#2",
+        "syn-e3#2"
+      ]
+    }
+  },
+  "contrast_pair": {
+    "short_dense": {
+      "renderer_id": "prose_narrative_dense@0.2.0-synthetic",
+      "text": "The item is widget.\nThe qty is 3.\nThe warehouse is W1.\n# pad ................\n# pad ................\n# pad ................\n# pad ................\n# pad ................\n# pad ................\n# pad ..",
+      "surface_sha256": "ba321b11e60a182c6e59532cc247f853dd637aa0817dd599a55a608edec59e1c",
+      "char_len": 201,
+      "units": [
+        {
+          "unit_id": "syn-e1",
+          "text": "The item is widget.",
+          "span": {
+            "start": 0,
+            "end": 19,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/prose_narrative",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e1",
+            "source_uri": "bitebench://syn-case-001/prose_narrative",
+            "byte_or_token_span": "char:0-19",
+            "renderer_id": "prose_narrative@0.2.0-synthetic"
+          },
+          "fact_id": "syn-e1"
+        },
+        {
+          "unit_id": "syn-e2",
+          "text": "The qty is 3.",
+          "span": {
+            "start": 20,
+            "end": 33,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/prose_narrative",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e2",
+            "source_uri": "bitebench://syn-case-001/prose_narrative",
+            "byte_or_token_span": "char:20-33",
+            "renderer_id": "prose_narrative@0.2.0-synthetic"
+          },
+          "fact_id": "syn-e2"
+        },
+        {
+          "unit_id": "syn-e3",
+          "text": "The warehouse is W1.",
+          "span": {
+            "start": 34,
+            "end": 54,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/prose_narrative",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e3",
+            "source_uri": "bitebench://syn-case-001/prose_narrative",
+            "byte_or_token_span": "char:34-54",
+            "renderer_id": "prose_narrative@0.2.0-synthetic"
+          },
+          "fact_id": "syn-e3"
+        }
+      ]
+    },
+    "long_repetitive": {
+      "renderer_id": "event_logs_repetitive@0.2.0-synthetic",
+      "text": "INFO key=item value=widget\nDEBUG heartbeat ok=1\nDEBUG heartbeat ok=1\nINFO key=qty value=3\nDEBUG heartbeat ok=1\nDEBUG heartbeat ok=1\nINFO key=warehouse value=W1\nDEBUG heartbeat ok=1\nDEBUG heartbeat ok=1",
+      "surface_sha256": "78202459994fd923dee7325b7c1640ca5335e1b04be7b3f6b9f1b2a2fa279255",
+      "char_len": 201,
+      "units": [
+        {
+          "unit_id": "syn-e1",
+          "text": "INFO key=item value=widget",
+          "span": {
+            "start": 0,
+            "end": 26,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e1",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:0-26",
+            "renderer_id": "event_logs@0.2.0-synthetic"
+          },
+          "fact_id": "syn-e1"
+        },
+        {
+          "unit_id": "event_logs-filler-0",
+          "text": "DEBUG heartbeat ok=1",
+          "span": {
+            "start": 27,
+            "end": 47,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "event_logs-filler-0",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:27-47",
+            "renderer_id": "event_logs@0.2.0-synthetic"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "event_logs-filler-1",
+          "text": "DEBUG heartbeat ok=1",
+          "span": {
+            "start": 48,
+            "end": 68,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "event_logs-filler-1",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:48-68",
+            "renderer_id": "event_logs@0.2.0-synthetic"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "syn-e2",
+          "text": "INFO key=qty value=3",
+          "span": {
+            "start": 69,
+            "end": 89,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e2",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:69-89",
+            "renderer_id": "event_logs@0.2.0-synthetic"
+          },
+          "fact_id": "syn-e2"
+        },
+        {
+          "unit_id": "event_logs-filler-2",
+          "text": "DEBUG heartbeat ok=1",
+          "span": {
+            "start": 90,
+            "end": 110,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "event_logs-filler-2",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:90-110",
+            "renderer_id": "event_logs@0.2.0-synthetic"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "event_logs-filler-3",
+          "text": "DEBUG heartbeat ok=1",
+          "span": {
+            "start": 111,
+            "end": 131,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "event_logs-filler-3",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:111-131",
+            "renderer_id": "event_logs@0.2.0-synthetic"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "syn-e3",
+          "text": "INFO key=warehouse value=W1",
+          "span": {
+            "start": 132,
+            "end": 159,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "syn-e3",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:132-159",
+            "renderer_id": "event_logs@0.2.0-synthetic"
+          },
+          "fact_id": "syn-e3"
+        },
+        {
+          "unit_id": "event_logs-filler-4",
+          "text": "DEBUG heartbeat ok=1",
+          "span": {
+            "start": 160,
+            "end": 180,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "event_logs-filler-4",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:160-180",
+            "renderer_id": "event_logs@0.2.0-synthetic"
+          },
+          "fact_id": null
+        },
+        {
+          "unit_id": "event_logs-filler-5",
+          "text": "DEBUG heartbeat ok=1",
+          "span": {
+            "start": 181,
+            "end": 201,
+            "unit": "char"
+          },
+          "source_uri": "bitebench://syn-case-001/event_logs",
+          "parent_unit_id": null,
+          "role": null,
+          "provenance": {
+            "unit_id": "event_logs-filler-5",
+            "source_uri": "bitebench://syn-case-001/event_logs",
+            "byte_or_token_span": "char:181-201",
+            "renderer_id": "event_logs@0.2.0-synthetic"
+          },
+          "fact_id": null
+        }
+      ]
+    },
+    "length_matched": false,
+    "length_match_basis": "char_only_not_token",
+    "char_len_matched": true,
+    "padding_applied": true,
+    "padding_note": "padding inserts '# pad' comment lines, which shift the structural morphology feature; treat padded pairs as diagnostic only"
+  },
+  "harness_hooks": {
+    "full_cost_contract": "T_total",
+    "token_meter_event_stub": {
+      "kind": "bitebench_render",
+      "case_id": "syn-case-001",
+      "textures": [
+        "prose_narrative",
+        "table_csv",
+        "nested_json",
+        "event_logs",
+        "code_config",
+        "mixed_payload"
+      ]
+    }
+  },
+  "notes": {
+    "pivot": "Pivot-to-bench",
+    "real_dataset": "TBD",
+    "fact_identity_human_lock": "TBD"
+  },
+  "bundle_fingerprint": "ef7ce998b7a5600601ca55377ddc78b1c48acfcd33e5def54addd2ba0c5ca7c2"
+}

@@ -1,17 +1,32 @@
 from __future__ import annotations
 
 import hashlib
+from collections.abc import Sequence
 from typing import Any
 
 from .models import CanonicalCase, Fact, json_dumps_stable
-from .renderers import RENDERERS, TEXTURE_FAMILIES, render_event_logs, render_prose_narrative
+from .renderers import (
+    RENDERERS,
+    TEXTURE_FAMILIES,
+    RenderedSurface,
+    render_event_logs,
+    render_prose_narrative,
+)
 
-GENERATOR_VERSION = "0.1.0-synthetic"
+#: Bumped when renderer output changes — frozen fixtures must be regenerated.
+GENERATOR_VERSION = "0.2.0-synthetic"
+
+
+class CounterfactualIdentityError(ValueError):
+    """Raised when a counterfactual pair does not hold its invariants."""
 
 
 def make_synthetic_case(seed: int = 0) -> CanonicalCase:
-    """Deterministic synthetic case. No real dataset / licence claims."""
-    # seed only selects among a tiny fixed family to keep fixtures frozen.
+    """Deterministic synthetic case. No real dataset / licence claims.
+
+    NOTE: only two canonical cases exist (``seed % 2``). Scaling the case pool
+    is future work and is recorded as an open item in the handover.
+    """
     variant = seed % 2
     if variant == 0:
         facts = (
@@ -59,6 +74,83 @@ def _pad_to_length(text: str, target: int) -> str:
     return out
 
 
+def _surface_record(surface: RenderedSurface, *, version: str) -> dict[str, Any]:
+    return {
+        "renderer_id": f"{surface.family}@{version}",
+        "text": surface.text,
+        "surface_sha256": _surface_hash(surface.text),
+        "char_len": len(surface.text),
+        "units": [dict(u) for u in surface.units],
+        "unit_ids": list(surface.unit_ids),
+    }
+
+
+def assert_counterfactual_identity(
+    bundles: Sequence[dict[str, Any]],
+) -> None:
+    """Machine-check that bundles sharing a ``facts_id`` are true counterfactuals.
+
+    Invariants: same answer, same question, same required-evidence identity,
+    same canonical facts. Only the surface texture may differ.
+    """
+    by_facts: dict[str, list[dict[str, Any]]] = {}
+    for bundle in bundles:
+        facts_id = str(bundle.get("facts_id") or bundle["canonical"]["case_id"])
+        by_facts.setdefault(facts_id, []).append(bundle)
+
+    for facts_id, group in sorted(by_facts.items()):
+        if len(group) < 2:
+            continue
+        ref = group[0]["canonical"]
+        for other in group[1:]:
+            cur = other["canonical"]
+            for field in ("answer", "question", "required_evidence_ids", "facts"):
+                if ref[field] != cur[field]:
+                    raise CounterfactualIdentityError(
+                        f"facts_id={facts_id!r}: {field} differs between "
+                        f"{ref['case_id']!r} and {cur['case_id']!r}: "
+                        f"{ref[field]!r} != {cur[field]!r}"
+                    )
+
+
+def assert_no_surface_leakage(bundle: dict[str, Any]) -> None:
+    """Fail closed when a surface carries oracle-only information.
+
+    The answer *value* may occur inside a required-evidence unit (that is the
+    task). It may not occur anywhere else, and it may never be labelled.
+    """
+    canonical = bundle["canonical"]
+    answer = str(canonical["answer"])
+    question = str(canonical["question"])
+    required = [str(x) for x in canonical["required_evidence_ids"]]
+
+    for family, payload in bundle["textures"].items():
+        text = str(payload["text"])
+        if question in text:
+            raise CounterfactualIdentityError(f"{family}: question leaked into the surface")
+        for eid in required:
+            if eid in text:
+                raise CounterfactualIdentityError(
+                    f"{family}: required evidence id {eid!r} leaked into the surface"
+                )
+        # Every occurrence of the answer must sit inside an evidence unit span.
+        # Match on fact_id so repeated renderings (mixed_payload) also count.
+        evidence_spans = [
+            (int(u["span"]["start"]), int(u["span"]["end"]))
+            for u in payload["units"]
+            if str(u.get("fact_id") or u["unit_id"]) in required
+        ]
+        idx = text.find(answer)
+        while idx != -1:
+            end = idx + len(answer)
+            if not any(start <= idx and end <= stop for start, stop in evidence_spans):
+                raise CounterfactualIdentityError(
+                    f"{family}: answer {answer!r} occurs at char {idx} outside "
+                    "any required-evidence unit"
+                )
+            idx = text.find(answer, idx + 1)
+
+
 def generate_texture_bundle(
     *,
     case: CanonicalCase | None = None,
@@ -72,46 +164,52 @@ def generate_texture_bundle(
     identity_hash = case.identity_hash()
     surfaces: dict[str, dict[str, Any]] = {}
     for family in TEXTURE_FAMILIES:
-        text = RENDERERS[family](case)
-        surfaces[family] = {
-            "renderer_id": f"{family}@{version}",
-            "text": text,
-            "surface_sha256": _surface_hash(text),
-            "char_len": len(text),
-        }
+        surfaces[family] = _surface_record(RENDERERS[family](case), version=version)
 
-    # Length-matched pair: short-dense prose vs long-repetitive logs, then pad the shorter.
-    dense = render_prose_narrative(case, dense=True)
-    long_rep = render_event_logs(case, repetitive=True)
-    target = max(len(dense), len(long_rep))
+    # Contrast pair: short-dense prose vs long-repetitive logs.
+    dense = render_prose_narrative(case, dense=True, version=version)
+    long_rep = render_event_logs(case, repetitive=True, version=version)
+    dense_text = dense.text
+    long_text = long_rep.text
+    target = max(len(dense_text), len(long_text))
     if length_match:
-        dense_m = _pad_to_length(dense, target)
-        long_m = _pad_to_length(long_rep, target)
-    else:
-        dense_m, long_m = dense, long_rep
+        dense_text = _pad_to_length(dense_text, target)
+        long_text = _pad_to_length(long_text, target)
+    char_len_matched = len(dense_text) == len(long_text)
 
     pair = {
         "short_dense": {
             "renderer_id": f"prose_narrative_dense@{version}",
-            "text": dense_m,
-            "surface_sha256": _surface_hash(dense_m),
-            "char_len": len(dense_m),
+            "text": dense_text,
+            "surface_sha256": _surface_hash(dense_text),
+            "char_len": len(dense_text),
+            "units": [dict(u) for u in dense.units],
         },
         "long_repetitive": {
             "renderer_id": f"event_logs_repetitive@{version}",
-            "text": long_m,
-            "surface_sha256": _surface_hash(long_m),
-            "char_len": len(long_m),
+            "text": long_text,
+            "surface_sha256": _surface_hash(long_text),
+            "char_len": len(long_text),
+            "units": [dict(u) for u in long_rep.units],
         },
-        "length_matched": length_match and len(dense_m) == len(long_m),
+        # char length is NOT token length. Until a tokeniser-based matcher
+        # exists, this pair must not enter a token-matched analysis.
+        "length_matched": False,
+        "length_match_basis": "char_only_not_token",
+        "char_len_matched": char_len_matched,
+        "padding_applied": bool(length_match),
+        "padding_note": (
+            "padding inserts '# pad' comment lines, which shift the structural "
+            "morphology feature; treat padded pairs as diagnostic only"
+        ),
     }
 
-    # Explicit non-leakage: route labels are metadata only, never embedded as answers.
-    return {
+    bundle = {
         "generator_version": version,
         "seed": seed,
         "identity_sha256": identity_hash,
         "canonical": case.identity_payload(),
+        "facts_id": case.case_id,
         "textures": surfaces,
         "contrast_pair": pair,
         "harness_hooks": {
@@ -128,14 +226,25 @@ def generate_texture_bundle(
             "fact_identity_human_lock": "TBD",
         },
     }
+    # Fail closed rather than emit a leaking benchmark.
+    assert_no_surface_leakage(bundle)
+    return bundle
 
 
 def bundle_fingerprint(bundle: dict[str, Any]) -> str:
-    # Fingerprint excludes surface texts' padding variance by using identity + family set.
+    """Fingerprint identity **and** rendered surfaces.
+
+    Surface hashes are included so that changing a renderer changes the
+    fingerprint — otherwise a benchmark version could silently drift.
+    """
     payload = {
         "generator_version": bundle["generator_version"],
         "seed": bundle["seed"],
         "identity_sha256": bundle["identity_sha256"],
         "families": sorted(bundle["textures"].keys()),
+        "surface_sha256": {
+            family: bundle["textures"][family]["surface_sha256"]
+            for family in sorted(bundle["textures"])
+        },
     }
     return hashlib.sha256(json_dumps_stable(payload).encode("utf-8")).hexdigest()
