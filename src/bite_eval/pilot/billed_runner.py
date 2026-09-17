@@ -106,6 +106,8 @@ class BilledInstanceResult:
     failures: tuple[str, ...] = ()
     answer_text: str = ""
     error: str | None = None
+    # Baseline status: ok | missing_pair | timeout | rate_limit | error
+    baseline_status: str = "ok"
 
 
 @dataclass
@@ -132,10 +134,61 @@ def _call_key(family: str, instance_id: str, method: str) -> tuple[str, str, str
     return (str(family), str(instance_id), str(method))
 
 
+def _refresh_stale_baselines(
+    results: list[BilledInstanceResult],
+    instance_id: str,
+    new_baseline_q: float,
+    new_baseline_status: str,
+    *,
+    delta: float = DELTA,
+    rho_visible: float = RHO_VISIBLE,
+    rho_recoverable: float = RHO_RECOVERABLE,
+    eta: float = ETA,
+) -> None:
+    """Bug 1 fix: After successful raw_full, refresh stale compressed baselines.
+    
+    When raw_full times out then succeeds on resume retry, compressed rows
+    already written with stale Q_baseline=0.0 / baseline_status=timeout must
+    be updated to use the new raw_full Q and constraints recomputed.
+    
+    Bug 1 (new): Also refresh rows with "unknown" baseline_status (from
+    missing/empty checkpoint field) to replace gold-derived baselines.
+    """
+    for row in results:
+        if (
+            row.instance_id == instance_id
+            and row.method_id != "raw_full"
+            and row.baseline_status in ("timeout", "error", "missing_pair", "unknown")
+        ):
+            row.Q_baseline = new_baseline_q
+            row.baseline_status = new_baseline_status
+            # Recompute constraints with the new baseline
+            cr = check_constraints(
+                Q=row.Q,
+                Q_baseline=new_baseline_q,
+                recall_vis=row.recall_vis,
+                recall_rec=row.recall_rec,
+                provenance=row.provenance,
+                delta=delta,
+                rho_visible=rho_visible,
+                rho_recoverable=rho_recoverable,
+                eta=eta,
+            )
+            row.constraints_ok = cr.ok
+            row.failures = cr.failures
+
+
 def _row_from_dict(d: Mapping[str, Any]) -> BilledInstanceResult:
     failures = d.get("failures") or ()
     if isinstance(failures, list):
         failures = tuple(failures)
+    # Bug 1 fix: missing baseline_status should NOT default to "ok"
+    # Treat missing/empty as "unknown" which requires baseline refresh
+    baseline_status_raw = d.get("baseline_status")
+    if baseline_status_raw:
+        baseline_status = str(baseline_status_raw)
+    else:
+        baseline_status = "unknown"
     return BilledInstanceResult(
         instance_id=str(d.get("instance_id", "")),
         family=str(d.get("family", "")),
@@ -157,6 +210,7 @@ def _row_from_dict(d: Mapping[str, Any]) -> BilledInstanceResult:
         failures=tuple(failures),
         answer_text=str(d.get("answer_text") or ""),
         error=d.get("error"),
+        baseline_status=baseline_status,
     )
 
 
@@ -315,8 +369,15 @@ def evaluate_billed_instance(
     http_trace: list[dict[str, Any]] | None = None,
     max_tokens: int = 256,
     retry_max: int | None = None,
+    raw_baseline_q: float | None = None,
+    baseline_status: str | None = None,
 ) -> BilledInstanceResult:
-    """One billed target call; T_total from provider usage only."""
+    """One billed target call; T_total from provider usage only.
+    
+    Q_baseline comes from paired raw_full response when provided via
+    raw_baseline_q. For raw_full itself, uses self-pairing (Q_baseline = Q).
+    Never uses gold answer as baseline.
+    """
     messages = _build_messages(packet, method_id)
     model_name = getattr(client, "model", DEFAULT_MODEL)
     try:
@@ -337,7 +398,7 @@ def evaluate_billed_instance(
             family=str(packet.get("family")),
             method_id=method_id,
             Q=0.0,
-            Q_baseline=1.0,
+            Q_baseline=raw_baseline_q if raw_baseline_q is not None else 0.0,
             recall_vis=0.0,
             recall_rec=0.0,
             provenance=0.0,
@@ -352,18 +413,28 @@ def evaluate_billed_instance(
             model=str(model_name),
             failures=("provider_timeout",),
             error=str(exc),
+            baseline_status=baseline_status or ("timeout" if method_id == "raw_full" else "ok"),
         )
     except (ZaiClientError, TimeoutError) as exc:
         # TimeoutError should already be ProviderTimeoutError from ZaiClient,
         # but catch bare TimeoutError if a duck-typed client raises it.
         text_proxy = str(packet.get("document") or "")
         is_timeout = isinstance(exc, TimeoutError) or "timed out" in str(exc).lower()
+        # Bug 3 fix: provider errors must NOT set baseline_status=ok
+        if baseline_status:
+            status = baseline_status
+        elif method_id == "raw_full":
+            # raw_full: timeout → "timeout", non-timeout error → "error"
+            status = "timeout" if is_timeout else "error"
+        else:
+            # Non-raw method: inherit from paired raw_full if available, else error
+            status = "error"
         return BilledInstanceResult(
             instance_id=str(packet.get("instance_id")),
             family=str(packet.get("family")),
             method_id=method_id,
             Q=0.0,
-            Q_baseline=1.0,
+            Q_baseline=raw_baseline_q if raw_baseline_q is not None else 0.0,
             recall_vis=0.0,
             recall_rec=0.0,
             provenance=0.0,
@@ -378,6 +449,7 @@ def evaluate_billed_instance(
             model=str(model_name),
             failures=("provider_timeout",) if is_timeout else ("provider_error",),
             error=str(exc),
+            baseline_status=status,
         )
 
     answer = str(getattr(result, "text", "") or "").strip()
@@ -393,10 +465,18 @@ def evaluate_billed_instance(
     vis = _visible_for_method(packet, method_id)
     m = metrics_from_instance(packet, vis, answer=answer)
 
-    # Baseline Q: gold-matched offline for constraint check (same packet)
-    gold = str(packet.get("gold_answer", ""))
-    m_base = metrics_from_instance(packet, vis, answer=gold)
-    Q_baseline = float(m_base["quality"])
+    # Q_baseline: from paired raw_full response, or self-pairing for raw_full
+    if raw_baseline_q is not None:
+        Q_baseline = raw_baseline_q
+        actual_baseline_status = baseline_status or "ok"
+    elif method_id == "raw_full":
+        # Self-pairing: raw_full uses its own Q as baseline
+        Q_baseline = float(m["quality"])
+        actual_baseline_status = "ok"
+    else:
+        # No paired raw_full provided — should not happen in proper workflow
+        Q_baseline = 0.0
+        actual_baseline_status = "missing_pair"
 
     text = str(packet.get("document") or "")
     t_logical = estimate_tokens_char4(text) + estimate_tokens_char4(answer)
@@ -439,6 +519,7 @@ def evaluate_billed_instance(
         failures=cr.failures,
         answer_text=answer,
         error=None,
+        baseline_status=actual_baseline_status,
     )
 
 
@@ -517,9 +598,12 @@ def run_billed_pilot(
     per_family: dict[str, Any] = {}
     stopped_early = False
 
+    # Lookup for raw_full Q values by instance_id (for pairing)
+    raw_baseline_lookup: dict[str, tuple[float, str]] = {}
+
     prior = load_checkpoint(checkpoint_path) if resume and checkpoint_path else {}
     skip_ok: dict[tuple[str, str, str], dict[str, Any]] = {}
-    skip_rate: set[tuple[str, str, str]] = set()
+    skip_rate: dict[tuple[str, str, str], dict[str, Any]] = {}
     retry_once: set[tuple[str, str, str]] = set()
     if resume and prior:
         for key, rec in prior.items():
@@ -527,13 +611,26 @@ def run_billed_pilot(
             if status == "ok":
                 skip_ok[key] = rec
             elif status == "rate_limit":
-                skip_rate.add(key)
+                # Bug 3 fix: Keep rate_limit records to restore into state
+                skip_rate[key] = rec
+                # Bug 3 fix: Restore state.rate_limited from checkpointed rate_limit rows
+                state.rate_limited = True
+                if not state.rate_limit_at:
+                    state.rate_limit_at = f"{rec.get('instance_id')}:{rec.get('method')}"
+                # Bug 3 fix: Track rate_limit for raw_full even without row data
+                # so compressed methods know to skip (not bill as missing_pair)
+                method = str(rec.get("method", rec.get("method_id", "")))
+                if method == "raw_full":
+                    instance_id = str(rec.get("instance_id", ""))
+                    if instance_id:
+                        raw_baseline_lookup[instance_id] = (0.0, "rate_limit")
             elif status in RESUME_RETRY_STATUSES:
                 retry_once.add(key)
 
-        # Restore ok rows into state (from checkpoint row or partial file)
+        # Restore ok and rate_limit rows into state (from checkpoint row or partial file)
         restored_keys: set[tuple[str, str, str]] = set()
-        for key, rec in skip_ok.items():
+        # Bug 2 fix: Restore rate_limit rows so they populate raw_baseline_lookup
+        for key, rec in {**skip_ok, **skip_rate}.items():
             row_data = rec.get("row")
             if isinstance(row_data, dict):
                 row = _row_from_dict(row_data)
@@ -542,6 +639,12 @@ def run_billed_pilot(
                 if row.error is None and row.T_total is not None:
                     state.calls_succeeded += 1
                 state.calls_skipped_ok += 1
+                # Populate raw_baseline_lookup for restored raw_full rows
+                if row.method_id == "raw_full":
+                    raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
+                    # Bug 1 fix: Refresh stale compressed baselines when restoring successful raw_full
+                    if row.error is None and row.baseline_status == "ok":
+                        _refresh_stale_baselines(state.results, row.instance_id, row.Q, row.baseline_status)
         if partial_path and Path(partial_path).is_file():
             try:
                 partial = json.loads(Path(partial_path).read_text(encoding="utf-8"))
@@ -560,8 +663,44 @@ def run_billed_pilot(
                         if row.error is None and row.T_total is not None:
                             state.calls_succeeded += 1
                         state.calls_skipped_ok += 1
+                        # Populate raw_baseline_lookup for restored raw_full rows
+                        if row.method_id == "raw_full":
+                            raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
+                            # Bug 1 fix: Refresh stale compressed baselines when restoring successful raw_full
+                            if row.error is None and row.baseline_status == "ok":
+                                _refresh_stale_baselines(state.results, row.instance_id, row.Q, row.baseline_status)
             except (json.JSONDecodeError, OSError):
                 pass
+
+        # Bug 2 fix (a): Post-restore refresh pass
+        # After all rows restored, refresh stale compressed baselines from ok raw_full
+        for row in state.results:
+            if row.method_id == "raw_full" and row.error is None and row.baseline_status == "ok":
+                _refresh_stale_baselines(state.results, row.instance_id, row.Q, row.baseline_status)
+                # Bug 2 fix: Persist refreshed compressed rows to checkpoint after restore
+                if checkpoint_path is not None:
+                    for refreshed_row in state.results:
+                        if (
+                            refreshed_row.instance_id == row.instance_id
+                            and refreshed_row.method_id != "raw_full"
+                        ):
+                            # Bug 1 fix: Preserve explicit statuses (rate_limit, etc)
+                            if refreshed_row.baseline_status == "rate_limit":
+                                status = "rate_limit"
+                            elif refreshed_row.error is None:
+                                status = "ok"
+                            else:
+                                status = "error"
+                            append_checkpoint(
+                                checkpoint_path,
+                                _checkpoint_record(
+                                    family=refreshed_row.family,
+                                    instance_id=refreshed_row.instance_id,
+                                    method=refreshed_row.method_id,
+                                    status=status,
+                                    row=refreshed_row,
+                                ),
+                            )
 
     def _record_attempt(
         *,
@@ -608,6 +747,7 @@ def run_billed_pilot(
                     continue
                 if key in skip_rate:
                     # Prior 429 on this key — skip to avoid storm
+                    # (rate_limit rows already restored into state above)
                     continue
 
                 # Resume retry: prior timeout/error gets one more attempt under
@@ -617,31 +757,110 @@ def run_billed_pilot(
                     state.calls_resumed_retry += 1
                     # Still use client's full retry budget for the re-attempt.
                     call_retry_max = None
-
+                
+                # Look up paired raw_full Q for non-raw methods
+                raw_baseline_q = None
+                baseline_status = None
+                instance_id = str(pkt.get("instance_id"))
+                if mid != "raw_full" and instance_id in raw_baseline_lookup:
+                    raw_baseline_q, baseline_status = raw_baseline_lookup[instance_id]
+                    # Bug 4 fix: Skip compressed if paired raw_full was rate-limited (before incrementing calls_attempted)
+                    if baseline_status == "rate_limit":
+                        # Don't attempt compressed when paired raw_full hit rate limit
+                        continue
+                elif mid != "raw_full":
+                    # No raw_full pair available yet
+                    baseline_status = "missing_pair"
+                
+                # Bug 4 fix: Increment calls_attempted only after skip checks
                 state.calls_attempted += 1
+                
                 try:
+                    
                     row = evaluate_billed_instance(
                         pkt,
                         mid,
                         client,
                         http_trace=state.http_trace,
                         retry_max=call_retry_max,
+                        raw_baseline_q=raw_baseline_q,
+                        baseline_status=baseline_status,
                     )
-                except RateLimitError:
+                except RateLimitError as exc:
+                    # Bug 2 fix: Record rate_limit row so it's tracked in state
                     state.rate_limited = True
                     state.rate_limit_at = f"{pkt.get('instance_id')}:{mid}"
                     stopped_early = True
+                    text_proxy = str(pkt.get("document") or "")
+                    model_name = getattr(client, "model", "glm-4.5-flash")
+                    row = BilledInstanceResult(
+                        instance_id=str(pkt.get("instance_id")),
+                        family=str(pkt.get("family")),
+                        method_id=mid,
+                        Q=0.0,
+                        Q_baseline=0.0,
+                        recall_vis=0.0,
+                        recall_rec=0.0,
+                        provenance=0.0,
+                        constraints_ok=False,
+                        T_total=None,
+                        T_prompt=None,
+                        T_completion=None,
+                        T_cached=None,
+                        estimate_source=BILLED_USAGE_LABEL,
+                        T_logical_char4_proxy=estimate_tokens_char4(text_proxy),
+                        B_r_cap=_br_cap(estimate_tokens_char4(text_proxy)),
+                        model=str(model_name),
+                        failures=("rate_limit",),
+                        error=str(exc),
+                        baseline_status="rate_limit",
+                    )
+                    fam_results.append(row)
+                    state.results.append(row)
+                    # For raw_full, populate lookup so compressed methods see rate_limit status
+                    if mid == "raw_full":
+                        raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
                     _record_attempt(
                         family=str(pkt.get("family")),
                         instance_id=str(pkt.get("instance_id")),
                         method=mid,
                         status="rate_limit",
                         error_type="RateLimitError",
+                        row=row,
                     )
                     break
 
                 fam_results.append(row)
                 state.results.append(row)
+                
+                # Populate raw_baseline_lookup for raw_full rows
+                if row.method_id == "raw_full":
+                    raw_baseline_lookup[row.instance_id] = (row.Q, row.baseline_status)
+                    # Bug 1 fix: Refresh stale compressed baselines after successful raw_full
+                    if row.error is None and row.baseline_status == "ok":
+                        _refresh_stale_baselines(state.results, row.instance_id, row.Q, row.baseline_status)
+                        # Bug 2 fix (b): Rewrite checkpoint for refreshed compressed rows
+                        if checkpoint_path is not None:
+                            for refreshed_row in state.results:
+                                if (
+                                    refreshed_row.instance_id == row.instance_id
+                                    and refreshed_row.method_id != "raw_full"
+                                ):
+                                    # Bug 1 fix: Preserve explicit statuses (rate_limit, etc)
+                                    if refreshed_row.baseline_status == "rate_limit":
+                                        status = "rate_limit"
+                                    elif refreshed_row.error is None:
+                                        status = "ok"
+                                    else:
+                                        status = "error"
+                                    # Rewrite checkpoint with updated baseline and constraints
+                                    _record_attempt(
+                                        family=refreshed_row.family,
+                                        instance_id=refreshed_row.instance_id,
+                                        method=refreshed_row.method_id,
+                                        status=status,
+                                        row=refreshed_row,
+                                    )
 
                 if row.error is None and row.T_total is not None:
                     state.calls_succeeded += 1
@@ -679,9 +898,17 @@ def run_billed_pilot(
                     )
             if stopped_early:
                 break
+        # Bug 2 fix: Exclude rate_limit and non-measured baselines from constraints_ok_rate
+        # Rows with baseline_status in (timeout, error, missing_pair, unknown) use Q_baseline=0.0
+        # so quality constraint passes vacuously — must not inflate constraint rate
+        measured_fam_results = [
+            r for r in fam_results
+            if r.baseline_status not in ("rate_limit", "timeout", "error", "missing_pair", "unknown")
+            and r.error is None
+        ]
         ok_rate = (
-            sum(1 for r in fam_results if r.constraints_ok) / len(fam_results)
-            if fam_results
+            sum(1 for r in measured_fam_results if r.constraints_ok) / len(measured_fam_results)
+            if measured_fam_results
             else 0.0
         )
         per_family[fam] = {
@@ -698,10 +925,20 @@ def run_billed_pilot(
     flush_partial(state, partial_path)
 
     n_rows = len(state.results)
+    # Bug 2 fix: Exclude rate_limit and non-measured baselines from constraints_ok_rate
+    # Rows with baseline_status in (timeout, error, missing_pair, unknown) use Q_baseline=0.0
+    # so quality constraint passes vacuously — must not inflate constraint rate
+    measured_rows = [
+        r for r in state.results
+        if r.baseline_status not in ("rate_limit", "timeout", "error", "missing_pair", "unknown")
+        and r.error is None
+    ]
     constraints_ok_rate = (
-        sum(1 for r in state.results if r.constraints_ok) / n_rows if n_rows else 0.0
+        sum(1 for r in measured_rows if r.constraints_ok) / len(measured_rows)
+        if measured_rows
+        else 0.0
     )
-    systematic_fail = n_rows > 0 and constraints_ok_rate < 0.5
+    systematic_fail = len(measured_rows) > 0 and constraints_ok_rate < 0.5
 
     billed_rows = [r for r in state.results if r.T_total is not None]
     has_billed = len(billed_rows) > 0

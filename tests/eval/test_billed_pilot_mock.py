@@ -313,7 +313,8 @@ def test_run_billed_pilot_rate_limit_partial() -> None:
     assert summary["rate_limited"] is True
     assert summary["decision"] == "pivot"
     assert "rate_limit" in summary["decision_reason"]
-    assert summary["n_instance_rows"] == 3  # stopped after 3 successes
+    # Bug 2 fix: rate_limit now creates a row, so 3 successes + 1 rate_limit = 4 rows
+    assert summary["n_instance_rows"] == 4
     assert summary["calls_succeeded"] == 3
 
 
@@ -721,3 +722,296 @@ def test_load_checkpoint_latest_wins(tmp_path: Path) -> None:
     )
     latest = load_checkpoint(ckpt)
     assert latest[("clean_local", "x1", "raw_full")]["status"] == "ok"
+
+
+# ---------------------------------------------------------------------------
+# Bug regressions: Bugbot PR#11 new findings
+# ---------------------------------------------------------------------------
+
+
+def test_bug1_stale_baselines_recompute_constraints(tmp_path: Path) -> None:
+    """Bug 1: Stale constraints survive baseline refresh.
+    
+    When raw_full times out then succeeds on resume, compressed rows must
+    recompute constraints_ok and failures with the new baseline.
+    """
+    ckpt = tmp_path / "bug1_ckpt.jsonl"
+    partial = tmp_path / "bug1_partial.json"
+    packets = generate_family_instances("clean_local", 1)
+    pkt = packets[0]
+    
+    # Simulate timeout on raw_full: Q_baseline=0.0, baseline_status=timeout
+    # Compressed row was written with stale baseline
+    append_checkpoint(
+        ckpt,
+        {
+            "family": pkt["family"],
+            "instance_id": pkt["instance_id"],
+            "method": "raw_full",
+            "status": "timeout",
+            "error_type": "ProviderTimeoutError",
+        },
+    )
+    # Compressed row with stale Q_baseline=0.0
+    append_checkpoint(
+        ckpt,
+        {
+            "family": pkt["family"],
+            "instance_id": pkt["instance_id"],
+            "method": "compressed_passthrough",
+            "status": "ok",
+            "usage": {"total_tokens": 30},
+            "row": {
+                "instance_id": str(pkt["instance_id"]),
+                "family": str(pkt["family"]),
+                "method_id": "compressed_passthrough",
+                "Q": 1.0,
+                "Q_baseline": 0.0,
+                "recall_vis": 0.8,
+                "recall_rec": 0.95,
+                "provenance": 1.0,
+                "constraints_ok": True,
+                "T_total": 30,
+                "T_prompt": 25,
+                "T_completion": 5,
+                "T_cached": 0,
+                "estimate_source": "billed_usage",
+                "failures": [],
+                "baseline_status": "timeout",
+                "answer_text": str(pkt["gold_answer"]),
+                "error": None,
+            },
+        },
+    )
+    
+    # Resume: raw_full succeeds, should refresh compressed baseline and recompute constraints
+    client = _FakeClient()
+    summary = run_billed_pilot(
+        client=client,
+        minimal=True,
+        families=["clean_local"],
+        n_per_family=1,
+        methods=["raw_full", "compressed_passthrough"],
+        paid_api=True,
+        checkpoint_path=ckpt,
+        partial_path=partial,
+        resume=True,
+    )
+    
+    # Find the compressed row
+    compressed = next(r for r in summary["results"] if r["method_id"] == "compressed_passthrough")
+    # Q_baseline should be refreshed from successful raw_full
+    assert compressed["Q_baseline"] > 0.0
+    assert compressed["baseline_status"] == "ok"
+    # Constraints should be recomputed (Q >= Q_baseline - delta should pass)
+    # With Q=1.0 and Q_baseline from raw_full (also ~1.0), constraints should still pass
+    assert compressed["constraints_ok"] is True
+
+
+def test_bug2_resume_restore_refreshes_stale_baselines(tmp_path: Path) -> None:
+    """Bug 2: Resume restore skips baseline refresh.
+    
+    After full restore, stale compressed baselines must be refreshed from ok raw_full.
+    """
+    ckpt = tmp_path / "bug2_ckpt.jsonl"
+    partial = tmp_path / "bug2_partial.json"
+    packets = generate_family_instances("clean_local", 1)
+    pkt = packets[0]
+    
+    # Checkpoint: raw_full succeeded on previous run
+    append_checkpoint(
+        ckpt,
+        {
+            "family": pkt["family"],
+            "instance_id": pkt["instance_id"],
+            "method": "raw_full",
+            "status": "ok",
+            "usage": {"total_tokens": 40},
+            "row": {
+                "instance_id": str(pkt["instance_id"]),
+                "family": str(pkt["family"]),
+                "method_id": "raw_full",
+                "Q": 1.0,
+                "Q_baseline": 1.0,
+                "recall_vis": 0.8,
+                "recall_rec": 0.95,
+                "provenance": 1.0,
+                "constraints_ok": True,
+                "T_total": 40,
+                "T_prompt": 35,
+                "T_completion": 5,
+                "T_cached": 0,
+                "estimate_source": "billed_usage",
+                "failures": [],
+                "baseline_status": "ok",
+                "answer_text": str(pkt["gold_answer"]),
+                "error": None,
+            },
+        },
+    )
+    # Compressed row with stale Q_baseline=0.0 from earlier timeout
+    append_checkpoint(
+        ckpt,
+        {
+            "family": pkt["family"],
+            "instance_id": pkt["instance_id"],
+            "method": "compressed_passthrough",
+            "status": "ok",
+            "usage": {"total_tokens": 30},
+            "row": {
+                "instance_id": str(pkt["instance_id"]),
+                "family": str(pkt["family"]),
+                "method_id": "compressed_passthrough",
+                "Q": 1.0,
+                "Q_baseline": 0.0,  # Stale
+                "recall_vis": 0.8,
+                "recall_rec": 0.95,
+                "provenance": 1.0,
+                "constraints_ok": True,  # Incorrectly passing
+                "T_total": 30,
+                "T_prompt": 25,
+                "T_completion": 5,
+                "T_cached": 0,
+                "estimate_source": "billed_usage",
+                "failures": [],
+                "baseline_status": "timeout",  # Stale status
+                "answer_text": str(pkt["gold_answer"]),
+                "error": None,
+            },
+        },
+    )
+    
+    # Resume: should refresh compressed baseline from ok raw_full during restore
+    client = _FakeClient()
+    summary = run_billed_pilot(
+        client=client,
+        minimal=True,
+        families=["clean_local"],
+        n_per_family=1,
+        methods=["raw_full", "compressed_passthrough"],
+        paid_api=True,
+        checkpoint_path=ckpt,
+        partial_path=partial,
+        resume=True,
+    )
+    
+    # No new calls since both already ok
+    assert summary["calls_attempted"] == 0
+    # Find the compressed row
+    compressed = next(r for r in summary["results"] if r["method_id"] == "compressed_passthrough")
+    # Q_baseline should be refreshed to raw_full's Q
+    assert compressed["Q_baseline"] == 1.0
+    assert compressed["baseline_status"] == "ok"
+
+
+def test_bug3_rate_limit_rows_excluded_from_constraints_ok_rate(tmp_path: Path) -> None:
+    """Bug 3: Rate-limit rows force systematic stop.
+    
+    Rate-limit rows must be excluded from constraints_ok_rate calculation.
+    """
+    ckpt = tmp_path / "bug3_ckpt.jsonl"
+    partial = tmp_path / "bug3_partial.json"
+    
+    # Rate limit on second call
+    client = _FakeClient(fail_rate_limit_after=1)
+    summary = run_billed_pilot(
+        client=client,
+        minimal=True,
+        families=["clean_local"],
+        n_per_family=2,
+        methods=["raw_full"],
+        paid_api=True,
+        checkpoint_path=ckpt,
+        partial_path=partial,
+        resume=False,
+    )
+    
+    # Should have 1 ok + 1 rate_limit
+    assert summary["calls_succeeded"] == 1
+    assert summary["rate_limited"] is True
+    # Rate-limit row should not count in constraints_ok_rate
+    # Only the successful row should count
+    measured = [r for r in summary["results"] if r["baseline_status"] != "rate_limit" and r["error"] is None]
+    assert len(measured) == 1
+    assert measured[0]["constraints_ok"] is True
+    # constraints_ok_rate should be 1.0 (1/1), not 0.5 (1/2)
+    assert summary["constraints_ok_rate"] == 1.0
+    # Decision should be pivot (rate_limit_partial), not stop (systematic fail)
+    assert summary["decision"] == "pivot"
+    assert "rate_limit" in summary["decision_reason"]
+
+
+def test_bug3_resume_restores_rate_limited_state(tmp_path: Path) -> None:
+    """Bug 3: Resume restore skips baseline refresh.
+    
+    On resume, state.rate_limited must be restored from checkpointed rate_limit rows.
+    """
+    ckpt = tmp_path / "bug3_resume_ckpt.jsonl"
+    partial = tmp_path / "bug3_resume_partial.json"
+    packets = generate_family_instances("clean_local", 1)
+    pkt = packets[0]
+    
+    # Checkpoint: rate_limit from previous run
+    append_checkpoint(
+        ckpt,
+        {
+            "family": pkt["family"],
+            "instance_id": pkt["instance_id"],
+            "method": "raw_full",
+            "status": "rate_limit",
+            "error_type": "RateLimitError",
+        },
+    )
+    
+    # Resume: should restore state.rate_limited
+    client = _FakeClient()
+    summary = run_billed_pilot(
+        client=client,
+        minimal=True,
+        families=["clean_local"],
+        n_per_family=1,
+        methods=["raw_full"],
+        paid_api=True,
+        checkpoint_path=ckpt,
+        partial_path=partial,
+        resume=True,
+    )
+    
+    # state.rate_limited should be True from restored checkpoint
+    assert summary["rate_limited"] is True
+    assert summary["rate_limit_at"] is not None
+    # Decision should handle rate_limit_partial, not systematic fail
+    assert summary["decision"] == "pivot"
+
+
+def test_bug4_skipped_pairs_dont_increment_attempts(tmp_path: Path) -> None:
+    """Bug 4: Skipped pairs still increment attempts.
+    
+    Compressed arms skipped due to paired rate_limit must not increment calls_attempted.
+    """
+    ckpt = tmp_path / "bug4_ckpt.jsonl"
+    partial = tmp_path / "bug4_partial.json"
+    
+    # Rate limit on first call (raw_full)
+    client = _FakeClient(fail_rate_limit_after=0)
+    summary = run_billed_pilot(
+        client=client,
+        minimal=True,
+        families=["clean_local"],
+        n_per_family=1,
+        methods=["raw_full", "compressed_passthrough"],
+        paid_api=True,
+        checkpoint_path=ckpt,
+        partial_path=partial,
+        resume=False,
+    )
+    
+    # Should have only 1 attempt (raw_full that hit rate limit)
+    # compressed_passthrough should be skipped without incrementing calls_attempted
+    assert summary["calls_attempted"] == 1
+    assert summary["calls_succeeded"] == 0
+    assert summary["rate_limited"] is True
+    # Only 1 row (raw_full with rate_limit)
+    assert summary["n_instance_rows"] == 1
+    assert summary["results"][0]["method_id"] == "raw_full"
+    assert summary["results"][0]["baseline_status"] == "rate_limit"

@@ -3,6 +3,11 @@
 Uses local_char4_proxy for T_total. Never calls paid APIs.
 Decision defaults to insufficient_offline when confirmatory C1–C3
 cannot be assessed with billed tokens.
+
+NOTE: Q_gold_oracle field represents gold answer quality (not actual baseline).
+Billed runner uses actual raw_full model Q as Q_baseline. This offline
+runner keeps gold for constraint checks but labels it Q_gold_oracle to
+distinguish from true baseline pairing.
 """
 
 from __future__ import annotations
@@ -45,7 +50,7 @@ class InstanceResult:
     family: str
     method_id: str
     Q: float
-    Q_baseline: float
+    Q_gold_oracle: float  # Gold answer quality (offline synthetic only)
     recall_vis: float
     recall_rec: float
     provenance: float
@@ -97,10 +102,11 @@ def evaluate_instance(
     answer, vis = _synthetic_method_answer(packet, method_id)
     m = metrics_from_instance(packet, vis, answer=answer)
 
-    # Baseline Q: raw_full on same packet (offline gold-matched)
+    # Q_gold_oracle: offline gold answer quality (not actual baseline)
+    # For offline synthetic runner only. Billed runner uses actual raw_full Q.
     base_answer, base_vis = _synthetic_method_answer(packet, "raw_full")
     m_base = metrics_from_instance(packet, base_vis, answer=base_answer)
-    Q_baseline = float(m_base["quality"])
+    Q_gold_oracle = float(m_base["quality"])
 
     text = str(packet.get("document") or "")
     t_in = estimate_tokens_char4(text)
@@ -110,7 +116,7 @@ def evaluate_instance(
 
     cr = check_constraints(
         Q=float(m["quality"]),
-        Q_baseline=Q_baseline,
+        Q_baseline=Q_gold_oracle,  # Still used for constraint check in offline
         recall_vis=float(m["evidence_recall_visible"]),
         recall_rec=float(m["evidence_recall_recoverable"]),
         provenance=float(m["provenance"]),
@@ -125,7 +131,7 @@ def evaluate_instance(
         family=str(packet.get("family")),
         method_id=method_id,
         Q=cr.Q,
-        Q_baseline=cr.Q_baseline,
+        Q_gold_oracle=cr.Q_baseline,  # Store as Q_gold_oracle in result
         recall_vis=cr.recall_vis,
         recall_rec=cr.recall_rec,
         provenance=cr.provenance,
