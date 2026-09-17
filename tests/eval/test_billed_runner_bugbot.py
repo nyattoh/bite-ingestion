@@ -1,7 +1,11 @@
 """Regression tests for Bugbot PR#11 findings in billed_runner.py.
 
-Bug 1: Checkpoint rewrite must preserve rate_limit status.
-Bug 2: Post-restore refresh must persist updated baselines to checkpoint.
+Bug 1 (prev): Checkpoint rewrite must preserve rate_limit status.
+Bug 2 (prev): Post-restore refresh must persist updated baselines to checkpoint.
+
+Bug 1 (new): Missing baseline_status must not default to "ok" (gold leak).
+Bug 2 (new): Invalid baselines must not inflate constraints_ok_rate.
+Bug 3 (new): Rate-limit without row must skip compressed (not bill as missing_pair).
 
 These tests call the real production code paths (_refresh_stale_baselines,
 checkpoint rewrite logic via run_billed_pilot) to ensure the fixes are
@@ -415,3 +419,408 @@ def test_bug2_restore_with_rate_limit_sibling() -> None:
         assert rec["row"]["baseline_status"] == "rate_limit"
         
         print("✓ Bug 2 edge case test passed: production restore refresh preserved rate_limit")
+
+
+def test_new_bug1_missing_baseline_status_requires_refresh() -> None:
+    """New Bug 1: Missing baseline_status must not default to "ok".
+    
+    When checkpoint rows omit baseline_status, _row_from_dict must NOT default
+    to "ok" (which skips baseline refresh). Instead, treat as "unknown" so
+    _refresh_stale_baselines replaces gold-derived Q_baseline with paired raw_full Q.
+    
+    Scenario:
+    1. Compressed row checkpointed WITHOUT baseline_status field (simulates old checkpoint)
+    2. raw_full succeeds on resume
+    3. Compressed must be refreshed despite missing baseline_status field
+    """
+    with tempfile.TemporaryDirectory() as tmpdir:
+        checkpoint_path = Path(tmpdir) / "test_checkpoint.jsonl"
+        
+        instance_id = "clean_local-000"
+        family = "clean_local"
+        
+        # Step 1: Pre-populate checkpoint with compressed row WITHOUT baseline_status
+        # (simulates old checkpoint format that might have gold-derived baseline)
+        append_checkpoint(
+            checkpoint_path,
+            {
+                "family": family,
+                "instance_id": instance_id,
+                "method": "compressed_passthrough",
+                "status": "ok",
+                "_test_seed_marker": "MISSING_STATUS_SEED",
+                "row": {
+                    "instance_id": instance_id,
+                    "family": family,
+                    "method_id": "compressed_passthrough",
+                    "Q": 0.88,
+                    "Q_baseline": 0.95,  # Gold-derived baseline (should be replaced)
+                    "recall_vis": 0.50,
+                    "recall_rec": 0.90,
+                    "provenance": 0.95,
+                    "constraints_ok": True,  # Wrong, based on gold baseline
+                    "T_total": 1100,
+                    "T_prompt": 700,
+                    "T_completion": 400,
+                    "T_cached": 0,
+                    "estimate_source": "provider_usage",
+                    "error": None,
+                    # NOTE: baseline_status is MISSING (not in dict)
+                },
+            },
+        )
+        
+        # Step 2: Write successful raw_full to checkpoint
+        append_checkpoint(
+            checkpoint_path,
+            {
+                "family": family,
+                "instance_id": instance_id,
+                "method": "raw_full",
+                "status": "ok",
+                "row": {
+                    "instance_id": instance_id,
+                    "family": family,
+                    "method_id": "raw_full",
+                    "Q": 0.82,
+                    "Q_baseline": 0.82,
+                    "recall_vis": 0.51,
+                    "recall_rec": 0.91,
+                    "provenance": 0.96,
+                    "constraints_ok": True,
+                    "T_total": 2300,
+                    "T_prompt": 1500,
+                    "T_completion": 800,
+                    "T_cached": 0,
+                    "estimate_source": "provider_usage",
+                    "error": None,
+                    "baseline_status": "ok",
+                },
+            },
+        )
+        
+        # Step 3: Mock client
+        class MockResponse:
+            text = "test_answer"
+            model = "test-model"
+            
+            @property
+            def usage(self):
+                return {
+                    "prompt_tokens": 100,
+                    "completion_tokens": 50,
+                    "total_tokens": 150,
+                    "cached_tokens": 0,
+                }
+        
+        mock_client = Mock()
+        mock_client.model = "test-model"
+        mock_client.chat_completion.return_value = MockResponse()
+        
+        # Run with resume=True: should refresh compressed baseline despite missing field
+        run_billed_pilot(
+            client=mock_client,
+            families=[family],
+            n_per_family=1,
+            methods=["raw_full", "compressed_passthrough"],
+            checkpoint_path=checkpoint_path,
+            resume=True,
+            stop_on_rate_limit=False,
+        )
+        
+        # Step 4: Verify baseline was refreshed and persisted
+        latest = load_checkpoint(checkpoint_path)
+        key = (family, instance_id, "compressed_passthrough")
+        rec = latest[key]
+        row = rec["row"]
+        
+        # Proof that refresh ran (marker removed by rewrite)
+        assert "_test_seed_marker" not in rec, (
+            "Checkpoint rewrite did not run for missing baseline_status case"
+        )
+        
+        # The gold-derived baseline (0.95) MUST be replaced with raw_full Q (0.82)
+        assert row["Q_baseline"] == 0.82, (
+            f"New Bug 1 regression: Missing baseline_status must trigger refresh. "
+            f"Q_baseline should be 0.82 (from raw_full), got {row['Q_baseline']}. "
+            f"Gold-derived baseline (0.95) leaked into results!"
+        )
+        assert row["baseline_status"] == "ok", (
+            f"baseline_status should be 'ok' after refresh, got '{row['baseline_status']}'"
+        )
+        
+        print("✓ New Bug 1 test passed: missing baseline_status triggers refresh (no gold leak)")
+
+
+def test_new_bug2_invalid_baselines_excluded_from_constraint_rate() -> None:
+    """New Bug 2: Invalid baselines must not inflate constraints_ok_rate.
+    
+    Successful compressed rows with baseline_status of timeout/error/missing_pair
+    use Q_baseline=0.0, so quality constraint passes vacuously. These must be
+    excluded from constraints_ok_rate calculation (same as rate_limit).
+    
+    Scenario:
+    1. Mix of compressed rows: some with valid baseline (ok), some with invalid (timeout)
+    2. Invalid baseline rows have Q_baseline=0.0, constraints_ok=True (vacuous pass)
+    3. constraints_ok_rate must exclude invalid baseline rows
+    """
+    with tempfile.TemporaryDirectory() as tmpdir:
+        checkpoint_path = Path(tmpdir) / "test_checkpoint.jsonl"
+        
+        # Use two instances from clean_local family
+        instance1 = "clean_local-000"
+        instance2 = "clean_local-001"
+        family = "clean_local"
+        
+        # Instance 1: valid baseline (raw_full ok, compressed ok with proper baseline)
+        append_checkpoint(
+            checkpoint_path,
+            {
+                "family": family,
+                "instance_id": instance1,
+                "method": "raw_full",
+                "status": "ok",
+                "row": {
+                    "instance_id": instance1,
+                    "family": family,
+                    "method_id": "raw_full",
+                    "Q": 0.85,
+                    "Q_baseline": 0.85,
+                    "recall_vis": 0.50,
+                    "recall_rec": 0.90,
+                    "provenance": 0.95,
+                    "constraints_ok": True,
+                    "T_total": 2400,
+                    "T_prompt": 1600,
+                    "T_completion": 800,
+                    "T_cached": 0,
+                    "estimate_source": "provider_usage",
+                    "error": None,
+                    "baseline_status": "ok",
+                },
+            },
+        )
+        append_checkpoint(
+            checkpoint_path,
+            {
+                "family": family,
+                "instance_id": instance1,
+                "method": "compressed_passthrough",
+                "status": "ok",
+                "row": {
+                    "instance_id": instance1,
+                    "family": family,
+                    "method_id": "compressed_passthrough",
+                    "Q": 0.40,  # Low Q, fails constraint vs baseline
+                    "Q_baseline": 0.85,
+                    "recall_vis": 0.50,
+                    "recall_rec": 0.90,
+                    "provenance": 0.95,
+                    "constraints_ok": False,  # FAILS constraint (valid test)
+                    "T_total": 1200,
+                    "T_prompt": 800,
+                    "T_completion": 400,
+                    "T_cached": 0,
+                    "estimate_source": "provider_usage",
+                    "error": None,
+                    "baseline_status": "ok",
+                },
+            },
+        )
+        
+        # Instance 2: invalid baseline (raw_full timeout, compressed with Q_baseline=0.0)
+        # NOTE: status="ok" so row is restored (not retried), but has error field set
+        append_checkpoint(
+            checkpoint_path,
+            {
+                "family": family,
+                "instance_id": instance2,
+                "method": "raw_full",
+                "status": "ok",  # Changed to "ok" so it's restored, not retried
+                "row": {
+                    "instance_id": instance2,
+                    "family": family,
+                    "method_id": "raw_full",
+                    "Q": 0.0,
+                    "Q_baseline": 0.0,
+                    "recall_vis": 0.0,
+                    "recall_rec": 0.0,
+                    "provenance": 0.0,
+                    "constraints_ok": False,
+                    "T_total": None,
+                    "T_prompt": None,
+                    "T_completion": None,
+                    "T_cached": None,
+                    "estimate_source": "provider_usage",
+                    "error": "timeout",  # Has error, so won't trigger baseline refresh
+                    "baseline_status": "timeout",
+                },
+            },
+        )
+        append_checkpoint(
+            checkpoint_path,
+            {
+                "family": family,
+                "instance_id": instance2,
+                "method": "compressed_passthrough",
+                "status": "ok",
+                "row": {
+                    "instance_id": instance2,
+                    "family": family,
+                    "method_id": "compressed_passthrough",
+                    "Q": 0.88,
+                    "Q_baseline": 0.0,  # Invalid baseline (from timeout raw_full)
+                    "recall_vis": 0.50,
+                    "recall_rec": 0.90,
+                    "provenance": 0.95,
+                    "constraints_ok": True,  # VACUOUS PASS (Q >= Q_baseline trivially)
+                    "T_total": 1100,
+                    "T_prompt": 700,
+                    "T_completion": 400,
+                    "T_cached": 0,
+                    "estimate_source": "provider_usage",
+                    "error": None,
+                    "baseline_status": "timeout",  # Invalid baseline marker
+                },
+            },
+        )
+        
+        # Mock client
+        class MockResponse:
+            text = "test_answer"
+            model = "test-model"
+            
+            @property
+            def usage(self):
+                return {
+                    "prompt_tokens": 100,
+                    "completion_tokens": 50,
+                    "total_tokens": 150,
+                    "cached_tokens": 0,
+                }
+        
+        mock_client = Mock()
+        mock_client.model = "test-model"
+        mock_client.chat_completion.return_value = MockResponse()
+        
+        # Run with resume=True (restore-only, no new calls)
+        summary = run_billed_pilot(
+            client=mock_client,
+            families=[family],
+            n_per_family=2,
+            methods=["raw_full", "compressed_passthrough"],
+            checkpoint_path=checkpoint_path,
+            resume=True,
+            stop_on_rate_limit=False,
+        )
+        
+        # Verify constraints_ok_rate calculation
+        # Measured rows (baseline_status=ok, error=None):
+        #   - Instance 1 raw_full (constraints_ok=True)
+        #   - Instance 1 compressed (constraints_ok=False)
+        # Excluded rows:
+        #   - Instance 2 raw_full (error="timeout")
+        #   - Instance 2 compressed (baseline_status="timeout")
+        # Expected: 1/2 = 0.5 (1 ok out of 2 measured)
+        constraint_rate = summary["constraints_ok_rate"]
+        assert constraint_rate == 0.5, (
+            f"New Bug 2 regression: constraints_ok_rate should be 0.5 (1 ok / 2 measured). "
+            f"Got {constraint_rate}. Invalid baseline rows must be excluded!"
+        )
+        
+        # Per-family rate should also exclude invalid baselines
+        per_fam = summary["per_family"][family]
+        fam_rate = per_fam["constraints_ok_rate"]
+        assert fam_rate == 0.5, (
+            f"New Bug 2 regression: per-family constraints_ok_rate should be 0.5. "
+            f"Got {fam_rate}. Invalid baseline rows must be excluded!"
+        )
+        
+        print("✓ New Bug 2 test passed: invalid baselines excluded from constraint rate")
+
+
+def test_new_bug3_ratelimit_resume_without_row_skips_compressed() -> None:
+    """New Bug 3: Rate-limit checkpoint without row must skip compressed.
+    
+    When paired raw_full hit rate_limit but checkpoint lacks row data,
+    compressed methods must still skip (via raw_baseline_lookup) rather than
+    billing as missing_pair.
+    
+    Scenario:
+    1. raw_full hits rate_limit, checkpointed WITHOUT row data (minimal checkpoint)
+    2. On resume, compressed attempts to run
+    3. Compressed must skip (not bill), recognizing paired raw_full was rate-limited
+    """
+    with tempfile.TemporaryDirectory() as tmpdir:
+        checkpoint_path = Path(tmpdir) / "test_checkpoint.jsonl"
+        
+        instance_id = "clean_local-000"
+        family = "clean_local"
+        
+        # Step 1: raw_full rate_limit checkpoint WITHOUT row data
+        # (simulates minimal checkpoint that only records status)
+        append_checkpoint(
+            checkpoint_path,
+            {
+                "family": family,
+                "instance_id": instance_id,
+                "method": "raw_full",
+                "status": "rate_limit",
+                "error_type": "RateLimitError",
+                # NOTE: No "row" field
+            },
+        )
+        
+        # Step 2: Mock client (compressed should NOT be called)
+        class MockResponse:
+            text = "test_answer"
+            model = "test-model"
+            
+            @property
+            def usage(self):
+                return {
+                    "prompt_tokens": 100,
+                    "completion_tokens": 50,
+                    "total_tokens": 150,
+                    "cached_tokens": 0,
+                }
+        
+        mock_client = Mock()
+        mock_client.model = "test-model"
+        mock_client.chat_completion.return_value = MockResponse()
+        
+        # Run with resume=True: should skip both raw_full (rate_limit) and compressed (paired)
+        summary = run_billed_pilot(
+            client=mock_client,
+            families=[family],
+            n_per_family=1,
+            methods=["raw_full", "compressed_passthrough"],
+            checkpoint_path=checkpoint_path,
+            resume=True,
+            stop_on_rate_limit=False,
+        )
+        
+        # Verify compressed was NOT attempted (calls_attempted should be 0)
+        assert summary["calls_attempted"] == 0, (
+            f"New Bug 3 regression: calls_attempted should be 0 (both methods skipped). "
+            f"Got {summary['calls_attempted']}. Compressed should skip when paired raw_full is rate-limited!"
+        )
+        
+        # Verify compressed is NOT in results (or if present, only as restored rate_limit)
+        compressed_results = [
+            r for r in summary["results"]
+            if r["method_id"] == "compressed_passthrough"
+        ]
+        # Should be empty (compressed was skipped, not even attempted)
+        assert len(compressed_results) == 0, (
+            f"New Bug 3 regression: compressed should not be attempted when paired raw_full is rate-limited. "
+            f"Found {len(compressed_results)} compressed rows."
+        )
+        
+        # Client should not have been called
+        assert mock_client.chat_completion.call_count == 0, (
+            "New Bug 3 regression: client should not be called when all methods skipped"
+        )
+        
+        print("✓ New Bug 3 test passed: rate-limit without row skips compressed (no billing)")
+

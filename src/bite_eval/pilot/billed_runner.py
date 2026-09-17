@@ -150,12 +150,15 @@ def _refresh_stale_baselines(
     When raw_full times out then succeeds on resume retry, compressed rows
     already written with stale Q_baseline=0.0 / baseline_status=timeout must
     be updated to use the new raw_full Q and constraints recomputed.
+    
+    Bug 1 (new): Also refresh rows with "unknown" baseline_status (from
+    missing/empty checkpoint field) to replace gold-derived baselines.
     """
     for row in results:
         if (
             row.instance_id == instance_id
             and row.method_id != "raw_full"
-            and row.baseline_status in ("timeout", "error", "missing_pair")
+            and row.baseline_status in ("timeout", "error", "missing_pair", "unknown")
         ):
             row.Q_baseline = new_baseline_q
             row.baseline_status = new_baseline_status
@@ -179,6 +182,13 @@ def _row_from_dict(d: Mapping[str, Any]) -> BilledInstanceResult:
     failures = d.get("failures") or ()
     if isinstance(failures, list):
         failures = tuple(failures)
+    # Bug 1 fix: missing baseline_status should NOT default to "ok"
+    # Treat missing/empty as "unknown" which requires baseline refresh
+    baseline_status_raw = d.get("baseline_status")
+    if baseline_status_raw:
+        baseline_status = str(baseline_status_raw)
+    else:
+        baseline_status = "unknown"
     return BilledInstanceResult(
         instance_id=str(d.get("instance_id", "")),
         family=str(d.get("family", "")),
@@ -200,7 +210,7 @@ def _row_from_dict(d: Mapping[str, Any]) -> BilledInstanceResult:
         failures=tuple(failures),
         answer_text=str(d.get("answer_text") or ""),
         error=d.get("error"),
-        baseline_status=str(d.get("baseline_status") or "ok"),
+        baseline_status=baseline_status,
     )
 
 
@@ -607,6 +617,13 @@ def run_billed_pilot(
                 state.rate_limited = True
                 if not state.rate_limit_at:
                     state.rate_limit_at = f"{rec.get('instance_id')}:{rec.get('method')}"
+                # Bug 3 fix: Track rate_limit for raw_full even without row data
+                # so compressed methods know to skip (not bill as missing_pair)
+                method = str(rec.get("method", rec.get("method_id", "")))
+                if method == "raw_full":
+                    instance_id = str(rec.get("instance_id", ""))
+                    if instance_id:
+                        raw_baseline_lookup[instance_id] = (0.0, "rate_limit")
             elif status in RESUME_RETRY_STATUSES:
                 retry_once.add(key)
 
@@ -881,10 +898,13 @@ def run_billed_pilot(
                     )
             if stopped_early:
                 break
-        # Bug 3 fix: Exclude rate_limit and non-measured rows from constraints_ok_rate
+        # Bug 2 fix: Exclude rate_limit and non-measured baselines from constraints_ok_rate
+        # Rows with baseline_status in (timeout, error, missing_pair, unknown) use Q_baseline=0.0
+        # so quality constraint passes vacuously — must not inflate constraint rate
         measured_fam_results = [
             r for r in fam_results
-            if r.baseline_status not in ("rate_limit",) and r.error is None
+            if r.baseline_status not in ("rate_limit", "timeout", "error", "missing_pair", "unknown")
+            and r.error is None
         ]
         ok_rate = (
             sum(1 for r in measured_fam_results if r.constraints_ok) / len(measured_fam_results)
@@ -905,10 +925,13 @@ def run_billed_pilot(
     flush_partial(state, partial_path)
 
     n_rows = len(state.results)
-    # Bug 3 fix: Exclude rate_limit and non-measured rows from constraints_ok_rate
+    # Bug 2 fix: Exclude rate_limit and non-measured baselines from constraints_ok_rate
+    # Rows with baseline_status in (timeout, error, missing_pair, unknown) use Q_baseline=0.0
+    # so quality constraint passes vacuously — must not inflate constraint rate
     measured_rows = [
         r for r in state.results
-        if r.baseline_status not in ("rate_limit",) and r.error is None
+        if r.baseline_status not in ("rate_limit", "timeout", "error", "missing_pair", "unknown")
+        and r.error is None
     ]
     constraints_ok_rate = (
         sum(1 for r in measured_rows if r.constraints_ok) / len(measured_rows)
