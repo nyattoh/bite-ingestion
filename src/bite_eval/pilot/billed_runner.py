@@ -475,28 +475,25 @@ def _build_messages(
     transformed: TransformedPacket,
     query: str,
 ) -> list[dict[str, str]]:
-    """EVAL-02: Build chat messages from TransformedPacket.
+    """EVAL-02/04: Build chat messages from TransformedPacket.
     
     Uses the transformed payload_text, ensuring prompt matches what was recorded
     as visible in the transformation step.
+    
+    EVAL-04: Unified wrapper across all arms (raw, compressed, etc.) to eliminate
+    wrapper bias. All arms use "Document:" prefix, not "Compressed document:".
     """
     payload = transformed.payload_text
-    method_id = transformed.method_id
     
-    if method_id == "raw_full":
-        user = (
-            f"Document:\n{payload}\n\n"
-            f"Question: {query}\n"
-            "Answer with only the final value/string, no explanation."
-        )
-    elif method_id in {"compressed_passthrough", "synthetic_passthrough"}:
-        user = (
-            f"Compressed document:\n{payload}\n\n"
-            f"Question: {query}\n"
-            "Answer with only the final value/string, no explanation."
-        )
-    else:
-        user = f"Document:\n{payload}\n\nQuestion: {query}\nAnswer briefly."
+    # EVAL-04: Unified wrapper template for all arms
+    # Previously: raw used "Document:", compressed used "Compressed document:"
+    # This caused a systematic 2-token bias (delta=-2 in BITE-15b pilot).
+    # Fix: Use identical "Document:" wrapper for all arms.
+    user = (
+        f"Document:\n{payload}\n\n"
+        f"Question: {query}\n"
+        "Answer with only the final value/string, no explanation."
+    )
     
     return [
         {
