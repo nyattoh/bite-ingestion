@@ -1,6 +1,6 @@
 {
   "schema": "bitebench-phase1c-token-freeze/v0.1",
-  "status": "pre_holdout_locked",
+  "status": "frozen_holdout_validated",
   "freeze_revision": "phase1c-token-match-v0.1",
   "case_pool_revision": "phase1b-24case-v0.1",
   "target_provider_model": "glm-4.5-flash",
@@ -148,8 +148,115 @@
       "syn-case-022",
       "syn-case-023"
     ],
-    "opened": false,
-    "results": null
+    "opened": true,
+    "results": [
+      {
+        "case_id": "syn-case-012",
+        "left_tokens": 84,
+        "right_tokens": 84,
+        "abs_delta": 0,
+        "relative_delta": 0,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-013",
+        "left_tokens": 84,
+        "right_tokens": 81,
+        "abs_delta": 3,
+        "relative_delta": 0.03636363636363636,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-014",
+        "left_tokens": 89,
+        "right_tokens": 88,
+        "abs_delta": 1,
+        "relative_delta": 0.011299435028248588,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-015",
+        "left_tokens": 87,
+        "right_tokens": 86,
+        "abs_delta": 1,
+        "relative_delta": 0.011560693641618497,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-016",
+        "left_tokens": 86,
+        "right_tokens": 85,
+        "abs_delta": 1,
+        "relative_delta": 0.011695906432748537,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-017",
+        "left_tokens": 92,
+        "right_tokens": 91,
+        "abs_delta": 1,
+        "relative_delta": 0.01092896174863388,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-018",
+        "left_tokens": 84,
+        "right_tokens": 84,
+        "abs_delta": 0,
+        "relative_delta": 0,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-019",
+        "left_tokens": 84,
+        "right_tokens": 81,
+        "abs_delta": 3,
+        "relative_delta": 0.03636363636363636,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-020",
+        "left_tokens": 89,
+        "right_tokens": 88,
+        "abs_delta": 1,
+        "relative_delta": 0.011299435028248588,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-021",
+        "left_tokens": 87,
+        "right_tokens": 86,
+        "abs_delta": 1,
+        "relative_delta": 0.011560693641618497,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-022",
+        "left_tokens": 86,
+        "right_tokens": 85,
+        "abs_delta": 1,
+        "relative_delta": 0.011695906432748537,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-023",
+        "left_tokens": 92,
+        "right_tokens": 91,
+        "abs_delta": 1,
+        "relative_delta": 0.01092896174863388,
+        "length_matched": true
+      }
+    ],
+    "pre_holdout_freeze_commit": "2217253b0cad455cd18851a0b5fc42ac6bd73030",
+    "opened_under_commit": "2eb24dc1ff88ebf490803f9ce1a072bd4b68c97b",
+    "n_cases": 12,
+    "n_matched": 12,
+    "all_matched": true,
+    "mean_abs_delta": 1.1666666666666667,
+    "mean_relative_delta": 0.013641438869147643,
+    "max_abs_delta": 3,
+    "max_relative_delta": 0.03636363636363636,
+    "rule_changed_after_opening": false
   },
   "paid_api": false,
   "research_conclusion": false
