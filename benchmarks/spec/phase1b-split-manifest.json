@@ -1,0 +1,47 @@
+{
+  "schema": "bitebench-phase1b-split/v0.1",
+  "case_pool_revision": "phase1b-24case-v0.1",
+  "generator_version": "0.2.0-synthetic",
+  "canonical_case_count": 24,
+  "calibration_case_ids": [
+    "syn-case-000",
+    "syn-case-001",
+    "syn-case-002",
+    "syn-case-003",
+    "syn-case-004",
+    "syn-case-005",
+    "syn-case-006",
+    "syn-case-007",
+    "syn-case-008",
+    "syn-case-009",
+    "syn-case-010",
+    "syn-case-011"
+  ],
+  "evaluation_case_ids": [
+    "syn-case-012",
+    "syn-case-013",
+    "syn-case-014",
+    "syn-case-015",
+    "syn-case-016",
+    "syn-case-017",
+    "syn-case-018",
+    "syn-case-019",
+    "syn-case-020",
+    "syn-case-021",
+    "syn-case-022",
+    "syn-case-023"
+  ],
+  "policy": {
+    "calibration_may_inform_thresholds": true,
+    "evaluation_must_not_inform_thresholds": true,
+    "evaluation_must_not_inform_feature_additions": true,
+    "evaluation_must_not_inform_routing_rule_changes": true,
+    "rerun_after_evaluation_change_requires_new_revision": true
+  },
+  "token_length_matching": {
+    "status": "not_implemented",
+    "reason": "No target tokenizer has been selected. Char padding must not be treated as token matching."
+  },
+  "paid_api": false,
+  "research_conclusion": false
+}
