@@ -16,9 +16,15 @@ from .phase2a import (
     PHASE2A_REVISION,
     Phase2ACell,
     Phase2ASurfaceProfile,
-    design_cells as phase2a_design_cells,
-    design_manifest as phase2a_design_manifest,
     generate_phase2a_bundle,
+)
+from .phase2a import (
+    design_cells as phase2a_design_cells,
+)
+from .phase2a import (
+    design_manifest as phase2a_design_manifest,
+)
+from .phase2a import (
     surface_profiles as phase2a_surface_profiles,
 )
 
