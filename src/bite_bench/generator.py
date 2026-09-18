@@ -16,19 +16,75 @@ from .renderers import (
 #: Bumped when renderer output changes — frozen fixtures must be regenerated.
 GENERATOR_VERSION = "0.2.0-synthetic"
 
+#: The renderer version stays at 0.2 because renderers are unchanged. This
+#: revision identifies the expanded canonical-case pool and its fixed split.
+CASE_POOL_REVISION = "phase1b-24case-v0.1"
+CANONICAL_CASE_SEEDS: tuple[int, ...] = tuple(range(24))
+CALIBRATION_SEEDS: tuple[int, ...] = tuple(range(12))
+EVALUATION_SEEDS: tuple[int, ...] = tuple(range(12, 24))
+
+
+def benchmark_split_for_seed(seed: int) -> str:
+    """Return the locked Phase-1B split for a canonical seed."""
+    if seed in CALIBRATION_SEEDS:
+        return "calibration"
+    if seed in EVALUATION_SEEDS:
+        return "evaluation"
+    return "unassigned"
+
+
+def canonical_case_ids(split: str | None = None) -> tuple[str, ...]:
+    """Return canonical case ids for the fixed 24-case Phase-1B pool."""
+    if split is None:
+        seeds = CANONICAL_CASE_SEEDS
+    elif split == "calibration":
+        seeds = CALIBRATION_SEEDS
+    elif split == "evaluation":
+        seeds = EVALUATION_SEEDS
+    else:
+        raise ValueError(f"unknown benchmark split: {split!r}")
+    return tuple(f"syn-case-{seed:03d}" for seed in seeds)
+
+
+def generate_canonical_pool(split: str | None = None) -> list[CanonicalCase]:
+    """Generate the fixed Phase-1B pool without looking at evaluation results."""
+    if split is None:
+        seeds = CANONICAL_CASE_SEEDS
+    elif split == "calibration":
+        seeds = CALIBRATION_SEEDS
+    elif split == "evaluation":
+        seeds = EVALUATION_SEEDS
+    else:
+        raise ValueError(f"unknown benchmark split: {split!r}")
+    return [make_synthetic_case(seed) for seed in seeds]
+
 
 class CounterfactualIdentityError(ValueError):
     """Raised when a counterfactual pair does not hold its invariants."""
 
 
 def make_synthetic_case(seed: int = 0) -> CanonicalCase:
-    """Deterministic synthetic case. No real dataset / licence claims.
+    """Build one deterministic synthetic canonical case.
 
-    NOTE: only two canonical cases exist (``seed % 2``). Scaling the case pool
-    is future work and is recorded as an open item in the handover.
+    Seeds 0 and 1 preserve the v0.2 frozen cases byte-for-byte at the surface
+    level. Seeds 2..23 expand the Phase-1B canonical pool. Seeds outside the
+    locked 24-case pool remain deterministic but are marked unassigned and
+    must not be used for confirmatory evaluation.
     """
-    variant = seed % 2
-    if variant == 0:
+    if seed < 0:
+        raise ValueError("seed must be non-negative")
+
+    split = benchmark_split_for_seed(seed)
+    common_meta = {
+        "synthetic": True,
+        "dataset": "TBD",
+        "licence": "TBD",
+        "split": split,
+        "case_pool_revision": CASE_POOL_REVISION,
+    }
+
+    # Preserve the two v0.2 frozen identities exactly.
+    if seed == 0:
         facts = (
             Fact("syn-e1", "service", "alpha"),
             Fact("syn-e2", "error_code", "E42"),
@@ -41,21 +97,107 @@ def make_synthetic_case(seed: int = 0) -> CanonicalCase:
             required_evidence_ids=("syn-e1", "syn-e2"),
             facts=facts,
             task_family="texture_swap",
-            meta={"synthetic": True, "dataset": "TBD", "licence": "TBD"},
+            meta=common_meta,
         )
-    facts = (
-        Fact("syn-e1", "item", "widget"),
-        Fact("syn-e2", "qty", "3"),
-        Fact("syn-e3", "warehouse", "W1"),
-    )
+    if seed == 1:
+        facts = (
+            Fact("syn-e1", "item", "widget"),
+            Fact("syn-e2", "qty", "3"),
+            Fact("syn-e3", "warehouse", "W1"),
+        )
+        return CanonicalCase(
+            case_id="syn-case-001",
+            question="What qty is recorded for item widget?",
+            answer="3",
+            required_evidence_ids=("syn-e1", "syn-e2"),
+            facts=facts,
+            task_family="texture_swap",
+            meta=common_meta,
+        )
+
+    case_id = f"syn-case-{seed:03d}"
+    ids = tuple(f"syn-{seed:03d}-e{i}" for i in range(1, 5))
+    slot = seed % 6
+    cycle = seed // 6
+
+    if slot == 0:
+        service = f"svc_{seed:03d}"
+        answer = f"ERR_{400 + seed}"
+        facts = (
+            Fact(ids[0], "service", service),
+            Fact(ids[1], "error_code", answer),
+            Fact(ids[2], "region", f"zone_{cycle}_a"),
+            Fact(ids[3], "severity", f"sev_{2 + cycle}"),
+        )
+        question = f"Which error_code did service {service} report?"
+        required = (ids[0], ids[1])
+    elif slot == 1:
+        item = f"item_{seed:03d}"
+        answer = f"QTY_{30 + seed}"
+        facts = (
+            Fact(ids[0], "item", item),
+            Fact(ids[1], "qty", answer),
+            Fact(ids[2], "warehouse", f"wh_{cycle}_b"),
+            Fact(ids[3], "batch", f"batch_{700 + seed}"),
+        )
+        question = f"What qty is recorded for item {item}?"
+        required = (ids[0], ids[1])
+    elif slot == 2:
+        app = f"app_{seed:03d}"
+        env = f"env_{cycle}_stage"
+        answer = f"VER_{2 + cycle}_{seed}"
+        facts = (
+            Fact(ids[0], "application", app),
+            Fact(ids[1], "environment", env),
+            Fact(ids[2], "version", answer),
+            Fact(ids[3], "owner", f"team_{cycle}_c"),
+        )
+        question = f"What version is application {app} running in {env}?"
+        required = (ids[0], ids[1], ids[2])
+    elif slot == 3:
+        sensor = f"sensor_{seed:03d}"
+        room = f"room_{cycle}_d"
+        answer = f"READ_{250 + seed}"
+        facts = (
+            Fact(ids[0], "sensor", sensor),
+            Fact(ids[1], "location", room),
+            Fact(ids[2], "reading", answer),
+            Fact(ids[3], "unit", "unit_celsius"),
+        )
+        question = f"What reading is recorded for {sensor} in {room}?"
+        required = (ids[0], ids[1], ids[2])
+    elif slot == 4:
+        order = f"order_{1000 + seed}"
+        answer = f"STATUS_PACKED_{seed:03d}"
+        facts = (
+            Fact(ids[0], "order", order),
+            Fact(ids[1], "status", answer),
+            Fact(ids[2], "carrier", f"carrier_{cycle}_e"),
+            Fact(ids[3], "priority", f"priority_{cycle}_normal"),
+        )
+        question = f"What status is recorded for order {order}?"
+        required = (ids[0], ids[1])
+    else:
+        account = f"account_{seed:03d}"
+        scope = f"scope_project_{cycle}_f"
+        answer = f"ROLE_REVIEWER_{seed:03d}"
+        facts = (
+            Fact(ids[0], "account", account),
+            Fact(ids[1], "scope", scope),
+            Fact(ids[2], "role", answer),
+            Fact(ids[3], "region", f"zone_{cycle}_f"),
+        )
+        question = f"What role does {account} have in {scope}?"
+        required = (ids[0], ids[1], ids[2])
+
     return CanonicalCase(
-        case_id="syn-case-001",
-        question="What qty is recorded for item widget?",
-        answer="3",
-        required_evidence_ids=("syn-e1", "syn-e2"),
+        case_id=case_id,
+        question=question,
+        answer=answer,
+        required_evidence_ids=required,
         facts=facts,
         task_family="texture_swap",
-        meta={"synthetic": True, "dataset": "TBD", "licence": "TBD"},
+        meta=common_meta,
     )
 
 
@@ -206,6 +348,8 @@ def generate_texture_bundle(
 
     bundle = {
         "generator_version": version,
+        "case_pool_revision": CASE_POOL_REVISION,
+        "benchmark_split": str(case.meta.get("split", "unassigned")),
         "seed": seed,
         "identity_sha256": identity_hash,
         "canonical": case.identity_payload(),
