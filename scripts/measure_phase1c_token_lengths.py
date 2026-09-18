@@ -130,6 +130,35 @@ def build_report(split: str) -> dict[str, Any]:
             }
         )
 
+    pair_buckets: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for row in cases:
+        for pair in row["all_pairs"]:
+            key = (str(pair["left"]), str(pair["right"]))
+            pair_buckets.setdefault(key, []).append(pair)
+    pair_summary: list[dict[str, Any]] = []
+    for (left, right), vals in sorted(pair_buckets.items()):
+        rel = [float(v["relative_delta"]) for v in vals]
+        abs_d = [int(v["abs_delta"]) for v in vals]
+        pair_summary.append(
+            {
+                "left": left,
+                "right": right,
+                "n": len(vals),
+                "mean_relative_delta": sum(rel) / len(rel),
+                "max_relative_delta": max(rel),
+                "mean_abs_delta": sum(abs_d) / len(abs_d),
+                "max_abs_delta": max(abs_d),
+            }
+        )
+    pair_summary.sort(
+        key=lambda p: (
+            p["mean_relative_delta"],
+            p["max_relative_delta"],
+            p["left"],
+            p["right"],
+        )
+    )
+
     return {
         "schema": "bitebench-token-length-calibration/v0.1",
         "purpose": "token-length construction only; not model-quality evaluation",
@@ -154,6 +183,7 @@ def build_report(split: str) -> dict[str, Any]:
             "add_generation_prompt": True,
         },
         "n_cases": len(cases),
+        "pair_summary": pair_summary,
         "cases": cases,
     }
 
@@ -183,6 +213,7 @@ def main() -> int:
             }
             for row in report["cases"]
         ],
+        "pair_summary": report["pair_summary"],
     }
     print("PHASE1C_TOKEN_REPORT_BEGIN")
     print(json.dumps(compact, sort_keys=True))
