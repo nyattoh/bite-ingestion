@@ -10,7 +10,6 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from bite_ingestion.packet_contract import validate_units
 from bite_bench.phase2a import (
     PHASE2A_REVISION,
     SCALE_DISTRACTOR_COUNTS,
@@ -21,6 +20,7 @@ from bite_bench.phase2a import (
     make_phase2a_case,
     surface_profiles,
 )
+from bite_ingestion.packet_contract import validate_units
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "benchmarks" / "spec" / "phase2a-design.json"
