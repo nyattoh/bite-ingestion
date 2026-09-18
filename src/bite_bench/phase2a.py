@@ -127,13 +127,19 @@ def _required_facts(cell: Phase2ACell) -> tuple[tuple[Fact, ...], str, str, tupl
 
     if cell.dependency == "direct":
         target = f"asset_{stem}"
-        fact = Fact(
+        record = f"record_{stem}"
+        f1 = Fact(
             fact_id=f"{cell.case_id}-gold-1",
-            key=f"value_for_{target}",
+            key=f"lookup_for_{target}",
+            value=record,
+        )
+        f2 = Fact(
+            fact_id=f"{cell.case_id}-gold-2",
+            key=f"value_for_{record}",
             value=answer,
         )
         question = f"What value is recorded for {target}?"
-        return (fact,), question, answer, (fact.fact_id,)
+        return (f1, f2), question, answer, (f1.fact_id, f2.fact_id)
 
     start = f"asset_{stem}"
     bridge = f"bridge_{stem}"
