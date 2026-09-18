@@ -46,3 +46,34 @@ The current contrast-pair padding is character-based diagnostic padding only.
 It is explicitly **not** token-length matching. A target tokenizer and matching
 tolerance must be selected and recorded before the confirmatory benchmark is
 fully frozen.
+
+
+## Phase 2A factorial benchmark generation
+
+Phase 2A starts a **new benchmark generation** rather than editing the spent
+Phase 1 holdout.
+
+Canonical axes:
+
+- scale: small / medium / large
+- dependency: direct / chain3
+- replicas: 0..3, with 0..1 calibration and 2..3 evaluation
+
+Surface axes use a full 2 x 2 x 2 factorial:
+
+- structure: flat / nested
+- dispersion: clustered / dispersed
+- redundancy: low / high
+
+This yields 24 canonical cases and 192 rendered surfaces.
+
+The design is declared in `benchmarks/spec/phase2a-design.json` and implemented
+in `src/bite_bench/phase2a.py`. The module intentionally does not import
+profiler/routing/operator code and stores no expected route labels.
+
+### Phase 2A limitation
+
+Token-length matching is **not frozen yet**. These surfaces must not be used for
+arm-performance claims. Phase 2B may use the calibration split only to build a
+fair length-controlled construction. Evaluation routing outcomes must remain
+unopened until that construction is frozen.
