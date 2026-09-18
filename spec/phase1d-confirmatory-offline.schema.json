@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase1d-confirmatory-offline.schema.json",
+  "title": "BITE Phase-1D confirmatory offline comparison v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "offline",
+    "paid_api",
+    "research_conclusion",
+    "arms",
+    "verdict",
+    "token_freeze_verification",
+    "negative_control_self_check",
+    "confirmatory",
+    "development"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase1d-confirmatory-offline/v0.1"
+    },
+    "offline": { "type": "boolean", "const": true },
+    "paid_api": { "type": "boolean", "const": false },
+    "research_conclusion": { "type": "boolean", "const": false },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE1D_OFFLINE_SIGNAL",
+        "PHASE1D_OFFLINE_NO_SIGNAL",
+        "PHASE1D_BLOCKED"
+      ]
+    },
+    "arms": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

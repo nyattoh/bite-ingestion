@@ -197,6 +197,32 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase1} rows={data.get('n_rows')}")
 
+    phase1d = args.root / "artifacts" / "phase1d" / "confirmatory-offline.json"
+    if phase1d.is_file():
+        n_checked += 1
+        data = json.loads(phase1d.read_text(encoding="utf-8"))
+        from bite_eval.phase1d_confirmatory import validate_confirmatory_doc
+
+        errs = list(validate_confirmatory_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase1d-confirmatory-offline.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase1d jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase1d}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase1d} verdict={data.get('verdict')} rows={data.get('confirmatory', {}).get('n_rows')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
