@@ -22,11 +22,23 @@ from bite_bench.generator import (
     GENERATOR_VERSION,
     generate_texture_bundle,
 )
+from bite_bench.token_match import (
+    TOKEN_MATCH_FREEZE_REVISION,
+    TOKEN_MATCH_LEFT,
+    TOKEN_MATCH_MAX_ABS_DELTA,
+    TOKEN_MATCH_MAX_RELATIVE_DELTA,
+    TOKEN_MATCH_RIGHT,
+    relative_token_delta,
+    token_length_match,
+)
 
 TOKENIZER_REPO = "zai-org/GLM-4.5"
 TOKENIZER_REVISION = "cbb2c7cfb52fa128a9660cb1a7a78e017899e115"
 TOKENIZER_LIBRARY = "transformers==4.54.0"
 TARGET_PROVIDER_MODEL = "glm-4.5-flash"
+EXPECTED_TOKENIZER_JSON_SHA256 = (
+    "9340665016419c825c4bdabbcc9acc43b7ca2c68ce142724afa829abb1be5efd"
+)
 
 SYSTEM_PROMPT = "You are a careful extractive QA assistant. Reply with the answer only."
 USER_TEMPLATE = (
@@ -70,6 +82,11 @@ def _load_tokenizer() -> tuple[Any, str]:
         revision=TOKENIZER_REVISION,
     )
     tokenizer_sha256 = _sha256_file(tokenizer_file)
+    if tokenizer_sha256 != EXPECTED_TOKENIZER_JSON_SHA256:
+        raise RuntimeError(
+            "tokenizer.json hash changed: "
+            f"{tokenizer_sha256} != {EXPECTED_TOKENIZER_JSON_SHA256}"
+        )
     tokenizer = AutoTokenizer.from_pretrained(
         TOKENIZER_REPO,
         revision=TOKENIZER_REVISION,
@@ -119,6 +136,8 @@ def build_report(split: str) -> dict[str, Any]:
                 }
             )
         pairs.sort(key=lambda p: (p["abs_delta"], p["relative_delta"], p["left"], p["right"]))
+        frozen_left = counts[TOKEN_MATCH_LEFT]
+        frozen_right = counts[TOKEN_MATCH_RIGHT]
         cases.append(
             {
                 "seed": seed,
@@ -126,6 +145,15 @@ def build_report(split: str) -> dict[str, Any]:
                 "split": bundle["benchmark_split"],
                 "surface_tokens": counts,
                 "best_natural_pair": pairs[0],
+                "frozen_pair": {
+                    "left": TOKEN_MATCH_LEFT,
+                    "right": TOKEN_MATCH_RIGHT,
+                    "left_tokens": frozen_left,
+                    "right_tokens": frozen_right,
+                    "abs_delta": abs(frozen_left - frozen_right),
+                    "relative_delta": relative_token_delta(frozen_left, frozen_right),
+                    "length_matched": token_length_match(frozen_left, frozen_right),
+                },
                 "all_pairs": pairs,
             }
         )
@@ -176,6 +204,14 @@ def build_report(split: str) -> dict[str, Any]:
                 "glm-4.5-flash tokenizer equivalence is not asserted here."
             ),
         },
+        "frozen_match_rule": {
+            "revision": TOKEN_MATCH_FREEZE_REVISION,
+            "left": TOKEN_MATCH_LEFT,
+            "right": TOKEN_MATCH_RIGHT,
+            "max_abs_delta": TOKEN_MATCH_MAX_ABS_DELTA,
+            "max_relative_delta": TOKEN_MATCH_MAX_RELATIVE_DELTA,
+            "selected_on": "calibration seeds 0..11 only",
+        },
         "prompt_contract": {
             "system": SYSTEM_PROMPT,
             "user_template": USER_TEMPLATE,
@@ -214,6 +250,10 @@ def main() -> int:
             for row in report["cases"]
         ],
         "pair_summary": report["pair_summary"],
+        "frozen_pairs": [
+            {"case_id": row["case_id"], **row["frozen_pair"]}
+            for row in report["cases"]
+        ],
     }
     print("PHASE1C_TOKEN_REPORT_BEGIN")
     print(json.dumps(compact, sort_keys=True))
