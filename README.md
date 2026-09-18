@@ -57,7 +57,8 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 2B calibration length control: **PHASE2B_LENGTH_CONTROL_PARTIAL** (dispersion matches exactly; structure and redundancy covary with length; no padding; evaluation sealed)
 - Phase 2C dispersion confirmatory freeze: **FROZEN_PRE_HOLDOUT** (`phase2c-dispersion-freeze-v0.2` supersedes v0.1)
 - Phase 2D confirmatory offline evaluation: **PHASE2D_OFFLINE_NO_SIGNAL** (0/48 eligible dispersion pairs; evaluation opened once under v0.2; not a paid-model result)
-- **Next**: do not retune thresholds / routing / operators after seeing this holdout
+- Phase 3A profiler mechanism audit: **PHASE3A_DISPERSION_UNOBSERVABLE** (post-hoc; current `l` is permutation-invariant query-hit mass, not positional locality; holdout not re-scored)
+- **Next**: do not retune profiler / thresholds / routing on the spent Phase 2 holdout
 
 See:
 - [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
@@ -74,3 +75,5 @@ See:
 - [`benchmarks/spec/phase2c-dispersion-freeze-v0.2.json`](benchmarks/spec/phase2c-dispersion-freeze-v0.2.json)
 - [`docs/hand_over/PHASE2D-CONFIRMATORY-OFFLINE.md`](docs/hand_over/PHASE2D-CONFIRMATORY-OFFLINE.md)
 - [`artifacts/phase2d/confirmatory-offline.json`](artifacts/phase2d/confirmatory-offline.json)
+- [`docs/hand_over/PHASE3A-PROFILER-MECHANISM-AUDIT.md`](docs/hand_over/PHASE3A-PROFILER-MECHANISM-AUDIT.md)
+- [`artifacts/phase3a/profiler-mechanism-audit.json`](artifacts/phase3a/profiler-mechanism-audit.json)

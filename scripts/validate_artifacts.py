@@ -336,6 +336,36 @@ def main(argv: list[str] | None = None) -> int:
                 f"n_signal={data.get('n_signal')} n_eligible={data.get('n_eligible')}"
             )
 
+    phase3a = args.root / "artifacts" / "phase3a" / "profiler-mechanism-audit.json"
+    if phase3a.is_file():
+        n_checked += 1
+        data = json.loads(phase3a.read_text(encoding="utf-8"))
+        from bite_eval.phase3a_audit import validate_phase3a_doc
+
+        errs = list(validate_phase3a_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3a-profiler-mechanism-audit.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3a jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3a}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(
+                f"OK   {phase3a} verdict={data.get('verdict')} "
+                f"identical={data.get('n_profiler_vectors_identical')}/"
+                f"{data.get('n_pairs')}"
+            )
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
