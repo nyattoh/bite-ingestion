@@ -123,21 +123,20 @@ def test_redundancy_axis_repeats_only_non_gold_material() -> None:
 
 
 def test_dispersion_axis_spreads_evidence_at_both_dependency_levels() -> None:
+    def spread(surface: dict, required_ids: set[str]) -> int:
+        spans = [
+            u["span"]
+            for u in surface["units"]
+            if str(u.get("fact_id")) in required_ids
+        ]
+        return max(int(s["end"]) for s in spans) - min(int(s["start"]) for s in spans)
+
     for dependency in ("direct", "chain3"):
         bundle = generate_phase2a_bundle(_cell("medium", dependency, 0))
         clustered = bundle["surfaces"]["p2a_flat_clustered_low"]
         dispersed = bundle["surfaces"]["p2a_flat_dispersed_low"]
         required = set(bundle["canonical"]["required_evidence_ids"])
-
-        def spread(surface: dict) -> int:
-            spans = [
-                u["span"]
-                for u in surface["units"]
-                if str(u.get("fact_id")) in required
-            ]
-            return max(int(s["end"]) for s in spans) - min(int(s["start"]) for s in spans)
-
-        assert spread(dispersed) > spread(clustered)
+        assert spread(dispersed, required) > spread(clustered, required)
 
 
 def test_structure_axis_changes_surface_without_changing_fact_ids() -> None:
