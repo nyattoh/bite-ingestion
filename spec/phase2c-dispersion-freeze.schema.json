@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase2c-dispersion-freeze.schema.json",
+  "title": "BITE Phase-2C dispersion confirmatory freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "revision",
+    "phase2a_revision",
+    "phase2b_verdict",
+    "primary_axis",
+    "n_planned_pairs",
+    "case_ids",
+    "tokenizer_reference",
+    "prompt_contract",
+    "length_criterion",
+    "arms",
+    "primary_offline_endpoints",
+    "exclusion_rule",
+    "phase2d_verdicts",
+    "secondary_axes",
+    "confirmatory_pairs",
+    "evaluation_sealed",
+    "paid_api"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase2c-dispersion-freeze/v0.1"
+    },
+    "status": { "type": "string", "const": "FROZEN_PRE_HOLDOUT" },
+    "offline": { "type": "boolean", "const": true },
+    "paid_api": { "type": "boolean", "const": false },
+    "research_conclusion": { "type": "boolean", "const": false },
+    "evaluation_sealed": { "type": "boolean", "const": true },
+    "arms_run": { "type": "boolean", "const": false },
+    "primary_axis": { "type": "string", "const": "dispersion" },
+    "n_planned_pairs": { "type": "integer", "const": 48 },
+    "phase2b_verdict": {
+      "type": "string",
+      "const": "PHASE2B_LENGTH_CONTROL_PARTIAL"
+    },
+    "arms": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": { "type": "string" }
+    },
+    "confirmatory_pairs": { "type": "array", "minItems": 48, "maxItems": 48 }
+  }
+}
