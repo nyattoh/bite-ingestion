@@ -2,7 +2,7 @@
 
 - 担当: Claude
 - ベース: `main` = `353c0c0`（PR #15 マージ後）
-- ブランチ: `feat/negative-control-families`（**未 push / 未 merge**）
+- ブランチ: `feat/negative-control-families`（origin push 済み / **未 merge**）
 - 実行日: 2026-09-18
 - 有料 API: **未使用**
 - `TBD_CALIBRATE` / profiler feature / routing rule: **未変更**
