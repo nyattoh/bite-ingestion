@@ -58,6 +58,7 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 2C dispersion confirmatory freeze: **FROZEN_PRE_HOLDOUT** (`phase2c-dispersion-freeze-v0.2` supersedes v0.1)
 - Phase 2D confirmatory offline evaluation: **PHASE2D_OFFLINE_NO_SIGNAL** (0/48 eligible dispersion pairs; evaluation opened once under v0.2; not a paid-model result)
 - Phase 3A profiler mechanism audit: **PHASE3A_DISPERSION_UNOBSERVABLE** (post-hoc; current `l` is permutation-invariant query-hit mass, not positional locality; holdout not re-scored)
+- Phase 3B gold-free dispersion sensor: **PHASE3B_SENSOR_READY** (development fixtures only; not wired to routing; v0 unchanged)
 - **Next**: do not retune profiler / thresholds / routing on the spent Phase 2 holdout
 
 See:
@@ -77,3 +78,5 @@ See:
 - [`artifacts/phase2d/confirmatory-offline.json`](artifacts/phase2d/confirmatory-offline.json)
 - [`docs/hand_over/PHASE3A-PROFILER-MECHANISM-AUDIT.md`](docs/hand_over/PHASE3A-PROFILER-MECHANISM-AUDIT.md)
 - [`artifacts/phase3a/profiler-mechanism-audit.json`](artifacts/phase3a/profiler-mechanism-audit.json)
+- [`docs/hand_over/PHASE3B-DISPERSION-SENSOR.md`](docs/hand_over/PHASE3B-DISPERSION-SENSOR.md)
+- [`artifacts/phase3b/sensor-evaluation.json`](artifacts/phase3b/sensor-evaluation.json)

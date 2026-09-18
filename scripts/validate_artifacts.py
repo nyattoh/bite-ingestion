@@ -366,6 +366,32 @@ def main(argv: list[str] | None = None) -> int:
                 f"{data.get('n_pairs')}"
             )
 
+    phase3b = args.root / "artifacts" / "phase3b" / "sensor-evaluation.json"
+    if phase3b.is_file():
+        n_checked += 1
+        data = json.loads(phase3b.read_text(encoding="utf-8"))
+        from bite_eval.phase3b_sensor import validate_phase3b_doc
+
+        errs = list(validate_phase3b_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3b-sensor-evaluation.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3b jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3b}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3b} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
