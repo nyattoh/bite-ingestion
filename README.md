@@ -51,9 +51,11 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 1B benchmark pool: **24 canonical cases**, fixed **12 calibration / 12 evaluation** split
 - No architecture-superiority claim
 - No new paid run yet
-- **Next blocker**: real tokenizer-based length matching, then freeze the confirmatory benchmark
+- Phase 1C token-length condition: frozen and holdout-validated (12/12 matched without padding)
+- **Next**: confirmatory offline comparison under the frozen benchmark, then a small paid smoke if it is clean
 
 See:
 - [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
 - [`docs/hand_over/PHASE1B-BENCHMARK-POOL-SPLIT.md`](docs/hand_over/PHASE1B-BENCHMARK-POOL-SPLIT.md)
 - [`benchmarks/spec/phase1b-split-manifest.json`](benchmarks/spec/phase1b-split-manifest.json)
+- [`docs/hand_over/PHASE1C-TOKEN-MATCH-FREEZE.md`](docs/hand_over/PHASE1C-TOKEN-MATCH-FREEZE.md)
