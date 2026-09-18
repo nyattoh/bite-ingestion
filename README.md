@@ -42,12 +42,18 @@ Names, datasets, APIs, numeric thresholds/budgets: keep literal `TBD`.
 
 No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purchase.
 
-## Current status (Gate C)
+## Current status
 
-- **v2 billed pilot** (`967ec0b`): decision = **pivot** (not Go)
-- C1=false, C2=not_evaluated, C3=false
-- `compressed_passthrough` was effectively no-op on short synthetic docs; do not claim morphology win
-- **Path B** (48-call family fix): separate `dependency_chain` prompt clarification slice; ok_rate=1.0 on that family ≠ full 384 matrix
-- **Next**: Phase 0 evaluator fixes, then offline real arms — NOT full 384 rebill yet
+- Historical billed pilot (`967ec0b`): decision = **pivot** (not Go)
+- Phase 0 evaluator repair: complete
+- Phase 1 foundation / offline arm wiring: complete
+- Negative controls: complete; the instrument now reports known evidence/provenance failures
+- Phase 1B benchmark pool: **24 canonical cases**, fixed **12 calibration / 12 evaluation** split
+- No architecture-superiority claim
+- No new paid run yet
+- **Next blocker**: real tokenizer-based length matching, then freeze the confirmatory benchmark
 
-See [`docs/hand_over/BITE-15b.md`](docs/hand_over/BITE-15b.md) and [`docs/hand_over/BITE-16.md`](docs/hand_over/BITE-16.md) for details.
+See:
+- [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
+- [`docs/hand_over/PHASE1B-BENCHMARK-POOL-SPLIT.md`](docs/hand_over/PHASE1B-BENCHMARK-POOL-SPLIT.md)
+- [`benchmarks/spec/phase1b-split-manifest.json`](benchmarks/spec/phase1b-split-manifest.json)
