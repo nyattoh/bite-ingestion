@@ -223,6 +223,32 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase1d} verdict={data.get('verdict')} rows={data.get('confirmatory', {}).get('n_rows')}")
 
+    phase2b = args.root / "artifacts" / "phase2b" / "calibration-token-matrix.json"
+    if phase2b.is_file():
+        n_checked += 1
+        data = json.loads(phase2b.read_text(encoding="utf-8"))
+        from bite_bench.phase2b import validate_phase2b_doc
+
+        errs = list(validate_phase2b_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase2b-length-control.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase2b jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase2b}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase2b} verdict={data.get('verdict')} surfaces={data.get('n_surfaces')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
