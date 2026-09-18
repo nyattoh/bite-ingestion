@@ -119,6 +119,8 @@ def make_synthetic_case(seed: int = 0) -> CanonicalCase:
     ids = tuple(f"syn-{seed:03d}-e{i}" for i in range(1, 5))
     slot = seed % 6
     cycle = seed // 6
+    facts: tuple[Fact, ...]
+    required: tuple[str, ...]
 
     if slot == 0:
         service = f"svc_{seed:03d}"
