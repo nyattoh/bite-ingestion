@@ -1,0 +1,156 @@
+{
+  "schema": "bitebench-phase1c-token-freeze/v0.1",
+  "status": "pre_holdout_locked",
+  "freeze_revision": "phase1c-token-match-v0.1",
+  "case_pool_revision": "phase1b-24case-v0.1",
+  "target_provider_model": "glm-4.5-flash",
+  "tokenizer_reference": {
+    "repo": "zai-org/GLM-4.5",
+    "revision": "cbb2c7cfb52fa128a9660cb1a7a78e017899e115",
+    "transformers_version": "4.54.0",
+    "tokenizer_json_sha256": "9340665016419c825c4bdabbcc9acc43b7ca2c68ce142724afa829abb1be5efd",
+    "exact_hosted_model_equivalence_asserted": false,
+    "note": "Pinned official GLM-4.5-family reference tokenizer. Z.ai hosted glm-4.5-flash does not expose an independently verified tokenizer identity in this repository, so exact provider equivalence is not claimed."
+  },
+  "prompt_contract": {
+    "system": "You are a careful extractive QA assistant. Reply with the answer only.",
+    "user_template": "Document:\\n{payload}\\n\\nQuestion: {query}\\nAnswer with only the final value/string, no explanation.",
+    "thinking": "disabled",
+    "add_generation_prompt": true
+  },
+  "frozen_match_rule": {
+    "left": "prose_narrative",
+    "right": "table_csv",
+    "max_abs_delta": 3,
+    "max_relative_delta": 0.04,
+    "selected_using": "calibration seeds 0..11 only",
+    "no_padding": true,
+    "selection_note": "Among calibration-wide fixed texture pairs, prose_narrative/table_csv kept every calibration case within 3 tokens and 4% without adding padding. Holdout must not change this rule."
+  },
+  "calibration": {
+    "n_cases": 12,
+    "all_matched": true,
+    "mean_abs_delta": 1.25,
+    "mean_relative_delta": 0.015809083935612523,
+    "max_abs_delta": 3,
+    "max_relative_delta": 0.037267080745341616,
+    "cases": [
+      {
+        "case_id": "syn-case-000",
+        "left_tokens": 67,
+        "right_tokens": 65,
+        "abs_delta": 2,
+        "relative_delta": 0.030303030303030304,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-001",
+        "left_tokens": 66,
+        "right_tokens": 64,
+        "abs_delta": 2,
+        "relative_delta": 0.03076923076923077,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-002",
+        "left_tokens": 87,
+        "right_tokens": 86,
+        "abs_delta": 1,
+        "relative_delta": 0.011560693641618497,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-003",
+        "left_tokens": 87,
+        "right_tokens": 86,
+        "abs_delta": 1,
+        "relative_delta": 0.011560693641618497,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-004",
+        "left_tokens": 86,
+        "right_tokens": 85,
+        "abs_delta": 1,
+        "relative_delta": 0.011695906432748537,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-005",
+        "left_tokens": 92,
+        "right_tokens": 91,
+        "abs_delta": 1,
+        "relative_delta": 0.01092896174863388,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-006",
+        "left_tokens": 84,
+        "right_tokens": 84,
+        "abs_delta": 0,
+        "relative_delta": 0,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-007",
+        "left_tokens": 82,
+        "right_tokens": 79,
+        "abs_delta": 3,
+        "relative_delta": 0.037267080745341616,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-008",
+        "left_tokens": 89,
+        "right_tokens": 88,
+        "abs_delta": 1,
+        "relative_delta": 0.011299435028248588,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-009",
+        "left_tokens": 87,
+        "right_tokens": 86,
+        "abs_delta": 1,
+        "relative_delta": 0.011560693641618497,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-010",
+        "left_tokens": 85,
+        "right_tokens": 84,
+        "abs_delta": 1,
+        "relative_delta": 0.011834319526627219,
+        "length_matched": true
+      },
+      {
+        "case_id": "syn-case-011",
+        "left_tokens": 92,
+        "right_tokens": 91,
+        "abs_delta": 1,
+        "relative_delta": 0.01092896174863388,
+        "length_matched": true
+      }
+    ]
+  },
+  "holdout": {
+    "case_ids": [
+      "syn-case-012",
+      "syn-case-013",
+      "syn-case-014",
+      "syn-case-015",
+      "syn-case-016",
+      "syn-case-017",
+      "syn-case-018",
+      "syn-case-019",
+      "syn-case-020",
+      "syn-case-021",
+      "syn-case-022",
+      "syn-case-023"
+    ],
+    "opened": false,
+    "results": null
+  },
+  "paid_api": false,
+  "research_conclusion": false
+}
