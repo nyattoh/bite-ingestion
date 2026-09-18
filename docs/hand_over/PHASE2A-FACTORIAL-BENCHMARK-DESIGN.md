@@ -42,7 +42,7 @@ constants.
 
 Dependency:
 
-- `direct`: one required evidence fact answers the question
+- `direct`: two required evidence facts form a one-link lookup plus final value
 - `chain3`: three required evidence facts form a two-link path plus final value
 
 Split is assigned before any routing result is observed:
@@ -69,8 +69,9 @@ JSON records.
 
 ### Dispersion
 
-For multi-evidence `chain3` cases, required evidence is either adjacent or
-spread across the document. The facts themselves do not change.
+At both dependency levels, required evidence is either adjacent or spread
+across the document. The facts themselves do not change. The `direct` design
+uses two required facts specifically so this axis is active there as well.
 
 ### Redundancy
 
