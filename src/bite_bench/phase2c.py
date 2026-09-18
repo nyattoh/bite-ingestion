@@ -2,12 +2,15 @@
 
 Registers the primary confirmatory contrast before evaluation is opened.
 Does not generate evaluation surfaces, count tokens, or run arms.
+
+v0.2 supersedes v0.1 verdict wording only. v0.1 remains on disk.
 """
 
 from __future__ import annotations
 
 import json
-from collections.abc import Mapping
+from collections.abc import Mapping, Sequence
+from pathlib import Path
 from typing import Any
 
 from bite_bench.phase2a import (
@@ -17,13 +20,17 @@ from bite_bench.phase2a import (
     design_cells,
 )
 from bite_bench.token_match import (
-    TOKEN_MATCH_FREEZE_REVISION,
     TOKEN_MATCH_MAX_ABS_DELTA,
     TOKEN_MATCH_MAX_RELATIVE_DELTA,
 )
 
-SCHEMA_ID = "bitebench-phase2c-dispersion-freeze/v0.1"
-PHASE2C_REVISION = "phase2c-dispersion-freeze-v0.1"
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+V01_FREEZE_PATH = _REPO_ROOT / "benchmarks" / "spec" / "phase2c-dispersion-freeze.json"
+
+SCHEMA_ID_V01 = "bitebench-phase2c-dispersion-freeze/v0.1"
+SCHEMA_ID = "bitebench-phase2c-dispersion-freeze/v0.2"
+PHASE2C_REVISION_V01 = "phase2c-dispersion-freeze-v0.1"
+PHASE2C_REVISION = "phase2c-dispersion-freeze-v0.2"
 BASE_MAIN_SHA = "dce759efbb94ae941a86c3358b1b717da3224c14"
 PHASE2B_VERDICT = "PHASE2B_LENGTH_CONTROL_PARTIAL"
 PRIMARY_AXIS = "dispersion"
@@ -35,6 +42,9 @@ PHASE2D_VERDICTS: tuple[str, ...] = (
     "PHASE2D_OFFLINE_NO_SIGNAL",
     "PHASE2D_BLOCKED",
 )
+VERDICT_SIGNAL = "PHASE2D_OFFLINE_SIGNAL"
+VERDICT_NO_SIGNAL = "PHASE2D_OFFLINE_NO_SIGNAL"
+VERDICT_BLOCKED = "PHASE2D_BLOCKED"
 
 SYSTEM_PROMPT = "You are a careful extractive QA assistant. Reply with the answer only."
 USER_TEMPLATE = (
@@ -76,6 +86,62 @@ EVALUATION_RESULT_KEYS = frozenset(
         "morphology",
     }
 )
+
+PHASE2D_VERDICT_V02: dict[str, Any] = {
+    VERDICT_BLOCKED: {
+        "when_any": [
+            "negative control / instrumentation self-check failed",
+            "frozen contract broken",
+            "eligible pair count is 0",
+            "fair confirmatory comparison cannot be formed",
+        ]
+    },
+    VERDICT_SIGNAL: {
+        "when": "n_eligible >= 1 and n_dispersion_specific_signal >= 1",
+        "one_pair_is_still_signal": True,
+        "no_strong_generalization": True,
+    },
+    VERDICT_NO_SIGNAL: {
+        "when": "n_eligible >= 1 and n_dispersion_specific_signal == 0",
+    },
+}
+
+ELIGIBLE_PAIR_V02: dict[str, Any] = {
+    "must_all": [
+        "satisfies Phase 1C length criterion",
+        "instrumentation/self-check did not fail",
+        "frozen canonical identity / wrapper / tokenizer contract hold",
+    ],
+    "if_length_criterion_fails": "exclude that pair; do not rescue",
+}
+
+DISPERSION_SPECIFIC_SIGNAL_V02: dict[str, Any] = {
+    "applies_to": "eligible pairs",
+    "first_check": (
+        "length_pi clustered and dispersed have the same routing/operator behavior"
+    ),
+    "if_length_pi_differs_at_matched_length": (
+        "not a BITE signal; record as instrumentation/policy consistency issue"
+    ),
+    "true_if_any": [
+        "rule_pi operator sequence differs clustered vs dispersed",
+        "rule_pi transformed/no-op status differs clustered vs dispersed",
+        "rule_pi_rebite recovery-fire status differs clustered vs dispersed",
+    ],
+    "not_signal": [
+        "raw payload hash difference (input order differs by design)",
+        "evidence recall difference alone",
+        "provenance difference alone",
+        "T_total difference alone",
+        "length_pi != rule_pi count alone",
+    ],
+    "record_always": [
+        "visible_evidence_recall",
+        "recoverable_evidence_recall",
+        "provenance_completeness",
+        "T_total",
+    ],
+}
 
 
 def confirmatory_pairs() -> list[dict[str, Any]]:
@@ -125,138 +191,97 @@ def confirmatory_pairs() -> list[dict[str, Any]]:
     return rows
 
 
+def load_v01_freeze() -> dict[str, Any]:
+    if not V01_FREEZE_PATH.is_file():
+        raise FileNotFoundError(f"v0.1 freeze missing: {V01_FREEZE_PATH}")
+    return json.loads(V01_FREEZE_PATH.read_text(encoding="utf-8"))
+
+
 def freeze_manifest() -> dict[str, Any]:
-    pairs = confirmatory_pairs()
-    eval_cells = design_cells("evaluation")
-    cal_cells = design_cells("calibration")
+    """Active freeze is v0.2. Built from retained v0.1 plus verdict disambiguation."""
+    doc = dict(load_v01_freeze())
+    doc["schema"] = SCHEMA_ID
+    doc["revision"] = PHASE2C_REVISION
+    doc["supersedes"] = PHASE2C_REVISION_V01
+    doc["supersession"] = {
+        "previous": PHASE2C_REVISION_V01,
+        "previous_path": "benchmarks/spec/phase2c-dispersion-freeze.json",
+        "reason": "disambiguate Phase 2D verdicts before opening evaluation",
+        "v0_1_deleted": False,
+        "v0_1_overwritten": False,
+    }
+    doc["eligible_pair"] = dict(ELIGIBLE_PAIR_V02)
+    doc["dispersion_specific_signal"] = dict(DISPERSION_SPECIFIC_SIGNAL_V02)
+    doc["phase2d_verdicts"] = dict(PHASE2D_VERDICT_V02)
+    doc["reporting"] = {
+        "required_counts": ["n_signal", "n_eligible"],
+        "required_breakdowns": ["scale", "dependency", "structure", "redundancy"],
+        "one_pair_is_still_signal": True,
+        "no_strong_generalization": True,
+    }
+    return doc
+
+
+def classify_dispersion_pair(
+    *,
+    length_criterion_ok: bool,
+    instrumentation_ok: bool,
+    frozen_contract_ok: bool,
+    length_pi_behavior_same: bool,
+    rule_pi_sequence_differs: bool,
+    rule_pi_noop_status_differs: bool,
+    rule_pi_rebite_recovery_differs: bool,
+    raw_payload_hash_differs: bool = False,
+    recall_differs: bool = False,
+    provenance_differs: bool = False,
+    t_total_differs: bool = False,
+    length_pi_neq_rule_pi: bool = False,
+) -> dict[str, Any]:
+    """Pre-declared pair classification. Does not inspect evaluation surfaces."""
+    del raw_payload_hash_differs, recall_differs, provenance_differs
+    del t_total_differs, length_pi_neq_rule_pi
+    eligible = length_criterion_ok and instrumentation_ok and frozen_contract_ok
+    if not eligible:
+        return {
+            "eligible": False,
+            "dispersion_specific_signal": False,
+            "classification": "ineligible",
+        }
+    if not length_pi_behavior_same:
+        return {
+            "eligible": True,
+            "dispersion_specific_signal": False,
+            "classification": "instrumentation_or_policy_consistency_issue",
+        }
+    signal = (
+        rule_pi_sequence_differs
+        or rule_pi_noop_status_differs
+        or rule_pi_rebite_recovery_differs
+    )
     return {
-        "schema": SCHEMA_ID,
-        "status": "FROZEN_PRE_HOLDOUT",
-        "revision": PHASE2C_REVISION,
-        "phase2a_revision": PHASE2A_REVISION,
-        "phase2b_verdict": PHASE2B_VERDICT,
-        "base_main_sha": BASE_MAIN_SHA,
-        "offline": True,
-        "paid_api": False,
-        "research_conclusion": False,
-        "evaluation_sealed": True,
-        "arms_run": False,
-        "primary_axis": PRIMARY_AXIS,
-        "primary_levels": [LEFT_DISPERSION, RIGHT_DISPERSION],
-        "n_planned_pairs": len(pairs),
-        "case_ids": {
-            "calibration": [c.case_id for c in cal_cells],
-            "evaluation": [c.case_id for c in eval_cells],
-        },
-        "tokenizer_reference": dict(TOKENIZER_REFERENCE),
-        "prompt_contract": {
-            "source": "scripts/measure_phase1c_token_lengths.py",
-            "system": SYSTEM_PROMPT,
-            "user_template": USER_TEMPLATE,
-            "thinking": "disabled",
-            "add_generation_prompt": True,
-        },
-        "length_criterion": {
-            "source": TOKEN_MATCH_FREEZE_REVISION,
-            "max_abs_delta": TOKEN_MATCH_MAX_ABS_DELTA,
-            "max_relative_delta": TOKEN_MATCH_MAX_RELATIVE_DELTA,
-            "no_padding": True,
-            "widened_after_phase2b": False,
-            "calibration_observation": {
-                "axis": PRIMARY_AXIS,
-                "n_contrasts": 48,
-                "n_matched": 48,
-                "abs_delta": 0,
-                "relative_delta": 0.0,
-                "note": (
-                    "Phase 2B calibration fact only. Evaluation token counts "
-                    "are not measured or recorded in this freeze."
-                ),
-            },
-        },
-        "arms": list(PHASE2D_ARMS),
-        "primary_question": {
-            "ja": (
-                "同じfacts・同じtoken長・同じsurface形式でも、required evidenceの"
-                "dispersionだけが変わったとき、length_piとrule_piの"
-                "routing/operator behaviorは異なるか？"
-            ),
-            "en": (
-                "When facts, token length, and surface form are held fixed and "
-                "only required-evidence dispersion changes, do length_pi and "
-                "rule_pi differ in routing/operator behavior?"
-            ),
-        },
-        "paid_model_accuracy_is_primary_endpoint": False,
-        "primary_offline_endpoints": [
-            "n_pairs_length_pi_neq_rule_pi",
-            "n_pairs_rule_pi_sequence_differs_clustered_vs_dispersed",
-            "n_pairs_operator_changed_payload",
-            "visible_evidence_recall",
-            "recoverable_evidence_recall",
-            "provenance_completeness",
-            "n_rebite_fires",
-            "T_total",
-            "payload_diff_vs_raw_full",
-        ],
-        "not_an_endpoint": ["BITE_wins", "morphology_superior", "Go"],
-        "exclusion_rule": {
-            "apply_in": "Phase 2D",
-            "if_pair_fails_length_criterion": "exclude that pair from confirmatory analysis",
-            "do_not": [
-                "widen max_abs_delta",
-                "widen max_relative_delta",
-                "add padding",
-                "rewrite surfaces",
-                "retune routing thresholds to create a difference",
-            ],
-        },
-        "phase2d_verdicts": {
-            "PHASE2D_OFFLINE_SIGNAL": (
-                "length-matched dispersion pairで、length_piでは説明できない"
-                "routing/operator差が観測された。"
-            ),
-            "PHASE2D_OFFLINE_NO_SIGNAL": (
-                "dispersionを変えても、length_piとrule_piの実質的差が観測されなかった。"
-            ),
-            "PHASE2D_BLOCKED": (
-                "freeze条件、length criterion、instrumentationなどが破れて"
-                "公平な評価ができない。"
-            ),
-        },
-        "secondary_axes": {
-            "structure": {
-                "status": "secondary_length_confounded_stress_axis",
-                "in_primary_confirmatory": False,
-                "deleted": False,
-                "phase2b_calibration_match_rate": 0.0,
-                "new_matching_method_after_evaluation": False,
-            },
-            "redundancy": {
-                "status": "secondary_length_confounded_stress_axis",
-                "in_primary_confirmatory": False,
-                "deleted": False,
-                "phase2b_calibration_match_rate": 0.0,
-                "new_matching_method_after_evaluation": False,
-            },
-        },
-        "locks": {
-            "no_profiler_in_phase2c": True,
-            "no_routing_in_phase2c": True,
-            "no_operator_in_phase2c": True,
-            "no_evaluation_token_counts_in_phase2c": True,
-            "no_threshold_retune_after_seeing_results": True,
-            "no_criterion_widen_to_rescue_pairs": True,
-            "evaluation_not_for_rule_tuning": True,
-        },
-        "confirmatory_pairs": pairs,
+        "eligible": True,
+        "dispersion_specific_signal": signal,
+        "classification": "signal" if signal else "no_signal",
     }
 
 
-def validate_freeze_doc(doc: Mapping[str, Any]) -> list[str]:
+def decide_phase2d_verdict(
+    *,
+    n_eligible: int,
+    n_dispersion_specific_signal: int,
+    blocked_reasons: Sequence[str] | None = None,
+) -> str:
+    if blocked_reasons:
+        return VERDICT_BLOCKED
+    if n_eligible < 1:
+        return VERDICT_BLOCKED
+    if n_dispersion_specific_signal >= 1:
+        return VERDICT_SIGNAL
+    return VERDICT_NO_SIGNAL
+
+
+def _validate_shared(doc: Mapping[str, Any]) -> list[str]:
     errs: list[str] = []
-    if doc.get("schema") != SCHEMA_ID:
-        errs.append(f"bad schema id: {doc.get('schema')!r}")
     if doc.get("primary_axis") != PRIMARY_AXIS:
         errs.append("primary_axis must be dispersion")
     if doc.get("evaluation_sealed") is not True:
@@ -326,16 +351,68 @@ def validate_freeze_doc(doc: Mapping[str, Any]) -> list[str]:
     verdicts = dict(doc.get("phase2d_verdicts") or {})
     if set(verdicts) != set(PHASE2D_VERDICTS):
         errs.append("Phase 2D verdict keys must be exactly the three freeze labels")
+    if doc.get("phase2a_revision") != PHASE2A_REVISION:
+        errs.append("phase2a_revision must stay frozen")
+    return errs
+
+
+def _validate_v02(doc: Mapping[str, Any]) -> list[str]:
+    errs: list[str] = []
+    if doc.get("schema") != SCHEMA_ID:
+        errs.append(f"bad schema id: {doc.get('schema')!r}")
+    if doc.get("revision") != PHASE2C_REVISION:
+        errs.append(f"bad revision: {doc.get('revision')!r}")
+    if doc.get("supersedes") != PHASE2C_REVISION_V01:
+        errs.append("v0.2 must supersede v0.1")
+    supersession = dict(doc.get("supersession") or {})
+    if supersession.get("v0_1_deleted") is not False:
+        errs.append("v0.1 must not be recorded as deleted")
+    if supersession.get("v0_1_overwritten") is not False:
+        errs.append("v0.1 must not be recorded as overwritten")
+    if "eligible_pair" not in doc:
+        errs.append("eligible_pair missing")
+    signal = dict(doc.get("dispersion_specific_signal") or {})
+    if "true_if_any" not in signal:
+        errs.append("dispersion_specific_signal.true_if_any missing")
+    not_signal = list(signal.get("not_signal") or [])
+    if not any("payload hash" in str(x) for x in not_signal):
+        errs.append("raw payload hash must be excluded from signal")
+    if not any("length_pi != rule_pi" in str(x) for x in not_signal):
+        errs.append("length_pi != rule_pi must not be the dispersion signal")
+    reporting = dict(doc.get("reporting") or {})
+    if "n_signal" not in list(reporting.get("required_counts") or []):
+        errs.append("reporting must include n_signal")
+    if "n_eligible" not in list(reporting.get("required_counts") or []):
+        errs.append("reporting must include n_eligible")
+    return errs
+
+
+def validate_freeze_doc(doc: Mapping[str, Any]) -> list[str]:
+    rev = doc.get("revision")
+    errs = _validate_shared(doc)
+    if rev == PHASE2C_REVISION_V01:
+        if doc.get("schema") != SCHEMA_ID_V01:
+            errs.append(f"v0.1 bad schema id: {doc.get('schema')!r}")
+        return errs
+    if rev == PHASE2C_REVISION:
+        errs.extend(_validate_v02(doc))
+        return errs
+    errs.append(f"unknown freeze revision: {rev!r}")
     return errs
 
 
 __all__ = [
     "PHASE2C_REVISION",
+    "PHASE2C_REVISION_V01",
     "PHASE2D_ARMS",
     "PHASE2D_VERDICTS",
     "PRIMARY_AXIS",
     "SCHEMA_ID",
+    "SCHEMA_ID_V01",
+    "classify_dispersion_pair",
     "confirmatory_pairs",
+    "decide_phase2d_verdict",
     "freeze_manifest",
+    "load_v01_freeze",
     "validate_freeze_doc",
 ]

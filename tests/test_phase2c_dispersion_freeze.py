@@ -14,15 +14,20 @@ import jsonschema
 from bite_bench.phase2a import design_cells, design_manifest, surface_profiles
 from bite_bench.phase2c import (
     PHASE2C_REVISION,
+    PHASE2C_REVISION_V01,
     PHASE2D_ARMS,
     PHASE2D_VERDICTS,
     PRIMARY_AXIS,
     SCHEMA_ID,
+    SCHEMA_ID_V01,
     SYSTEM_PROMPT,
     TOKENIZER_REFERENCE,
     USER_TEMPLATE,
+    classify_dispersion_pair,
     confirmatory_pairs,
+    decide_phase2d_verdict,
     freeze_manifest,
+    load_v01_freeze,
     validate_freeze_doc,
 )
 from bite_bench.token_match import (
@@ -31,8 +36,10 @@ from bite_bench.token_match import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-FREEZE = ROOT / "benchmarks" / "spec" / "phase2c-dispersion-freeze.json"
-SCHEMA = ROOT / "spec" / "phase2c-dispersion-freeze.schema.json"
+FREEZE_V01 = ROOT / "benchmarks" / "spec" / "phase2c-dispersion-freeze.json"
+FREEZE_V02 = ROOT / "benchmarks" / "spec" / "phase2c-dispersion-freeze-v0.2.json"
+SCHEMA_V01 = ROOT / "spec" / "phase2c-dispersion-freeze.schema.json"
+SCHEMA_V02 = ROOT / "spec" / "phase2c-dispersion-freeze-v0.2.schema.json"
 PHASE1C = ROOT / "benchmarks" / "spec" / "phase1c-token-freeze.json"
 PHASE2A = ROOT / "benchmarks" / "spec" / "phase2a-design.json"
 PHASE2C_PY = ROOT / "src" / "bite_bench" / "phase2c.py"
@@ -48,22 +55,67 @@ FORBIDDEN = (
 )
 
 
+def _no_eval_measurements(pairs: object) -> None:
+    blob = json.dumps(pairs)
+    for key in (
+        "prompt_tokens",
+        "left_tokens",
+        "right_tokens",
+        "operator_sequence",
+        "payload_sha256",
+        "T_profiler",
+        "T_router",
+        "T_total",
+        "abs_delta",
+    ):
+        assert key not in blob, key
+
+
 def test_phase2c_source_does_not_open_evaluation_or_bite_eval() -> None:
     source = PHASE2C_PY.read_text(encoding="utf-8")
     for needle in FORBIDDEN:
         assert needle not in source, needle
 
 
-def test_committed_freeze_matches_code() -> None:
-    committed = json.loads(FREEZE.read_text(encoding="utf-8"))
-    assert committed == freeze_manifest()
-    assert validate_freeze_doc(committed) == []
-    jsonschema.validate(committed, json.loads(SCHEMA.read_text(encoding="utf-8")))
-    assert committed["schema"] == SCHEMA_ID
-    assert committed["revision"] == PHASE2C_REVISION
-    assert committed["status"] == "FROZEN_PRE_HOLDOUT"
-    assert committed["evaluation_sealed"] is True
-    assert committed["arms_run"] is False
+def test_v01_is_retained_not_overwritten() -> None:
+    v01 = json.loads(FREEZE_V01.read_text(encoding="utf-8"))
+    assert v01["revision"] == PHASE2C_REVISION_V01
+    assert v01["schema"] == SCHEMA_ID_V01
+    assert validate_freeze_doc(v01) == []
+    jsonschema.validate(v01, json.loads(SCHEMA_V01.read_text(encoding="utf-8")))
+    assert v01 == load_v01_freeze()
+
+
+def test_v02_supersedes_v01_and_matches_code() -> None:
+    v02 = json.loads(FREEZE_V02.read_text(encoding="utf-8"))
+    assert v02 == freeze_manifest()
+    assert validate_freeze_doc(v02) == []
+    jsonschema.validate(v02, json.loads(SCHEMA_V02.read_text(encoding="utf-8")))
+    assert v02["schema"] == SCHEMA_ID
+    assert v02["revision"] == PHASE2C_REVISION
+    assert v02["supersedes"] == PHASE2C_REVISION_V01
+    assert v02["supersession"]["v0_1_deleted"] is False
+    assert v02["supersession"]["v0_1_overwritten"] is False
+    assert v02["evaluation_sealed"] is True
+    assert v02["arms_run"] is False
+
+
+def test_v02_keeps_v01_pairs_and_contracts() -> None:
+    v01 = load_v01_freeze()
+    v02 = freeze_manifest()
+    assert v02["confirmatory_pairs"] == v01["confirmatory_pairs"]
+    assert v02["arms"] == v01["arms"]
+    assert v02["primary_axis"] == v01["primary_axis"]
+    assert v02["tokenizer_reference"] == v01["tokenizer_reference"]
+    assert v02["prompt_contract"] == v01["prompt_contract"]
+    assert v02["length_criterion"] == v01["length_criterion"]
+    assert v02["case_ids"] == v01["case_ids"]
+    assert v02["secondary_axes"] == v01["secondary_axes"]
+    assert v02["primary_question"] == v01["primary_question"]
+    assert v02["primary_offline_endpoints"] == v01["primary_offline_endpoints"]
+    assert v02["exclusion_rule"] == v01["exclusion_rule"]
+    assert v02["n_planned_pairs"] == v01["n_planned_pairs"] == 48
+    assert v02["phase2d_verdicts"] != v01["phase2d_verdicts"]
 
 
 def test_primary_axis_is_dispersion_with_48_pairs() -> None:
@@ -102,24 +154,13 @@ def test_pairs_hold_structure_and_redundancy_grid() -> None:
 
 
 def test_freeze_has_no_evaluation_measurements() -> None:
-    blob = FREEZE.read_text(encoding="utf-8")
-    for key in (
-        "prompt_tokens",
-        "left_tokens",
-        "right_tokens",
-        "operator_sequence",
-        "payload_sha256",
-        "T_profiler",
-        "T_router",
-    ):
-        assert key not in blob
-    pairs = json.dumps(json.loads(blob)["confirmatory_pairs"])
-    assert "T_total" not in pairs
-    assert "abs_delta" not in pairs
+    for path in (FREEZE_V01, FREEZE_V02):
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        _no_eval_measurements(doc["confirmatory_pairs"])
 
 
 def test_length_criterion_is_phase1c() -> None:
-    freeze = json.loads(FREEZE.read_text(encoding="utf-8"))
+    freeze = freeze_manifest()
     phase1c = json.loads(PHASE1C.read_text(encoding="utf-8"))
     rule = freeze["length_criterion"]
     assert TOKEN_MATCH_MAX_ABS_DELTA == 3
@@ -143,7 +184,7 @@ def test_length_criterion_is_phase1c() -> None:
 
 
 def test_four_arms_and_phase2d_verdicts_are_pre_registered() -> None:
-    freeze = json.loads(FREEZE.read_text(encoding="utf-8"))
+    freeze = freeze_manifest()
     assert tuple(freeze["arms"]) == PHASE2D_ARMS
     assert set(freeze["phase2d_verdicts"]) == set(PHASE2D_VERDICTS)
     assert freeze["paid_model_accuracy_is_primary_endpoint"] is False
@@ -151,10 +192,11 @@ def test_four_arms_and_phase2d_verdicts_are_pre_registered() -> None:
     assert "n_pairs_length_pi_neq_rule_pi" in freeze["primary_offline_endpoints"]
     assert freeze["exclusion_rule"]["if_pair_fails_length_criterion"].startswith("exclude")
     assert "widen max_abs_delta" in freeze["exclusion_rule"]["do_not"]
+    assert freeze["eligible_pair"]["if_length_criterion_fails"].startswith("exclude")
 
 
 def test_structure_and_redundancy_remain_secondary() -> None:
-    freeze = json.loads(FREEZE.read_text(encoding="utf-8"))
+    freeze = freeze_manifest()
     for axis in ("structure", "redundancy"):
         row = freeze["secondary_axes"][axis]
         assert row["in_primary_confirmatory"] is False
@@ -168,3 +210,60 @@ def test_phase2a_design_was_not_rewritten() -> None:
     assert committed == design_manifest()
     assert committed["status"] == "DESIGN_READY_NOT_FROZEN"
     assert committed["locks"]["token_length_matching_frozen"] is False
+
+
+def test_dispersion_specific_signal_definition() -> None:
+    base = {
+        "length_criterion_ok": True,
+        "instrumentation_ok": True,
+        "frozen_contract_ok": True,
+        "length_pi_behavior_same": True,
+        "rule_pi_sequence_differs": False,
+        "rule_pi_noop_status_differs": False,
+        "rule_pi_rebite_recovery_differs": False,
+    }
+    assert classify_dispersion_pair(**base)["dispersion_specific_signal"] is False
+    assert classify_dispersion_pair(**{**base, "rule_pi_sequence_differs": True})[
+        "dispersion_specific_signal"
+    ]
+    assert classify_dispersion_pair(**{**base, "rule_pi_noop_status_differs": True})[
+        "dispersion_specific_signal"
+    ]
+    assert classify_dispersion_pair(**{**base, "rule_pi_rebite_recovery_differs": True})[
+        "dispersion_specific_signal"
+    ]
+    noise = classify_dispersion_pair(
+        **base,
+        raw_payload_hash_differs=True,
+        recall_differs=True,
+        provenance_differs=True,
+        t_total_differs=True,
+        length_pi_neq_rule_pi=True,
+    )
+    assert noise["dispersion_specific_signal"] is False
+    inconsistent = classify_dispersion_pair(
+        **{**base, "length_pi_behavior_same": False, "rule_pi_sequence_differs": True}
+    )
+    assert inconsistent["eligible"] is True
+    assert inconsistent["dispersion_specific_signal"] is False
+    assert inconsistent["classification"] == "instrumentation_or_policy_consistency_issue"
+    ineligible = classify_dispersion_pair(**{**base, "length_criterion_ok": False})
+    assert ineligible["eligible"] is False
+    assert ineligible["dispersion_specific_signal"] is False
+
+
+def test_phase2d_verdict_rules() -> None:
+    assert decide_phase2d_verdict(n_eligible=0, n_dispersion_specific_signal=0) == (
+        "PHASE2D_BLOCKED"
+    )
+    assert decide_phase2d_verdict(
+        n_eligible=12,
+        n_dispersion_specific_signal=0,
+        blocked_reasons=("self-check failed",),
+    ) == "PHASE2D_BLOCKED"
+    assert decide_phase2d_verdict(n_eligible=12, n_dispersion_specific_signal=1) == (
+        "PHASE2D_OFFLINE_SIGNAL"
+    )
+    assert decide_phase2d_verdict(n_eligible=12, n_dispersion_specific_signal=0) == (
+        "PHASE2D_OFFLINE_NO_SIGNAL"
+    )
