@@ -27,6 +27,12 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e ".[dev]"
       
+      - name: Phase1C tokenizer calibration (temporary branch measurement)
+        if: github.event_name == 'pull_request' && github.head_ref == 'feat/phase1c-token-match-freeze'
+        run: |
+          python -m pip install "transformers==4.54.0" "huggingface_hub>=0.34,<1"
+          python scripts/measure_phase1c_token_lengths.py --split calibration --out /tmp/phase1c-token-calibration.json
+
       - name: Lint with ruff
         run: |
           python -m ruff check src tests
