@@ -1,0 +1,103 @@
+{
+  "schema": "bitebench-phase2a-design/v0.1",
+  "revision": "phase2a-factorial-v0.1",
+  "purpose": "factorial benchmark generation independent of current BITE profiler/routing thresholds",
+  "canonical_axes": {
+    "scale": {
+      "levels": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "distractor_counts": {
+        "small": 8,
+        "medium": 32,
+        "large": 96
+      }
+    },
+    "dependency": {
+      "levels": [
+        "direct",
+        "chain3"
+      ]
+    },
+    "replica": {
+      "levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "calibration": [
+        0,
+        1
+      ],
+      "evaluation": [
+        2,
+        3
+      ]
+    }
+  },
+  "surface_axes": {
+    "structure": [
+      "flat",
+      "nested"
+    ],
+    "dispersion": [
+      "clustered",
+      "dispersed"
+    ],
+    "redundancy": [
+      "low",
+      "high"
+    ],
+    "full_factorial": true,
+    "n_profiles": 8
+  },
+  "counts": {
+    "canonical_cases": 24,
+    "calibration_cases": 12,
+    "evaluation_cases": 12,
+    "surfaces_per_case": 8,
+    "total_surfaces": 192
+  },
+  "case_ids": {
+    "calibration": [
+      "p2a-small-direct-r0",
+      "p2a-small-direct-r1",
+      "p2a-small-chain3-r0",
+      "p2a-small-chain3-r1",
+      "p2a-medium-direct-r0",
+      "p2a-medium-direct-r1",
+      "p2a-medium-chain3-r0",
+      "p2a-medium-chain3-r1",
+      "p2a-large-direct-r0",
+      "p2a-large-direct-r1",
+      "p2a-large-chain3-r0",
+      "p2a-large-chain3-r1"
+    ],
+    "evaluation": [
+      "p2a-small-direct-r2",
+      "p2a-small-direct-r3",
+      "p2a-small-chain3-r2",
+      "p2a-small-chain3-r3",
+      "p2a-medium-direct-r2",
+      "p2a-medium-direct-r3",
+      "p2a-medium-chain3-r2",
+      "p2a-medium-chain3-r3",
+      "p2a-large-direct-r2",
+      "p2a-large-direct-r3",
+      "p2a-large-chain3-r2",
+      "p2a-large-chain3-r3"
+    ]
+  },
+  "locks": {
+    "no_profiler_import": true,
+    "no_routing_import": true,
+    "no_threshold_import": true,
+    "no_expected_route_labels": true,
+    "evaluation_not_for_rule_tuning": true,
+    "token_length_matching_frozen": false
+  },
+  "status": "DESIGN_READY_NOT_FROZEN"
+}
