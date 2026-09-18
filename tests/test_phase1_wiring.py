@@ -425,14 +425,22 @@ def test_provenance_is_arm_independent() -> None:
     the baseline for a reason unrelated to the arm.
     """
     doc = run_phase1_matrix(n_per_family=1, artifact_path=None)
+
+    # Arm independence holds over every row, controls included: provenance may
+    # only depend on the source, never on which arm processed it.
     by_arm: dict[str, set[float]] = {}
     for row in doc["rows"]:
         by_arm.setdefault(str(row["method"]), set()).add(float(row["provenance"]))
     assert by_arm, "no rows"
     raw = by_arm["raw_full"]
-    assert raw == {1.0}, f"raw_full provenance must not be penalised: {raw}"
     for arm, values in by_arm.items():
         assert values == raw, f"{arm} provenance {values} != raw_full {raw}"
+
+    # On workload sources every arm scores 1.0. Negative controls are excluded
+    # here because neg_missing_provenance is *supposed* to score below 1.0 —
+    # that case is asserted in tests/test_negative_controls.py.
+    workload = {float(r["provenance"]) for r in doc["rows"] if r["case_kind"] != "negative_control"}
+    assert workload == {1.0}, f"workload provenance must not be penalised: {workload}"
 
 
 def test_raw_full_exposes_the_same_unit_graph_as_candidates() -> None:
@@ -541,7 +549,7 @@ def test_arm_differentiation_is_backed_by_real_removal() -> None:
             if row["payload_sha256"] == raw["payload_sha256"]:
                 continue
             differing += 1
-            assert (row.get("recoverable_evidence_ids") or row.get("loss_ledger")), (
+            assert row.get("recoverable_evidence_ids") or row.get("loss_ledger"), (
                 f"{row['case_id']}/{method}: payload differs from raw_full but "
                 "nothing is recorded in R or the loss ledger"
             )

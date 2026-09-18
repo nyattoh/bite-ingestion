@@ -55,6 +55,9 @@ class _Seg:
     unit_id: str | None = None
     gold: bool = False
     role: str | None = None
+    #: Override the packet source_uri for this unit. ``""`` models a segment
+    #: whose origin was never recorded, so provenance cannot be complete.
+    source_uri: str | None = None
 
 
 def _build_document(
@@ -91,7 +94,7 @@ def _build_document(
                 text=piece.text,
                 start=start,
                 end=end,
-                source_uri=source_uri,
+                source_uri=source_uri if piece.source_uri is None else piece.source_uri,
                 renderer_id=FAMILIES_RENDERER_ID,
                 role=piece.role,
             )
@@ -326,4 +329,132 @@ def _iter_family(family: str, n: int) -> Iterator[dict[str, object]]:
             )
 
         else:  # pragma: no cover — guarded by SYNTHETIC_FAMILIES
+            return
+
+
+# ===========================================================================
+# Negative controls
+# ===========================================================================
+#
+# These are NOT workload families. They exist to prove that the measurement
+# instrument reports failure when evidence is genuinely lost. They are kept
+# out of ``SYNTHETIC_FAMILIES`` so the workload set, the offline pilot and the
+# billed runner are unchanged.
+#
+# Every case fails for a reason a human can state in one sentence, and it
+# fails against the *unmodified* policy, profiler and operators: no threshold,
+# feature or routing rule was touched to produce these numbers.
+
+NEGATIVE_FAMILIES: tuple[str, ...] = (
+    "neg_gold_quarantined",
+    "neg_unrecoverable_gold",
+    "neg_missing_provenance",
+)
+
+#: Why each control must fail, and what the instrument has to report.
+NEGATIVE_FAMILY_INTENT: dict[str, str] = {
+    "neg_gold_quarantined": (
+        "Half of the required evidence sits on an ERROR line inside a malformed "
+        "JSON document. UNTANGLE quarantines anomaly lines, so a morphology-aware "
+        "arm necessarily removes that half from view. recall_vis must drop to 0.5; "
+        "recall_rec must stay 1.0 because the unit is in R; the re-bite arm must "
+        "fetch it back to 1.0 and pay T_rebite > 0."
+    ),
+    "neg_unrecoverable_gold": (
+        "Same quarantine, but the surviving text mentions the same fields as the "
+        "query, so bounded token-targeted recovery has no signal that anything is "
+        "missing. recall_vis must stay below 1.0 for BOTH rule_pi and "
+        "rule_pi_rebite, and T_rebite must be 0. Being in R is not the same as "
+        "having been recovered."
+    ),
+    "neg_missing_provenance": (
+        "One unit was pasted in with no recorded origin (empty source_uri). "
+        "Provenance cannot be complete, so the provenance score must fall below "
+        "1.0 for every arm, including raw_full."
+    ),
+}
+
+
+def generate_negative_instances(family: str, n: int = 1) -> list[dict[str, object]]:
+    """Generate negative-control packets. Returns [] for unknown ids."""
+    if family not in NEGATIVE_FAMILIES:
+        return []
+    return list(_iter_negative(family, n))
+
+
+def _iter_negative(family: str, n: int) -> Iterator[dict[str, object]]:
+    for i in range(n):
+        code = f"K{i:02d}"
+        val = 100 + i
+        eid = f"{family}-e{i}"
+        eid2 = f"{family}-e{i}b"
+
+        if family == "neg_gold_quarantined":
+            # '{"audit": [' makes the whole document malformed JSON -> profiler
+            # a=0.80 -> rule-Pi includes UNTANGLE. The ERROR line is classified
+            # anomaly_candidate and is quarantined into R.
+            # The query tokens (code / value / Kxx) appear ONLY in the omitted
+            # line, so bounded re-bite can form a request for it.
+            yield _base(
+                family,
+                i,
+                pieces=[
+                    _Seg('{"audit": ['),
+                    "\n",
+                    _Seg(f"INFO service=alpha region=lab-only slot={i}", eid, gold=True),
+                    "\n",
+                    _Seg(f"ERROR service=alpha code={code} value={val}", eid2, gold=True),
+                    "\n",
+                    _Seg("INFO trailing heartbeat ok=1"),
+                ],
+                query=f"What is the value for code {code}?",
+                gold_answer=str(val),
+                domain="observability_logs",
+                extra={"negative_control": True},
+            )
+
+        elif family == "neg_unrecoverable_gold":
+            # Same quarantine mechanism, but the surviving INFO line repeats
+            # every distinctive query token (status / code / Kxx), so
+            # insufficient_r_targets finds nothing to fetch.
+            yield _base(
+                family,
+                i,
+                pieces=[
+                    _Seg('{"audit": ['),
+                    "\n",
+                    _Seg(f"INFO code={code} status lookup requested", eid, gold=True),
+                    "\n",
+                    _Seg(f"ERROR code={code} status={val}", eid2, gold=True),
+                    "\n",
+                    _Seg("INFO trailing heartbeat ok=1"),
+                ],
+                query=f"What is the status for code {code}?",
+                gold_answer=str(val),
+                domain="observability_logs",
+                extra={"negative_control": True},
+            )
+
+        elif family == "neg_missing_provenance":
+            # Plain prose: no anomaly marker, not JSON-ish, so no operator
+            # removes anything. The only defect is that one unit has no
+            # recorded origin.
+            yield _base(
+                family,
+                i,
+                pieces=[
+                    _Seg(f"Section A. The codeword {code} equals {val}.", eid, gold=True),
+                    " ",
+                    _Seg(
+                        "Section B was pasted from an unrecorded source.",
+                        source_uri="",
+                    ),
+                ],
+                query=f"What is {code}?",
+                gold_answer=str(val),
+                domain="prose",
+                extra={"negative_control": True},
+            )
+
+        else:  # pragma: no cover — guarded by NEGATIVE_FAMILIES
             return
