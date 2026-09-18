@@ -397,13 +397,132 @@ def summarize_rows(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     }
 
 
+def arm_rows_for_packet(
+    packet: Mapping[str, Any],
+    *,
+    case_kind: str,
+    family: str,
+) -> list[dict[str, Any]]:
+    """Run the four Phase-1 arms on one packet using the existing adapters.
+
+    This is the shared measurement path. Callers must not change profiler,
+    policy, or operator behaviour; they only supply the packet.
+    """
+    from bite_eval.baselines import get_baseline
+
+    prepared, report = attach_morphology(packet)
+    case_id = str(prepared.get("instance_id") or "")
+    facts_id = str(prepared.get("facts_id") or case_id)
+    texture = str(prepared.get("texture") or prepared.get("domain") or "unspecified")
+    gold_ids = [str(g) for g in (prepared.get("gold_evidence_ids") or [])]
+    original = extract_text(prepared)
+    morph = {k: float((prepared.get("morphology") or {}).get(k, 0.0)) for k in FEATURE_KEYS}
+    query = str(prepared.get("query") or "")
+    rows: list[dict[str, Any]] = []
+    for arm in PHASE1_ARMS:
+        adapter = get_baseline(arm)
+        ctx = {
+            "domain": prepared.get("domain"),
+            "query": query,
+            "wrapper": OFFLINE_WRAPPER,
+            "output_constraint": OUTPUT_CONSTRAINT,
+            "timeout_s": None,
+            "retry_policy": "n/a_offline_no_network",
+        }
+        out = dict(adapter.run(prepared, ctx))  # type: ignore[attr-defined]
+        payload = str(out.get("payload_text") or out.get("visible_evidence") or "")
+        if not isinstance(out.get("payload_text") or out.get("visible_evidence"), str):
+            payload = payload_text_from_packet({"visible_evidence": out.get("visible_evidence")})
+        acc = out.get("accounting") if isinstance(out.get("accounting"), Mapping) else {}
+        ledger = _arm_ledger(
+            method=arm,
+            case_id=case_id,
+            profiler_cpu_ms=float(report.cpu_ms),
+            accounting=acc if isinstance(acc, Mapping) else None,
+            payload=payload,
+        )
+        totals = dict(ledger.totals())
+        dc = validate_ledger_totals(ledger.rows(), totals)
+        vis_ids = [str(x) for x in (out.get("visible_unit_ids") or [])]
+        r_entries = _r_entries(out.get("R"))
+        rec_ids = [
+            str(e.get("unit_id"))
+            for e in r_entries
+            if e.get("unit_id") and e.get("recoverable", True)
+        ]
+        units = (
+            [u for u in (out.get("units") or []) if isinstance(u, Mapping)]
+            if isinstance(out.get("units"), list)
+            else []
+        )
+        metrics = metrics_from_transformed(
+            gold_ids=gold_ids,
+            visible_ids=vis_ids,
+            units=units,
+            r_entries=r_entries,
+        )
+        tstat = str(out.get("transformation_status") or "")
+        is_no_op = (
+            bool(out.get("is_no_op"))
+            or tstat == "no_op"
+            or (arm != "raw_full" and payload == original and out.get("status") == "ok")
+        )
+        baseline_status = str(out.get("status") or "ok")
+        status = _row_status(arm, baseline_status, is_no_op)
+        seq = out.get("proposed_sequence")
+        if not isinstance(seq, list):
+            trace = out.get("baseline_trace") if isinstance(out.get("baseline_trace"), Mapping) else {}
+            seq = list(trace.get("sequence") or []) if isinstance(trace, Mapping) else []
+        call_ids = [str(r.get("call_id")) for r in ledger.rows() if r.get("call_id")]
+        rows.append(
+            {
+                "case_id": case_id,
+                "case_kind": case_kind,
+                "family": family,
+                "facts_id": facts_id,
+                "texture": texture,
+                "method": arm,
+                "payload_sha256": str(out.get("payload_hash") or payload_hash(payload)),
+                "operator_sequence": seq,
+                "morphology": dict(morph),
+                "policy_used_morphology": arm in {"rule_pi", "rule_pi_rebite"},
+                "visible_evidence_ids": vis_ids,
+                "recoverable_evidence_ids": rec_ids,
+                "loss_ledger": list(out.get("irreversible_loss_ledger") or []),
+                "status": status,
+                "no_op": status == "no_op",
+                "failed": status == "failed",
+                "baseline_status": baseline_status,
+                "reason": out.get("reason"),
+                "payload_chars": len(payload),
+                "token_estimate": estimate_tokens_char4(payload),
+                "evidence_recall_visible": metrics["evidence_recall_visible"],
+                "evidence_recall_recoverable": metrics["evidence_recall_recoverable"],
+                "provenance": metrics["provenance"],
+                "T_profiler": totals.get("T_profiler"),
+                "T_router": totals.get("T_router"),
+                "T_operator": totals.get("T_operator"),
+                "T_target_in": totals.get("T_target_in"),
+                "T_target_out": totals.get("T_target_out"),
+                "T_rebite": totals.get("T_rebite"),
+                "T_total": totals.get("T_total"),
+                "query": query,
+                "ledger_call_ids": call_ids,
+                "dc_violations": dc,
+                "rebite_steps": (out.get("baseline_trace") or {}).get("rebite_steps")
+                if isinstance(out.get("baseline_trace"), Mapping)
+                else None,
+            }
+        )
+    return rows
+
+
 def run_phase1_matrix(
     *,
     n_per_family: int = 1,
     artifact_path: str | Path | None = None,
     summary_path: str | Path | None = None,
 ) -> dict[str, Any]:
-    from bite_eval.baselines import get_baseline
     from bite_eval.pilot.families import (
         NEGATIVE_FAMILIES,
         SYNTHETIC_FAMILIES,
@@ -425,115 +544,7 @@ def run_phase1_matrix(
     rows: list[dict[str, Any]] = []
     for case_kind, family, packets in plan:
         for packet in packets:
-            prepared, report = attach_morphology(packet)
-            case_id = str(prepared.get("instance_id") or "")
-            facts_id = str(prepared.get("facts_id") or case_id)
-            texture = str(prepared.get("texture") or prepared.get("domain") or "unspecified")
-            gold_ids = [str(g) for g in (prepared.get("gold_evidence_ids") or [])]
-            original = extract_text(prepared)
-            morph = {k: float((prepared.get("morphology") or {}).get(k, 0.0)) for k in FEATURE_KEYS}
-            query = str(prepared.get("query") or "")
-            for arm in PHASE1_ARMS:
-                adapter = get_baseline(arm)
-                ctx = {
-                    "domain": prepared.get("domain"),
-                    "query": query,
-                    "wrapper": OFFLINE_WRAPPER,
-                    "output_constraint": OUTPUT_CONSTRAINT,
-                    "timeout_s": None,
-                    "retry_policy": "n/a_offline_no_network",
-                }
-                out = dict(adapter.run(prepared, ctx))  # type: ignore[attr-defined]
-                payload = str(out.get("payload_text") or out.get("visible_evidence") or "")
-                if not isinstance(out.get("payload_text") or out.get("visible_evidence"), str):
-                    payload = payload_text_from_packet(
-                        {"visible_evidence": out.get("visible_evidence")}
-                    )
-                acc = out.get("accounting") if isinstance(out.get("accounting"), Mapping) else {}
-                ledger = _arm_ledger(
-                    method=arm,
-                    case_id=case_id,
-                    profiler_cpu_ms=float(report.cpu_ms),
-                    accounting=acc if isinstance(acc, Mapping) else None,
-                    payload=payload,
-                )
-                totals = dict(ledger.totals())
-                dc = validate_ledger_totals(ledger.rows(), totals)
-                vis_ids = [str(x) for x in (out.get("visible_unit_ids") or [])]
-                r_entries = _r_entries(out.get("R"))
-                rec_ids = [
-                    str(e.get("unit_id"))
-                    for e in r_entries
-                    if e.get("unit_id") and e.get("recoverable", True)
-                ]
-                units = (
-                    [u for u in (out.get("units") or []) if isinstance(u, Mapping)]
-                    if isinstance(out.get("units"), list)
-                    else []
-                )
-                metrics = metrics_from_transformed(
-                    gold_ids=gold_ids,
-                    visible_ids=vis_ids,
-                    units=units,
-                    r_entries=r_entries,
-                )
-                tstat = str(out.get("transformation_status") or "")
-                is_no_op = (
-                    bool(out.get("is_no_op"))
-                    or tstat == "no_op"
-                    or (arm != "raw_full" and payload == original and out.get("status") == "ok")
-                )
-                baseline_status = str(out.get("status") or "ok")
-                status = _row_status(arm, baseline_status, is_no_op)
-                seq = out.get("proposed_sequence")
-                if not isinstance(seq, list):
-                    trace = (
-                        out.get("baseline_trace")
-                        if isinstance(out.get("baseline_trace"), Mapping)
-                        else {}
-                    )
-                    seq = list(trace.get("sequence") or []) if isinstance(trace, Mapping) else []
-                call_ids = [str(r.get("call_id")) for r in ledger.rows() if r.get("call_id")]
-                rows.append(
-                    {
-                        "case_id": case_id,
-                        "case_kind": case_kind,
-                        "family": family,
-                        "facts_id": facts_id,
-                        "texture": texture,
-                        "method": arm,
-                        "payload_sha256": str(out.get("payload_hash") or payload_hash(payload)),
-                        "operator_sequence": seq,
-                        "morphology": dict(morph),
-                        "policy_used_morphology": arm in {"rule_pi", "rule_pi_rebite"},
-                        "visible_evidence_ids": vis_ids,
-                        "recoverable_evidence_ids": rec_ids,
-                        "loss_ledger": list(out.get("irreversible_loss_ledger") or []),
-                        "status": status,
-                        "no_op": status == "no_op",
-                        "failed": status == "failed",
-                        "baseline_status": baseline_status,
-                        "reason": out.get("reason"),
-                        "payload_chars": len(payload),
-                        "token_estimate": estimate_tokens_char4(payload),
-                        "evidence_recall_visible": metrics["evidence_recall_visible"],
-                        "evidence_recall_recoverable": metrics["evidence_recall_recoverable"],
-                        "provenance": metrics["provenance"],
-                        "T_profiler": totals.get("T_profiler"),
-                        "T_router": totals.get("T_router"),
-                        "T_operator": totals.get("T_operator"),
-                        "T_target_in": totals.get("T_target_in"),
-                        "T_target_out": totals.get("T_target_out"),
-                        "T_rebite": totals.get("T_rebite"),
-                        "T_total": totals.get("T_total"),
-                        "query": query,
-                        "ledger_call_ids": call_ids,
-                        "dc_violations": dc,
-                        "rebite_steps": (out.get("baseline_trace") or {}).get("rebite_steps")
-                        if isinstance(out.get("baseline_trace"), Mapping)
-                        else None,
-                    }
-                )
+            rows.extend(arm_rows_for_packet(packet, case_kind=case_kind, family=family))
 
     summary = summarize_rows(rows)
     controls = negative_control_report(rows)
@@ -687,6 +698,7 @@ __all__ = [
     "OUTPUT_CONSTRAINT",
     "ROW_KEYS",
     "SCHEMA_ID",
+    "arm_rows_for_packet",
     "metrics_from_transformed",
     "negative_control_report",
     "render_summary_md",

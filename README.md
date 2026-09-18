@@ -52,10 +52,12 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - No architecture-superiority claim
 - No new paid run yet
 - Phase 1C token-length condition: frozen and holdout-validated (12/12 matched without padding)
-- **Next**: confirmatory offline comparison under the frozen benchmark, then a small paid smoke if it is clean
+- Phase 1D confirmatory offline comparison: **PHASE1D_OFFLINE_NO_SIGNAL** (holdout 12 × frozen pair; length_pi and rule_pi both chose no-op CUT; not a paid-model result)
+- **Next**: a small paid smoke is a human/Path B decision, not implied by this offline matrix
 
 See:
 - [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
 - [`docs/hand_over/PHASE1B-BENCHMARK-POOL-SPLIT.md`](docs/hand_over/PHASE1B-BENCHMARK-POOL-SPLIT.md)
 - [`benchmarks/spec/phase1b-split-manifest.json`](benchmarks/spec/phase1b-split-manifest.json)
 - [`docs/hand_over/PHASE1C-TOKEN-MATCH-FREEZE.md`](docs/hand_over/PHASE1C-TOKEN-MATCH-FREEZE.md)
+- [`docs/hand_over/PHASE1D-CONFIRMATORY-OFFLINE.md`](docs/hand_over/PHASE1D-CONFIRMATORY-OFFLINE.md)
