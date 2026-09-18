@@ -89,7 +89,7 @@ def test_each_bundle_has_same_identity_across_eight_surfaces() -> None:
 def test_dependency_axis_changes_required_evidence_without_changing_scale() -> None:
     direct = make_phase2a_case(_cell("medium", "direct", 0))
     chain = make_phase2a_case(_cell("medium", "chain3", 0))
-    assert len(direct.required_evidence_ids) == 1
+    assert len(direct.required_evidence_ids) == 2
     assert len(chain.required_evidence_ids) == 3
     assert direct.meta["distractor_count"] == chain.meta["distractor_count"] == 32
 
@@ -122,21 +122,22 @@ def test_redundancy_axis_repeats_only_non_gold_material() -> None:
     assert high["char_len"] > low["char_len"]
 
 
-def test_dispersion_axis_spreads_chain_evidence() -> None:
-    bundle = generate_phase2a_bundle(_cell("medium", "chain3", 0))
-    clustered = bundle["surfaces"]["p2a_flat_clustered_low"]
-    dispersed = bundle["surfaces"]["p2a_flat_dispersed_low"]
-    required = set(bundle["canonical"]["required_evidence_ids"])
+def test_dispersion_axis_spreads_evidence_at_both_dependency_levels() -> None:
+    for dependency in ("direct", "chain3"):
+        bundle = generate_phase2a_bundle(_cell("medium", dependency, 0))
+        clustered = bundle["surfaces"]["p2a_flat_clustered_low"]
+        dispersed = bundle["surfaces"]["p2a_flat_dispersed_low"]
+        required = set(bundle["canonical"]["required_evidence_ids"])
 
-    def spread(surface: dict) -> int:
-        spans = [
-            u["span"]
-            for u in surface["units"]
-            if str(u.get("fact_id")) in required
-        ]
-        return max(int(s["end"]) for s in spans) - min(int(s["start"]) for s in spans)
+        def spread(surface: dict) -> int:
+            spans = [
+                u["span"]
+                for u in surface["units"]
+                if str(u.get("fact_id")) in required
+            ]
+            return max(int(s["end"]) for s in spans) - min(int(s["start"]) for s in spans)
 
-    assert spread(dispersed) > spread(clustered)
+        assert spread(dispersed) > spread(clustered)
 
 
 def test_structure_axis_changes_surface_without_changing_fact_ids() -> None:
