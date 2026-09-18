@@ -82,6 +82,8 @@ def make_synthetic_case(seed: int = 0) -> CanonicalCase:
         "split": split,
         "case_pool_revision": CASE_POOL_REVISION,
     }
+    facts: tuple[Fact, ...]
+    required: tuple[str, ...]
 
     # Preserve the two v0.2 frozen identities exactly.
     if seed == 0:
@@ -119,8 +121,6 @@ def make_synthetic_case(seed: int = 0) -> CanonicalCase:
     ids = tuple(f"syn-{seed:03d}-e{i}" for i in range(1, 5))
     slot = seed % 6
     cycle = seed // 6
-    facts: tuple[Fact, ...]
-    required: tuple[str, ...]
 
     if slot == 0:
         service = f"svc_{seed:03d}"
