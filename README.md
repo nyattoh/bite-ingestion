@@ -53,7 +53,8 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - No new paid run yet
 - Phase 1C token-length condition: frozen and holdout-validated (12/12 matched without padding)
 - Phase 1D confirmatory offline comparison: **PHASE1D_OFFLINE_NO_SIGNAL** (holdout 12 × frozen pair; length_pi and rule_pi both chose no-op CUT; not a paid-model result)
-- **Next**: a small paid smoke is a human/Path B decision, not implied by this offline matrix
+- Phase 2A factorial benchmark design: **DESIGN_READY_NOT_FROZEN** (24 canonical cases × 8 morphology surfaces; routing-independent)
+- **Next**: Phase 2B calibration-only length control / morphology coverage. Do not open Phase 2 evaluation routing yet.
 
 See:
 - [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
@@ -61,3 +62,5 @@ See:
 - [`benchmarks/spec/phase1b-split-manifest.json`](benchmarks/spec/phase1b-split-manifest.json)
 - [`docs/hand_over/PHASE1C-TOKEN-MATCH-FREEZE.md`](docs/hand_over/PHASE1C-TOKEN-MATCH-FREEZE.md)
 - [`docs/hand_over/PHASE1D-CONFIRMATORY-OFFLINE.md`](docs/hand_over/PHASE1D-CONFIRMATORY-OFFLINE.md)
+- [`docs/hand_over/PHASE2A-FACTORIAL-BENCHMARK-DESIGN.md`](docs/hand_over/PHASE2A-FACTORIAL-BENCHMARK-DESIGN.md)
+- [`benchmarks/spec/phase2a-design.json`](benchmarks/spec/phase2a-design.json)
