@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3c-sensor-generalization.schema.json",
+  "title": "BITE Phase-3C sensor generalization audit v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "offline",
+    "paid_api",
+    "routing_connected",
+    "evaluation_holdout_used",
+    "v0_overwritten",
+    "sensor_behavior_changed",
+    "verdict",
+    "primary_feature",
+    "checks"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3c-sensor-generalization/v0.1"
+    },
+    "offline": { "type": "boolean", "const": true },
+    "paid_api": { "type": "boolean", "const": false },
+    "routing_connected": { "type": "boolean", "const": false },
+    "evaluation_holdout_used": { "type": "boolean", "const": false },
+    "v0_overwritten": { "type": "boolean", "const": false },
+    "sensor_behavior_changed": { "type": "boolean", "const": false },
+    "routing_feature_choice": { "type": "string", "const": "not_decided" },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE3C_SENSOR_GENERALIZES",
+        "PHASE3C_SENSOR_SCOPED",
+        "PHASE3C_SENSOR_REVISE"
+      ]
+    }
+  }
+}
