@@ -39,8 +39,11 @@
     "rerun_after_evaluation_change_requires_new_revision": true
   },
   "token_length_matching": {
-    "status": "not_implemented",
-    "reason": "No target tokenizer has been selected. Char padding must not be treated as token matching."
+    "status": "implemented_reference_tokenizer_holdout_validated",
+    "phase1c_manifest": "benchmarks/spec/phase1c-token-freeze.json",
+    "rule": "prose_narrative vs table_csv; <=3 tokens and <=4% relative delta; no padding",
+    "holdout_result": "12/12 matched under the rule frozen before holdout",
+    "caveat": "Uses pinned official GLM-4.5-family reference tokenizer; exact hosted glm-4.5-flash tokenizer equivalence is not asserted."
   },
   "paid_api": false,
   "research_conclusion": false
