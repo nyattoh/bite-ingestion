@@ -55,7 +55,8 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 1D confirmatory offline comparison: **PHASE1D_OFFLINE_NO_SIGNAL** (holdout 12 × frozen pair; length_pi and rule_pi both chose no-op CUT; not a paid-model result)
 - Phase 2A factorial benchmark design: **DESIGN_READY_NOT_FROZEN** (24 canonical cases × 8 morphology surfaces; routing-independent)
 - Phase 2B calibration length control: **PHASE2B_LENGTH_CONTROL_PARTIAL** (dispersion matches exactly; structure and redundancy covary with length; no padding; evaluation sealed)
-- **Next**: construction choice for structure/redundancy length control remains open. Do not open Phase 2 evaluation routing yet.
+- Phase 2C dispersion confirmatory freeze: **FROZEN_PRE_HOLDOUT** (48 planned clustered vs dispersed pairs; evaluation not opened)
+- **Next**: Phase 2D confirmatory offline comparison under this freeze. Do not retune thresholds after seeing results.
 
 See:
 - [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
@@ -67,3 +68,5 @@ See:
 - [`benchmarks/spec/phase2a-design.json`](benchmarks/spec/phase2a-design.json)
 - [`docs/hand_over/PHASE2B-CALIBRATION-LENGTH-CONTROL.md`](docs/hand_over/PHASE2B-CALIBRATION-LENGTH-CONTROL.md)
 - [`benchmarks/spec/phase2b-length-control-draft.json`](benchmarks/spec/phase2b-length-control-draft.json)
+- [`docs/hand_over/PHASE2C-DISPERSION-FREEZE.md`](docs/hand_over/PHASE2C-DISPERSION-FREEZE.md)
+- [`benchmarks/spec/phase2c-dispersion-freeze.json`](benchmarks/spec/phase2c-dispersion-freeze.json)

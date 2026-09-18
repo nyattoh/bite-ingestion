@@ -249,6 +249,35 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase2b} verdict={data.get('verdict')} surfaces={data.get('n_surfaces')}")
 
+    phase2c = args.root / "benchmarks" / "spec" / "phase2c-dispersion-freeze.json"
+    if phase2c.is_file():
+        n_checked += 1
+        data = json.loads(phase2c.read_text(encoding="utf-8"))
+        from bite_bench.phase2c import validate_freeze_doc
+
+        errs = list(validate_freeze_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase2c-dispersion-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase2c jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase2c}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(
+                f"OK   {phase2c} status={data.get('status')} "
+                f"pairs={data.get('n_planned_pairs')}"
+            )
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
