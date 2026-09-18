@@ -55,8 +55,9 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 1D confirmatory offline comparison: **PHASE1D_OFFLINE_NO_SIGNAL** (holdout 12 × frozen pair; length_pi and rule_pi both chose no-op CUT; not a paid-model result)
 - Phase 2A factorial benchmark design: **DESIGN_READY_NOT_FROZEN** (24 canonical cases × 8 morphology surfaces; routing-independent)
 - Phase 2B calibration length control: **PHASE2B_LENGTH_CONTROL_PARTIAL** (dispersion matches exactly; structure and redundancy covary with length; no padding; evaluation sealed)
-- Phase 2C dispersion confirmatory freeze: **FROZEN_PRE_HOLDOUT** (`phase2c-dispersion-freeze-v0.2` supersedes v0.1; evaluation not opened)
-- **Next**: Phase 2D confirmatory offline comparison under v0.2. Do not retune thresholds after seeing results.
+- Phase 2C dispersion confirmatory freeze: **FROZEN_PRE_HOLDOUT** (`phase2c-dispersion-freeze-v0.2` supersedes v0.1)
+- Phase 2D confirmatory offline evaluation: **PHASE2D_OFFLINE_NO_SIGNAL** (0/48 eligible dispersion pairs; evaluation opened once under v0.2; not a paid-model result)
+- **Next**: do not retune thresholds / routing / operators after seeing this holdout
 
 See:
 - [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
@@ -71,3 +72,5 @@ See:
 - [`docs/hand_over/PHASE2C-DISPERSION-FREEZE.md`](docs/hand_over/PHASE2C-DISPERSION-FREEZE.md)
 - [`benchmarks/spec/phase2c-dispersion-freeze.json`](benchmarks/spec/phase2c-dispersion-freeze.json) (v0.1, retained)
 - [`benchmarks/spec/phase2c-dispersion-freeze-v0.2.json`](benchmarks/spec/phase2c-dispersion-freeze-v0.2.json)
+- [`docs/hand_over/PHASE2D-CONFIRMATORY-OFFLINE.md`](docs/hand_over/PHASE2D-CONFIRMATORY-OFFLINE.md)
+- [`artifacts/phase2d/confirmatory-offline.json`](artifacts/phase2d/confirmatory-offline.json)

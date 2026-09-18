@@ -307,6 +307,35 @@ def main(argv: list[str] | None = None) -> int:
                 f"pairs={data.get('n_planned_pairs')} supersedes={data.get('supersedes')}"
             )
 
+    phase2d = args.root / "artifacts" / "phase2d" / "confirmatory-offline.json"
+    if phase2d.is_file():
+        n_checked += 1
+        data = json.loads(phase2d.read_text(encoding="utf-8"))
+        from bite_eval.phase2d_confirmatory import validate_phase2d_doc
+
+        errs = list(validate_phase2d_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase2d-confirmatory-offline.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase2d jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase2d}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(
+                f"OK   {phase2d} verdict={data.get('verdict')} "
+                f"n_signal={data.get('n_signal')} n_eligible={data.get('n_eligible')}"
+            )
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
