@@ -49,8 +49,4 @@ jobs:
       
       - name: Validate artifacts (if present)
         run: |
-          if [ -d "artifacts/runs" ]; then
-            python scripts/validate_artifacts.py
-          else
-            echo "No artifacts/runs directory found, skipping validation"
-          fi
+          python scripts/validate_artifacts.py
