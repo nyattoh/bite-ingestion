@@ -1,0 +1,138 @@
+{
+  "arms": {
+    "UNTANGLE_is_isolated_not_wired_as_preprocess": true,
+    "isolated": [
+      "CUT",
+      "REDUCE",
+      "INTEGRATE",
+      "UNTANGLE"
+    ],
+    "no_composite_pipeline": true
+  },
+  "design": {
+    "anomalous_pads": [
+      3,
+      7,
+      11,
+      15
+    ],
+    "canonical_gold_shared_across_textures": true,
+    "dispersion": "far",
+    "formats": [
+      "key_value",
+      "json"
+    ],
+    "layout": "gold_origin, pads, gold_dest",
+    "n_pads": 24,
+    "operators_see": "pre-split logical units",
+    "redundant_pads": "12 exact duplicate pairs, same n_units",
+    "scale": "medium",
+    "shape": "one_hop",
+    "textures": [
+      "redundant",
+      "unique",
+      "anomalous"
+    ],
+    "unique_overlay": "append id=<hop> to both gold values only"
+  },
+  "generation": "p3h",
+  "high_bin_confirmation": "pre-operator mean_edge_distance >= T_high on every surface",
+  "locked_from_phase3g": {
+    "T_high": 4,
+    "T_low": 1,
+    "candidate_unchanged": true,
+    "feature": "mean_edge_distance",
+    "selected_candidate": "A_mean_edge_distance",
+    "thresholds_unchanged": true,
+    "v1_sensor_unchanged": true
+  },
+  "map_verdicts": [
+    "PHASE3H_M1_SUPPORTED",
+    "PHASE3H_M2_SUPPORTED",
+    "PHASE3H_CONDITIONAL_MAP_REQUIRED",
+    "PHASE3H_MAP_UNRESOLVED"
+  ],
+  "metrics": {
+    "collateral_n_gold_removed": true,
+    "collateral_n_nongold_removed": true,
+    "effective_dependency_span": "mean_edge_distance",
+    "evidence_recall_visible": true,
+    "n_gold_joined": true,
+    "n_quarantined": true,
+    "no_op": true,
+    "provenance_completeness": true
+  },
+  "must_pick_m1_or_m2": false,
+  "n_planned_rows": 48,
+  "n_planned_surfaces": 12,
+  "not_objective": [
+    "token_reduction",
+    "n_signal",
+    "INTEGRATE_rate",
+    "T_total"
+  ],
+  "offline": true,
+  "operator_map_candidates_unchanged": {
+    "M1_locality_for_integrate": {
+      "high": "must_not_fire_INTEGRATE_from_this_feature_alone; CUT_or_REDUCE_candidate"
+    },
+    "M2_spread_needs_gather": {
+      "high": "may_contribute_toward_INTEGRATE_only_with_other_features"
+    },
+    "adoption": "phase3h_routing_semantics_freeze"
+  },
+  "p3f_evaluation_holdout_used": false,
+  "p3f_evaluation_replicas_sealed": [
+    2,
+    3
+  ],
+  "paid_api": false,
+  "planned_surface_ids": [
+    "p3h-redundant-r0-key_value",
+    "p3h-redundant-r0-json",
+    "p3h-redundant-r1-key_value",
+    "p3h-redundant-r1-json",
+    "p3h-unique-r0-key_value",
+    "p3h-unique-r0-json",
+    "p3h-unique-r1-key_value",
+    "p3h-unique-r1-json",
+    "p3h-anomalous-r0-key_value",
+    "p3h-anomalous-r0-json",
+    "p3h-anomalous-r1-key_value",
+    "p3h-anomalous-r1-json"
+  ],
+  "replicas": [
+    0,
+    1
+  ],
+  "research_conclusion": false,
+  "revision": "phase3h-operator-map-freeze-v0.1",
+  "routing": {
+    "high_bin_mapped_to_operator": false,
+    "implement_map_on_conditional": false,
+    "operator_map_selected": false,
+    "routing_connected": false,
+    "rule_policy_changed": false,
+    "selected_operator_map": null
+  },
+  "schema": "bitebench-phase3h-operator-map-freeze/v0.1",
+  "split": "development",
+  "synthetic": true,
+  "token_reduction_used_for_verdict": false,
+  "verdict": "PHASE3H_PROTOCOL_FROZEN",
+  "verdict_rules": {
+    "PHASE3H_CONDITIONAL_MAP_REQUIRED": "redundant REDUCE and unique INTEGRATE and anomalous UNTANGLE",
+    "PHASE3H_M1_SUPPORTED": "INTEGRATE unique-signal false, and REDUCE or UNTANGLE signal true",
+    "PHASE3H_M2_SUPPORTED": "unique INTEGRATE true, redundant REDUCE false, anomalous UNTANGLE false",
+    "PHASE3H_MAP_UNRESOLVED": "blocked, high bin unconfirmed, or no matching rule",
+    "anomalous_UNTANGLE": "n_quarantined > 0 and n_gold_quarantined == 0",
+    "consensus": "all formats and replicas of a texture-arm pair",
+    "helpful_requires": [
+      "recall_visible == 1.0",
+      "n_gold_removed == 0"
+    ],
+    "on_conditional": "stop; do not implement a routing map",
+    "redundant_REDUCE": "n_nongold_removed > 0",
+    "unique_INTEGRATE": "n_gold_joined >= 1"
+  }
+}

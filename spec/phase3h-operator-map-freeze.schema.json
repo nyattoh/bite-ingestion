@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3h-operator-map-freeze.schema.json",
+  "title": "BITE Phase-3H operator-map protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "generation",
+    "split",
+    "p3f_evaluation_holdout_used",
+    "locked_from_phase3g",
+    "routing",
+    "token_reduction_used_for_verdict",
+    "must_pick_m1_or_m2",
+    "map_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3h-operator-map-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3h-operator-map-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE3H_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "generation": { "type": "string", "const": "p3h" },
+    "split": { "type": "string", "const": "development" },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "token_reduction_used_for_verdict": { "type": "boolean", "const": false },
+    "must_pick_m1_or_m2": { "type": "boolean", "const": false },
+    "map_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE3H_M1_SUPPORTED",
+          "PHASE3H_M2_SUPPORTED",
+          "PHASE3H_CONDITIONAL_MAP_REQUIRED",
+          "PHASE3H_MAP_UNRESOLVED"
+        ]
+      }
+    }
+  }
+}
