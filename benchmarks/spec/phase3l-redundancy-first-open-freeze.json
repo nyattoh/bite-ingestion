@@ -104,9 +104,9 @@
   ],
   "locked_hashes": {
     "k0_family_expect": "4a70f6f46f74b9b488425f3d2f4914b5fcee58cedac205990ffbad2ba099340e",
-    "p3k_split_manifest": "0a66d4f0f3b0050c0a6b6016ca84b3c6b837223f7d9827e5e64111d0424d67b6",
-    "phase3k_ready_artifact": "a0c4c7e9002237a98fa5282c576e59e1a883f825a71ad5e1917822370a5ce8c4",
-    "sensor_source_blob": "62cba04733ba70fff8c13cbf4f77668186b679605f991de8bf909bbc3a34acc2"
+    "p3k_split_manifest": "b89bcb16647819182a4314482c72f0107d98891942d01f55404749149f85e704",
+    "phase3k_ready_artifact": "d9ee70c13ec54cff8565a1b768c81f3b68a508d8fa7d8eee24d517f7699b0f7e",
+    "sensor_source_blob": "7a6f71e46b924179fa5f0ceee78377f0a03bddd04d1c5b194a56e85a71e1f5d3"
   },
   "n_evaluation_surfaces": 60,
   "negative_families": [

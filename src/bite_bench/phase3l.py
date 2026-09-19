@@ -66,7 +66,7 @@ SPLIT_JSON = _REPO / "benchmarks" / "spec" / "phase3k-split-manifest.json"
 
 
 def sha256_file(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
 
 def family_expect_sha() -> str:
