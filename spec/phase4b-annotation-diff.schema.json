@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4b-annotation-diff.schema.json",
+  "title": "BITE Phase-4B annotation v1 to v2 diff",
+  "type": "object",
+  "required": ["schema", "revision", "documents"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4b-annotation-diff/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4b-annotations-v2-v0.1"
+    },
+    "documents": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12
+    }
+  }
+}
