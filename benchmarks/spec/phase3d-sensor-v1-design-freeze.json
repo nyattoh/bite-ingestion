@@ -1,0 +1,696 @@
+{
+  "blocked_reasons": [],
+  "confirmatory": false,
+  "edge_rule": {
+    "accepted_false_negative": "value-to-value pointer whose target has no matching key-side or record-id field",
+    "candidates": [
+      {
+        "equals_v0": true,
+        "id": "value_to_any_occurrence",
+        "one_hop_kv": true,
+        "shared_label_becomes_edge": true,
+        "v1_role": "rejected_as_primary"
+      },
+      {
+        "id": "value_to_value_cooccurrence",
+        "one_hop_kv": false,
+        "shared_label_becomes_edge": true,
+        "v1_role": "rejected_as_primary"
+      },
+      {
+        "id": "value_to_foreign_key_side",
+        "json_id_field_parent_pointer": false,
+        "one_hop_kv": true,
+        "shared_label_becomes_edge": false,
+        "v1_role": "part_of_primary"
+      },
+      {
+        "id": "value_to_record_identifier",
+        "json_id_field_parent_pointer": true,
+        "one_hop_kv": true,
+        "record_id_fields": [
+          "id",
+          "k"
+        ],
+        "shared_label_becomes_edge": false,
+        "v1_role": "part_of_primary"
+      },
+      {
+        "heuristic": true,
+        "id": "value_to_key_or_record_id",
+        "json_id_field_parent_pointer": true,
+        "note": "value-side identifier on unit i edges to unit j iff j exposes that identifier on key-side or as a closed record-id field value",
+        "one_hop_kv": true,
+        "shared_label_becomes_edge": false,
+        "v1_role": "primary"
+      }
+    ],
+    "copies_are_not_edges": true,
+    "heuristic": true,
+    "primary": "value_to_key_or_record_id",
+    "record_id_fields": [
+      "id",
+      "k"
+    ]
+  },
+  "evaluation_holdout_used": false,
+  "expected_relations": [
+    {
+      "id": "near_lt_medium_lt_far",
+      "metric": "mean_edge_distance",
+      "order": [
+        "true_dep_near_kv",
+        "true_dep_medium_kv",
+        "true_dep_far_kv"
+      ]
+    },
+    {
+      "equal": [
+        "scale_short",
+        "scale_medium",
+        "scale_long"
+      ],
+      "id": "scale_abs_raw_equal",
+      "metric": "mean_edge_distance"
+    },
+    {
+      "id": "scale_norm_decreases",
+      "metric": "mean_edge_distance_norm",
+      "strict_decrease": [
+        "scale_short",
+        "scale_medium",
+        "scale_long"
+      ]
+    },
+    {
+      "equal": [
+        "true_dep_near_json_pretty",
+        "true_dep_near_json_compact"
+      ],
+      "id": "pretty_eq_compact_logical",
+      "metrics": [
+        "n_edges",
+        "mean_edge_distance",
+        "n_logical_units"
+      ]
+    },
+    {
+      "equal": [
+        "true_dep_near_kv",
+        "blank_line_kv"
+      ],
+      "id": "blank_eq_near_logical",
+      "metrics": [
+        "n_edges",
+        "mean_edge_distance",
+        "n_logical_units"
+      ]
+    },
+    {
+      "equal": [
+        "wrap_pretty_json",
+        "true_dep_near_json_compact"
+      ],
+      "id": "wrap_pretty_eq_compact",
+      "metrics": [
+        "n_edges",
+        "mean_edge_distance",
+        "n_logical_units"
+      ]
+    },
+    {
+      "cases": [
+        "shared_env_only",
+        "shared_service_only",
+        "shared_owner_only",
+        "shared_label_only",
+        "multiple_unrelated_same_identifiers"
+      ],
+      "equal_to": 0.0,
+      "id": "cooccurrence_zero_edges",
+      "metric": "n_edges"
+    },
+    {
+      "equal": [
+        "true_dep_near_kv",
+        "true_edge_plus_cooccurrence_pollution"
+      ],
+      "id": "pollution_matches_true_near",
+      "metrics": [
+        "n_edges",
+        "mean_edge_distance"
+      ]
+    },
+    {
+      "id": "two_hop_chain_gt_one_hop",
+      "metric": "chain_span",
+      "order": [
+        "one_hop_kv",
+        "two_hop_kv"
+      ]
+    }
+  ],
+  "fixture_identifiers": {
+    "ref_a": "id_alpha_77",
+    "ref_b": "id_bravo_88",
+    "ref_out": "id_result_99",
+    "shared_case": "case_helix_1",
+    "shared_env": "env_prod_west",
+    "shared_label": "cat_billing_x",
+    "shared_owner": "owner_ada_k",
+    "shared_service": "svc_web_gate"
+  },
+  "fixtures": [
+    {
+      "case_id": "true_dep_near_kv",
+      "expect": {
+        "mean_edge_distance": 1.0,
+        "n_edges": 1.0,
+        "n_logical_units": 2
+      },
+      "family": "true_dependency",
+      "kind": "near",
+      "lines": [
+        "origin_bin=id_alpha_77",
+        "bin_id_alpha_77=id_result_99"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "true_dep_medium_kv",
+      "expect": {
+        "mean_edge_distance": 4.0,
+        "n_edges": 1.0,
+        "n_logical_units": 5
+      },
+      "family": "true_dependency",
+      "kind": "medium",
+      "lines": [
+        "origin_bin=id_alpha_77",
+        "pad_k0=pad_v0",
+        "pad_k1=pad_v1",
+        "pad_k2=pad_v2",
+        "bin_id_alpha_77=id_result_99"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "true_dep_far_kv",
+      "expect": {
+        "mean_edge_distance": 9.0,
+        "n_edges": 1.0,
+        "n_logical_units": 10
+      },
+      "family": "true_dependency",
+      "kind": "far",
+      "lines": [
+        "origin_bin=id_alpha_77",
+        "pad_k0=pad_v0",
+        "pad_k1=pad_v1",
+        "pad_k2=pad_v2",
+        "pad_k3=pad_v3",
+        "pad_k4=pad_v4",
+        "pad_k5=pad_v5",
+        "pad_k6=pad_v6",
+        "pad_k7=pad_v7",
+        "bin_id_alpha_77=id_result_99"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "true_dep_near_json_compact",
+      "expect": {
+        "mean_edge_distance": 1.0,
+        "n_edges": 1.0,
+        "n_logical_units": 2
+      },
+      "family": "true_dependency",
+      "kind": "near",
+      "required": true,
+      "surface": "json_compact",
+      "text": "[{\"k\":\"origin_bin\",\"v\":\"id_alpha_77\"},{\"k\":\"bin_id_alpha_77\",\"v\":\"id_result_99\"}]"
+    },
+    {
+      "case_id": "true_dep_near_json_pretty",
+      "expect": {
+        "mean_edge_distance": 1.0,
+        "n_edges": 1.0,
+        "n_logical_units": 2
+      },
+      "family": "true_dependency",
+      "kind": "near",
+      "required": true,
+      "surface": "json_pretty",
+      "text": "[\n  {\n    \"k\": \"origin_bin\",\n    \"v\": \"id_alpha_77\"\n  },\n  {\n    \"k\": \"bin_id_alpha_77\",\n    \"v\": \"id_result_99\"\n  }\n]"
+    },
+    {
+      "case_id": "scale_short",
+      "expect": {
+        "mean_edge_distance": 4.0,
+        "n_edges": 1.0
+      },
+      "family": "scale",
+      "kind": "short",
+      "lines": [
+        "origin_bin=id_alpha_77",
+        "pad_k0=pad_v0",
+        "pad_k1=pad_v1",
+        "pad_k2=pad_v2",
+        "bin_id_alpha_77=id_result_99",
+        "pad_k10=pad_v10",
+        "pad_k11=pad_v11",
+        "pad_k12=pad_v12",
+        "pad_k13=pad_v13"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "scale_medium",
+      "expect": {
+        "mean_edge_distance": 4.0,
+        "n_edges": 1.0
+      },
+      "family": "scale",
+      "kind": "medium",
+      "lines": [
+        "origin_bin=id_alpha_77",
+        "pad_k0=pad_v0",
+        "pad_k1=pad_v1",
+        "pad_k2=pad_v2",
+        "bin_id_alpha_77=id_result_99",
+        "pad_k10=pad_v10",
+        "pad_k11=pad_v11",
+        "pad_k12=pad_v12",
+        "pad_k13=pad_v13",
+        "pad_k14=pad_v14",
+        "pad_k15=pad_v15",
+        "pad_k16=pad_v16",
+        "pad_k17=pad_v17",
+        "pad_k18=pad_v18",
+        "pad_k19=pad_v19",
+        "pad_k20=pad_v20",
+        "pad_k21=pad_v21",
+        "pad_k22=pad_v22",
+        "pad_k23=pad_v23",
+        "pad_k24=pad_v24",
+        "pad_k25=pad_v25",
+        "pad_k26=pad_v26",
+        "pad_k27=pad_v27",
+        "pad_k28=pad_v28",
+        "pad_k29=pad_v29"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "scale_long",
+      "expect": {
+        "mean_edge_distance": 4.0,
+        "n_edges": 1.0
+      },
+      "family": "scale",
+      "kind": "long",
+      "lines": [
+        "origin_bin=id_alpha_77",
+        "pad_k0=pad_v0",
+        "pad_k1=pad_v1",
+        "pad_k2=pad_v2",
+        "bin_id_alpha_77=id_result_99",
+        "pad_k10=pad_v10",
+        "pad_k11=pad_v11",
+        "pad_k12=pad_v12",
+        "pad_k13=pad_v13",
+        "pad_k14=pad_v14",
+        "pad_k15=pad_v15",
+        "pad_k16=pad_v16",
+        "pad_k17=pad_v17",
+        "pad_k18=pad_v18",
+        "pad_k19=pad_v19",
+        "pad_k20=pad_v20",
+        "pad_k21=pad_v21",
+        "pad_k22=pad_v22",
+        "pad_k23=pad_v23",
+        "pad_k24=pad_v24",
+        "pad_k25=pad_v25",
+        "pad_k26=pad_v26",
+        "pad_k27=pad_v27",
+        "pad_k28=pad_v28",
+        "pad_k29=pad_v29",
+        "pad_k30=pad_v30",
+        "pad_k31=pad_v31",
+        "pad_k32=pad_v32",
+        "pad_k33=pad_v33",
+        "pad_k34=pad_v34",
+        "pad_k35=pad_v35",
+        "pad_k36=pad_v36",
+        "pad_k37=pad_v37",
+        "pad_k38=pad_v38",
+        "pad_k39=pad_v39",
+        "pad_k40=pad_v40",
+        "pad_k41=pad_v41",
+        "pad_k42=pad_v42",
+        "pad_k43=pad_v43",
+        "pad_k44=pad_v44",
+        "pad_k45=pad_v45",
+        "pad_k46=pad_v46",
+        "pad_k47=pad_v47",
+        "pad_k48=pad_v48",
+        "pad_k49=pad_v49",
+        "pad_k50=pad_v50",
+        "pad_k51=pad_v51",
+        "pad_k52=pad_v52",
+        "pad_k53=pad_v53",
+        "pad_k54=pad_v54",
+        "pad_k55=pad_v55",
+        "pad_k56=pad_v56",
+        "pad_k57=pad_v57",
+        "pad_k58=pad_v58",
+        "pad_k59=pad_v59",
+        "pad_k60=pad_v60",
+        "pad_k61=pad_v61",
+        "pad_k62=pad_v62",
+        "pad_k63=pad_v63",
+        "pad_k64=pad_v64",
+        "pad_k65=pad_v65",
+        "pad_k66=pad_v66",
+        "pad_k67=pad_v67",
+        "pad_k68=pad_v68",
+        "pad_k69=pad_v69",
+        "pad_k70=pad_v70",
+        "pad_k71=pad_v71",
+        "pad_k72=pad_v72",
+        "pad_k73=pad_v73",
+        "pad_k74=pad_v74",
+        "pad_k75=pad_v75",
+        "pad_k76=pad_v76",
+        "pad_k77=pad_v77",
+        "pad_k78=pad_v78",
+        "pad_k79=pad_v79",
+        "pad_k80=pad_v80",
+        "pad_k81=pad_v81",
+        "pad_k82=pad_v82",
+        "pad_k83=pad_v83",
+        "pad_k84=pad_v84",
+        "pad_k85=pad_v85",
+        "pad_k86=pad_v86",
+        "pad_k87=pad_v87",
+        "pad_k88=pad_v88",
+        "pad_k89=pad_v89"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "blank_line_kv",
+      "expect": {
+        "mean_edge_distance": 1.0,
+        "n_edges": 1.0,
+        "n_logical_units": 2
+      },
+      "family": "line_invariance",
+      "kind": "blank_lines",
+      "lines": [
+        "origin_bin=id_alpha_77",
+        "",
+        "",
+        "bin_id_alpha_77=id_result_99"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "wrap_pretty_json",
+      "expect": {
+        "mean_edge_distance": 1.0,
+        "n_edges": 1.0,
+        "n_logical_units": 2
+      },
+      "family": "line_invariance",
+      "kind": "wrap",
+      "note": "pretty-print newlines are not logical units",
+      "required": true,
+      "surface": "json_pretty",
+      "text": "[\n  {\n    \"k\": \"origin_bin\",\n    \"v\": \"id_alpha_77\"\n  },\n  {\n    \"k\": \"bin_id_alpha_77\",\n    \"v\": \"id_result_99\"\n  }\n]"
+    },
+    {
+      "case_id": "shared_env_only",
+      "expect": {
+        "n_edges": 0.0
+      },
+      "family": "cooccurrence",
+      "kind": "shared_env",
+      "lines": [
+        "row_alpha=env_prod_west",
+        "row_beta=env_prod_west"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "shared_service_only",
+      "expect": {
+        "n_edges": 0.0
+      },
+      "family": "cooccurrence",
+      "kind": "shared_service",
+      "lines": [
+        "row_alpha=svc_web_gate",
+        "row_beta=svc_web_gate"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "shared_owner_only",
+      "expect": {
+        "n_edges": 0.0
+      },
+      "family": "cooccurrence",
+      "kind": "shared_owner",
+      "lines": [
+        "row_alpha=owner_ada_k",
+        "row_beta=owner_ada_k"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "shared_label_only",
+      "expect": {
+        "n_edges": 0.0
+      },
+      "family": "cooccurrence",
+      "kind": "shared_label",
+      "lines": [
+        "row_alpha=cat_billing_x",
+        "row_beta=cat_billing_x"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "multiple_unrelated_same_identifiers",
+      "expect": {
+        "n_edges": 0.0
+      },
+      "family": "cooccurrence",
+      "kind": "unrelated_same_ids",
+      "lines": [
+        "ticket_a=case_helix_1",
+        "ticket_b=case_helix_1"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "true_edge_plus_cooccurrence_pollution",
+      "expect": {
+        "mean_edge_distance": 1.0,
+        "n_edges": 1.0
+      },
+      "family": "cooccurrence",
+      "kind": "pollution",
+      "lines": [
+        "origin_bin=id_alpha_77",
+        "bin_id_alpha_77=id_result_99",
+        "label_a=env_prod_west",
+        "pad_k0=pad_v0",
+        "pad_k1=pad_v1",
+        "pad_k2=pad_v2",
+        "pad_k3=pad_v3",
+        "pad_k4=pad_v4",
+        "label_b=env_prod_west"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "one_hop_kv",
+      "expect": {
+        "chain_span": 1.0,
+        "n_edges": 1.0
+      },
+      "family": "graph_shape",
+      "kind": "one_hop",
+      "lines": [
+        "origin_bin=id_alpha_77",
+        "bin_id_alpha_77=id_result_99"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "two_hop_kv",
+      "expect": {
+        "chain_span": 2.0,
+        "n_edges": 2.0,
+        "n_logical_units": 3
+      },
+      "family": "graph_shape",
+      "kind": "two_hop",
+      "lines": [
+        "origin_bin=id_alpha_77",
+        "bin_id_alpha_77=id_bravo_88",
+        "bin_id_bravo_88=id_result_99"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "branch_kv",
+      "expect": {
+        "component_span": 2.0,
+        "n_edges": 2.0,
+        "n_logical_units": 3
+      },
+      "family": "graph_shape",
+      "kind": "branch",
+      "lines": [
+        "origin_bin=id_alpha_77",
+        "left_id_alpha_77=id_left_01",
+        "right_id_alpha_77=id_right_02"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "no_reference",
+      "expect": {
+        "mean_edge_distance": 0.0,
+        "n_edges": 0.0
+      },
+      "family": "negative",
+      "kind": "no_reference",
+      "lines": [
+        "noise_k0=noise_v0",
+        "noise_k1=noise_v1",
+        "noise_k2=noise_v2",
+        "noise_k3=noise_v3",
+        "noise_k4=noise_v4",
+        "noise_k5=noise_v5",
+        "noise_k6=noise_v6",
+        "noise_k7=noise_v7"
+      ],
+      "required": true,
+      "surface": "key_value"
+    },
+    {
+      "case_id": "malformed_nul",
+      "expect": {
+        "fail_closed": true,
+        "n_edges": 0.0
+      },
+      "family": "negative",
+      "kind": "malformed",
+      "payload_encoding": "nul",
+      "required": true,
+      "surface": "payload"
+    }
+  ],
+  "format_scope": {
+    "do_not_promote_after_seeing_results": true,
+    "json_pretty_and_compact_same_logical_structure": true,
+    "optional": [
+      "csv",
+      "yaml"
+    ],
+    "out_of_scope": [
+      "prose"
+    ],
+    "required": [
+      "key_value",
+      "json"
+    ]
+  },
+  "gold_inputs": false,
+  "implementation": "not_started",
+  "integrate_threshold": null,
+  "logical_unit": {
+    "distance_unit": "logical_unit_index",
+    "json": "parse document; array-of-objects \u2192 one unit per object; object with k and v \u2192 one kv-encoded unit; pretty and compact that parse equal have equal unit sequences",
+    "key_value": "non_empty_line_with_equals_is_one_unit; blank_lines_are_not_units",
+    "physical_line_index": "diagnostic_only",
+    "wrap_invariance": "pretty_print_and_blank_lines_only; mid_identifier_split_is_malformed"
+  },
+  "offline": true,
+  "paid_api": false,
+  "performance": {
+    "forbids": [
+      "per_value_atom_full_document_scan"
+    ],
+    "measure_after_impl_line_counts": [
+      100,
+      500,
+      1000,
+      5000,
+      10000
+    ],
+    "not_success_criterion": "faster_wall_time",
+    "success_criterion": "algorithm_has_no_full_line_rescan_per_value_atom",
+    "v0_algorithm": "value_atom_times_all_lines",
+    "v1_algorithm": "single_pass_identifier_occurrence_index_then_lookup",
+    "wall_time_slo": null
+  },
+  "phase2_key_prefixes_as_oracle": false,
+  "predecessor_sensor": "dependency_dispersion_v0",
+  "premise": "PHASE3C_SENSOR_SCOPED",
+  "purpose": "freeze v1 sensor design from Phase 3C limits before any v1 code; not a routing rule and not a Phase 2 rescore",
+  "quantities": {
+    "features": [
+      "n_edges",
+      "mean_edge_distance",
+      "mean_edge_distance_norm",
+      "component_span",
+      "chain_span"
+    ],
+    "mean_edge_distance_means": "absolute_logical_unit_separation",
+    "mean_edge_distance_norm_means": "relative_logical_unit_separation",
+    "not_comparable_to_v0_line_distance_without_conversion": true,
+    "routing_choice": "not_decided",
+    "threshold": "not_in_this_phase"
+  },
+  "research_conclusion": false,
+  "revision": "phase3d-sensor-v1-design-freeze-v0.1",
+  "routing_connected": false,
+  "routing_feature_choice": "not_decided",
+  "schema": "bitebench-phase3d-sensor-v1-design-freeze/v0.1",
+  "sensor_code_changed": false,
+  "status": "PHASE3D_V1_DESIGN_FROZEN",
+  "stopword_expansion_is_not_primary_control": true,
+  "synthetic": true,
+  "v0_limits_retained": [
+    "supported_only_key_value_and_oneline_json",
+    "pretty_json_csv_yaml_prose_unsupported",
+    "blank_line_and_wrapping_distort_physical_line_distance",
+    "identifier_reappearance_is_treated_as_reference",
+    "value_atom_times_all_lines_scan_about_41s_at_5000_lines",
+    "raw_vs_normalized_routing_choice_not_decided"
+  ],
+  "v0_overwritten": false,
+  "v1_sensor_name": "dependency_dispersion_v1",
+  "verdict": "PHASE3D_V1_DESIGN_FROZEN"
+}

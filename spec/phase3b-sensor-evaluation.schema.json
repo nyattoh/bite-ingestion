@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3b-sensor-evaluation.schema.json",
+  "title": "BITE Phase-3B sensor evaluation v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "offline",
+    "paid_api",
+    "routing_connected",
+    "evaluation_holdout_used",
+    "v0_overwritten",
+    "verdict",
+    "primary_feature",
+    "checks"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3b-sensor-evaluation/v0.1"
+    },
+    "offline": { "type": "boolean", "const": true },
+    "paid_api": { "type": "boolean", "const": false },
+    "routing_connected": { "type": "boolean", "const": false },
+    "evaluation_holdout_used": { "type": "boolean", "const": false },
+    "v0_overwritten": { "type": "boolean", "const": false },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE3B_SENSOR_READY",
+        "PHASE3B_SENSOR_PARTIAL",
+        "PHASE3B_SENSOR_NOT_READY"
+      ]
+    }
+  }
+}
