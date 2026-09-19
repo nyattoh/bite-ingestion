@@ -62,7 +62,7 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 3C sensor generalization audit: **PHASE3C_SENSOR_SCOPED** (development fixtures only; scale/format/co-occurrence limits recorded; not wired to routing; v0 unchanged)
 - Phase 3D v1 sensor design freeze: **PHASE3D_V1_DESIGN_FROZEN** (index lookup, value→key/record-id, logical units; kv+JSON required; not implemented; not wired)
 - Phase 3E v1 sensor implementation: **PHASE3E_V1_VALIDATED** (development freeze fixtures; v0 retained; routing unconnected)
-- Phase 3F routing calibration protocol freeze: **PHASE3F_ROUTING_CALIBRATION_PROTOCOL_FROZEN** (new p3f generation; calibration/evaluation split locked; thresholds not set; RulePolicy unconnected)
+- Phase 3F routing calibration protocol freeze: **PHASE3F_ROUTING_CALIBRATION_PROTOCOL_FROZEN** (`phase3f-routing-calibration-freeze-v0.2` supersedes v0.1; thresholds not set; RulePolicy unconnected)
 - **Next**: do not retune profiler / thresholds / routing on the spent Phase 2 holdout
 
 See:
@@ -91,4 +91,5 @@ See:
 - [`docs/hand_over/PHASE3E-SENSOR-V1-VALIDATION.md`](docs/hand_over/PHASE3E-SENSOR-V1-VALIDATION.md)
 - [`artifacts/phase3e/sensor-v1-validation.json`](artifacts/phase3e/sensor-v1-validation.json)
 - [`docs/hand_over/PHASE3F-ROUTING-CALIBRATION-FREEZE.md`](docs/hand_over/PHASE3F-ROUTING-CALIBRATION-FREEZE.md)
-- [`benchmarks/spec/phase3f-routing-calibration-freeze.json`](benchmarks/spec/phase3f-routing-calibration-freeze.json)
+- [`benchmarks/spec/phase3f-routing-calibration-freeze.json`](benchmarks/spec/phase3f-routing-calibration-freeze.json) (v0.1, retained)
+- [`benchmarks/spec/phase3f-routing-calibration-freeze-v0.2.json`](benchmarks/spec/phase3f-routing-calibration-freeze-v0.2.json)

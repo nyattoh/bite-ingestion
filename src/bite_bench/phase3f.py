@@ -16,11 +16,15 @@ from typing import Any, Literal
 
 from bite_bench.models import CanonicalCase, Fact
 
-SCHEMA_ID = "bitebench-phase3f-routing-calibration-freeze/v0.1"
-REVISION = "phase3f-routing-calibration-freeze-v0.1"
+SCHEMA_ID_V01 = "bitebench-phase3f-routing-calibration-freeze/v0.1"
+SCHEMA_ID = "bitebench-phase3f-routing-calibration-freeze/v0.2"
+REVISION_V01 = "phase3f-routing-calibration-freeze-v0.1"
+REVISION = "phase3f-routing-calibration-freeze-v0.2"
 VERDICT_FROZEN = "PHASE3F_ROUTING_CALIBRATION_PROTOCOL_FROZEN"
 VERDICT_BLOCKED = "PHASE3F_PROTOCOL_BLOCKED"
 VERDICTS = (VERDICT_FROZEN, VERDICT_BLOCKED)
+COLLAPSE_FRACTION = 0.95
+_BIN_RANK = {"low": 0, "mid": 1, "high": 2}
 
 Scale = Literal["small", "medium", "large"]
 Shape = Literal["one_hop", "two_hop", "branch"]
@@ -48,7 +52,8 @@ ADVERSARIAL_KINDS: tuple[str, ...] = (
 CANDIDATES: tuple[str, ...] = ("A_mean_edge_distance", "B_mean_edge_distance_norm", "C_raw_and_norm")
 
 _REPO = Path(__file__).resolve().parents[2]
-FREEZE_PATH = _REPO / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze.json"
+V01_FREEZE_PATH = _REPO / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze.json"
+FREEZE_PATH = _REPO / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze-v0.2.json"
 SPLIT_PATH = _REPO / "benchmarks" / "spec" / "phase3f-split-manifest.json"
 
 
@@ -290,124 +295,249 @@ def adversarial_surface(kind: str, replica: int, fmt: Fmt) -> dict[str, Any]:
     }
 
 
-def candidate_protocol() -> dict[str, Any]:
+def bin_ordering_holds(near: str, medium: str, far: str) -> bool:
+    try:
+        n_rank, m_rank, f_rank = _BIN_RANK[near], _BIN_RANK[medium], _BIN_RANK[far]
+    except KeyError:
+        return False
+    return n_rank <= m_rank <= f_rank and n_rank < f_rank
+
+
+def is_negative_adversarial_case(intended_edges: object) -> bool:
+    return intended_edges == [] or intended_edges == ()
+
+
+def bin_is_elevated(bin_label: str) -> bool:
+    return bin_label in {"mid", "high"}
+
+
+def _grid_tie_tuple(point: Mapping[str, Any]) -> tuple[float, ...]:
+    if "T_raw_high" in point:
+        return (
+            float(point["T_raw_high"]),
+            float(point["T_norm_high"]),
+            float(point["T_raw_low"]),
+            float(point["T_norm_low"]),
+        )
+    return (float(point["T_high"]), float(point["T_low"]))
+
+
+def select_best_grid_point(
+    points: Sequence[Mapping[str, Any]],
+) -> dict[str, Any] | None:
+    """Pick one grid point. Does not look at calibration payloads."""
+    eligible = [dict(point) for point in points if point.get("non_collapse") is True]
+    if not eligible:
+        return None
+
+    def key(point: Mapping[str, Any]) -> tuple[Any, ...]:
+        return (
+            float(point["negative_adversarial_elevated_bin_rate"]),
+            -float(point["bin_ordering_coverage"]),
+            -float(point["format_consistency"]),
+            *_grid_tie_tuple(point),
+        )
+
+    return min(eligible, key=key)
+
+
+def select_best_candidate(
+    rows: Sequence[Mapping[str, Any]],
+) -> dict[str, Any] | None:
+    """Compare A/B/C after each has one best grid point. Ignores sensor FP."""
+    eligible = [dict(row) for row in rows if row.get("non_collapse") is True]
+    if not eligible:
+        return None
+    order = {cid: index for index, cid in enumerate(CANDIDATES)}
+
+    def key(row: Mapping[str, Any]) -> tuple[Any, ...]:
+        return (
+            -float(row["continuous_dispersion_ordering_coverage"]),
+            -float(row["scale_stability"]),
+            -float(row["format_consistency"]),
+            order[str(row["id"])],
+        )
+
+    return min(eligible, key=key)
+
+
+def metric_roles() -> dict[str, Any]:
     return {
-        "do_not_pick_by_n_signal": True,
-        "candidates": [
-            {
-                "id": "A_mean_edge_distance",
-                "feature": "mean_edge_distance",
-                "meaning": "absolute_logical_unit_separation",
-                "simplicity_rank": 1,
-            },
-            {
-                "id": "B_mean_edge_distance_norm",
-                "feature": "mean_edge_distance_norm",
-                "meaning": "relative_logical_unit_separation",
-                "simplicity_rank": 2,
-            },
-            {
-                "id": "C_raw_and_norm",
-                "features": ["mean_edge_distance", "mean_edge_distance_norm"],
-                "rule": (
-                    "high if raw>=T_raw_high AND norm>=T_norm_high; "
-                    "low if raw<=T_raw_low AND norm<=T_norm_low; else mid"
+        "sensor_level_diagnostic": {
+            "edge_false_positive_rate": {
+                "definition": (
+                    "v1 extra-edge rate vs intended_edges; gold/intended_edges "
+                    "are scorer-only and never sensor input"
                 ),
-                "simplicity_rank": 3,
+                "used_in_threshold_grid_objective": False,
+                "used_in_candidate_selection": False,
+                "reason": "independent of A/B/C scores and of T_low/T_high",
+                "sensor_revision_this_phase": False,
             },
-        ],
-        "selection_priority": [
+            "true_dep_plus_misleading_suffix": {
+                "in_negative_adversarial_elevated_bin_rate": False,
+                "store_as_diagnostic": ["edge_precision", "extra_edge_count"],
+            },
+        },
+        "candidate_level": {
+            "used_in_threshold_grid_point_comparison": False,
+            "measured_on": "continuous_score_before_threshold",
+            "metrics": [
+                {
+                    "name": "continuous_dispersion_ordering_coverage",
+                    "prefer": "higher",
+                    "definition": (
+                        "fraction of calibration primary cells where the "
+                        "candidate score is strictly near < medium < far"
+                    ),
+                },
+                {
+                    "name": "scale_stability",
+                    "prefer": "higher",
+                    "definition": (
+                        "one-hop medium (abs gap 3) keeps raw equal across "
+                        "scales; one-hop far (endpoints) keeps norm equal "
+                        "across scales"
+                    ),
+                },
+            ],
+        },
+        "threshold_dependent": {
+            "used_in_threshold_grid_point_comparison": True,
+            "metrics": [
+                {
+                    "name": "bin_ordering_coverage",
+                    "prefer": "higher",
+                    "definition": (
+                        "fraction of calibration primary cells where "
+                        "bin(near) <= bin(medium) <= bin(far) and "
+                        "bin(near) < bin(far)"
+                    ),
+                },
+                {
+                    "name": "negative_adversarial_elevated_bin_rate",
+                    "prefer": "lower",
+                    "definition": (
+                        "among calibration adversarial surfaces with "
+                        "intended_edges=[], fraction whose bin is mid or high"
+                    ),
+                    "excludes": "true_dep_plus_misleading_suffix",
+                },
+                {
+                    "name": "format_consistency",
+                    "prefer": "higher",
+                    "definition": (
+                        "fraction of calibration cells where key_value and "
+                        "json receive the same low/mid/high bin"
+                    ),
+                },
+                {
+                    "name": "non_collapse",
+                    "prefer": "eligible_only",
+                    "threshold": COLLAPSE_FRACTION,
+                    "definition": (
+                        "no single bin may cover >= 0.95 of calibration "
+                        "primary surfaces"
+                    ),
+                },
+            ],
+        },
+    }
+
+
+def candidate_selection_v02() -> list[dict[str, Any]]:
+    return [
+        {
+            "rank": 1,
+            "name": "continuous_dispersion_ordering_coverage",
+            "prefer": "higher",
+            "threshold_dependent": False,
+        },
+        {
+            "rank": 2,
+            "name": "scale_stability",
+            "prefer": "higher",
+            "threshold_dependent": False,
+        },
+        {
+            "rank": 3,
+            "name": "format_consistency",
+            "prefer": "higher",
+            "threshold_dependent": True,
+            "source": "best_grid_point",
+        },
+        {
+            "rank": 4,
+            "name": "non_collapse",
+            "prefer": "eligible_only",
+            "threshold_dependent": True,
+            "source": "best_grid_point",
+        },
+        {
+            "rank": 5,
+            "name": "simplicity",
+            "prefer": "A_then_B_then_C",
+            "tie_order": list(CANDIDATES),
+        },
+    ]
+
+
+def threshold_grid_objective_v02() -> dict[str, Any]:
+    return {
+        "eligibility": "non_collapse",
+        "selection_order": [
             {
                 "rank": 1,
-                "name": "adversarial_false_positive_rate",
+                "name": "negative_adversarial_elevated_bin_rate",
                 "prefer": "lower",
-                "definition": (
-                    "on calibration adversarial surfaces, fraction of cases with "
-                    "a v1 edge that is not in intended_edges"
-                ),
             },
-            {
-                "rank": 2,
-                "name": "dispersion_ordering_coverage",
-                "prefer": "higher",
-                "definition": (
-                    "fraction of calibration primary cells where the candidate "
-                    "score is strictly near < medium < far"
-                ),
-            },
-            {
-                "rank": 3,
-                "name": "scale_stability",
-                "prefer": "higher",
-                "definition": (
-                    "one-hop medium (abs gap 3) keeps raw equal across scales; "
-                    "one-hop far (endpoints) keeps norm equal across scales"
-                ),
-            },
+            {"rank": 2, "name": "bin_ordering_coverage", "prefer": "higher"},
+            {"rank": 3, "name": "format_consistency", "prefer": "higher"},
             {
                 "rank": 4,
-                "name": "format_consistency",
-                "prefer": "higher",
-                "definition": (
-                    "fraction of calibration cells where key_value and json "
-                    "get the same low/mid/high bin"
-                ),
-            },
-            {
-                "rank": 5,
-                "name": "non_collapse",
-                "prefer": "eligible_only",
-                "definition": (
-                    "after binning, no single bin may cover >= 0.95 of "
-                    "calibration primary surfaces"
-                ),
-            },
-            {
-                "rank": 6,
-                "name": "simplicity",
-                "prefer": "lower_simplicity_rank",
-                "tie_order": list(CANDIDATES),
+                "name": "complete_tie",
+                "prefer": "smallest_T_high_then_smallest_T_low",
+                "candidate_C": [
+                    "T_raw_high",
+                    "T_norm_high",
+                    "T_raw_low",
+                    "T_norm_low",
+                ],
             },
         ],
+        "applies_within": "each_candidate_separately",
+        "do_not_extend_grid_after_seeing_calibration": True,
+        "not_used": [
+            "edge_false_positive_rate",
+            "continuous_dispersion_ordering_coverage",
+            "scale_stability",
+            "n_signal",
+            "INTEGRATE_rate",
+        ],
+    }
+
+
+def candidate_protocol() -> dict[str, Any]:
+    v01 = load_v01_freeze()
+    return {
+        "do_not_pick_by_n_signal": True,
+        "do_not_pick_by_integrate_rate": True,
+        "sensor_edge_fp_is_shared_diagnostic": True,
+        "procedure": "pick_best_grid_point_per_candidate_then_compare",
+        "candidates": list(v01["candidates"]["candidates"]),
+        "selection_priority": candidate_selection_v02(),
         "do_not_add_candidates_after_seeing_calibration": True,
     }
 
 
 def threshold_search_protocol() -> dict[str, Any]:
-    return {
-        "phase": "3G_calibration_only",
-        "evaluation_sealed_until_locked": True,
-        "do_not_edit_after_seeing_evaluation": True,
-        "values_not_set_in_phase3f": True,
-        "bin_rule": (
-            "x <= T_low -> low; T_low < x < T_high -> mid; x >= T_high -> high"
-        ),
-        "grids": {
-            "A_mean_edge_distance": {
-                "T_low": [1, 2, 3, 4, 5],
-                "T_high": [4, 5, 6, 7, 8, 9, 10],
-                "constraint": "T_low < T_high",
-            },
-            "B_mean_edge_distance_norm": {
-                "T_low": [0.05, 0.10, 0.15, 0.20, 0.25],
-                "T_high": [0.30, 0.40, 0.50, 0.60, 0.75, 0.90],
-                "constraint": "T_low < T_high",
-            },
-            "C_raw_and_norm": {
-                "T_raw_low": [1, 2, 4],
-                "T_raw_high": [4, 9],
-                "T_norm_low": [0.10, 0.25],
-                "T_norm_high": [0.50, 0.75],
-                "constraint": "T_raw_low < T_raw_high and T_norm_low < T_norm_high",
-            },
-        },
-        "objective": (
-            "among grid points that minimize adversarial FP on calibration "
-            "and pass non_collapse, maximize dispersion_ordering_coverage; "
-            "tie -> smallest T_high then smallest T_low"
-        ),
-        "not_objective": ["n_signal", "INTEGRATE_rate"],
-    }
+    v01 = load_v01_freeze()
+    search = dict(v01["threshold_search"])
+    search["objective"] = threshold_grid_objective_v02()
+    search["not_objective"] = list(threshold_grid_objective_v02()["not_used"])
+    search["do_not_extend_grid_after_seeing_calibration"] = True
+    search["grids"] = v01["threshold_search"]["grids"]
+    return search
 
 
 def operator_map_candidates() -> dict[str, Any]:
@@ -474,7 +604,7 @@ def split_manifest() -> dict[str, Any]:
     rows = _surface_catalog()
     return {
         "schema": "bitebench-phase3f-split-manifest/v0.1",
-        "revision": REVISION,
+        "revision": REVISION_V01,
         "evaluation_outcomes_open": False,
         "calibration_measured": False,
         "n_calibration": sum(1 for row in rows if row["split"] == "calibration"),
@@ -485,71 +615,45 @@ def split_manifest() -> dict[str, Any]:
     }
 
 
+def load_v01_freeze() -> dict[str, Any]:
+    if not V01_FREEZE_PATH.is_file():
+        raise FileNotFoundError(f"v0.1 freeze missing: {V01_FREEZE_PATH}")
+    return json.loads(V01_FREEZE_PATH.read_text(encoding="utf-8"))
+
+
 def freeze_manifest() -> dict[str, Any]:
-    blocked: list[str] = []
-    if "prose" in FORMATS or "csv" in FORMATS or "yaml" in FORMATS:
-        blocked.append("unsupported_format_in_required_set")
-    if CALIBRATION_REPLICAS == EVALUATION_REPLICAS:
-        blocked.append("split_not_disjoint")
+    """Active freeze is v0.2. v0.1 generation/split/grids/candidates stay."""
+    doc = json.loads(json.dumps(load_v01_freeze()))
+    blocked = list(doc.get("blocked_reasons") or [])
     verdict = VERDICT_BLOCKED if blocked else VERDICT_FROZEN
-    catalog = _surface_catalog()
-    return {
-        "schema": SCHEMA_ID,
-        "revision": REVISION,
-        "verdict": verdict,
-        "blocked_reasons": blocked,
-        "offline": True,
-        "paid_api": False,
-        "synthetic": True,
-        "research_conclusion": False,
-        "routing_connected": False,
-        "evaluation_holdout_used": False,
-        "v1_sensor_changed": False,
-        "v0_overwritten": False,
-        "rule_policy_changed": False,
-        "thresholds_set": False,
-        "calibration_measured": False,
-        "evaluation_outcomes_open": False,
-        "premise": "PHASE3E_V1_VALIDATED",
-        "generation": "p3f",
-        "not_phase2": True,
-        "required_formats": list(FORMATS),
-        "out_of_scope_formats": ["csv", "yaml", "prose"],
-        "primary_axis": "dependency_dispersion",
-        "dispersion_levels": list(DISPERSIONS),
-        "scale_levels": list(SCALES),
-        "shapes": list(SHAPES),
-        "distractor_counts": dict(DISTRACTOR_COUNTS),
-        "medium_intervening_units": MEDIUM_GAP,
-        "length_control": (
-            "near/medium/far of one canonical cell are permutations of the "
-            "same logical units; no padding"
-        ),
-        "scale_contrasts": {
-            "same_absolute_different_size": "one_hop medium (gap=3) across small/medium/large",
-            "same_relative_different_absolute": "one_hop far (endpoints) across small/medium/large",
-        },
-        "gold_leakage": "forbidden_in_sensor_input",
-        "n_canonical_cells": len(design_cells()),
-        "n_primary_surfaces": sum(1 for row in catalog if row["family"] == "primary"),
-        "n_adversarial_surfaces": sum(1 for row in catalog if row["family"] == "adversarial"),
-        "canonical_case_ids": [cell.case_id for cell in design_cells()],
-        "adversarial": [adversarial_case(kind, replica) for kind, replica in product(ADVERSARIAL_KINDS, REPLICAS)],
-        "candidates": candidate_protocol(),
-        "threshold_search": threshold_search_protocol(),
-        "operator_maps": operator_map_candidates(),
-        "phase3g": "calibration_split_only",
-        "purpose": (
-            "freeze how v1 would be chosen for routing before seeing any "
-            "calibration numbers; not a routing connection"
-        ),
+    doc["schema"] = SCHEMA_ID
+    doc["revision"] = REVISION
+    doc["verdict"] = verdict
+    doc["supersedes"] = REVISION_V01
+    doc["supersession"] = {
+        "previous": REVISION_V01,
+        "previous_path": "benchmarks/spec/phase3f-routing-calibration-freeze.json",
+        "reason": "split threshold-grid objective from threshold-independent diagnostics",
+        "v0_1_deleted": False,
+        "v0_1_overwritten": False,
+        "unchanged": [
+            "generation",
+            "split",
+            "candidates",
+            "grids",
+            "formats",
+            "adversarial_fixtures",
+            "operator_maps",
+        ],
     }
+    doc["metric_roles"] = metric_roles()
+    doc["candidates"] = candidate_protocol()
+    doc["threshold_search"] = threshold_search_protocol()
+    return doc
 
 
-def validate_phase3f_doc(doc: Mapping[str, Any]) -> list[str]:
+def _validate_shared(doc: Mapping[str, Any]) -> list[str]:
     errs: list[str] = []
-    if doc.get("schema") != SCHEMA_ID:
-        errs.append(f"bad schema: {doc.get('schema')!r}")
     if doc.get("paid_api") is not False:
         errs.append("paid_api must be false")
     if doc.get("routing_connected") is not False:
@@ -585,14 +689,106 @@ def validate_phase3f_doc(doc: Mapping[str, Any]) -> list[str]:
     return errs
 
 
-def write_freeze() -> tuple[Path, Path]:
+def _validate_v02(doc: Mapping[str, Any]) -> list[str]:
+    errs: list[str] = []
+    if doc.get("schema") != SCHEMA_ID:
+        errs.append(f"bad schema: {doc.get('schema')!r}")
+    if doc.get("revision") != REVISION:
+        errs.append(f"bad revision: {doc.get('revision')!r}")
+    if doc.get("supersedes") != REVISION_V01:
+        errs.append("v0.2 must supersede v0.1")
+    supersession = dict(doc.get("supersession") or {})
+    if supersession.get("v0_1_deleted") is not False:
+        errs.append("v0.1 must not be recorded as deleted")
+    if supersession.get("v0_1_overwritten") is not False:
+        errs.append("v0.1 must not be recorded as overwritten")
+    v01 = load_v01_freeze()
+    for key in (
+        "adversarial",
+        "canonical_case_ids",
+        "required_formats",
+        "operator_maps",
+        "n_primary_surfaces",
+        "n_adversarial_surfaces",
+        "generation",
+        "distractor_counts",
+        "shapes",
+        "scale_levels",
+        "dispersion_levels",
+    ):
+        if doc.get(key) != v01.get(key):
+            errs.append(f"{key} drifted from v0.1")
+    if (doc.get("candidates") or {}).get("candidates") != (v01.get("candidates") or {}).get(
+        "candidates"
+    ):
+        errs.append("A/B/C candidate list drifted from v0.1")
+    if (doc.get("threshold_search") or {}).get("grids") != (v01.get("threshold_search") or {}).get(
+        "grids"
+    ):
+        errs.append("threshold grids drifted from v0.1")
+    roles = dict(doc.get("metric_roles") or {})
+    sensor = dict(roles.get("sensor_level_diagnostic") or {}).get("edge_false_positive_rate") or {}
+    if dict(sensor).get("used_in_threshold_grid_objective") is not False:
+        errs.append("edge_false_positive_rate must not drive the grid")
+    if dict(sensor).get("used_in_candidate_selection") is not False:
+        errs.append("edge_false_positive_rate must not pick A/B/C")
+    cand_level = dict(roles.get("candidate_level") or {})
+    if cand_level.get("used_in_threshold_grid_point_comparison") is not False:
+        errs.append("continuous candidate metrics must not pick grid points")
+    objective = dict((doc.get("threshold_search") or {}).get("objective") or {})
+    names = [row.get("name") for row in list(objective.get("selection_order") or [])]
+    if names[:3] != [
+        "negative_adversarial_elevated_bin_rate",
+        "bin_ordering_coverage",
+        "format_consistency",
+    ]:
+        errs.append("grid selection order drifted")
+    if "edge_false_positive_rate" in names or "continuous_dispersion_ordering_coverage" in names:
+        errs.append("threshold-independent metric leaked into grid order")
+    if objective.get("eligibility") != "non_collapse":
+        errs.append("non_collapse must be grid eligibility")
+    not_used = list(objective.get("not_used") or [])
+    for banned in (
+        "n_signal",
+        "INTEGRATE_rate",
+        "edge_false_positive_rate",
+        "continuous_dispersion_ordering_coverage",
+        "scale_stability",
+    ):
+        if banned not in not_used:
+            errs.append(f"{banned} must be excluded from grid objective")
+    priority = [
+        row.get("name")
+        for row in list((doc.get("candidates") or {}).get("selection_priority") or [])
+    ]
+    if priority[:2] != [
+        "continuous_dispersion_ordering_coverage",
+        "scale_stability",
+    ]:
+        errs.append("candidate selection order drifted")
+    if priority and priority[0] == "adversarial_false_positive_rate":
+        errs.append("v0.1 grid-confused FP must not rank candidates")
+    return errs
+
+
+def validate_phase3f_doc(doc: Mapping[str, Any]) -> list[str]:
+    errs = _validate_shared(doc)
+    rev = doc.get("revision")
+    if rev == REVISION_V01:
+        if doc.get("schema") != SCHEMA_ID_V01:
+            errs.append(f"v0.1 bad schema: {doc.get('schema')!r}")
+        return errs
+    if rev == REVISION:
+        errs.extend(_validate_v02(doc))
+        return errs
+    errs.append(f"unknown freeze revision: {rev!r}")
+    return errs
+
+
+def write_freeze() -> Path:
     FREEZE_PATH.parent.mkdir(parents=True, exist_ok=True)
     FREEZE_PATH.write_text(
         json.dumps(freeze_manifest(), indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
-    SPLIT_PATH.write_text(
-        json.dumps(split_manifest(), indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
-    )
-    return FREEZE_PATH, SPLIT_PATH
+    return FREEZE_PATH

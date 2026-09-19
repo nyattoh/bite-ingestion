@@ -470,15 +470,25 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase3e} verdict={data.get('verdict')}")
 
-    phase3f = args.root / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze.json"
-    if phase3f.is_file():
+    from bite_bench.phase3f import validate_phase3f_doc
+
+    for phase3f, schema_name in (
+        (
+            args.root / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze.json",
+            "phase3f-routing-calibration-freeze.schema.json",
+        ),
+        (
+            args.root / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze-v0.2.json",
+            "phase3f-routing-calibration-freeze-v0.2.schema.json",
+        ),
+    ):
+        if not phase3f.is_file():
+            continue
         n_checked += 1
         data = json.loads(phase3f.read_text(encoding="utf-8"))
-        from bite_bench.phase3f import validate_phase3f_doc
-
         errs = list(validate_phase3f_doc(data))
         errs.extend(_scan_secrets(data))
-        schema_path = args.root / "spec" / "phase3f-routing-calibration-freeze.schema.json"
+        schema_path = args.root / "spec" / schema_name
         if schema_path.is_file():
             try:
                 import jsonschema  # type: ignore
@@ -494,7 +504,9 @@ def main(argv: list[str] | None = None) -> int:
             for e in errs:
                 print(f"  - {e}")
         else:
-            print(f"OK   {phase3f} verdict={data.get('verdict')}")
+            print(
+                f"OK   {phase3f} verdict={data.get('verdict')} revision={data.get('revision')}"
+            )
 
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
