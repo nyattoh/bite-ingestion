@@ -31,6 +31,12 @@ from bite_bench.xfer2_corpus import (
     N_CANONICAL,
     forbidden_hits,
 )
+from bite_eval.phase3q_eval import (
+    PROTOCOL_COMMIT_SHA,
+    RESULT_PATH,
+    run_evaluation,
+    validate_phase3q_result,
+)
 from bite_ingestion.adapters.bite_xfer2 import packet_from_document, unitize
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -110,3 +116,57 @@ def test_q0_packet_is_gold_free() -> None:
     assert "texture" not in packet
     assert "expected_sequence" not in packet
     assert "duplicate_groups" not in packet
+
+
+def test_q1_matches_artifacts_and_keeps_seals() -> None:
+    doc = run_evaluation()
+    committed = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+    assert json.loads(json.dumps(doc, sort_keys=True)) == json.loads(
+        json.dumps(committed, sort_keys=True)
+    )
+    assert validate_phase3q_result(committed) == []
+    jsonschema.validate(
+        committed,
+        json.loads((ROOT / "spec" / "phase3q-xfer2-transfer.schema.json").read_text(encoding="utf-8")),
+    )
+    for name in (
+        "cross-format.json",
+        "actionability.json",
+        "composition-safety.json",
+        "operator-interference.json",
+        "failure-classification.json",
+    ):
+        extra = json.loads((ROOT / "artifacts" / "phase3q" / name).read_text(encoding="utf-8"))
+        schema = json.loads(
+            (ROOT / "spec" / f"phase3q-{name.replace('.json', '')}.schema.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        jsonschema.validate(extra, schema)
+    assert committed["protocol_commit_sha"] == PROTOCOL_COMMIT_SHA
+    assert committed["n_rows"] == N_SURFACES
+    assert committed["p3f_evaluation_holdout_used"] is False
+    assert committed["calibration"] is False
+    assert committed["rule_policy_executed"] is False
+    assert committed["verdict"] in {
+        "PHASE3Q_XFER2_TRANSFER_CONFIRMED",
+        "PHASE3Q_XFER2_TRANSFER_FAILED",
+        "PHASE3Q_XFER2_TRANSFER_BLOCKED",
+    }
+    if committed["verdict"] == "PHASE3Q_XFER2_TRANSFER_FAILED":
+        assert committed["failure_classes"]
+        assert set(committed["failure_classes"]) <= {
+            "gate_format_dependence",
+            "predicate_format_dependence",
+            "sensor_operator_mismatch",
+            "operator_interference",
+            "composition_safety",
+            "other",
+        }
+    assert json.loads(PHASE3O.read_text(encoding="utf-8"))["verdict"] == PHASE3O_VERDICT
+    blob = RESULT_PATH.read_text(encoding="utf-8")
+    assert "p3f-" not in blob
+    eval_py = (ROOT / "src" / "bite_eval" / "phase3q_eval.py").read_text(encoding="utf-8")
+    assert "bite_bench.xfer1_corpus" not in eval_py
+    assert "bite_bench.phase3m" not in eval_py
+    assert "RulePolicy(" not in eval_py

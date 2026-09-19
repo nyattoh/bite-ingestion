@@ -73,6 +73,7 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 3N conditional routing first-open: **PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_CONFIRMED** (p3m replicas 2/3; same frozen p3m texture families / new replica identifiers; p3f evaluation sealed)
 - Phase 3O BITE-XFER-1 transfer: **PHASE3O_XFER1_TRANSFER_FAILED** (104 surfaces; routing/cross-format identity held; mixed_order sensor/operator mismatch + pretty_json composition safety; no retune; p3f evaluation sealed)
 - Phase 3P record alignment v2: **PHASE3P_RECORD_ALIGNMENT_VALIDATED** (fresh p3p; sensor/operator biconditional; lineage-aware safety; Phase 3O remains FAILED; p3f sealed)
+- Phase 3Q BITE-XFER-2 transfer: **PHASE3Q_XFER2_TRANSFER_FAILED** (112 surfaces; 100/112 ok; operator_interference on overlap/anomaly-join adversarial; mid case gated; no retune; p3f sealed)
 - **Next**: do not retune profiler / thresholds / routing on the spent Phase 2 holdout
 
 See:
@@ -135,3 +136,6 @@ See:
 - [`docs/hand_over/PHASE3P-RECORD-ALIGNMENT.md`](docs/hand_over/PHASE3P-RECORD-ALIGNMENT.md)
 - [`benchmarks/spec/phase3p-record-alignment-freeze.json`](benchmarks/spec/phase3p-record-alignment-freeze.json)
 - [`artifacts/phase3p/record-alignment.json`](artifacts/phase3p/record-alignment.json)
+- [`docs/hand_over/PHASE3Q-BITE-XFER2.md`](docs/hand_over/PHASE3Q-BITE-XFER2.md)
+- [`benchmarks/spec/phase3q-xfer2-freeze.json`](benchmarks/spec/phase3q-xfer2-freeze.json)
+- [`artifacts/phase3q/xfer2-transfer.json`](artifacts/phase3q/xfer2-transfer.json)
