@@ -1,0 +1,1875 @@
+{
+  "blocked_reasons": [],
+  "calibration": false,
+  "checks": {
+    "four_rendering_invariance": true,
+    "lineage_aware_safety": true,
+    "negative_controls": true,
+    "p3f_sealed": true,
+    "phase3o_failed_unchanged": true,
+    "reproduction_not_primary": true,
+    "sensor_operator_biconditional": true,
+    "v1_unchanged": true
+  },
+  "claim_boundary": "development repair of logical-record alignment and lineage-aware safety",
+  "formats": [
+    "key_value",
+    "compact_json",
+    "pretty_json",
+    "reversed_order_json"
+  ],
+  "lineage_safety": {
+    "n_ok": 14,
+    "rows": [
+      {
+        "case_id": "p3p-rjoin",
+        "format": "key_value",
+        "ok": true,
+        "role": "reduce_v2_then_integrate",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-rjoin-u00",
+            "p3p-rjoin-u09"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 102,
+          "token_proxy_before": 110
+        },
+        "safety_ok": true,
+        "sequence": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-rjoin-key_value"
+      },
+      {
+        "case_id": "p3p-rjoin",
+        "format": "compact_json",
+        "ok": true,
+        "role": "reduce_v2_then_integrate",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-rjoin-u00",
+            "p3p-rjoin-u09"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 141,
+          "token_proxy_before": 152
+        },
+        "safety_ok": true,
+        "sequence": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-rjoin-compact_json"
+      },
+      {
+        "case_id": "p3p-rjoin",
+        "format": "pretty_json",
+        "ok": true,
+        "role": "reduce_v2_then_integrate",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-rjoin-u00",
+            "p3p-rjoin-u09"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 182,
+          "token_proxy_before": 207
+        },
+        "safety_ok": true,
+        "sequence": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-rjoin-pretty_json"
+      },
+      {
+        "case_id": "p3p-rjoin",
+        "format": "reversed_order_json",
+        "ok": true,
+        "role": "reduce_v2_then_integrate",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-rjoin-u00",
+            "p3p-rjoin-u09"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 141,
+          "token_proxy_before": 152
+        },
+        "safety_ok": true,
+        "sequence": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-rjoin-reversed_order_json"
+      },
+      {
+        "case_id": "p3p-uri",
+        "format": "key_value",
+        "ok": true,
+        "role": "untangle_reduce_v2_integrate",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-uri-u00",
+            "p3p-uri-u09"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 90,
+          "token_proxy_before": 105
+        },
+        "safety_ok": true,
+        "sequence": [
+          "UNTANGLE",
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-uri-key_value"
+      },
+      {
+        "case_id": "p3p-uri",
+        "format": "compact_json",
+        "ok": true,
+        "role": "untangle_reduce_v2_integrate",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-uri-u00",
+            "p3p-uri-u09"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 129,
+          "token_proxy_before": 151
+        },
+        "safety_ok": true,
+        "sequence": [
+          "UNTANGLE",
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-uri-compact_json"
+      },
+      {
+        "case_id": "p3p-uri",
+        "format": "pretty_json",
+        "ok": true,
+        "role": "untangle_reduce_v2_integrate",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-uri-u00",
+            "p3p-uri-u09"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 170,
+          "token_proxy_before": 209
+        },
+        "safety_ok": true,
+        "sequence": [
+          "UNTANGLE",
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-uri-pretty_json"
+      },
+      {
+        "case_id": "p3p-uri",
+        "format": "reversed_order_json",
+        "ok": true,
+        "role": "untangle_reduce_v2_integrate",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-uri-u00",
+            "p3p-uri-u09"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 129,
+          "token_proxy_before": 151
+        },
+        "safety_ok": true,
+        "sequence": [
+          "UNTANGLE",
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-uri-reversed_order_json"
+      },
+      {
+        "case_id": "p3p-derj",
+        "format": "pretty_json",
+        "ok": true,
+        "role": "prior_derived_id_then_integrate",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-derj-u00",
+            "p3p-derj-u01"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 31,
+          "token_proxy_before": 33
+        },
+        "safety_ok": true,
+        "sequence": [
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-derj-pretty_json"
+      },
+      {
+        "case_id": "p3p-tjoin",
+        "format": "key_value",
+        "ok": true,
+        "role": "true_shared_join_key",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-tjoin-u00",
+            "p3p-tjoin-u09"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 95,
+          "token_proxy_before": 95
+        },
+        "safety_ok": true,
+        "sequence": [
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-tjoin-key_value"
+      },
+      {
+        "case_id": "p3p-tjoin",
+        "format": "compact_json",
+        "ok": true,
+        "role": "true_shared_join_key",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-tjoin-u00",
+            "p3p-tjoin-u09"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 130,
+          "token_proxy_before": 130
+        },
+        "safety_ok": true,
+        "sequence": [
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-tjoin-compact_json"
+      },
+      {
+        "case_id": "p3p-tjoin",
+        "format": "pretty_json",
+        "ok": true,
+        "role": "true_shared_join_key",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-tjoin-u00",
+            "p3p-tjoin-u09"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 167,
+          "token_proxy_before": 176
+        },
+        "safety_ok": true,
+        "sequence": [
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-tjoin-pretty_json"
+      },
+      {
+        "case_id": "p3p-tjoin",
+        "format": "reversed_order_json",
+        "ok": true,
+        "role": "true_shared_join_key",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [
+            "p3p-tjoin-u00",
+            "p3p-tjoin-u09"
+          ],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 130,
+          "token_proxy_before": 130
+        },
+        "safety_ok": true,
+        "sequence": [
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-tjoin-reversed_order_json"
+      },
+      {
+        "case_id": "p3p-nroot",
+        "format": "pretty_json",
+        "ok": true,
+        "role": "unrelated_derived_roots_negative",
+        "safety": {
+          "checks": {
+            "conservation_untraced": true,
+            "integrate_explicit_join_composite": true,
+            "lineage_recall": true,
+            "no_unrelated_overmerge": true,
+            "provenance_completeness": true,
+            "quarantine_recoverable": true,
+            "reduce_only_logical_duplicates": true,
+            "silent_loss": true
+          },
+          "conservation_untraced": [],
+          "integrate_explicit_join_composite": true,
+          "join_roots_used": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "ok": true,
+          "provenance_completeness": 1.0,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": 0,
+          "token_proxy_after": 35,
+          "token_proxy_before": 37
+        },
+        "safety_ok": true,
+        "sequence": [
+          "INTEGRATE"
+        ],
+        "sequence_ok": true,
+        "surface_id": "p3p-nroot-pretty_json"
+      }
+    ],
+    "schema": "bite-phase3p-lineage-safety/v0.1"
+  },
+  "n_align": 37,
+  "n_align_ok": 37,
+  "n_safety": 14,
+  "n_safety_ok": 14,
+  "no_new_threshold": true,
+  "no_winner_score": true,
+  "not_claimed": [
+    "Phase3O TRANSFER_CONFIRMED",
+    "real-world corpus generalization",
+    "BITE superiority"
+  ],
+  "offline": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3o_o0_sha": "76998156d3cbf67fc0a53e151688e46bd3c26dc7",
+  "phase3o_remains": "Phase3O remains FAILED; known failures are repaired in development",
+  "phase3o_verdict_unchanged": true,
+  "protocol_commit_sha": "4756acbb09e3df59dbe4832e2888c35a9cd9c37b",
+  "protocol_revision": "phase3p-record-alignment-freeze-v0.1",
+  "research_conclusion": false,
+  "revision": "phase3p-record-alignment-v0.1",
+  "rows": [
+    {
+      "biconditional": true,
+      "case_id": "p3p-dadj",
+      "duplicate_unit_ratio": 0.33333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "key_value",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "adjacent_logical_duplicate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-dadj-key_value"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-dadj",
+      "duplicate_unit_ratio": 0.33333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "compact_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "adjacent_logical_duplicate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-dadj-compact_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-dadj",
+      "duplicate_unit_ratio": 0.33333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "pretty_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "adjacent_logical_duplicate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-dadj-pretty_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-dadj",
+      "duplicate_unit_ratio": 0.33333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "reversed_order_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "adjacent_logical_duplicate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-dadj-reversed_order_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-drev",
+      "duplicate_unit_ratio": 0.5,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "compact_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "reversed_field_order_duplicate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-drev-compact_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-drev",
+      "duplicate_unit_ratio": 0.5,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "pretty_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "reversed_field_order_duplicate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-drev-pretty_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-drev",
+      "duplicate_unit_ratio": 0.5,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "reversed_order_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "reversed_field_order_duplicate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-drev-reversed_order_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-dnon",
+      "duplicate_unit_ratio": 0.33333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "key_value",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "nonadjacent_logical_duplicate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-dnon-key_value"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-dnon",
+      "duplicate_unit_ratio": 0.33333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "compact_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "nonadjacent_logical_duplicate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-dnon-compact_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-dnon",
+      "duplicate_unit_ratio": 0.33333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "pretty_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "nonadjacent_logical_duplicate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-dnon-pretty_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-dnon",
+      "duplicate_unit_ratio": 0.33333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "reversed_order_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "nonadjacent_logical_duplicate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-dnon-reversed_order_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-nkey",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "key_value",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "same_key_different_value_negative",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-nkey-key_value"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-nkey",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "compact_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "same_key_different_value_negative",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-nkey-compact_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-nkey",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "pretty_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "same_key_different_value_negative",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-nkey-pretty_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-nkey",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "reversed_order_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "same_key_different_value_negative",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-nkey-reversed_order_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-nval",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "key_value",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "same_value_different_key_negative",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-nval-key_value"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-nval",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "compact_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "same_value_different_key_negative",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-nval-compact_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-nval",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "pretty_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "same_value_different_key_negative",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-nval-pretty_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-nval",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "reversed_order_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "same_value_different_key_negative",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-nval-reversed_order_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-nextra",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "compact_json",
+      "max_multiplicity_after": 0,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "extra_field_object_negative",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-nextra-compact_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-nextra",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "pretty_json",
+      "max_multiplicity_after": 0,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "extra_field_object_negative",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-nextra-pretty_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-nextra",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "reversed_order_json",
+      "max_multiplicity_after": 0,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "extra_field_object_negative",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-nextra-reversed_order_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-kvdup",
+      "duplicate_unit_ratio": 0.33333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "key_value",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "kv_exact_duplicate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-kvdup-key_value"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-rjoin",
+      "duplicate_unit_ratio": 0.08333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "key_value",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "reduce_v2_then_integrate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-rjoin-key_value"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-rjoin",
+      "duplicate_unit_ratio": 0.08333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "compact_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "reduce_v2_then_integrate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-rjoin-compact_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-rjoin",
+      "duplicate_unit_ratio": 0.08333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "pretty_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "reduce_v2_then_integrate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-rjoin-pretty_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-rjoin",
+      "duplicate_unit_ratio": 0.08333333333333337,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "reversed_order_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "reduce_v2_then_integrate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-rjoin-reversed_order_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-uri",
+      "duplicate_unit_ratio": 0.07692307692307687,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "key_value",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "untangle_reduce_v2_integrate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-uri-key_value"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-uri",
+      "duplicate_unit_ratio": 0.07692307692307687,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "compact_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "untangle_reduce_v2_integrate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-uri-compact_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-uri",
+      "duplicate_unit_ratio": 0.07692307692307687,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "pretty_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "untangle_reduce_v2_integrate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-uri-pretty_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-uri",
+      "duplicate_unit_ratio": 0.07692307692307687,
+      "expect_duplicate": true,
+      "fail_closed": false,
+      "format": "reversed_order_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 1,
+      "ok": true,
+      "role": "untangle_reduce_v2_integrate",
+      "sensor_duplicate": true,
+      "surface_id": "p3p-uri-reversed_order_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-derj",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "pretty_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "prior_derived_id_then_integrate",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-derj-pretty_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-tjoin",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "key_value",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "true_shared_join_key",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-tjoin-key_value"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-tjoin",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "compact_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "true_shared_join_key",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-tjoin-compact_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-tjoin",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "pretty_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "true_shared_join_key",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-tjoin-pretty_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-tjoin",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "reversed_order_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "true_shared_join_key",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-tjoin-reversed_order_json"
+    },
+    {
+      "biconditional": true,
+      "case_id": "p3p-nroot",
+      "duplicate_unit_ratio": 0.0,
+      "expect_duplicate": false,
+      "fail_closed": false,
+      "format": "pretty_json",
+      "max_multiplicity_after": 1,
+      "n_omitted": 0,
+      "ok": true,
+      "role": "unrelated_derived_roots_negative",
+      "sensor_duplicate": false,
+      "surface_id": "p3p-nroot-pretty_json"
+    }
+  ],
+  "rule_policy_changed": false,
+  "schema": "bite-phase3p-record-alignment/v0.1",
+  "sensor_operator_alignment": {
+    "invariance": {
+      "n_cases": 7,
+      "n_ok": 7,
+      "rows": [
+        {
+          "after": {
+            "compact_json": 1,
+            "key_value": 1,
+            "pretty_json": 1,
+            "reversed_order_json": 1
+          },
+          "case_id": "p3p-dadj",
+          "ok": true,
+          "ratios": {
+            "compact_json": 0.33333333333333337,
+            "key_value": 0.33333333333333337,
+            "pretty_json": 0.33333333333333337,
+            "reversed_order_json": 0.33333333333333337
+          }
+        },
+        {
+          "after": {
+            "compact_json": 1,
+            "key_value": 1,
+            "pretty_json": 1,
+            "reversed_order_json": 1
+          },
+          "case_id": "p3p-dnon",
+          "ok": true,
+          "ratios": {
+            "compact_json": 0.33333333333333337,
+            "key_value": 0.33333333333333337,
+            "pretty_json": 0.33333333333333337,
+            "reversed_order_json": 0.33333333333333337
+          }
+        },
+        {
+          "after": {
+            "compact_json": 1,
+            "key_value": 1,
+            "pretty_json": 1,
+            "reversed_order_json": 1
+          },
+          "case_id": "p3p-nkey",
+          "ok": true,
+          "ratios": {
+            "compact_json": 0.0,
+            "key_value": 0.0,
+            "pretty_json": 0.0,
+            "reversed_order_json": 0.0
+          }
+        },
+        {
+          "after": {
+            "compact_json": 1,
+            "key_value": 1,
+            "pretty_json": 1,
+            "reversed_order_json": 1
+          },
+          "case_id": "p3p-nval",
+          "ok": true,
+          "ratios": {
+            "compact_json": 0.0,
+            "key_value": 0.0,
+            "pretty_json": 0.0,
+            "reversed_order_json": 0.0
+          }
+        },
+        {
+          "after": {
+            "compact_json": 1,
+            "key_value": 1,
+            "pretty_json": 1,
+            "reversed_order_json": 1
+          },
+          "case_id": "p3p-rjoin",
+          "ok": true,
+          "ratios": {
+            "compact_json": 0.08333333333333337,
+            "key_value": 0.08333333333333337,
+            "pretty_json": 0.08333333333333337,
+            "reversed_order_json": 0.08333333333333337
+          }
+        },
+        {
+          "after": {
+            "compact_json": 1,
+            "key_value": 1,
+            "pretty_json": 1,
+            "reversed_order_json": 1
+          },
+          "case_id": "p3p-tjoin",
+          "ok": true,
+          "ratios": {
+            "compact_json": 0.0,
+            "key_value": 0.0,
+            "pretty_json": 0.0,
+            "reversed_order_json": 0.0
+          }
+        },
+        {
+          "after": {
+            "compact_json": 1,
+            "key_value": 1,
+            "pretty_json": 1,
+            "reversed_order_json": 1
+          },
+          "case_id": "p3p-uri",
+          "ok": true,
+          "ratios": {
+            "compact_json": 0.07692307692307687,
+            "key_value": 0.07692307692307687,
+            "pretty_json": 0.07692307692307687,
+            "reversed_order_json": 0.07692307692307687
+          }
+        }
+      ]
+    },
+    "n_ok": 37,
+    "rows": [
+      {
+        "biconditional": true,
+        "case_id": "p3p-dadj",
+        "duplicate_unit_ratio": 0.33333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "key_value",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "adjacent_logical_duplicate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-dadj-key_value"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-dadj",
+        "duplicate_unit_ratio": 0.33333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "compact_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "adjacent_logical_duplicate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-dadj-compact_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-dadj",
+        "duplicate_unit_ratio": 0.33333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "pretty_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "adjacent_logical_duplicate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-dadj-pretty_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-dadj",
+        "duplicate_unit_ratio": 0.33333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "reversed_order_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "adjacent_logical_duplicate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-dadj-reversed_order_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-drev",
+        "duplicate_unit_ratio": 0.5,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "compact_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "reversed_field_order_duplicate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-drev-compact_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-drev",
+        "duplicate_unit_ratio": 0.5,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "pretty_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "reversed_field_order_duplicate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-drev-pretty_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-drev",
+        "duplicate_unit_ratio": 0.5,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "reversed_order_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "reversed_field_order_duplicate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-drev-reversed_order_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-dnon",
+        "duplicate_unit_ratio": 0.33333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "key_value",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "nonadjacent_logical_duplicate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-dnon-key_value"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-dnon",
+        "duplicate_unit_ratio": 0.33333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "compact_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "nonadjacent_logical_duplicate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-dnon-compact_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-dnon",
+        "duplicate_unit_ratio": 0.33333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "pretty_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "nonadjacent_logical_duplicate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-dnon-pretty_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-dnon",
+        "duplicate_unit_ratio": 0.33333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "reversed_order_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "nonadjacent_logical_duplicate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-dnon-reversed_order_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-nkey",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "key_value",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "same_key_different_value_negative",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-nkey-key_value"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-nkey",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "compact_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "same_key_different_value_negative",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-nkey-compact_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-nkey",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "pretty_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "same_key_different_value_negative",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-nkey-pretty_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-nkey",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "reversed_order_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "same_key_different_value_negative",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-nkey-reversed_order_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-nval",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "key_value",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "same_value_different_key_negative",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-nval-key_value"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-nval",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "compact_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "same_value_different_key_negative",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-nval-compact_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-nval",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "pretty_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "same_value_different_key_negative",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-nval-pretty_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-nval",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "reversed_order_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "same_value_different_key_negative",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-nval-reversed_order_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-nextra",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "compact_json",
+        "max_multiplicity_after": 0,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "extra_field_object_negative",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-nextra-compact_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-nextra",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "pretty_json",
+        "max_multiplicity_after": 0,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "extra_field_object_negative",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-nextra-pretty_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-nextra",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "reversed_order_json",
+        "max_multiplicity_after": 0,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "extra_field_object_negative",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-nextra-reversed_order_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-kvdup",
+        "duplicate_unit_ratio": 0.33333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "key_value",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "kv_exact_duplicate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-kvdup-key_value"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-rjoin",
+        "duplicate_unit_ratio": 0.08333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "key_value",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "reduce_v2_then_integrate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-rjoin-key_value"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-rjoin",
+        "duplicate_unit_ratio": 0.08333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "compact_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "reduce_v2_then_integrate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-rjoin-compact_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-rjoin",
+        "duplicate_unit_ratio": 0.08333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "pretty_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "reduce_v2_then_integrate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-rjoin-pretty_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-rjoin",
+        "duplicate_unit_ratio": 0.08333333333333337,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "reversed_order_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "reduce_v2_then_integrate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-rjoin-reversed_order_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-uri",
+        "duplicate_unit_ratio": 0.07692307692307687,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "key_value",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "untangle_reduce_v2_integrate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-uri-key_value"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-uri",
+        "duplicate_unit_ratio": 0.07692307692307687,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "compact_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "untangle_reduce_v2_integrate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-uri-compact_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-uri",
+        "duplicate_unit_ratio": 0.07692307692307687,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "pretty_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "untangle_reduce_v2_integrate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-uri-pretty_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-uri",
+        "duplicate_unit_ratio": 0.07692307692307687,
+        "expect_duplicate": true,
+        "fail_closed": false,
+        "format": "reversed_order_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 1,
+        "ok": true,
+        "role": "untangle_reduce_v2_integrate",
+        "sensor_duplicate": true,
+        "surface_id": "p3p-uri-reversed_order_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-derj",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "pretty_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "prior_derived_id_then_integrate",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-derj-pretty_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-tjoin",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "key_value",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "true_shared_join_key",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-tjoin-key_value"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-tjoin",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "compact_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "true_shared_join_key",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-tjoin-compact_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-tjoin",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "pretty_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "true_shared_join_key",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-tjoin-pretty_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-tjoin",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "reversed_order_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "true_shared_join_key",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-tjoin-reversed_order_json"
+      },
+      {
+        "biconditional": true,
+        "case_id": "p3p-nroot",
+        "duplicate_unit_ratio": 0.0,
+        "expect_duplicate": false,
+        "fail_closed": false,
+        "format": "pretty_json",
+        "max_multiplicity_after": 1,
+        "n_omitted": 0,
+        "ok": true,
+        "role": "unrelated_derived_roots_negative",
+        "sensor_duplicate": false,
+        "surface_id": "p3p-nroot-pretty_json"
+      }
+    ],
+    "schema": "bite-phase3p-sensor-operator-alignment/v0.1"
+  },
+  "synthetic": true,
+  "token_reduction": "diagnostic_only",
+  "v1_policy_changed": false,
+  "v1_reduce_changed": false,
+  "v1_safety_changed": false,
+  "v1_sensor_changed": false,
+  "verdict": "PHASE3P_RECORD_ALIGNMENT_VALIDATED",
+  "xfer1_reproduction": {
+    "n_surfaces": 5,
+    "phase3o_remains": "Phase3O remains FAILED; known failures are repaired in development",
+    "phase3o_verdict": "PHASE3O_XFER1_TRANSFER_FAILED",
+    "primary": false,
+    "rows": [
+      {
+        "failure_classes": [
+          "sensor_operator_mismatch"
+        ],
+        "ok": false,
+        "primary": false,
+        "surface_id": "xfer1-c018-mixed_order_json"
+      },
+      {
+        "failure_classes": [
+          "sensor_operator_mismatch"
+        ],
+        "ok": false,
+        "primary": false,
+        "surface_id": "xfer1-c021-mixed_order_json"
+      },
+      {
+        "failure_classes": [
+          "composition_safety"
+        ],
+        "ok": false,
+        "primary": false,
+        "surface_id": "xfer1-c022-pretty_json"
+      },
+      {
+        "failure_classes": [
+          "sensor_operator_mismatch"
+        ],
+        "ok": false,
+        "primary": false,
+        "surface_id": "xfer1-c022-mixed_order_json"
+      },
+      {
+        "failure_classes": [
+          "composition_safety"
+        ],
+        "ok": false,
+        "primary": false,
+        "surface_id": "xfer1-c024-pretty_json"
+      }
+    ],
+    "schema": "bite-phase3p-xfer1-reproduction/v0.1",
+    "v2_regression_secondary": [
+      {
+        "max_multiplicity_after": 1,
+        "primary": false,
+        "safety_ok": true,
+        "sequence": [
+          "REDUCE_v2"
+        ],
+        "surface_id": "xfer1-c018-mixed_order_json"
+      },
+      {
+        "max_multiplicity_after": 1,
+        "primary": false,
+        "safety_ok": true,
+        "sequence": [
+          "UNTANGLE",
+          "REDUCE_v2"
+        ],
+        "surface_id": "xfer1-c021-mixed_order_json"
+      },
+      {
+        "max_multiplicity_after": 1,
+        "primary": false,
+        "safety_ok": true,
+        "sequence": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "surface_id": "xfer1-c022-pretty_json"
+      },
+      {
+        "max_multiplicity_after": 1,
+        "primary": false,
+        "safety_ok": true,
+        "sequence": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "surface_id": "xfer1-c022-mixed_order_json"
+      },
+      {
+        "max_multiplicity_after": 1,
+        "primary": false,
+        "safety_ok": true,
+        "sequence": [
+          "UNTANGLE",
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "surface_id": "xfer1-c024-pretty_json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "k": "src_flash_q012",
+    "v": "chip_lock_q012"
+  },
+  {
+    "k": "note_firmware_q012_00",
+    "v": "blob_firmware_q012_00"
+  },
+  {
+    "k": "note_firmware_q012_01",
+    "v": "blob_firmware_q012_01 観測"
+  },
+  {
+    "k": "dst_chip_lock_q012",
+    "v": "ack_chip_lock_q012"
+  },
+  {
+    "k": "mate_a_q012",
+    "v": "crate_a_q012 id=plate_q012"
+  },
+  {
+    "k": "mate_b_q012",
+    "v": "crate_b_q012 id=plate_q012"
+  },
+  {
+    "k": "mate_c_q012",
+    "v": "crate_c_q012 id=plate_q012"
+  }
+]

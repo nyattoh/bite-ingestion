@@ -1,0 +1,1463 @@
+{
+  "calibration": false,
+  "claim_boundary": "reference-edge specificity audit only",
+  "copy_p3f_cases": false,
+  "copy_p3r_cases": false,
+  "cut_forbidden": true,
+  "distances": [
+    1,
+    3,
+    4,
+    9
+  ],
+  "families": [
+    "true_reference_only",
+    "suffix_collision_only",
+    "true_reference_plus_suffix_collision",
+    "suffix_collision_plus_actionability",
+    "shared_prefix_only",
+    "shared_suffix_text_only",
+    "substring_only"
+  ],
+  "formats": [
+    "key_value",
+    "compact_json",
+    "pretty_json",
+    "reversed_order_json"
+  ],
+  "gate_rule": "intended empty -> false; intended mean < 4 -> false; intended mean >= 4 -> true",
+  "generation": "p3s",
+  "invariants": {
+    "cross_format_exact": true,
+    "edge_set_exact": true,
+    "false_reference_edges": 0,
+    "gate_expectation_exact": true,
+    "no_mean_only_success": true
+  },
+  "locked_blobs": {
+    "artifacts/phase3r/channel-planner.json": "3b5df18761ce9a0749deca453338b5276744d43f",
+    "benchmarks/spec/phase3r-channel-planner-freeze.json": "5515b06200ed4b07652a05a9dd31732e3dc137e7",
+    "src/bite_ingestion/policies/conditional_texture_policy_v3.py": "dd8b24d0cb7f0e6c4d26834d3663044cbdb9e074",
+    "src/bite_ingestion/policies/projected_actionability_plan_v1.py": "af3737f078a6d91da38999885aea13860350526a",
+    "src/bite_ingestion/profilers/dependency_dispersion_v2.py": "32c9016c86379561b1e915ee322184a19fe927cd"
+  },
+  "locked_t_high": 4.0,
+  "n_canonical": 28,
+  "n_surfaces": 112,
+  "no_format_exception": true,
+  "no_key_side_atoms_change": true,
+  "no_new_ak_threshold": true,
+  "no_operator_semantic_change": true,
+  "no_repair": true,
+  "no_threshold_grid": true,
+  "no_winner_score": true,
+  "not_claimed": [
+    "routing generalization",
+    "real-world corpus generalization",
+    "BITE superiority",
+    "Phase3Q TRANSFER_CONFIRMED"
+  ],
+  "offline": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3q_q0_sha": "67bfd22f782c6663de6e977848a5a381cd62ae51",
+  "phase3q_remains": "Phase3Q remains FAILED",
+  "phase3q_verdict_unchanged": true,
+  "phase3r_artifact_unchanged": true,
+  "phase3r_head_sha": "2ff6ec667bdbe44797a6a1351e118e3fcdaac4d8",
+  "phase3r_r0_sha": "d1f39ed6dd43180c132510a1723f7c884b6e693c",
+  "phase3r_verdict": "PHASE3R_CHANNEL_PLANNER_VALIDATED",
+  "planned_cases": [
+    {
+      "case_id": "p3s-true-d1",
+      "distance": 1,
+      "family": "true_reference_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_true_d1",
+          "cider_press_p3s_true_d1"
+        ],
+        [
+          "dst_cider_press_p3s_true_d1",
+          "mash_p3s_true_d1"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-true-d3",
+      "distance": 3,
+      "family": "true_reference_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_true_d3",
+          "cider_press_p3s_true_d3"
+        ],
+        [
+          "note_orchard_p3s_true_d3_00",
+          "pulp_orchard_p3s_true_d3_00"
+        ],
+        [
+          "note_orchard_p3s_true_d3_01",
+          "pulp_orchard_p3s_true_d3_01"
+        ],
+        [
+          "dst_cider_press_p3s_true_d3",
+          "mash_p3s_true_d3"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-true-d4",
+      "distance": 4,
+      "family": "true_reference_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_true_d4",
+          "cider_press_p3s_true_d4"
+        ],
+        [
+          "note_orchard_p3s_true_d4_00",
+          "pulp_orchard_p3s_true_d4_00"
+        ],
+        [
+          "note_orchard_p3s_true_d4_01",
+          "pulp_orchard_p3s_true_d4_01"
+        ],
+        [
+          "note_orchard_p3s_true_d4_02",
+          "pulp_orchard_p3s_true_d4_02"
+        ],
+        [
+          "dst_cider_press_p3s_true_d4",
+          "mash_p3s_true_d4"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-true-d9",
+      "distance": 9,
+      "family": "true_reference_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_true_d9",
+          "cider_press_p3s_true_d9"
+        ],
+        [
+          "note_orchard_p3s_true_d9_00",
+          "pulp_orchard_p3s_true_d9_00"
+        ],
+        [
+          "note_orchard_p3s_true_d9_01",
+          "pulp_orchard_p3s_true_d9_01"
+        ],
+        [
+          "note_orchard_p3s_true_d9_02",
+          "pulp_orchard_p3s_true_d9_02"
+        ],
+        [
+          "note_orchard_p3s_true_d9_03",
+          "pulp_orchard_p3s_true_d9_03"
+        ],
+        [
+          "note_orchard_p3s_true_d9_04",
+          "pulp_orchard_p3s_true_d9_04"
+        ],
+        [
+          "note_orchard_p3s_true_d9_05",
+          "pulp_orchard_p3s_true_d9_05"
+        ],
+        [
+          "note_orchard_p3s_true_d9_06",
+          "pulp_orchard_p3s_true_d9_06"
+        ],
+        [
+          "note_orchard_p3s_true_d9_07",
+          "pulp_orchard_p3s_true_d9_07"
+        ],
+        [
+          "dst_cider_press_p3s_true_d9",
+          "mash_p3s_true_d9"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-suf-d1",
+      "distance": 1,
+      "family": "suffix_collision_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_suf_d1",
+          "keg_p3s_suf_d1"
+        ],
+        [
+          "bin_grove_keg_p3s_suf_d1",
+          "pulp_p3s_suf_d1"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-suf-d3",
+      "distance": 3,
+      "family": "suffix_collision_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_suf_d3",
+          "keg_p3s_suf_d3"
+        ],
+        [
+          "note_orchard_p3s_suf_d3_00",
+          "pulp_orchard_p3s_suf_d3_00"
+        ],
+        [
+          "note_orchard_p3s_suf_d3_01",
+          "pulp_orchard_p3s_suf_d3_01"
+        ],
+        [
+          "bin_grove_keg_p3s_suf_d3",
+          "pulp_p3s_suf_d3"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-suf-d4",
+      "distance": 4,
+      "family": "suffix_collision_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_suf_d4",
+          "keg_p3s_suf_d4"
+        ],
+        [
+          "note_orchard_p3s_suf_d4_00",
+          "pulp_orchard_p3s_suf_d4_00"
+        ],
+        [
+          "note_orchard_p3s_suf_d4_01",
+          "pulp_orchard_p3s_suf_d4_01"
+        ],
+        [
+          "note_orchard_p3s_suf_d4_02",
+          "pulp_orchard_p3s_suf_d4_02"
+        ],
+        [
+          "bin_grove_keg_p3s_suf_d4",
+          "pulp_p3s_suf_d4"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-suf-d9",
+      "distance": 9,
+      "family": "suffix_collision_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_suf_d9",
+          "keg_p3s_suf_d9"
+        ],
+        [
+          "note_orchard_p3s_suf_d9_00",
+          "pulp_orchard_p3s_suf_d9_00"
+        ],
+        [
+          "note_orchard_p3s_suf_d9_01",
+          "pulp_orchard_p3s_suf_d9_01"
+        ],
+        [
+          "note_orchard_p3s_suf_d9_02",
+          "pulp_orchard_p3s_suf_d9_02"
+        ],
+        [
+          "note_orchard_p3s_suf_d9_03",
+          "pulp_orchard_p3s_suf_d9_03"
+        ],
+        [
+          "note_orchard_p3s_suf_d9_04",
+          "pulp_orchard_p3s_suf_d9_04"
+        ],
+        [
+          "note_orchard_p3s_suf_d9_05",
+          "pulp_orchard_p3s_suf_d9_05"
+        ],
+        [
+          "note_orchard_p3s_suf_d9_06",
+          "pulp_orchard_p3s_suf_d9_06"
+        ],
+        [
+          "note_orchard_p3s_suf_d9_07",
+          "pulp_orchard_p3s_suf_d9_07"
+        ],
+        [
+          "bin_grove_keg_p3s_suf_d9",
+          "pulp_p3s_suf_d9"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-mix-d1",
+      "distance": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n_records": 12,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_mix_d1",
+          "cider_press_p3s_mix_d1"
+        ],
+        [
+          "dst_cider_press_p3s_mix_d1",
+          "mash_p3s_mix_d1"
+        ],
+        [
+          "note_orchard_p3s_mix_d1_40",
+          "pulp_orchard_p3s_mix_d1_40"
+        ],
+        [
+          "note_orchard_p3s_mix_d1_41",
+          "pulp_orchard_p3s_mix_d1_41"
+        ],
+        [
+          "note_orchard_p3s_mix_d1_42",
+          "pulp_orchard_p3s_mix_d1_42"
+        ],
+        [
+          "note_orchard_p3s_mix_d1_43",
+          "pulp_orchard_p3s_mix_d1_43"
+        ],
+        [
+          "note_orchard_p3s_mix_d1_44",
+          "pulp_orchard_p3s_mix_d1_44"
+        ],
+        [
+          "note_orchard_p3s_mix_d1_45",
+          "pulp_orchard_p3s_mix_d1_45"
+        ],
+        [
+          "note_orchard_p3s_mix_d1_46",
+          "pulp_orchard_p3s_mix_d1_46"
+        ],
+        [
+          "note_orchard_p3s_mix_d1_47",
+          "pulp_orchard_p3s_mix_d1_47"
+        ],
+        [
+          "aux_bough_p3s_mix_d1",
+          "keg_p3s_mix_d1"
+        ],
+        [
+          "bin_grove_keg_p3s_mix_d1",
+          "pulp_aux_p3s_mix_d1"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-mix-d3",
+      "distance": 3,
+      "family": "true_reference_plus_suffix_collision",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "n_records": 14,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_mix_d3",
+          "cider_press_p3s_mix_d3"
+        ],
+        [
+          "note_orchard_p3s_mix_d3_00",
+          "pulp_orchard_p3s_mix_d3_00"
+        ],
+        [
+          "note_orchard_p3s_mix_d3_01",
+          "pulp_orchard_p3s_mix_d3_01"
+        ],
+        [
+          "dst_cider_press_p3s_mix_d3",
+          "mash_p3s_mix_d3"
+        ],
+        [
+          "note_orchard_p3s_mix_d3_40",
+          "pulp_orchard_p3s_mix_d3_40"
+        ],
+        [
+          "note_orchard_p3s_mix_d3_41",
+          "pulp_orchard_p3s_mix_d3_41"
+        ],
+        [
+          "note_orchard_p3s_mix_d3_42",
+          "pulp_orchard_p3s_mix_d3_42"
+        ],
+        [
+          "note_orchard_p3s_mix_d3_43",
+          "pulp_orchard_p3s_mix_d3_43"
+        ],
+        [
+          "note_orchard_p3s_mix_d3_44",
+          "pulp_orchard_p3s_mix_d3_44"
+        ],
+        [
+          "note_orchard_p3s_mix_d3_45",
+          "pulp_orchard_p3s_mix_d3_45"
+        ],
+        [
+          "note_orchard_p3s_mix_d3_46",
+          "pulp_orchard_p3s_mix_d3_46"
+        ],
+        [
+          "note_orchard_p3s_mix_d3_47",
+          "pulp_orchard_p3s_mix_d3_47"
+        ],
+        [
+          "aux_bough_p3s_mix_d3",
+          "keg_p3s_mix_d3"
+        ],
+        [
+          "bin_grove_keg_p3s_mix_d3",
+          "pulp_aux_p3s_mix_d3"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-mix-d4",
+      "distance": 4,
+      "family": "true_reference_plus_suffix_collision",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "n_records": 15,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_mix_d4",
+          "cider_press_p3s_mix_d4"
+        ],
+        [
+          "note_orchard_p3s_mix_d4_00",
+          "pulp_orchard_p3s_mix_d4_00"
+        ],
+        [
+          "note_orchard_p3s_mix_d4_01",
+          "pulp_orchard_p3s_mix_d4_01"
+        ],
+        [
+          "note_orchard_p3s_mix_d4_02",
+          "pulp_orchard_p3s_mix_d4_02"
+        ],
+        [
+          "dst_cider_press_p3s_mix_d4",
+          "mash_p3s_mix_d4"
+        ],
+        [
+          "note_orchard_p3s_mix_d4_40",
+          "pulp_orchard_p3s_mix_d4_40"
+        ],
+        [
+          "note_orchard_p3s_mix_d4_41",
+          "pulp_orchard_p3s_mix_d4_41"
+        ],
+        [
+          "note_orchard_p3s_mix_d4_42",
+          "pulp_orchard_p3s_mix_d4_42"
+        ],
+        [
+          "note_orchard_p3s_mix_d4_43",
+          "pulp_orchard_p3s_mix_d4_43"
+        ],
+        [
+          "note_orchard_p3s_mix_d4_44",
+          "pulp_orchard_p3s_mix_d4_44"
+        ],
+        [
+          "note_orchard_p3s_mix_d4_45",
+          "pulp_orchard_p3s_mix_d4_45"
+        ],
+        [
+          "note_orchard_p3s_mix_d4_46",
+          "pulp_orchard_p3s_mix_d4_46"
+        ],
+        [
+          "note_orchard_p3s_mix_d4_47",
+          "pulp_orchard_p3s_mix_d4_47"
+        ],
+        [
+          "aux_bough_p3s_mix_d4",
+          "keg_p3s_mix_d4"
+        ],
+        [
+          "bin_grove_keg_p3s_mix_d4",
+          "pulp_aux_p3s_mix_d4"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-mix-d9",
+      "distance": 9,
+      "family": "true_reference_plus_suffix_collision",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "n_records": 20,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_mix_d9",
+          "cider_press_p3s_mix_d9"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_00",
+          "pulp_orchard_p3s_mix_d9_00"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_01",
+          "pulp_orchard_p3s_mix_d9_01"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_02",
+          "pulp_orchard_p3s_mix_d9_02"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_03",
+          "pulp_orchard_p3s_mix_d9_03"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_04",
+          "pulp_orchard_p3s_mix_d9_04"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_05",
+          "pulp_orchard_p3s_mix_d9_05"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_06",
+          "pulp_orchard_p3s_mix_d9_06"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_07",
+          "pulp_orchard_p3s_mix_d9_07"
+        ],
+        [
+          "dst_cider_press_p3s_mix_d9",
+          "mash_p3s_mix_d9"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_40",
+          "pulp_orchard_p3s_mix_d9_40"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_41",
+          "pulp_orchard_p3s_mix_d9_41"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_42",
+          "pulp_orchard_p3s_mix_d9_42"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_43",
+          "pulp_orchard_p3s_mix_d9_43"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_44",
+          "pulp_orchard_p3s_mix_d9_44"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_45",
+          "pulp_orchard_p3s_mix_d9_45"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_46",
+          "pulp_orchard_p3s_mix_d9_46"
+        ],
+        [
+          "note_orchard_p3s_mix_d9_47",
+          "pulp_orchard_p3s_mix_d9_47"
+        ],
+        [
+          "aux_bough_p3s_mix_d9",
+          "keg_p3s_mix_d9"
+        ],
+        [
+          "bin_grove_keg_p3s_mix_d9",
+          "pulp_aux_p3s_mix_d9"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-act-d1",
+      "distance": 1,
+      "family": "suffix_collision_plus_actionability",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 7,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_act_d1",
+          "keg_p3s_act_d1"
+        ],
+        [
+          "bin_grove_keg_p3s_act_d1",
+          "pulp_p3s_act_d1"
+        ],
+        [
+          "copy_vat_p3s_act_d1",
+          "same_vat_p3s_act_d1_row"
+        ],
+        [
+          "copy_vat_p3s_act_d1",
+          "same_vat_p3s_act_d1_row"
+        ],
+        [
+          "alert_p3s_act_d1",
+          "press kettle FATAL"
+        ],
+        [
+          "mate_a_p3s_act_d1",
+          "barrel_a_p3s_act_d1 id=cask_p3s_act_d1"
+        ],
+        [
+          "mate_b_p3s_act_d1",
+          "barrel_b_p3s_act_d1 id=cask_p3s_act_d1"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-act-d3",
+      "distance": 3,
+      "family": "suffix_collision_plus_actionability",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 9,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_act_d3",
+          "keg_p3s_act_d3"
+        ],
+        [
+          "note_orchard_p3s_act_d3_00",
+          "pulp_orchard_p3s_act_d3_00"
+        ],
+        [
+          "note_orchard_p3s_act_d3_01",
+          "pulp_orchard_p3s_act_d3_01"
+        ],
+        [
+          "bin_grove_keg_p3s_act_d3",
+          "pulp_p3s_act_d3"
+        ],
+        [
+          "copy_vat_p3s_act_d3",
+          "same_vat_p3s_act_d3_row"
+        ],
+        [
+          "copy_vat_p3s_act_d3",
+          "same_vat_p3s_act_d3_row"
+        ],
+        [
+          "alert_p3s_act_d3",
+          "press kettle FATAL"
+        ],
+        [
+          "mate_a_p3s_act_d3",
+          "barrel_a_p3s_act_d3 id=cask_p3s_act_d3"
+        ],
+        [
+          "mate_b_p3s_act_d3",
+          "barrel_b_p3s_act_d3 id=cask_p3s_act_d3"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-act-d4",
+      "distance": 4,
+      "family": "suffix_collision_plus_actionability",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_act_d4",
+          "keg_p3s_act_d4"
+        ],
+        [
+          "note_orchard_p3s_act_d4_00",
+          "pulp_orchard_p3s_act_d4_00"
+        ],
+        [
+          "note_orchard_p3s_act_d4_01",
+          "pulp_orchard_p3s_act_d4_01"
+        ],
+        [
+          "note_orchard_p3s_act_d4_02",
+          "pulp_orchard_p3s_act_d4_02"
+        ],
+        [
+          "bin_grove_keg_p3s_act_d4",
+          "pulp_p3s_act_d4"
+        ],
+        [
+          "copy_vat_p3s_act_d4",
+          "same_vat_p3s_act_d4_row"
+        ],
+        [
+          "copy_vat_p3s_act_d4",
+          "same_vat_p3s_act_d4_row"
+        ],
+        [
+          "alert_p3s_act_d4",
+          "press kettle FATAL"
+        ],
+        [
+          "mate_a_p3s_act_d4",
+          "barrel_a_p3s_act_d4 id=cask_p3s_act_d4"
+        ],
+        [
+          "mate_b_p3s_act_d4",
+          "barrel_b_p3s_act_d4 id=cask_p3s_act_d4"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-act-d9",
+      "distance": 9,
+      "family": "suffix_collision_plus_actionability",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 15,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_act_d9",
+          "keg_p3s_act_d9"
+        ],
+        [
+          "note_orchard_p3s_act_d9_00",
+          "pulp_orchard_p3s_act_d9_00"
+        ],
+        [
+          "note_orchard_p3s_act_d9_01",
+          "pulp_orchard_p3s_act_d9_01"
+        ],
+        [
+          "note_orchard_p3s_act_d9_02",
+          "pulp_orchard_p3s_act_d9_02"
+        ],
+        [
+          "note_orchard_p3s_act_d9_03",
+          "pulp_orchard_p3s_act_d9_03"
+        ],
+        [
+          "note_orchard_p3s_act_d9_04",
+          "pulp_orchard_p3s_act_d9_04"
+        ],
+        [
+          "note_orchard_p3s_act_d9_05",
+          "pulp_orchard_p3s_act_d9_05"
+        ],
+        [
+          "note_orchard_p3s_act_d9_06",
+          "pulp_orchard_p3s_act_d9_06"
+        ],
+        [
+          "note_orchard_p3s_act_d9_07",
+          "pulp_orchard_p3s_act_d9_07"
+        ],
+        [
+          "bin_grove_keg_p3s_act_d9",
+          "pulp_p3s_act_d9"
+        ],
+        [
+          "copy_vat_p3s_act_d9",
+          "same_vat_p3s_act_d9_row"
+        ],
+        [
+          "copy_vat_p3s_act_d9",
+          "same_vat_p3s_act_d9_row"
+        ],
+        [
+          "alert_p3s_act_d9",
+          "press kettle FATAL"
+        ],
+        [
+          "mate_a_p3s_act_d9",
+          "barrel_a_p3s_act_d9 id=cask_p3s_act_d9"
+        ],
+        [
+          "mate_b_p3s_act_d9",
+          "barrel_b_p3s_act_d9 id=cask_p3s_act_d9"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-pre-d1",
+      "distance": 1,
+      "family": "shared_prefix_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_pre_d1",
+          "cider_press_west_p3s_pre_d1"
+        ],
+        [
+          "dst_cider_press_p3s_pre_d1",
+          "mash_p3s_pre_d1"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-pre-d3",
+      "distance": 3,
+      "family": "shared_prefix_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_pre_d3",
+          "cider_press_west_p3s_pre_d3"
+        ],
+        [
+          "note_orchard_p3s_pre_d3_00",
+          "pulp_orchard_p3s_pre_d3_00"
+        ],
+        [
+          "note_orchard_p3s_pre_d3_01",
+          "pulp_orchard_p3s_pre_d3_01"
+        ],
+        [
+          "dst_cider_press_p3s_pre_d3",
+          "mash_p3s_pre_d3"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-pre-d4",
+      "distance": 4,
+      "family": "shared_prefix_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_pre_d4",
+          "cider_press_west_p3s_pre_d4"
+        ],
+        [
+          "note_orchard_p3s_pre_d4_00",
+          "pulp_orchard_p3s_pre_d4_00"
+        ],
+        [
+          "note_orchard_p3s_pre_d4_01",
+          "pulp_orchard_p3s_pre_d4_01"
+        ],
+        [
+          "note_orchard_p3s_pre_d4_02",
+          "pulp_orchard_p3s_pre_d4_02"
+        ],
+        [
+          "dst_cider_press_p3s_pre_d4",
+          "mash_p3s_pre_d4"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-pre-d9",
+      "distance": 9,
+      "family": "shared_prefix_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_pre_d9",
+          "cider_press_west_p3s_pre_d9"
+        ],
+        [
+          "note_orchard_p3s_pre_d9_00",
+          "pulp_orchard_p3s_pre_d9_00"
+        ],
+        [
+          "note_orchard_p3s_pre_d9_01",
+          "pulp_orchard_p3s_pre_d9_01"
+        ],
+        [
+          "note_orchard_p3s_pre_d9_02",
+          "pulp_orchard_p3s_pre_d9_02"
+        ],
+        [
+          "note_orchard_p3s_pre_d9_03",
+          "pulp_orchard_p3s_pre_d9_03"
+        ],
+        [
+          "note_orchard_p3s_pre_d9_04",
+          "pulp_orchard_p3s_pre_d9_04"
+        ],
+        [
+          "note_orchard_p3s_pre_d9_05",
+          "pulp_orchard_p3s_pre_d9_05"
+        ],
+        [
+          "note_orchard_p3s_pre_d9_06",
+          "pulp_orchard_p3s_pre_d9_06"
+        ],
+        [
+          "note_orchard_p3s_pre_d9_07",
+          "pulp_orchard_p3s_pre_d9_07"
+        ],
+        [
+          "dst_cider_press_p3s_pre_d9",
+          "mash_p3s_pre_d9"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-sst-d1",
+      "distance": 1,
+      "family": "shared_suffix_text_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_sst_d1",
+          "ownkeg_p3s_sst_d1"
+        ],
+        [
+          "bin_grove_keg_p3s_sst_d1",
+          "pulp_p3s_sst_d1"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-sst-d3",
+      "distance": 3,
+      "family": "shared_suffix_text_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_sst_d3",
+          "ownkeg_p3s_sst_d3"
+        ],
+        [
+          "note_orchard_p3s_sst_d3_00",
+          "pulp_orchard_p3s_sst_d3_00"
+        ],
+        [
+          "note_orchard_p3s_sst_d3_01",
+          "pulp_orchard_p3s_sst_d3_01"
+        ],
+        [
+          "bin_grove_keg_p3s_sst_d3",
+          "pulp_p3s_sst_d3"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-sst-d4",
+      "distance": 4,
+      "family": "shared_suffix_text_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_sst_d4",
+          "ownkeg_p3s_sst_d4"
+        ],
+        [
+          "note_orchard_p3s_sst_d4_00",
+          "pulp_orchard_p3s_sst_d4_00"
+        ],
+        [
+          "note_orchard_p3s_sst_d4_01",
+          "pulp_orchard_p3s_sst_d4_01"
+        ],
+        [
+          "note_orchard_p3s_sst_d4_02",
+          "pulp_orchard_p3s_sst_d4_02"
+        ],
+        [
+          "bin_grove_keg_p3s_sst_d4",
+          "pulp_p3s_sst_d4"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-sst-d9",
+      "distance": 9,
+      "family": "shared_suffix_text_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_sst_d9",
+          "ownkeg_p3s_sst_d9"
+        ],
+        [
+          "note_orchard_p3s_sst_d9_00",
+          "pulp_orchard_p3s_sst_d9_00"
+        ],
+        [
+          "note_orchard_p3s_sst_d9_01",
+          "pulp_orchard_p3s_sst_d9_01"
+        ],
+        [
+          "note_orchard_p3s_sst_d9_02",
+          "pulp_orchard_p3s_sst_d9_02"
+        ],
+        [
+          "note_orchard_p3s_sst_d9_03",
+          "pulp_orchard_p3s_sst_d9_03"
+        ],
+        [
+          "note_orchard_p3s_sst_d9_04",
+          "pulp_orchard_p3s_sst_d9_04"
+        ],
+        [
+          "note_orchard_p3s_sst_d9_05",
+          "pulp_orchard_p3s_sst_d9_05"
+        ],
+        [
+          "note_orchard_p3s_sst_d9_06",
+          "pulp_orchard_p3s_sst_d9_06"
+        ],
+        [
+          "note_orchard_p3s_sst_d9_07",
+          "pulp_orchard_p3s_sst_d9_07"
+        ],
+        [
+          "bin_grove_keg_p3s_sst_d9",
+          "pulp_p3s_sst_d9"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-sub-d1",
+      "distance": 1,
+      "family": "substring_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_sub_d1",
+          "amber"
+        ],
+        [
+          "slot_amber_p3s_sub_d1",
+          "mash_p3s_sub_d1"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-sub-d3",
+      "distance": 3,
+      "family": "substring_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_sub_d3",
+          "amber"
+        ],
+        [
+          "note_orchard_p3s_sub_d3_00",
+          "pulp_orchard_p3s_sub_d3_00"
+        ],
+        [
+          "note_orchard_p3s_sub_d3_01",
+          "pulp_orchard_p3s_sub_d3_01"
+        ],
+        [
+          "slot_amber_p3s_sub_d3",
+          "mash_p3s_sub_d3"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-sub-d4",
+      "distance": 4,
+      "family": "substring_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_sub_d4",
+          "amber"
+        ],
+        [
+          "note_orchard_p3s_sub_d4_00",
+          "pulp_orchard_p3s_sub_d4_00"
+        ],
+        [
+          "note_orchard_p3s_sub_d4_01",
+          "pulp_orchard_p3s_sub_d4_01"
+        ],
+        [
+          "note_orchard_p3s_sub_d4_02",
+          "pulp_orchard_p3s_sub_d4_02"
+        ],
+        [
+          "slot_amber_p3s_sub_d4",
+          "mash_p3s_sub_d4"
+        ]
+      ]
+    },
+    {
+      "case_id": "p3s-sub-d9",
+      "distance": 9,
+      "family": "substring_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_bough_p3s_sub_d9",
+          "amber"
+        ],
+        [
+          "note_orchard_p3s_sub_d9_00",
+          "pulp_orchard_p3s_sub_d9_00"
+        ],
+        [
+          "note_orchard_p3s_sub_d9_01",
+          "pulp_orchard_p3s_sub_d9_01"
+        ],
+        [
+          "note_orchard_p3s_sub_d9_02",
+          "pulp_orchard_p3s_sub_d9_02"
+        ],
+        [
+          "note_orchard_p3s_sub_d9_03",
+          "pulp_orchard_p3s_sub_d9_03"
+        ],
+        [
+          "note_orchard_p3s_sub_d9_04",
+          "pulp_orchard_p3s_sub_d9_04"
+        ],
+        [
+          "note_orchard_p3s_sub_d9_05",
+          "pulp_orchard_p3s_sub_d9_05"
+        ],
+        [
+          "note_orchard_p3s_sub_d9_06",
+          "pulp_orchard_p3s_sub_d9_06"
+        ],
+        [
+          "note_orchard_p3s_sub_d9_07",
+          "pulp_orchard_p3s_sub_d9_07"
+        ],
+        [
+          "slot_amber_p3s_sub_d9",
+          "mash_p3s_sub_d9"
+        ]
+      ]
+    }
+  ],
+  "policy_consequence": "suffix_collision_plus_actionability sequence is always []",
+  "premise": "PHASE3R_CHANNEL_PLANNER_VALIDATED",
+  "primary_truth": "scorer-only intended_reference_edges; observed undirected set must match exactly",
+  "research_conclusion": false,
+  "revision": "phase3s-reference-specificity-freeze-v0.1",
+  "s1_verdicts": [
+    "PHASE3S_REFERENCE_SPECIFICITY_CONFIRMED",
+    "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+    "PHASE3S_REFERENCE_SPECIFICITY_BLOCKED"
+  ],
+  "schema": "bitebench-phase3s-reference-specificity-freeze/v0.1",
+  "synthetic": true,
+  "token_reduction": "diagnostic_only",
+  "verdict": "PHASE3S_REFERENCE_SPECIFICITY_PROTOCOL_FROZEN",
+  "verdict_rule": {
+    "PHASE3S_REFERENCE_SPECIFICITY_BLOCKED": "protocol drift / leak / fair audit cannot run",
+    "PHASE3S_REFERENCE_SPECIFICITY_CONFIRMED": "all fresh surfaces: edge set exact, false reference edge 0, gate expectation exact, cross-format exact",
+    "PHASE3S_REFERENCE_SPECIFICITY_FAILED": "one or more false edges or false gates from suffix/prefix/substring collision"
+  }
+}

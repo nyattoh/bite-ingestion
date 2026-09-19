@@ -1,0 +1,14 @@
+src_queue_q023=cron_lock_q023
+note_scheduler_q023_00=blob_scheduler_q023_00
+note_scheduler_q023_01=blob_scheduler_q023_01 観測
+note_scheduler_q023_02=naïve blob_scheduler_q023_02
+note_scheduler_q023_03=blob_scheduler_q023_03 shift = 1
+note_scheduler_q023_04=blob_scheduler_q023_04 said "ok"
+note_scheduler_q023_05=α blob_scheduler_q023_05
+note_scheduler_q023_06=NGC 1300 blob_scheduler_q023_06
+note_scheduler_q023_07=blob_scheduler_q023_07
+dst_cron_lock_q023=ack_cron_lock_q023
+alert_q023=ingest dump TRACEBACK
+mate_a_q023=crate_a_q023 id=plate_q023
+mate_b_q023=crate_b_q023 id=plate_q023
+mate_c_q023=crate_c_q023 id=plate_q023

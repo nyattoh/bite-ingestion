@@ -1,0 +1,1703 @@
+{
+  "schema": "bitebench-phase2c-dispersion-freeze/v0.2",
+  "status": "FROZEN_PRE_HOLDOUT",
+  "revision": "phase2c-dispersion-freeze-v0.2",
+  "phase2a_revision": "phase2a-factorial-v0.1",
+  "phase2b_verdict": "PHASE2B_LENGTH_CONTROL_PARTIAL",
+  "base_main_sha": "dce759efbb94ae941a86c3358b1b717da3224c14",
+  "offline": true,
+  "paid_api": false,
+  "research_conclusion": false,
+  "evaluation_sealed": true,
+  "arms_run": false,
+  "primary_axis": "dispersion",
+  "primary_levels": [
+    "clustered",
+    "dispersed"
+  ],
+  "n_planned_pairs": 48,
+  "case_ids": {
+    "calibration": [
+      "p2a-small-direct-r0",
+      "p2a-small-direct-r1",
+      "p2a-small-chain3-r0",
+      "p2a-small-chain3-r1",
+      "p2a-medium-direct-r0",
+      "p2a-medium-direct-r1",
+      "p2a-medium-chain3-r0",
+      "p2a-medium-chain3-r1",
+      "p2a-large-direct-r0",
+      "p2a-large-direct-r1",
+      "p2a-large-chain3-r0",
+      "p2a-large-chain3-r1"
+    ],
+    "evaluation": [
+      "p2a-small-direct-r2",
+      "p2a-small-direct-r3",
+      "p2a-small-chain3-r2",
+      "p2a-small-chain3-r3",
+      "p2a-medium-direct-r2",
+      "p2a-medium-direct-r3",
+      "p2a-medium-chain3-r2",
+      "p2a-medium-chain3-r3",
+      "p2a-large-direct-r2",
+      "p2a-large-direct-r3",
+      "p2a-large-chain3-r2",
+      "p2a-large-chain3-r3"
+    ]
+  },
+  "tokenizer_reference": {
+    "repo": "zai-org/GLM-4.5",
+    "revision": "cbb2c7cfb52fa128a9660cb1a7a78e017899e115",
+    "transformers_version": "4.54.0",
+    "tokenizer_json_sha256": "9340665016419c825c4bdabbcc9acc43b7ca2c68ce142724afa829abb1be5efd",
+    "exact_hosted_model_equivalence_asserted": false,
+    "note": "Pinned official GLM-4.5-family reference tokenizer. Exact hosted glm-4.5-flash tokenizer equivalence is not asserted here."
+  },
+  "prompt_contract": {
+    "source": "scripts/measure_phase1c_token_lengths.py",
+    "system": "You are a careful extractive QA assistant. Reply with the answer only.",
+    "user_template": "Document:\n{payload}\n\nQuestion: {query}\nAnswer with only the final value/string, no explanation.",
+    "thinking": "disabled",
+    "add_generation_prompt": true
+  },
+  "length_criterion": {
+    "source": "phase1c-token-match-v0.1",
+    "max_abs_delta": 3,
+    "max_relative_delta": 0.04,
+    "no_padding": true,
+    "widened_after_phase2b": false,
+    "calibration_observation": {
+      "axis": "dispersion",
+      "n_contrasts": 48,
+      "n_matched": 48,
+      "abs_delta": 0,
+      "relative_delta": 0.0,
+      "note": "Phase 2B calibration fact only. Evaluation token counts are not measured or recorded in this freeze."
+    }
+  },
+  "arms": [
+    "raw_full",
+    "length_pi",
+    "rule_pi",
+    "rule_pi_rebite"
+  ],
+  "primary_question": {
+    "ja": "同じfacts・同じtoken長・同じsurface形式でも、required evidenceのdispersionだけが変わったとき、length_piとrule_piのrouting/operator behaviorは異なるか？",
+    "en": "When facts, token length, and surface form are held fixed and only required-evidence dispersion changes, do length_pi and rule_pi differ in routing/operator behavior?"
+  },
+  "paid_model_accuracy_is_primary_endpoint": false,
+  "primary_offline_endpoints": [
+    "n_pairs_length_pi_neq_rule_pi",
+    "n_pairs_rule_pi_sequence_differs_clustered_vs_dispersed",
+    "n_pairs_operator_changed_payload",
+    "visible_evidence_recall",
+    "recoverable_evidence_recall",
+    "provenance_completeness",
+    "n_rebite_fires",
+    "T_total",
+    "payload_diff_vs_raw_full"
+  ],
+  "not_an_endpoint": [
+    "BITE_wins",
+    "morphology_superior",
+    "Go"
+  ],
+  "exclusion_rule": {
+    "apply_in": "Phase 2D",
+    "if_pair_fails_length_criterion": "exclude that pair from confirmatory analysis",
+    "do_not": [
+      "widen max_abs_delta",
+      "widen max_relative_delta",
+      "add padding",
+      "rewrite surfaces",
+      "retune routing thresholds to create a difference"
+    ]
+  },
+  "phase2d_verdicts": {
+    "PHASE2D_BLOCKED": {
+      "when_any": [
+        "negative control / instrumentation self-check failed",
+        "frozen contract broken",
+        "eligible pair count is 0",
+        "fair confirmatory comparison cannot be formed"
+      ]
+    },
+    "PHASE2D_OFFLINE_SIGNAL": {
+      "when": "n_eligible >= 1 and n_dispersion_specific_signal >= 1",
+      "one_pair_is_still_signal": true,
+      "no_strong_generalization": true
+    },
+    "PHASE2D_OFFLINE_NO_SIGNAL": {
+      "when": "n_eligible >= 1 and n_dispersion_specific_signal == 0"
+    }
+  },
+  "secondary_axes": {
+    "structure": {
+      "status": "secondary_length_confounded_stress_axis",
+      "in_primary_confirmatory": false,
+      "deleted": false,
+      "phase2b_calibration_match_rate": 0.0,
+      "new_matching_method_after_evaluation": false
+    },
+    "redundancy": {
+      "status": "secondary_length_confounded_stress_axis",
+      "in_primary_confirmatory": false,
+      "deleted": false,
+      "phase2b_calibration_match_rate": 0.0,
+      "new_matching_method_after_evaluation": false
+    }
+  },
+  "locks": {
+    "no_profiler_in_phase2c": true,
+    "no_routing_in_phase2c": true,
+    "no_operator_in_phase2c": true,
+    "no_evaluation_token_counts_in_phase2c": true,
+    "no_threshold_retune_after_seeing_results": true,
+    "no_criterion_widen_to_rescue_pairs": true,
+    "evaluation_not_for_rule_tuning": true
+  },
+  "confirmatory_pairs": [
+    {
+      "pair_id": "p2a-small-direct-r2::flat::low::clustered-dispersed",
+      "case_id": "p2a-small-direct-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "small",
+      "dependency": "direct",
+      "structure": "flat",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-direct-r2::flat::high::clustered-dispersed",
+      "case_id": "p2a-small-direct-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "small",
+      "dependency": "direct",
+      "structure": "flat",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-direct-r2::nested::low::clustered-dispersed",
+      "case_id": "p2a-small-direct-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "small",
+      "dependency": "direct",
+      "structure": "nested",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-direct-r2::nested::high::clustered-dispersed",
+      "case_id": "p2a-small-direct-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "small",
+      "dependency": "direct",
+      "structure": "nested",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-direct-r3::flat::low::clustered-dispersed",
+      "case_id": "p2a-small-direct-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "small",
+      "dependency": "direct",
+      "structure": "flat",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-direct-r3::flat::high::clustered-dispersed",
+      "case_id": "p2a-small-direct-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "small",
+      "dependency": "direct",
+      "structure": "flat",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-direct-r3::nested::low::clustered-dispersed",
+      "case_id": "p2a-small-direct-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "small",
+      "dependency": "direct",
+      "structure": "nested",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-direct-r3::nested::high::clustered-dispersed",
+      "case_id": "p2a-small-direct-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "small",
+      "dependency": "direct",
+      "structure": "nested",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-chain3-r2::flat::low::clustered-dispersed",
+      "case_id": "p2a-small-chain3-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "small",
+      "dependency": "chain3",
+      "structure": "flat",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-chain3-r2::flat::high::clustered-dispersed",
+      "case_id": "p2a-small-chain3-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "small",
+      "dependency": "chain3",
+      "structure": "flat",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-chain3-r2::nested::low::clustered-dispersed",
+      "case_id": "p2a-small-chain3-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "small",
+      "dependency": "chain3",
+      "structure": "nested",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-chain3-r2::nested::high::clustered-dispersed",
+      "case_id": "p2a-small-chain3-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "small",
+      "dependency": "chain3",
+      "structure": "nested",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-chain3-r3::flat::low::clustered-dispersed",
+      "case_id": "p2a-small-chain3-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "small",
+      "dependency": "chain3",
+      "structure": "flat",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-chain3-r3::flat::high::clustered-dispersed",
+      "case_id": "p2a-small-chain3-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "small",
+      "dependency": "chain3",
+      "structure": "flat",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-chain3-r3::nested::low::clustered-dispersed",
+      "case_id": "p2a-small-chain3-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "small",
+      "dependency": "chain3",
+      "structure": "nested",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-small-chain3-r3::nested::high::clustered-dispersed",
+      "case_id": "p2a-small-chain3-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "small",
+      "dependency": "chain3",
+      "structure": "nested",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-direct-r2::flat::low::clustered-dispersed",
+      "case_id": "p2a-medium-direct-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "medium",
+      "dependency": "direct",
+      "structure": "flat",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-direct-r2::flat::high::clustered-dispersed",
+      "case_id": "p2a-medium-direct-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "medium",
+      "dependency": "direct",
+      "structure": "flat",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-direct-r2::nested::low::clustered-dispersed",
+      "case_id": "p2a-medium-direct-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "medium",
+      "dependency": "direct",
+      "structure": "nested",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-direct-r2::nested::high::clustered-dispersed",
+      "case_id": "p2a-medium-direct-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "medium",
+      "dependency": "direct",
+      "structure": "nested",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-direct-r3::flat::low::clustered-dispersed",
+      "case_id": "p2a-medium-direct-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "medium",
+      "dependency": "direct",
+      "structure": "flat",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-direct-r3::flat::high::clustered-dispersed",
+      "case_id": "p2a-medium-direct-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "medium",
+      "dependency": "direct",
+      "structure": "flat",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-direct-r3::nested::low::clustered-dispersed",
+      "case_id": "p2a-medium-direct-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "medium",
+      "dependency": "direct",
+      "structure": "nested",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-direct-r3::nested::high::clustered-dispersed",
+      "case_id": "p2a-medium-direct-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "medium",
+      "dependency": "direct",
+      "structure": "nested",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-chain3-r2::flat::low::clustered-dispersed",
+      "case_id": "p2a-medium-chain3-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "medium",
+      "dependency": "chain3",
+      "structure": "flat",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-chain3-r2::flat::high::clustered-dispersed",
+      "case_id": "p2a-medium-chain3-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "medium",
+      "dependency": "chain3",
+      "structure": "flat",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-chain3-r2::nested::low::clustered-dispersed",
+      "case_id": "p2a-medium-chain3-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "medium",
+      "dependency": "chain3",
+      "structure": "nested",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-chain3-r2::nested::high::clustered-dispersed",
+      "case_id": "p2a-medium-chain3-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "medium",
+      "dependency": "chain3",
+      "structure": "nested",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-chain3-r3::flat::low::clustered-dispersed",
+      "case_id": "p2a-medium-chain3-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "medium",
+      "dependency": "chain3",
+      "structure": "flat",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-chain3-r3::flat::high::clustered-dispersed",
+      "case_id": "p2a-medium-chain3-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "medium",
+      "dependency": "chain3",
+      "structure": "flat",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-chain3-r3::nested::low::clustered-dispersed",
+      "case_id": "p2a-medium-chain3-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "medium",
+      "dependency": "chain3",
+      "structure": "nested",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-medium-chain3-r3::nested::high::clustered-dispersed",
+      "case_id": "p2a-medium-chain3-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "medium",
+      "dependency": "chain3",
+      "structure": "nested",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-direct-r2::flat::low::clustered-dispersed",
+      "case_id": "p2a-large-direct-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "large",
+      "dependency": "direct",
+      "structure": "flat",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-direct-r2::flat::high::clustered-dispersed",
+      "case_id": "p2a-large-direct-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "large",
+      "dependency": "direct",
+      "structure": "flat",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-direct-r2::nested::low::clustered-dispersed",
+      "case_id": "p2a-large-direct-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "large",
+      "dependency": "direct",
+      "structure": "nested",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-direct-r2::nested::high::clustered-dispersed",
+      "case_id": "p2a-large-direct-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "large",
+      "dependency": "direct",
+      "structure": "nested",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-direct-r3::flat::low::clustered-dispersed",
+      "case_id": "p2a-large-direct-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "large",
+      "dependency": "direct",
+      "structure": "flat",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-direct-r3::flat::high::clustered-dispersed",
+      "case_id": "p2a-large-direct-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "large",
+      "dependency": "direct",
+      "structure": "flat",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-direct-r3::nested::low::clustered-dispersed",
+      "case_id": "p2a-large-direct-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "large",
+      "dependency": "direct",
+      "structure": "nested",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-direct-r3::nested::high::clustered-dispersed",
+      "case_id": "p2a-large-direct-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "large",
+      "dependency": "direct",
+      "structure": "nested",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-chain3-r2::flat::low::clustered-dispersed",
+      "case_id": "p2a-large-chain3-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "large",
+      "dependency": "chain3",
+      "structure": "flat",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-chain3-r2::flat::high::clustered-dispersed",
+      "case_id": "p2a-large-chain3-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "large",
+      "dependency": "chain3",
+      "structure": "flat",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-chain3-r2::nested::low::clustered-dispersed",
+      "case_id": "p2a-large-chain3-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "large",
+      "dependency": "chain3",
+      "structure": "nested",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-chain3-r2::nested::high::clustered-dispersed",
+      "case_id": "p2a-large-chain3-r2",
+      "split": "evaluation",
+      "replica": 2,
+      "scale": "large",
+      "dependency": "chain3",
+      "structure": "nested",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-chain3-r3::flat::low::clustered-dispersed",
+      "case_id": "p2a-large-chain3-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "large",
+      "dependency": "chain3",
+      "structure": "flat",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-chain3-r3::flat::high::clustered-dispersed",
+      "case_id": "p2a-large-chain3-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "large",
+      "dependency": "chain3",
+      "structure": "flat",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_flat_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_flat_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-chain3-r3::nested::low::clustered-dispersed",
+      "case_id": "p2a-large-chain3-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "large",
+      "dependency": "chain3",
+      "structure": "nested",
+      "redundancy": "low",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_low"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_low"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    },
+    {
+      "pair_id": "p2a-large-chain3-r3::nested::high::clustered-dispersed",
+      "case_id": "p2a-large-chain3-r3",
+      "split": "evaluation",
+      "replica": 3,
+      "scale": "large",
+      "dependency": "chain3",
+      "structure": "nested",
+      "redundancy": "high",
+      "left": {
+        "dispersion": "clustered",
+        "family": "p2a_nested_clustered_high"
+      },
+      "right": {
+        "dispersion": "dispersed",
+        "family": "p2a_nested_dispersed_high"
+      },
+      "held_fixed": [
+        "canonical_facts",
+        "question",
+        "answer",
+        "required_evidence",
+        "scale",
+        "dependency",
+        "structure",
+        "redundancy",
+        "prompt_wrapper",
+        "tokenizer_contract"
+      ],
+      "varies": "dispersion"
+    }
+  ],
+  "supersedes": "phase2c-dispersion-freeze-v0.1",
+  "supersession": {
+    "previous": "phase2c-dispersion-freeze-v0.1",
+    "previous_path": "benchmarks/spec/phase2c-dispersion-freeze.json",
+    "reason": "disambiguate Phase 2D verdicts before opening evaluation",
+    "v0_1_deleted": false,
+    "v0_1_overwritten": false
+  },
+  "eligible_pair": {
+    "must_all": [
+      "satisfies Phase 1C length criterion",
+      "instrumentation/self-check did not fail",
+      "frozen canonical identity / wrapper / tokenizer contract hold"
+    ],
+    "if_length_criterion_fails": "exclude that pair; do not rescue"
+  },
+  "dispersion_specific_signal": {
+    "applies_to": "eligible pairs",
+    "first_check": "length_pi clustered and dispersed have the same routing/operator behavior",
+    "if_length_pi_differs_at_matched_length": "not a BITE signal; record as instrumentation/policy consistency issue",
+    "true_if_any": [
+      "rule_pi operator sequence differs clustered vs dispersed",
+      "rule_pi transformed/no-op status differs clustered vs dispersed",
+      "rule_pi_rebite recovery-fire status differs clustered vs dispersed"
+    ],
+    "not_signal": [
+      "raw payload hash difference (input order differs by design)",
+      "evidence recall difference alone",
+      "provenance difference alone",
+      "T_total difference alone",
+      "length_pi != rule_pi count alone"
+    ],
+    "record_always": [
+      "visible_evidence_recall",
+      "recoverable_evidence_recall",
+      "provenance_completeness",
+      "T_total"
+    ]
+  },
+  "reporting": {
+    "required_counts": [
+      "n_signal",
+      "n_eligible"
+    ],
+    "required_breakdowns": [
+      "scale",
+      "dependency",
+      "structure",
+      "redundancy"
+    ],
+    "one_pair_is_still_signal": true,
+    "no_strong_generalization": true
+  }
+}
