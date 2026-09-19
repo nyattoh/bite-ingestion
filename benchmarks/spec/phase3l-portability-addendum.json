@@ -1,0 +1,24 @@
+{
+  "schema": "bitebench-phase3l-portability-addendum/v0.1",
+  "kind": "metadata_only",
+  "rewrites_phase3l_artifact": false,
+  "rewrites_phase3l_verdict": false,
+  "evaluation_rerun": false,
+  "original_l0": "d365d0b1bd4cb3dcdad617ed4e78df19fdf23ce6",
+  "first_open_result_commit": "fcc3fb0b202410702d0d74aef8899a076f60b3bd",
+  "crlf_portability_amendment": "21dd64d29c15ae055f77d9bbf2b874e607156111",
+  "amendment_after_first_open": true,
+  "amendment_scope": "checkout-newline-independent hash of locked blobs",
+  "unchanged": [
+    "structural_redundancy_v1",
+    "p3k_split",
+    "FAMILY_EXPECT",
+    "evaluation_rows",
+    "verdict_rule"
+  ],
+  "git_blob_sha": {
+    "src/bite_ingestion/profilers/structural_redundancy_v1.py": "aca6fcd6664f9942b9f72a0d2fd171bfbfe41a35",
+    "benchmarks/spec/phase3k-split-manifest.json": "ddfde740ef4c06a688e2a76830fda0ad024bcde2",
+    "artifacts/phase3k/structural-redundancy.json": "d1f3438190f25c0c2b0f0e7451351d5f8a3b81ea"
+  }
+}
