@@ -1,0 +1,7 @@
+src_flash_q012=chip_lock_q012
+note_firmware_q012_00=blob_firmware_q012_00
+note_firmware_q012_01=blob_firmware_q012_01 観測
+dst_chip_lock_q012=ack_chip_lock_q012
+mate_a_q012=crate_a_q012 id=plate_q012
+mate_b_q012=crate_b_q012 id=plate_q012
+mate_c_q012=crate_c_q012 id=plate_q012

@@ -1,0 +1,4581 @@
+{
+  "all_features": [
+    "b",
+    "r",
+    "s",
+    "k",
+    "a",
+    "l",
+    "p",
+    "u"
+  ],
+  "base_main_sha": "dce759efbb94ae941a86c3358b1b717da3224c14",
+  "blocked_reasons": [],
+  "confirmatory": false,
+  "dispersion_operator": {
+    "routing_features_designed_to_observe_it": [],
+    "what_it_changes": "order of the same fact lines; required-evidence char-span positions",
+    "what_it_does_not_change": "fact texts, query, line-text multiset, separator character, gold ids"
+  },
+  "feature_deltas": {
+    "a": {
+      "designed_to_move_with_dispersion": false,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "n_nonzero": 0,
+      "routing": true
+    },
+    "b": {
+      "designed_to_move_with_dispersion": false,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "n_nonzero": 0,
+      "routing": true
+    },
+    "k": {
+      "designed_to_move_with_dispersion": false,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "n_nonzero": 0,
+      "routing": true
+    },
+    "l": {
+      "designed_to_move_with_dispersion": false,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "n_nonzero": 0,
+      "routing": true
+    },
+    "p": {
+      "designed_to_move_with_dispersion": false,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "n_nonzero": 0,
+      "routing": false
+    },
+    "r": {
+      "designed_to_move_with_dispersion": false,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "n_nonzero": 0,
+      "routing": true
+    },
+    "s": {
+      "designed_to_move_with_dispersion": false,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "n_nonzero": 0,
+      "routing": false
+    },
+    "u": {
+      "designed_to_move_with_dispersion": false,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "n_nonzero": 0,
+      "routing": true
+    }
+  },
+  "feature_dispersion_design": {
+    "a": {
+      "designed_to_move_with_dispersion": false,
+      "routing": true,
+      "why": "whole-text anomaly / malformed-JSON of the entire payload"
+    },
+    "b": {
+      "designed_to_move_with_dispersion": false,
+      "routing": true,
+      "why": "newline density and separator-character rate over the whole text"
+    },
+    "k": {
+      "designed_to_move_with_dispersion": false,
+      "routing": true,
+      "why": "ref-like token count over the whole text / line_count"
+    },
+    "l": {
+      "designed_to_move_with_dispersion": false,
+      "permutation_invariant": true,
+      "routing": true,
+      "uses_gold_or_required_evidence_ids": false,
+      "why": "query-token substring hit mass on stripped lines; hits are sorted descending and the top min(3,n) / total is kept. Line order and inter-line distance are discarded. Not positional evidence locality."
+    },
+    "p": {
+      "designed_to_move_with_dispersion": false,
+      "routing": false,
+      "why": "path/version/line-number regex hits on the whole text"
+    },
+    "r": {
+      "designed_to_move_with_dispersion": false,
+      "routing": true,
+      "why": "duplicate stripped-line ratio (bag of lines)"
+    },
+    "s": {
+      "designed_to_move_with_dispersion": false,
+      "routing": false,
+      "why": "JSON/CSV/code heuristics on the whole text"
+    },
+    "u": {
+      "designed_to_move_with_dispersion": false,
+      "routing": true,
+      "used_for_routing": false,
+      "why": "derived from a and (1-l); rule-\u03a0 records u but does not route on it"
+    }
+  },
+  "l_definition": {
+    "designed_to_move_with_dispersion": false,
+    "permutation_invariant": true,
+    "routing": true,
+    "uses_gold_or_required_evidence_ids": false,
+    "why": "query-token substring hit mass on stripped lines; hits are sorted descending and the top min(3,n) / total is kept. Line order and inter-line distance are discarded. Not positional evidence locality."
+  },
+  "n_pairs": 48,
+  "n_phase2d_morphology_matches_live": 48,
+  "n_planned_pairs": 48,
+  "n_profiler_vectors_identical": 48,
+  "n_query_hit_line_index_span_differs": 24,
+  "n_required_span_spread_differs": 48,
+  "n_routing_feature_nonzero": 0,
+  "offline": true,
+  "paid_api": false,
+  "pairs": [
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-direct-r2",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.49612403100775193,
+          "k": 0.0,
+          "l": 0.4166666666666667,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.17499999999999996
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.49612403100775193,
+          "k": 0.0,
+          "l": 0.4166666666666667,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.17499999999999996
+        }
+      },
+      "pair_id": "p2a-small-direct-r2::flat::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.49612403100775193,
+          "k": 0.0,
+          "l": 0.4166666666666667,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.17499999999999996
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.49612403100775193,
+          "k": 0.0,
+          "l": 0.4166666666666667,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.17499999999999996
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 9,
+        "dispersed": 9
+      },
+      "redundancy": "low",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 64,
+        "dispersed": 456
+      },
+      "scale": "small",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-direct-r2",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5292307692307692,
+          "k": 0.0,
+          "l": 0.17857142857142858,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.2464285714285714
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5292307692307692,
+          "k": 0.0,
+          "l": 0.17857142857142858,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.2464285714285714
+        }
+      },
+      "pair_id": "p2a-small-direct-r2::flat::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5292307692307692,
+          "k": 0.0,
+          "l": 0.17857142857142858,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.2464285714285714
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5292307692307692,
+          "k": 0.0,
+          "l": 0.17857142857142858,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.2464285714285714
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 25,
+        "dispersed": 25
+      },
+      "redundancy": "high",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 64,
+        "dispersed": 1240
+      },
+      "scale": "small",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-direct-r2",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8025423728813559,
+          "k": 0.0,
+          "l": 0.46153846153846156,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.5615384615384615
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8025423728813559,
+          "k": 0.0,
+          "l": 0.46153846153846156,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.5615384615384615
+        }
+      },
+      "pair_id": "p2a-small-direct-r2::nested::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8025423728813559,
+          "k": 0.0,
+          "l": 0.46153846153846156,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.5615384615384615
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8025423728813559,
+          "k": 0.0,
+          "l": 0.46153846153846156,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.5615384615384615
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 9,
+        "dispersed": 9
+      },
+      "redundancy": "low",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 95,
+        "dispersed": 735
+      },
+      "scale": "small",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-direct-r2",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8161918328584996,
+          "k": 0.0,
+          "l": 0.20689655172413793,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.6379310344827587
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8161918328584996,
+          "k": 0.0,
+          "l": 0.20689655172413793,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.6379310344827587
+        }
+      },
+      "pair_id": "p2a-small-direct-r2::nested::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8161918328584996,
+          "k": 0.0,
+          "l": 0.20689655172413793,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.6379310344827587
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8161918328584996,
+          "k": 0.0,
+          "l": 0.20689655172413793,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.6379310344827587
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 25,
+        "dispersed": 25
+      },
+      "redundancy": "high",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 95,
+        "dispersed": 2015
+      },
+      "scale": "small",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-direct-r3",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.49612403100775193,
+          "k": 0.0,
+          "l": 0.4166666666666667,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.17499999999999996
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.49612403100775193,
+          "k": 0.0,
+          "l": 0.4166666666666667,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.17499999999999996
+        }
+      },
+      "pair_id": "p2a-small-direct-r3::flat::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.49612403100775193,
+          "k": 0.0,
+          "l": 0.4166666666666667,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.17499999999999996
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.49612403100775193,
+          "k": 0.0,
+          "l": 0.4166666666666667,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.17499999999999996
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 9,
+        "dispersed": 9
+      },
+      "redundancy": "low",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 64,
+        "dispersed": 456
+      },
+      "scale": "small",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-direct-r3",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5292307692307692,
+          "k": 0.0,
+          "l": 0.17857142857142858,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.2464285714285714
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5292307692307692,
+          "k": 0.0,
+          "l": 0.17857142857142858,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.2464285714285714
+        }
+      },
+      "pair_id": "p2a-small-direct-r3::flat::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5292307692307692,
+          "k": 0.0,
+          "l": 0.17857142857142858,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.2464285714285714
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5292307692307692,
+          "k": 0.0,
+          "l": 0.17857142857142858,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.2464285714285714
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 25,
+        "dispersed": 25
+      },
+      "redundancy": "high",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 64,
+        "dispersed": 1240
+      },
+      "scale": "small",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-direct-r3",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8025423728813559,
+          "k": 0.0,
+          "l": 0.46153846153846156,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.5615384615384615
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8025423728813559,
+          "k": 0.0,
+          "l": 0.46153846153846156,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.5615384615384615
+        }
+      },
+      "pair_id": "p2a-small-direct-r3::nested::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8025423728813559,
+          "k": 0.0,
+          "l": 0.46153846153846156,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.5615384615384615
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8025423728813559,
+          "k": 0.0,
+          "l": 0.46153846153846156,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.5615384615384615
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 9,
+        "dispersed": 9
+      },
+      "redundancy": "low",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 95,
+        "dispersed": 735
+      },
+      "scale": "small",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-direct-r3",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8161918328584996,
+          "k": 0.0,
+          "l": 0.20689655172413793,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.6379310344827587
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8161918328584996,
+          "k": 0.0,
+          "l": 0.20689655172413793,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.6379310344827587
+        }
+      },
+      "pair_id": "p2a-small-direct-r3::nested::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8161918328584996,
+          "k": 0.0,
+          "l": 0.20689655172413793,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.6379310344827587
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8161918328584996,
+          "k": 0.0,
+          "l": 0.20689655172413793,
+          "p": 0.0,
+          "r": 0.6153846153846154,
+          "s": 0.0,
+          "u": 0.6379310344827587
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 25,
+        "dispersed": 25
+      },
+      "redundancy": "high",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 95,
+        "dispersed": 2015
+      },
+      "scale": "small",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-chain3-r2",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.49046793760831886,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.49046793760831886,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        }
+      },
+      "pair_id": "p2a-small-chain3-r2::flat::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.49046793760831886,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.49046793760831886,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 10
+      },
+      "redundancy": "low",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 125,
+        "dispersed": 517
+      },
+      "scale": "small",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-chain3-r2",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5253490080822925,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5253490080822925,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.0
+        }
+      },
+      "pair_id": "p2a-small-chain3-r2::flat::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5253490080822925,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5253490080822925,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 26
+      },
+      "redundancy": "high",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 125,
+        "dispersed": 1301
+      },
+      "scale": "small",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-chain3-r2",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8025054466230936,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8025054466230936,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        }
+      },
+      "pair_id": "p2a-small-chain3-r2::nested::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8025054466230936,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8025054466230936,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 10
+      },
+      "redundancy": "low",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 187,
+        "dispersed": 827
+      },
+      "scale": "small",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-chain3-r2",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8156050955414013,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8156050955414013,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.4
+        }
+      },
+      "pair_id": "p2a-small-chain3-r2::nested::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8156050955414013,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8156050955414013,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 26
+      },
+      "redundancy": "high",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 187,
+        "dispersed": 2107
+      },
+      "scale": "small",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-chain3-r3",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.49046793760831886,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.49046793760831886,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        }
+      },
+      "pair_id": "p2a-small-chain3-r3::flat::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.49046793760831886,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.49046793760831886,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 10
+      },
+      "redundancy": "low",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 125,
+        "dispersed": 517
+      },
+      "scale": "small",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-chain3-r3",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5253490080822925,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5253490080822925,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.0
+        }
+      },
+      "pair_id": "p2a-small-chain3-r3::flat::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5253490080822925,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5253490080822925,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 26
+      },
+      "redundancy": "high",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 125,
+        "dispersed": 1301
+      },
+      "scale": "small",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-chain3-r3",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8025054466230936,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8025054466230936,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        }
+      },
+      "pair_id": "p2a-small-chain3-r3::nested::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8025054466230936,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8025054466230936,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 10
+      },
+      "redundancy": "low",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 187,
+        "dispersed": 827
+      },
+      "scale": "small",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-small-chain3-r3",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8156050955414013,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8156050955414013,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.4
+        }
+      },
+      "pair_id": "p2a-small-chain3-r3::nested::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8156050955414013,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8156050955414013,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.5925925925925926,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 26
+      },
+      "redundancy": "high",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 187,
+        "dispersed": 2107
+      },
+      "scale": "small",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-direct-r2",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5231481481481481,
+          "k": 0.0,
+          "l": 0.1388888888888889,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.25833333333333336
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5231481481481481,
+          "k": 0.0,
+          "l": 0.1388888888888889,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.25833333333333336
+        }
+      },
+      "pair_id": "p2a-medium-direct-r2::flat::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5231481481481481,
+          "k": 0.0,
+          "l": 0.1388888888888889,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.25833333333333336
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5231481481481481,
+          "k": 0.0,
+          "l": 0.1388888888888889,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.25833333333333336
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 33,
+        "dispersed": 33
+      },
+      "redundancy": "low",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 66,
+        "dispersed": 1666
+      },
+      "scale": "medium",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-direct-r2",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5340909090909092,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.285
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5340909090909092,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.285
+        }
+      },
+      "pair_id": "p2a-medium-direct-r2::flat::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5340909090909092,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.285
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5340909090909092,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.285
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 97,
+        "dispersed": 97
+      },
+      "redundancy": "high",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 66,
+        "dispersed": 4866
+      },
+      "scale": "medium",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-direct-r2",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8160675772825305,
+          "k": 0.0,
+          "l": 0.16216216216216217,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6513513513513514
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8160675772825305,
+          "k": 0.0,
+          "l": 0.16216216216216217,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6513513513513514
+        }
+      },
+      "pair_id": "p2a-medium-direct-r2::nested::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8160675772825305,
+          "k": 0.0,
+          "l": 0.16216216216216217,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6513513513513514
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8160675772825305,
+          "k": 0.0,
+          "l": 0.16216216216216217,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6513513513513514
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 33,
+        "dispersed": 33
+      },
+      "redundancy": "low",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 97,
+        "dispersed": 2689
+      },
+      "scale": "medium",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-direct-r2",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8204745166959578,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8204745166959578,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        }
+      },
+      "pair_id": "p2a-medium-direct-r2::nested::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8204745166959578,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8204745166959578,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 97,
+        "dispersed": 97
+      },
+      "redundancy": "high",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 97,
+        "dispersed": 7873
+      },
+      "scale": "medium",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-direct-r3",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5231481481481481,
+          "k": 0.0,
+          "l": 0.1388888888888889,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.25833333333333336
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5231481481481481,
+          "k": 0.0,
+          "l": 0.1388888888888889,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.25833333333333336
+        }
+      },
+      "pair_id": "p2a-medium-direct-r3::flat::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5231481481481481,
+          "k": 0.0,
+          "l": 0.1388888888888889,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.25833333333333336
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5231481481481481,
+          "k": 0.0,
+          "l": 0.1388888888888889,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.25833333333333336
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 33,
+        "dispersed": 33
+      },
+      "redundancy": "low",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 66,
+        "dispersed": 1666
+      },
+      "scale": "medium",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-direct-r3",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5340909090909092,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.285
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5340909090909092,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.285
+        }
+      },
+      "pair_id": "p2a-medium-direct-r3::flat::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5340909090909092,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.285
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5340909090909092,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.285
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 97,
+        "dispersed": 97
+      },
+      "redundancy": "high",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 66,
+        "dispersed": 4866
+      },
+      "scale": "medium",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-direct-r3",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8160675772825305,
+          "k": 0.0,
+          "l": 0.16216216216216217,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6513513513513514
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8160675772825305,
+          "k": 0.0,
+          "l": 0.16216216216216217,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6513513513513514
+        }
+      },
+      "pair_id": "p2a-medium-direct-r3::nested::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8160675772825305,
+          "k": 0.0,
+          "l": 0.16216216216216217,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6513513513513514
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8160675772825305,
+          "k": 0.0,
+          "l": 0.16216216216216217,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6513513513513514
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 33,
+        "dispersed": 33
+      },
+      "redundancy": "low",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 97,
+        "dispersed": 2689
+      },
+      "scale": "medium",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-direct-r3",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8204745166959578,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8204745166959578,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        }
+      },
+      "pair_id": "p2a-medium-direct-r3::nested::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8204745166959578,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8204745166959578,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.653061224489796,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 97,
+        "dispersed": 97
+      },
+      "redundancy": "high",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 97,
+        "dispersed": 7873
+      },
+      "scale": "medium",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-chain3-r2",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.519821328866555,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.519821328866555,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        }
+      },
+      "pair_id": "p2a-medium-chain3-r2::flat::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.519821328866555,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.519821328866555,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 34
+      },
+      "redundancy": "low",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 129,
+        "dispersed": 1729
+      },
+      "scale": "medium",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-chain3-r2",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5327589661390504,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5327589661390504,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.0
+        }
+      },
+      "pair_id": "p2a-medium-chain3-r2::flat::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5327589661390504,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5327589661390504,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 98
+      },
+      "redundancy": "high",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 129,
+        "dispersed": 4929
+      },
+      "scale": "medium",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-chain3-r2",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8155076495132128,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8155076495132128,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        }
+      },
+      "pair_id": "p2a-medium-chain3-r2::nested::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8155076495132128,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8155076495132128,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 34
+      },
+      "redundancy": "low",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 191,
+        "dispersed": 2783
+      },
+      "scale": "medium",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-chain3-r2",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8202233250620348,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8202233250620348,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.4
+        }
+      },
+      "pair_id": "p2a-medium-chain3-r2::nested::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8202233250620348,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8202233250620348,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 98
+      },
+      "redundancy": "high",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 191,
+        "dispersed": 7967
+      },
+      "scale": "medium",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-chain3-r3",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.519821328866555,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.519821328866555,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        }
+      },
+      "pair_id": "p2a-medium-chain3-r3::flat::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.519821328866555,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.519821328866555,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 34
+      },
+      "redundancy": "low",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 129,
+        "dispersed": 1729
+      },
+      "scale": "medium",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-chain3-r3",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5327589661390504,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5327589661390504,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.0
+        }
+      },
+      "pair_id": "p2a-medium-chain3-r3::flat::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5327589661390504,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5327589661390504,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 98
+      },
+      "redundancy": "high",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 129,
+        "dispersed": 4929
+      },
+      "scale": "medium",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-chain3-r3",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8155076495132128,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8155076495132128,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        }
+      },
+      "pair_id": "p2a-medium-chain3-r3::nested::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8155076495132128,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8155076495132128,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 34
+      },
+      "redundancy": "low",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 191,
+        "dispersed": 2783
+      },
+      "scale": "medium",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-medium-chain3-r3",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8202233250620348,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8202233250620348,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.4
+        }
+      },
+      "pair_id": "p2a-medium-chain3-r3::nested::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8202233250620348,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8202233250620348,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6464646464646464,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 98
+      },
+      "redundancy": "high",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 191,
+        "dispersed": 7967
+      },
+      "scale": "medium",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-direct-r2",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5451532725766363,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.285
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5451532725766363,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.285
+        }
+      },
+      "pair_id": "p2a-large-direct-r2::flat::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5451532725766363,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.285
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5451532725766363,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.285
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 97,
+        "dispersed": 97
+      },
+      "redundancy": "low",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 64,
+        "dispersed": 4768
+      },
+      "scale": "large",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-direct-r2",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5490306265805001,
+          "k": 0.0,
+          "l": 0.017123287671232876,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.29486301369863016
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5490306265805001,
+          "k": 0.0,
+          "l": 0.017123287671232876,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.29486301369863016
+        }
+      },
+      "pair_id": "p2a-large-direct-r2::flat::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5490306265805001,
+          "k": 0.0,
+          "l": 0.017123287671232876,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.29486301369863016
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5490306265805001,
+          "k": 0.0,
+          "l": 0.017123287671232876,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.29486301369863016
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 289,
+        "dispersed": 289
+      },
+      "redundancy": "high",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 64,
+        "dispersed": 14176
+      },
+      "scale": "large",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-direct-r2",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8226417493007883,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8226417493007883,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        }
+      },
+      "pair_id": "p2a-large-direct-r2::nested::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8226417493007883,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8226417493007883,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 97,
+        "dispersed": 97
+      },
+      "redundancy": "low",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 95,
+        "dispersed": 7775
+      },
+      "scale": "large",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-direct-r2",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8242013261000602,
+          "k": 0.0,
+          "l": 0.020477815699658702,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.6938566552901024
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8242013261000602,
+          "k": 0.0,
+          "l": 0.020477815699658702,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.6938566552901024
+        }
+      },
+      "pair_id": "p2a-large-direct-r2::nested::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8242013261000602,
+          "k": 0.0,
+          "l": 0.020477815699658702,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.6938566552901024
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8242013261000602,
+          "k": 0.0,
+          "l": 0.020477815699658702,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.6938566552901024
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 289,
+        "dispersed": 289
+      },
+      "redundancy": "high",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 95,
+        "dispersed": 23135
+      },
+      "scale": "large",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-direct-r3",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5451532725766363,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.285
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5451532725766363,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.285
+        }
+      },
+      "pair_id": "p2a-large-direct-r3::flat::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5451532725766363,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.285
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5451532725766363,
+          "k": 0.0,
+          "l": 0.05,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.285
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 97,
+        "dispersed": 97
+      },
+      "redundancy": "low",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 64,
+        "dispersed": 4768
+      },
+      "scale": "large",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-direct-r3",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5490306265805001,
+          "k": 0.0,
+          "l": 0.017123287671232876,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.29486301369863016
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5490306265805001,
+          "k": 0.0,
+          "l": 0.017123287671232876,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.29486301369863016
+        }
+      },
+      "pair_id": "p2a-large-direct-r3::flat::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5490306265805001,
+          "k": 0.0,
+          "l": 0.017123287671232876,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.29486301369863016
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5490306265805001,
+          "k": 0.0,
+          "l": 0.017123287671232876,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.29486301369863016
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 289,
+        "dispersed": 289
+      },
+      "redundancy": "high",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 64,
+        "dispersed": 14176
+      },
+      "scale": "large",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-direct-r3",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8226417493007883,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8226417493007883,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        }
+      },
+      "pair_id": "p2a-large-direct-r3::nested::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8226417493007883,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8226417493007883,
+          "k": 0.0,
+          "l": 0.0594059405940594,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.6821782178217821
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 97,
+        "dispersed": 97
+      },
+      "redundancy": "low",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 95,
+        "dispersed": 7775
+      },
+      "scale": "large",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-direct-r3",
+      "dependency": "direct",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8242013261000602,
+          "k": 0.0,
+          "l": 0.020477815699658702,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.6938566552901024
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8242013261000602,
+          "k": 0.0,
+          "l": 0.020477815699658702,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.6938566552901024
+        }
+      },
+      "pair_id": "p2a-large-direct-r3::nested::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8242013261000602,
+          "k": 0.0,
+          "l": 0.020477815699658702,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.6938566552901024
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8242013261000602,
+          "k": 0.0,
+          "l": 0.020477815699658702,
+          "p": 0.0,
+          "r": 0.6620689655172414,
+          "s": 0.0,
+          "u": 0.6938566552901024
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 289,
+        "dispersed": 289
+      },
+      "redundancy": "high",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 95,
+        "dispersed": 23135
+      },
+      "scale": "large",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-chain3-r2",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5438740028635713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5438740028635713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        }
+      },
+      "pair_id": "p2a-large-chain3-r2::flat::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5438740028635713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5438740028635713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 98
+      },
+      "redundancy": "low",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 125,
+        "dispersed": 4829
+      },
+      "scale": "large",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-chain3-r2",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5485766244666713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5485766244666713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.0
+        }
+      },
+      "pair_id": "p2a-large-chain3-r2::flat::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5485766244666713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5485766244666713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 290
+      },
+      "redundancy": "high",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 125,
+        "dispersed": 14237
+      },
+      "scale": "large",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-chain3-r2",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8224051269163106,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8224051269163106,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        }
+      },
+      "pair_id": "p2a-large-chain3-r2::nested::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8224051269163106,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8224051269163106,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 98
+      },
+      "redundancy": "low",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 187,
+        "dispersed": 7867
+      },
+      "scale": "large",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-chain3-r2",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8241144180461446,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8241144180461446,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.4
+        }
+      },
+      "pair_id": "p2a-large-chain3-r2::nested::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8241144180461446,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8241144180461446,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 290
+      },
+      "redundancy": "high",
+      "replica": 2,
+      "required_span_spread": {
+        "clustered": 187,
+        "dispersed": 23227
+      },
+      "scale": "large",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-chain3-r3",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5438740028635713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5438740028635713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        }
+      },
+      "pair_id": "p2a-large-chain3-r3::flat::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5438740028635713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5438740028635713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 98
+      },
+      "redundancy": "low",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 125,
+        "dispersed": 4829
+      },
+      "scale": "large",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-chain3-r3",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5485766244666713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5485766244666713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.0
+        }
+      },
+      "pair_id": "p2a-large-chain3-r3::flat::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.0,
+          "b": 0.5485766244666713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "dispersed": {
+          "a": 0.0,
+          "b": 0.5485766244666713,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 290
+      },
+      "redundancy": "high",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 125,
+        "dispersed": 14237
+      },
+      "scale": "large",
+      "structure": "flat"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-chain3-r3",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8224051269163106,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8224051269163106,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        }
+      },
+      "pair_id": "p2a-large-chain3-r3::nested::low::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8224051269163106,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8224051269163106,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 98
+      },
+      "redundancy": "low",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 187,
+        "dispersed": 7867
+      },
+      "scale": "large",
+      "structure": "nested"
+    },
+    {
+      "abs_delta": {
+        "a": 0.0,
+        "b": 0.0,
+        "k": 0.0,
+        "l": 0.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      },
+      "case_id": "p2a-large-chain3-r3",
+      "dependency": "chain3",
+      "live": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8241144180461446,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8241144180461446,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.4
+        }
+      },
+      "pair_id": "p2a-large-chain3-r3::nested::high::clustered-dispersed",
+      "phase2d_stored": {
+        "abs_delta": {
+          "a": 0.0,
+          "b": 0.0,
+          "k": 0.0,
+          "l": 0.0,
+          "p": 0.0,
+          "r": 0.0,
+          "s": 0.0,
+          "u": 0.0
+        },
+        "clustered": {
+          "a": 0.8,
+          "b": 0.8241144180461446,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "dispersed": {
+          "a": 0.8,
+          "b": 0.8241144180461446,
+          "k": 0.0,
+          "l": 1.0,
+          "p": 0.0,
+          "r": 0.6597938144329897,
+          "s": 0.0,
+          "u": 0.4
+        },
+        "matches_live": true
+      },
+      "query_hit_line_index_span": {
+        "clustered": 2,
+        "dispersed": 290
+      },
+      "redundancy": "high",
+      "replica": 3,
+      "required_span_spread": {
+        "clustered": 187,
+        "dispersed": 23227
+      },
+      "scale": "large",
+      "structure": "nested"
+    }
+  ],
+  "phase2d_artifact": "artifacts/phase2d/confirmatory-offline.json",
+  "phase2d_n_eligible": 48,
+  "phase2d_n_signal": 0,
+  "phase2d_verdict": "PHASE2D_OFFLINE_NO_SIGNAL",
+  "post_hoc": true,
+  "profiler": "deterministic_v0",
+  "purpose": "post-hoc mechanism audit of why Phase 2D reported PHASE2D_OFFLINE_NO_SIGNAL; not a new confirmatory result and not a licence to retune profiler/thresholds on the spent holdout",
+  "research_conclusion": false,
+  "routing_features": [
+    "b",
+    "a",
+    "r",
+    "k",
+    "l",
+    "u"
+  ],
+  "schema": "bite-phase3a-profiler-mechanism-audit/v0.1",
+  "synthetic": true,
+  "thresholds_untouched": {
+    "HIGH": 0.66,
+    "LOW": 0.34,
+    "note": "recorded only; not recalibrated"
+  },
+  "verdict": "PHASE3A_DISPERSION_UNOBSERVABLE"
+}

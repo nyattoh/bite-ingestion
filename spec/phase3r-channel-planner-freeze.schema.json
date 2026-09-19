@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3r-channel-planner-freeze.schema.json",
+  "title": "BITE Phase-3R channel planner protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "generation",
+    "copy_xfer2_cases",
+    "p3f_evaluation_holdout_used",
+    "no_threshold_grid",
+    "reproduction_only_surfaces",
+    "r1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3r-channel-planner-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3r-channel-planner-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE3R_CHANNEL_PLANNER_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE3Q_XFER2_TRANSFER_FAILED"
+    },
+    "generation": { "type": "string", "const": "p3r" },
+    "copy_xfer2_cases": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_threshold_grid": { "type": "boolean", "const": true },
+    "reproduction_only_surfaces": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12
+    },
+    "r1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE3R_CHANNEL_PLANNER_VALIDATED",
+          "PHASE3R_CHANNEL_PLANNER_PARTIAL",
+          "PHASE3R_CHANNEL_PLANNER_BLOCKED"
+        ]
+      }
+    }
+  }
+}

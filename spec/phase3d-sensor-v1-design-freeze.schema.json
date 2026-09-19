@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3d-sensor-v1-design-freeze.schema.json",
+  "title": "BITE Phase-3D dependency-dispersion v1 design freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "routing_connected",
+    "evaluation_holdout_used",
+    "sensor_code_changed",
+    "implementation",
+    "v0_limits_retained",
+    "performance",
+    "edge_rule",
+    "format_scope",
+    "quantities",
+    "fixtures",
+    "expected_relations"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3d-sensor-v1-design-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3d-sensor-v1-design-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": ["PHASE3D_V1_DESIGN_FROZEN", "PHASE3D_V1_DESIGN_BLOCKED"]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "routing_connected": { "type": "boolean", "const": false },
+    "evaluation_holdout_used": { "type": "boolean", "const": false },
+    "sensor_code_changed": { "type": "boolean", "const": false },
+    "v0_overwritten": { "type": "boolean", "const": false },
+    "implementation": { "type": "string", "const": "not_started" },
+    "routing_feature_choice": { "type": "string", "const": "not_decided" },
+    "integrate_threshold": { "type": "null" }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3m-composition-safety.schema.json",
+  "title": "BITE Phase-3M composition safety v0.1",
+  "type": "object",
+  "required": ["schema", "keys", "n_ok", "rows"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3m-composition-safety/v0.1"
+    },
+    "keys": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "n_ok": { "type": "integer", "minimum": 0 },
+    "rows": { "type": "array" }
+  }
+}

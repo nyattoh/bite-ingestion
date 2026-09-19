@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3o-xfer1-freeze.schema.json",
+  "title": "BITE Phase-3O XFER-1 protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "n_surfaces",
+    "p3f_evaluation_holdout_used",
+    "no_phase3m_import",
+    "o1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3o-xfer1-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3o-xfer1-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE3O_XFER1_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_CONFIRMED"
+    },
+    "n_surfaces": { "type": "integer", "const": 104 },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_phase3m_import": { "type": "boolean", "const": true },
+    "o1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE3O_XFER1_TRANSFER_CONFIRMED",
+          "PHASE3O_XFER1_TRANSFER_FAILED",
+          "PHASE3O_XFER1_TRANSFER_BLOCKED"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,2031 @@
+{
+  "n_ok": 40,
+  "n_surfaces": 40,
+  "rows": [
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-disj",
+      "expected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "format": "key_value",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-disj-key_value"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-disj",
+      "expected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "format": "compact_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-disj-compact_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-disj",
+      "expected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "format": "pretty_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-disj-pretty_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-disj",
+      "expected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "format": "reversed_order_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-disj-reversed_order_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-eq2",
+      "expected_sequence": [
+        "REDUCE_v2"
+      ],
+      "format": "key_value",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "REDUCE_v2"
+      ],
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [
+        {
+          "op": "INTEGRATE",
+          "reason": "subsumed_by_reduce"
+        }
+      ],
+      "surface_id": "p3r-b-eq2-key_value"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-eq2",
+      "expected_sequence": [
+        "REDUCE_v2"
+      ],
+      "format": "compact_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "REDUCE_v2"
+      ],
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [
+        {
+          "op": "INTEGRATE",
+          "reason": "subsumed_by_reduce"
+        }
+      ],
+      "surface_id": "p3r-b-eq2-compact_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-eq2",
+      "expected_sequence": [
+        "REDUCE_v2"
+      ],
+      "format": "pretty_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "REDUCE_v2"
+      ],
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [
+        {
+          "op": "INTEGRATE",
+          "reason": "subsumed_by_reduce"
+        }
+      ],
+      "surface_id": "p3r-b-eq2-pretty_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-eq2",
+      "expected_sequence": [
+        "REDUCE_v2"
+      ],
+      "format": "reversed_order_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "REDUCE_v2"
+      ],
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [
+        {
+          "op": "INTEGRATE",
+          "reason": "subsumed_by_reduce"
+        }
+      ],
+      "surface_id": "p3r-b-eq2-reversed_order_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-sub3",
+      "expected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "format": "key_value",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-sub3-key_value"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-sub3",
+      "expected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "format": "compact_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-sub3-compact_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-sub3",
+      "expected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "format": "pretty_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-sub3-pretty_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-sub3",
+      "expected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "format": "reversed_order_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-sub3-reversed_order_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-an2",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "format": "key_value",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [
+        {
+          "op": "INTEGRATE",
+          "reason": "blocked_by_quarantine"
+        }
+      ],
+      "surface_id": "p3r-b-an2-key_value"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-an2",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "format": "compact_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [
+        {
+          "op": "INTEGRATE",
+          "reason": "blocked_by_quarantine"
+        }
+      ],
+      "surface_id": "p3r-b-an2-compact_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-an2",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "format": "pretty_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [
+        {
+          "op": "INTEGRATE",
+          "reason": "blocked_by_quarantine"
+        }
+      ],
+      "surface_id": "p3r-b-an2-pretty_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-an2",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "format": "reversed_order_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [
+        {
+          "op": "INTEGRATE",
+          "reason": "blocked_by_quarantine"
+        }
+      ],
+      "surface_id": "p3r-b-an2-reversed_order_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-an3",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "format": "key_value",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-an3-key_value"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-an3",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "format": "compact_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-an3-compact_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-an3",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "format": "pretty_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-an3-pretty_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-an3",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "format": "reversed_order_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-an3-reversed_order_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-adup",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "format": "key_value",
+      "initial_actionability": {
+        "INTEGRATE": false,
+        "REDUCE_v2": true,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [
+        {
+          "op": "REDUCE_v2",
+          "reason": "blocked_by_quarantine"
+        }
+      ],
+      "surface_id": "p3r-b-adup-key_value"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-adup",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "format": "compact_json",
+      "initial_actionability": {
+        "INTEGRATE": false,
+        "REDUCE_v2": true,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [
+        {
+          "op": "REDUCE_v2",
+          "reason": "blocked_by_quarantine"
+        }
+      ],
+      "surface_id": "p3r-b-adup-compact_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-adup",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "format": "pretty_json",
+      "initial_actionability": {
+        "INTEGRATE": false,
+        "REDUCE_v2": true,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [
+        {
+          "op": "REDUCE_v2",
+          "reason": "blocked_by_quarantine"
+        }
+      ],
+      "surface_id": "p3r-b-adup-pretty_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-adup",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "format": "reversed_order_json",
+      "initial_actionability": {
+        "INTEGRATE": false,
+        "REDUCE_v2": true,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [
+        {
+          "op": "REDUCE_v2",
+          "reason": "blocked_by_quarantine"
+        }
+      ],
+      "surface_id": "p3r-b-adup-reversed_order_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-alld",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "format": "key_value",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-alld-key_value"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-alld",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "format": "compact_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-alld-compact_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-alld",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "format": "pretty_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-alld-pretty_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-alld",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "format": "reversed_order_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-alld-reversed_order_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-twoj",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "format": "key_value",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-twoj-key_value"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-twoj",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "format": "compact_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-twoj-compact_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-twoj",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "format": "pretty_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-twoj-pretty_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": true,
+          "included": true,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-twoj",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "format": "reversed_order_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": true
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "projected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-twoj-reversed_order_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-mid",
+      "expected_sequence": [],
+      "format": "key_value",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-mid-key_value"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-mid",
+      "expected_sequence": [],
+      "format": "compact_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-mid-compact_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-mid",
+      "expected_sequence": [],
+      "format": "pretty_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-mid-pretty_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-mid",
+      "expected_sequence": [],
+      "format": "reversed_order_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": true,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-mid-reversed_order_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-zero",
+      "expected_sequence": [],
+      "format": "key_value",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "projected_sequence": [
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-zero-key_value"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-zero",
+      "expected_sequence": [],
+      "format": "compact_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "projected_sequence": [
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-zero-compact_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-zero",
+      "expected_sequence": [],
+      "format": "pretty_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "projected_sequence": [
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-zero-pretty_json"
+    },
+    {
+      "actionability_before_each_step": [
+        {
+          "actionable": false,
+          "included": false,
+          "op": "UNTANGLE"
+        },
+        {
+          "actionable": false,
+          "included": false,
+          "op": "REDUCE_v2"
+        },
+        {
+          "actionable": true,
+          "included": true,
+          "op": "INTEGRATE"
+        }
+      ],
+      "case_id": "p3r-b-zero",
+      "expected_sequence": [],
+      "format": "reversed_order_json",
+      "initial_actionability": {
+        "INTEGRATE": true,
+        "REDUCE_v2": false,
+        "UNTANGLE": false
+      },
+      "integrity": {
+        "included_actionable_at_fire": true,
+        "no_actionability_drift": true,
+        "ok": true,
+        "replay_equals_plan": true,
+        "suppressed_non_actionable_at_fire": true
+      },
+      "ok": true,
+      "plan_ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "projected_sequence": [
+        "INTEGRATE"
+      ],
+      "safety_ok": true,
+      "suppressed_actions": [],
+      "surface_id": "p3r-b-zero-reversed_order_json"
+    }
+  ],
+  "schema": "bite-phase3r-planner-integrity/v0.1"
+}

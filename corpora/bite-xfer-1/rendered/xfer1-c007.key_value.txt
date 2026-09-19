@@ -1,0 +1,6 @@
+gate_inc_c007=node_inc_c007 id=lot_c007
+bin_node_inc_c007=ack_inc_c007 id=lot_c007
+alert_c007=worker dump TRACEBACK
+mate_c007=crate_c007 id=lot_c007
+note_incident_c007_20=blob_incident_c007_20
+note_incident_c007_21=blob_incident_c007_21

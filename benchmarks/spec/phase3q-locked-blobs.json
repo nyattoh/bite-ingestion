@@ -1,0 +1,28 @@
+{
+  "git_blob_sha": {
+    "src/bite_eval/composition_safety_v2.py": "85560279375b30f737eb3825cce72373be70488e",
+    "src/bite_ingestion/logical_record.py": "c6f8cdd455cbc6814141fdb95458a72cc47b7af0",
+    "src/bite_ingestion/operators/integrate.py": "68e34becd80e7e803f511ec57ea7a23c2aaa1240",
+    "src/bite_ingestion/operators/preflight.py": "b3cc6946f515b3ca6f025500a4ffdad45c111eea",
+    "src/bite_ingestion/operators/reduce_v2.py": "d4bafba7dfdd048a0ccad404a8f706202e2157b5",
+    "src/bite_ingestion/operators/untangle.py": "2951b7542f96674930e750e438891ca772b46896",
+    "src/bite_ingestion/packet_contract.py": "ffd059958bb154c70218715d81fd37d577c55367",
+    "src/bite_ingestion/policies/conditional_texture_policy_v2.py": "848e1e65bf370fb7203be038630b95c61fc763cb",
+    "src/bite_ingestion/profilers/dependency_dispersion_v1.py": "890d777bb8179df27c8aeba35f1efebc133dd8eb",
+    "src/bite_ingestion/profilers/structural_redundancy_v2.py": "8960396c9a91872a1bfb0ccdaeae834d872cf12e"
+  },
+  "no_new_threshold": true,
+  "no_operator_change": true,
+  "no_policy_change": true,
+  "no_predicate_retune": true,
+  "no_safety_evaluator_change": true,
+  "no_sensor_change": true,
+  "on_failed": "do not retune predicates, sensors, or operators in this PR",
+  "phase3o_o0_sha": "76998156d3cbf67fc0a53e151688e46bd3c26dc7",
+  "phase3o_verdict": "PHASE3O_XFER1_TRANSFER_FAILED",
+  "phase3p_freeze_sha": "4756acbb09e3df59dbe4832e2888c35a9cd9c37b",
+  "phase3p_head_sha": "833bb56eec52260bc9a424e6d0ad8af397eb2604",
+  "phase3p_primary_artifact": "e45d6255be3495cadfbad11cd64e206d92a17c38",
+  "phase3p_primary_path": "artifacts/phase3p/record-alignment.json",
+  "schema": "bitebench-phase3q-locked-blobs/v0.1"
+}

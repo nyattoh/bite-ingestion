@@ -1,0 +1,14 @@
+src_scope_q021=star_lock_q021
+note_astro_q021_00=blob_astro_q021_00
+note_astro_q021_01=blob_astro_q021_01 観測
+note_astro_q021_02=naïve blob_astro_q021_02
+note_astro_q021_03=blob_astro_q021_03 shift = 1
+note_astro_q021_04=blob_astro_q021_04 said "ok"
+note_astro_q021_05=α blob_astro_q021_05
+note_astro_q021_06=NGC 1300 blob_astro_q021_06
+note_astro_q021_07=blob_astro_q021_07
+dst_star_lock_q021=ack_star_lock_q021
+copy_main_q021=same_main_q021_row
+gap_main_q021=void_main_q021
+copy_main_q021=same_main_q021_row
+alert_q021=CCD readout FATAL

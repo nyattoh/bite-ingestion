@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3p-record-alignment-freeze.schema.json",
+  "title": "BITE Phase-3P record alignment protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "generation",
+    "copy_xfer1_cases",
+    "p3f_evaluation_holdout_used",
+    "no_new_threshold",
+    "reproduction_only_surfaces",
+    "p1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3p-record-alignment-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3p-record-alignment-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE3P_RECORD_ALIGNMENT_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE3O_XFER1_TRANSFER_FAILED"
+    },
+    "generation": { "type": "string", "const": "p3p" },
+    "copy_xfer1_cases": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_new_threshold": { "type": "boolean", "const": true },
+    "reproduction_only_surfaces": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "p1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE3P_RECORD_ALIGNMENT_VALIDATED",
+          "PHASE3P_RECORD_ALIGNMENT_PARTIAL",
+          "PHASE3P_RECORD_ALIGNMENT_BLOCKED"
+        ]
+      }
+    }
+  }
+}
