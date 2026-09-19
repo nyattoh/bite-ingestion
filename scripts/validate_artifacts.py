@@ -1215,6 +1215,87 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase3q} verdict={data.get('verdict')}")
 
+    from bite_bench.phase3r import validate_phase3r_freeze
+    from bite_eval.phase3r_eval import validate_phase3r_result
+
+    phase3r_freeze = args.root / "benchmarks" / "spec" / "phase3r-channel-planner-freeze.json"
+    if phase3r_freeze.is_file():
+        n_checked += 1
+        data = json.loads(phase3r_freeze.read_text(encoding="utf-8"))
+        errs = list(validate_phase3r_freeze(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3r-channel-planner-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3r freeze jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3r_freeze}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3r_freeze} verdict={data.get('verdict')}")
+
+    phase3r = args.root / "artifacts" / "phase3r" / "channel-planner.json"
+    if phase3r.is_file():
+        n_checked += 1
+        data = json.loads(phase3r.read_text(encoding="utf-8"))
+        errs = list(validate_phase3r_result(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3r-channel-planner.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3r jsonschema: {exc}")
+        for extra, extra_schema in (
+            (
+                args.root / "artifacts" / "phase3r" / "channel-separation.json",
+                args.root / "spec" / "phase3r-channel-separation.schema.json",
+            ),
+            (
+                args.root / "artifacts" / "phase3r" / "planner-integrity.json",
+                args.root / "spec" / "phase3r-planner-integrity.schema.json",
+            ),
+            (
+                args.root / "artifacts" / "phase3r" / "composition-safety.json",
+                args.root / "spec" / "phase3r-composition-safety.schema.json",
+            ),
+            (
+                args.root / "artifacts" / "phase3r" / "xfer2-regression.json",
+                args.root / "spec" / "phase3r-xfer2-regression.schema.json",
+            ),
+        ):
+            if extra.is_file() and extra_schema.is_file():
+                extra_doc = json.loads(extra.read_text(encoding="utf-8"))
+                try:
+                    import jsonschema  # type: ignore
+
+                    jsonschema.validate(
+                        extra_doc, json.loads(extra_schema.read_text(encoding="utf-8"))
+                    )
+                except ImportError:
+                    pass
+                except Exception as exc:  # noqa: BLE001
+                    errs.append(f"phase3r extra jsonschema {extra.name}: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3r}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3r} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1

@@ -74,6 +74,7 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 3O BITE-XFER-1 transfer: **PHASE3O_XFER1_TRANSFER_FAILED** (104 surfaces; routing/cross-format identity held; mixed_order sensor/operator mismatch + pretty_json composition safety; no retune; p3f evaluation sealed)
 - Phase 3P record alignment v2: **PHASE3P_RECORD_ALIGNMENT_VALIDATED** (fresh p3p; sensor/operator biconditional; lineage-aware safety; Phase 3O remains FAILED; p3f sealed)
 - Phase 3Q BITE-XFER-2 transfer: **PHASE3Q_XFER2_TRANSFER_FAILED** (112 surfaces; 100/112 ok; operator_interference on overlap/anomaly-join adversarial; mid case gated; no retune; p3f sealed)
+- Phase 3R relation-channel + projected planner: **PHASE3R_CHANNEL_PLANNER_VALIDATED** (fresh p3r; v2 reference channel; projected actionability; T_high=4 carry-forward; Phase 3Q remains FAILED; p3f sealed)
 - **Next**: do not retune profiler / thresholds / routing on the spent Phase 2 holdout
 
 See:
@@ -139,3 +140,6 @@ See:
 - [`docs/hand_over/PHASE3Q-BITE-XFER2.md`](docs/hand_over/PHASE3Q-BITE-XFER2.md)
 - [`benchmarks/spec/phase3q-xfer2-freeze.json`](benchmarks/spec/phase3q-xfer2-freeze.json)
 - [`artifacts/phase3q/xfer2-transfer.json`](artifacts/phase3q/xfer2-transfer.json)
+- [`docs/hand_over/PHASE3R-CHANNEL-PLANNER.md`](docs/hand_over/PHASE3R-CHANNEL-PLANNER.md)
+- [`benchmarks/spec/phase3r-channel-planner-freeze.json`](benchmarks/spec/phase3r-channel-planner-freeze.json)
+- [`artifacts/phase3r/channel-planner.json`](artifacts/phase3r/channel-planner.json)

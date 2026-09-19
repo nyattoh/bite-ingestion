@@ -320,5 +320,181 @@ def write_freeze() -> Path:
     return FREEZE_PATH
 
 
+FORBIDDEN_BODY = (
+    "texture",
+    "REDUCE",
+    "UNTANGLE",
+    "INTEGRATE",
+    "expected_sequence",
+    "xfer2-",
+    "p3q-",
+    "p3p-",
+    "p3m-",
+    "p3f-",
+    "hop_p3m",
+)
+
+
+def _stem(case_id: str) -> str:
+    return case_id.replace("-", "_")
+
+
+def _fill(cid: str, n: int, start: int = 0) -> list[tuple[str, str]]:
+    return [
+        (f"note_canal_{cid}_{i:02d}", f"blob_canal_{cid}_{i:02d}")
+        for i in range(start, start + n)
+    ]
+
+
+def _hop(cid: str, distance: int) -> list[tuple[str, str]]:
+    n_between = max(int(distance) - 1, 0)
+    return [
+        (f"src_pier_{cid}", f"tide_lock_{cid}"),
+        *_fill(cid, n_between),
+        (f"dst_tide_lock_{cid}", f"wake_{cid}"),
+    ]
+
+
+def _id_join(cid: str, n: int = 2, *, fatal_index: int | None = None) -> list[tuple[str, str]]:
+    token = f"id=folio_{cid}"
+    rows = []
+    for i in range(n):
+        value = f"crate_{chr(97 + i)}_{cid} {token}"
+        if fatal_index == i:
+            value = f"{value} CCD readout FATAL"
+        rows.append((f"mate_{chr(97 + i)}_{cid}", value))
+    return rows
+
+
+def _key_join(cid: str, n: int = 2) -> list[tuple[str, str]]:
+    token = f"key=vat_{cid}"
+    return [
+        (f"alt_{chr(97 + i)}_{cid}", f"hold_{chr(97 + i)}_{cid} {token}") for i in range(n)
+    ]
+
+
+def _dup(cid: str, tag: str = "main") -> list[tuple[str, str]]:
+    pair = (f"copy_{tag}_{cid}", f"same_{tag}_{cid}_row")
+    return [pair, pair]
+
+
+def records_for(case_id: str) -> list[tuple[str, str]]:
+    cid = _stem(case_id)
+    if case_id == "p3r-a-zfil":
+        return _fill(cid, 6)
+    if case_id == "p3r-a-zjoin":
+        return [*_id_join(cid), *_key_join(cid)]
+    if case_id.startswith("p3r-a-"):
+        rest = case_id.removeprefix("p3r-a-")
+        dist, pert = rest.split("-", 1)
+        rows = _hop(cid, DISTANCES[dist])
+        if pert == "adj":
+            rows.extend(_id_join(cid))
+        elif pert == "far":
+            rows.extend(_fill(cid, 5, start=20))
+            rows.extend(_key_join(cid))
+        elif pert == "mix":
+            rows.extend(_id_join(cid))
+            rows.extend(_fill(cid, 5, start=20))
+            rows.extend(_key_join(cid))
+        return rows
+    if case_id == "p3r-b-mid":
+        rows = _hop(cid, 3)
+        rows.extend(_dup(cid))
+        rows.extend(_id_join(cid))
+        return rows
+    if case_id == "p3r-b-zero":
+        return [*_fill(cid, 6), *_id_join(cid)]
+    rows = _hop(cid, 9)
+    if case_id == "p3r-b-disj":
+        rows.extend(_dup(cid))
+        rows.extend(_id_join(cid))
+        return rows
+    if case_id == "p3r-b-eq2":
+        token = f"id=folio_{cid}"
+        pair = (f"copy_ov_{cid}", f"{token} same_{cid}_row")
+        rows.extend([pair, pair])
+        return rows
+    if case_id == "p3r-b-sub3":
+        token = f"id=folio_{cid}"
+        pair = (f"copy_sub_{cid}", f"{token} same_{cid}_row")
+        rows.extend([pair, pair, (f"mate_c_{cid}", f"crate_c_{cid} {token}")])
+        return rows
+    if case_id == "p3r-b-an2":
+        rows.extend(_id_join(cid, fatal_index=0))
+        return rows
+    if case_id == "p3r-b-an3":
+        rows.extend(_id_join(cid, n=3, fatal_index=0))
+        return rows
+    if case_id == "p3r-b-adup":
+        pair = (f"copy_al_{cid}", "CCD readout FATAL same_al_row")
+        rows.extend([pair, pair])
+        return rows
+    if case_id == "p3r-b-alld":
+        rows.extend(_dup(cid))
+        rows.append((f"alert_{cid}", "CCD readout FATAL"))
+        rows.extend(_id_join(cid))
+        return rows
+    if case_id == "p3r-b-twoj":
+        rows.extend(_id_join(cid, fatal_index=0))
+        rows.extend(_key_join(cid))
+        return rows
+    raise KeyError(case_id)
+
+
+def render_records(records: list[tuple[str, str]], fmt: str) -> str:
+    if fmt == "key_value":
+        return "\n".join(f"{key}={value}" for key, value in records) + "\n"
+    if fmt == "reversed_order_json":
+        objs = [{"v": value, "k": key} for key, value in records]
+        return json.dumps(objs, separators=(",", ":"))
+    objs = [{"k": key, "v": value} for key, value in records]
+    if fmt == "pretty_json":
+        return json.dumps(objs, indent=2)
+    if fmt == "compact_json":
+        return json.dumps(objs, separators=(",", ":"))
+    raise ValueError(f"unknown format {fmt}")
+
+
+def dest_index_for(case_id: str) -> int | None:
+    if case_id in {"p3r-a-zfil", "p3r-a-zjoin", "p3r-b-zero"}:
+        return None
+    if case_id == "p3r-b-mid":
+        return 3
+    if case_id.startswith("p3r-a-"):
+        dist = case_id.removeprefix("p3r-a-").split("-", 1)[0]
+        return DISTANCES[dist]
+    return 9
+
+
+def development_surfaces() -> list[dict[str, Any]]:
+    surfaces: list[dict[str, Any]] = []
+    for spec in planned_track_a_cases() + planned_track_b_cases():
+        case_id = str(spec["case_id"])
+        records = records_for(case_id)
+        for fmt in spec["formats"]:
+            body = render_records(records, str(fmt))
+            surfaces.append(
+                {
+                    "surface_id": f"{case_id}-{fmt}",
+                    "case_id": case_id,
+                    "track": spec["track"],
+                    "format": fmt,
+                    "document": body,
+                    "n_records": len(records),
+                    "distance": spec.get("distance"),
+                    "perturbation": spec.get("perturbation"),
+                    "n_reference_edges": spec.get("n_reference_edges"),
+                    "expected_sequence": list(spec.get("expected_sequence") or []),
+                    "dest_index": dest_index_for(case_id),
+                }
+            )
+    return surfaces
+
+
+def forbidden_hits(text: str) -> list[str]:
+    return [token for token in FORBIDDEN_BODY if token in text]
+
+
 if __name__ == "__main__":
     write_freeze()

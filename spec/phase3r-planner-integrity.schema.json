@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3r-planner-integrity.schema.json",
+  "title": "BITE Phase-3R planner integrity v0.1",
+  "type": "object",
+  "required": ["schema", "n_ok", "n_surfaces", "rows"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3r-planner-integrity/v0.1"
+    },
+    "n_ok": { "type": "integer", "minimum": 0 },
+    "n_surfaces": { "type": "integer", "minimum": 0 },
+    "rows": { "type": "array" }
+  }
+}
