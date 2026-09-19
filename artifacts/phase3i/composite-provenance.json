@@ -1,0 +1,131 @@
+{
+  "blocked_reasons": [],
+  "locked_candidate": "A_mean_edge_distance",
+  "locked_thresholds": {
+    "T_high": 4,
+    "T_low": 1
+  },
+  "malformed": [
+    {
+      "case_id": "p3i-malformed-joined-from-only",
+      "defect": "joined_from_without_composite_provenance",
+      "fail_closed": true,
+      "ok": true
+    },
+    {
+      "case_id": "p3i-malformed-fake-span",
+      "defect": "composite_with_source_exact_span",
+      "fail_closed": true,
+      "ok": true
+    }
+  ],
+  "n_malformed": 2,
+  "n_well_formed": 6,
+  "offline": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3h_verdict_unchanged": "PHASE3H_CONDITIONAL_MAP_REQUIRED",
+  "protocol_commit_sha": "e6bc818ec37c2b31f33a800b4e724b10acbfb887",
+  "protocol_revision": "phase3i-composite-provenance-freeze-v0.1",
+  "research_conclusion": false,
+  "revision": "phase3i-composite-provenance-v0.1",
+  "routing_connected": false,
+  "rows": [
+    {
+      "case_id": "p3i-same-uri-2way",
+      "conservation_untraced": [],
+      "deterministic": true,
+      "expect_join": true,
+      "generation": "p3i",
+      "join_plan_matches_sources": true,
+      "joined": true,
+      "lineage_recall": 1.0,
+      "ok": true,
+      "op_status": "ok",
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3i-three-way",
+      "conservation_untraced": [],
+      "deterministic": true,
+      "expect_join": true,
+      "generation": "p3i",
+      "join_plan_matches_sources": true,
+      "joined": true,
+      "lineage_recall": 1.0,
+      "ok": true,
+      "op_status": "ok",
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3i-mixed-uri",
+      "conservation_untraced": [],
+      "deterministic": true,
+      "expect_join": true,
+      "generation": "p3i",
+      "join_plan_matches_sources": true,
+      "joined": true,
+      "lineage_recall": 1.0,
+      "ok": true,
+      "op_status": "ok",
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3i-passthrough",
+      "conservation_untraced": [],
+      "deterministic": true,
+      "expect_join": false,
+      "generation": "p3i",
+      "join_plan_matches_sources": true,
+      "joined": false,
+      "lineage_recall": 1.0,
+      "ok": true,
+      "op_status": "ok",
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3i-dep-edge",
+      "conservation_untraced": [],
+      "deterministic": true,
+      "expect_join": true,
+      "generation": "p3i",
+      "join_plan_matches_sources": true,
+      "joined": true,
+      "lineage_recall": 1.0,
+      "ok": true,
+      "op_status": "ok",
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3i-explicit-key",
+      "conservation_untraced": [],
+      "deterministic": true,
+      "expect_join": true,
+      "generation": "p3i",
+      "join_plan_matches_sources": true,
+      "joined": true,
+      "lineage_recall": 1.0,
+      "ok": true,
+      "op_status": "ok",
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "split": "development"
+    }
+  ],
+  "rule_policy_changed": false,
+  "rule_policy_implemented": false,
+  "schema": "bite-phase3i-composite-provenance/v0.1",
+  "synthetic": true,
+  "v1_sensor_changed": false,
+  "verdict": "PHASE3I_COMPOSITE_PROVENANCE_VALIDATED"
+}

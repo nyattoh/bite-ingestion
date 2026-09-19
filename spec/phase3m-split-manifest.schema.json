@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3m-split-manifest.schema.json",
+  "title": "BITE Phase-3M split manifest v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "generation",
+    "evaluation_sealed",
+    "calibration_replicas",
+    "evaluation_replicas"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3m-split-manifest/v0.1"
+    },
+    "generation": { "type": "string", "const": "p3m" },
+    "evaluation_sealed": { "type": "boolean", "const": true },
+    "calibration_replicas": {
+      "type": "array",
+      "const": [0, 1]
+    },
+    "evaluation_replicas": {
+      "type": "array",
+      "const": [2, 3]
+    }
+  }
+}
