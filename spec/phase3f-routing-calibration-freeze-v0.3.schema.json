@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3f-routing-calibration-freeze-v0.3.schema.json",
+  "title": "BITE Phase-3F routing calibration protocol freeze v0.3",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "supersedes",
+    "verdict",
+    "paid_api",
+    "routing_connected",
+    "evaluation_holdout_used",
+    "calibration_measured",
+    "evaluation_outcomes_open",
+    "thresholds_set",
+    "v1_sensor_changed",
+    "rule_policy_changed",
+    "required_formats",
+    "metric_roles",
+    "candidates",
+    "threshold_search",
+    "adversarial",
+    "operator_maps"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3f-routing-calibration-freeze/v0.3"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3f-routing-calibration-freeze-v0.3"
+    },
+    "supersedes": {
+      "type": "string",
+      "const": "phase3f-routing-calibration-freeze-v0.2"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE3F_ROUTING_CALIBRATION_PROTOCOL_FROZEN",
+        "PHASE3F_PROTOCOL_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "routing_connected": { "type": "boolean", "const": false },
+    "evaluation_holdout_used": { "type": "boolean", "const": false },
+    "calibration_measured": { "type": "boolean", "const": false },
+    "evaluation_outcomes_open": { "type": "boolean", "const": false },
+    "thresholds_set": { "type": "boolean", "const": false },
+    "v1_sensor_changed": { "type": "boolean", "const": false },
+    "rule_policy_changed": { "type": "boolean", "const": false }
+  }
+}
