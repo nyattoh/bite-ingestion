@@ -79,7 +79,8 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 3T exact reference identity v3: **PHASE3T_EXACT_REFERENCE_VALIDATED** (fresh p3t; full-token exact edges; T_high=4 carry-forward; Phase 3S/3Q remain FAILED; p3f sealed)
 - Phase 4A REALSTRUCT-1 corpus freeze: **PHASE4A_REAL_CORPUS_FROZEN** (12 public key=value configs; scorer-only annotation; no BITE run; Phase 3S/3Q remain FAILED; p3f sealed)
 - Phase 4B REALSTRUCT-1 development adapter: **PHASE4B_REAL_ADAPTER_READY** (dev 3 only; source-exact dual-plane adapter; eval 9 sealed; no baseline; Phase 3S/3Q remain FAILED; p3f sealed)
-- **Next**: Phase 4C/eval measurement on the frozen evaluation 9 bytes; do not invent XFER-3; do not swap REALSTRUCT-1 sources; do not retune T_high
+- Phase 4C REALSTRUCT-1 holdout first-open: **PHASE4C_REAL_HOLDOUT_MEASURED** (frozen eval 9 once; raw_full/adapter_only ablation; no retune; Phase 3S/3Q remain FAILED; p3f sealed)
+- **Next**: do not invent XFER-3; do not swap REALSTRUCT-1 sources; do not retune T_high on this holdout
 
 See:
 - [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
@@ -160,3 +161,6 @@ See:
 - [`docs/hand_over/PHASE4B-REALSTRUCT1-DEV-ADAPTER.md`](docs/hand_over/PHASE4B-REALSTRUCT1-DEV-ADAPTER.md)
 - [`benchmarks/spec/phase4b-scorer-addendum-freeze.json`](benchmarks/spec/phase4b-scorer-addendum-freeze.json)
 - [`artifacts/phase4b/real-adapter.json`](artifacts/phase4b/real-adapter.json)
+- [`docs/hand_over/PHASE4C-REALSTRUCT1-FIRST-OPEN.md`](docs/hand_over/PHASE4C-REALSTRUCT1-FIRST-OPEN.md)
+- [`benchmarks/spec/phase4c-holdout-first-open-freeze.json`](benchmarks/spec/phase4c-holdout-first-open-freeze.json)
+- [`artifacts/phase4c/real-holdout.json`](artifacts/phase4c/real-holdout.json)

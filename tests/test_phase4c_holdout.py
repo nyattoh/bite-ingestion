@@ -33,6 +33,7 @@ from bite_eval.chain_span_reachable import (
     chain_span_reachable,
     chain_span_simple_path,
 )
+from bite_eval.phase4c_eval import RESULT_PATH, validate_phase4c_result
 from bite_ingestion.adapters.realstruct1_adapter_v1 import adapt
 from bite_ingestion.profilers import dependency_dispersion_v3 as v3mod
 from bite_ingestion.profilers.dependency_dispersion_v3 import measure as measure_v3
@@ -122,3 +123,20 @@ def test_dev3_gate_features_match_under_chain_span_replacement() -> None:
             assert _gate(with_rep) == _gate(dummy)
     finally:
         v3mod._chain_span = saved
+
+
+def test_c1_holdout_measured_eval_nine() -> None:
+    result = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+    assert validate_phase4c_result(result) == []
+    jsonschema.validate(
+        result,
+        json.loads((ROOT / "spec" / "phase4c-real-holdout.schema.json").read_text(encoding="utf-8")),
+    )
+    assert result["verdict"] == "PHASE4C_REAL_HOLDOUT_MEASURED"
+    assert result["n_ok"] == 9
+    assert result["n_eval"] == 9
+    assert result["eval_opened"] is True
+    assert result["p3f_evaluation_holdout_used"] is False
+    assert result["errors"] == []
+    assert [row["source_id"] for row in result["rows"]] == list(EVAL_SOURCE_IDS)
+    assert "rs1-dotenv-linkding" not in [row["source_id"] for row in result["rows"]]
