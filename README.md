@@ -70,6 +70,7 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 3K structural redundancy v1: **PHASE3K_REDUNDANCY_SENSOR_READY** (logical-record duplicate_unit_ratio; v0.r retained; RulePolicy unconnected)
 - Phase 3L redundancy first-open: **PHASE3L_REDUNDANCY_HOLDOUT_CONFIRMED** (p3k replicas 2/3; same frozen families / new replica values; RulePolicy unconnected)
 - Phase 3M gold-free conditional routing: **PHASE3M_CONDITIONAL_ROUTING_READY** (p3m development 0/1; `conditional_texture_policy_v1`; RulePolicy retained; p3m/p3f evaluation sealed)
+- Phase 3N conditional routing first-open: **PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_CONFIRMED** (p3m replicas 2/3; same frozen p3m texture families / new replica identifiers; p3f evaluation sealed)
 - **Next**: do not retune profiler / thresholds / routing on the spent Phase 2 holdout
 
 See:
@@ -123,3 +124,6 @@ See:
 - [`benchmarks/spec/phase3m-conditional-routing-freeze.json`](benchmarks/spec/phase3m-conditional-routing-freeze.json)
 - [`benchmarks/spec/phase3m-split-manifest.json`](benchmarks/spec/phase3m-split-manifest.json)
 - [`artifacts/phase3m/conditional-routing.json`](artifacts/phase3m/conditional-routing.json)
+- [`docs/hand_over/PHASE3N-CONDITIONAL-ROUTING-FIRST-OPEN.md`](docs/hand_over/PHASE3N-CONDITIONAL-ROUTING-FIRST-OPEN.md)
+- [`benchmarks/spec/phase3n-conditional-routing-first-open-freeze.json`](benchmarks/spec/phase3n-conditional-routing-first-open-freeze.json)
+- [`artifacts/phase3n/conditional-routing-first-open.json`](artifacts/phase3n/conditional-routing-first-open.json)

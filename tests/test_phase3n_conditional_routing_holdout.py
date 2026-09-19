@@ -1,6 +1,6 @@
-"""Phase 3N conditional routing first-open freeze (N0) tests.
+"""Phase 3N conditional routing first-open freeze (N0) and holdout (N1) tests.
 
-Does not run the policy. Does not open p3f. Does not remeasure development.
+Does not change predicates, fixtures, or RulePolicy. Does not open p3f.
 """
 
 from __future__ import annotations
@@ -26,6 +26,7 @@ from bite_bench.phase3n import (
     M1_COMMIT_SHA,
     N_EVAL_SURFACES,
     PROTOCOL_FROZEN,
+    VERDICT_CONFIRMED,
     evaluation_case_ids,
     evaluation_surfaces,
     freeze_manifest,
@@ -34,12 +35,30 @@ from bite_bench.phase3n import (
     split_evaluation_ids,
     validate_phase3n_freeze,
 )
+from bite_eval.phase3n_eval import (
+    PROTOCOL_COMMIT_SHA,
+    RESULT_PATH,
+    ROUTING_PATH,
+    SAFETY_PATH,
+    packet_from_surface,
+    run_evaluation,
+    validate_phase3n_result,
+)
+from bite_ingestion.policies.conditional_texture_policy_v1 import (
+    ConditionalTexturePolicyV1,
+    PolicyLeakError,
+)
+from bite_ingestion.policies.leak_guard import OracleLeakError
 
 ROOT = Path(__file__).resolve().parents[1]
 FREEZE = ROOT / "benchmarks" / "spec" / "phase3n-conditional-routing-first-open-freeze.json"
 LOCKED = ROOT / "benchmarks" / "spec" / "phase3n-locked-blobs.json"
 SCHEMA = ROOT / "spec" / "phase3n-conditional-routing-first-open-freeze.schema.json"
 GEN_PY = ROOT / "src" / "bite_bench" / "phase3n.py"
+EXP_PY = ROOT / "src" / "bite_eval" / "phase3n_eval.py"
+EXP_SCHEMA = ROOT / "spec" / "phase3n-conditional-routing-first-open.schema.json"
+ROUTING_SCHEMA = ROOT / "spec" / "phase3n-routing-comparison.schema.json"
+SAFETY_SCHEMA = ROOT / "spec" / "phase3n-composition-safety.schema.json"
 POLICY_PY = ROOT / "src" / "bite_ingestion" / "policies" / "rule_policy.py"
 PHASE3M = ROOT / "artifacts" / "phase3m" / "conditional-routing.json"
 
@@ -104,5 +123,75 @@ def test_n0_does_not_measure_or_open_p3f() -> None:
         )
     ) == split_manifest()
     assert "class RulePolicy" in POLICY_PY.read_text(encoding="utf-8")
+    for path, expected in LOCKED_GIT_BLOBS.items():
+        assert git_blob_sha(path) == expected
+
+
+def test_n1_records_n0_sha_and_matches_artifacts() -> None:
+    doc = run_evaluation()
+    committed = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+    assert json.loads(json.dumps(doc, sort_keys=True)) == json.loads(
+        json.dumps(committed, sort_keys=True)
+    )
+    assert validate_phase3n_result(committed) == []
+    jsonschema.validate(committed, json.loads(EXP_SCHEMA.read_text(encoding="utf-8")))
+    jsonschema.validate(
+        json.loads(ROUTING_PATH.read_text(encoding="utf-8")),
+        json.loads(ROUTING_SCHEMA.read_text(encoding="utf-8")),
+    )
+    jsonschema.validate(
+        json.loads(SAFETY_PATH.read_text(encoding="utf-8")),
+        json.loads(SAFETY_SCHEMA.read_text(encoding="utf-8")),
+    )
+    assert committed["protocol_commit_sha"] == PROTOCOL_COMMIT_SHA
+    assert committed["m0_commit_sha"] == M0_COMMIT_SHA
+    assert committed["m1_commit_sha"] == M1_COMMIT_SHA
+    assert committed["verdict"] == VERDICT_CONFIRMED
+    assert committed["n_rows"] == N_EVAL_SURFACES
+    assert committed["n_ok"] == N_EVAL_SURFACES
+    assert committed["n_sequence_ok"] == N_EVAL_SURFACES
+    assert committed["n_safety_ok"] == N_EVAL_SURFACES
+    assert committed["rule_policy_executed"] is False
+    assert committed["p3f_evaluation_holdout_used"] is False
+    assert committed["claim_boundary"] == CLAIM_BOUNDARY
+    assert committed["no_winner_score"] is True
+
+
+def test_n1_evaluation_set_is_r2_r3_only() -> None:
+    blob = RESULT_PATH.read_text(encoding="utf-8")
+    assert "p3f-" not in blob
+    doc = json.loads(blob)
+    assert [row["case_id"] for row in doc["rows"]] == evaluation_case_ids()
+    for row in doc["rows"]:
+        assert row["split"] == "evaluation"
+        assert row["replica"] in (2, 3)
+        assert not str(row["case_id"]).endswith(("-r0", "-r1"))
+        assert row["ok"] is True
+        assert row["cut_present"] is False
+        assert row["n_edges_eq_0_as_low"] is False
+        if row["dispersion"] == "high":
+            assert row["gated"] is True
+            assert row["sequence"] == list(HIGH_SEQUENCES[row["texture"]])
+        else:
+            assert row["gated"] is False
+            assert row["sequence"] == []
+
+
+def test_n1_policy_packet_is_gold_free() -> None:
+    surface = evaluation_surfaces()[0]
+    packet = packet_from_surface(surface)
+    assert "gold_unit_ids" not in packet
+    assert "texture" not in packet
+    assert "expected_sequence" not in packet
+    policy = ConditionalTexturePolicyV1()
+    with pytest.raises(OracleLeakError):
+        policy.propose({**packet, "gold_route": ["REDUCE"]})
+    with pytest.raises(PolicyLeakError):
+        policy.propose({**packet, "texture": "redundant"})
+    blob = EXP_PY.read_text(encoding="utf-8")
+    assert "RulePolicy(" not in blob
+    assert json.loads(PHASE3M.read_text(encoding="utf-8"))["verdict"] == (
+        "PHASE3M_CONDITIONAL_ROUTING_READY"
+    )
     for path, expected in LOCKED_GIT_BLOBS.items():
         assert git_blob_sha(path) == expected
