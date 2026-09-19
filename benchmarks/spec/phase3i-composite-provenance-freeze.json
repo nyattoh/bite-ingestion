@@ -1,0 +1,163 @@
+{
+  "completeness": {
+    "composite": "kind=composite and len(sources)>=2 and each source has unit_id, source_uri, byte_or_token_span",
+    "joined_from_alone": false,
+    "source": "provenance.unit_id and provenance.source_uri and provenance.byte_or_token_span and source-exact span.end"
+  },
+  "fields": {
+    "composite_span": "envelope",
+    "envelope.contiguous": false,
+    "envelope_is_not_source_exact": true,
+    "joined_from": "derivation links only; not complete provenance",
+    "legacy_missing_kind": "source",
+    "legacy_missing_span_kind": "source_exact",
+    "provenance.kind": [
+      "source",
+      "composite"
+    ],
+    "provenance.sources": "array of source records, required when kind=composite",
+    "source_record": [
+      "unit_id",
+      "source_uri",
+      "byte_or_token_span",
+      "renderer_id"
+    ],
+    "span.kind": [
+      "source_exact",
+      "envelope"
+    ],
+    "top_level_source_uri_on_mixed_join": null
+  },
+  "generation": "p3i",
+  "gold": "scorer only; not passed to the operator",
+  "i1_verdicts": [
+    "PHASE3I_COMPOSITE_PROVENANCE_VALIDATED",
+    "PHASE3I_COMPOSITE_PROVENANCE_PARTIAL",
+    "PHASE3I_COMPOSITE_PROVENANCE_BLOCKED"
+  ],
+  "invariants_after_integrate": [
+    "provenance_completeness == 1.0",
+    "required_evidence_lineage_recall == 1.0",
+    "conservation_untraced(...) == []",
+    "joined source ids resolve in root lineage",
+    "silent_loss == 0",
+    "join_plan unit_ids == composite provenance.sources unit_ids",
+    "deterministic output / stable id"
+  ],
+  "locked_from_phase3g": {
+    "T_high": 4,
+    "T_low": 1,
+    "candidate_unchanged": true,
+    "selected_candidate": "A_mean_edge_distance",
+    "thresholds_unchanged": true,
+    "v1_sensor_unchanged": true
+  },
+  "malformed_fail_closed": true,
+  "offline": true,
+  "on_not_validated": "do not connect conditional routing",
+  "operators": {
+    "cut_untangle_reduce_semantics_unchanged": true,
+    "integrate_must_emit_composite": true
+  },
+  "p3f_evaluation_holdout_used": false,
+  "p3f_evaluation_replicas_sealed": [
+    2,
+    3
+  ],
+  "paid_api": false,
+  "phase3h_artifact_immutable": true,
+  "phase3h_verdict_unchanged": "PHASE3H_CONDITIONAL_MAP_REQUIRED",
+  "planned_cases": [
+    {
+      "case_id": "p3i-same-uri-2way",
+      "contiguous": false,
+      "expect_join": true,
+      "join": "explicit_id",
+      "n_join_members": 2,
+      "source_uris": [
+        "bitebench://p3i/a"
+      ]
+    },
+    {
+      "case_id": "p3i-three-way",
+      "contiguous": false,
+      "expect_join": true,
+      "join": "explicit_id",
+      "n_join_members": 3,
+      "source_uris": [
+        "bitebench://p3i/a"
+      ]
+    },
+    {
+      "case_id": "p3i-mixed-uri",
+      "contiguous": false,
+      "expect_join": true,
+      "join": "explicit_id",
+      "n_join_members": 2,
+      "source_uris": [
+        "bitebench://p3i/a",
+        "bitebench://p3i/b"
+      ]
+    },
+    {
+      "case_id": "p3i-passthrough",
+      "contiguous": true,
+      "expect_join": false,
+      "join": null,
+      "n_join_members": 0,
+      "source_uris": [
+        "bitebench://p3i/a"
+      ]
+    },
+    {
+      "case_id": "p3i-dep-edge",
+      "contiguous": false,
+      "expect_join": true,
+      "join": "dependency_edge",
+      "n_join_members": 2,
+      "source_uris": [
+        "bitebench://p3i/a"
+      ]
+    },
+    {
+      "case_id": "p3i-explicit-key",
+      "contiguous": false,
+      "expect_join": true,
+      "join": "explicit_key",
+      "n_join_members": 2,
+      "source_uris": [
+        "bitebench://p3i/a"
+      ]
+    },
+    {
+      "case_id": "p3i-malformed-joined-from-only",
+      "defect": "joined_from_without_composite_provenance",
+      "fail_closed": true,
+      "join": "malformed"
+    },
+    {
+      "case_id": "p3i-malformed-fake-span",
+      "defect": "composite_with_source_exact_span",
+      "fail_closed": true,
+      "join": "malformed"
+    }
+  ],
+  "research_conclusion": false,
+  "reuse_p3h_to_strengthen_conclusion": false,
+  "revision": "phase3i-composite-provenance-freeze-v0.1",
+  "routing": {
+    "implement_conditional_map": false,
+    "routing_connected": false,
+    "rule_policy_changed": false,
+    "validated_required_before_routing": true
+  },
+  "schema": "bitebench-phase3i-composite-provenance-freeze/v0.1",
+  "split": "development",
+  "synthetic": true,
+  "validator_distinction": {
+    "composite": "kind is composite",
+    "malformed": "joined multi-source without composite kind, or envelope/source_exact mismatch",
+    "source": "kind is source or omitted"
+  },
+  "verdict": "PHASE3I_COMPOSITE_PROVENANCE_FROZEN"
+}

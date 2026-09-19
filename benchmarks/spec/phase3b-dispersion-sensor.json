@@ -1,0 +1,35 @@
+{
+  "schema": "bitebench-phase3b-dispersion-sensor-contract/v0.1",
+  "sensor_name": "dependency_dispersion_v0",
+  "replaces_deterministic_v0": false,
+  "wired_to_rule_policy": false,
+  "gold_inputs": false,
+  "primary_feature": "mean_edge_distance",
+  "units": "line_index_distance",
+  "how": {
+    "atoms": "exact identifier tokens; stopwords and short generic tokens dropped",
+    "edge": "a value-side identifier from line i appears in a different, non-identical line j",
+    "not": [
+      "required_evidence_ids",
+      "gold_answer",
+      "gold_route",
+      "is_required_evidence",
+      "Phase-2 key prefixes as oracle labels"
+    ]
+  },
+  "candidates_considered": [
+    "n_edges",
+    "mean_edge_distance",
+    "median_edge_distance",
+    "max_edge_distance",
+    "mean_edge_distance_norm",
+    "component_span",
+    "chain_span",
+    "query_identifier_span"
+  ],
+  "primary_rationale": "fewest numbers that rank near < medium < far on a fixed line multiset",
+  "query_candidate": {
+    "name": "query_identifier_span_v0",
+    "note": "separate from deterministic_v0.l; idle unless the query carries a rare identifier"
+  }
+}
