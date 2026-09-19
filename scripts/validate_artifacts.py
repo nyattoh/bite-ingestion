@@ -1633,6 +1633,45 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase4b} verdict={data.get('verdict')}")
 
+    from bite_bench.phase4c import validate_phase4c_freeze
+
+    phase4c_freeze = args.root / "benchmarks" / "spec" / "phase4c-holdout-first-open-freeze.json"
+    if phase4c_freeze.is_file():
+        n_checked += 1
+        data = json.loads(phase4c_freeze.read_text(encoding="utf-8"))
+        errs = list(validate_phase4c_freeze(data))
+        schema_path = args.root / "spec" / "phase4c-holdout-first-open-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase4c freeze jsonschema: {exc}")
+        eq_path = args.root / "artifacts" / "phase4c" / "reachability-equivalence.json"
+        eq_schema = args.root / "spec" / "phase4c-reachability-equivalence.schema.json"
+        if eq_path.is_file() and eq_schema.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(
+                    json.loads(eq_path.read_text(encoding="utf-8")),
+                    json.loads(eq_schema.read_text(encoding="utf-8")),
+                )
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase4c extra jsonschema {eq_path.name}: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase4c_freeze}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase4c_freeze} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
