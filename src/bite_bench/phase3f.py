@@ -17,9 +17,11 @@ from typing import Any, Literal
 from bite_bench.models import CanonicalCase, Fact
 
 SCHEMA_ID_V01 = "bitebench-phase3f-routing-calibration-freeze/v0.1"
-SCHEMA_ID = "bitebench-phase3f-routing-calibration-freeze/v0.2"
+SCHEMA_ID_V02 = "bitebench-phase3f-routing-calibration-freeze/v0.2"
+SCHEMA_ID = "bitebench-phase3f-routing-calibration-freeze/v0.3"
 REVISION_V01 = "phase3f-routing-calibration-freeze-v0.1"
-REVISION = "phase3f-routing-calibration-freeze-v0.2"
+REVISION_V02 = "phase3f-routing-calibration-freeze-v0.2"
+REVISION = "phase3f-routing-calibration-freeze-v0.3"
 VERDICT_FROZEN = "PHASE3F_ROUTING_CALIBRATION_PROTOCOL_FROZEN"
 VERDICT_BLOCKED = "PHASE3F_PROTOCOL_BLOCKED"
 VERDICTS = (VERDICT_FROZEN, VERDICT_BLOCKED)
@@ -53,7 +55,8 @@ CANDIDATES: tuple[str, ...] = ("A_mean_edge_distance", "B_mean_edge_distance_nor
 
 _REPO = Path(__file__).resolve().parents[2]
 V01_FREEZE_PATH = _REPO / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze.json"
-FREEZE_PATH = _REPO / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze-v0.2.json"
+V02_FREEZE_PATH = _REPO / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze-v0.2.json"
+FREEZE_PATH = _REPO / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze-v0.3.json"
 SPLIT_PATH = _REPO / "benchmarks" / "spec" / "phase3f-split-manifest.json"
 
 
@@ -295,6 +298,56 @@ def adversarial_surface(kind: str, replica: int, fmt: Fmt) -> dict[str, Any]:
     }
 
 
+def strict_dispersion_order(near: float, medium: float, far: float) -> bool:
+    return near < medium < far
+
+
+def candidate_ordering_holds(
+    candidate_id: str,
+    *,
+    raw_near: float,
+    raw_medium: float,
+    raw_far: float,
+    norm_near: float,
+    norm_medium: float,
+    norm_far: float,
+) -> bool:
+    raw_ok = strict_dispersion_order(raw_near, raw_medium, raw_far)
+    norm_ok = strict_dispersion_order(norm_near, norm_medium, norm_far)
+    if candidate_id == "A_mean_edge_distance":
+        return raw_ok
+    if candidate_id == "B_mean_edge_distance_norm":
+        return norm_ok
+    if candidate_id == "C_raw_and_norm":
+        return raw_ok and norm_ok
+    raise ValueError(candidate_id)
+
+
+def scale_stability_holds(
+    candidate_id: str,
+    *,
+    raw_one_hop_medium: Mapping[str, float],
+    norm_one_hop_far: Mapping[str, float],
+) -> bool:
+    a_ok = (
+        raw_one_hop_medium["small"]
+        == raw_one_hop_medium["medium"]
+        == raw_one_hop_medium["large"]
+    )
+    b_ok = (
+        norm_one_hop_far["small"]
+        == norm_one_hop_far["medium"]
+        == norm_one_hop_far["large"]
+    )
+    if candidate_id == "A_mean_edge_distance":
+        return a_ok
+    if candidate_id == "B_mean_edge_distance_norm":
+        return b_ok
+    if candidate_id == "C_raw_and_norm":
+        return a_ok and b_ok
+    raise ValueError(candidate_id)
+
+
 def bin_ordering_holds(near: str, medium: str, far: str) -> bool:
     try:
         n_rank, m_rank, f_rank = _BIN_RANK[near], _BIN_RANK[medium], _BIN_RANK[far]
@@ -441,6 +494,55 @@ def metric_roles() -> dict[str, Any]:
                     ),
                 },
             ],
+        },
+    }
+
+
+def candidate_level_v03() -> dict[str, Any]:
+    return {
+        "used_in_threshold_grid_point_comparison": False,
+        "measured_on": "continuous_score_before_threshold",
+        "no_new_scalar_for_C": True,
+        "no_weighted_sum_of_raw_and_norm": True,
+        "tolerance": "exact_equality_on_deterministic_synthetic_values",
+        "do_not_add_tolerance_after_seeing_results": True,
+        "continuous_dispersion_ordering_coverage": {
+            "unit": "calibration_canonical_cell",
+            "A_mean_edge_distance": {
+                "continuous_score": "mean_edge_distance",
+                "pass_if": "raw(near) < raw(medium) < raw(far)",
+            },
+            "B_mean_edge_distance_norm": {
+                "continuous_score": "mean_edge_distance_norm",
+                "pass_if": "norm(near) < norm(medium) < norm(far)",
+            },
+            "C_raw_and_norm": {
+                "continuous_score": None,
+                "pass_if": (
+                    "raw(near) < raw(medium) < raw(far) AND "
+                    "norm(near) < norm(medium) < norm(far)"
+                ),
+            },
+        },
+        "scale_stability": {
+            "unit": "calibration_replica",
+            "A_mean_edge_distance": {
+                "contrast": "same_absolute_different_document_size",
+                "pass_if": (
+                    "one-hop medium mean_edge_distance identical across "
+                    "small/medium/large"
+                ),
+            },
+            "B_mean_edge_distance_norm": {
+                "contrast": "same_relative_different_absolute",
+                "pass_if": (
+                    "one-hop far mean_edge_distance_norm identical across "
+                    "small/medium/large"
+                ),
+            },
+            "C_raw_and_norm": {
+                "pass_if": "A_condition AND B_condition",
+            },
         },
     }
 
@@ -621,34 +723,64 @@ def load_v01_freeze() -> dict[str, Any]:
     return json.loads(V01_FREEZE_PATH.read_text(encoding="utf-8"))
 
 
+def load_v02_freeze() -> dict[str, Any]:
+    if not V02_FREEZE_PATH.is_file():
+        raise FileNotFoundError(f"v0.2 freeze missing: {V02_FREEZE_PATH}")
+    return json.loads(V02_FREEZE_PATH.read_text(encoding="utf-8"))
+
+
 def freeze_manifest() -> dict[str, Any]:
-    """Active freeze is v0.2. v0.1 generation/split/grids/candidates stay."""
-    doc = json.loads(json.dumps(load_v01_freeze()))
+    """Active freeze is v0.3. v0.2 generation/split/grids/threshold objective stay."""
+    doc = json.loads(json.dumps(load_v02_freeze()))
     blocked = list(doc.get("blocked_reasons") or [])
     verdict = VERDICT_BLOCKED if blocked else VERDICT_FROZEN
     doc["schema"] = SCHEMA_ID
     doc["revision"] = REVISION
     doc["verdict"] = verdict
-    doc["supersedes"] = REVISION_V01
+    doc["supersedes"] = REVISION_V02
     doc["supersession"] = {
-        "previous": REVISION_V01,
-        "previous_path": "benchmarks/spec/phase3f-routing-calibration-freeze.json",
-        "reason": "split threshold-grid objective from threshold-independent diagnostics",
+        "previous": REVISION_V02,
+        "previous_path": "benchmarks/spec/phase3f-routing-calibration-freeze-v0.2.json",
+        "reason": "define C pre-threshold metrics and defer M1/M2 to Phase 3H",
         "v0_1_deleted": False,
         "v0_1_overwritten": False,
+        "v0_2_deleted": False,
+        "v0_2_overwritten": False,
         "unchanged": [
             "generation",
             "split",
+            "surfaces",
+            "adversarial_fixtures",
             "candidates",
             "grids",
-            "formats",
-            "adversarial_fixtures",
-            "operator_maps",
+            "threshold_objective",
+        ],
+        "changed": [
+            "candidate_C_pre_threshold_metrics",
+            "M1_M2_adoption_timing",
         ],
     }
-    doc["metric_roles"] = metric_roles()
-    doc["candidates"] = candidate_protocol()
-    doc["threshold_search"] = threshold_search_protocol()
+    roles = dict(doc["metric_roles"])
+    roles["candidate_level"] = candidate_level_v03()
+    doc["metric_roles"] = roles
+    maps = dict(doc["operator_maps"])
+    maps["adoption"] = "phase3h_routing_semantics_freeze"
+    maps["phase3g_selects"] = ["feature_candidate_A_B_C", "threshold_values"]
+    maps["phase3g_does_not_select"] = [
+        "M1_locality_for_integrate",
+        "M2_spread_needs_gather",
+    ]
+    maps["not_selected_in_phase3g_because"] = (
+        "M1/M2 do not change sensor score, threshold bin, or Phase 3G "
+        "calibration metrics, so the current priority list cannot distinguish "
+        "them from data"
+    )
+    maps["mapping_selection"] = (
+        "deferred to phase3h_routing_semantics_freeze; "
+        "Phase 3G does not choose M1 vs M2"
+    )
+    maps["rule_policy_unconnected"] = True
+    doc["operator_maps"] = maps
     return doc
 
 
@@ -691,9 +823,9 @@ def _validate_shared(doc: Mapping[str, Any]) -> list[str]:
 
 def _validate_v02(doc: Mapping[str, Any]) -> list[str]:
     errs: list[str] = []
-    if doc.get("schema") != SCHEMA_ID:
+    if doc.get("schema") != SCHEMA_ID_V02:
         errs.append(f"bad schema: {doc.get('schema')!r}")
-    if doc.get("revision") != REVISION:
+    if doc.get("revision") != REVISION_V02:
         errs.append(f"bad revision: {doc.get('revision')!r}")
     if doc.get("supersedes") != REVISION_V01:
         errs.append("v0.2 must supersede v0.1")
@@ -771,6 +903,78 @@ def _validate_v02(doc: Mapping[str, Any]) -> list[str]:
     return errs
 
 
+def _validate_v03(doc: Mapping[str, Any]) -> list[str]:
+    errs: list[str] = []
+    if doc.get("schema") != SCHEMA_ID:
+        errs.append(f"bad schema: {doc.get('schema')!r}")
+    if doc.get("revision") != REVISION:
+        errs.append(f"bad revision: {doc.get('revision')!r}")
+    if doc.get("supersedes") != REVISION_V02:
+        errs.append("v0.3 must supersede v0.2")
+    supersession = dict(doc.get("supersession") or {})
+    if supersession.get("v0_1_deleted") is not False:
+        errs.append("v0.1 must not be recorded as deleted")
+    if supersession.get("v0_1_overwritten") is not False:
+        errs.append("v0.1 must not be recorded as overwritten")
+    if supersession.get("v0_2_deleted") is not False:
+        errs.append("v0.2 must not be recorded as deleted")
+    if supersession.get("v0_2_overwritten") is not False:
+        errs.append("v0.2 must not be recorded as overwritten")
+    v02 = load_v02_freeze()
+    for key in (
+        "adversarial",
+        "canonical_case_ids",
+        "required_formats",
+        "n_primary_surfaces",
+        "n_adversarial_surfaces",
+        "generation",
+        "distractor_counts",
+        "shapes",
+        "scale_levels",
+        "dispersion_levels",
+        "candidates",
+    ):
+        if doc.get(key) != v02.get(key):
+            errs.append(f"{key} drifted from v0.2")
+    if (doc.get("threshold_search") or {}).get("grids") != (v02.get("threshold_search") or {}).get(
+        "grids"
+    ):
+        errs.append("threshold grids drifted from v0.2")
+    if (doc.get("threshold_search") or {}).get("objective") != (v02.get("threshold_search") or {}).get(
+        "objective"
+    ):
+        errs.append("threshold objective drifted from v0.2")
+    if (doc.get("operator_maps") or {}).get("candidates") != (v02.get("operator_maps") or {}).get(
+        "candidates"
+    ):
+        errs.append("M1/M2 candidates drifted from v0.2")
+    maps = dict(doc.get("operator_maps") or {})
+    if maps.get("adoption") != "phase3h_routing_semantics_freeze":
+        errs.append("M1/M2 adoption must be Phase 3H")
+    if "M1_locality_for_integrate" not in list(maps.get("phase3g_does_not_select") or []):
+        errs.append("Phase 3G must not select M1")
+    if list(maps.get("phase3g_selects") or []) != [
+        "feature_candidate_A_B_C",
+        "threshold_values",
+    ]:
+        errs.append("Phase 3G may select only A/B/C and thresholds")
+    cand_level = dict((doc.get("metric_roles") or {}).get("candidate_level") or {})
+    if cand_level.get("no_new_scalar_for_C") is not True:
+        errs.append("Candidate C must not get a new scalar score")
+    if cand_level.get("no_weighted_sum_of_raw_and_norm") is not True:
+        errs.append("must not invent a weighted raw+norm score")
+    if cand_level.get("do_not_add_tolerance_after_seeing_results") is not True:
+        errs.append("must not add scale_stability tolerance after seeing data")
+    c_score = (
+        dict(cand_level.get("continuous_dispersion_ordering_coverage") or {})
+        .get("C_raw_and_norm")
+        or {}
+    )
+    if dict(c_score).get("continuous_score") is not None:
+        errs.append("Candidate C continuous_score must be null")
+    return errs
+
+
 def validate_phase3f_doc(doc: Mapping[str, Any]) -> list[str]:
     errs = _validate_shared(doc)
     rev = doc.get("revision")
@@ -778,8 +982,11 @@ def validate_phase3f_doc(doc: Mapping[str, Any]) -> list[str]:
         if doc.get("schema") != SCHEMA_ID_V01:
             errs.append(f"v0.1 bad schema: {doc.get('schema')!r}")
         return errs
-    if rev == REVISION:
+    if rev == REVISION_V02:
         errs.extend(_validate_v02(doc))
+        return errs
+    if rev == REVISION:
+        errs.extend(_validate_v03(doc))
         return errs
     errs.append(f"unknown freeze revision: {rev!r}")
     return errs

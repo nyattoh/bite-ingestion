@@ -18,16 +18,21 @@ from bite_bench.phase3f import (
     FORMATS,
     REVISION,
     REVISION_V01,
+    REVISION_V02,
     SCHEMA_ID,
     SCHEMA_ID_V01,
+    SCHEMA_ID_V02,
     adversarial_case,
     adversarial_surface,
     bin_ordering_holds,
+    candidate_ordering_holds,
     design_cells,
     freeze_manifest,
     is_negative_adversarial_case,
     load_v01_freeze,
+    load_v02_freeze,
     make_surface,
+    scale_stability_holds,
     select_best_candidate,
     select_best_grid_point,
     sensor_source_unit,
@@ -41,9 +46,11 @@ from bite_ingestion.profilers.dependency_dispersion_v1 import SENSOR_NAME as V1_
 ROOT = Path(__file__).resolve().parents[1]
 FREEZE_V01 = ROOT / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze.json"
 FREEZE_V02 = ROOT / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze-v0.2.json"
+FREEZE_V03 = ROOT / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze-v0.3.json"
 SPLIT = ROOT / "benchmarks" / "spec" / "phase3f-split-manifest.json"
 SCHEMA_V01 = ROOT / "spec" / "phase3f-routing-calibration-freeze.schema.json"
 SCHEMA_V02 = ROOT / "spec" / "phase3f-routing-calibration-freeze-v0.2.schema.json"
+SCHEMA_V03 = ROOT / "spec" / "phase3f-routing-calibration-freeze-v0.3.schema.json"
 GEN_PY = ROOT / "src" / "bite_bench" / "phase3f.py"
 V1_PY = ROOT / "src" / "bite_ingestion" / "profilers" / "dependency_dispersion_v1.py"
 POLICY_PY = ROOT / "src" / "bite_ingestion" / "policies" / "rule_policy.py"
@@ -61,32 +68,46 @@ def test_v01_is_retained_not_overwritten() -> None:
     assert "bin_ordering_coverage" not in str(v01["threshold_search"]["objective"])
 
 
-def test_v02_supersedes_v01_and_matches_code() -> None:
+def test_v02_is_retained_not_overwritten() -> None:
     v02 = json.loads(FREEZE_V02.read_text(encoding="utf-8"))
-    assert v02 == freeze_manifest()
+    assert v02["revision"] == REVISION_V02
+    assert v02["schema"] == SCHEMA_ID_V02
     assert validate_phase3f_doc(v02) == []
     jsonschema.validate(v02, json.loads(SCHEMA_V02.read_text(encoding="utf-8")))
-    assert v02["schema"] == SCHEMA_ID
-    assert v02["revision"] == REVISION
+    assert v02 == load_v02_freeze()
     assert v02["supersedes"] == REVISION_V01
-    assert v02["supersession"]["v0_1_deleted"] is False
-    assert v02["supersession"]["v0_1_overwritten"] is False
-    assert v02["verdict"] == "PHASE3F_ROUTING_CALIBRATION_PROTOCOL_FROZEN"
     assert json.loads(SPLIT.read_text(encoding="utf-8")) == split_manifest()
 
 
-def test_v02_keeps_v01_generation_split_candidates_grids() -> None:
+def test_v03_supersedes_v02_and_matches_code() -> None:
+    v03 = json.loads(FREEZE_V03.read_text(encoding="utf-8"))
+    assert v03 == freeze_manifest()
+    assert validate_phase3f_doc(v03) == []
+    jsonschema.validate(v03, json.loads(SCHEMA_V03.read_text(encoding="utf-8")))
+    assert v03["schema"] == SCHEMA_ID
+    assert v03["revision"] == REVISION
+    assert v03["supersedes"] == REVISION_V02
+    assert v03["supersession"]["v0_1_deleted"] is False
+    assert v03["supersession"]["v0_2_deleted"] is False
+    assert v03["supersession"]["v0_2_overwritten"] is False
+    assert v03["verdict"] == "PHASE3F_ROUTING_CALIBRATION_PROTOCOL_FROZEN"
+
+
+def test_v03_keeps_v02_generation_split_candidates_grids_objective() -> None:
     v01 = load_v01_freeze()
-    v02 = freeze_manifest()
+    v02 = load_v02_freeze()
+    v03 = freeze_manifest()
     assert v02["adversarial"] == v01["adversarial"]
-    assert v02["canonical_case_ids"] == v01["canonical_case_ids"]
-    assert v02["required_formats"] == v01["required_formats"]
-    assert v02["operator_maps"] == v01["operator_maps"]
-    assert v02["threshold_search"]["grids"] == v01["threshold_search"]["grids"]
-    assert v02["candidates"]["candidates"] == v01["candidates"]["candidates"]
-    assert v02["n_primary_surfaces"] == v01["n_primary_surfaces"] == 216
-    assert v02["n_adversarial_surfaces"] == v01["n_adversarial_surfaces"] == 48
-    assert v02["generation"] == "p3f"
+    assert v03["adversarial"] == v02["adversarial"]
+    assert v03["canonical_case_ids"] == v02["canonical_case_ids"]
+    assert v03["required_formats"] == v02["required_formats"]
+    assert v03["candidates"] == v02["candidates"]
+    assert v03["threshold_search"]["grids"] == v02["threshold_search"]["grids"]
+    assert v03["threshold_search"]["objective"] == v02["threshold_search"]["objective"]
+    assert v03["operator_maps"]["candidates"] == v02["operator_maps"]["candidates"]
+    assert v03["n_primary_surfaces"] == v02["n_primary_surfaces"] == 216
+    assert v03["n_adversarial_surfaces"] == v02["n_adversarial_surfaces"] == 48
+    assert v03["generation"] == "p3f"
     assert split_manifest()["revision"] == REVISION_V01
 
 
@@ -162,12 +183,16 @@ def test_adversarial_kinds_are_specified() -> None:
     assert len(empty) == 5
 
 
-def test_v02_metric_roles_and_selection_rules() -> None:
+def test_v03_metric_roles_and_selection_rules() -> None:
     doc = freeze_manifest()
     fp = doc["metric_roles"]["sensor_level_diagnostic"]["edge_false_positive_rate"]
     assert fp["used_in_threshold_grid_objective"] is False
     assert fp["used_in_candidate_selection"] is False
-    assert doc["metric_roles"]["candidate_level"]["used_in_threshold_grid_point_comparison"] is False
+    cand = doc["metric_roles"]["candidate_level"]
+    assert cand["used_in_threshold_grid_point_comparison"] is False
+    assert cand["no_new_scalar_for_C"] is True
+    assert cand["no_weighted_sum_of_raw_and_norm"] is True
+    assert cand["continuous_dispersion_ordering_coverage"]["C_raw_and_norm"]["continuous_score"] is None
     names = [row["name"] for row in doc["candidates"]["selection_priority"]]
     assert names == [
         "continuous_dispersion_ordering_coverage",
@@ -185,11 +210,54 @@ def test_v02_metric_roles_and_selection_rules() -> None:
     assert doc["threshold_search"]["objective"]["eligibility"] == "non_collapse"
     assert doc["threshold_search"]["values_not_set_in_phase3f"] is True
     assert doc["operator_maps"]["dispersion_feature_does_not_auto_integrate"] is True
+    assert doc["operator_maps"]["adoption"] == "phase3h_routing_semantics_freeze"
+    assert doc["operator_maps"]["phase3g_selects"] == [
+        "feature_candidate_A_B_C",
+        "threshold_values",
+    ]
+    assert "M1_locality_for_integrate" in doc["operator_maps"]["phase3g_does_not_select"]
     assert doc["thresholds_set"] is False
     assert bin_ordering_holds("low", "mid", "high")
     assert bin_ordering_holds("low", "low", "high")
     assert not bin_ordering_holds("mid", "mid", "mid")
     assert not bin_ordering_holds("high", "mid", "low")
+    assert candidate_ordering_holds(
+        "A_mean_edge_distance",
+        raw_near=1,
+        raw_medium=2,
+        raw_far=4,
+        norm_near=0.9,
+        norm_medium=0.5,
+        norm_far=0.1,
+    )
+    assert not candidate_ordering_holds(
+        "C_raw_and_norm",
+        raw_near=1,
+        raw_medium=2,
+        raw_far=4,
+        norm_near=0.9,
+        norm_medium=0.5,
+        norm_far=0.1,
+    )
+    assert candidate_ordering_holds(
+        "C_raw_and_norm",
+        raw_near=1,
+        raw_medium=2,
+        raw_far=4,
+        norm_near=0.1,
+        norm_medium=0.2,
+        norm_far=0.4,
+    )
+    assert scale_stability_holds(
+        "A_mean_edge_distance",
+        raw_one_hop_medium={"small": 4, "medium": 4, "large": 4},
+        norm_one_hop_far={"small": 0.9, "medium": 0.5, "large": 0.3},
+    )
+    assert not scale_stability_holds(
+        "C_raw_and_norm",
+        raw_one_hop_medium={"small": 4, "medium": 4, "large": 4},
+        norm_one_hop_far={"small": 0.9, "medium": 0.5, "large": 0.3},
+    )
     winner = select_best_grid_point(
         [
             {
@@ -268,6 +336,7 @@ def test_freeze_has_no_evaluation_outcomes() -> None:
     blob = (
         FREEZE_V01.read_text(encoding="utf-8")
         + FREEZE_V02.read_text(encoding="utf-8")
+        + FREEZE_V03.read_text(encoding="utf-8")
         + SPLIT.read_text(encoding="utf-8")
     )
     for needle in ("operator_sequence", "T_profiler", "T_router"):

@@ -1,0 +1,945 @@
+{
+  "adversarial": [
+    {
+      "case_id": "p3f-adv-key_suffix_matches_value-r0",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-key_suffix_matches_value-r0-a",
+          "key": "anchor_r0",
+          "value": "tok_zeta_r0"
+        },
+        {
+          "fact_id": "p3f-adv-key_suffix_matches_value-r0-b",
+          "key": "misc_tok_zeta_r0",
+          "value": "plain_r0"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "key_suffix_matches_value",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 0,
+      "split": "calibration"
+    },
+    {
+      "case_id": "p3f-adv-key_suffix_matches_value-r1",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-key_suffix_matches_value-r1-a",
+          "key": "anchor_r1",
+          "value": "tok_zeta_r1"
+        },
+        {
+          "fact_id": "p3f-adv-key_suffix_matches_value-r1-b",
+          "key": "misc_tok_zeta_r1",
+          "value": "plain_r1"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "key_suffix_matches_value",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 1,
+      "split": "calibration"
+    },
+    {
+      "case_id": "p3f-adv-key_suffix_matches_value-r2",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-key_suffix_matches_value-r2-a",
+          "key": "anchor_r2",
+          "value": "tok_zeta_r2"
+        },
+        {
+          "fact_id": "p3f-adv-key_suffix_matches_value-r2-b",
+          "key": "misc_tok_zeta_r2",
+          "value": "plain_r2"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "key_suffix_matches_value",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3f-adv-key_suffix_matches_value-r3",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-key_suffix_matches_value-r3-a",
+          "key": "anchor_r3",
+          "value": "tok_zeta_r3"
+        },
+        {
+          "fact_id": "p3f-adv-key_suffix_matches_value-r3-b",
+          "key": "misc_tok_zeta_r3",
+          "value": "plain_r3"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "key_suffix_matches_value",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3f-adv-shared_prefix-r0",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-shared_prefix-r0-a",
+          "key": "grp_alpha_r0",
+          "value": "val_one_r0"
+        },
+        {
+          "fact_id": "p3f-adv-shared_prefix-r0-b",
+          "key": "grp_bravo_r0",
+          "value": "val_two_r0"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "shared_prefix",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 0,
+      "split": "calibration"
+    },
+    {
+      "case_id": "p3f-adv-shared_prefix-r1",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-shared_prefix-r1-a",
+          "key": "grp_alpha_r1",
+          "value": "val_one_r1"
+        },
+        {
+          "fact_id": "p3f-adv-shared_prefix-r1-b",
+          "key": "grp_bravo_r1",
+          "value": "val_two_r1"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "shared_prefix",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 1,
+      "split": "calibration"
+    },
+    {
+      "case_id": "p3f-adv-shared_prefix-r2",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-shared_prefix-r2-a",
+          "key": "grp_alpha_r2",
+          "value": "val_one_r2"
+        },
+        {
+          "fact_id": "p3f-adv-shared_prefix-r2-b",
+          "key": "grp_bravo_r2",
+          "value": "val_two_r2"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "shared_prefix",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3f-adv-shared_prefix-r3",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-shared_prefix-r3-a",
+          "key": "grp_alpha_r3",
+          "value": "val_one_r3"
+        },
+        {
+          "fact_id": "p3f-adv-shared_prefix-r3-b",
+          "key": "grp_bravo_r3",
+          "value": "val_two_r3"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "shared_prefix",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3f-adv-shared_suffix-r0",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-shared_suffix-r0-a",
+          "key": "head_tok_tail_r0",
+          "value": "val_a_r0"
+        },
+        {
+          "fact_id": "p3f-adv-shared_suffix-r0-b",
+          "key": "other_tok_tail_r0",
+          "value": "val_b_r0"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "shared_suffix",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 0,
+      "split": "calibration"
+    },
+    {
+      "case_id": "p3f-adv-shared_suffix-r1",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-shared_suffix-r1-a",
+          "key": "head_tok_tail_r1",
+          "value": "val_a_r1"
+        },
+        {
+          "fact_id": "p3f-adv-shared_suffix-r1-b",
+          "key": "other_tok_tail_r1",
+          "value": "val_b_r1"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "shared_suffix",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 1,
+      "split": "calibration"
+    },
+    {
+      "case_id": "p3f-adv-shared_suffix-r2",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-shared_suffix-r2-a",
+          "key": "head_tok_tail_r2",
+          "value": "val_a_r2"
+        },
+        {
+          "fact_id": "p3f-adv-shared_suffix-r2-b",
+          "key": "other_tok_tail_r2",
+          "value": "val_b_r2"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "shared_suffix",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3f-adv-shared_suffix-r3",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-shared_suffix-r3-a",
+          "key": "head_tok_tail_r3",
+          "value": "val_a_r3"
+        },
+        {
+          "fact_id": "p3f-adv-shared_suffix-r3-b",
+          "key": "other_tok_tail_r3",
+          "value": "val_b_r3"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "shared_suffix",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3f-adv-substring_not_dependency-r0",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-substring_not_dependency-r0-a",
+          "key": "row_r0",
+          "value": "idab"
+        },
+        {
+          "fact_id": "p3f-adv-substring_not_dependency-r0-b",
+          "key": "xidabx",
+          "value": "other_r0"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "substring_not_dependency",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 0,
+      "split": "calibration"
+    },
+    {
+      "case_id": "p3f-adv-substring_not_dependency-r1",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-substring_not_dependency-r1-a",
+          "key": "row_r1",
+          "value": "idab"
+        },
+        {
+          "fact_id": "p3f-adv-substring_not_dependency-r1-b",
+          "key": "xidabx",
+          "value": "other_r1"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "substring_not_dependency",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 1,
+      "split": "calibration"
+    },
+    {
+      "case_id": "p3f-adv-substring_not_dependency-r2",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-substring_not_dependency-r2-a",
+          "key": "row_r2",
+          "value": "idab"
+        },
+        {
+          "fact_id": "p3f-adv-substring_not_dependency-r2-b",
+          "key": "xidabx",
+          "value": "other_r2"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "substring_not_dependency",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3f-adv-substring_not_dependency-r3",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-substring_not_dependency-r3-a",
+          "key": "row_r3",
+          "value": "idab"
+        },
+        {
+          "fact_id": "p3f-adv-substring_not_dependency-r3-b",
+          "key": "xidabx",
+          "value": "other_r3"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "substring_not_dependency",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3f-adv-unrelated_same_value-r0",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-unrelated_same_value-r0-a",
+          "key": "row_alpha_r0",
+          "value": "env_prod_r0"
+        },
+        {
+          "fact_id": "p3f-adv-unrelated_same_value-r0-b",
+          "key": "row_beta_r0",
+          "value": "env_prod_r0"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "unrelated_same_value",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 0,
+      "split": "calibration"
+    },
+    {
+      "case_id": "p3f-adv-unrelated_same_value-r1",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-unrelated_same_value-r1-a",
+          "key": "row_alpha_r1",
+          "value": "env_prod_r1"
+        },
+        {
+          "fact_id": "p3f-adv-unrelated_same_value-r1-b",
+          "key": "row_beta_r1",
+          "value": "env_prod_r1"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "unrelated_same_value",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 1,
+      "split": "calibration"
+    },
+    {
+      "case_id": "p3f-adv-unrelated_same_value-r2",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-unrelated_same_value-r2-a",
+          "key": "row_alpha_r2",
+          "value": "env_prod_r2"
+        },
+        {
+          "fact_id": "p3f-adv-unrelated_same_value-r2-b",
+          "key": "row_beta_r2",
+          "value": "env_prod_r2"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "unrelated_same_value",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3f-adv-unrelated_same_value-r3",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-unrelated_same_value-r3-a",
+          "key": "row_alpha_r3",
+          "value": "env_prod_r3"
+        },
+        {
+          "fact_id": "p3f-adv-unrelated_same_value-r3-b",
+          "key": "row_beta_r3",
+          "value": "env_prod_r3"
+        }
+      ],
+      "intended_edges": [],
+      "kind": "unrelated_same_value",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3f-adv-true_dep_plus_misleading_suffix-r0",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-true_dep_plus_misleading_suffix-r0-a",
+          "key": "origin_r0",
+          "value": "hop_mu_r0"
+        },
+        {
+          "fact_id": "p3f-adv-true_dep_plus_misleading_suffix-r0-b",
+          "key": "bin_hop_mu_r0",
+          "value": "ans_mu_r0"
+        },
+        {
+          "fact_id": "p3f-adv-true_dep_plus_misleading_suffix-r0-c",
+          "key": "trap_hop_mu_r0",
+          "value": "noise_r0"
+        }
+      ],
+      "intended_edges": [
+        [
+          "p3f-adv-true_dep_plus_misleading_suffix-r0-a",
+          "p3f-adv-true_dep_plus_misleading_suffix-r0-b"
+        ]
+      ],
+      "kind": "true_dep_plus_misleading_suffix",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 0,
+      "split": "calibration"
+    },
+    {
+      "case_id": "p3f-adv-true_dep_plus_misleading_suffix-r1",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-true_dep_plus_misleading_suffix-r1-a",
+          "key": "origin_r1",
+          "value": "hop_mu_r1"
+        },
+        {
+          "fact_id": "p3f-adv-true_dep_plus_misleading_suffix-r1-b",
+          "key": "bin_hop_mu_r1",
+          "value": "ans_mu_r1"
+        },
+        {
+          "fact_id": "p3f-adv-true_dep_plus_misleading_suffix-r1-c",
+          "key": "trap_hop_mu_r1",
+          "value": "noise_r1"
+        }
+      ],
+      "intended_edges": [
+        [
+          "p3f-adv-true_dep_plus_misleading_suffix-r1-a",
+          "p3f-adv-true_dep_plus_misleading_suffix-r1-b"
+        ]
+      ],
+      "kind": "true_dep_plus_misleading_suffix",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 1,
+      "split": "calibration"
+    },
+    {
+      "case_id": "p3f-adv-true_dep_plus_misleading_suffix-r2",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-true_dep_plus_misleading_suffix-r2-a",
+          "key": "origin_r2",
+          "value": "hop_mu_r2"
+        },
+        {
+          "fact_id": "p3f-adv-true_dep_plus_misleading_suffix-r2-b",
+          "key": "bin_hop_mu_r2",
+          "value": "ans_mu_r2"
+        },
+        {
+          "fact_id": "p3f-adv-true_dep_plus_misleading_suffix-r2-c",
+          "key": "trap_hop_mu_r2",
+          "value": "noise_r2"
+        }
+      ],
+      "intended_edges": [
+        [
+          "p3f-adv-true_dep_plus_misleading_suffix-r2-a",
+          "p3f-adv-true_dep_plus_misleading_suffix-r2-b"
+        ]
+      ],
+      "kind": "true_dep_plus_misleading_suffix",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3f-adv-true_dep_plus_misleading_suffix-r3",
+      "facts": [
+        {
+          "fact_id": "p3f-adv-true_dep_plus_misleading_suffix-r3-a",
+          "key": "origin_r3",
+          "value": "hop_mu_r3"
+        },
+        {
+          "fact_id": "p3f-adv-true_dep_plus_misleading_suffix-r3-b",
+          "key": "bin_hop_mu_r3",
+          "value": "ans_mu_r3"
+        },
+        {
+          "fact_id": "p3f-adv-true_dep_plus_misleading_suffix-r3-c",
+          "key": "trap_hop_mu_r3",
+          "value": "noise_r3"
+        }
+      ],
+      "intended_edges": [
+        [
+          "p3f-adv-true_dep_plus_misleading_suffix-r3-a",
+          "p3f-adv-true_dep_plus_misleading_suffix-r3-b"
+        ]
+      ],
+      "kind": "true_dep_plus_misleading_suffix",
+      "note": "gold/intended_edges are scorer-only; not sensor input",
+      "replica": 3,
+      "split": "evaluation"
+    }
+  ],
+  "blocked_reasons": [],
+  "calibration_measured": false,
+  "candidates": {
+    "candidates": [
+      {
+        "feature": "mean_edge_distance",
+        "id": "A_mean_edge_distance",
+        "meaning": "absolute_logical_unit_separation",
+        "simplicity_rank": 1
+      },
+      {
+        "feature": "mean_edge_distance_norm",
+        "id": "B_mean_edge_distance_norm",
+        "meaning": "relative_logical_unit_separation",
+        "simplicity_rank": 2
+      },
+      {
+        "features": [
+          "mean_edge_distance",
+          "mean_edge_distance_norm"
+        ],
+        "id": "C_raw_and_norm",
+        "rule": "high if raw>=T_raw_high AND norm>=T_norm_high; low if raw<=T_raw_low AND norm<=T_norm_low; else mid",
+        "simplicity_rank": 3
+      }
+    ],
+    "do_not_add_candidates_after_seeing_calibration": true,
+    "do_not_pick_by_integrate_rate": true,
+    "do_not_pick_by_n_signal": true,
+    "procedure": "pick_best_grid_point_per_candidate_then_compare",
+    "selection_priority": [
+      {
+        "name": "continuous_dispersion_ordering_coverage",
+        "prefer": "higher",
+        "rank": 1,
+        "threshold_dependent": false
+      },
+      {
+        "name": "scale_stability",
+        "prefer": "higher",
+        "rank": 2,
+        "threshold_dependent": false
+      },
+      {
+        "name": "format_consistency",
+        "prefer": "higher",
+        "rank": 3,
+        "source": "best_grid_point",
+        "threshold_dependent": true
+      },
+      {
+        "name": "non_collapse",
+        "prefer": "eligible_only",
+        "rank": 4,
+        "source": "best_grid_point",
+        "threshold_dependent": true
+      },
+      {
+        "name": "simplicity",
+        "prefer": "A_then_B_then_C",
+        "rank": 5,
+        "tie_order": [
+          "A_mean_edge_distance",
+          "B_mean_edge_distance_norm",
+          "C_raw_and_norm"
+        ]
+      }
+    ],
+    "sensor_edge_fp_is_shared_diagnostic": true
+  },
+  "canonical_case_ids": [
+    "p3f-small-one_hop-r0",
+    "p3f-small-one_hop-r1",
+    "p3f-small-one_hop-r2",
+    "p3f-small-one_hop-r3",
+    "p3f-small-two_hop-r0",
+    "p3f-small-two_hop-r1",
+    "p3f-small-two_hop-r2",
+    "p3f-small-two_hop-r3",
+    "p3f-small-branch-r0",
+    "p3f-small-branch-r1",
+    "p3f-small-branch-r2",
+    "p3f-small-branch-r3",
+    "p3f-medium-one_hop-r0",
+    "p3f-medium-one_hop-r1",
+    "p3f-medium-one_hop-r2",
+    "p3f-medium-one_hop-r3",
+    "p3f-medium-two_hop-r0",
+    "p3f-medium-two_hop-r1",
+    "p3f-medium-two_hop-r2",
+    "p3f-medium-two_hop-r3",
+    "p3f-medium-branch-r0",
+    "p3f-medium-branch-r1",
+    "p3f-medium-branch-r2",
+    "p3f-medium-branch-r3",
+    "p3f-large-one_hop-r0",
+    "p3f-large-one_hop-r1",
+    "p3f-large-one_hop-r2",
+    "p3f-large-one_hop-r3",
+    "p3f-large-two_hop-r0",
+    "p3f-large-two_hop-r1",
+    "p3f-large-two_hop-r2",
+    "p3f-large-two_hop-r3",
+    "p3f-large-branch-r0",
+    "p3f-large-branch-r1",
+    "p3f-large-branch-r2",
+    "p3f-large-branch-r3"
+  ],
+  "dispersion_levels": [
+    "near",
+    "medium",
+    "far"
+  ],
+  "distractor_counts": {
+    "large": 48,
+    "medium": 24,
+    "small": 8
+  },
+  "evaluation_holdout_used": false,
+  "evaluation_outcomes_open": false,
+  "generation": "p3f",
+  "gold_leakage": "forbidden_in_sensor_input",
+  "length_control": "near/medium/far of one canonical cell are permutations of the same logical units; no padding",
+  "medium_intervening_units": 3,
+  "metric_roles": {
+    "candidate_level": {
+      "continuous_dispersion_ordering_coverage": {
+        "A_mean_edge_distance": {
+          "continuous_score": "mean_edge_distance",
+          "pass_if": "raw(near) < raw(medium) < raw(far)"
+        },
+        "B_mean_edge_distance_norm": {
+          "continuous_score": "mean_edge_distance_norm",
+          "pass_if": "norm(near) < norm(medium) < norm(far)"
+        },
+        "C_raw_and_norm": {
+          "continuous_score": null,
+          "pass_if": "raw(near) < raw(medium) < raw(far) AND norm(near) < norm(medium) < norm(far)"
+        },
+        "unit": "calibration_canonical_cell"
+      },
+      "do_not_add_tolerance_after_seeing_results": true,
+      "measured_on": "continuous_score_before_threshold",
+      "no_new_scalar_for_C": true,
+      "no_weighted_sum_of_raw_and_norm": true,
+      "scale_stability": {
+        "A_mean_edge_distance": {
+          "contrast": "same_absolute_different_document_size",
+          "pass_if": "one-hop medium mean_edge_distance identical across small/medium/large"
+        },
+        "B_mean_edge_distance_norm": {
+          "contrast": "same_relative_different_absolute",
+          "pass_if": "one-hop far mean_edge_distance_norm identical across small/medium/large"
+        },
+        "C_raw_and_norm": {
+          "pass_if": "A_condition AND B_condition"
+        },
+        "unit": "calibration_replica"
+      },
+      "tolerance": "exact_equality_on_deterministic_synthetic_values",
+      "used_in_threshold_grid_point_comparison": false
+    },
+    "sensor_level_diagnostic": {
+      "edge_false_positive_rate": {
+        "definition": "v1 extra-edge rate vs intended_edges; gold/intended_edges are scorer-only and never sensor input",
+        "reason": "independent of A/B/C scores and of T_low/T_high",
+        "sensor_revision_this_phase": false,
+        "used_in_candidate_selection": false,
+        "used_in_threshold_grid_objective": false
+      },
+      "true_dep_plus_misleading_suffix": {
+        "in_negative_adversarial_elevated_bin_rate": false,
+        "store_as_diagnostic": [
+          "edge_precision",
+          "extra_edge_count"
+        ]
+      }
+    },
+    "threshold_dependent": {
+      "metrics": [
+        {
+          "definition": "fraction of calibration primary cells where bin(near) <= bin(medium) <= bin(far) and bin(near) < bin(far)",
+          "name": "bin_ordering_coverage",
+          "prefer": "higher"
+        },
+        {
+          "definition": "among calibration adversarial surfaces with intended_edges=[], fraction whose bin is mid or high",
+          "excludes": "true_dep_plus_misleading_suffix",
+          "name": "negative_adversarial_elevated_bin_rate",
+          "prefer": "lower"
+        },
+        {
+          "definition": "fraction of calibration cells where key_value and json receive the same low/mid/high bin",
+          "name": "format_consistency",
+          "prefer": "higher"
+        },
+        {
+          "definition": "no single bin may cover >= 0.95 of calibration primary surfaces",
+          "name": "non_collapse",
+          "prefer": "eligible_only",
+          "threshold": 0.95
+        }
+      ],
+      "used_in_threshold_grid_point_comparison": true
+    }
+  },
+  "n_adversarial_surfaces": 48,
+  "n_canonical_cells": 36,
+  "n_primary_surfaces": 216,
+  "not_phase2": true,
+  "offline": true,
+  "operator_maps": {
+    "adoption": "phase3h_routing_semantics_freeze",
+    "bins": [
+      "low",
+      "mid",
+      "high"
+    ],
+    "candidates": [
+      {
+        "high": "must_not_fire_INTEGRATE_from_this_feature_alone; CUT_or_REDUCE_candidate",
+        "id": "M1_locality_for_integrate",
+        "low": "may_contribute_toward_INTEGRATE_only_with_other_features",
+        "mid": "candidate_to_prepend_UNTANGLE_then_existing_rule_pi"
+      },
+      {
+        "high": "may_contribute_toward_INTEGRATE_only_with_other_features",
+        "id": "M2_spread_needs_gather",
+        "low": "no_extra_operator_from_this_feature",
+        "mid": "candidate_to_prepend_UNTANGLE"
+      }
+    ],
+    "dispersion_feature_does_not_auto_integrate": true,
+    "existing_rule_policy_unchanged_in_phase3f": true,
+    "mapping_selection": "deferred to phase3h_routing_semantics_freeze; Phase 3G does not choose M1 vs M2",
+    "not_selected_in_phase3g_because": "M1/M2 do not change sensor score, threshold bin, or Phase 3G calibration metrics, so the current priority list cannot distinguish them from data",
+    "phase3g_does_not_select": [
+      "M1_locality_for_integrate",
+      "M2_spread_needs_gather"
+    ],
+    "phase3g_selects": [
+      "feature_candidate_A_B_C",
+      "threshold_values"
+    ],
+    "rule_policy_unconnected": true
+  },
+  "out_of_scope_formats": [
+    "csv",
+    "yaml",
+    "prose"
+  ],
+  "paid_api": false,
+  "phase3g": "calibration_split_only",
+  "premise": "PHASE3E_V1_VALIDATED",
+  "primary_axis": "dependency_dispersion",
+  "purpose": "freeze how v1 would be chosen for routing before seeing any calibration numbers; not a routing connection",
+  "required_formats": [
+    "key_value",
+    "json"
+  ],
+  "research_conclusion": false,
+  "revision": "phase3f-routing-calibration-freeze-v0.3",
+  "routing_connected": false,
+  "rule_policy_changed": false,
+  "scale_contrasts": {
+    "same_absolute_different_size": "one_hop medium (gap=3) across small/medium/large",
+    "same_relative_different_absolute": "one_hop far (endpoints) across small/medium/large"
+  },
+  "scale_levels": [
+    "small",
+    "medium",
+    "large"
+  ],
+  "schema": "bitebench-phase3f-routing-calibration-freeze/v0.3",
+  "shapes": [
+    "one_hop",
+    "two_hop",
+    "branch"
+  ],
+  "supersedes": "phase3f-routing-calibration-freeze-v0.2",
+  "supersession": {
+    "changed": [
+      "candidate_C_pre_threshold_metrics",
+      "M1_M2_adoption_timing"
+    ],
+    "previous": "phase3f-routing-calibration-freeze-v0.2",
+    "previous_path": "benchmarks/spec/phase3f-routing-calibration-freeze-v0.2.json",
+    "reason": "define C pre-threshold metrics and defer M1/M2 to Phase 3H",
+    "unchanged": [
+      "generation",
+      "split",
+      "surfaces",
+      "adversarial_fixtures",
+      "candidates",
+      "grids",
+      "threshold_objective"
+    ],
+    "v0_1_deleted": false,
+    "v0_1_overwritten": false,
+    "v0_2_deleted": false,
+    "v0_2_overwritten": false
+  },
+  "synthetic": true,
+  "threshold_search": {
+    "bin_rule": "x <= T_low -> low; T_low < x < T_high -> mid; x >= T_high -> high",
+    "do_not_edit_after_seeing_evaluation": true,
+    "do_not_extend_grid_after_seeing_calibration": true,
+    "evaluation_sealed_until_locked": true,
+    "grids": {
+      "A_mean_edge_distance": {
+        "T_high": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "T_low": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "constraint": "T_low < T_high"
+      },
+      "B_mean_edge_distance_norm": {
+        "T_high": [
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.75,
+          0.9
+        ],
+        "T_low": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25
+        ],
+        "constraint": "T_low < T_high"
+      },
+      "C_raw_and_norm": {
+        "T_norm_high": [
+          0.5,
+          0.75
+        ],
+        "T_norm_low": [
+          0.1,
+          0.25
+        ],
+        "T_raw_high": [
+          4,
+          9
+        ],
+        "T_raw_low": [
+          1,
+          2,
+          4
+        ],
+        "constraint": "T_raw_low < T_raw_high and T_norm_low < T_norm_high"
+      }
+    },
+    "not_objective": [
+      "edge_false_positive_rate",
+      "continuous_dispersion_ordering_coverage",
+      "scale_stability",
+      "n_signal",
+      "INTEGRATE_rate"
+    ],
+    "objective": {
+      "applies_within": "each_candidate_separately",
+      "do_not_extend_grid_after_seeing_calibration": true,
+      "eligibility": "non_collapse",
+      "not_used": [
+        "edge_false_positive_rate",
+        "continuous_dispersion_ordering_coverage",
+        "scale_stability",
+        "n_signal",
+        "INTEGRATE_rate"
+      ],
+      "selection_order": [
+        {
+          "name": "negative_adversarial_elevated_bin_rate",
+          "prefer": "lower",
+          "rank": 1
+        },
+        {
+          "name": "bin_ordering_coverage",
+          "prefer": "higher",
+          "rank": 2
+        },
+        {
+          "name": "format_consistency",
+          "prefer": "higher",
+          "rank": 3
+        },
+        {
+          "candidate_C": [
+            "T_raw_high",
+            "T_norm_high",
+            "T_raw_low",
+            "T_norm_low"
+          ],
+          "name": "complete_tie",
+          "prefer": "smallest_T_high_then_smallest_T_low",
+          "rank": 4
+        }
+      ]
+    },
+    "phase": "3G_calibration_only",
+    "values_not_set_in_phase3f": true
+  },
+  "thresholds_set": false,
+  "v0_overwritten": false,
+  "v1_sensor_changed": false,
+  "verdict": "PHASE3F_ROUTING_CALIBRATION_PROTOCOL_FROZEN"
+}

@@ -18,19 +18,44 @@
 ## 現在の freeze
 
 ```text
-phase3f-routing-calibration-freeze-v0.2
+phase3f-routing-calibration-freeze-v0.3
 PHASE3F_ROUTING_CALIBRATION_PROTOCOL_FROZEN
 ```
 
-v0.1 は削除していない。上書きしていない。v0.2 が supersede する。
+v0.1 / v0.2 は削除していない。上書きしていない。v0.3 が v0.2 を supersede する。
 
-- 残置: `benchmarks/spec/phase3f-routing-calibration-freeze.json`（revision `phase3f-routing-calibration-freeze-v0.1`）
-- 現行: `benchmarks/spec/phase3f-routing-calibration-freeze-v0.2.json`
+- 残置: `benchmarks/spec/phase3f-routing-calibration-freeze.json`（v0.1）
+- 残置: `benchmarks/spec/phase3f-routing-calibration-freeze-v0.2.json`
+- 現行: `benchmarks/spec/phase3f-routing-calibration-freeze-v0.3.json`
 - split: `benchmarks/spec/phase3f-split-manifest.json`（v0.1 のまま）
 
-変更したのは threshold search objective の役割分離だけ。generation / split / A・B・C / grids / formats / adversarial fixtures / M1・M2 は v0.1 のまま。
+v0.3 で変えたのは Candidate C の threshold 前 metric 定義と、M1/M2 の採用タイミングだけ。generation / split / surfaces / adversarial / A・B・C / grids / threshold objective は v0.2 のまま。
 
 BITE wins / Go ではない。
+
+---
+
+## v0.3 で直した曖昧さ
+
+### Candidate の continuous ordering
+
+- A: `continuous_score = mean_edge_distance`。cell ごとに `raw(near) < raw(medium) < raw(far)` なら pass。その割合が coverage。
+- B: `continuous_score = mean_edge_distance_norm`。`norm(near) < norm(medium) < norm(far)`。
+- C: 単一 scalar は作らない。raw と norm の双方が成立した cell だけ pass。重み付き加算はしない。
+
+### scale_stability
+
+replica ごとに判定し、その pass 率が `scale_stability`。tolerance は結果を見て足さない。exact comparison。
+
+- A: one-hop medium の `mean_edge_distance` が small/medium/large で同一
+- B: one-hop far の `mean_edge_distance_norm` が small/medium/large で同一
+- C: A 条件 AND B 条件
+
+### M1 / M2
+
+Phase 3G では選ばない。sensor score / threshold bin / 3G calibration metric を変えないので、現行 priority list ではデータで識別できない。候補定義は残す。adoption は `phase3h_routing_semantics_freeze`。
+
+3G で選ぶのは feature candidate A/B/C と threshold 値だけ。RulePolicy にはまだ接続しない。
 
 ---
 
@@ -108,9 +133,9 @@ near / medium / far は同一 logical unit の並べ替え。padding なし。
 
 ---
 
-## Operator 対応（v0.1 から不変）
+## Operator 対応
 
-high dispersion から単独で INTEGRATE を発火させない。M1 / M2 は候補のまま。採用は 3G。RulePolicy は変更しない。
+high dispersion から単独で INTEGRATE を発火させない。M1 / M2 候補定義は残す。採用は Phase 3H。Phase 3G では選ばない。RulePolicy は変更しない。
 
 ---
 
@@ -118,13 +143,14 @@ high dispersion から単独で INTEGRATE を発火させない。M1 / M2 は候
 
 - `src/bite_bench/phase3f.py`
 - `benchmarks/spec/phase3f-routing-calibration-freeze.json`（v0.1 残置）
-- `benchmarks/spec/phase3f-routing-calibration-freeze-v0.2.json`
+- `benchmarks/spec/phase3f-routing-calibration-freeze-v0.2.json`（残置）
+- `benchmarks/spec/phase3f-routing-calibration-freeze-v0.3.json`
 - `benchmarks/spec/phase3f-split-manifest.json`（未変更）
-- `spec/phase3f-routing-calibration-freeze-v0.2.schema.json`
+- `spec/phase3f-routing-calibration-freeze-v0.3.schema.json`
 - `tests/test_phase3f_routing_calibration_freeze.py`
 
 ---
 
 ## 次
 
-Phase 3G で calibration split だけを測り、この v0.2 規則で candidate と threshold をロックする。evaluation はまだ開けない。
+Phase 3G で calibration split だけを測り、この v0.3 規則で A/B/C と threshold をロックする。M1/M2 は選ばない。evaluation はまだ開けない。

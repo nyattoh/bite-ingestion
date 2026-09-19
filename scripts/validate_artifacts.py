@@ -481,6 +481,10 @@ def main(argv: list[str] | None = None) -> int:
             args.root / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze-v0.2.json",
             "phase3f-routing-calibration-freeze-v0.2.schema.json",
         ),
+        (
+            args.root / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze-v0.3.json",
+            "phase3f-routing-calibration-freeze-v0.3.schema.json",
+        ),
     ):
         if not phase3f.is_file():
             continue
