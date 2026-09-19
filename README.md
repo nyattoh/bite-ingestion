@@ -64,6 +64,7 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 3E v1 sensor implementation: **PHASE3E_V1_VALIDATED** (development freeze fixtures; v0 retained; routing unconnected)
 - Phase 3F routing calibration protocol freeze: **PHASE3F_ROUTING_CALIBRATION_PROTOCOL_FROZEN** (`phase3f-routing-calibration-freeze-v0.3` supersedes v0.2; thresholds not set; RulePolicy unconnected)
 - Phase 3G calibration lock: **PHASE3G_CALIBRATION_LOCKED** (candidate A `mean_edge_distance`, T_low=1 T_high=4; evaluation sealed; RulePolicy unconnected)
+- Phase 3H operator-map development experiment: **PHASE3H_CONDITIONAL_MAP_REQUIRED** (p3h high-dispersion textures; p3f evaluation sealed; RulePolicy not implemented)
 - **Next**: do not retune profiler / thresholds / routing on the spent Phase 2 holdout
 
 See:
@@ -97,3 +98,6 @@ See:
 - [`benchmarks/spec/phase3f-routing-calibration-freeze-v0.3.json`](benchmarks/spec/phase3f-routing-calibration-freeze-v0.3.json)
 - [`docs/hand_over/PHASE3G-CALIBRATION-LOCK.md`](docs/hand_over/PHASE3G-CALIBRATION-LOCK.md)
 - [`artifacts/phase3g/calibration-lock.json`](artifacts/phase3g/calibration-lock.json)
+- [`docs/hand_over/PHASE3H-OPERATOR-MAP.md`](docs/hand_over/PHASE3H-OPERATOR-MAP.md)
+- [`benchmarks/spec/phase3h-operator-map-freeze.json`](benchmarks/spec/phase3h-operator-map-freeze.json)
+- [`artifacts/phase3h/operator-map-experiment.json`](artifacts/phase3h/operator-map-experiment.json)

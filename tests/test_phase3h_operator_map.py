@@ -1,6 +1,6 @@
-"""Phase 3H operator-map protocol freeze tests (H0).
+"""Phase 3H operator-map freeze (H0) and development experiment (H1) tests.
 
-Does not run operators. Does not open p3f evaluation. Does not change v1.
+p3f evaluation stays sealed. Candidate A, thresholds, and v1 stay locked.
 """
 
 from __future__ import annotations
@@ -35,13 +35,21 @@ from bite_bench.phase3h import (
     refuse_p3f_evaluation,
     validate_phase3h_freeze,
 )
+from bite_eval.phase3h_experiment import (
+    PROTOCOL_COMMIT_SHA,
+    RESULT_PATH,
+    run_experiment,
+    validate_phase3h_experiment,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 FREEZE = ROOT / "benchmarks" / "spec" / "phase3h-operator-map-freeze.json"
 SCHEMA = ROOT / "spec" / "phase3h-operator-map-freeze.schema.json"
 GEN_PY = ROOT / "src" / "bite_bench" / "phase3h.py"
+EXP_PY = ROOT / "src" / "bite_eval" / "phase3h_experiment.py"
 V1_PY = ROOT / "src" / "bite_ingestion" / "profilers" / "dependency_dispersion_v1.py"
 POLICY_PY = ROOT / "src" / "bite_ingestion" / "policies" / "rule_policy.py"
+EXP_SCHEMA = ROOT / "spec" / "phase3h-operator-map-experiment.schema.json"
 
 
 def test_committed_freeze_matches_manifest() -> None:
@@ -192,3 +200,62 @@ def test_h0_does_not_import_routing_or_p3f_generator() -> None:
     assert POLICY_PY.is_file()
     assert V1_PY.is_file()
     assert "HIGH" in POLICY_PY.read_text(encoding="utf-8")
+
+
+def test_h1_records_h0_commit_and_matches_artifacts() -> None:
+    doc = run_experiment()
+    committed = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+    assert json.loads(json.dumps(doc, sort_keys=True)) == json.loads(
+        json.dumps(committed, sort_keys=True)
+    )
+    assert validate_phase3h_experiment(committed) == []
+    jsonschema.validate(committed, json.loads(EXP_SCHEMA.read_text(encoding="utf-8")))
+    assert committed["protocol_commit_sha"] == PROTOCOL_COMMIT_SHA
+    assert len(PROTOCOL_COMMIT_SHA) == 40
+    assert committed["verdict"] in MAP_VERDICTS
+    assert committed["locked_candidate"] == LOCKED_CANDIDATE
+    assert committed["locked_thresholds"] == {"T_low": LOCKED_T_LOW, "T_high": LOCKED_T_HIGH}
+    assert committed["token_reduction_used_for_verdict"] is False
+    assert committed["must_pick_m1_or_m2"] is False
+    assert committed["operator_map_selected"] is False
+    assert committed["selected_operator_map"] is None
+    assert committed["high_bin_mapped_to_operator"] is False
+    assert committed["rule_policy_implemented"] is False
+    if committed["verdict"] == VERDICT_CONDITIONAL:
+        assert committed["rule_policy_changed"] is False
+
+
+def test_h1_does_not_open_p3f_evaluation() -> None:
+    blob = RESULT_PATH.read_text(encoding="utf-8")
+    assert "p3f-" not in blob
+    assert '"replica": 2' not in blob
+    assert '"replica": 3' not in blob
+    doc = json.loads(blob)
+    assert doc["p3f_evaluation_holdout_used"] is False
+    assert doc["evaluation_outcomes_open"] is False
+    for row in doc["rows"]:
+        assert row["generation"] == "p3h"
+        assert row["split"] == "development"
+        assert row["replica"] in REPLICAS
+        assert not str(row["surface_id"]).startswith("p3f-")
+
+
+def test_h1_does_not_pick_winner_by_token_reduction() -> None:
+    src = EXP_PY.read_text(encoding="utf-8")
+    assert "decide_verdict(" in src
+    assert "token_proxy" in src
+    assert "token_reduction_used_for_verdict" in src
+    doc = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+    assert "token_proxy_after" in doc["rows"][0]
+    assert doc["token_reduction_used_for_verdict"] is False
+    assert "winner" not in decide_verdict.__code__.co_varnames
+
+
+def test_h1_does_not_change_v1_or_routing_modules() -> None:
+    exp = EXP_PY.read_text(encoding="utf-8")
+    assert "from bite_ingestion.policies" not in exp
+    assert "RulePolicy" not in exp
+    assert "from bite_bench.phase3f" not in exp
+    assert POLICY_PY.is_file()
+    assert "class RulePolicy" in POLICY_PY.read_text(encoding="utf-8")
+    assert "def measure(" in V1_PY.read_text(encoding="utf-8")
