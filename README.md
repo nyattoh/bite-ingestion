@@ -71,6 +71,7 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 3L redundancy first-open: **PHASE3L_REDUNDANCY_HOLDOUT_CONFIRMED** (p3k replicas 2/3; same frozen families / new replica values; RulePolicy unconnected)
 - Phase 3M gold-free conditional routing: **PHASE3M_CONDITIONAL_ROUTING_READY** (p3m development 0/1; `conditional_texture_policy_v1`; RulePolicy retained; p3m/p3f evaluation sealed)
 - Phase 3N conditional routing first-open: **PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_CONFIRMED** (p3m replicas 2/3; same frozen p3m texture families / new replica identifiers; p3f evaluation sealed)
+- Phase 3O BITE-XFER-1 transfer: **PHASE3O_XFER1_TRANSFER_FAILED** (104 surfaces; routing/cross-format identity held; mixed_order sensor/operator mismatch + pretty_json composition safety; no retune; p3f evaluation sealed)
 - **Next**: do not retune profiler / thresholds / routing on the spent Phase 2 holdout
 
 See:
@@ -127,3 +128,6 @@ See:
 - [`docs/hand_over/PHASE3N-CONDITIONAL-ROUTING-FIRST-OPEN.md`](docs/hand_over/PHASE3N-CONDITIONAL-ROUTING-FIRST-OPEN.md)
 - [`benchmarks/spec/phase3n-conditional-routing-first-open-freeze.json`](benchmarks/spec/phase3n-conditional-routing-first-open-freeze.json)
 - [`artifacts/phase3n/conditional-routing-first-open.json`](artifacts/phase3n/conditional-routing-first-open.json)
+- [`docs/hand_over/PHASE3O-BITE-XFER1.md`](docs/hand_over/PHASE3O-BITE-XFER1.md)
+- [`benchmarks/spec/phase3o-xfer1-freeze.json`](benchmarks/spec/phase3o-xfer1-freeze.json)
+- [`artifacts/phase3o/xfer1-transfer.json`](artifacts/phase3o/xfer1-transfer.json)
