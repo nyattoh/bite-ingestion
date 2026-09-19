@@ -1,0 +1,561 @@
+{
+  "n_ok": 14,
+  "rows": [
+    {
+      "case_id": "p3p-rjoin",
+      "format": "key_value",
+      "ok": true,
+      "role": "reduce_v2_then_integrate",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-rjoin-u00",
+          "p3p-rjoin-u09"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 102,
+        "token_proxy_before": 110
+      },
+      "safety_ok": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-rjoin-key_value"
+    },
+    {
+      "case_id": "p3p-rjoin",
+      "format": "compact_json",
+      "ok": true,
+      "role": "reduce_v2_then_integrate",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-rjoin-u00",
+          "p3p-rjoin-u09"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 141,
+        "token_proxy_before": 152
+      },
+      "safety_ok": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-rjoin-compact_json"
+    },
+    {
+      "case_id": "p3p-rjoin",
+      "format": "pretty_json",
+      "ok": true,
+      "role": "reduce_v2_then_integrate",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-rjoin-u00",
+          "p3p-rjoin-u09"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 182,
+        "token_proxy_before": 207
+      },
+      "safety_ok": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-rjoin-pretty_json"
+    },
+    {
+      "case_id": "p3p-rjoin",
+      "format": "reversed_order_json",
+      "ok": true,
+      "role": "reduce_v2_then_integrate",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-rjoin-u00",
+          "p3p-rjoin-u09"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 141,
+        "token_proxy_before": 152
+      },
+      "safety_ok": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-rjoin-reversed_order_json"
+    },
+    {
+      "case_id": "p3p-uri",
+      "format": "key_value",
+      "ok": true,
+      "role": "untangle_reduce_v2_integrate",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-uri-u00",
+          "p3p-uri-u09"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 90,
+        "token_proxy_before": 105
+      },
+      "safety_ok": true,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-uri-key_value"
+    },
+    {
+      "case_id": "p3p-uri",
+      "format": "compact_json",
+      "ok": true,
+      "role": "untangle_reduce_v2_integrate",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-uri-u00",
+          "p3p-uri-u09"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 129,
+        "token_proxy_before": 151
+      },
+      "safety_ok": true,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-uri-compact_json"
+    },
+    {
+      "case_id": "p3p-uri",
+      "format": "pretty_json",
+      "ok": true,
+      "role": "untangle_reduce_v2_integrate",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-uri-u00",
+          "p3p-uri-u09"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 170,
+        "token_proxy_before": 209
+      },
+      "safety_ok": true,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-uri-pretty_json"
+    },
+    {
+      "case_id": "p3p-uri",
+      "format": "reversed_order_json",
+      "ok": true,
+      "role": "untangle_reduce_v2_integrate",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-uri-u00",
+          "p3p-uri-u09"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 129,
+        "token_proxy_before": 151
+      },
+      "safety_ok": true,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-uri-reversed_order_json"
+    },
+    {
+      "case_id": "p3p-derj",
+      "format": "pretty_json",
+      "ok": true,
+      "role": "prior_derived_id_then_integrate",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-derj-u00",
+          "p3p-derj-u01"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 31,
+        "token_proxy_before": 33
+      },
+      "safety_ok": true,
+      "sequence": [
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-derj-pretty_json"
+    },
+    {
+      "case_id": "p3p-tjoin",
+      "format": "key_value",
+      "ok": true,
+      "role": "true_shared_join_key",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-tjoin-u00",
+          "p3p-tjoin-u09"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 95,
+        "token_proxy_before": 95
+      },
+      "safety_ok": true,
+      "sequence": [
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-tjoin-key_value"
+    },
+    {
+      "case_id": "p3p-tjoin",
+      "format": "compact_json",
+      "ok": true,
+      "role": "true_shared_join_key",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-tjoin-u00",
+          "p3p-tjoin-u09"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 130,
+        "token_proxy_before": 130
+      },
+      "safety_ok": true,
+      "sequence": [
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-tjoin-compact_json"
+    },
+    {
+      "case_id": "p3p-tjoin",
+      "format": "pretty_json",
+      "ok": true,
+      "role": "true_shared_join_key",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-tjoin-u00",
+          "p3p-tjoin-u09"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 167,
+        "token_proxy_before": 176
+      },
+      "safety_ok": true,
+      "sequence": [
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-tjoin-pretty_json"
+    },
+    {
+      "case_id": "p3p-tjoin",
+      "format": "reversed_order_json",
+      "ok": true,
+      "role": "true_shared_join_key",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [
+          "p3p-tjoin-u00",
+          "p3p-tjoin-u09"
+        ],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 130,
+        "token_proxy_before": 130
+      },
+      "safety_ok": true,
+      "sequence": [
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-tjoin-reversed_order_json"
+    },
+    {
+      "case_id": "p3p-nroot",
+      "format": "pretty_json",
+      "ok": true,
+      "role": "unrelated_derived_roots_negative",
+      "safety": {
+        "checks": {
+          "conservation_untraced": true,
+          "integrate_explicit_join_composite": true,
+          "lineage_recall": true,
+          "no_unrelated_overmerge": true,
+          "provenance_completeness": true,
+          "quarantine_recoverable": true,
+          "reduce_only_logical_duplicates": true,
+          "silent_loss": true
+        },
+        "conservation_untraced": [],
+        "integrate_explicit_join_composite": true,
+        "join_roots_used": [],
+        "lineage_recall": 1.0,
+        "no_unrelated_overmerge": true,
+        "ok": true,
+        "provenance_completeness": 1.0,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": 0,
+        "token_proxy_after": 35,
+        "token_proxy_before": 37
+      },
+      "safety_ok": true,
+      "sequence": [
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "surface_id": "p3p-nroot-pretty_json"
+    }
+  ],
+  "schema": "bite-phase3p-lineage-safety/v0.1"
+}

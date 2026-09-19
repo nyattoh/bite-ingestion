@@ -300,5 +300,120 @@ def write_freeze() -> Path:
     return FREEZE_PATH
 
 
+FORBIDDEN_BODY = (
+    "texture",
+    "REDUCE",
+    "UNTANGLE",
+    "INTEGRATE",
+    "expected_sequence",
+    "hop_p3m",
+    "padk_",
+    "xfer1-",
+    "p3m-",
+    "p3f-",
+)
+
+
+def _fill(cid: str, n: int, start: int = 0) -> list[tuple[str, str]]:
+    return [
+        (f"note_lab_{cid}_{i:02d}", f"blob_lab_{cid}_{i:02d}")
+        for i in range(start, start + n)
+    ]
+
+
+def _hop(cid: str, n_between: int = 8, join: str | None = None) -> list[tuple[str, str]]:
+    src_v = f"dock_lab_{cid}"
+    dst_v = f"ack_lab_{cid}"
+    if join:
+        src_v = f"{src_v} {join}"
+        dst_v = f"{dst_v} {join}"
+    return [
+        (f"wire_lab_{cid}", src_v),
+        *_fill(cid, n_between),
+        (f"bin_dock_lab_{cid}", dst_v),
+    ]
+
+
+def records_for(case_id: str) -> list[tuple[str, str]]:
+    cid = case_id.removeprefix("p3p-")
+    dup = ("slot_lab_" + cid, "same_lab_" + cid)
+    if case_id == "p3p-dadj":
+        return [dup, dup, *_fill(cid, 1, 20)]
+    if case_id == "p3p-drev":
+        return [dup, dup]
+    if case_id == "p3p-dnon":
+        return [dup, ("gap_lab_" + cid, "void_lab_" + cid), dup]
+    if case_id == "p3p-nkey":
+        return [("slot_lab_" + cid, "alpha_lab_" + cid), ("slot_lab_" + cid, "beta_lab_" + cid)]
+    if case_id == "p3p-nval":
+        return [("slot_a_" + cid, "same_lab_" + cid), ("slot_b_" + cid, "same_lab_" + cid)]
+    if case_id == "p3p-nextra":
+        return [dup, dup]
+    if case_id == "p3p-kvdup":
+        return [dup, dup, *_fill(cid, 1, 20)]
+    if case_id == "p3p-rjoin":
+        rows = _hop(cid, join="id=vial_" + cid)
+        rows.extend([dup, dup])
+        return rows
+    if case_id == "p3p-uri":
+        rows = _hop(cid, join="id=vial_" + cid)
+        rows.extend([dup, dup, ("alert_" + cid, "probe dump TRACEBACK")])
+        return rows
+    if case_id == "p3p-derj":
+        join = "id=vial_" + cid
+        return [("left_lab_" + cid, "hold " + join), ("right_lab_" + cid, "hold " + join)]
+    if case_id == "p3p-tjoin":
+        return _hop(cid, join="id=vial_" + cid)
+    if case_id == "p3p-nroot":
+        return [
+            ("left_lab_" + cid, "hold id=vial_left_" + cid),
+            ("right_lab_" + cid, "hold id=vial_right_" + cid),
+        ]
+    raise KeyError(case_id)
+
+
+def render_records(case_id: str, records: list[tuple[str, str]], fmt: str) -> str:
+    extra = case_id == "p3p-nextra"
+    reverse_pair = case_id == "p3p-drev"
+    if fmt == "key_value":
+        return "\n".join(f"{key}={value}" for key, value in records) + "\n"
+    objs: list[dict[str, str]] = []
+    for index, (key, value) in enumerate(records):
+        if extra:
+            objs.append({"k": key, "v": value, "meta": f"tag_{index}"})
+        elif (reverse_pair or fmt == "reversed_order_json") and index % 2:
+            objs.append({"v": value, "k": key})
+        else:
+            objs.append({"k": key, "v": value})
+    if fmt == "pretty_json":
+        return json.dumps(objs, indent=2)
+    return json.dumps(objs, separators=(",", ":"))
+
+
+def planned_cases() -> list[dict[str, Any]]:
+    return list(freeze_manifest()["planned_cases"])
+
+
+def development_surfaces() -> list[dict[str, Any]]:
+    surfaces: list[dict[str, Any]] = []
+    for spec in planned_cases():
+        case_id = str(spec["case_id"])
+        records = records_for(case_id)
+        for fmt in spec["formats"]:
+            body = render_records(case_id, records, str(fmt))
+            surfaces.append(
+                {
+                    "surface_id": f"{case_id}-{fmt}",
+                    "case_id": case_id,
+                    "format": fmt,
+                    "role": spec["role"],
+                    "expect_duplicate": bool(spec["expect_duplicate"]),
+                    "document": body,
+                    "n_records": len(records),
+                }
+            )
+    return surfaces
+
+
 if __name__ == "__main__":
     write_freeze()

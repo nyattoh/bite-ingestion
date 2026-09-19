@@ -20,6 +20,18 @@ from bite_bench.phase3p import (
     refuse_p3f_evaluation,
     validate_phase3p_freeze,
 )
+from bite_eval.phase3p_eval import (
+    PROTOCOL_COMMIT_SHA,
+    RESULT_PATH,
+    run_evaluation,
+    validate_phase3p_result,
+)
+from bite_ingestion.interfaces.operator import OperatorId
+from bite_ingestion.logical_record import identity_of_text
+from bite_ingestion.operators import OPERATOR_REGISTRY
+from bite_ingestion.operators.reduce_v2 import LogicalReduceOperatorV2
+from bite_ingestion.packet_contract import make_unit
+from bite_ingestion.profilers.structural_redundancy_v2 import measure
 
 ROOT = Path(__file__).resolve().parents[1]
 FREEZE = ROOT / "benchmarks" / "spec" / "phase3p-record-alignment-freeze.json"
@@ -61,3 +73,53 @@ def test_phase3o_stays_failed_and_p3f_sealed() -> None:
     for path in (V1_POLICY, V1_SENSOR, V1_REDUCE):
         assert path.is_file()
     assert "def composition_safety(" in V1_SAFETY.read_text(encoding="utf-8")
+
+
+def test_logical_identity_ignores_json_order_and_rejects_extra_fields() -> None:
+    compact = '{"k":"slot_lab_dadj","v":"same_lab_dadj"}'
+    reversed_obj = '{"v":"same_lab_dadj","k":"slot_lab_dadj"}'
+    extra = '{"k":"slot_lab_dadj","v":"same_lab_dadj","meta":"tag"}'
+    assert identity_of_text(compact) == identity_of_text(reversed_obj)
+    assert identity_of_text(extra) is None
+    payload = f"[{compact},{reversed_obj}]"
+    report = measure({"payload": payload})
+    assert report.fail_closed is False
+    assert report.features["duplicate_unit_ratio"] > 0.0
+    doc = f"[{compact},{reversed_obj}]"
+    units = [
+        make_unit(unit_id="a", text=compact, start=1, end=1 + len(compact), source_uri="u"),
+        make_unit(
+            unit_id="b",
+            text=reversed_obj,
+            start=2 + len(compact),
+            end=2 + len(compact) + len(reversed_obj),
+            source_uri="u",
+        ),
+    ]
+    packet = {"packet_id": "t", "document": doc, "units": units, "visible_evidence": []}
+    after = LogicalReduceOperatorV2().apply(packet)
+    assert len(after["units"]) == 1
+    assert after["units"][0]["unit_id"] == "a"
+    assert after["units"][0]["text"] == compact
+
+
+def test_p1_matches_artifacts_and_keeps_phase3o_failed() -> None:
+    doc = run_evaluation()
+    committed = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+    assert json.loads(json.dumps(doc, sort_keys=True)) == json.loads(
+        json.dumps(committed, sort_keys=True)
+    )
+    assert validate_phase3p_result(committed) == []
+    jsonschema.validate(
+        committed,
+        json.loads((ROOT / "spec" / "phase3p-record-alignment.schema.json").read_text(encoding="utf-8")),
+    )
+    assert committed["protocol_commit_sha"] == PROTOCOL_COMMIT_SHA
+    assert committed["verdict"] == "PHASE3P_RECORD_ALIGNMENT_VALIDATED"
+    assert committed["phase3o_verdict_unchanged"] is True
+    assert json.loads(PHASE3O.read_text(encoding="utf-8"))["verdict"] == PHASE3O_VERDICT
+    assert committed["xfer1_reproduction"]["primary"] is False
+    assert OperatorId.REDUCE_V2 not in OPERATOR_REGISTRY
+    assert "class ReduceOperator" in V1_REDUCE.read_text(encoding="utf-8")
+    blob = RESULT_PATH.read_text(encoding="utf-8")
+    assert "p3f-" not in blob

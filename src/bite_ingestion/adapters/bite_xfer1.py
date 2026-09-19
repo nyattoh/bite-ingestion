@@ -88,7 +88,7 @@ def unitize(
 ) -> list[dict[str, Any]]:
     if fmt == "key_value":
         spans = _kv_spans(document)
-    elif fmt in {"compact_json", "pretty_json", "mixed_order_json"}:
+    elif fmt in {"compact_json", "pretty_json", "mixed_order_json", "reversed_order_json"}:
         spans = _json_object_spans(document)
     else:
         raise UnitizerError(f"unsupported format {fmt}")
