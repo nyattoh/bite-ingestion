@@ -1,0 +1,54 @@
+[
+  {
+    "k": "src_flash_q020",
+    "v": "chip_lock_q020"
+  },
+  {
+    "k": "note_firmware_q020_00",
+    "v": "blob_firmware_q020_00"
+  },
+  {
+    "k": "note_firmware_q020_01",
+    "v": "blob_firmware_q020_01 観測"
+  },
+  {
+    "k": "note_firmware_q020_02",
+    "v": "naïve blob_firmware_q020_02"
+  },
+  {
+    "k": "note_firmware_q020_03",
+    "v": "blob_firmware_q020_03 shift = 1"
+  },
+  {
+    "k": "note_firmware_q020_04",
+    "v": "blob_firmware_q020_04 said \"ok\""
+  },
+  {
+    "k": "note_firmware_q020_05",
+    "v": "α blob_firmware_q020_05"
+  },
+  {
+    "k": "note_firmware_q020_06",
+    "v": "NGC 1300 blob_firmware_q020_06"
+  },
+  {
+    "k": "note_firmware_q020_07",
+    "v": "blob_firmware_q020_07"
+  },
+  {
+    "k": "dst_chip_lock_q020",
+    "v": "ack_chip_lock_q020"
+  },
+  {
+    "k": "mate_a_q020",
+    "v": "crate_a_q020 id=plate_q020"
+  },
+  {
+    "k": "mate_b_q020",
+    "v": "crate_b_q020 id=plate_q020"
+  },
+  {
+    "k": "mate_c_q020",
+    "v": "crate_c_q020 id=plate_q020"
+  }
+]

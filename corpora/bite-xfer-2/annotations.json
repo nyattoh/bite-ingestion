@@ -1,0 +1,488 @@
+{
+  "annotations": {
+    "xfer2-q001": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [],
+      "explicit_join_groups": [],
+      "intended_dispersion": "low",
+      "required_evidence_ids": [
+        "xfer2-q001-u00",
+        "xfer2-q001-u02"
+      ]
+    },
+    "xfer2-q002": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [
+        [
+          "xfer2-q002-u02",
+          "xfer2-q002-u03"
+        ]
+      ],
+      "explicit_join_groups": [],
+      "intended_dispersion": "low",
+      "required_evidence_ids": [
+        "xfer2-q002-u00",
+        "xfer2-q002-u01"
+      ]
+    },
+    "xfer2-q003": {
+      "anomaly_unit_ids": [
+        "xfer2-q003-u02"
+      ],
+      "duplicate_groups": [],
+      "explicit_join_groups": [],
+      "intended_dispersion": "low",
+      "required_evidence_ids": [
+        "xfer2-q003-u00",
+        "xfer2-q003-u01"
+      ]
+    },
+    "xfer2-q004": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [],
+      "explicit_join_groups": [
+        [
+          "xfer2-q004-u02",
+          "xfer2-q004-u03",
+          "xfer2-q004-u04"
+        ]
+      ],
+      "intended_dispersion": "low",
+      "required_evidence_ids": [
+        "xfer2-q004-u00",
+        "xfer2-q004-u01"
+      ]
+    },
+    "xfer2-q005": {
+      "anomaly_unit_ids": [
+        "xfer2-q005-u04"
+      ],
+      "duplicate_groups": [
+        [
+          "xfer2-q005-u02",
+          "xfer2-q005-u03"
+        ]
+      ],
+      "explicit_join_groups": [],
+      "intended_dispersion": "low",
+      "required_evidence_ids": [
+        "xfer2-q005-u00",
+        "xfer2-q005-u01"
+      ]
+    },
+    "xfer2-q006": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [
+        [
+          "xfer2-q006-u02",
+          "xfer2-q006-u03"
+        ]
+      ],
+      "explicit_join_groups": [
+        [
+          "xfer2-q006-u04",
+          "xfer2-q006-u05"
+        ]
+      ],
+      "intended_dispersion": "low",
+      "required_evidence_ids": [
+        "xfer2-q006-u00",
+        "xfer2-q006-u01"
+      ]
+    },
+    "xfer2-q007": {
+      "anomaly_unit_ids": [
+        "xfer2-q007-u02"
+      ],
+      "duplicate_groups": [],
+      "explicit_join_groups": [
+        [
+          "xfer2-q007-u03",
+          "xfer2-q007-u04",
+          "xfer2-q007-u05"
+        ]
+      ],
+      "intended_dispersion": "low",
+      "required_evidence_ids": [
+        "xfer2-q007-u00",
+        "xfer2-q007-u01"
+      ]
+    },
+    "xfer2-q008": {
+      "anomaly_unit_ids": [
+        "xfer2-q008-u04"
+      ],
+      "duplicate_groups": [
+        [
+          "xfer2-q008-u02",
+          "xfer2-q008-u03"
+        ]
+      ],
+      "explicit_join_groups": [
+        [
+          "xfer2-q008-u05",
+          "xfer2-q008-u06",
+          "xfer2-q008-u07"
+        ]
+      ],
+      "intended_dispersion": "low",
+      "required_evidence_ids": [
+        "xfer2-q008-u00",
+        "xfer2-q008-u01"
+      ]
+    },
+    "xfer2-q009": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [],
+      "explicit_join_groups": [],
+      "intended_dispersion": "mid",
+      "required_evidence_ids": [
+        "xfer2-q009-u00",
+        "xfer2-q009-u03"
+      ]
+    },
+    "xfer2-q010": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [
+        [
+          "xfer2-q010-u04",
+          "xfer2-q010-u05",
+          "xfer2-q010-u06"
+        ]
+      ],
+      "explicit_join_groups": [],
+      "intended_dispersion": "mid",
+      "required_evidence_ids": [
+        "xfer2-q010-u00",
+        "xfer2-q010-u03"
+      ]
+    },
+    "xfer2-q011": {
+      "anomaly_unit_ids": [
+        "xfer2-q011-u04"
+      ],
+      "duplicate_groups": [],
+      "explicit_join_groups": [],
+      "intended_dispersion": "mid",
+      "required_evidence_ids": [
+        "xfer2-q011-u00",
+        "xfer2-q011-u03"
+      ]
+    },
+    "xfer2-q012": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [],
+      "explicit_join_groups": [
+        [
+          "xfer2-q012-u04",
+          "xfer2-q012-u05",
+          "xfer2-q012-u06"
+        ]
+      ],
+      "intended_dispersion": "mid",
+      "required_evidence_ids": [
+        "xfer2-q012-u00",
+        "xfer2-q012-u03"
+      ]
+    },
+    "xfer2-q013": {
+      "anomaly_unit_ids": [
+        "xfer2-q013-u07"
+      ],
+      "duplicate_groups": [
+        [
+          "xfer2-q013-u04",
+          "xfer2-q013-u05",
+          "xfer2-q013-u06"
+        ]
+      ],
+      "explicit_join_groups": [],
+      "intended_dispersion": "mid",
+      "required_evidence_ids": [
+        "xfer2-q013-u00",
+        "xfer2-q013-u03"
+      ]
+    },
+    "xfer2-q014": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [
+        [
+          "xfer2-q014-u04",
+          "xfer2-q014-u05",
+          "xfer2-q014-u06"
+        ]
+      ],
+      "explicit_join_groups": [
+        [
+          "xfer2-q014-u07",
+          "xfer2-q014-u08"
+        ]
+      ],
+      "intended_dispersion": "mid",
+      "required_evidence_ids": [
+        "xfer2-q014-u00",
+        "xfer2-q014-u03"
+      ]
+    },
+    "xfer2-q015": {
+      "anomaly_unit_ids": [
+        "xfer2-q015-u04"
+      ],
+      "duplicate_groups": [],
+      "explicit_join_groups": [
+        [
+          "xfer2-q015-u05",
+          "xfer2-q015-u06",
+          "xfer2-q015-u07"
+        ]
+      ],
+      "intended_dispersion": "mid",
+      "required_evidence_ids": [
+        "xfer2-q015-u00",
+        "xfer2-q015-u03"
+      ]
+    },
+    "xfer2-q016": {
+      "anomaly_unit_ids": [
+        "xfer2-q016-u07"
+      ],
+      "duplicate_groups": [
+        [
+          "xfer2-q016-u04",
+          "xfer2-q016-u05",
+          "xfer2-q016-u06"
+        ]
+      ],
+      "explicit_join_groups": [
+        [
+          "xfer2-q016-u08",
+          "xfer2-q016-u09",
+          "xfer2-q016-u10"
+        ]
+      ],
+      "intended_dispersion": "mid",
+      "required_evidence_ids": [
+        "xfer2-q016-u00",
+        "xfer2-q016-u03"
+      ]
+    },
+    "xfer2-q017": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [],
+      "explicit_join_groups": [],
+      "intended_dispersion": "high",
+      "required_evidence_ids": [
+        "xfer2-q017-u00",
+        "xfer2-q017-u10"
+      ]
+    },
+    "xfer2-q018": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [
+        [
+          "xfer2-q018-u10",
+          "xfer2-q018-u12"
+        ]
+      ],
+      "explicit_join_groups": [],
+      "intended_dispersion": "high",
+      "required_evidence_ids": [
+        "xfer2-q018-u00",
+        "xfer2-q018-u09"
+      ]
+    },
+    "xfer2-q019": {
+      "anomaly_unit_ids": [
+        "xfer2-q019-u10"
+      ],
+      "duplicate_groups": [],
+      "explicit_join_groups": [],
+      "intended_dispersion": "high",
+      "required_evidence_ids": [
+        "xfer2-q019-u00",
+        "xfer2-q019-u09"
+      ]
+    },
+    "xfer2-q020": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [],
+      "explicit_join_groups": [
+        [
+          "xfer2-q020-u10",
+          "xfer2-q020-u11",
+          "xfer2-q020-u12"
+        ]
+      ],
+      "intended_dispersion": "high",
+      "required_evidence_ids": [
+        "xfer2-q020-u00",
+        "xfer2-q020-u09"
+      ]
+    },
+    "xfer2-q021": {
+      "anomaly_unit_ids": [
+        "xfer2-q021-u13"
+      ],
+      "duplicate_groups": [
+        [
+          "xfer2-q021-u10",
+          "xfer2-q021-u12"
+        ]
+      ],
+      "explicit_join_groups": [],
+      "intended_dispersion": "high",
+      "required_evidence_ids": [
+        "xfer2-q021-u00",
+        "xfer2-q021-u09"
+      ]
+    },
+    "xfer2-q022": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [
+        [
+          "xfer2-q022-u10",
+          "xfer2-q022-u12"
+        ]
+      ],
+      "explicit_join_groups": [
+        [
+          "xfer2-q022-u13",
+          "xfer2-q022-u14"
+        ]
+      ],
+      "intended_dispersion": "high",
+      "required_evidence_ids": [
+        "xfer2-q022-u00",
+        "xfer2-q022-u09"
+      ]
+    },
+    "xfer2-q023": {
+      "anomaly_unit_ids": [
+        "xfer2-q023-u10"
+      ],
+      "duplicate_groups": [],
+      "explicit_join_groups": [
+        [
+          "xfer2-q023-u11",
+          "xfer2-q023-u12",
+          "xfer2-q023-u13"
+        ]
+      ],
+      "intended_dispersion": "high",
+      "required_evidence_ids": [
+        "xfer2-q023-u00",
+        "xfer2-q023-u09"
+      ]
+    },
+    "xfer2-q024": {
+      "anomaly_unit_ids": [
+        "xfer2-q024-u15"
+      ],
+      "duplicate_groups": [
+        [
+          "xfer2-q024-u12",
+          "xfer2-q024-u14"
+        ]
+      ],
+      "explicit_join_groups": [
+        [
+          "xfer2-q024-u16",
+          "xfer2-q024-u17",
+          "xfer2-q024-u18"
+        ]
+      ],
+      "intended_dispersion": "high",
+      "required_evidence_ids": [
+        "xfer2-q024-u00",
+        "xfer2-q024-u10"
+      ]
+    },
+    "xfer2-q025": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [
+        [
+          "xfer2-q025-u12",
+          "xfer2-q025-u13"
+        ],
+        [
+          "xfer2-q025-u14",
+          "xfer2-q025-u16"
+        ]
+      ],
+      "explicit_join_groups": [
+        [
+          "xfer2-q025-u17",
+          "xfer2-q025-u18"
+        ]
+      ],
+      "intended_dispersion": "high",
+      "required_evidence_ids": [
+        "xfer2-q025-u00",
+        "xfer2-q025-u10"
+      ]
+    },
+    "xfer2-q026": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [
+        [
+          "xfer2-q026-u10",
+          "xfer2-q026-u11"
+        ]
+      ],
+      "explicit_join_groups": [
+        [
+          "xfer2-q026-u12",
+          "xfer2-q026-u13"
+        ],
+        [
+          "xfer2-q026-u14",
+          "xfer2-q026-u15",
+          "xfer2-q026-u16"
+        ]
+      ],
+      "intended_dispersion": "high",
+      "required_evidence_ids": [
+        "xfer2-q026-u00",
+        "xfer2-q026-u09"
+      ]
+    },
+    "xfer2-q027": {
+      "anomaly_unit_ids": [],
+      "duplicate_groups": [
+        [
+          "xfer2-q027-u10",
+          "xfer2-q027-u11"
+        ]
+      ],
+      "explicit_join_groups": [
+        [
+          "xfer2-q027-u10",
+          "xfer2-q027-u11"
+        ]
+      ],
+      "intended_dispersion": "high",
+      "required_evidence_ids": [
+        "xfer2-q027-u00",
+        "xfer2-q027-u09"
+      ]
+    },
+    "xfer2-q028": {
+      "anomaly_unit_ids": [
+        "xfer2-q028-u10"
+      ],
+      "duplicate_groups": [],
+      "explicit_join_groups": [
+        [
+          "xfer2-q028-u10",
+          "xfer2-q028-u11"
+        ]
+      ],
+      "intended_dispersion": "high",
+      "required_evidence_ids": [
+        "xfer2-q028-u00",
+        "xfer2-q028-u09"
+      ]
+    }
+  },
+  "corpus": "BITE-XFER-2"
+}

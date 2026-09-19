@@ -1,0 +1,8 @@
+src_scope_q013=star_lock_q013
+note_astro_q013_00=blob_astro_q013_00
+note_astro_q013_01=blob_astro_q013_01 観測
+dst_star_lock_q013=ack_star_lock_q013
+copy_main_q013=same_main_q013_row
+copy_main_q013=same_main_q013_row
+copy_main_q013=same_main_q013_row
+alert_q013=CCD readout FATAL

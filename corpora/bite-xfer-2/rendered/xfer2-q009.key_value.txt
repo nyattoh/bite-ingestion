@@ -1,0 +1,5 @@
+src_scope_q009=star_lock_q009
+src2_scope_q009=moon_lock_q009
+note_astro_q009_00=blob_astro_q009_00
+dst_star_lock_q009=ack_star_lock_q009
+dst_moon_lock_q009=ack_moon_lock_q009

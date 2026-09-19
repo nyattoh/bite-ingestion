@@ -85,6 +85,7 @@ def unitize(
     case_id: str,
     fmt: str,
     source_uri: str | None = None,
+    renderer_id: str = "bite-xfer-1",
 ) -> list[dict[str, Any]]:
     if fmt == "key_value":
         spans = _kv_spans(document)
@@ -107,7 +108,7 @@ def unitize(
                 start=start,
                 end=end,
                 source_uri=uri,
-                renderer_id="bite-xfer-1",
+                renderer_id=renderer_id,
             )
         )
     validate_units(units, document=document)

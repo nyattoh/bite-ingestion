@@ -1,0 +1,15 @@
+src_accn_q022=vitrine_lock_q022
+note_museum_q022_00=blob_museum_q022_00
+note_museum_q022_01=blob_museum_q022_01 観測
+note_museum_q022_02=naïve blob_museum_q022_02
+note_museum_q022_03=blob_museum_q022_03 shift = 1
+note_museum_q022_04=blob_museum_q022_04 said "ok"
+note_museum_q022_05=α blob_museum_q022_05
+note_museum_q022_06=NGC 1300 blob_museum_q022_06
+note_museum_q022_07=blob_museum_q022_07
+dst_vitrine_lock_q022=ack_vitrine_lock_q022
+copy_main_q022=same_main_q022_row
+gap_main_q022=void_main_q022
+copy_main_q022=same_main_q022_row
+mate_a_q022=crate_a_q022 key=accn_q022
+mate_b_q022=crate_b_q022 key=accn_q022

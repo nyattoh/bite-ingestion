@@ -1,0 +1,7 @@
+src_accn_q010=vitrine_lock_q010
+note_museum_q010_00=blob_museum_q010_00
+note_museum_q010_01=blob_museum_q010_01 観測
+dst_vitrine_lock_q010=ack_vitrine_lock_q010
+copy_main_q010=same_main_q010_row
+copy_main_q010=same_main_q010_row
+copy_main_q010=same_main_q010_row
