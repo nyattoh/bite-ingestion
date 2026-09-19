@@ -1,0 +1,12 @@
+src_scope_q017=star_lock_q017
+src2_scope_q017=moon_lock_q017
+note_astro_q017_00=blob_astro_q017_00
+note_astro_q017_01=blob_astro_q017_01 観測
+note_astro_q017_02=naïve blob_astro_q017_02
+note_astro_q017_03=blob_astro_q017_03 shift = 1
+note_astro_q017_04=blob_astro_q017_04 said "ok"
+note_astro_q017_05=α blob_astro_q017_05
+note_astro_q017_06=NGC 1300 blob_astro_q017_06
+note_astro_q017_07=blob_astro_q017_07
+dst_star_lock_q017=ack_star_lock_q017
+dst_moon_lock_q017=ack_moon_lock_q017

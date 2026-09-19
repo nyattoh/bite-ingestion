@@ -1,0 +1,14 @@
+{
+  "allowed": [
+    "gate_format_dependence",
+    "predicate_format_dependence",
+    "sensor_operator_mismatch",
+    "composition_safety",
+    "other"
+  ],
+  "classes": [
+    "composition_safety",
+    "sensor_operator_mismatch"
+  ],
+  "schema": "bite-phase3o-failure-classification/v0.1"
+}

@@ -1,0 +1,118 @@
+{
+  "documents": [
+    {
+      "actual_sequence": [
+        "UNTANGLE"
+      ],
+      "gate": true,
+      "integrate_in_sequence": false,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "reduce_in_sequence": false,
+      "source_id": "rs1-dotenv-koel",
+      "untangle_in_sequence": true
+    },
+    {
+      "actual_sequence": [],
+      "gate": false,
+      "integrate_in_sequence": false,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [],
+      "reduce_in_sequence": false,
+      "source_id": "rs1-dotenv-bookstack",
+      "untangle_in_sequence": false
+    },
+    {
+      "actual_sequence": [],
+      "gate": true,
+      "integrate_in_sequence": false,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [],
+      "reduce_in_sequence": false,
+      "source_id": "rs1-dotenv-laravel",
+      "untangle_in_sequence": false
+    },
+    {
+      "actual_sequence": [],
+      "gate": true,
+      "integrate_in_sequence": false,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [],
+      "reduce_in_sequence": false,
+      "source_id": "rs1-props-ratis-log4j",
+      "untangle_in_sequence": false
+    },
+    {
+      "actual_sequence": [],
+      "gate": true,
+      "integrate_in_sequence": false,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [],
+      "reduce_in_sequence": false,
+      "source_id": "rs1-props-kafka-server",
+      "untangle_in_sequence": false
+    },
+    {
+      "actual_sequence": [],
+      "gate": true,
+      "integrate_in_sequence": false,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [],
+      "reduce_in_sequence": false,
+      "source_id": "rs1-props-tomcat-logging",
+      "untangle_in_sequence": false
+    },
+    {
+      "actual_sequence": [
+        "REDUCE_v2"
+      ],
+      "gate": true,
+      "integrate_in_sequence": false,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "reduce_in_sequence": true,
+      "source_id": "rs1-ini-polybar",
+      "untangle_in_sequence": false
+    },
+    {
+      "actual_sequence": [
+        "REDUCE_v2"
+      ],
+      "gate": true,
+      "integrate_in_sequence": false,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "reduce_in_sequence": true,
+      "source_id": "rs1-ini-gogs",
+      "untangle_in_sequence": false
+    },
+    {
+      "actual_sequence": [],
+      "gate": true,
+      "integrate_in_sequence": false,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [],
+      "reduce_in_sequence": false,
+      "source_id": "rs1-ini-tegra-common",
+      "untangle_in_sequence": false
+    }
+  ],
+  "no_route_correctness_score": true,
+  "revision": "phase4c-real-holdout-v0.1",
+  "schema": "bite-phase4c-route-observation/v0.1"
+}

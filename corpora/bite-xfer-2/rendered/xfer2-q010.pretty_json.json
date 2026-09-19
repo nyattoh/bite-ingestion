@@ -1,0 +1,30 @@
+[
+  {
+    "k": "src_accn_q010",
+    "v": "vitrine_lock_q010"
+  },
+  {
+    "k": "note_museum_q010_00",
+    "v": "blob_museum_q010_00"
+  },
+  {
+    "k": "note_museum_q010_01",
+    "v": "blob_museum_q010_01 観測"
+  },
+  {
+    "k": "dst_vitrine_lock_q010",
+    "v": "ack_vitrine_lock_q010"
+  },
+  {
+    "k": "copy_main_q010",
+    "v": "same_main_q010_row"
+  },
+  {
+    "k": "copy_main_q010",
+    "v": "same_main_q010_row"
+  },
+  {
+    "k": "copy_main_q010",
+    "v": "same_main_q010_row"
+  }
+]

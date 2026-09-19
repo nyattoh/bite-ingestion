@@ -1,0 +1,5 @@
+src_queue_q011=cron_lock_q011
+note_scheduler_q011_00=blob_scheduler_q011_00
+note_scheduler_q011_01=blob_scheduler_q011_01 観測
+dst_cron_lock_q011=ack_cron_lock_q011
+alert_q011=ingest dump TRACEBACK

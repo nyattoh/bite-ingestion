@@ -1,0 +1,101 @@
+{
+  "n_surfaces": 5,
+  "phase3o_remains": "Phase3O remains FAILED; known failures are repaired in development",
+  "phase3o_verdict": "PHASE3O_XFER1_TRANSFER_FAILED",
+  "primary": false,
+  "rows": [
+    {
+      "failure_classes": [
+        "sensor_operator_mismatch"
+      ],
+      "ok": false,
+      "primary": false,
+      "surface_id": "xfer1-c018-mixed_order_json"
+    },
+    {
+      "failure_classes": [
+        "sensor_operator_mismatch"
+      ],
+      "ok": false,
+      "primary": false,
+      "surface_id": "xfer1-c021-mixed_order_json"
+    },
+    {
+      "failure_classes": [
+        "composition_safety"
+      ],
+      "ok": false,
+      "primary": false,
+      "surface_id": "xfer1-c022-pretty_json"
+    },
+    {
+      "failure_classes": [
+        "sensor_operator_mismatch"
+      ],
+      "ok": false,
+      "primary": false,
+      "surface_id": "xfer1-c022-mixed_order_json"
+    },
+    {
+      "failure_classes": [
+        "composition_safety"
+      ],
+      "ok": false,
+      "primary": false,
+      "surface_id": "xfer1-c024-pretty_json"
+    }
+  ],
+  "schema": "bite-phase3p-xfer1-reproduction/v0.1",
+  "v2_regression_secondary": [
+    {
+      "max_multiplicity_after": 1,
+      "primary": false,
+      "safety_ok": true,
+      "sequence": [
+        "REDUCE_v2"
+      ],
+      "surface_id": "xfer1-c018-mixed_order_json"
+    },
+    {
+      "max_multiplicity_after": 1,
+      "primary": false,
+      "safety_ok": true,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE_v2"
+      ],
+      "surface_id": "xfer1-c021-mixed_order_json"
+    },
+    {
+      "max_multiplicity_after": 1,
+      "primary": false,
+      "safety_ok": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "xfer1-c022-pretty_json"
+    },
+    {
+      "max_multiplicity_after": 1,
+      "primary": false,
+      "safety_ok": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "xfer1-c022-mixed_order_json"
+    },
+    {
+      "max_multiplicity_after": 1,
+      "primary": false,
+      "safety_ok": true,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "xfer1-c024-pretty_json"
+    }
+  ]
+}

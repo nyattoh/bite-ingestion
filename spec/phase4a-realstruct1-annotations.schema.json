@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4a-realstruct1-annotations.schema.json",
+  "title": "BITE Phase-4A REALSTRUCT-1 scorer-only annotations v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "independent_of_bite_implementation",
+    "raw_syntax_only",
+    "missing_annotation_is_not_non_reference",
+    "documents"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4a-realstruct1-annotations/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4a-realstruct1-v0.1"
+    },
+    "independent_of_bite_implementation": { "type": "boolean", "const": true },
+    "raw_syntax_only": { "type": "boolean", "const": true },
+    "missing_annotation_is_not_non_reference": { "type": "boolean", "const": true },
+    "documents": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12
+    }
+  }
+}

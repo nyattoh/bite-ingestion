@@ -1,0 +1,183 @@
+{
+  "documents": [
+    {
+      "adapter_only": {
+        "n_gold_assignment_lines": 2,
+        "n_gold_lines_kept": 2,
+        "n_gold_lines_missing": 0,
+        "n_routing_assignments": 114,
+        "n_unsupported_passthrough": 242,
+        "token_proxy": 561,
+        "visible_chars": 2129
+      },
+      "raw_full": {
+        "n_bytes": 12877,
+        "n_source_units": 356,
+        "reconstruction_exact": true,
+        "token_proxy": 3218,
+        "visible_chars": 12869
+      },
+      "source_id": "rs1-dotenv-koel"
+    },
+    {
+      "adapter_only": {
+        "n_gold_assignment_lines": 0,
+        "n_gold_lines_kept": 0,
+        "n_gold_lines_missing": 0,
+        "n_routing_assignments": 15,
+        "n_unsupported_passthrough": 38,
+        "token_proxy": 89,
+        "visible_chars": 339
+      },
+      "raw_full": {
+        "n_bytes": 2009,
+        "n_source_units": 53,
+        "reconstruction_exact": true,
+        "token_proxy": 503,
+        "visible_chars": 2009
+      },
+      "source_id": "rs1-dotenv-bookstack"
+    },
+    {
+      "adapter_only": {
+        "n_gold_assignment_lines": 3,
+        "n_gold_lines_kept": 3,
+        "n_gold_lines_missing": 0,
+        "n_routing_assignments": 43,
+        "n_unsupported_passthrough": 22,
+        "token_proxy": 228,
+        "visible_chars": 867
+      },
+      "raw_full": {
+        "n_bytes": 1091,
+        "n_source_units": 65,
+        "reconstruction_exact": true,
+        "token_proxy": 273,
+        "visible_chars": 1091
+      },
+      "source_id": "rs1-dotenv-laravel"
+    },
+    {
+      "adapter_only": {
+        "n_gold_assignment_lines": 10,
+        "n_gold_lines_kept": 10,
+        "n_gold_lines_missing": 0,
+        "n_routing_assignments": 23,
+        "n_unsupported_passthrough": 51,
+        "token_proxy": 286,
+        "visible_chars": 1121
+      },
+      "raw_full": {
+        "n_bytes": 2643,
+        "n_source_units": 74,
+        "reconstruction_exact": true,
+        "token_proxy": 661,
+        "visible_chars": 2643
+      },
+      "source_id": "rs1-props-ratis-log4j"
+    },
+    {
+      "adapter_only": {
+        "n_gold_assignment_lines": 0,
+        "n_gold_lines_kept": 0,
+        "n_gold_lines_missing": 0,
+        "n_routing_assignments": 24,
+        "n_unsupported_passthrough": 105,
+        "token_proxy": 235,
+        "visible_chars": 915
+      },
+      "raw_full": {
+        "n_bytes": 6365,
+        "n_source_units": 129,
+        "reconstruction_exact": true,
+        "token_proxy": 1592,
+        "visible_chars": 6365
+      },
+      "source_id": "rs1-props-kafka-server"
+    },
+    {
+      "adapter_only": {
+        "n_gold_assignment_lines": 0,
+        "n_gold_lines_kept": 0,
+        "n_gold_lines_missing": 0,
+        "n_routing_assignments": 31,
+        "n_unsupported_passthrough": 45,
+        "token_proxy": 595,
+        "visible_chars": 2350
+      },
+      "raw_full": {
+        "n_bytes": 4003,
+        "n_source_units": 76,
+        "reconstruction_exact": true,
+        "token_proxy": 1001,
+        "visible_chars": 4003
+      },
+      "source_id": "rs1-props-tomcat-logging"
+    },
+    {
+      "adapter_only": {
+        "n_gold_assignment_lines": 0,
+        "n_gold_lines_kept": 0,
+        "n_gold_lines_missing": 0,
+        "n_routing_assignments": 94,
+        "n_unsupported_passthrough": 90,
+        "token_proxy": 664,
+        "visible_chars": 2560
+      },
+      "raw_full": {
+        "n_bytes": 4704,
+        "n_source_units": 184,
+        "reconstruction_exact": true,
+        "token_proxy": 1041,
+        "visible_chars": 4162
+      },
+      "source_id": "rs1-ini-polybar"
+    },
+    {
+      "adapter_only": {
+        "n_gold_assignment_lines": 0,
+        "n_gold_lines_kept": 0,
+        "n_gold_lines_missing": 0,
+        "n_routing_assignments": 230,
+        "n_unsupported_passthrough": 338,
+        "token_proxy": 1398,
+        "visible_chars": 5361
+      },
+      "raw_full": {
+        "n_bytes": 20199,
+        "n_source_units": 568,
+        "reconstruction_exact": true,
+        "token_proxy": 5025,
+        "visible_chars": 20097
+      },
+      "source_id": "rs1-ini-gogs"
+    },
+    {
+      "adapter_only": {
+        "n_gold_assignment_lines": 10,
+        "n_gold_lines_kept": 10,
+        "n_gold_lines_missing": 0,
+        "n_routing_assignments": 122,
+        "n_unsupported_passthrough": 54,
+        "token_proxy": 2459,
+        "visible_chars": 9715
+      },
+      "raw_full": {
+        "n_bytes": 11092,
+        "n_source_units": 176,
+        "reconstruction_exact": true,
+        "token_proxy": 2773,
+        "visible_chars": 11092
+      },
+      "source_id": "rs1-ini-tegra-common"
+    }
+  ],
+  "ids": [
+    "raw_full",
+    "adapter_only"
+  ],
+  "no_winner_score": true,
+  "revision": "phase4c-real-holdout-v0.1",
+  "schema": "bite-phase4c-baselines/v0.1",
+  "token_proxy_label": "local_char4_proxy"
+}

@@ -1,0 +1,543 @@
+{
+  "calibration": false,
+  "claim_boundary": "development repair of reference-channel separation and projected actionability",
+  "copy_xfer2_cases": false,
+  "cut_forbidden": true,
+  "formats": [
+    "key_value",
+    "compact_json",
+    "pretty_json",
+    "reversed_order_json"
+  ],
+  "frozen_unchanged": [
+    "dependency_dispersion_v1",
+    "conditional_texture_policy_v2",
+    "composition_safety_v2",
+    "structural_redundancy_v2",
+    "LogicalReduceOperatorV2",
+    "UntangleOperator",
+    "IntegrateOperator",
+    "preflight",
+    "RulePolicy"
+  ],
+  "generation": "p3r",
+  "invariants": {
+    "conservation_untraced": [],
+    "included_actionable_at_fire": true,
+    "join_perturbation_invariance": true,
+    "lineage_recall": 1.0,
+    "no_actionability_drift": true,
+    "no_unrelated_overmerge": true,
+    "projected_sequence_exact": true,
+    "provenance_completeness": 1.0,
+    "r_recoverable": true,
+    "reference_only_v1_v2_exact": true,
+    "replay_equals_plan": true,
+    "silent_loss": 0,
+    "suppressed_non_actionable_at_fire": true
+  },
+  "no_new_ak_threshold": true,
+  "no_operator_semantic_change": true,
+  "no_threshold_grid": true,
+  "no_winner_score": true,
+  "not_claimed": [
+    "Phase3Q TRANSFER_CONFIRMED",
+    "Phase3O TRANSFER_CONFIRMED",
+    "new calibration of T_high",
+    "real-world corpus generalization",
+    "BITE superiority"
+  ],
+  "offline": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3o_o0_sha": "76998156d3cbf67fc0a53e151688e46bd3c26dc7",
+  "phase3o_remains": "Phase3O remains FAILED; known failures are repaired in development",
+  "phase3o_verdict": "PHASE3O_XFER1_TRANSFER_FAILED",
+  "phase3q_artifact_unchanged": true,
+  "phase3q_head_sha": "1dab2d07a3a79b682e37f74b1265ab5eaef2cbef",
+  "phase3q_q0_sha": "67bfd22f782c6663de6e977848a5a381cd62ae51",
+  "phase3q_remains": "Phase3Q remains FAILED",
+  "phase3q_verdict_unchanged": true,
+  "planned_track_a": [
+    {
+      "case_id": "p3r-a-near-none",
+      "distance": 1,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 1,
+      "perturbation": "none",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-near-adj",
+      "distance": 1,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 1,
+      "perturbation": "adj",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-near-far",
+      "distance": 1,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 1,
+      "perturbation": "far",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-near-mix",
+      "distance": 1,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 1,
+      "perturbation": "mix",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-mid-none",
+      "distance": 3,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 1,
+      "perturbation": "none",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-mid-adj",
+      "distance": 3,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 1,
+      "perturbation": "adj",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-mid-far",
+      "distance": 3,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 1,
+      "perturbation": "far",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-mid-mix",
+      "distance": 3,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 1,
+      "perturbation": "mix",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-high-none",
+      "distance": 9,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 1,
+      "perturbation": "none",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-high-adj",
+      "distance": 9,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 1,
+      "perturbation": "adj",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-high-far",
+      "distance": 9,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 1,
+      "perturbation": "far",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-high-mix",
+      "distance": 9,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 1,
+      "perturbation": "mix",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-zfil",
+      "distance": 0,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 0,
+      "perturbation": "none",
+      "track": "A"
+    },
+    {
+      "case_id": "p3r-a-zjoin",
+      "distance": 0,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "n_reference_edges": 0,
+      "perturbation": "join_only",
+      "track": "A"
+    }
+  ],
+  "planned_track_b": [
+    {
+      "case_id": "p3r-b-disj",
+      "expected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "high_reference": true,
+      "role": "disjoint_duplicate_and_join",
+      "track": "B"
+    },
+    {
+      "case_id": "p3r-b-eq2",
+      "expected_sequence": [
+        "REDUCE_v2"
+      ],
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "high_reference": true,
+      "role": "duplicate_equals_two_way_join",
+      "track": "B"
+    },
+    {
+      "case_id": "p3r-b-sub3",
+      "expected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "high_reference": true,
+      "role": "duplicate_subset_of_three_way_join",
+      "track": "B"
+    },
+    {
+      "case_id": "p3r-b-an2",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "high_reference": true,
+      "role": "anomaly_in_two_way_join",
+      "track": "B"
+    },
+    {
+      "case_id": "p3r-b-an3",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "high_reference": true,
+      "role": "anomaly_in_three_way_join",
+      "track": "B"
+    },
+    {
+      "case_id": "p3r-b-adup",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "high_reference": true,
+      "role": "anomaly_in_two_way_duplicate",
+      "track": "B"
+    },
+    {
+      "case_id": "p3r-b-alld",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "high_reference": true,
+      "role": "anomaly_duplicate_join_disjoint",
+      "track": "B"
+    },
+    {
+      "case_id": "p3r-b-twoj",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "high_reference": true,
+      "role": "two_joins_quarantine_destroys_one",
+      "track": "B"
+    },
+    {
+      "case_id": "p3r-b-mid",
+      "expected_sequence": [],
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "high_reference": false,
+      "role": "mid_reference_control",
+      "track": "B"
+    },
+    {
+      "case_id": "p3r-b-zero",
+      "expected_sequence": [],
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "high_reference": false,
+      "role": "zero_reference_edge_control",
+      "track": "B"
+    }
+  ],
+  "premise": "PHASE3Q_XFER2_TRANSFER_FAILED",
+  "r1_verdicts": [
+    "PHASE3R_CHANNEL_PLANNER_VALIDATED",
+    "PHASE3R_CHANNEL_PLANNER_PARTIAL",
+    "PHASE3R_CHANNEL_PLANNER_BLOCKED"
+  ],
+  "repair_targets": [
+    "reference_vs_explicit_join_channel_separation",
+    "projected_actionability_operator_sequence"
+  ],
+  "reproduction_expect": {
+    "xfer2-q014": {
+      "gated": false,
+      "mean_reference_edge_distance": 3
+    },
+    "xfer2-q027": {
+      "projected_sequence": [
+        "REDUCE_v2"
+      ]
+    },
+    "xfer2-q028": {
+      "projected_sequence": [
+        "UNTANGLE"
+      ]
+    }
+  },
+  "reproduction_not_primary_evidence": true,
+  "reproduction_only_surfaces": [
+    "xfer2-q014-key_value",
+    "xfer2-q014-compact_json",
+    "xfer2-q014-pretty_json",
+    "xfer2-q014-reversed_order_json",
+    "xfer2-q027-key_value",
+    "xfer2-q027-compact_json",
+    "xfer2-q027-pretty_json",
+    "xfer2-q027-reversed_order_json",
+    "xfer2-q028-key_value",
+    "xfer2-q028-compact_json",
+    "xfer2-q028-pretty_json",
+    "xfer2-q028-reversed_order_json"
+  ],
+  "research_conclusion": false,
+  "revision": "phase3r-channel-planner-freeze-v0.1",
+  "rule_policy_unchanged": true,
+  "schema": "bitebench-phase3r-channel-planner-freeze/v0.1",
+  "synthetic": true,
+  "token_reduction": "diagnostic_only",
+  "track_a": {
+    "carry_forward": {
+      "candidate": 4.0,
+      "fields": [
+        "edge_count",
+        "raw_mean_distance"
+      ],
+      "not_a_new_calibration": true,
+      "requires_v1_v2_exact_match_on_reference_only": true
+    },
+    "distances": {
+      "high": 9,
+      "mid": 3,
+      "near": 1
+    },
+    "does_not_change_v1": true,
+    "fail_closed": [
+      "malformed",
+      "nul"
+    ],
+    "fuzzy": false,
+    "join_not_in_dependency_score": true,
+    "mask": "id=<token> and key=<token> spans in KV value / JSON v only",
+    "n_surfaces": 56,
+    "no_rewrite_of_records": true,
+    "perturbations": [
+      "none",
+      "adj",
+      "far",
+      "mix"
+    ],
+    "primary": [
+      "n_reference_edges",
+      "mean_reference_edge_distance"
+    ],
+    "sensor": "dependency_dispersion_v2"
+  },
+  "track_b": {
+    "cut_forbidden": true,
+    "does_not_change_v2": true,
+    "expected_sequences": {
+      "p3r-b-adup": [
+        "UNTANGLE"
+      ],
+      "p3r-b-alld": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "p3r-b-an2": [
+        "UNTANGLE"
+      ],
+      "p3r-b-an3": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "p3r-b-disj": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "p3r-b-eq2": [
+        "REDUCE_v2"
+      ],
+      "p3r-b-mid": [],
+      "p3r-b-sub3": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "p3r-b-twoj": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "p3r-b-zero": []
+    },
+    "gate": "n_reference_edges>0 AND mean_reference_edge_distance>=4",
+    "gate_requires_carry_forward": true,
+    "initial_integrate_not_sufficient": true,
+    "order": [
+      "UNTANGLE",
+      "REDUCE_v2",
+      "INTEGRATE"
+    ],
+    "planner": "projected_actionability_plan_v1",
+    "policy": "conditional_texture_policy_v3",
+    "project_on_scratch": true,
+    "suppression_reasons": [
+      "blocked_by_quarantine",
+      "subsumed_by_reduce",
+      "no_longer_actionable"
+    ]
+  },
+  "verdict": "PHASE3R_CHANNEL_PLANNER_PROTOCOL_FROZEN",
+  "verdict_rule": {
+    "PHASE3R_CHANNEL_PLANNER_BLOCKED": "protocol drift / fair validation cannot run / provenance failure",
+    "PHASE3R_CHANNEL_PLANNER_PARTIAL": "one track only, or threshold carry-forward cannot be established",
+    "PHASE3R_CHANNEL_PLANNER_VALIDATED": "fresh p3r: Track A 56/56; reference-only v1/v2 exact; join perturbation invariance; T_high=4 carry-forward; Track B projected sequence exact; planner integrity; composition safety; frozen components unchanged"
+  }
+}
