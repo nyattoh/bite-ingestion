@@ -1381,6 +1381,91 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase3s} verdict={data.get('verdict')}")
 
+    from bite_bench.phase3t import validate_phase3t_freeze
+    from bite_eval.phase3t_eval import validate_phase3t_result
+
+    phase3t_freeze = args.root / "benchmarks" / "spec" / "phase3t-exact-reference-freeze.json"
+    if phase3t_freeze.is_file():
+        n_checked += 1
+        data = json.loads(phase3t_freeze.read_text(encoding="utf-8"))
+        errs = list(validate_phase3t_freeze(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3t-exact-reference-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3t freeze jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3t_freeze}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3t_freeze} verdict={data.get('verdict')}")
+
+    phase3t = args.root / "artifacts" / "phase3t" / "exact-reference.json"
+    if phase3t.is_file():
+        n_checked += 1
+        data = json.loads(phase3t.read_text(encoding="utf-8"))
+        errs = list(validate_phase3t_result(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3t-exact-reference.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3t jsonschema: {exc}")
+        for extra, extra_schema in (
+            (
+                args.root / "artifacts" / "phase3t" / "exact-edge.json",
+                args.root / "spec" / "phase3t-exact-edge.schema.json",
+            ),
+            (
+                args.root / "artifacts" / "phase3t" / "threshold-bridge.json",
+                args.root / "spec" / "phase3t-threshold-bridge.schema.json",
+            ),
+            (
+                args.root / "artifacts" / "phase3t" / "gate.json",
+                args.root / "spec" / "phase3t-gate.schema.json",
+            ),
+            (
+                args.root / "artifacts" / "phase3t" / "policy-consequence.json",
+                args.root / "spec" / "phase3t-policy-consequence.schema.json",
+            ),
+            (
+                args.root / "artifacts" / "phase3t" / "phase3s-regression.json",
+                args.root / "spec" / "phase3t-phase3s-regression.schema.json",
+            ),
+        ):
+            if extra.is_file() and extra_schema.is_file():
+                extra_doc = json.loads(extra.read_text(encoding="utf-8"))
+                try:
+                    import jsonschema  # type: ignore
+
+                    jsonschema.validate(
+                        extra_doc, json.loads(extra_schema.read_text(encoding="utf-8"))
+                    )
+                except ImportError:
+                    pass
+                except Exception as exc:  # noqa: BLE001
+                    errs.append(f"phase3t extra jsonschema {extra.name}: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3t}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3t} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
