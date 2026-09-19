@@ -223,6 +223,321 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase1d} verdict={data.get('verdict')} rows={data.get('confirmatory', {}).get('n_rows')}")
 
+    phase2b = args.root / "artifacts" / "phase2b" / "calibration-token-matrix.json"
+    if phase2b.is_file():
+        n_checked += 1
+        data = json.loads(phase2b.read_text(encoding="utf-8"))
+        from bite_bench.phase2b import validate_phase2b_doc
+
+        errs = list(validate_phase2b_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase2b-length-control.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase2b jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase2b}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase2b} verdict={data.get('verdict')} surfaces={data.get('n_surfaces')}")
+
+    phase2c = args.root / "benchmarks" / "spec" / "phase2c-dispersion-freeze.json"
+    if phase2c.is_file():
+        n_checked += 1
+        data = json.loads(phase2c.read_text(encoding="utf-8"))
+        from bite_bench.phase2c import validate_freeze_doc
+
+        errs = list(validate_freeze_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase2c-dispersion-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase2c jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase2c}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(
+                f"OK   {phase2c} status={data.get('status')} "
+                f"pairs={data.get('n_planned_pairs')}"
+            )
+
+    phase2c_v2 = args.root / "benchmarks" / "spec" / "phase2c-dispersion-freeze-v0.2.json"
+    if phase2c_v2.is_file():
+        n_checked += 1
+        data = json.loads(phase2c_v2.read_text(encoding="utf-8"))
+        from bite_bench.phase2c import validate_freeze_doc
+
+        errs = list(validate_freeze_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase2c-dispersion-freeze-v0.2.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase2c v0.2 jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase2c_v2}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(
+                f"OK   {phase2c_v2} status={data.get('status')} "
+                f"pairs={data.get('n_planned_pairs')} supersedes={data.get('supersedes')}"
+            )
+
+    phase2d = args.root / "artifacts" / "phase2d" / "confirmatory-offline.json"
+    if phase2d.is_file():
+        n_checked += 1
+        data = json.loads(phase2d.read_text(encoding="utf-8"))
+        from bite_eval.phase2d_confirmatory import validate_phase2d_doc
+
+        errs = list(validate_phase2d_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase2d-confirmatory-offline.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase2d jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase2d}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(
+                f"OK   {phase2d} verdict={data.get('verdict')} "
+                f"n_signal={data.get('n_signal')} n_eligible={data.get('n_eligible')}"
+            )
+
+    phase3a = args.root / "artifacts" / "phase3a" / "profiler-mechanism-audit.json"
+    if phase3a.is_file():
+        n_checked += 1
+        data = json.loads(phase3a.read_text(encoding="utf-8"))
+        from bite_eval.phase3a_audit import validate_phase3a_doc
+
+        errs = list(validate_phase3a_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3a-profiler-mechanism-audit.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3a jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3a}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(
+                f"OK   {phase3a} verdict={data.get('verdict')} "
+                f"identical={data.get('n_profiler_vectors_identical')}/"
+                f"{data.get('n_pairs')}"
+            )
+
+    phase3b = args.root / "artifacts" / "phase3b" / "sensor-evaluation.json"
+    if phase3b.is_file():
+        n_checked += 1
+        data = json.loads(phase3b.read_text(encoding="utf-8"))
+        from bite_eval.phase3b_sensor import validate_phase3b_doc
+
+        errs = list(validate_phase3b_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3b-sensor-evaluation.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3b jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3b}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3b} verdict={data.get('verdict')}")
+
+    phase3c = args.root / "artifacts" / "phase3c" / "sensor-generalization.json"
+    if phase3c.is_file():
+        n_checked += 1
+        data = json.loads(phase3c.read_text(encoding="utf-8"))
+        from bite_eval.phase3c_audit import validate_phase3c_doc
+
+        errs = list(validate_phase3c_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3c-sensor-generalization.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3c jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3c}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3c} verdict={data.get('verdict')}")
+
+    phase3d = args.root / "benchmarks" / "spec" / "phase3d-sensor-v1-design-freeze.json"
+    if phase3d.is_file():
+        n_checked += 1
+        data = json.loads(phase3d.read_text(encoding="utf-8"))
+        from bite_eval.phase3d_v1_freeze import validate_phase3d_doc
+
+        errs = list(validate_phase3d_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3d-sensor-v1-design-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3d jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3d}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3d} verdict={data.get('verdict')}")
+
+    phase3e = args.root / "artifacts" / "phase3e" / "sensor-v1-validation.json"
+    if phase3e.is_file():
+        n_checked += 1
+        data = json.loads(phase3e.read_text(encoding="utf-8"))
+        from bite_eval.phase3e_validate import validate_phase3e_doc
+
+        errs = list(validate_phase3e_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3e-sensor-v1-validation.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3e jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3e}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3e} verdict={data.get('verdict')}")
+
+    from bite_bench.phase3f import validate_phase3f_doc
+
+    for phase3f, schema_name in (
+        (
+            args.root / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze.json",
+            "phase3f-routing-calibration-freeze.schema.json",
+        ),
+        (
+            args.root / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze-v0.2.json",
+            "phase3f-routing-calibration-freeze-v0.2.schema.json",
+        ),
+        (
+            args.root / "benchmarks" / "spec" / "phase3f-routing-calibration-freeze-v0.3.json",
+            "phase3f-routing-calibration-freeze-v0.3.schema.json",
+        ),
+    ):
+        if not phase3f.is_file():
+            continue
+        n_checked += 1
+        data = json.loads(phase3f.read_text(encoding="utf-8"))
+        errs = list(validate_phase3f_doc(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / schema_name
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3f jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3f}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(
+                f"OK   {phase3f} verdict={data.get('verdict')} revision={data.get('revision')}"
+            )
+
+    from bite_eval.phase3g_calibrate import validate_phase3g_lock
+
+    phase3g = args.root / "artifacts" / "phase3g" / "calibration-lock.json"
+    if phase3g.is_file():
+        n_checked += 1
+        data = json.loads(phase3g.read_text(encoding="utf-8"))
+        errs = list(validate_phase3g_lock(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3g-calibration-lock.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3g jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3g}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3g} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
