@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import re
 from collections import OrderedDict
 from collections.abc import Mapping, Sequence
 from typing import Any
@@ -22,14 +21,7 @@ from .base import (
     sort_units,
     stable_id,
 )
-
-_ID_FIELD = re.compile(r"\b(?:id|key)\s*=\s*([A-Za-z0-9_\-.]+)", re.IGNORECASE)
-_REF_FIELD = re.compile(r"(?:ref:|#see\s+)([A-Za-z0-9_\-./]+)", re.IGNORECASE)
-
-
-def _extract_join_keys(text: str) -> list[str]:
-    keys = [m.group(1) for m in _ID_FIELD.finditer(text)]
-    return keys
+from .preflight import extract_explicit_join_keys as _extract_join_keys
 
 
 def _context_dep_edges(context: Mapping[str, object]) -> list[tuple[str, str]]:

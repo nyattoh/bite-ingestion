@@ -807,6 +807,96 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase3l} verdict={data.get('verdict')}")
 
+    from bite_bench.phase3m import validate_phase3m_freeze, validate_phase3m_split
+    from bite_eval.phase3m_eval import validate_phase3m_result
+
+    phase3m_freeze = args.root / "benchmarks" / "spec" / "phase3m-conditional-routing-freeze.json"
+    if phase3m_freeze.is_file():
+        n_checked += 1
+        data = json.loads(phase3m_freeze.read_text(encoding="utf-8"))
+        errs = list(validate_phase3m_freeze(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3m-conditional-routing-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3m freeze jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3m_freeze}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3m_freeze} verdict={data.get('verdict')}")
+
+    phase3m_split = args.root / "benchmarks" / "spec" / "phase3m-split-manifest.json"
+    if phase3m_split.is_file():
+        n_checked += 1
+        data = json.loads(phase3m_split.read_text(encoding="utf-8"))
+        errs = list(validate_phase3m_split(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3m-split-manifest.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3m split jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3m_split}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3m_split} generation={data.get('generation')}")
+
+    phase3m = args.root / "artifacts" / "phase3m" / "conditional-routing.json"
+    if phase3m.is_file():
+        n_checked += 1
+        data = json.loads(phase3m.read_text(encoding="utf-8"))
+        errs = list(validate_phase3m_result(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3m-conditional-routing.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3m jsonschema: {exc}")
+        safety = args.root / "artifacts" / "phase3m" / "composition-safety.json"
+        if safety.is_file():
+            safety_doc = json.loads(safety.read_text(encoding="utf-8"))
+            safety_schema = args.root / "spec" / "phase3m-composition-safety.schema.json"
+            if safety_schema.is_file():
+                try:
+                    import jsonschema  # type: ignore
+
+                    jsonschema.validate(
+                        safety_doc, json.loads(safety_schema.read_text(encoding="utf-8"))
+                    )
+                except ImportError:
+                    pass
+                except Exception as exc:  # noqa: BLE001
+                    errs.append(f"phase3m safety jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3m}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3m} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
