@@ -1,0 +1,6 @@
+gate_bui_c002=node_bui_c002
+bin_node_bui_c002=ack_bui_c002
+copy_c002=same_c002_row
+copy_c002=same_c002_row
+note_build_c002_20=blob_build_c002_20
+note_build_c002_21=blob_build_c002_21
