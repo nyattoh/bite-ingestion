@@ -47,7 +47,7 @@
     "unadjudicated_extra_edges": "sensor edges not in gold; not called false positives"
   },
   "no_baseline_execution": true,
-  "overlay_v2_blob": "a59635230500850b7057b6125503f4c04abfa4ff",
+  "overlay_v2_blob": "0d1388b89bf2c5c2e062472ea2b78a1b1923ad9b",
   "overlay_v2_sha256": "dfcff8d9117918a56d77d31ee46c32c45b085f39b3337584abfc40fe03d0cab8",
   "p3f_unopened": true,
   "provenance_invariants": [

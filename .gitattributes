@@ -1,1 +1,2 @@
 corpora/realstruct-1/raw/** -text
+corpora/realstruct-1/annotations-v2.json -text
