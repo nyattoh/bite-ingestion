@@ -1593,6 +1593,46 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase4b_freeze} verdict={data.get('verdict')}")
 
+    from bite_eval.phase4b_eval import validate_phase4b_result
+
+    phase4b = args.root / "artifacts" / "phase4b" / "real-adapter.json"
+    if phase4b.is_file():
+        n_checked += 1
+        data = json.loads(phase4b.read_text(encoding="utf-8"))
+        errs = list(validate_phase4b_result(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase4b-real-adapter.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase4b jsonschema: {exc}")
+        lock_path = args.root / "artifacts" / "phase4b" / "evaluation-lock.json"
+        lock_schema = args.root / "spec" / "phase4b-evaluation-lock.schema.json"
+        if lock_path.is_file() and lock_schema.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(
+                    json.loads(lock_path.read_text(encoding="utf-8")),
+                    json.loads(lock_schema.read_text(encoding="utf-8")),
+                )
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase4b extra jsonschema {lock_path.name}: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase4b}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase4b} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1

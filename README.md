@@ -78,7 +78,8 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 3S reference-edge specificity: **PHASE3S_REFERENCE_SPECIFICITY_FAILED** (fresh p3s; suffix collision false edges; no repair; Phase 3Q remains FAILED; p3f sealed)
 - Phase 3T exact reference identity v3: **PHASE3T_EXACT_REFERENCE_VALIDATED** (fresh p3t; full-token exact edges; T_high=4 carry-forward; Phase 3S/3Q remain FAILED; p3f sealed)
 - Phase 4A REALSTRUCT-1 corpus freeze: **PHASE4A_REAL_CORPUS_FROZEN** (12 public key=value configs; scorer-only annotation; no BITE run; Phase 3S/3Q remain FAILED; p3f sealed)
-- **Next**: Phase 4B measurement on the frozen evaluation split; do not invent XFER-3; do not retune on the spent Phase 2 holdout; do not swap REALSTRUCT-1 sources after BITE runs
+- Phase 4B REALSTRUCT-1 development adapter: **PHASE4B_REAL_ADAPTER_READY** (dev 3 only; source-exact dual-plane adapter; eval 9 sealed; no baseline; Phase 3S/3Q remain FAILED; p3f sealed)
+- **Next**: Phase 4C/eval measurement on the frozen evaluation 9 bytes; do not invent XFER-3; do not swap REALSTRUCT-1 sources; do not retune T_high
 
 See:
 - [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
@@ -156,3 +157,6 @@ See:
 - [`benchmarks/spec/phase4a-realstruct1-freeze.json`](benchmarks/spec/phase4a-realstruct1-freeze.json)
 - [`artifacts/phase4a/realstruct-1.json`](artifacts/phase4a/realstruct-1.json)
 - [`corpora/realstruct-1/manifest.json`](corpora/realstruct-1/manifest.json)
+- [`docs/hand_over/PHASE4B-REALSTRUCT1-DEV-ADAPTER.md`](docs/hand_over/PHASE4B-REALSTRUCT1-DEV-ADAPTER.md)
+- [`benchmarks/spec/phase4b-scorer-addendum-freeze.json`](benchmarks/spec/phase4b-scorer-addendum-freeze.json)
+- [`artifacts/phase4b/real-adapter.json`](artifacts/phase4b/real-adapter.json)
