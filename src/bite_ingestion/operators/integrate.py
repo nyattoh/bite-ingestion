@@ -8,6 +8,11 @@ from collections.abc import Mapping, Sequence
 from typing import Any
 
 from bite_ingestion.interfaces.operator import OperatorId
+from bite_ingestion.packet_contract import (
+    make_composite_provenance,
+    make_envelope_span,
+    source_records_from_unit,
+)
 
 from .base import (
     append_tau_step,
@@ -162,20 +167,26 @@ class IntegrateOperator:
             used.extend(members)
             joined_text = "\n".join(str(id_to_unit[m].get("text", "")) for m in members)
             new_id = stable_id("u_", out.get("packet_id", ""), "join", join_key, *members)
-            first = id_to_unit[members[0]]
-            integrated_units.append(
-                {
-                    "unit_id": new_id,
-                    "text": joined_text,
-                    "span": first.get("span"),
-                    "source_uri": first.get("source_uri"),
-                    "version": first.get("version"),
-                    "media_type": first.get("media_type"),
-                    "parent_unit_id": members[0],
-                    "joined_from": members,
-                    "join_key": join_key,
-                }
-            )
+            member_units = [id_to_unit[m] for m in members]
+            first = member_units[0]
+            records: list[dict[str, Any]] = []
+            for member in member_units:
+                records.extend(source_records_from_unit(member))
+            uris = {row["source_uri"] for row in records}
+            joined_unit: dict[str, Any] = {
+                "unit_id": new_id,
+                "text": joined_text,
+                "span": make_envelope_span(member_units),
+                "parent_unit_id": members[0],
+                "joined_from": members,
+                "join_key": join_key,
+                "provenance": make_composite_provenance(records),
+                "version": first.get("version"),
+                "media_type": first.get("media_type"),
+            }
+            if len(uris) == 1:
+                joined_unit["source_uri"] = next(iter(uris))
+            integrated_units.append(joined_unit)
 
         # Pass-through units not consumed by a multi-join
         used_set = set(used)

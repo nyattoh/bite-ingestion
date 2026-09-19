@@ -589,6 +589,57 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase3h} verdict={data.get('verdict')}")
 
+    from bite_bench.phase3i import validate_phase3i_freeze
+    from bite_eval.phase3i_validate import validate_phase3i_result
+
+    phase3i_freeze = args.root / "benchmarks" / "spec" / "phase3i-composite-provenance-freeze.json"
+    if phase3i_freeze.is_file():
+        n_checked += 1
+        data = json.loads(phase3i_freeze.read_text(encoding="utf-8"))
+        errs = list(validate_phase3i_freeze(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3i-composite-provenance-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3i freeze jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3i_freeze}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3i_freeze} verdict={data.get('verdict')}")
+
+    phase3i = args.root / "artifacts" / "phase3i" / "composite-provenance.json"
+    if phase3i.is_file():
+        n_checked += 1
+        data = json.loads(phase3i.read_text(encoding="utf-8"))
+        errs = list(validate_phase3i_result(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase3i-composite-provenance.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase3i jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase3i}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase3i} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
