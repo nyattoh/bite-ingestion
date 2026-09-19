@@ -1,0 +1,7 @@
+gate_bui_c010=node_bui_c010
+note_build_c010_00=blob_build_c010_00
+note_build_c010_01=blob_build_c010_01
+bin_node_bui_c010=ack_bui_c010
+copy_c010=same_c010_row
+copy_c010=same_c010_row
+copy_c010=same_c010_row

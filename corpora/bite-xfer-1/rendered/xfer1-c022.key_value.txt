@@ -1,0 +1,10 @@
+gate_bui_c022=node_bui_c022 key=batch_c022
+copy_c022=same_c022_row
+note_build_c022_00=blob_build_c022_00
+note_build_c022_01=blob_build_c022_01
+note_build_c022_02=blob_build_c022_02
+note_build_c022_03=blob_build_c022_03
+note_build_c022_04=blob_build_c022_04
+note_build_c022_05=blob_build_c022_05
+copy_c022=same_c022_row
+bin_node_bui_c022=ack_bui_c022 key=batch_c022

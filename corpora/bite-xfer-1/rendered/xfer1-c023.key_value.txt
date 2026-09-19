@@ -1,0 +1,12 @@
+gate_inc_c023=node_inc_c023 id=lot_c023
+note_incident_c023_00=blob_incident_c023_00
+note_incident_c023_01=blob_incident_c023_01
+note_incident_c023_02=blob_incident_c023_02
+note_incident_c023_03=blob_incident_c023_03
+note_incident_c023_04=blob_incident_c023_04
+note_incident_c023_05=blob_incident_c023_05
+note_incident_c023_06=blob_incident_c023_06
+note_incident_c023_07=blob_incident_c023_07
+bin_node_inc_c023=ack_inc_c023 id=lot_c023
+alert_c023=worker dump TRACEBACK
+mate_c023=crate_c023 id=lot_c023
