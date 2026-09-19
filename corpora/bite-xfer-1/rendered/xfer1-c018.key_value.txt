@@ -1,0 +1,10 @@
+gate_bui_c018=node_bui_c018
+copy_c018=same_c018_row
+note_build_c018_00=blob_build_c018_00
+note_build_c018_01=blob_build_c018_01
+note_build_c018_02=blob_build_c018_02
+note_build_c018_03=blob_build_c018_03
+note_build_c018_04=blob_build_c018_04
+note_build_c018_05=blob_build_c018_05
+copy_c018=same_c018_row
+bin_node_bui_c018=ack_bui_c018

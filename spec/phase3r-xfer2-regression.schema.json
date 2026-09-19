@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3r-xfer2-regression.schema.json",
+  "title": "BITE Phase-3R XFER-2 secondary regression v0.1",
+  "type": "object",
+  "required": ["schema", "primary", "phase3q_remains", "phase3q_verdict", "n_ok", "rows"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3r-xfer2-regression/v0.1"
+    },
+    "primary": { "type": "boolean", "const": false },
+    "phase3q_remains": {
+      "type": "string",
+      "const": "Phase3Q remains FAILED"
+    },
+    "phase3q_verdict": {
+      "type": "string",
+      "const": "PHASE3Q_XFER2_TRANSFER_FAILED"
+    },
+    "n_ok": { "type": "integer", "minimum": 0 },
+    "rows": { "type": "array" }
+  }
+}

@@ -1,0 +1,4277 @@
+{
+  "rows": [
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d1-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d1-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d1-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d1-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "mean_reference_edge_distance": 3.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d3-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "mean_reference_edge_distance": 3.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d3-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "mean_reference_edge_distance": 3.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d3-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "mean_reference_edge_distance": 3.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d3-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "key_value",
+      "gate_expected": true,
+      "gate_observed": true,
+      "gate_ok": true,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "mean_reference_edge_distance": 4.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d4-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "compact_json",
+      "gate_expected": true,
+      "gate_observed": true,
+      "gate_ok": true,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "mean_reference_edge_distance": 4.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d4-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "pretty_json",
+      "gate_expected": true,
+      "gate_observed": true,
+      "gate_ok": true,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "mean_reference_edge_distance": 4.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d4-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "reversed_order_json",
+      "gate_expected": true,
+      "gate_observed": true,
+      "gate_ok": true,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "mean_reference_edge_distance": 4.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d4-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "key_value",
+      "gate_expected": true,
+      "gate_observed": true,
+      "gate_ok": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "mean_reference_edge_distance": 9.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d9-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "compact_json",
+      "gate_expected": true,
+      "gate_observed": true,
+      "gate_ok": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "mean_reference_edge_distance": 9.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d9-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "pretty_json",
+      "gate_expected": true,
+      "gate_observed": true,
+      "gate_ok": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "mean_reference_edge_distance": 9.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d9-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-true-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "true_reference_only",
+      "format": "reversed_order_json",
+      "gate_expected": true,
+      "gate_observed": true,
+      "gate_ok": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "mean_reference_edge_distance": 9.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_true_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-true-d9-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d1",
+      "distance": 1,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d1-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d1",
+      "distance": 1,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d1-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d1",
+      "distance": 1,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d1-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d1",
+      "distance": 1,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d1-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d3",
+      "distance": 3,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 3.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d3-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d3",
+      "distance": 3,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 3.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d3-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d3",
+      "distance": 3,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 3.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d3-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d3",
+      "distance": 3,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 3.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d3-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d4",
+      "distance": 4,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 4.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d4-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d4",
+      "distance": 4,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 4.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d4-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d4",
+      "distance": 4,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 4.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d4-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d4",
+      "distance": 4,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 4.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d4-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d9",
+      "distance": 9,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 9.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d9-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d9",
+      "distance": 9,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 9.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d9-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d9",
+      "distance": 9,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 9.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d9-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-suf-d9",
+      "distance": 9,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 9.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_suf_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-suf-d9-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d1",
+      "distance": 1,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          10,
+          11
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d1",
+          "distance": 1,
+          "dst": 11,
+          "src": 10
+        }
+      ],
+      "surface_id": "p3s-mix-d1-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d1",
+      "distance": 1,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          10,
+          11
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d1",
+          "distance": 1,
+          "dst": 11,
+          "src": 10
+        }
+      ],
+      "surface_id": "p3s-mix-d1-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d1",
+      "distance": 1,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          10,
+          11
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d1",
+          "distance": 1,
+          "dst": 11,
+          "src": 10
+        }
+      ],
+      "surface_id": "p3s-mix-d1-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d1",
+      "distance": 1,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          10,
+          11
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d1",
+          "distance": 1,
+          "dst": 11,
+          "src": 10
+        }
+      ],
+      "surface_id": "p3s-mix-d1-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d3",
+      "distance": 3,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "mean_reference_edge_distance": 2.0,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d3",
+          "distance": 1,
+          "dst": 13,
+          "src": 12
+        }
+      ],
+      "surface_id": "p3s-mix-d3-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d3",
+      "distance": 3,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "mean_reference_edge_distance": 2.0,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d3",
+          "distance": 1,
+          "dst": 13,
+          "src": 12
+        }
+      ],
+      "surface_id": "p3s-mix-d3-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d3",
+      "distance": 3,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "mean_reference_edge_distance": 2.0,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d3",
+          "distance": 1,
+          "dst": 13,
+          "src": 12
+        }
+      ],
+      "surface_id": "p3s-mix-d3-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d3",
+      "distance": 3,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "mean_reference_edge_distance": 2.0,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d3",
+          "distance": 1,
+          "dst": 13,
+          "src": 12
+        }
+      ],
+      "surface_id": "p3s-mix-d3-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d4",
+      "distance": 4,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          13,
+          14
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "key_value",
+      "gate_expected": true,
+      "gate_observed": false,
+      "gate_ok": false,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "mean_reference_edge_distance": 2.5,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d4",
+          "distance": 1,
+          "dst": 14,
+          "src": 13
+        }
+      ],
+      "surface_id": "p3s-mix-d4-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d4",
+      "distance": 4,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          13,
+          14
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "compact_json",
+      "gate_expected": true,
+      "gate_observed": false,
+      "gate_ok": false,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "mean_reference_edge_distance": 2.5,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d4",
+          "distance": 1,
+          "dst": 14,
+          "src": 13
+        }
+      ],
+      "surface_id": "p3s-mix-d4-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d4",
+      "distance": 4,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          13,
+          14
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "pretty_json",
+      "gate_expected": true,
+      "gate_observed": false,
+      "gate_ok": false,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "mean_reference_edge_distance": 2.5,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d4",
+          "distance": 1,
+          "dst": 14,
+          "src": 13
+        }
+      ],
+      "surface_id": "p3s-mix-d4-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d4",
+      "distance": 4,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          13,
+          14
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "reversed_order_json",
+      "gate_expected": true,
+      "gate_observed": false,
+      "gate_ok": false,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "mean_reference_edge_distance": 2.5,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d4",
+          "distance": 1,
+          "dst": 14,
+          "src": 13
+        }
+      ],
+      "surface_id": "p3s-mix-d4-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d9",
+      "distance": 9,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          18,
+          19
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "key_value",
+      "gate_expected": true,
+      "gate_observed": true,
+      "gate_ok": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "mean_reference_edge_distance": 5.0,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ],
+        [
+          18,
+          19
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d9",
+          "distance": 1,
+          "dst": 19,
+          "src": 18
+        }
+      ],
+      "surface_id": "p3s-mix-d9-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d9",
+      "distance": 9,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          18,
+          19
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "compact_json",
+      "gate_expected": true,
+      "gate_observed": true,
+      "gate_ok": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "mean_reference_edge_distance": 5.0,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ],
+        [
+          18,
+          19
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d9",
+          "distance": 1,
+          "dst": 19,
+          "src": 18
+        }
+      ],
+      "surface_id": "p3s-mix-d9-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d9",
+      "distance": 9,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          18,
+          19
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "pretty_json",
+      "gate_expected": true,
+      "gate_observed": true,
+      "gate_ok": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "mean_reference_edge_distance": 5.0,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ],
+        [
+          18,
+          19
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d9",
+          "distance": 1,
+          "dst": 19,
+          "src": 18
+        }
+      ],
+      "surface_id": "p3s-mix-d9-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-mix-d9",
+      "distance": 9,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          18,
+          19
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "true_reference_plus_suffix_collision",
+      "format": "reversed_order_json",
+      "gate_expected": true,
+      "gate_observed": true,
+      "gate_ok": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "mean_reference_edge_distance": 5.0,
+      "missing_edges": [],
+      "n_reference_edges": 2.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ],
+        [
+          18,
+          19
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "cider_press_p3s_mix_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        },
+        {
+          "atom": "keg_p3s_mix_d9",
+          "distance": 1,
+          "dst": 19,
+          "src": 18
+        }
+      ],
+      "surface_id": "p3s-mix-d9-reversed_order_json"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d1",
+      "distance": 1,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d1-key_value"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d1",
+      "distance": 1,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d1-compact_json"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d1",
+      "distance": 1,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d1-pretty_json"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d1",
+      "distance": 1,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 1.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d1",
+          "distance": 1,
+          "dst": 1,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d1-reversed_order_json"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d3",
+      "distance": 3,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 3.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d3-key_value"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d3",
+      "distance": 3,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 3.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d3-compact_json"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d3",
+      "distance": 3,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 3.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d3-pretty_json"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d3",
+      "distance": 3,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 3.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d3",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d3-reversed_order_json"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d4",
+      "distance": 4,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 4.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d4-key_value"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d4",
+      "distance": 4,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 4.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d4-compact_json"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d4",
+      "distance": 4,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 4.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d4-pretty_json"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d4",
+      "distance": 4,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 4.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d4",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d4-reversed_order_json"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d9",
+      "distance": 9,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 9.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d9-key_value"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d9",
+      "distance": 9,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 9.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d9-compact_json"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d9",
+      "distance": 9,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 9.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d9-pretty_json"
+    },
+    {
+      "actionability_family": true,
+      "case_id": "p3s-act-d9",
+      "distance": 9,
+      "edge_set_exact": false,
+      "extra_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "fail_closed": false,
+      "false_reference_edges": 1,
+      "family": "suffix_collision_plus_actionability",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": true,
+      "gate_ok": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 9.0,
+      "missing_edges": [],
+      "n_reference_edges": 1.0,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": false,
+      "policy_seq_ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [
+        {
+          "atom": "keg_p3s_act_d9",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        }
+      ],
+      "surface_id": "p3s-act-d9-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d1-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d1-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d1-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d1-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d3-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d3-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d3-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d3-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d4-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d4-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d4-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d4-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d9-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d9-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d9-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-pre-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_prefix_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-pre-d9-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d1-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d1-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d1-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d1-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d3-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d3-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d3-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d3-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d4-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d4-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d4-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d4-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d9-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d9-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d9-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sst-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "shared_suffix_text_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sst-d9-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d1-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d1-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d1-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d1",
+      "distance": 1,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d1-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d3-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d3-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d3-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d3",
+      "distance": 3,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d3-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d4-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d4-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d4-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d4",
+      "distance": 4,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d4-reversed_order_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "key_value",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d9-key_value"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "compact_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d9-compact_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "pretty_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d9-pretty_json"
+    },
+    {
+      "actionability_family": false,
+      "case_id": "p3s-sub-d9",
+      "distance": 9,
+      "edge_set_exact": true,
+      "extra_edges": [],
+      "fail_closed": false,
+      "false_reference_edges": 0,
+      "family": "substring_only",
+      "format": "reversed_order_json",
+      "gate_expected": false,
+      "gate_observed": false,
+      "gate_ok": true,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "missing_edges": [],
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_seq_ok": true,
+      "policy_sequence": [],
+      "policy_sequence_expected": [],
+      "raw_edge_rows": [],
+      "surface_id": "p3s-sub-d9-reversed_order_json"
+    }
+  ],
+  "schema": "bite-phase3s-edge-rows/v0.1"
+}

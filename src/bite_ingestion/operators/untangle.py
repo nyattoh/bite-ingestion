@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 import re
 from collections.abc import Mapping
 from typing import Any
@@ -20,45 +19,9 @@ from .base import (
     sort_units,
     unit_locator,
 )
+from .preflight import routing_untangle_reasons
 
-# Structural markers only — TBD-calibrate for richer detectors; no magic score thresholds.
-_INJECT_MARKERS = (
-    "<<<INJECT",
-    ">>>INJECT",
-    "{{INJECTION",
-    "<script>",
-    "IGNORE PREVIOUS INSTRUCTIONS",
-)
-_ANOMALY_MARKERS = re.compile(r"\b(ERROR|FATAL|EXCEPTION|TRACEBACK|PANIC)\b", re.IGNORECASE)
 _DEP_REF = re.compile(r"(?:ref:|#see\s+)([A-Za-z0-9_\-./]+)", re.IGNORECASE)
-
-
-def _looks_malformed_json(text: str) -> bool:
-    s = text.strip()
-    if not s:
-        return False
-    if s[0] not in "{[":
-        # Partial JSON fragment heuristic
-        return ("{" in s or "[" in s) and (
-            s.count("{") != s.count("}") or s.count("[") != s.count("]")
-        )
-    try:
-        json.loads(s)
-        return False
-    except (json.JSONDecodeError, TypeError):
-        return True
-
-
-def _injection_suspect(text: str) -> bool:
-    upper = text.upper()
-    for m in _INJECT_MARKERS:
-        if m.upper() in upper:
-            return True
-    return False
-
-
-def _anomaly_candidate(text: str) -> bool:
-    return bool(_ANOMALY_MARKERS.search(text))
 
 
 def _dependency_refs(text: str) -> list[str]:
@@ -68,13 +31,7 @@ def _dependency_refs(text: str) -> list[str]:
 def _classify_unit(unit: Mapping[str, Any], all_ids: set[str]) -> list[str]:
     """Return reason codes for a unit (may be multiple; first is primary for R)."""
     text = str(unit.get("text", ""))
-    reasons: list[str] = []
-    if _looks_malformed_json(text):
-        reasons.append("malformed")
-    if _injection_suspect(text):
-        reasons.append("injection_suspect")
-    if _anomaly_candidate(text):
-        reasons.append("anomaly_candidate")
+    reasons: list[str] = list(routing_untangle_reasons(text))
     refs = _dependency_refs(text)
     if refs:
         # edge if any ref points at another known unit id or any ref present

@@ -1,0 +1,6558 @@
+{
+  "blocked_reasons": [],
+  "by_family": {
+    "exact_reference_only": {
+      "n": 16,
+      "n_ok": 16
+    },
+    "exact_reference_plus_suffix_collision": {
+      "n": 16,
+      "n_ok": 16
+    },
+    "prefix_only": {
+      "n": 16,
+      "n_ok": 16
+    },
+    "shared_generic_text": {
+      "n": 16,
+      "n_ok": 16
+    },
+    "substring_only": {
+      "n": 16,
+      "n_ok": 16
+    },
+    "suffix_collision_plus_actionability": {
+      "n": 16,
+      "n_ok": 16
+    },
+    "suffix_text_only": {
+      "n": 16,
+      "n_ok": 16
+    },
+    "underscore_suffix_collision_only": {
+      "n": 16,
+      "n_ok": 16
+    }
+  },
+  "calibration": false,
+  "checks": {
+    "composition_safety": true,
+    "cross_format_exact": true,
+    "edge_set_exact": true,
+    "exact_reference_distances": true,
+    "false_reference_edges_zero": true,
+    "frozen_unchanged": true,
+    "gate_expectation_exact": true,
+    "p3f_sealed": true,
+    "phase3q_failed_unchanged": true,
+    "phase3s_failed_unchanged": true,
+    "policy_consequence": true,
+    "reproduction_not_primary": true,
+    "suffix_collision_no_edge": true,
+    "t_high_carry_forward": true,
+    "true_plus_collision_true_only": true
+  },
+  "claim_boundary": "last synthetic-only mechanism repair: exact reference identity",
+  "cut_forbidden": true,
+  "exact_edge": {
+    "n_ok": 128,
+    "rows": [
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "v2_mean": 1.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "v3_mean": 1.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 1.0,
+        "intended_reference_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mean_reference_edge_distance": 1.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d1",
+            "distance": 1,
+            "dst": 1,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d1-key_value"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "v2_mean": 1.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "v3_mean": 1.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 1.0,
+        "intended_reference_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mean_reference_edge_distance": 1.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d1",
+            "distance": 1,
+            "dst": 1,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d1-compact_json"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "v2_mean": 1.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "v3_mean": 1.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 1.0,
+        "intended_reference_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mean_reference_edge_distance": 1.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d1",
+            "distance": 1,
+            "dst": 1,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d1-pretty_json"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "v2_mean": 1.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "v3_mean": 1.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 1.0,
+        "intended_reference_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mean_reference_edge_distance": 1.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d1",
+            "distance": 1,
+            "dst": 1,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d1-reversed_order_json"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              3
+            ]
+          ],
+          "v2_mean": 3.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              3
+            ]
+          ],
+          "v3_mean": 3.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 3.0,
+        "intended_reference_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mean_reference_edge_distance": 3.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d3",
+            "distance": 3,
+            "dst": 3,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d3-key_value"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              3
+            ]
+          ],
+          "v2_mean": 3.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              3
+            ]
+          ],
+          "v3_mean": 3.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 3.0,
+        "intended_reference_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mean_reference_edge_distance": 3.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d3",
+            "distance": 3,
+            "dst": 3,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d3-compact_json"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              3
+            ]
+          ],
+          "v2_mean": 3.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              3
+            ]
+          ],
+          "v3_mean": 3.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 3.0,
+        "intended_reference_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mean_reference_edge_distance": 3.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d3",
+            "distance": 3,
+            "dst": 3,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d3-pretty_json"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              3
+            ]
+          ],
+          "v2_mean": 3.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              3
+            ]
+          ],
+          "v3_mean": 3.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 3.0,
+        "intended_reference_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mean_reference_edge_distance": 3.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d3",
+            "distance": 3,
+            "dst": 3,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d3-reversed_order_json"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              4
+            ]
+          ],
+          "v2_mean": 4.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              4
+            ]
+          ],
+          "v3_mean": 4.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "key_value",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 4.0,
+        "intended_reference_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "mean_reference_edge_distance": 4.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d4",
+            "distance": 4,
+            "dst": 4,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d4-key_value"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              4
+            ]
+          ],
+          "v2_mean": 4.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              4
+            ]
+          ],
+          "v3_mean": 4.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "compact_json",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 4.0,
+        "intended_reference_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "mean_reference_edge_distance": 4.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d4",
+            "distance": 4,
+            "dst": 4,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d4-compact_json"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              4
+            ]
+          ],
+          "v2_mean": 4.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              4
+            ]
+          ],
+          "v3_mean": 4.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "pretty_json",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 4.0,
+        "intended_reference_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "mean_reference_edge_distance": 4.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d4",
+            "distance": 4,
+            "dst": 4,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d4-pretty_json"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              4
+            ]
+          ],
+          "v2_mean": 4.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              4
+            ]
+          ],
+          "v3_mean": 4.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "reversed_order_json",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 4.0,
+        "intended_reference_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "mean_reference_edge_distance": 4.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d4",
+            "distance": 4,
+            "dst": 4,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d4-reversed_order_json"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              9
+            ]
+          ],
+          "v2_mean": 9.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              9
+            ]
+          ],
+          "v3_mean": 9.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "key_value",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 9.0,
+        "intended_reference_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mean_reference_edge_distance": 9.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d9",
+            "distance": 9,
+            "dst": 9,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d9-key_value"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              9
+            ]
+          ],
+          "v2_mean": 9.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              9
+            ]
+          ],
+          "v3_mean": 9.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "compact_json",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 9.0,
+        "intended_reference_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mean_reference_edge_distance": 9.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d9",
+            "distance": 9,
+            "dst": 9,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d9-compact_json"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              9
+            ]
+          ],
+          "v2_mean": 9.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              9
+            ]
+          ],
+          "v3_mean": 9.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "pretty_json",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 9.0,
+        "intended_reference_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mean_reference_edge_distance": 9.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d9",
+            "distance": 9,
+            "dst": 9,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d9-pretty_json"
+      },
+      {
+        "bridge": true,
+        "bridge_row": {
+          "exact": true,
+          "v2_edges": [
+            [
+              0,
+              9
+            ]
+          ],
+          "v2_mean": 9.0,
+          "v2_n": 1.0,
+          "v3_edges": [
+            [
+              0,
+              9
+            ]
+          ],
+          "v3_mean": 9.0,
+          "v3_n": 1.0
+        },
+        "case_id": "p3t-ex-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_only",
+        "format": "reversed_order_json",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 9.0,
+        "intended_reference_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mean_reference_edge_distance": 9.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_ex_d9",
+            "distance": 9,
+            "dst": 9,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-ex-d9-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d1-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d1-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d1-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d1-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d3-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d3-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d3-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d3-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d4-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d4-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d4-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d4-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d9-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d9-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d9-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-suf-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "underscore_suffix_collision_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-suf-d9-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 1.0,
+        "intended_reference_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mean_reference_edge_distance": 1.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d1",
+            "distance": 1,
+            "dst": 1,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d1-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 1.0,
+        "intended_reference_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mean_reference_edge_distance": 1.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d1",
+            "distance": 1,
+            "dst": 1,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d1-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 1.0,
+        "intended_reference_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mean_reference_edge_distance": 1.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d1",
+            "distance": 1,
+            "dst": 1,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d1-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 1.0,
+        "intended_reference_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mean_reference_edge_distance": 1.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d1",
+            "distance": 1,
+            "dst": 1,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d1-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 3.0,
+        "intended_reference_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mean_reference_edge_distance": 3.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d3",
+            "distance": 3,
+            "dst": 3,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d3-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 3.0,
+        "intended_reference_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mean_reference_edge_distance": 3.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d3",
+            "distance": 3,
+            "dst": 3,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d3-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 3.0,
+        "intended_reference_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mean_reference_edge_distance": 3.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d3",
+            "distance": 3,
+            "dst": 3,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d3-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 3.0,
+        "intended_reference_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mean_reference_edge_distance": 3.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d3",
+            "distance": 3,
+            "dst": 3,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d3-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "key_value",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 4.0,
+        "intended_reference_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "mean_reference_edge_distance": 4.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d4",
+            "distance": 4,
+            "dst": 4,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d4-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "compact_json",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 4.0,
+        "intended_reference_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "mean_reference_edge_distance": 4.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d4",
+            "distance": 4,
+            "dst": 4,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d4-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "pretty_json",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 4.0,
+        "intended_reference_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "mean_reference_edge_distance": 4.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d4",
+            "distance": 4,
+            "dst": 4,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d4-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "reversed_order_json",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 4.0,
+        "intended_reference_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "mean_reference_edge_distance": 4.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d4",
+            "distance": 4,
+            "dst": 4,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d4-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "key_value",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 9.0,
+        "intended_reference_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mean_reference_edge_distance": 9.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d9",
+            "distance": 9,
+            "dst": 9,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d9-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "compact_json",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 9.0,
+        "intended_reference_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mean_reference_edge_distance": 9.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d9",
+            "distance": 9,
+            "dst": 9,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d9-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "pretty_json",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 9.0,
+        "intended_reference_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mean_reference_edge_distance": 9.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d9",
+            "distance": 9,
+            "dst": 9,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d9-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-mix-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "exact_reference_plus_suffix_collision",
+        "format": "reversed_order_json",
+        "gate_expected": true,
+        "gate_observed": true,
+        "gate_ok": true,
+        "intended_mean": 9.0,
+        "intended_reference_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mean_reference_edge_distance": 9.0,
+        "missing_edges": [],
+        "n_reference_edges": 1.0,
+        "observed_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [
+          {
+            "atom": "loom_heddle_p3t_mix_d9",
+            "distance": 9,
+            "dst": 9,
+            "src": 0
+          }
+        ],
+        "safety_ok": true,
+        "surface_id": "p3t-mix-d9-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d1-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d1-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d1-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d1-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d3-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d3-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d3-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d3-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d4-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d4-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d4-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d4-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d9-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d9-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d9-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-act-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_collision_plus_actionability",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-act-d9-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d1-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d1-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d1-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d1-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d3-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d3-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d3-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d3-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d4-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d4-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d4-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d4-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d9-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d9-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d9-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-pre-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "prefix_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-pre-d9-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d1-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d1-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d1-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d1-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d3-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d3-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d3-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d3-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d4-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d4-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d4-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d4-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d9-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d9-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d9-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sst-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "suffix_text_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sst-d9-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d1-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d1-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d1-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d1-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d3-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d3-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d3-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d3-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d4-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d4-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d4-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d4-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d9-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d9-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d9-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-sub-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "substring_only",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-sub-d9-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d1-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d1-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d1-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d1",
+        "distance": 1,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d1-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d3-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d3-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d3-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d3",
+        "distance": 3,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d3-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d4-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d4-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d4-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d4",
+        "distance": 4,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d4-reversed_order_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "key_value",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d9-key_value"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "compact_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d9-compact_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "pretty_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d9-pretty_json"
+      },
+      {
+        "bridge": false,
+        "bridge_row": null,
+        "case_id": "p3t-gen-d9",
+        "distance": 9,
+        "edge_set_exact": true,
+        "extra_edges": [],
+        "false_reference_edges": 0,
+        "family": "shared_generic_text",
+        "format": "reversed_order_json",
+        "gate_expected": false,
+        "gate_observed": false,
+        "gate_ok": true,
+        "intended_mean": 0.0,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "missing_edges": [],
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_seq_ok": true,
+        "policy_sequence": [],
+        "policy_sequence_expected": [],
+        "raw_edge_rows": [],
+        "safety_ok": true,
+        "surface_id": "p3t-gen-d9-reversed_order_json"
+      }
+    ],
+    "schema": "bite-phase3t-exact-edge/v0.1"
+  },
+  "formats": [
+    "key_value",
+    "compact_json",
+    "pretty_json",
+    "reversed_order_json"
+  ],
+  "gate": {
+    "n_ok": 128,
+    "rows": [
+      {
+        "family": "exact_reference_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-ex-d1-key_value"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-ex-d1-compact_json"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-ex-d1-pretty_json"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-ex-d1-reversed_order_json"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-ex-d3-key_value"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-ex-d3-compact_json"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-ex-d3-pretty_json"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-ex-d3-reversed_order_json"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-ex-d4-key_value"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-ex-d4-compact_json"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-ex-d4-pretty_json"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-ex-d4-reversed_order_json"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-ex-d9-key_value"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-ex-d9-compact_json"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-ex-d9-pretty_json"
+      },
+      {
+        "family": "exact_reference_only",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-ex-d9-reversed_order_json"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d1-key_value"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d1-compact_json"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d1-pretty_json"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d1-reversed_order_json"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d3-key_value"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d3-compact_json"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d3-pretty_json"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d3-reversed_order_json"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d4-key_value"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d4-compact_json"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d4-pretty_json"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d4-reversed_order_json"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d9-key_value"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d9-compact_json"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d9-pretty_json"
+      },
+      {
+        "family": "underscore_suffix_collision_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-suf-d9-reversed_order_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-mix-d1-key_value"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-mix-d1-compact_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-mix-d1-pretty_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-mix-d1-reversed_order_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-mix-d3-key_value"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-mix-d3-compact_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-mix-d3-pretty_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-mix-d3-reversed_order_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-mix-d4-key_value"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-mix-d4-compact_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-mix-d4-pretty_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-mix-d4-reversed_order_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-mix-d9-key_value"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-mix-d9-compact_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-mix-d9-pretty_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "gate_expected": true,
+        "gate_observed": true,
+        "ok": true,
+        "surface_id": "p3t-mix-d9-reversed_order_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d1-key_value"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d1-compact_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d1-pretty_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d1-reversed_order_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d3-key_value"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d3-compact_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d3-pretty_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d3-reversed_order_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d4-key_value"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d4-compact_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d4-pretty_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d4-reversed_order_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d9-key_value"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d9-compact_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d9-pretty_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-act-d9-reversed_order_json"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d1-key_value"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d1-compact_json"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d1-pretty_json"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d1-reversed_order_json"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d3-key_value"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d3-compact_json"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d3-pretty_json"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d3-reversed_order_json"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d4-key_value"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d4-compact_json"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d4-pretty_json"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d4-reversed_order_json"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d9-key_value"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d9-compact_json"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d9-pretty_json"
+      },
+      {
+        "family": "prefix_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-pre-d9-reversed_order_json"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d1-key_value"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d1-compact_json"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d1-pretty_json"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d1-reversed_order_json"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d3-key_value"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d3-compact_json"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d3-pretty_json"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d3-reversed_order_json"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d4-key_value"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d4-compact_json"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d4-pretty_json"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d4-reversed_order_json"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d9-key_value"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d9-compact_json"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d9-pretty_json"
+      },
+      {
+        "family": "suffix_text_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sst-d9-reversed_order_json"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d1-key_value"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d1-compact_json"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d1-pretty_json"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d1-reversed_order_json"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d3-key_value"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d3-compact_json"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d3-pretty_json"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d3-reversed_order_json"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d4-key_value"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d4-compact_json"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d4-pretty_json"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d4-reversed_order_json"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d9-key_value"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d9-compact_json"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d9-pretty_json"
+      },
+      {
+        "family": "substring_only",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-sub-d9-reversed_order_json"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d1-key_value"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d1-compact_json"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d1-pretty_json"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d1-reversed_order_json"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d3-key_value"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d3-compact_json"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d3-pretty_json"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d3-reversed_order_json"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d4-key_value"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d4-compact_json"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d4-pretty_json"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d4-reversed_order_json"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d9-key_value"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d9-compact_json"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d9-pretty_json"
+      },
+      {
+        "family": "shared_generic_text",
+        "gate_expected": false,
+        "gate_observed": false,
+        "ok": true,
+        "surface_id": "p3t-gen-d9-reversed_order_json"
+      }
+    ],
+    "schema": "bite-phase3t-gate/v0.1"
+  },
+  "n_ok": 128,
+  "n_surfaces": 128,
+  "next_if_validated": "Phase 4 real-structured corpus; do not invent XFER-3",
+  "no_planner_change": true,
+  "no_threshold_grid": true,
+  "no_winner_score": true,
+  "not_claimed": [
+    "routing generalization",
+    "real-world corpus generalization",
+    "BITE superiority",
+    "Phase3S CONFIRMED"
+  ],
+  "offline": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3q_remains": "Phase3Q remains FAILED",
+  "phase3s_regression": {
+    "n_ok": 32,
+    "phase3s_remains": "Phase3S remains FAILED",
+    "phase3s_verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+    "primary": false,
+    "rows": [
+      {
+        "case_id": "p3s-suf-d1",
+        "family": "suffix_collision_only",
+        "format": "key_value",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d1-key_value"
+      },
+      {
+        "case_id": "p3s-suf-d1",
+        "family": "suffix_collision_only",
+        "format": "compact_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d1-compact_json"
+      },
+      {
+        "case_id": "p3s-suf-d1",
+        "family": "suffix_collision_only",
+        "format": "pretty_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d1-pretty_json"
+      },
+      {
+        "case_id": "p3s-suf-d1",
+        "family": "suffix_collision_only",
+        "format": "reversed_order_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d1-reversed_order_json"
+      },
+      {
+        "case_id": "p3s-suf-d3",
+        "family": "suffix_collision_only",
+        "format": "key_value",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d3-key_value"
+      },
+      {
+        "case_id": "p3s-suf-d3",
+        "family": "suffix_collision_only",
+        "format": "compact_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d3-compact_json"
+      },
+      {
+        "case_id": "p3s-suf-d3",
+        "family": "suffix_collision_only",
+        "format": "pretty_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d3-pretty_json"
+      },
+      {
+        "case_id": "p3s-suf-d3",
+        "family": "suffix_collision_only",
+        "format": "reversed_order_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d3-reversed_order_json"
+      },
+      {
+        "case_id": "p3s-suf-d4",
+        "family": "suffix_collision_only",
+        "format": "key_value",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d4-key_value"
+      },
+      {
+        "case_id": "p3s-suf-d4",
+        "family": "suffix_collision_only",
+        "format": "compact_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d4-compact_json"
+      },
+      {
+        "case_id": "p3s-suf-d4",
+        "family": "suffix_collision_only",
+        "format": "pretty_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d4-pretty_json"
+      },
+      {
+        "case_id": "p3s-suf-d4",
+        "family": "suffix_collision_only",
+        "format": "reversed_order_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d4-reversed_order_json"
+      },
+      {
+        "case_id": "p3s-suf-d9",
+        "family": "suffix_collision_only",
+        "format": "key_value",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d9-key_value"
+      },
+      {
+        "case_id": "p3s-suf-d9",
+        "family": "suffix_collision_only",
+        "format": "compact_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d9-compact_json"
+      },
+      {
+        "case_id": "p3s-suf-d9",
+        "family": "suffix_collision_only",
+        "format": "pretty_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d9-pretty_json"
+      },
+      {
+        "case_id": "p3s-suf-d9",
+        "family": "suffix_collision_only",
+        "format": "reversed_order_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-suf-d9-reversed_order_json"
+      },
+      {
+        "case_id": "p3s-mix-d1",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "key_value",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d1-key_value"
+      },
+      {
+        "case_id": "p3s-mix-d1",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "compact_json",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d1-compact_json"
+      },
+      {
+        "case_id": "p3s-mix-d1",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "pretty_json",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d1-pretty_json"
+      },
+      {
+        "case_id": "p3s-mix-d1",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "reversed_order_json",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d1-reversed_order_json"
+      },
+      {
+        "case_id": "p3s-mix-d3",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "key_value",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d3-key_value"
+      },
+      {
+        "case_id": "p3s-mix-d3",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "compact_json",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d3-compact_json"
+      },
+      {
+        "case_id": "p3s-mix-d3",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "pretty_json",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d3-pretty_json"
+      },
+      {
+        "case_id": "p3s-mix-d3",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "reversed_order_json",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d3-reversed_order_json"
+      },
+      {
+        "case_id": "p3s-mix-d4",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "key_value",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d4-key_value"
+      },
+      {
+        "case_id": "p3s-mix-d4",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "compact_json",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d4-compact_json"
+      },
+      {
+        "case_id": "p3s-mix-d4",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "pretty_json",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d4-pretty_json"
+      },
+      {
+        "case_id": "p3s-mix-d4",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "reversed_order_json",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d4-reversed_order_json"
+      },
+      {
+        "case_id": "p3s-mix-d9",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "key_value",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d9-key_value"
+      },
+      {
+        "case_id": "p3s-mix-d9",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "compact_json",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d9-compact_json"
+      },
+      {
+        "case_id": "p3s-mix-d9",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "pretty_json",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d9-pretty_json"
+      },
+      {
+        "case_id": "p3s-mix-d9",
+        "family": "true_reference_plus_suffix_collision",
+        "format": "reversed_order_json",
+        "gated": false,
+        "intended_reference_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": false,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-mix-d9-reversed_order_json"
+      },
+      {
+        "case_id": "p3s-act-d1",
+        "family": "suffix_collision_plus_actionability",
+        "format": "key_value",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d1-key_value"
+      },
+      {
+        "case_id": "p3s-act-d1",
+        "family": "suffix_collision_plus_actionability",
+        "format": "compact_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d1-compact_json"
+      },
+      {
+        "case_id": "p3s-act-d1",
+        "family": "suffix_collision_plus_actionability",
+        "format": "pretty_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d1-pretty_json"
+      },
+      {
+        "case_id": "p3s-act-d1",
+        "family": "suffix_collision_plus_actionability",
+        "format": "reversed_order_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d1-reversed_order_json"
+      },
+      {
+        "case_id": "p3s-act-d3",
+        "family": "suffix_collision_plus_actionability",
+        "format": "key_value",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d3-key_value"
+      },
+      {
+        "case_id": "p3s-act-d3",
+        "family": "suffix_collision_plus_actionability",
+        "format": "compact_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d3-compact_json"
+      },
+      {
+        "case_id": "p3s-act-d3",
+        "family": "suffix_collision_plus_actionability",
+        "format": "pretty_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d3-pretty_json"
+      },
+      {
+        "case_id": "p3s-act-d3",
+        "family": "suffix_collision_plus_actionability",
+        "format": "reversed_order_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d3-reversed_order_json"
+      },
+      {
+        "case_id": "p3s-act-d4",
+        "family": "suffix_collision_plus_actionability",
+        "format": "key_value",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d4-key_value"
+      },
+      {
+        "case_id": "p3s-act-d4",
+        "family": "suffix_collision_plus_actionability",
+        "format": "compact_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d4-compact_json"
+      },
+      {
+        "case_id": "p3s-act-d4",
+        "family": "suffix_collision_plus_actionability",
+        "format": "pretty_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d4-pretty_json"
+      },
+      {
+        "case_id": "p3s-act-d4",
+        "family": "suffix_collision_plus_actionability",
+        "format": "reversed_order_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d4-reversed_order_json"
+      },
+      {
+        "case_id": "p3s-act-d9",
+        "family": "suffix_collision_plus_actionability",
+        "format": "key_value",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d9-key_value"
+      },
+      {
+        "case_id": "p3s-act-d9",
+        "family": "suffix_collision_plus_actionability",
+        "format": "compact_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d9-compact_json"
+      },
+      {
+        "case_id": "p3s-act-d9",
+        "family": "suffix_collision_plus_actionability",
+        "format": "pretty_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d9-pretty_json"
+      },
+      {
+        "case_id": "p3s-act-d9",
+        "family": "suffix_collision_plus_actionability",
+        "format": "reversed_order_json",
+        "gated": false,
+        "intended_reference_edges": [],
+        "mean_reference_edge_distance": 0.0,
+        "n_reference_edges": 0.0,
+        "observed_edges": [],
+        "ok": true,
+        "policy_sequence": [],
+        "primary": false,
+        "surface_id": "p3s-act-d9-reversed_order_json"
+      }
+    ],
+    "schema": "bite-phase3t-phase3s-regression/v0.1"
+  },
+  "phase3s_remains": "Phase3S remains FAILED",
+  "phase3s_s0_sha": "3525506c4601f4471489a15f78d013900c05eda1",
+  "policy_consequence": {
+    "n_ok": 128,
+    "rows": [
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d1-key_value"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d1-compact_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d1-pretty_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d1-reversed_order_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d3-key_value"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d3-compact_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d3-pretty_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d3-reversed_order_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d4-key_value"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d4-compact_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d4-pretty_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d4-reversed_order_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d9-key_value"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d9-compact_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d9-pretty_json"
+      },
+      {
+        "family": "exact_reference_plus_suffix_collision",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-mix-d9-reversed_order_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d1-key_value"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d1-compact_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d1-pretty_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d1-reversed_order_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d3-key_value"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d3-compact_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d3-pretty_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d3-reversed_order_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d4-key_value"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d4-compact_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d4-pretty_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d4-reversed_order_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d9-key_value"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d9-compact_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d9-pretty_json"
+      },
+      {
+        "family": "suffix_collision_plus_actionability",
+        "ok": true,
+        "policy_sequence": [],
+        "surface_id": "p3t-act-d9-reversed_order_json"
+      }
+    ],
+    "schema": "bite-phase3t-policy-consequence/v0.1"
+  },
+  "policy_name": "conditional_texture_policy_v4",
+  "protocol_commit_sha": "70a3f7792a5baee1382b890fb7021dc7fb234ce1",
+  "protocol_revision": "phase3t-exact-reference-freeze-v0.1",
+  "research_conclusion": false,
+  "revision": "phase3t-exact-reference-v0.1",
+  "schema": "bite-phase3t-exact-reference/v0.1",
+  "synthetic": true,
+  "t_high_carry_forward": true,
+  "t_high_reference": 4.0,
+  "threshold_bridge": {
+    "n_ok": 16,
+    "ok": true,
+    "rows": [
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "v2_mean": 1.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "v3_mean": 1.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "v2_mean": 1.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "v3_mean": 1.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "v2_mean": 1.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "v3_mean": 1.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "v2_mean": 1.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "v3_mean": 1.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "v2_mean": 3.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "v3_mean": 3.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "v2_mean": 3.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "v3_mean": 3.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "v2_mean": 3.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "v3_mean": 3.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "v2_mean": 3.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            3
+          ]
+        ],
+        "v3_mean": 3.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "v2_mean": 4.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "v3_mean": 4.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "v2_mean": 4.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "v3_mean": 4.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "v2_mean": 4.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "v3_mean": 4.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "v2_mean": 4.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            4
+          ]
+        ],
+        "v3_mean": 4.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "v2_mean": 9.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "v3_mean": 9.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "v2_mean": 9.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "v3_mean": 9.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "v2_mean": 9.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "v3_mean": 9.0,
+        "v3_n": 1.0
+      },
+      {
+        "exact": true,
+        "v2_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "v2_mean": 9.0,
+        "v2_n": 1.0,
+        "v3_edges": [
+          [
+            0,
+            9
+          ]
+        ],
+        "v3_mean": 9.0,
+        "v3_n": 1.0
+      }
+    ],
+    "schema": "bite-phase3t-threshold-bridge/v0.1"
+  },
+  "token_reduction": "diagnostic_only",
+  "verdict": "PHASE3T_EXACT_REFERENCE_VALIDATED"
+}

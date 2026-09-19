@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3l-redundancy-first-open.schema.json",
+  "title": "BITE Phase-3L redundancy first-open evaluation v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "k0_commit_sha",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "routing_connected",
+    "redundancy_threshold_set",
+    "rule_policy_changed"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3l-redundancy-first-open/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3l-redundancy-first-open-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 40
+    },
+    "k0_commit_sha": {
+      "type": "string",
+      "const": "526601b68a0eec9861b012ef5ddc67078447bf36"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE3L_REDUNDANCY_HOLDOUT_CONFIRMED",
+        "PHASE3L_REDUNDANCY_HOLDOUT_FAILED",
+        "PHASE3L_REDUNDANCY_HOLDOUT_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "routing_connected": { "type": "boolean", "const": false },
+    "redundancy_threshold_set": { "type": "boolean", "const": false },
+    "rule_policy_changed": { "type": "boolean", "const": false }
+  }
+}
