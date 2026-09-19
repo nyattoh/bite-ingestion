@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3q-actionability.schema.json",
+  "title": "BITE Phase-3Q actionability comparison v0.1",
+  "type": "object",
+  "required": ["schema", "n_ok", "rows"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3q-actionability/v0.1"
+    },
+    "n_ok": { "type": "integer", "minimum": 0 },
+    "rows": { "type": "array" }
+  }
+}

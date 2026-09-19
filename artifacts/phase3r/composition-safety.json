@@ -1,0 +1,1274 @@
+{
+  "n_ok": 40,
+  "rows": [
+    {
+      "case_id": "p3r-b-disj",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "key_value",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-disj-u12",
+        "p3r-b-disj-u13"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-disj-key_value",
+      "token_proxy_after": 161,
+      "token_proxy_before": 172
+    },
+    {
+      "case_id": "p3r-b-disj",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "compact_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-disj-u12",
+        "p3r-b-disj-u13"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-disj-compact_json",
+      "token_proxy_after": 206,
+      "token_proxy_before": 222
+    },
+    {
+      "case_id": "p3r-b-disj",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "pretty_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-disj-u12",
+        "p3r-b-disj-u13"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-disj-pretty_json",
+      "token_proxy_after": 255,
+      "token_proxy_before": 285
+    },
+    {
+      "case_id": "p3r-b-disj",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "reversed_order_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-disj-u12",
+        "p3r-b-disj-u13"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-disj-reversed_order_json",
+      "token_proxy_after": 206,
+      "token_proxy_before": 222
+    },
+    {
+      "case_id": "p3r-b-eq2",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "key_value",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "REDUCE_v2"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-eq2-key_value",
+      "token_proxy_after": 130,
+      "token_proxy_before": 144
+    },
+    {
+      "case_id": "p3r-b-eq2",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "compact_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "REDUCE_v2"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-eq2-compact_json",
+      "token_proxy_after": 168,
+      "token_proxy_before": 186
+    },
+    {
+      "case_id": "p3r-b-eq2",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "pretty_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "REDUCE_v2"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-eq2-pretty_json",
+      "token_proxy_after": 209,
+      "token_proxy_before": 240
+    },
+    {
+      "case_id": "p3r-b-eq2",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "reversed_order_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "REDUCE_v2"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-eq2-reversed_order_json",
+      "token_proxy_after": 168,
+      "token_proxy_before": 186
+    },
+    {
+      "case_id": "p3r-b-sub3",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "key_value",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-sub3-u10",
+        "p3r-b-sub3-u12"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-sub3-key_value",
+      "token_proxy_after": 150,
+      "token_proxy_before": 165
+    },
+    {
+      "case_id": "p3r-b-sub3",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "compact_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-sub3-u10",
+        "p3r-b-sub3-u12"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-sub3-compact_json",
+      "token_proxy_after": 192,
+      "token_proxy_before": 211
+    },
+    {
+      "case_id": "p3r-b-sub3",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "pretty_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-sub3-u10",
+        "p3r-b-sub3-u12"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-sub3-pretty_json",
+      "token_proxy_after": 237,
+      "token_proxy_before": 270
+    },
+    {
+      "case_id": "p3r-b-sub3",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "reversed_order_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-sub3-u10",
+        "p3r-b-sub3-u12"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-sub3-reversed_order_json",
+      "token_proxy_after": 192,
+      "token_proxy_before": 211
+    },
+    {
+      "case_id": "p3r-b-an2",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "key_value",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-an2-key_value",
+      "token_proxy_after": 129,
+      "token_proxy_before": 147
+    },
+    {
+      "case_id": "p3r-b-an2",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "compact_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-an2-compact_json",
+      "token_proxy_after": 168,
+      "token_proxy_before": 190
+    },
+    {
+      "case_id": "p3r-b-an2",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "pretty_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-an2-pretty_json",
+      "token_proxy_after": 209,
+      "token_proxy_before": 244
+    },
+    {
+      "case_id": "p3r-b-an2",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "reversed_order_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-an2-reversed_order_json",
+      "token_proxy_after": 168,
+      "token_proxy_before": 190
+    },
+    {
+      "case_id": "p3r-b-an3",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "key_value",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-an3-u11",
+        "p3r-b-an3-u12"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-an3-key_value",
+      "token_proxy_after": 143,
+      "token_proxy_before": 161
+    },
+    {
+      "case_id": "p3r-b-an3",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "compact_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-an3-u11",
+        "p3r-b-an3-u12"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-an3-compact_json",
+      "token_proxy_after": 185,
+      "token_proxy_before": 207
+    },
+    {
+      "case_id": "p3r-b-an3",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "pretty_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-an3-u11",
+        "p3r-b-an3-u12"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-an3-pretty_json",
+      "token_proxy_after": 230,
+      "token_proxy_before": 265
+    },
+    {
+      "case_id": "p3r-b-an3",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "reversed_order_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-an3-u11",
+        "p3r-b-an3-u12"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-an3-reversed_order_json",
+      "token_proxy_after": 185,
+      "token_proxy_before": 207
+    },
+    {
+      "case_id": "p3r-b-adup",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "key_value",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-adup-key_value",
+      "token_proxy_after": 121,
+      "token_proxy_before": 145
+    },
+    {
+      "case_id": "p3r-b-adup",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "compact_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-adup-compact_json",
+      "token_proxy_after": 156,
+      "token_proxy_before": 188
+    },
+    {
+      "case_id": "p3r-b-adup",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "pretty_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-adup-pretty_json",
+      "token_proxy_after": 193,
+      "token_proxy_before": 242
+    },
+    {
+      "case_id": "p3r-b-adup",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "reversed_order_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-adup-reversed_order_json",
+      "token_proxy_after": 156,
+      "token_proxy_before": 188
+    },
+    {
+      "case_id": "p3r-b-alld",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "key_value",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-alld-u13",
+        "p3r-b-alld-u14"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-alld-key_value",
+      "token_proxy_after": 161,
+      "token_proxy_before": 181
+    },
+    {
+      "case_id": "p3r-b-alld",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "compact_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-alld-u13",
+        "p3r-b-alld-u14"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-alld-compact_json",
+      "token_proxy_after": 206,
+      "token_proxy_before": 234
+    },
+    {
+      "case_id": "p3r-b-alld",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "pretty_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-alld-u13",
+        "p3r-b-alld-u14"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-alld-pretty_json",
+      "token_proxy_after": 255,
+      "token_proxy_before": 302
+    },
+    {
+      "case_id": "p3r-b-alld",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "reversed_order_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-alld-u13",
+        "p3r-b-alld-u14"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-alld-reversed_order_json",
+      "token_proxy_after": 206,
+      "token_proxy_before": 234
+    },
+    {
+      "case_id": "p3r-b-twoj",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "key_value",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-twoj-u12",
+        "p3r-b-twoj-u13"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-twoj-key_value",
+      "token_proxy_after": 162,
+      "token_proxy_before": 181
+    },
+    {
+      "case_id": "p3r-b-twoj",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "compact_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-twoj-u12",
+        "p3r-b-twoj-u13"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-twoj-compact_json",
+      "token_proxy_after": 207,
+      "token_proxy_before": 230
+    },
+    {
+      "case_id": "p3r-b-twoj",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "pretty_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-twoj-u12",
+        "p3r-b-twoj-u13"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-twoj-pretty_json",
+      "token_proxy_after": 256,
+      "token_proxy_before": 293
+    },
+    {
+      "case_id": "p3r-b-twoj",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "reversed_order_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [
+        "p3r-b-twoj-u12",
+        "p3r-b-twoj-u13"
+      ],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-twoj-reversed_order_json",
+      "token_proxy_after": 207,
+      "token_proxy_before": 230
+    },
+    {
+      "case_id": "p3r-b-mid",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "key_value",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-mid-key_value",
+      "token_proxy_after": 93,
+      "token_proxy_before": 93
+    },
+    {
+      "case_id": "p3r-b-mid",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "compact_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-mid-compact_json",
+      "token_proxy_after": 121,
+      "token_proxy_before": 121
+    },
+    {
+      "case_id": "p3r-b-mid",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "pretty_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-mid-pretty_json",
+      "token_proxy_after": 151,
+      "token_proxy_before": 157
+    },
+    {
+      "case_id": "p3r-b-mid",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "reversed_order_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-mid-reversed_order_json",
+      "token_proxy_after": 121,
+      "token_proxy_before": 121
+    },
+    {
+      "case_id": "p3r-b-zero",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "key_value",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-zero-key_value",
+      "token_proxy_after": 104,
+      "token_proxy_before": 104
+    },
+    {
+      "case_id": "p3r-b-zero",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "compact_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-zero-compact_json",
+      "token_proxy_after": 132,
+      "token_proxy_before": 132
+    },
+    {
+      "case_id": "p3r-b-zero",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "pretty_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-zero-pretty_json",
+      "token_proxy_after": 162,
+      "token_proxy_before": 168
+    },
+    {
+      "case_id": "p3r-b-zero",
+      "checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "conservation_untraced": [],
+      "format": "reversed_order_json",
+      "integrate_explicit_join_composite": true,
+      "join_roots_used": [],
+      "lineage_recall": 1.0,
+      "no_unrelated_overmerge": true,
+      "ok": true,
+      "provenance_completeness": 1.0,
+      "quarantine_recoverable": true,
+      "reduce_only_logical_duplicates": true,
+      "sequence": [],
+      "silent_loss": 0,
+      "surface_id": "p3r-b-zero-reversed_order_json",
+      "token_proxy_after": 132,
+      "token_proxy_before": 132
+    }
+  ],
+  "schema": "bite-phase3r-composition-safety/v0.1"
+}

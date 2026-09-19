@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3m-conditional-routing.schema.json",
+  "title": "BITE Phase-3M conditional routing development result v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "p3m_evaluation_opened",
+    "rule_policy_changed",
+    "rule_policy_executed",
+    "cut_in_conditional_map"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3m-conditional-routing/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3m-conditional-routing-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 40
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE3M_CONDITIONAL_ROUTING_READY",
+        "PHASE3M_CONDITIONAL_ROUTING_PARTIAL",
+        "PHASE3M_CONDITIONAL_ROUTING_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "p3m_evaluation_opened": { "type": "boolean", "const": false },
+    "rule_policy_changed": { "type": "boolean", "const": false },
+    "rule_policy_executed": { "type": "boolean", "const": false },
+    "cut_in_conditional_map": { "type": "boolean", "const": false }
+  }
+}

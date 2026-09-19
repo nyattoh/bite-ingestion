@@ -1,0 +1,5 @@
+gate_inv_c012=node_inv_c012 id=lot_c012
+note_inventory_c012_00=blob_inventory_c012_00
+note_inventory_c012_01=blob_inventory_c012_01
+bin_node_inv_c012=ack_inv_c012 id=lot_c012
+mate_c012=crate_c012 id=lot_c012

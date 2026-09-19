@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3s-reference-specificity.schema.json",
+  "title": "BITE Phase-3S reference-edge specificity evaluation v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "calibration",
+    "no_repair",
+    "phase3q_remains"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3s-reference-specificity/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3s-reference-specificity-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "const": "3525506c4601f4471489a15f78d013900c05eda1"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE3S_REFERENCE_SPECIFICITY_CONFIRMED",
+        "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+        "PHASE3S_REFERENCE_SPECIFICITY_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "calibration": { "type": "boolean", "const": false },
+    "no_repair": { "type": "boolean", "const": true },
+    "phase3q_remains": {
+      "type": "string",
+      "const": "Phase3Q remains FAILED"
+    }
+  }
+}
