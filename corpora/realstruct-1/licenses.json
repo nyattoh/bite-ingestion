@@ -1,0 +1,124 @@
+{
+  "allowed_spdx": [
+    "MIT",
+    "Apache-2.0",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+    "0BSD",
+    "Unlicense",
+    "CC0-1.0"
+  ],
+  "documents": [
+    {
+      "commit_sha": "aa0cf127fc365a56ee016867144ddffabc2290ae",
+      "license_note": "composer.json license field MIT; no LICENSE file in skeleton",
+      "license_url": "https://github.com/laravel/laravel/blob/aa0cf127fc365a56ee016867144ddffabc2290ae/composer.json",
+      "redistributable": true,
+      "repository_url": "https://github.com/laravel/laravel",
+      "source_id": "rs1-dotenv-laravel",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "51698046353dfc7dd4ee466580f9120d5a1f6762",
+      "license_note": "",
+      "license_url": "https://github.com/koel/koel/blob/51698046353dfc7dd4ee466580f9120d5a1f6762/LICENSE.md",
+      "redistributable": true,
+      "repository_url": "https://github.com/koel/koel",
+      "source_id": "rs1-dotenv-koel",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "cf133540b13073e18e08f10b65a2aff2be0f155e",
+      "license_note": "",
+      "license_url": "https://github.com/BookStackApp/BookStack/blob/cf133540b13073e18e08f10b65a2aff2be0f155e/LICENSE",
+      "redistributable": true,
+      "repository_url": "https://github.com/BookStackApp/BookStack",
+      "source_id": "rs1-dotenv-bookstack",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "27b7303baf41bb28babc610ac8eaa486e1ddfab5",
+      "license_note": "",
+      "license_url": "https://github.com/sissbruecker/linkding/blob/27b7303baf41bb28babc610ac8eaa486e1ddfab5/LICENSE.txt",
+      "redistributable": true,
+      "repository_url": "https://github.com/sissbruecker/linkding",
+      "source_id": "rs1-dotenv-linkding",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "a3febb258a28c1023a09ba29bc41c1b98a2c2cc7",
+      "license_note": "",
+      "license_url": "https://github.com/apache/hadoop/blob/a3febb258a28c1023a09ba29bc41c1b98a2c2cc7/LICENSE.txt",
+      "redistributable": true,
+      "repository_url": "https://github.com/apache/hadoop",
+      "source_id": "rs1-props-hadoop-log4j",
+      "spdx": "Apache-2.0"
+    },
+    {
+      "commit_sha": "959ee33d8231deb798a876ecd9fa8f66b252cf71",
+      "license_note": "",
+      "license_url": "https://github.com/apache/ratis/blob/959ee33d8231deb798a876ecd9fa8f66b252cf71/LICENSE",
+      "redistributable": true,
+      "repository_url": "https://github.com/apache/ratis",
+      "source_id": "rs1-props-ratis-log4j",
+      "spdx": "Apache-2.0"
+    },
+    {
+      "commit_sha": "995cfcf99f7917403e030428c00b5c51808ddc61",
+      "license_note": "",
+      "license_url": "https://github.com/apache/kafka/blob/995cfcf99f7917403e030428c00b5c51808ddc61/LICENSE",
+      "redistributable": true,
+      "repository_url": "https://github.com/apache/kafka",
+      "source_id": "rs1-props-kafka-server",
+      "spdx": "Apache-2.0"
+    },
+    {
+      "commit_sha": "e7604b9f63c86a9e88bc569bd19d4f57739c6768",
+      "license_note": "",
+      "license_url": "https://github.com/apache/tomcat/blob/e7604b9f63c86a9e88bc569bd19d4f57739c6768/LICENSE",
+      "redistributable": true,
+      "repository_url": "https://github.com/apache/tomcat",
+      "source_id": "rs1-props-tomcat-logging",
+      "spdx": "Apache-2.0"
+    },
+    {
+      "commit_sha": "dbbd717e923694c36f41b0360515b4374bbe6ee0",
+      "license_note": "",
+      "license_url": "https://github.com/gogs/gogs/blob/dbbd717e923694c36f41b0360515b4374bbe6ee0/LICENSE",
+      "redistributable": true,
+      "repository_url": "https://github.com/gogs/gogs",
+      "source_id": "rs1-ini-gogs",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "f99e0b1c7a5b094f5a04b14101899d0cb4ece69d",
+      "license_note": "",
+      "license_url": "https://github.com/polybar/polybar/blob/f99e0b1c7a5b094f5a04b14101899d0cb4ece69d/LICENSE",
+      "redistributable": true,
+      "repository_url": "https://github.com/polybar/polybar",
+      "source_id": "rs1-ini-polybar",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "4171f85bbc60cd8cbb95b768438b6b670cd276e0",
+      "license_note": "OE LICENSE: all metadata MIT unless otherwise stated",
+      "license_url": "https://github.com/openembedded/openembedded-core/blob/4171f85bbc60cd8cbb95b768438b6b670cd276e0/LICENSE.MIT",
+      "redistributable": true,
+      "repository_url": "https://github.com/openembedded/openembedded-core",
+      "source_id": "rs1-ini-oe-bitbake",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "8f741d06e6975ead6c710a8b5cb43ddd0be18ddb",
+      "license_note": "",
+      "license_url": "https://github.com/OE4T/meta-tegra/blob/8f741d06e6975ead6c710a8b5cb43ddd0be18ddb/LICENSE",
+      "redistributable": true,
+      "repository_url": "https://github.com/OE4T/meta-tegra",
+      "source_id": "rs1-ini-tegra-common",
+      "spdx": "MIT"
+    }
+  ],
+  "revision": "phase4a-realstruct1-v0.1",
+  "schema": "bite-phase4a-realstruct1-licenses/v0.1"
+}

@@ -77,7 +77,8 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 3R relation-channel + projected planner: **PHASE3R_CHANNEL_PLANNER_VALIDATED** (fresh p3r; v2 reference channel; projected actionability; T_high=4 carry-forward; Phase 3Q remains FAILED; p3f sealed)
 - Phase 3S reference-edge specificity: **PHASE3S_REFERENCE_SPECIFICITY_FAILED** (fresh p3s; suffix collision false edges; no repair; Phase 3Q remains FAILED; p3f sealed)
 - Phase 3T exact reference identity v3: **PHASE3T_EXACT_REFERENCE_VALIDATED** (fresh p3t; full-token exact edges; T_high=4 carry-forward; Phase 3S/3Q remain FAILED; p3f sealed)
-- **Next**: Phase 4 real-structured corpus; do not invent XFER-3; do not retune on the spent Phase 2 holdout
+- Phase 4A REALSTRUCT-1 corpus freeze: **PHASE4A_REAL_CORPUS_FROZEN** (12 public key=value configs; scorer-only annotation; no BITE run; Phase 3S/3Q remain FAILED; p3f sealed)
+- **Next**: Phase 4B measurement on the frozen evaluation split; do not invent XFER-3; do not retune on the spent Phase 2 holdout; do not swap REALSTRUCT-1 sources after BITE runs
 
 See:
 - [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
@@ -151,3 +152,7 @@ See:
 - [`docs/hand_over/PHASE3T-EXACT-REFERENCE.md`](docs/hand_over/PHASE3T-EXACT-REFERENCE.md)
 - [`benchmarks/spec/phase3t-exact-reference-freeze.json`](benchmarks/spec/phase3t-exact-reference-freeze.json)
 - [`artifacts/phase3t/exact-reference.json`](artifacts/phase3t/exact-reference.json)
+- [`docs/hand_over/PHASE4A-REALSTRUCT1.md`](docs/hand_over/PHASE4A-REALSTRUCT1.md)
+- [`benchmarks/spec/phase4a-realstruct1-freeze.json`](benchmarks/spec/phase4a-realstruct1-freeze.json)
+- [`artifacts/phase4a/realstruct-1.json`](artifacts/phase4a/realstruct-1.json)
+- [`corpora/realstruct-1/manifest.json`](corpora/realstruct-1/manifest.json)

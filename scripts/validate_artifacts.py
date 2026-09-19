@@ -1466,6 +1466,86 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase3t} verdict={data.get('verdict')}")
 
+    from bite_bench.phase4a import validate_phase4a_freeze
+    from bite_bench.realstruct1 import validate_phase4a_corpus
+
+    phase4a_freeze = args.root / "benchmarks" / "spec" / "phase4a-realstruct1-freeze.json"
+    if phase4a_freeze.is_file():
+        n_checked += 1
+        data = json.loads(phase4a_freeze.read_text(encoding="utf-8"))
+        errs = list(validate_phase4a_freeze(data))
+        schema_path = args.root / "spec" / "phase4a-realstruct1-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase4a freeze jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase4a_freeze}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase4a_freeze} verdict={data.get('verdict')}")
+
+    phase4a = args.root / "artifacts" / "phase4a" / "realstruct-1.json"
+    if phase4a.is_file():
+        n_checked += 1
+        data = json.loads(phase4a.read_text(encoding="utf-8"))
+        errs = list(validate_phase4a_corpus(data))
+        errs.extend(_scan_secrets(data))
+        schema_path = args.root / "spec" / "phase4a-realstruct1.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase4a jsonschema: {exc}")
+        for extra, extra_schema in (
+            (
+                args.root / "corpora" / "realstruct-1" / "manifest.json",
+                args.root / "spec" / "phase4a-realstruct1-corpus.schema.json",
+            ),
+            (
+                args.root / "corpora" / "realstruct-1" / "licenses.json",
+                args.root / "spec" / "phase4a-realstruct1-licenses.schema.json",
+            ),
+            (
+                args.root / "corpora" / "realstruct-1" / "split.json",
+                args.root / "spec" / "phase4a-realstruct1-split.schema.json",
+            ),
+            (
+                args.root / "corpora" / "realstruct-1" / "annotations.json",
+                args.root / "spec" / "phase4a-realstruct1-annotations.schema.json",
+            ),
+        ):
+            if extra.is_file() and extra_schema.is_file():
+                extra_doc = json.loads(extra.read_text(encoding="utf-8"))
+                try:
+                    import jsonschema  # type: ignore
+
+                    jsonschema.validate(
+                        extra_doc, json.loads(extra_schema.read_text(encoding="utf-8"))
+                    )
+                except ImportError:
+                    pass
+                except Exception as exc:  # noqa: BLE001
+                    errs.append(f"phase4a extra jsonschema {extra.name}: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase4a}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase4a} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
