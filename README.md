@@ -68,6 +68,7 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 3I composite provenance: **PHASE3I_COMPOSITE_PROVENANCE_VALIDATED** (multi-source derived units; p3f evaluation sealed; RulePolicy unconnected)
 - Phase 3J texture observability: **PHASE3J_TEXTURE_SENSOR_REVISION_REQUIRED** (p3j gold-free audit; r is format-unstable on compact JSON; profiler unchanged)
 - Phase 3K structural redundancy v1: **PHASE3K_REDUNDANCY_SENSOR_READY** (logical-record duplicate_unit_ratio; v0.r retained; RulePolicy unconnected)
+- Phase 3L redundancy first-open: **PHASE3L_REDUNDANCY_HOLDOUT_CONFIRMED** (p3k replicas 2/3; same frozen families / new replica values; RulePolicy unconnected)
 - **Next**: do not retune profiler / thresholds / routing on the spent Phase 2 holdout
 
 See:
@@ -114,3 +115,6 @@ See:
 - [`benchmarks/spec/phase3k-structural-redundancy-freeze.json`](benchmarks/spec/phase3k-structural-redundancy-freeze.json)
 - [`benchmarks/spec/phase3k-split-manifest.json`](benchmarks/spec/phase3k-split-manifest.json)
 - [`artifacts/phase3k/structural-redundancy.json`](artifacts/phase3k/structural-redundancy.json)
+- [`docs/hand_over/PHASE3L-REDUNDANCY-FIRST-OPEN.md`](docs/hand_over/PHASE3L-REDUNDANCY-FIRST-OPEN.md)
+- [`benchmarks/spec/phase3l-redundancy-first-open-freeze.json`](benchmarks/spec/phase3l-redundancy-first-open-freeze.json)
+- [`artifacts/phase3l/redundancy-first-open.json`](artifacts/phase3l/redundancy-first-open.json)
