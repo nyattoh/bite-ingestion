@@ -1,0 +1,278 @@
+{
+  "bite_xfer1_role": "development_evidence_not_confirmatory_holdout",
+  "calibration": false,
+  "claim_boundary": "development repair of logical-record alignment and lineage-aware safety",
+  "copy_xfer1_cases": false,
+  "cut_forbidden": true,
+  "formats": [
+    "key_value",
+    "compact_json",
+    "pretty_json",
+    "reversed_order_json"
+  ],
+  "generation": "p3p",
+  "invariants": {
+    "conservation_untraced": [],
+    "four_rendering_invariance": true,
+    "integrate_only_explicit_join": true,
+    "lineage_recall": 1.0,
+    "no_unrelated_root_overmerge": true,
+    "provenance_completeness": 1.0,
+    "r_recoverable": true,
+    "reduce_after_multiplicity_le_1": true,
+    "reduce_only_logical_duplicates": true,
+    "sensor_operator_biconditional": true,
+    "silent_loss": 0
+  },
+  "locked_from_phase3g": {
+    "T_high": 4.0,
+    "feature": "mean_edge_distance",
+    "gate": "n_edges>0 AND mean_edge_distance>=4"
+  },
+  "no_new_threshold": true,
+  "no_predicate_retune": true,
+  "no_winner_score": true,
+  "not_claimed": [
+    "Phase3O TRANSFER_CONFIRMED",
+    "real-world corpus generalization",
+    "BITE superiority",
+    "confirmatory holdout on BITE-XFER-1"
+  ],
+  "offline": true,
+  "p1_verdicts": [
+    "PHASE3P_RECORD_ALIGNMENT_VALIDATED",
+    "PHASE3P_RECORD_ALIGNMENT_PARTIAL",
+    "PHASE3P_RECORD_ALIGNMENT_BLOCKED"
+  ],
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3o_artifact_unchanged": true,
+  "phase3o_head_sha": "d3b44c9c4f0d44b26b6c7074c48e76706eba918f",
+  "phase3o_o0_sha": "76998156d3cbf67fc0a53e151688e46bd3c26dc7",
+  "phase3o_remains": "Phase3O remains FAILED; known failures are repaired in development",
+  "phase3o_verdict_unchanged": true,
+  "planned_cases": [
+    {
+      "case_id": "p3p-dadj",
+      "expect_duplicate": true,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "role": "adjacent_logical_duplicate"
+    },
+    {
+      "case_id": "p3p-drev",
+      "expect_duplicate": true,
+      "formats": [
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "role": "reversed_field_order_duplicate"
+    },
+    {
+      "case_id": "p3p-dnon",
+      "expect_duplicate": true,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "role": "nonadjacent_logical_duplicate"
+    },
+    {
+      "case_id": "p3p-nkey",
+      "expect_duplicate": false,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "role": "same_key_different_value_negative"
+    },
+    {
+      "case_id": "p3p-nval",
+      "expect_duplicate": false,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "role": "same_value_different_key_negative"
+    },
+    {
+      "case_id": "p3p-nextra",
+      "expect_duplicate": false,
+      "formats": [
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "role": "extra_field_object_negative"
+    },
+    {
+      "case_id": "p3p-kvdup",
+      "expect_duplicate": true,
+      "formats": [
+        "key_value"
+      ],
+      "role": "kv_exact_duplicate"
+    },
+    {
+      "case_id": "p3p-rjoin",
+      "expect_duplicate": true,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "role": "reduce_v2_then_integrate"
+    },
+    {
+      "case_id": "p3p-uri",
+      "expect_duplicate": true,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "role": "untangle_reduce_v2_integrate"
+    },
+    {
+      "case_id": "p3p-derj",
+      "expect_duplicate": false,
+      "formats": [
+        "pretty_json"
+      ],
+      "role": "prior_derived_id_then_integrate"
+    },
+    {
+      "case_id": "p3p-tjoin",
+      "expect_duplicate": false,
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "role": "true_shared_join_key"
+    },
+    {
+      "case_id": "p3p-nroot",
+      "expect_duplicate": false,
+      "formats": [
+        "pretty_json"
+      ],
+      "role": "unrelated_derived_roots_negative"
+    }
+  ],
+  "premise": "PHASE3O_XFER1_TRANSFER_FAILED",
+  "reproduction_not_primary_evidence": true,
+  "reproduction_only_surfaces": [
+    "xfer1-c018-mixed_order_json",
+    "xfer1-c021-mixed_order_json",
+    "xfer1-c022-pretty_json",
+    "xfer1-c022-mixed_order_json",
+    "xfer1-c024-pretty_json"
+  ],
+  "research_conclusion": false,
+  "revision": "phase3p-record-alignment-freeze-v0.1",
+  "rule_policy_unchanged": true,
+  "schema": "bitebench-phase3p-record-alignment-freeze/v0.1",
+  "synthetic": true,
+  "token_reduction": "diagnostic_only",
+  "track_a": {
+    "LogicalReduceOperatorV2": {
+      "does_not_change_ReduceOperator": true,
+      "identity": "logical_record_identity_v2",
+      "keep": "first source-exact representative",
+      "no_dedupe": [
+        "same_key_different_value",
+        "same_value_different_key",
+        "extra_field_object"
+      ],
+      "no_whitespace_id_rewrite": true,
+      "omitted_recoverable": [
+        "original_text",
+        "source_span",
+        "provenance",
+        "duplicate_of"
+      ]
+    },
+    "conditional_texture_policy_v2": {
+      "cut_forbidden": true,
+      "does_not_change_v1": true,
+      "gate_unchanged": true,
+      "integrate_predicate_unchanged": true,
+      "operator_order": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "reduce_sensor": "structural_redundancy_v2",
+      "untangle_predicate_unchanged": true
+    },
+    "logical_record_identity_v2": {
+      "extra_field": "not a logical duplicate candidate",
+      "fail_closed": [
+        "malformed",
+        "nul"
+      ],
+      "forbidden": [
+        "fuzzy",
+        "lowercase",
+        "semantic_similarity"
+      ],
+      "gold_free": true,
+      "json": "object schema exactly {k,v} both string; whitespace and field order ignored",
+      "kv": "one unit key=value; strip only around separator"
+    },
+    "structural_redundancy_v2": {
+      "actionability": "ratio>0 AND not fail_closed",
+      "does_not_change_v1": true,
+      "feature": "duplicate_unit_ratio",
+      "identity": "logical_record_identity_v2",
+      "no_threshold": true
+    }
+  },
+  "track_b": {
+    "composition_safety_v2": {
+      "dependency_edge_not_explicit_success": true,
+      "does_not_change_v1": true,
+      "join_compare": "root_lineage_sets",
+      "lineage_fields": [
+        "provenance.sources",
+        "joined_from",
+        "derived_from",
+        "parent_unit_id",
+        "R"
+      ],
+      "overmerge_uses_root_source_text": true
+    }
+  },
+  "v1_unchanged": [
+    "conditional_texture_policy_v1",
+    "structural_redundancy_v1",
+    "ReduceOperator",
+    "composition_safety",
+    "RulePolicy",
+    "preflight",
+    "UNTANGLE",
+    "INTEGRATE",
+    "dependency_dispersion_v1"
+  ],
+  "verdict": "PHASE3P_RECORD_ALIGNMENT_PROTOCOL_FROZEN",
+  "verdict_rule": {
+    "PHASE3P_RECORD_ALIGNMENT_BLOCKED": "contract drift / provenance failure / fair validation cannot run",
+    "PHASE3P_RECORD_ALIGNMENT_PARTIAL": "some invariants only",
+    "PHASE3P_RECORD_ALIGNMENT_VALIDATED": "fresh p3p: sensor/operator biconditional; four-rendering invariance; lineage-aware safety; negatives; v1 unchanged"
+  }
+}

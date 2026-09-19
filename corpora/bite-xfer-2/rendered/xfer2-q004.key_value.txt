@@ -1,0 +1,6 @@
+src_flash_q004=chip_lock_q004
+dst_chip_lock_q004=ack_chip_lock_q004
+mate_a_q004=crate_a_q004 id=plate_q004
+mate_b_q004=crate_b_q004 id=plate_q004
+mate_c_q004=crate_c_q004 id=plate_q004
+note_firmware_q004_20=NGC 1300 blob_firmware_q004_20

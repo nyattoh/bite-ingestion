@@ -1,0 +1,30 @@
+{
+  "documents": [
+    {
+      "gold_hits": 0,
+      "gold_n": 0,
+      "gold_reference_recall": "NA",
+      "n_unadjudicated_extra_edges": 0,
+      "reference_coverage_status": "not_observed",
+      "source_id": "rs1-dotenv-linkding"
+    },
+    {
+      "gold_hits": 41,
+      "gold_n": 41,
+      "gold_reference_recall": 1.0,
+      "n_unadjudicated_extra_edges": 3556,
+      "reference_coverage_status": "complete",
+      "source_id": "rs1-props-hadoop-log4j"
+    },
+    {
+      "gold_hits": 208,
+      "gold_n": 248,
+      "gold_reference_recall": 0.8387096774193549,
+      "n_unadjudicated_extra_edges": 245,
+      "reference_coverage_status": "gap_observed",
+      "source_id": "rs1-ini-oe-bitbake"
+    }
+  ],
+  "revision": "phase4b-real-adapter-v0.1",
+  "schema": "bite-phase4b-reference-coverage/v0.1"
+}

@@ -1,0 +1,19 @@
+src_scope_q025=star_lock_q025
+src2_scope_q025=moon_lock_q025
+note_astro_q025_00=blob_astro_q025_00
+note_astro_q025_01=blob_astro_q025_01 観測
+note_astro_q025_02=naïve blob_astro_q025_02
+note_astro_q025_03=blob_astro_q025_03 shift = 1
+note_astro_q025_04=blob_astro_q025_04 said "ok"
+note_astro_q025_05=α blob_astro_q025_05
+note_astro_q025_06=NGC 1300 blob_astro_q025_06
+note_astro_q025_07=blob_astro_q025_07
+dst_star_lock_q025=ack_star_lock_q025
+dst_moon_lock_q025=ack_moon_lock_q025
+copy_alpha_q025=same_alpha_q025_row
+copy_alpha_q025=same_alpha_q025_row
+copy_beta_q025=same_beta_q025_row
+gap_beta_q025=void_beta_q025
+copy_beta_q025=same_beta_q025_row
+mate_a_q025=crate_a_q025 id=plate_q025
+mate_b_q025=crate_b_q025 id=plate_q025

@@ -1,0 +1,11 @@
+src_queue_q019=cron_lock_q019
+note_scheduler_q019_00=blob_scheduler_q019_00
+note_scheduler_q019_01=blob_scheduler_q019_01 観測
+note_scheduler_q019_02=naïve blob_scheduler_q019_02
+note_scheduler_q019_03=blob_scheduler_q019_03 shift = 1
+note_scheduler_q019_04=blob_scheduler_q019_04 said "ok"
+note_scheduler_q019_05=α blob_scheduler_q019_05
+note_scheduler_q019_06=NGC 1300 blob_scheduler_q019_06
+note_scheduler_q019_07=blob_scheduler_q019_07
+dst_cron_lock_q019=ack_cron_lock_q019
+alert_q019=ingest dump TRACEBACK

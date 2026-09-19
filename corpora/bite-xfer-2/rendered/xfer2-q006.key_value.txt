@@ -1,0 +1,6 @@
+src_accn_q006=vitrine_lock_q006
+dst_vitrine_lock_q006=ack_vitrine_lock_q006
+copy_main_q006=same_main_q006_row
+copy_main_q006=same_main_q006_row
+mate_a_q006=crate_a_q006 key=accn_q006
+mate_b_q006=crate_b_q006 key=accn_q006
