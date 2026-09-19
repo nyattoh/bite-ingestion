@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3o-failure-classification.schema.json",
+  "title": "BITE Phase-3O failure classification v0.1",
+  "type": "object",
+  "required": ["schema", "classes", "allowed"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3o-failure-classification/v0.1"
+    },
+    "classes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "gate_format_dependence",
+          "predicate_format_dependence",
+          "sensor_operator_mismatch",
+          "composition_safety",
+          "other"
+        ]
+      }
+    },
+    "allowed": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

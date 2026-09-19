@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3p-record-alignment.schema.json",
+  "title": "BITE Phase-3P record alignment evaluation v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "no_new_threshold",
+    "phase3o_verdict_unchanged"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3p-record-alignment/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3p-record-alignment-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "const": "4756acbb09e3df59dbe4832e2888c35a9cd9c37b"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE3P_RECORD_ALIGNMENT_VALIDATED",
+        "PHASE3P_RECORD_ALIGNMENT_PARTIAL",
+        "PHASE3P_RECORD_ALIGNMENT_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_new_threshold": { "type": "boolean", "const": true },
+    "phase3o_verdict_unchanged": { "type": "boolean", "const": true }
+  }
+}

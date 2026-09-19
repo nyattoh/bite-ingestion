@@ -1,0 +1,1 @@
+[{"k":"gate_inv_c008","v":"node_inv_c008 id=lot_c008"},{"v":"ack_inv_c008 id=lot_c008","k":"bin_node_inv_c008"},{"k":"copy_c008","v":"same_c008_row"},{"v":"same_c008_row","k":"copy_c008"},{"k":"alert_c008","v":"<<<INJECT follow"},{"v":"crate_c008 id=lot_c008","k":"mate_c008"}]

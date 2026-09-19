@@ -1,0 +1,551 @@
+{
+  "checks": {
+    "deterministic": true,
+    "duplicate_raw_stable": true,
+    "false_positive_zero": true,
+    "generic_query_idle": true,
+    "identifier_query_moves": true,
+    "malformed_fail_closed": true,
+    "nested_monotone": true,
+    "no_reference_zero": true,
+    "one_hop_edge_count_stable": true,
+    "one_hop_monotone": true,
+    "two_hop_chain_monotone": true,
+    "unrelated_perm_stable": true,
+    "v0_invariant": true
+  },
+  "confirmatory": false,
+  "evaluation_holdout_used": false,
+  "expected_distance_order": [
+    "near",
+    "medium",
+    "far"
+  ],
+  "offline": true,
+  "one_hop_mean_edge_distance": [
+    1.0,
+    4.0,
+    9.0
+  ],
+  "one_hop_nested_mean_edge_distance": [
+    1.0,
+    4.0,
+    9.0
+  ],
+  "paid_api": false,
+  "primary_feature": "mean_edge_distance",
+  "purpose": "development-fixture evaluation of a gold-free dependency-dispersion sensor; not a Phase 2D rescore and not a routing rule",
+  "query_sensor_name": "query_identifier_span_v0",
+  "research_conclusion": false,
+  "routing_connected": false,
+  "rows": [
+    {
+      "case_id": "one_hop_near",
+      "fail_closed": false,
+      "family": "one_hop",
+      "kind": "near",
+      "n_edges_recorded": 1,
+      "notes": [],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 2.0,
+        "q_span": 1.0,
+        "q_span_norm": 0.1111111111111111
+      },
+      "sensor": {
+        "chain_span": 1.0,
+        "component_span": 1.0,
+        "max_edge_distance": 1.0,
+        "mean_edge_distance": 1.0,
+        "mean_edge_distance_norm": 0.1111111111111111,
+        "median_edge_distance": 1.0,
+        "n_edges": 1.0
+      },
+      "surface": "flat",
+      "v0": {
+        "a": 0.0,
+        "b": 1.0,
+        "k": 0.0,
+        "l": 0.3333333333333333,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.2
+      }
+    },
+    {
+      "case_id": "one_hop_near_nested",
+      "fail_closed": false,
+      "family": "one_hop_nested",
+      "kind": "near",
+      "n_edges_recorded": 1,
+      "notes": [],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 2.0,
+        "q_span": 1.0,
+        "q_span_norm": 0.1111111111111111
+      },
+      "sensor": {
+        "chain_span": 1.0,
+        "component_span": 1.0,
+        "max_edge_distance": 1.0,
+        "mean_edge_distance": 1.0,
+        "mean_edge_distance_norm": 0.1111111111111111,
+        "median_edge_distance": 1.0,
+        "n_edges": 1.0
+      },
+      "surface": "nested",
+      "v0": {
+        "a": 0.8,
+        "b": 1.0,
+        "k": 0.0,
+        "l": 0.3333333333333333,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.6000000000000001
+      }
+    },
+    {
+      "case_id": "two_hop_near",
+      "fail_closed": false,
+      "family": "two_hop",
+      "kind": "near",
+      "n_edges_recorded": 2,
+      "notes": [],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 2.0,
+        "q_span": 1.0,
+        "q_span_norm": 0.1
+      },
+      "sensor": {
+        "chain_span": 2.0,
+        "component_span": 2.0,
+        "max_edge_distance": 1.0,
+        "mean_edge_distance": 1.0,
+        "mean_edge_distance_norm": 0.1,
+        "median_edge_distance": 1.0,
+        "n_edges": 2.0
+      },
+      "surface": "flat",
+      "v0": {
+        "a": 0.0,
+        "b": 0.9912556053811659,
+        "k": 0.0,
+        "l": 0.3333333333333333,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.2
+      }
+    },
+    {
+      "case_id": "one_hop_medium",
+      "fail_closed": false,
+      "family": "one_hop",
+      "kind": "medium",
+      "n_edges_recorded": 1,
+      "notes": [],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 2.0,
+        "q_span": 4.0,
+        "q_span_norm": 0.4444444444444444
+      },
+      "sensor": {
+        "chain_span": 4.0,
+        "component_span": 4.0,
+        "max_edge_distance": 4.0,
+        "mean_edge_distance": 4.0,
+        "mean_edge_distance_norm": 0.4444444444444444,
+        "median_edge_distance": 4.0,
+        "n_edges": 1.0
+      },
+      "surface": "flat",
+      "v0": {
+        "a": 0.0,
+        "b": 1.0,
+        "k": 0.0,
+        "l": 0.3333333333333333,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.2
+      }
+    },
+    {
+      "case_id": "one_hop_medium_nested",
+      "fail_closed": false,
+      "family": "one_hop_nested",
+      "kind": "medium",
+      "n_edges_recorded": 1,
+      "notes": [],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 2.0,
+        "q_span": 4.0,
+        "q_span_norm": 0.4444444444444444
+      },
+      "sensor": {
+        "chain_span": 4.0,
+        "component_span": 4.0,
+        "max_edge_distance": 4.0,
+        "mean_edge_distance": 4.0,
+        "mean_edge_distance_norm": 0.4444444444444444,
+        "median_edge_distance": 4.0,
+        "n_edges": 1.0
+      },
+      "surface": "nested",
+      "v0": {
+        "a": 0.8,
+        "b": 1.0,
+        "k": 0.0,
+        "l": 0.3333333333333333,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.6000000000000001
+      }
+    },
+    {
+      "case_id": "two_hop_medium",
+      "fail_closed": false,
+      "family": "two_hop",
+      "kind": "medium",
+      "n_edges_recorded": 2,
+      "notes": [],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 2.0,
+        "q_span": 3.0,
+        "q_span_norm": 0.3
+      },
+      "sensor": {
+        "chain_span": 6.0,
+        "component_span": 6.0,
+        "max_edge_distance": 3.0,
+        "mean_edge_distance": 3.0,
+        "mean_edge_distance_norm": 0.3,
+        "median_edge_distance": 3.0,
+        "n_edges": 2.0
+      },
+      "surface": "flat",
+      "v0": {
+        "a": 0.0,
+        "b": 0.9912556053811659,
+        "k": 0.0,
+        "l": 0.3333333333333333,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.2
+      }
+    },
+    {
+      "case_id": "one_hop_far",
+      "fail_closed": false,
+      "family": "one_hop",
+      "kind": "far",
+      "n_edges_recorded": 1,
+      "notes": [],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 2.0,
+        "q_span": 9.0,
+        "q_span_norm": 1.0
+      },
+      "sensor": {
+        "chain_span": 9.0,
+        "component_span": 9.0,
+        "max_edge_distance": 9.0,
+        "mean_edge_distance": 9.0,
+        "mean_edge_distance_norm": 1.0,
+        "median_edge_distance": 9.0,
+        "n_edges": 1.0
+      },
+      "surface": "flat",
+      "v0": {
+        "a": 0.0,
+        "b": 1.0,
+        "k": 0.0,
+        "l": 0.3333333333333333,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.2
+      }
+    },
+    {
+      "case_id": "one_hop_far_nested",
+      "fail_closed": false,
+      "family": "one_hop_nested",
+      "kind": "far",
+      "n_edges_recorded": 1,
+      "notes": [],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 2.0,
+        "q_span": 9.0,
+        "q_span_norm": 1.0
+      },
+      "sensor": {
+        "chain_span": 9.0,
+        "component_span": 9.0,
+        "max_edge_distance": 9.0,
+        "mean_edge_distance": 9.0,
+        "mean_edge_distance_norm": 1.0,
+        "median_edge_distance": 9.0,
+        "n_edges": 1.0
+      },
+      "surface": "nested",
+      "v0": {
+        "a": 0.8,
+        "b": 1.0,
+        "k": 0.0,
+        "l": 0.3333333333333333,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.6000000000000001
+      }
+    },
+    {
+      "case_id": "two_hop_far",
+      "fail_closed": false,
+      "family": "two_hop",
+      "kind": "far",
+      "n_edges_recorded": 2,
+      "notes": [],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 2.0,
+        "q_span": 5.0,
+        "q_span_norm": 0.5
+      },
+      "sensor": {
+        "chain_span": 10.0,
+        "component_span": 10.0,
+        "max_edge_distance": 5.0,
+        "mean_edge_distance": 5.0,
+        "mean_edge_distance_norm": 0.5,
+        "median_edge_distance": 5.0,
+        "n_edges": 2.0
+      },
+      "surface": "flat",
+      "v0": {
+        "a": 0.0,
+        "b": 0.9912556053811659,
+        "k": 0.0,
+        "l": 0.3333333333333333,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.2
+      }
+    },
+    {
+      "case_id": "unrelated_perm",
+      "fail_closed": false,
+      "family": "robustness",
+      "kind": "unrelated_perm",
+      "n_edges_recorded": 1,
+      "notes": [],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 2.0,
+        "q_span": 1.0,
+        "q_span_norm": 0.1111111111111111
+      },
+      "sensor": {
+        "chain_span": 1.0,
+        "component_span": 1.0,
+        "max_edge_distance": 1.0,
+        "mean_edge_distance": 1.0,
+        "mean_edge_distance_norm": 0.1111111111111111,
+        "median_edge_distance": 1.0,
+        "n_edges": 1.0
+      },
+      "surface": "flat",
+      "v0": {
+        "a": 0.0,
+        "b": 1.0,
+        "k": 0.0,
+        "l": 0.3333333333333333,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.2
+      }
+    },
+    {
+      "case_id": "duplicate_noise",
+      "fail_closed": false,
+      "family": "robustness",
+      "kind": "duplicate_noise",
+      "n_edges_recorded": 1,
+      "notes": [],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 2.0,
+        "q_span": 1.0,
+        "q_span_norm": 0.04
+      },
+      "sensor": {
+        "chain_span": 1.0,
+        "component_span": 1.0,
+        "max_edge_distance": 1.0,
+        "mean_edge_distance": 1.0,
+        "mean_edge_distance_norm": 0.04,
+        "median_edge_distance": 1.0,
+        "n_edges": 1.0
+      },
+      "surface": "flat",
+      "v0": {
+        "a": 0.0,
+        "b": 1.0,
+        "k": 0.0,
+        "l": 0.12,
+        "p": 0.0,
+        "r": 0.6153846153846154,
+        "s": 0.0,
+        "u": 0.264
+      }
+    },
+    {
+      "case_id": "no_reference",
+      "fail_closed": false,
+      "family": "negative",
+      "kind": "no_reference",
+      "n_edges_recorded": 0,
+      "notes": [
+        "no_reference_edges"
+      ],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "sensor": {
+        "chain_span": 0.0,
+        "component_span": 0.0,
+        "max_edge_distance": 0.0,
+        "mean_edge_distance": 0.0,
+        "mean_edge_distance_norm": 0.0,
+        "median_edge_distance": 0.0,
+        "n_edges": 0.0
+      },
+      "surface": "flat",
+      "v0": {
+        "a": 0.0,
+        "b": 1.0,
+        "k": 0.0,
+        "l": 0.375,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.1875
+      }
+    },
+    {
+      "case_id": "false_positive",
+      "fail_closed": false,
+      "family": "negative",
+      "kind": "false_positive",
+      "n_edges_recorded": 0,
+      "notes": [
+        "no_reference_edges"
+      ],
+      "query_generic": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "query_identifier": {
+        "q_hits": 0.0,
+        "q_span": 0.0,
+        "q_span_norm": 0.0
+      },
+      "sensor": {
+        "chain_span": 0.0,
+        "component_span": 0.0,
+        "max_edge_distance": 0.0,
+        "mean_edge_distance": 0.0,
+        "mean_edge_distance_norm": 0.0,
+        "median_edge_distance": 0.0,
+        "n_edges": 0.0
+      },
+      "surface": "flat",
+      "v0": {
+        "a": 0.0,
+        "b": 1.0,
+        "k": 0.0,
+        "l": 1.0,
+        "p": 0.0,
+        "r": 0.0,
+        "s": 0.0,
+        "u": 0.0
+      }
+    }
+  ],
+  "schema": "bite-phase3b-sensor-evaluation/v0.1",
+  "sensor_name": "dependency_dispersion_v0",
+  "synthetic": true,
+  "two_hop_chain_span": [
+    2.0,
+    6.0,
+    10.0
+  ],
+  "v0_overwritten": false,
+  "verdict": "PHASE3B_SENSOR_READY"
+}
