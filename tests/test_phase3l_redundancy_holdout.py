@@ -6,6 +6,7 @@ Does not change the sensor, p3k split, or routing. Does not open p3f.
 from __future__ import annotations
 
 import json
+import subprocess
 from pathlib import Path
 
 import jsonschema
@@ -155,3 +156,29 @@ def test_l1_does_not_patch_locked_code() -> None:
     )
     assert "class RulePolicy" in POLICY_PY.read_text(encoding="utf-8")
     assert "Counter(" in SENSOR_PY.read_text(encoding="utf-8")
+
+
+def test_portability_addendum_keeps_first_open_verdict() -> None:
+    addendum = json.loads(
+        (ROOT / "benchmarks" / "spec" / "phase3l-portability-addendum.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    result = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+    assert result["verdict"] == VERDICT_CONFIRMED
+    assert result["protocol_commit_sha"] == "d365d0b1bd4cb3dcdad617ed4e78df19fdf23ce6"
+    assert addendum["rewrites_phase3l_artifact"] is False
+    assert addendum["rewrites_phase3l_verdict"] is False
+    assert addendum["evaluation_rerun"] is False
+    assert addendum["amendment_after_first_open"] is True
+    assert addendum["original_l0"] == "d365d0b1bd4cb3dcdad617ed4e78df19fdf23ce6"
+    assert addendum["first_open_result_commit"] == "fcc3fb0b202410702d0d74aef8899a076f60b3bd"
+    assert addendum["crlf_portability_amendment"] == "21dd64d29c15ae055f77d9bbf2b874e607156111"
+
+    for path, expected in dict(addendum["git_blob_sha"]).items():
+        got = subprocess.check_output(
+            ["git", "rev-parse", f"HEAD:{path}"],
+            cwd=ROOT,
+            text=True,
+        ).strip()
+        assert got == expected
