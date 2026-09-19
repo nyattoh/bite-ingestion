@@ -1,0 +1,334 @@
+{
+  "n_ok": 28,
+  "rows": [
+    {
+      "case_id": "p3s-act-d1",
+      "family": "suffix_collision_plus_actionability",
+      "gate_observed": false,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-act-d3",
+      "family": "suffix_collision_plus_actionability",
+      "gate_observed": false,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-act-d4",
+      "family": "suffix_collision_plus_actionability",
+      "gate_observed": true,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ]
+    },
+    {
+      "case_id": "p3s-act-d9",
+      "family": "suffix_collision_plus_actionability",
+      "gate_observed": true,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ]
+    },
+    {
+      "case_id": "p3s-mix-d1",
+      "family": "true_reference_plus_suffix_collision",
+      "gate_observed": false,
+      "observed_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-mix-d3",
+      "family": "true_reference_plus_suffix_collision",
+      "gate_observed": false,
+      "observed_edges": [
+        [
+          0,
+          3
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-mix-d4",
+      "family": "true_reference_plus_suffix_collision",
+      "gate_observed": false,
+      "observed_edges": [
+        [
+          0,
+          4
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-mix-d9",
+      "family": "true_reference_plus_suffix_collision",
+      "gate_observed": true,
+      "observed_edges": [
+        [
+          0,
+          9
+        ],
+        [
+          18,
+          19
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-pre-d1",
+      "family": "shared_prefix_only",
+      "gate_observed": false,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-pre-d3",
+      "family": "shared_prefix_only",
+      "gate_observed": false,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-pre-d4",
+      "family": "shared_prefix_only",
+      "gate_observed": false,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-pre-d9",
+      "family": "shared_prefix_only",
+      "gate_observed": false,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-sst-d1",
+      "family": "shared_suffix_text_only",
+      "gate_observed": false,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-sst-d3",
+      "family": "shared_suffix_text_only",
+      "gate_observed": false,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-sst-d4",
+      "family": "shared_suffix_text_only",
+      "gate_observed": false,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-sst-d9",
+      "family": "shared_suffix_text_only",
+      "gate_observed": false,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-sub-d1",
+      "family": "substring_only",
+      "gate_observed": false,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-sub-d3",
+      "family": "substring_only",
+      "gate_observed": false,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-sub-d4",
+      "family": "substring_only",
+      "gate_observed": false,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-sub-d9",
+      "family": "substring_only",
+      "gate_observed": false,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-suf-d1",
+      "family": "suffix_collision_only",
+      "gate_observed": false,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-suf-d3",
+      "family": "suffix_collision_only",
+      "gate_observed": false,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-suf-d4",
+      "family": "suffix_collision_only",
+      "gate_observed": true,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-suf-d9",
+      "family": "suffix_collision_only",
+      "gate_observed": true,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-true-d1",
+      "family": "true_reference_only",
+      "gate_observed": false,
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-true-d3",
+      "family": "true_reference_only",
+      "gate_observed": false,
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-true-d4",
+      "family": "true_reference_only",
+      "gate_observed": true,
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    },
+    {
+      "case_id": "p3s-true-d9",
+      "family": "true_reference_only",
+      "gate_observed": true,
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "policy_sequence": []
+    }
+  ],
+  "schema": "bite-phase3s-cross-format/v0.1"
+}

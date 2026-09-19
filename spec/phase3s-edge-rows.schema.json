@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3s-edge-rows.schema.json",
+  "title": "BITE Phase-3S raw reference-edge rows v0.1",
+  "type": "object",
+  "required": ["schema", "rows"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3s-edge-rows/v0.1"
+    },
+    "rows": { "type": "array" }
+  }
+}

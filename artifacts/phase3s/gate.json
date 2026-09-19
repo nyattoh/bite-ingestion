@@ -1,0 +1,790 @@
+{
+  "n_ok": 92,
+  "rows": [
+    {
+      "family": "true_reference_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-true-d1-key_value"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-true-d1-compact_json"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-true-d1-pretty_json"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-true-d1-reversed_order_json"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-true-d3-key_value"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-true-d3-compact_json"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-true-d3-pretty_json"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-true-d3-reversed_order_json"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": true,
+      "gate_observed": true,
+      "ok": true,
+      "surface_id": "p3s-true-d4-key_value"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": true,
+      "gate_observed": true,
+      "ok": true,
+      "surface_id": "p3s-true-d4-compact_json"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": true,
+      "gate_observed": true,
+      "ok": true,
+      "surface_id": "p3s-true-d4-pretty_json"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": true,
+      "gate_observed": true,
+      "ok": true,
+      "surface_id": "p3s-true-d4-reversed_order_json"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": true,
+      "gate_observed": true,
+      "ok": true,
+      "surface_id": "p3s-true-d9-key_value"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": true,
+      "gate_observed": true,
+      "ok": true,
+      "surface_id": "p3s-true-d9-compact_json"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": true,
+      "gate_observed": true,
+      "ok": true,
+      "surface_id": "p3s-true-d9-pretty_json"
+    },
+    {
+      "family": "true_reference_only",
+      "gate_expected": true,
+      "gate_observed": true,
+      "ok": true,
+      "surface_id": "p3s-true-d9-reversed_order_json"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-suf-d1-key_value"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-suf-d1-compact_json"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-suf-d1-pretty_json"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-suf-d1-reversed_order_json"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-suf-d3-key_value"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-suf-d3-compact_json"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-suf-d3-pretty_json"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-suf-d3-reversed_order_json"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-suf-d4-key_value"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-suf-d4-compact_json"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-suf-d4-pretty_json"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-suf-d4-reversed_order_json"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-suf-d9-key_value"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-suf-d9-compact_json"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-suf-d9-pretty_json"
+    },
+    {
+      "family": "suffix_collision_only",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-suf-d9-reversed_order_json"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-mix-d1-key_value"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-mix-d1-compact_json"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-mix-d1-pretty_json"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-mix-d1-reversed_order_json"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-mix-d3-key_value"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-mix-d3-compact_json"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-mix-d3-pretty_json"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-mix-d3-reversed_order_json"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": true,
+      "gate_observed": false,
+      "ok": false,
+      "surface_id": "p3s-mix-d4-key_value"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": true,
+      "gate_observed": false,
+      "ok": false,
+      "surface_id": "p3s-mix-d4-compact_json"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": true,
+      "gate_observed": false,
+      "ok": false,
+      "surface_id": "p3s-mix-d4-pretty_json"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": true,
+      "gate_observed": false,
+      "ok": false,
+      "surface_id": "p3s-mix-d4-reversed_order_json"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": true,
+      "gate_observed": true,
+      "ok": true,
+      "surface_id": "p3s-mix-d9-key_value"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": true,
+      "gate_observed": true,
+      "ok": true,
+      "surface_id": "p3s-mix-d9-compact_json"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": true,
+      "gate_observed": true,
+      "ok": true,
+      "surface_id": "p3s-mix-d9-pretty_json"
+    },
+    {
+      "family": "true_reference_plus_suffix_collision",
+      "gate_expected": true,
+      "gate_observed": true,
+      "ok": true,
+      "surface_id": "p3s-mix-d9-reversed_order_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-act-d1-key_value"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-act-d1-compact_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-act-d1-pretty_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-act-d1-reversed_order_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-act-d3-key_value"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-act-d3-compact_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-act-d3-pretty_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-act-d3-reversed_order_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-act-d4-key_value"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-act-d4-compact_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-act-d4-pretty_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-act-d4-reversed_order_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-act-d9-key_value"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-act-d9-compact_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-act-d9-pretty_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "gate_expected": false,
+      "gate_observed": true,
+      "ok": false,
+      "surface_id": "p3s-act-d9-reversed_order_json"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d1-key_value"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d1-compact_json"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d1-pretty_json"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d1-reversed_order_json"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d3-key_value"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d3-compact_json"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d3-pretty_json"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d3-reversed_order_json"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d4-key_value"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d4-compact_json"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d4-pretty_json"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d4-reversed_order_json"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d9-key_value"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d9-compact_json"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d9-pretty_json"
+    },
+    {
+      "family": "shared_prefix_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-pre-d9-reversed_order_json"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d1-key_value"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d1-compact_json"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d1-pretty_json"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d1-reversed_order_json"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d3-key_value"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d3-compact_json"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d3-pretty_json"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d3-reversed_order_json"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d4-key_value"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d4-compact_json"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d4-pretty_json"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d4-reversed_order_json"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d9-key_value"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d9-compact_json"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d9-pretty_json"
+    },
+    {
+      "family": "shared_suffix_text_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sst-d9-reversed_order_json"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d1-key_value"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d1-compact_json"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d1-pretty_json"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d1-reversed_order_json"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d3-key_value"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d3-compact_json"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d3-pretty_json"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d3-reversed_order_json"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d4-key_value"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d4-compact_json"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d4-pretty_json"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d4-reversed_order_json"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d9-key_value"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d9-compact_json"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d9-pretty_json"
+    },
+    {
+      "family": "substring_only",
+      "gate_expected": false,
+      "gate_observed": false,
+      "ok": true,
+      "surface_id": "p3s-sub-d9-reversed_order_json"
+    }
+  ],
+  "schema": "bite-phase3s-gate/v0.1"
+}
