@@ -1,6 +1,6 @@
-"""Phase 3J texture observability freeze tests (J0).
+"""Phase 3J texture observability freeze (J0) and audit (J1) tests.
 
-Does not measure profiler values. Does not open p3f evaluation.
+Does not open p3f evaluation. Does not change deterministic_v0 or routing.
 """
 
 from __future__ import annotations
@@ -16,6 +16,7 @@ from bite_bench.phase3j import (
     GENERATION,
     PROTOCOL_FROZEN,
     TEXTURES,
+    VERDICT_REVISION,
     EvaluationSealError,
     design_surfaces,
     freeze_manifest,
@@ -23,6 +24,12 @@ from bite_bench.phase3j import (
     profiler_source_unit,
     refuse_p3f_evaluation,
     validate_phase3j_freeze,
+)
+from bite_eval.phase3j_audit import (
+    PROTOCOL_COMMIT_SHA,
+    RESULT_PATH,
+    run_audit,
+    validate_phase3j_result,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,6 +41,8 @@ V1_PY = ROOT / "src" / "bite_ingestion" / "profilers" / "dependency_dispersion_v
 POLICY_PY = ROOT / "src" / "bite_ingestion" / "policies" / "rule_policy.py"
 PHASE3H = ROOT / "artifacts" / "phase3h" / "operator-map-experiment.json"
 PHASE3I = ROOT / "artifacts" / "phase3i" / "composite-provenance.json"
+EXP_SCHEMA = ROOT / "spec" / "phase3j-texture-observability.schema.json"
+EXP_PY = ROOT / "src" / "bite_eval" / "phase3j_audit.py"
 
 
 def test_committed_freeze_matches_manifest() -> None:
@@ -108,3 +117,42 @@ def test_j0_does_not_open_p3f_or_touch_profiler_routing() -> None:
     assert "class DeterministicMorphologyProfiler" in V0_PY.read_text(encoding="utf-8")
     assert "def measure(" in V1_PY.read_text(encoding="utf-8")
     assert "class RulePolicy" in POLICY_PY.read_text(encoding="utf-8")
+
+
+def test_j1_records_j0_sha_and_matches_artifacts() -> None:
+    doc = run_audit()
+    committed = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+    assert json.loads(json.dumps(doc, sort_keys=True)) == json.loads(
+        json.dumps(committed, sort_keys=True)
+    )
+    assert validate_phase3j_result(committed) == []
+    jsonschema.validate(committed, json.loads(EXP_SCHEMA.read_text(encoding="utf-8")))
+    assert committed["protocol_commit_sha"] == PROTOCOL_COMMIT_SHA
+    assert len(PROTOCOL_COMMIT_SHA) == 40
+    assert committed["verdict"] == VERDICT_REVISION
+    assert committed["rule_policy_executed"] is False
+    assert committed["profiler_changed"] is False
+    assert committed["no_new_absolute_threshold"] is True
+    assert committed["p3f_evaluation_holdout_used"] is False
+    assert committed["high_confirmed"] is True
+
+
+def test_j1_does_not_open_p3f_evaluation() -> None:
+    blob = RESULT_PATH.read_text(encoding="utf-8")
+    assert "p3f-" not in blob
+    doc = json.loads(blob)
+    for row in doc["rows"]:
+        assert row["generation"] == "p3j"
+        assert row["split"] == "development"
+        assert not str(row["surface_id"]).startswith("p3f-")
+        assert not str(row["surface_id"]).startswith("p3h-")
+
+
+def test_j1_does_not_import_or_patch_routing() -> None:
+    blob = EXP_PY.read_text(encoding="utf-8")
+    assert "from bite_ingestion.policies" not in blob
+    assert "RulePolicy" not in blob
+    assert "from bite_bench.phase3f" not in blob
+    assert "FEATURE_KEYS = (\"b\", \"r\", \"s\", \"k\", \"a\", \"l\", \"p\", \"u\")" in (
+        V0_PY.read_text(encoding="utf-8")
+    )

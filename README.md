@@ -66,6 +66,7 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 3G calibration lock: **PHASE3G_CALIBRATION_LOCKED** (candidate A `mean_edge_distance`, T_low=1 T_high=4; evaluation sealed; RulePolicy unconnected)
 - Phase 3H operator-map development experiment: **PHASE3H_CONDITIONAL_MAP_REQUIRED** (p3h high-dispersion textures; p3f evaluation sealed; RulePolicy not implemented)
 - Phase 3I composite provenance: **PHASE3I_COMPOSITE_PROVENANCE_VALIDATED** (multi-source derived units; p3f evaluation sealed; RulePolicy unconnected)
+- Phase 3J texture observability: **PHASE3J_TEXTURE_SENSOR_REVISION_REQUIRED** (p3j gold-free audit; r is format-unstable on compact JSON; profiler unchanged)
 - **Next**: do not retune profiler / thresholds / routing on the spent Phase 2 holdout
 
 See:
@@ -105,3 +106,6 @@ See:
 - [`docs/hand_over/PHASE3I-COMPOSITE-PROVENANCE.md`](docs/hand_over/PHASE3I-COMPOSITE-PROVENANCE.md)
 - [`benchmarks/spec/phase3i-composite-provenance-freeze.json`](benchmarks/spec/phase3i-composite-provenance-freeze.json)
 - [`artifacts/phase3i/composite-provenance.json`](artifacts/phase3i/composite-provenance.json)
+- [`docs/hand_over/PHASE3J-TEXTURE-OBSERVABILITY.md`](docs/hand_over/PHASE3J-TEXTURE-OBSERVABILITY.md)
+- [`benchmarks/spec/phase3j-texture-observability-freeze.json`](benchmarks/spec/phase3j-texture-observability-freeze.json)
+- [`artifacts/phase3j/texture-observability.json`](artifacts/phase3j/texture-observability.json)
