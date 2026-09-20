@@ -2036,6 +2036,31 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase4h2_pool} verdict={data.get('verdict')}")
 
+    from bite_bench.phase4i import validate_phase4i_freeze
+
+    phase4i_freeze = args.root / "benchmarks" / "spec" / "phase4i-first-open-freeze.json"
+    if phase4i_freeze.is_file():
+        n_checked += 1
+        data = json.loads(phase4i_freeze.read_text(encoding="utf-8"))
+        errs = list(validate_phase4i_freeze(data))
+        schema_path = args.root / "spec" / "phase4i-first-open-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase4i freeze jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase4i_freeze}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase4i_freeze} verdict={data.get('verdict')}")
+
     from bite_bench.realstruct2_ext import validate_augmented
 
     phase4h2 = args.root / "artifacts" / "phase4h2" / "realstruct-2-augmented.json"
