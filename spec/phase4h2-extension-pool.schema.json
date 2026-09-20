@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4h2-extension-pool.schema.json",
+  "title": "BITE Phase-4H2 extension candidate pool v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "h3_commit_sha",
+    "file_contents_opened",
+    "no_arm_execution",
+    "exclude_h1_repo_path",
+    "families"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4h2-extension-pool/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4h2-realstruct2-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE4H2_EXTENSION_POOL_FROZEN"
+    },
+    "h3_commit_sha": {
+      "type": "string",
+      "const": "3441f3524891fc772ce8751f75b22d32755d58da"
+    },
+    "file_contents_opened": { "type": "boolean", "const": false },
+    "no_arm_execution": { "type": "boolean", "const": true },
+    "exclude_h1_repo_path": { "type": "boolean", "const": true },
+    "families": { "type": "object" }
+  }
+}

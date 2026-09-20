@@ -23,6 +23,7 @@ from bite_bench.phase4h2 import (
     freeze_manifest,
     validate_phase4h2_freeze,
 )
+from bite_bench.realstruct2_ext import EXT_POOL_PATH, validate_extension_pool
 
 ROOT = Path(__file__).resolve().parents[1]
 FREEZE = ROOT / "benchmarks" / "spec" / "phase4h2-acquisition-extension-freeze.json"
@@ -74,3 +75,20 @@ def test_h3_does_not_discover_or_rewrite_phase4h() -> None:
     with pytest.raises(EvaluationSealError, match="p3f evaluation sealed"):
         refuse_p3f_evaluation("p3f-medium-one_hop-r2")
     assert H2_RESULT_BLOB == "666eed454c3dba6dd2cfa2a73e5989004380f177"
+
+
+def test_h4_extension_pool_frozen_without_file_contents() -> None:
+    pool = json.loads(EXT_POOL_PATH.read_text(encoding="utf-8"))
+    assert validate_extension_pool(pool) == []
+    jsonschema.validate(
+        pool,
+        json.loads((ROOT / "spec" / "phase4h2-extension-pool.schema.json").read_text(encoding="utf-8")),
+    )
+    assert pool["file_contents_opened"] is False
+    assert pool["exclude_h1_repo_path"] is True
+    for family, rows in pool["families"].items():
+        assert 1 <= len(rows) <= 180
+        for row in rows:
+            assert "raw" not in row
+            assert "content" not in row
+            assert row["selection_key"]
