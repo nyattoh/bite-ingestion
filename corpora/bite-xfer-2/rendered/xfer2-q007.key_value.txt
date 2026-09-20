@@ -1,0 +1,6 @@
+src_queue_q007=cron_lock_q007
+dst_cron_lock_q007=ack_cron_lock_q007
+alert_q007=ingest dump TRACEBACK
+mate_a_q007=crate_a_q007 id=plate_q007
+mate_b_q007=crate_b_q007 id=plate_q007
+mate_c_q007=crate_c_q007 id=plate_q007

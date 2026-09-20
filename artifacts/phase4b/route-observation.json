@@ -1,0 +1,54 @@
+{
+  "documents": [
+    {
+      "actual_sequence": [],
+      "gate": false,
+      "integrate_in_sequence": false,
+      "n_units_after": 20,
+      "n_units_before": 20,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [],
+      "reduce_in_sequence": false,
+      "source_id": "rs1-dotenv-linkding",
+      "untangle_in_sequence": false
+    },
+    {
+      "actual_sequence": [
+        "UNTANGLE"
+      ],
+      "gate": true,
+      "integrate_in_sequence": false,
+      "n_units_after": 119,
+      "n_units_before": 120,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "reduce_in_sequence": false,
+      "source_id": "rs1-props-hadoop-log4j",
+      "untangle_in_sequence": true
+    },
+    {
+      "actual_sequence": [
+        "REDUCE_v2"
+      ],
+      "gate": true,
+      "integrate_in_sequence": false,
+      "n_units_after": 481,
+      "n_units_before": 482,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "reduce_in_sequence": true,
+      "source_id": "rs1-ini-oe-bitbake",
+      "untangle_in_sequence": false
+    }
+  ],
+  "no_route_correctness_score": true,
+  "revision": "phase4b-real-adapter-v0.1",
+  "schema": "bite-phase4b-route-observation/v0.1"
+}

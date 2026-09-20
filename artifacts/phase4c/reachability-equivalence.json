@@ -1,0 +1,31 @@
+{
+  "by_n": [
+    {
+      "n": 0,
+      "n_graphs": 1
+    },
+    {
+      "n": 1,
+      "n_graphs": 2
+    },
+    {
+      "n": 2,
+      "n_graphs": 16
+    },
+    {
+      "n": 3,
+      "n_graphs": 512
+    },
+    {
+      "n": 4,
+      "n_graphs": 65536
+    }
+  ],
+  "claim": "semantics-preserving computational replacement for frozen _chain_span",
+  "exact": true,
+  "n_graphs": 66067,
+  "n_max": 4,
+  "n_mismatches": 0,
+  "revision": "phase4c-holdout-first-open-freeze-v0.1",
+  "schema": "bite-phase4c-reachability-equivalence/v0.1"
+}

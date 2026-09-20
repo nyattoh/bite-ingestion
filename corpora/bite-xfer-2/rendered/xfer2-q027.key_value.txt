@@ -1,0 +1,12 @@
+src_queue_q027=cron_lock_q027
+note_scheduler_q027_00=blob_scheduler_q027_00
+note_scheduler_q027_01=blob_scheduler_q027_01 観測
+note_scheduler_q027_02=naïve blob_scheduler_q027_02
+note_scheduler_q027_03=blob_scheduler_q027_03 shift = 1
+note_scheduler_q027_04=blob_scheduler_q027_04 said "ok"
+note_scheduler_q027_05=α blob_scheduler_q027_05
+note_scheduler_q027_06=NGC 1300 blob_scheduler_q027_06
+note_scheduler_q027_07=blob_scheduler_q027_07
+dst_cron_lock_q027=ack_cron_lock_q027
+copy_ov_q027=id=plate_q027 same_q027_row
+copy_ov_q027=id=plate_q027 same_q027_row

@@ -1,0 +1,50 @@
+[
+  {
+    "k": "gate_inc_c023",
+    "v": "node_inc_c023 id=lot_c023"
+  },
+  {
+    "k": "note_incident_c023_00",
+    "v": "blob_incident_c023_00"
+  },
+  {
+    "k": "note_incident_c023_01",
+    "v": "blob_incident_c023_01"
+  },
+  {
+    "k": "note_incident_c023_02",
+    "v": "blob_incident_c023_02"
+  },
+  {
+    "k": "note_incident_c023_03",
+    "v": "blob_incident_c023_03"
+  },
+  {
+    "k": "note_incident_c023_04",
+    "v": "blob_incident_c023_04"
+  },
+  {
+    "k": "note_incident_c023_05",
+    "v": "blob_incident_c023_05"
+  },
+  {
+    "k": "note_incident_c023_06",
+    "v": "blob_incident_c023_06"
+  },
+  {
+    "k": "note_incident_c023_07",
+    "v": "blob_incident_c023_07"
+  },
+  {
+    "k": "bin_node_inc_c023",
+    "v": "ack_inc_c023 id=lot_c023"
+  },
+  {
+    "k": "alert_c023",
+    "v": "worker dump TRACEBACK"
+  },
+  {
+    "k": "mate_c023",
+    "v": "crate_c023 id=lot_c023"
+  }
+]
