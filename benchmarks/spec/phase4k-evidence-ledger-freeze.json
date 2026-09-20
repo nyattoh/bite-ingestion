@@ -1,0 +1,245 @@
+{
+  "cited_blobs": {
+    "artifacts/phase3q/xfer2-transfer.json": "47ede9cab9619bc66dace5738e1f523b87a35f63",
+    "artifacts/phase3s/reference-specificity.json": "f4bcaae86586c5f738954b78fda8427f3bb78694",
+    "artifacts/phase3t/exact-reference.json": "5892ad925152e8cac32319e243c2e85f67ae2a0c",
+    "artifacts/phase4a/realstruct-1.json": "7a7b0834e9b66c599492a06dbe116e773eca6320",
+    "artifacts/phase4b/real-adapter.json": "137312ddb8b19396cc48c992ebd75bfc1ed8f585",
+    "artifacts/phase4c/real-holdout.json": "f344bde69d7f963bb78780e967bc59bf639d2942",
+    "artifacts/phase4d/measurement-semantics.json": "5a0060138866ed28fca9cb54b5916b03edebea5c",
+    "artifacts/phase4e/full-key-reference.json": "5f3681439d37dd44df2e74299b3c1ad7fc95bce2",
+    "artifacts/phase4f/prospective-comparison.json": "28bfd7ea8b131b72ba55bb3f84a7126f99c96578",
+    "artifacts/phase4g/comparison-accounting.json": "2635401558d27b2a2781ee53ff7465b877f39b37",
+    "artifacts/phase4h/realstruct-2.json": "666eed454c3dba6dd2cfa2a73e5989004380f177",
+    "artifacts/phase4h2/realstruct-2-augmented.json": "095bb18a206842c813e8f47c165528743c9f6210",
+    "artifacts/phase4i/arm-rows.json": "d8d43669fa00f94b86e3cd5d26feb6d8072eb99f",
+    "artifacts/phase4i/first-open.json": "144a4ca3c2e44d8f0abbd32d0bb8b2f2b5b7b149",
+    "artifacts/phase4i/mechanism-diagnostic.json": "3500b26b1f0fe2c61301b97656e5628c4dae7004",
+    "artifacts/phase4i/model-visible-cost.json": "044325494109fcb0910ec1195bd7836a77d253cf",
+    "artifacts/phase4i/paired-reference-retention.json": "455b8d3e95ced9c17e9d096f7dc334fe480d14c3",
+    "artifacts/phase4i/paired-unique-identity.json": "eeb2941399d11817bd0d4c16b2737b43d4344d0b",
+    "artifacts/phase4i/safety.json": "8d3da7283799e291412c177eba339f50bd72f3e7",
+    "artifacts/phase4j/annotation-compatibility.json": "018c591efcbcac2ba0d76d733dd319508c98a629",
+    "artifacts/phase4j/corrected-atom-aware.json": "bf6054588f36b97e3d823112a54ac129be4e94d1",
+    "artifacts/phase4j/legacy-vs-corrected-paired-reference.json": "9f01369f8542155afc65eee31dfcaa74c9506349",
+    "artifacts/phase4j/reference-schema-audit.json": "b4ccdff3860c643630a292d16ea4428c6d480e06",
+    "artifacts/phase4j/sensor-replay.json": "e948e468b8c74ea38543a23462f91812e33c5e84",
+    "benchmarks/spec/phase4i-first-open-freeze.json": "260c5ae4847776c33d27ea6718466d1dd814abdf",
+    "benchmarks/spec/phase4j-reference-schema-freeze.json": "731ffbc7db9652ad03928c3defdb775ca0b83c8e",
+    "src/bite_eval/atom_aware_reference.py": "1c24b419cba83adb205eb1bce16d60ad451ffa17"
+  },
+  "claim_boundary": "Phase-4 documentation-only evidence ledger; no new experiment",
+  "do_not_pool_evidence_categories": true,
+  "documentation_only": true,
+  "evidence_categories": [
+    "mechanism_evidence",
+    "real_corpus_safety_evidence",
+    "prospective_realstruct2_comparison_evidence",
+    "retrospective_measurement_corrections"
+  ],
+  "historical_verdicts": [
+    {
+      "blob": "47ede9cab9619bc66dace5738e1f523b87a35f63",
+      "label": "historical failure; later versions repaired mechanisms without erasing this verdict",
+      "path": "artifacts/phase3q/xfer2-transfer.json",
+      "phase": "3Q",
+      "verdict": "PHASE3Q_XFER2_TRANSFER_FAILED"
+    },
+    {
+      "blob": "f4bcaae86586c5f738954b78fda8427f3bb78694",
+      "label": "historical failure; later versions repaired mechanisms without erasing this verdict",
+      "path": "artifacts/phase3s/reference-specificity.json",
+      "phase": "3S",
+      "verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED"
+    },
+    {
+      "blob": "5892ad925152e8cac32319e243c2e85f67ae2a0c",
+      "label": "v3 exact-reference repair; does not erase Phase3S FAILED",
+      "path": "artifacts/phase3t/exact-reference.json",
+      "phase": "3T",
+      "verdict": "PHASE3T_EXACT_REFERENCE_VALIDATED"
+    },
+    {
+      "blob": "7a7b0834e9b66c599492a06dbe116e773eca6320",
+      "label": "REALSTRUCT-1 corpus freeze",
+      "path": "artifacts/phase4a/realstruct-1.json",
+      "phase": "4A",
+      "verdict": "PHASE4A_REAL_CORPUS_FROZEN"
+    },
+    {
+      "blob": "137312ddb8b19396cc48c992ebd75bfc1ed8f585",
+      "label": "REALSTRUCT-1 development adapter",
+      "path": "artifacts/phase4b/real-adapter.json",
+      "phase": "4B",
+      "verdict": "PHASE4B_REAL_ADAPTER_READY"
+    },
+    {
+      "blob": "f344bde69d7f963bb78780e967bc59bf639d2942",
+      "label": "REALSTRUCT-1 holdout first-open",
+      "path": "artifacts/phase4c/real-holdout.json",
+      "phase": "4C",
+      "verdict": "PHASE4C_REAL_HOLDOUT_MEASURED"
+    },
+    {
+      "blob": "5a0060138866ed28fca9cb54b5916b03edebea5c",
+      "label": "retrospective measurement-semantics audit",
+      "path": "artifacts/phase4d/measurement-semantics.json",
+      "phase": "4D",
+      "verdict": "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED"
+    },
+    {
+      "blob": "5f3681439d37dd44df2e74299b3c1ad7fc95bce2",
+      "label": "v2 full-key / v4 sensor repair; does not erase Phase3S FAILED",
+      "path": "artifacts/phase4e/full-key-reference.json",
+      "phase": "4E",
+      "verdict": "PHASE4E_FULL_KEY_REFERENCE_VALIDATED"
+    },
+    {
+      "blob": "28bfd7ea8b131b72ba55bb3f84a7126f99c96578",
+      "label": "prospective comparison protocol",
+      "path": "artifacts/phase4f/prospective-comparison.json",
+      "phase": "4F",
+      "verdict": "PHASE4F_COMPARISON_PROTOCOL_READY"
+    },
+    {
+      "blob": "2635401558d27b2a2781ee53ff7465b877f39b37",
+      "label": "comparison accounting v2",
+      "path": "artifacts/phase4g/comparison-accounting.json",
+      "phase": "4G",
+      "verdict": "PHASE4G_COMPARISON_ACCOUNTING_VALIDATED"
+    },
+    {
+      "blob": "666eed454c3dba6dd2cfa2a73e5989004380f177",
+      "label": "REALSTRUCT-2 corpus freeze PARTIAL",
+      "path": "artifacts/phase4h/realstruct-2.json",
+      "phase": "4H",
+      "verdict": "PHASE4H_REALSTRUCT2_PARTIAL"
+    },
+    {
+      "blob": "095bb18a206842c813e8f47c165528743c9f6210",
+      "label": "REALSTRUCT-2 two-wave fill to 18/18",
+      "path": "artifacts/phase4h2/realstruct-2-augmented.json",
+      "phase": "4H2",
+      "verdict": "PHASE4H2_REALSTRUCT2_AUGMENTED_FROZEN"
+    },
+    {
+      "blob": "144a4ca3c2e44d8f0abbd32d0bb8b2f2b5b7b149",
+      "label": "prospective four-arm first-open",
+      "path": "artifacts/phase4i/first-open.json",
+      "phase": "4I",
+      "verdict": "PHASE4I_PROSPECTIVE_COMPARISON_MEASURED"
+    },
+    {
+      "blob": "b4ccdff3860c643630a292d16ea4428c6d480e06",
+      "label": "retrospective reference-schema compatibility audit",
+      "path": "artifacts/phase4j/reference-schema-audit.json",
+      "phase": "4J",
+      "verdict": "PHASE4J_REFERENCE_SCHEMA_AUDITED"
+    }
+  ],
+  "j0_freeze_blob": "731ffbc7db9652ad03928c3defdb775ca0b83c8e",
+  "k1_verdicts": [
+    "PHASE4K_EVIDENCE_LEDGER_FROZEN",
+    "PHASE4K_EVIDENCE_LEDGER_BLOCKED"
+  ],
+  "negative_null_evidence": [
+    "Natural convenience sample produced sparse transformation: 17/18 documents had no BITE operator sequence.",
+    "Reference-retention comparison was effectively n=1.",
+    "Matched-budget evidence comparison was effectively n=1.",
+    "These are results, not protocol failures."
+  ],
+  "no_arm_rerun": true,
+  "no_baseline_change": true,
+  "no_bite_retune": true,
+  "no_corpus_acquisition": true,
+  "no_merge": true,
+  "no_new_experiment": true,
+  "no_operator_change": true,
+  "no_p3f_result_statement": true,
+  "no_phase4a_to_4j_rewrite": true,
+  "no_policy_change": true,
+  "no_sensor_change": true,
+  "no_sensor_replay": true,
+  "no_threshold_change": true,
+  "no_tokenizer_execution": true,
+  "no_winner_score": true,
+  "no_xfer3": true,
+  "offline_core_tests": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3q_remains": "PHASE3Q_XFER2_TRANSFER_FAILED",
+  "phase3s_remains": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "phase4_conclusion": "Phase 4 established a reproducible real-structured evaluation path, full-source safety under the frozen protocol, and one prospective four-arm convenience-sample measurement. The sample provided limited opportunity to evaluate BITE transformations because operator activation was sparse.",
+  "phase4j_head_sha": "7616c89542895a88726762069ef482d897b25335",
+  "phase4j_result_blob": "b4ccdff3860c643630a292d16ea4428c6d480e06",
+  "premise": "PHASE4J_REFERENCE_SCHEMA_AUDITED",
+  "prospective_realstruct2_facts": {
+    "bite_model_visible_reduction_incidence": "1/18",
+    "bite_safety": "18/18",
+    "four_arms_rows": 72,
+    "historical_reference_retention": {
+      "n": 0,
+      "reason": "legacy reader schema incompatibility",
+      "status": "not_observed"
+    },
+    "matched_budget_unique_identity": {
+      "BITE_v5": 1.0,
+      "delta": 0.15384615384615385,
+      "length_pi_v1": 0.8461538461538461,
+      "n": 1,
+      "n_prominence": "n=1",
+      "source_id": "rs2-ini-genicam-harvesters_gui"
+    },
+    "mechanism": {
+      "gate_incidence": "4/18",
+      "gate_is_not_successful_transformation_incidence": true,
+      "reduce_v2": "1/18",
+      "route_empty": "17/18"
+    },
+    "not_a_win_rate": true,
+    "planner_integrity": "18/18",
+    "primary_documents": 18,
+    "raw_reconstruction_exact": "72/72"
+  },
+  "research_conclusion": false,
+  "retrospective_corrections": {
+    "not_a_new_first_open": true,
+    "reference_retention": {
+      "BITE_v5": 1.0,
+      "delta": 0.0,
+      "length_pi_v1": 1.0,
+      "n": 1,
+      "source_id": "rs2-ini-ahuacate-pve-medialab",
+      "tie": 1
+    },
+    "reference_sensor_ahuacate": {
+      "do_not_generalize_from_one_gold_document": true,
+      "precision": 1.0,
+      "recall": 1.0,
+      "unadjudicated": 0
+    }
+  },
+  "revision": "phase4k-evidence-ledger-freeze-v0.1",
+  "schema": "bitebench-phase4k-evidence-ledger-freeze/v0.1",
+  "supported_claims": [
+    "On the frozen 18-document REALSTRUCT-2 convenience sample, BITE preserved the frozen safety invariants on all documents.",
+    "BITE reduced model-visible tokens relative to adapter_only on 1 of 18 documents.",
+    "On the single matched-budget document, BITE retained all unique assignment identities while prefix truncation retained 84.6%.",
+    "On the single reference-gold document, retrospectively corrected reference retention was 1.0 for both BITE and the matched length arm."
+  ],
+  "unsupported_claims": [
+    "BITE superiority",
+    "general real-world effectiveness",
+    "population-level frequency",
+    "answer-quality improvement",
+    "RAG superiority",
+    "production-readiness",
+    "statistical superiority",
+    "reference-retention advantage"
+  ],
+  "verdict": "PHASE4K_EVIDENCE_LEDGER_PROTOCOL_FROZEN",
+  "verdict_rule": {
+    "PHASE4K_EVIDENCE_LEDGER_BLOCKED": "historical verdict drifted, cited blob SHA drifted, evidence categories pooled, or a forbidden claim/execution flag is set",
+    "PHASE4K_EVIDENCE_LEDGER_FROZEN": "Phase4A-4J historical verdicts preserved; all cited blob SHAs verified; prospective and retrospective evidence clearly separated; n values shown beside every comparative result; no new execution; no retune; no merge; p3f unopened; no superiority/generalization claim"
+  }
+}

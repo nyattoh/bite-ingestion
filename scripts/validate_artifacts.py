@@ -2161,6 +2161,31 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase4j} verdict={data.get('verdict')}")
 
+    from bite_bench.phase4k import validate_phase4k_freeze
+
+    phase4k_freeze = args.root / "benchmarks" / "spec" / "phase4k-evidence-ledger-freeze.json"
+    if phase4k_freeze.is_file():
+        n_checked += 1
+        data = json.loads(phase4k_freeze.read_text(encoding="utf-8"))
+        errs = list(validate_phase4k_freeze(data))
+        schema_path = args.root / "spec" / "phase4k-evidence-ledger-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase4k freeze jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase4k_freeze}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase4k_freeze} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1

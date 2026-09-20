@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4k-evidence-ledger-freeze.schema.json",
+  "title": "BITE Phase-4K evidence-ledger freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "phase4j_head_sha",
+    "p3f_evaluation_holdout_used",
+    "documentation_only",
+    "no_new_experiment",
+    "no_arm_rerun",
+    "no_phase4a_to_4j_rewrite",
+    "no_merge",
+    "do_not_pool_evidence_categories",
+    "evidence_categories",
+    "k1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase4k-evidence-ledger-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4k-evidence-ledger-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE4K_EVIDENCE_LEDGER_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE4J_REFERENCE_SCHEMA_AUDITED"
+    },
+    "phase4j_head_sha": {
+      "type": "string",
+      "const": "7616c89542895a88726762069ef482d897b25335"
+    },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "documentation_only": { "type": "boolean", "const": true },
+    "no_new_experiment": { "type": "boolean", "const": true },
+    "no_arm_rerun": { "type": "boolean", "const": true },
+    "no_phase4a_to_4j_rewrite": { "type": "boolean", "const": true },
+    "no_merge": { "type": "boolean", "const": true },
+    "do_not_pool_evidence_categories": { "type": "boolean", "const": true },
+    "evidence_categories": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "string",
+        "enum": [
+          "mechanism_evidence",
+          "real_corpus_safety_evidence",
+          "prospective_realstruct2_comparison_evidence",
+          "retrospective_measurement_corrections"
+        ]
+      }
+    },
+    "k1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE4K_EVIDENCE_LEDGER_FROZEN",
+          "PHASE4K_EVIDENCE_LEDGER_BLOCKED"
+        ]
+      }
+    }
+  }
+}
