@@ -1,0 +1,1362 @@
+{
+  "cases": [
+    {
+      "case_id": "xfer2-q001",
+      "domain": "astro",
+      "n_records": 8,
+      "records": [
+        {
+          "k": "src_scope_q001",
+          "v": "star_lock_q001"
+        },
+        {
+          "k": "src2_scope_q001",
+          "v": "moon_lock_q001"
+        },
+        {
+          "k": "dst_star_lock_q001",
+          "v": "ack_star_lock_q001"
+        },
+        {
+          "k": "dst_moon_lock_q001",
+          "v": "ack_moon_lock_q001"
+        },
+        {
+          "k": "note_astro_q001_20",
+          "v": "NGC 1300 blob_astro_q001_20"
+        },
+        {
+          "k": "note_astro_q001_21",
+          "v": "blob_astro_q001_21"
+        },
+        {
+          "k": "note_astro_q001_22",
+          "v": "blob_astro_q001_22 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_astro_q001_23",
+          "v": "na\u00efve blob_astro_q001_23"
+        }
+      ],
+      "signature": "none"
+    },
+    {
+      "case_id": "xfer2-q002",
+      "domain": "museum",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "src_accn_q002",
+          "v": "vitrine_lock_q002"
+        },
+        {
+          "k": "dst_vitrine_lock_q002",
+          "v": "ack_vitrine_lock_q002"
+        },
+        {
+          "k": "copy_main_q002",
+          "v": "same_main_q002_row"
+        },
+        {
+          "k": "copy_main_q002",
+          "v": "same_main_q002_row"
+        },
+        {
+          "k": "note_museum_q002_20",
+          "v": "NGC 1300 blob_museum_q002_20"
+        },
+        {
+          "k": "note_museum_q002_21",
+          "v": "blob_museum_q002_21"
+        }
+      ],
+      "signature": "duplicate"
+    },
+    {
+      "case_id": "xfer2-q003",
+      "domain": "scheduler",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "src_queue_q003",
+          "v": "cron_lock_q003"
+        },
+        {
+          "k": "dst_cron_lock_q003",
+          "v": "ack_cron_lock_q003"
+        },
+        {
+          "k": "alert_q003",
+          "v": "ingest dump TRACEBACK"
+        },
+        {
+          "k": "note_scheduler_q003_20",
+          "v": "NGC 1300 blob_scheduler_q003_20"
+        },
+        {
+          "k": "note_scheduler_q003_21",
+          "v": "blob_scheduler_q003_21"
+        },
+        {
+          "k": "note_scheduler_q003_22",
+          "v": "blob_scheduler_q003_22 \u89b3\u6e2c"
+        }
+      ],
+      "signature": "anomaly"
+    },
+    {
+      "case_id": "xfer2-q004",
+      "domain": "firmware",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "src_flash_q004",
+          "v": "chip_lock_q004"
+        },
+        {
+          "k": "dst_chip_lock_q004",
+          "v": "ack_chip_lock_q004"
+        },
+        {
+          "k": "mate_a_q004",
+          "v": "crate_a_q004 id=plate_q004"
+        },
+        {
+          "k": "mate_b_q004",
+          "v": "crate_b_q004 id=plate_q004"
+        },
+        {
+          "k": "mate_c_q004",
+          "v": "crate_c_q004 id=plate_q004"
+        },
+        {
+          "k": "note_firmware_q004_20",
+          "v": "NGC 1300 blob_firmware_q004_20"
+        }
+      ],
+      "signature": "explicit_join"
+    },
+    {
+      "case_id": "xfer2-q005",
+      "domain": "astro",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "src_scope_q005",
+          "v": "star_lock_q005"
+        },
+        {
+          "k": "dst_star_lock_q005",
+          "v": "ack_star_lock_q005"
+        },
+        {
+          "k": "copy_main_q005",
+          "v": "same_main_q005_row"
+        },
+        {
+          "k": "copy_main_q005",
+          "v": "same_main_q005_row"
+        },
+        {
+          "k": "alert_q005",
+          "v": "CCD readout FATAL"
+        },
+        {
+          "k": "note_astro_q005_20",
+          "v": "NGC 1300 blob_astro_q005_20"
+        }
+      ],
+      "signature": "duplicate+anomaly"
+    },
+    {
+      "case_id": "xfer2-q006",
+      "domain": "museum",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "src_accn_q006",
+          "v": "vitrine_lock_q006"
+        },
+        {
+          "k": "dst_vitrine_lock_q006",
+          "v": "ack_vitrine_lock_q006"
+        },
+        {
+          "k": "copy_main_q006",
+          "v": "same_main_q006_row"
+        },
+        {
+          "k": "copy_main_q006",
+          "v": "same_main_q006_row"
+        },
+        {
+          "k": "mate_a_q006",
+          "v": "crate_a_q006 key=accn_q006"
+        },
+        {
+          "k": "mate_b_q006",
+          "v": "crate_b_q006 key=accn_q006"
+        }
+      ],
+      "signature": "duplicate+join"
+    },
+    {
+      "case_id": "xfer2-q007",
+      "domain": "scheduler",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "src_queue_q007",
+          "v": "cron_lock_q007"
+        },
+        {
+          "k": "dst_cron_lock_q007",
+          "v": "ack_cron_lock_q007"
+        },
+        {
+          "k": "alert_q007",
+          "v": "ingest dump TRACEBACK"
+        },
+        {
+          "k": "mate_a_q007",
+          "v": "crate_a_q007 id=plate_q007"
+        },
+        {
+          "k": "mate_b_q007",
+          "v": "crate_b_q007 id=plate_q007"
+        },
+        {
+          "k": "mate_c_q007",
+          "v": "crate_c_q007 id=plate_q007"
+        }
+      ],
+      "signature": "anomaly+join"
+    },
+    {
+      "case_id": "xfer2-q008",
+      "domain": "firmware",
+      "n_records": 8,
+      "records": [
+        {
+          "k": "src_flash_q008",
+          "v": "chip_lock_q008"
+        },
+        {
+          "k": "dst_chip_lock_q008",
+          "v": "ack_chip_lock_q008"
+        },
+        {
+          "k": "copy_main_q008",
+          "v": "same_main_q008_row"
+        },
+        {
+          "k": "copy_main_q008",
+          "v": "same_main_q008_row"
+        },
+        {
+          "k": "alert_q008",
+          "v": "<<<INJECT device map"
+        },
+        {
+          "k": "mate_a_q008",
+          "v": "crate_a_q008 id=plate_q008"
+        },
+        {
+          "k": "mate_b_q008",
+          "v": "crate_b_q008 id=plate_q008"
+        },
+        {
+          "k": "mate_c_q008",
+          "v": "crate_c_q008 id=plate_q008"
+        }
+      ],
+      "signature": "duplicate+anomaly+join"
+    },
+    {
+      "case_id": "xfer2-q009",
+      "domain": "astro",
+      "n_records": 5,
+      "records": [
+        {
+          "k": "src_scope_q009",
+          "v": "star_lock_q009"
+        },
+        {
+          "k": "src2_scope_q009",
+          "v": "moon_lock_q009"
+        },
+        {
+          "k": "note_astro_q009_00",
+          "v": "blob_astro_q009_00"
+        },
+        {
+          "k": "dst_star_lock_q009",
+          "v": "ack_star_lock_q009"
+        },
+        {
+          "k": "dst_moon_lock_q009",
+          "v": "ack_moon_lock_q009"
+        }
+      ],
+      "signature": "none"
+    },
+    {
+      "case_id": "xfer2-q010",
+      "domain": "museum",
+      "n_records": 7,
+      "records": [
+        {
+          "k": "src_accn_q010",
+          "v": "vitrine_lock_q010"
+        },
+        {
+          "k": "note_museum_q010_00",
+          "v": "blob_museum_q010_00"
+        },
+        {
+          "k": "note_museum_q010_01",
+          "v": "blob_museum_q010_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "dst_vitrine_lock_q010",
+          "v": "ack_vitrine_lock_q010"
+        },
+        {
+          "k": "copy_main_q010",
+          "v": "same_main_q010_row"
+        },
+        {
+          "k": "copy_main_q010",
+          "v": "same_main_q010_row"
+        },
+        {
+          "k": "copy_main_q010",
+          "v": "same_main_q010_row"
+        }
+      ],
+      "signature": "duplicate"
+    },
+    {
+      "case_id": "xfer2-q011",
+      "domain": "scheduler",
+      "n_records": 5,
+      "records": [
+        {
+          "k": "src_queue_q011",
+          "v": "cron_lock_q011"
+        },
+        {
+          "k": "note_scheduler_q011_00",
+          "v": "blob_scheduler_q011_00"
+        },
+        {
+          "k": "note_scheduler_q011_01",
+          "v": "blob_scheduler_q011_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "dst_cron_lock_q011",
+          "v": "ack_cron_lock_q011"
+        },
+        {
+          "k": "alert_q011",
+          "v": "ingest dump TRACEBACK"
+        }
+      ],
+      "signature": "anomaly"
+    },
+    {
+      "case_id": "xfer2-q012",
+      "domain": "firmware",
+      "n_records": 7,
+      "records": [
+        {
+          "k": "src_flash_q012",
+          "v": "chip_lock_q012"
+        },
+        {
+          "k": "note_firmware_q012_00",
+          "v": "blob_firmware_q012_00"
+        },
+        {
+          "k": "note_firmware_q012_01",
+          "v": "blob_firmware_q012_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "dst_chip_lock_q012",
+          "v": "ack_chip_lock_q012"
+        },
+        {
+          "k": "mate_a_q012",
+          "v": "crate_a_q012 id=plate_q012"
+        },
+        {
+          "k": "mate_b_q012",
+          "v": "crate_b_q012 id=plate_q012"
+        },
+        {
+          "k": "mate_c_q012",
+          "v": "crate_c_q012 id=plate_q012"
+        }
+      ],
+      "signature": "explicit_join"
+    },
+    {
+      "case_id": "xfer2-q013",
+      "domain": "astro",
+      "n_records": 8,
+      "records": [
+        {
+          "k": "src_scope_q013",
+          "v": "star_lock_q013"
+        },
+        {
+          "k": "note_astro_q013_00",
+          "v": "blob_astro_q013_00"
+        },
+        {
+          "k": "note_astro_q013_01",
+          "v": "blob_astro_q013_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "dst_star_lock_q013",
+          "v": "ack_star_lock_q013"
+        },
+        {
+          "k": "copy_main_q013",
+          "v": "same_main_q013_row"
+        },
+        {
+          "k": "copy_main_q013",
+          "v": "same_main_q013_row"
+        },
+        {
+          "k": "copy_main_q013",
+          "v": "same_main_q013_row"
+        },
+        {
+          "k": "alert_q013",
+          "v": "CCD readout FATAL"
+        }
+      ],
+      "signature": "duplicate+anomaly"
+    },
+    {
+      "case_id": "xfer2-q014",
+      "domain": "museum",
+      "n_records": 9,
+      "records": [
+        {
+          "k": "src_accn_q014",
+          "v": "vitrine_lock_q014"
+        },
+        {
+          "k": "note_museum_q014_00",
+          "v": "blob_museum_q014_00"
+        },
+        {
+          "k": "note_museum_q014_01",
+          "v": "blob_museum_q014_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "dst_vitrine_lock_q014",
+          "v": "ack_vitrine_lock_q014"
+        },
+        {
+          "k": "copy_main_q014",
+          "v": "same_main_q014_row"
+        },
+        {
+          "k": "copy_main_q014",
+          "v": "same_main_q014_row"
+        },
+        {
+          "k": "copy_main_q014",
+          "v": "same_main_q014_row"
+        },
+        {
+          "k": "mate_a_q014",
+          "v": "crate_a_q014 key=accn_q014"
+        },
+        {
+          "k": "mate_b_q014",
+          "v": "crate_b_q014 key=accn_q014"
+        }
+      ],
+      "signature": "duplicate+join"
+    },
+    {
+      "case_id": "xfer2-q015",
+      "domain": "scheduler",
+      "n_records": 8,
+      "records": [
+        {
+          "k": "src_queue_q015",
+          "v": "cron_lock_q015"
+        },
+        {
+          "k": "note_scheduler_q015_00",
+          "v": "blob_scheduler_q015_00"
+        },
+        {
+          "k": "note_scheduler_q015_01",
+          "v": "blob_scheduler_q015_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "dst_cron_lock_q015",
+          "v": "ack_cron_lock_q015"
+        },
+        {
+          "k": "alert_q015",
+          "v": "ingest dump TRACEBACK"
+        },
+        {
+          "k": "mate_a_q015",
+          "v": "crate_a_q015 id=plate_q015"
+        },
+        {
+          "k": "mate_b_q015",
+          "v": "crate_b_q015 id=plate_q015"
+        },
+        {
+          "k": "mate_c_q015",
+          "v": "crate_c_q015 id=plate_q015"
+        }
+      ],
+      "signature": "anomaly+join"
+    },
+    {
+      "case_id": "xfer2-q016",
+      "domain": "firmware",
+      "n_records": 11,
+      "records": [
+        {
+          "k": "src_flash_q016",
+          "v": "chip_lock_q016"
+        },
+        {
+          "k": "note_firmware_q016_00",
+          "v": "blob_firmware_q016_00"
+        },
+        {
+          "k": "note_firmware_q016_01",
+          "v": "blob_firmware_q016_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "dst_chip_lock_q016",
+          "v": "ack_chip_lock_q016"
+        },
+        {
+          "k": "copy_main_q016",
+          "v": "same_main_q016_row"
+        },
+        {
+          "k": "copy_main_q016",
+          "v": "same_main_q016_row"
+        },
+        {
+          "k": "copy_main_q016",
+          "v": "same_main_q016_row"
+        },
+        {
+          "k": "alert_q016",
+          "v": "<<<INJECT device map"
+        },
+        {
+          "k": "mate_a_q016",
+          "v": "crate_a_q016 id=plate_q016"
+        },
+        {
+          "k": "mate_b_q016",
+          "v": "crate_b_q016 id=plate_q016"
+        },
+        {
+          "k": "mate_c_q016",
+          "v": "crate_c_q016 id=plate_q016"
+        }
+      ],
+      "signature": "duplicate+anomaly+join"
+    },
+    {
+      "case_id": "xfer2-q017",
+      "domain": "astro",
+      "n_records": 12,
+      "records": [
+        {
+          "k": "src_scope_q017",
+          "v": "star_lock_q017"
+        },
+        {
+          "k": "src2_scope_q017",
+          "v": "moon_lock_q017"
+        },
+        {
+          "k": "note_astro_q017_00",
+          "v": "blob_astro_q017_00"
+        },
+        {
+          "k": "note_astro_q017_01",
+          "v": "blob_astro_q017_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_astro_q017_02",
+          "v": "na\u00efve blob_astro_q017_02"
+        },
+        {
+          "k": "note_astro_q017_03",
+          "v": "blob_astro_q017_03 shift = 1"
+        },
+        {
+          "k": "note_astro_q017_04",
+          "v": "blob_astro_q017_04 said \"ok\""
+        },
+        {
+          "k": "note_astro_q017_05",
+          "v": "\u03b1 blob_astro_q017_05"
+        },
+        {
+          "k": "note_astro_q017_06",
+          "v": "NGC 1300 blob_astro_q017_06"
+        },
+        {
+          "k": "note_astro_q017_07",
+          "v": "blob_astro_q017_07"
+        },
+        {
+          "k": "dst_star_lock_q017",
+          "v": "ack_star_lock_q017"
+        },
+        {
+          "k": "dst_moon_lock_q017",
+          "v": "ack_moon_lock_q017"
+        }
+      ],
+      "signature": "none"
+    },
+    {
+      "case_id": "xfer2-q018",
+      "domain": "museum",
+      "n_records": 13,
+      "records": [
+        {
+          "k": "src_accn_q018",
+          "v": "vitrine_lock_q018"
+        },
+        {
+          "k": "note_museum_q018_00",
+          "v": "blob_museum_q018_00"
+        },
+        {
+          "k": "note_museum_q018_01",
+          "v": "blob_museum_q018_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_museum_q018_02",
+          "v": "na\u00efve blob_museum_q018_02"
+        },
+        {
+          "k": "note_museum_q018_03",
+          "v": "blob_museum_q018_03 shift = 1"
+        },
+        {
+          "k": "note_museum_q018_04",
+          "v": "blob_museum_q018_04 said \"ok\""
+        },
+        {
+          "k": "note_museum_q018_05",
+          "v": "\u03b1 blob_museum_q018_05"
+        },
+        {
+          "k": "note_museum_q018_06",
+          "v": "NGC 1300 blob_museum_q018_06"
+        },
+        {
+          "k": "note_museum_q018_07",
+          "v": "blob_museum_q018_07"
+        },
+        {
+          "k": "dst_vitrine_lock_q018",
+          "v": "ack_vitrine_lock_q018"
+        },
+        {
+          "k": "copy_main_q018",
+          "v": "same_main_q018_row"
+        },
+        {
+          "k": "gap_main_q018",
+          "v": "void_main_q018"
+        },
+        {
+          "k": "copy_main_q018",
+          "v": "same_main_q018_row"
+        }
+      ],
+      "signature": "duplicate"
+    },
+    {
+      "case_id": "xfer2-q019",
+      "domain": "scheduler",
+      "n_records": 11,
+      "records": [
+        {
+          "k": "src_queue_q019",
+          "v": "cron_lock_q019"
+        },
+        {
+          "k": "note_scheduler_q019_00",
+          "v": "blob_scheduler_q019_00"
+        },
+        {
+          "k": "note_scheduler_q019_01",
+          "v": "blob_scheduler_q019_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_scheduler_q019_02",
+          "v": "na\u00efve blob_scheduler_q019_02"
+        },
+        {
+          "k": "note_scheduler_q019_03",
+          "v": "blob_scheduler_q019_03 shift = 1"
+        },
+        {
+          "k": "note_scheduler_q019_04",
+          "v": "blob_scheduler_q019_04 said \"ok\""
+        },
+        {
+          "k": "note_scheduler_q019_05",
+          "v": "\u03b1 blob_scheduler_q019_05"
+        },
+        {
+          "k": "note_scheduler_q019_06",
+          "v": "NGC 1300 blob_scheduler_q019_06"
+        },
+        {
+          "k": "note_scheduler_q019_07",
+          "v": "blob_scheduler_q019_07"
+        },
+        {
+          "k": "dst_cron_lock_q019",
+          "v": "ack_cron_lock_q019"
+        },
+        {
+          "k": "alert_q019",
+          "v": "ingest dump TRACEBACK"
+        }
+      ],
+      "signature": "anomaly"
+    },
+    {
+      "case_id": "xfer2-q020",
+      "domain": "firmware",
+      "n_records": 13,
+      "records": [
+        {
+          "k": "src_flash_q020",
+          "v": "chip_lock_q020"
+        },
+        {
+          "k": "note_firmware_q020_00",
+          "v": "blob_firmware_q020_00"
+        },
+        {
+          "k": "note_firmware_q020_01",
+          "v": "blob_firmware_q020_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_firmware_q020_02",
+          "v": "na\u00efve blob_firmware_q020_02"
+        },
+        {
+          "k": "note_firmware_q020_03",
+          "v": "blob_firmware_q020_03 shift = 1"
+        },
+        {
+          "k": "note_firmware_q020_04",
+          "v": "blob_firmware_q020_04 said \"ok\""
+        },
+        {
+          "k": "note_firmware_q020_05",
+          "v": "\u03b1 blob_firmware_q020_05"
+        },
+        {
+          "k": "note_firmware_q020_06",
+          "v": "NGC 1300 blob_firmware_q020_06"
+        },
+        {
+          "k": "note_firmware_q020_07",
+          "v": "blob_firmware_q020_07"
+        },
+        {
+          "k": "dst_chip_lock_q020",
+          "v": "ack_chip_lock_q020"
+        },
+        {
+          "k": "mate_a_q020",
+          "v": "crate_a_q020 id=plate_q020"
+        },
+        {
+          "k": "mate_b_q020",
+          "v": "crate_b_q020 id=plate_q020"
+        },
+        {
+          "k": "mate_c_q020",
+          "v": "crate_c_q020 id=plate_q020"
+        }
+      ],
+      "signature": "explicit_join"
+    },
+    {
+      "case_id": "xfer2-q021",
+      "domain": "astro",
+      "n_records": 14,
+      "records": [
+        {
+          "k": "src_scope_q021",
+          "v": "star_lock_q021"
+        },
+        {
+          "k": "note_astro_q021_00",
+          "v": "blob_astro_q021_00"
+        },
+        {
+          "k": "note_astro_q021_01",
+          "v": "blob_astro_q021_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_astro_q021_02",
+          "v": "na\u00efve blob_astro_q021_02"
+        },
+        {
+          "k": "note_astro_q021_03",
+          "v": "blob_astro_q021_03 shift = 1"
+        },
+        {
+          "k": "note_astro_q021_04",
+          "v": "blob_astro_q021_04 said \"ok\""
+        },
+        {
+          "k": "note_astro_q021_05",
+          "v": "\u03b1 blob_astro_q021_05"
+        },
+        {
+          "k": "note_astro_q021_06",
+          "v": "NGC 1300 blob_astro_q021_06"
+        },
+        {
+          "k": "note_astro_q021_07",
+          "v": "blob_astro_q021_07"
+        },
+        {
+          "k": "dst_star_lock_q021",
+          "v": "ack_star_lock_q021"
+        },
+        {
+          "k": "copy_main_q021",
+          "v": "same_main_q021_row"
+        },
+        {
+          "k": "gap_main_q021",
+          "v": "void_main_q021"
+        },
+        {
+          "k": "copy_main_q021",
+          "v": "same_main_q021_row"
+        },
+        {
+          "k": "alert_q021",
+          "v": "CCD readout FATAL"
+        }
+      ],
+      "signature": "duplicate+anomaly"
+    },
+    {
+      "case_id": "xfer2-q022",
+      "domain": "museum",
+      "n_records": 15,
+      "records": [
+        {
+          "k": "src_accn_q022",
+          "v": "vitrine_lock_q022"
+        },
+        {
+          "k": "note_museum_q022_00",
+          "v": "blob_museum_q022_00"
+        },
+        {
+          "k": "note_museum_q022_01",
+          "v": "blob_museum_q022_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_museum_q022_02",
+          "v": "na\u00efve blob_museum_q022_02"
+        },
+        {
+          "k": "note_museum_q022_03",
+          "v": "blob_museum_q022_03 shift = 1"
+        },
+        {
+          "k": "note_museum_q022_04",
+          "v": "blob_museum_q022_04 said \"ok\""
+        },
+        {
+          "k": "note_museum_q022_05",
+          "v": "\u03b1 blob_museum_q022_05"
+        },
+        {
+          "k": "note_museum_q022_06",
+          "v": "NGC 1300 blob_museum_q022_06"
+        },
+        {
+          "k": "note_museum_q022_07",
+          "v": "blob_museum_q022_07"
+        },
+        {
+          "k": "dst_vitrine_lock_q022",
+          "v": "ack_vitrine_lock_q022"
+        },
+        {
+          "k": "copy_main_q022",
+          "v": "same_main_q022_row"
+        },
+        {
+          "k": "gap_main_q022",
+          "v": "void_main_q022"
+        },
+        {
+          "k": "copy_main_q022",
+          "v": "same_main_q022_row"
+        },
+        {
+          "k": "mate_a_q022",
+          "v": "crate_a_q022 key=accn_q022"
+        },
+        {
+          "k": "mate_b_q022",
+          "v": "crate_b_q022 key=accn_q022"
+        }
+      ],
+      "signature": "duplicate+join"
+    },
+    {
+      "case_id": "xfer2-q023",
+      "domain": "scheduler",
+      "n_records": 14,
+      "records": [
+        {
+          "k": "src_queue_q023",
+          "v": "cron_lock_q023"
+        },
+        {
+          "k": "note_scheduler_q023_00",
+          "v": "blob_scheduler_q023_00"
+        },
+        {
+          "k": "note_scheduler_q023_01",
+          "v": "blob_scheduler_q023_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_scheduler_q023_02",
+          "v": "na\u00efve blob_scheduler_q023_02"
+        },
+        {
+          "k": "note_scheduler_q023_03",
+          "v": "blob_scheduler_q023_03 shift = 1"
+        },
+        {
+          "k": "note_scheduler_q023_04",
+          "v": "blob_scheduler_q023_04 said \"ok\""
+        },
+        {
+          "k": "note_scheduler_q023_05",
+          "v": "\u03b1 blob_scheduler_q023_05"
+        },
+        {
+          "k": "note_scheduler_q023_06",
+          "v": "NGC 1300 blob_scheduler_q023_06"
+        },
+        {
+          "k": "note_scheduler_q023_07",
+          "v": "blob_scheduler_q023_07"
+        },
+        {
+          "k": "dst_cron_lock_q023",
+          "v": "ack_cron_lock_q023"
+        },
+        {
+          "k": "alert_q023",
+          "v": "ingest dump TRACEBACK"
+        },
+        {
+          "k": "mate_a_q023",
+          "v": "crate_a_q023 id=plate_q023"
+        },
+        {
+          "k": "mate_b_q023",
+          "v": "crate_b_q023 id=plate_q023"
+        },
+        {
+          "k": "mate_c_q023",
+          "v": "crate_c_q023 id=plate_q023"
+        }
+      ],
+      "signature": "anomaly+join"
+    },
+    {
+      "case_id": "xfer2-q024",
+      "domain": "firmware",
+      "n_records": 19,
+      "records": [
+        {
+          "k": "src_flash_q024",
+          "v": "chip_lock_q024"
+        },
+        {
+          "k": "src2_flash_q024",
+          "v": "rom_lock_q024"
+        },
+        {
+          "k": "note_firmware_q024_00",
+          "v": "blob_firmware_q024_00"
+        },
+        {
+          "k": "note_firmware_q024_01",
+          "v": "blob_firmware_q024_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_firmware_q024_02",
+          "v": "na\u00efve blob_firmware_q024_02"
+        },
+        {
+          "k": "note_firmware_q024_03",
+          "v": "blob_firmware_q024_03 shift = 1"
+        },
+        {
+          "k": "note_firmware_q024_04",
+          "v": "blob_firmware_q024_04 said \"ok\""
+        },
+        {
+          "k": "note_firmware_q024_05",
+          "v": "\u03b1 blob_firmware_q024_05"
+        },
+        {
+          "k": "note_firmware_q024_06",
+          "v": "NGC 1300 blob_firmware_q024_06"
+        },
+        {
+          "k": "note_firmware_q024_07",
+          "v": "blob_firmware_q024_07"
+        },
+        {
+          "k": "dst_chip_lock_q024",
+          "v": "ack_chip_lock_q024"
+        },
+        {
+          "k": "dst_rom_lock_q024",
+          "v": "ack_rom_lock_q024"
+        },
+        {
+          "k": "copy_main_q024",
+          "v": "same_main_q024_row"
+        },
+        {
+          "k": "gap_main_q024",
+          "v": "void_main_q024"
+        },
+        {
+          "k": "copy_main_q024",
+          "v": "same_main_q024_row"
+        },
+        {
+          "k": "alert_q024",
+          "v": "<<<INJECT device map"
+        },
+        {
+          "k": "mate_a_q024",
+          "v": "crate_a_q024 id=plate_q024"
+        },
+        {
+          "k": "mate_b_q024",
+          "v": "crate_b_q024 id=plate_q024"
+        },
+        {
+          "k": "mate_c_q024",
+          "v": "crate_c_q024 id=plate_q024"
+        }
+      ],
+      "signature": "duplicate+anomaly+join"
+    },
+    {
+      "case_id": "xfer2-q025",
+      "domain": "astro",
+      "n_records": 19,
+      "records": [
+        {
+          "k": "src_scope_q025",
+          "v": "star_lock_q025"
+        },
+        {
+          "k": "src2_scope_q025",
+          "v": "moon_lock_q025"
+        },
+        {
+          "k": "note_astro_q025_00",
+          "v": "blob_astro_q025_00"
+        },
+        {
+          "k": "note_astro_q025_01",
+          "v": "blob_astro_q025_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_astro_q025_02",
+          "v": "na\u00efve blob_astro_q025_02"
+        },
+        {
+          "k": "note_astro_q025_03",
+          "v": "blob_astro_q025_03 shift = 1"
+        },
+        {
+          "k": "note_astro_q025_04",
+          "v": "blob_astro_q025_04 said \"ok\""
+        },
+        {
+          "k": "note_astro_q025_05",
+          "v": "\u03b1 blob_astro_q025_05"
+        },
+        {
+          "k": "note_astro_q025_06",
+          "v": "NGC 1300 blob_astro_q025_06"
+        },
+        {
+          "k": "note_astro_q025_07",
+          "v": "blob_astro_q025_07"
+        },
+        {
+          "k": "dst_star_lock_q025",
+          "v": "ack_star_lock_q025"
+        },
+        {
+          "k": "dst_moon_lock_q025",
+          "v": "ack_moon_lock_q025"
+        },
+        {
+          "k": "copy_alpha_q025",
+          "v": "same_alpha_q025_row"
+        },
+        {
+          "k": "copy_alpha_q025",
+          "v": "same_alpha_q025_row"
+        },
+        {
+          "k": "copy_beta_q025",
+          "v": "same_beta_q025_row"
+        },
+        {
+          "k": "gap_beta_q025",
+          "v": "void_beta_q025"
+        },
+        {
+          "k": "copy_beta_q025",
+          "v": "same_beta_q025_row"
+        },
+        {
+          "k": "mate_a_q025",
+          "v": "crate_a_q025 id=plate_q025"
+        },
+        {
+          "k": "mate_b_q025",
+          "v": "crate_b_q025 id=plate_q025"
+        }
+      ],
+      "signature": "two_dup_disjoint_join"
+    },
+    {
+      "case_id": "xfer2-q026",
+      "domain": "museum",
+      "n_records": 17,
+      "records": [
+        {
+          "k": "src_accn_q026",
+          "v": "vitrine_lock_q026"
+        },
+        {
+          "k": "note_museum_q026_00",
+          "v": "blob_museum_q026_00"
+        },
+        {
+          "k": "note_museum_q026_01",
+          "v": "blob_museum_q026_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_museum_q026_02",
+          "v": "na\u00efve blob_museum_q026_02"
+        },
+        {
+          "k": "note_museum_q026_03",
+          "v": "blob_museum_q026_03 shift = 1"
+        },
+        {
+          "k": "note_museum_q026_04",
+          "v": "blob_museum_q026_04 said \"ok\""
+        },
+        {
+          "k": "note_museum_q026_05",
+          "v": "\u03b1 blob_museum_q026_05"
+        },
+        {
+          "k": "note_museum_q026_06",
+          "v": "NGC 1300 blob_museum_q026_06"
+        },
+        {
+          "k": "note_museum_q026_07",
+          "v": "blob_museum_q026_07"
+        },
+        {
+          "k": "dst_vitrine_lock_q026",
+          "v": "ack_vitrine_lock_q026"
+        },
+        {
+          "k": "copy_solo_q026",
+          "v": "same_solo_q026_row"
+        },
+        {
+          "k": "copy_solo_q026",
+          "v": "same_solo_q026_row"
+        },
+        {
+          "k": "mate_a_q026",
+          "v": "crate_a_q026 id=plate_q026"
+        },
+        {
+          "k": "mate_b_q026",
+          "v": "crate_b_q026 id=plate_q026"
+        },
+        {
+          "k": "alt_a_q026",
+          "v": "crate_a_q026 key=folio_q026"
+        },
+        {
+          "k": "alt_b_q026",
+          "v": "crate_b_q026 key=folio_q026"
+        },
+        {
+          "k": "alt_c_q026",
+          "v": "crate_c_q026 key=folio_q026"
+        }
+      ],
+      "signature": "one_dup_two_joins"
+    },
+    {
+      "case_id": "xfer2-q027",
+      "domain": "scheduler",
+      "n_records": 12,
+      "records": [
+        {
+          "k": "src_queue_q027",
+          "v": "cron_lock_q027"
+        },
+        {
+          "k": "note_scheduler_q027_00",
+          "v": "blob_scheduler_q027_00"
+        },
+        {
+          "k": "note_scheduler_q027_01",
+          "v": "blob_scheduler_q027_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_scheduler_q027_02",
+          "v": "na\u00efve blob_scheduler_q027_02"
+        },
+        {
+          "k": "note_scheduler_q027_03",
+          "v": "blob_scheduler_q027_03 shift = 1"
+        },
+        {
+          "k": "note_scheduler_q027_04",
+          "v": "blob_scheduler_q027_04 said \"ok\""
+        },
+        {
+          "k": "note_scheduler_q027_05",
+          "v": "\u03b1 blob_scheduler_q027_05"
+        },
+        {
+          "k": "note_scheduler_q027_06",
+          "v": "NGC 1300 blob_scheduler_q027_06"
+        },
+        {
+          "k": "note_scheduler_q027_07",
+          "v": "blob_scheduler_q027_07"
+        },
+        {
+          "k": "dst_cron_lock_q027",
+          "v": "ack_cron_lock_q027"
+        },
+        {
+          "k": "copy_ov_q027",
+          "v": "id=plate_q027 same_q027_row"
+        },
+        {
+          "k": "copy_ov_q027",
+          "v": "id=plate_q027 same_q027_row"
+        }
+      ],
+      "signature": "dup_overlaps_join"
+    },
+    {
+      "case_id": "xfer2-q028",
+      "domain": "firmware",
+      "n_records": 12,
+      "records": [
+        {
+          "k": "src_flash_q028",
+          "v": "chip_lock_q028"
+        },
+        {
+          "k": "note_firmware_q028_00",
+          "v": "blob_firmware_q028_00"
+        },
+        {
+          "k": "note_firmware_q028_01",
+          "v": "blob_firmware_q028_01 \u89b3\u6e2c"
+        },
+        {
+          "k": "note_firmware_q028_02",
+          "v": "na\u00efve blob_firmware_q028_02"
+        },
+        {
+          "k": "note_firmware_q028_03",
+          "v": "blob_firmware_q028_03 shift = 1"
+        },
+        {
+          "k": "note_firmware_q028_04",
+          "v": "blob_firmware_q028_04 said \"ok\""
+        },
+        {
+          "k": "note_firmware_q028_05",
+          "v": "\u03b1 blob_firmware_q028_05"
+        },
+        {
+          "k": "note_firmware_q028_06",
+          "v": "NGC 1300 blob_firmware_q028_06"
+        },
+        {
+          "k": "note_firmware_q028_07",
+          "v": "blob_firmware_q028_07"
+        },
+        {
+          "k": "dst_chip_lock_q028",
+          "v": "ack_chip_lock_q028"
+        },
+        {
+          "k": "alert_q028",
+          "v": "id=plate_q028 CCD readout FATAL"
+        },
+        {
+          "k": "mate_a_q028",
+          "v": "crate_a_q028 id=plate_q028"
+        }
+      ],
+      "signature": "anomaly_in_join"
+    }
+  ],
+  "corpus": "BITE-XFER-2",
+  "n_cases": 28
+}

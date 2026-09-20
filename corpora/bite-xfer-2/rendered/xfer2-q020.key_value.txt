@@ -1,0 +1,13 @@
+src_flash_q020=chip_lock_q020
+note_firmware_q020_00=blob_firmware_q020_00
+note_firmware_q020_01=blob_firmware_q020_01 観測
+note_firmware_q020_02=naïve blob_firmware_q020_02
+note_firmware_q020_03=blob_firmware_q020_03 shift = 1
+note_firmware_q020_04=blob_firmware_q020_04 said "ok"
+note_firmware_q020_05=α blob_firmware_q020_05
+note_firmware_q020_06=NGC 1300 blob_firmware_q020_06
+note_firmware_q020_07=blob_firmware_q020_07
+dst_chip_lock_q020=ack_chip_lock_q020
+mate_a_q020=crate_a_q020 id=plate_q020
+mate_b_q020=crate_b_q020 id=plate_q020
+mate_c_q020=crate_c_q020 id=plate_q020

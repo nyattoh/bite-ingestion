@@ -2,6 +2,10 @@
 
 from __future__ import annotations
 
+from .conditional_texture_policy_v1 import (
+    ConditionalTexturePolicyV1,
+    PolicyLeakError,
+)
 from .decision import PolicyDecision, RuleFire
 from .fixed_policy import DEFAULT_SEQUENCE, FixedPolicy
 from .grammar import (
@@ -33,6 +37,7 @@ __all__ = [
     "DEFAULT_SEQUENCE",
     "NORMAL_ORDER",
     "TBD_CALIBRATE",
+    "ConditionalTexturePolicyV1",
     "FixedPolicy",
     "GrammarError",
     "LengthOnlyPolicy",
@@ -41,6 +46,7 @@ __all__ = [
     "OracleLeakError",
     "OraclePolicy",
     "PolicyDecision",
+    "PolicyLeakError",
     "RuleFire",
     "RulePolicy",
     "TBDCalibrate",

@@ -1,0 +1,140 @@
+{
+  "documents": [
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "gold_hits_pairs": 0,
+      "gold_n_pairs": 0,
+      "line_pair_recall_legacy": "NA",
+      "n_gold_triples": 0,
+      "recalls_differ": false,
+      "source_id": "rs1-dotenv-linkding",
+      "split_role": "development"
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": 0.0,
+      "gold_hits_pairs": 41,
+      "gold_n_pairs": 41,
+      "line_pair_recall_legacy": 1.0,
+      "n_gold_triples": 41,
+      "recalls_differ": true,
+      "source_id": "rs1-props-hadoop-log4j",
+      "split_role": "development"
+    },
+    {
+      "atom_aware_precision": 1.0,
+      "atom_aware_recall": 0.851528384279476,
+      "gold_hits_pairs": 208,
+      "gold_n_pairs": 248,
+      "line_pair_recall_legacy": 0.8387096774193549,
+      "n_gold_triples": 229,
+      "recalls_differ": true,
+      "source_id": "rs1-ini-oe-bitbake",
+      "split_role": "development"
+    },
+    {
+      "atom_aware_precision": 1.0,
+      "atom_aware_recall": 1.0,
+      "gold_hits_pairs": 1,
+      "gold_n_pairs": 1,
+      "line_pair_recall_legacy": 1.0,
+      "n_gold_triples": 1,
+      "recalls_differ": false,
+      "source_id": "rs1-dotenv-koel",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "gold_hits_pairs": 0,
+      "gold_n_pairs": 0,
+      "line_pair_recall_legacy": "NA",
+      "n_gold_triples": 0,
+      "recalls_differ": false,
+      "source_id": "rs1-dotenv-bookstack",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_precision": 1.0,
+      "atom_aware_recall": 1.0,
+      "gold_hits_pairs": 2,
+      "gold_n_pairs": 2,
+      "line_pair_recall_legacy": 1.0,
+      "n_gold_triples": 2,
+      "recalls_differ": false,
+      "source_id": "rs1-dotenv-laravel",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": 0.0,
+      "gold_hits_pairs": 7,
+      "gold_n_pairs": 7,
+      "line_pair_recall_legacy": 1.0,
+      "n_gold_triples": 7,
+      "recalls_differ": true,
+      "source_id": "rs1-props-ratis-log4j",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "gold_hits_pairs": 0,
+      "gold_n_pairs": 0,
+      "line_pair_recall_legacy": "NA",
+      "n_gold_triples": 0,
+      "recalls_differ": false,
+      "source_id": "rs1-props-kafka-server",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "gold_hits_pairs": 0,
+      "gold_n_pairs": 0,
+      "line_pair_recall_legacy": "NA",
+      "n_gold_triples": 0,
+      "recalls_differ": false,
+      "source_id": "rs1-props-tomcat-logging",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "gold_hits_pairs": 0,
+      "gold_n_pairs": 0,
+      "line_pair_recall_legacy": "NA",
+      "n_gold_triples": 0,
+      "recalls_differ": false,
+      "source_id": "rs1-ini-polybar",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "gold_hits_pairs": 0,
+      "gold_n_pairs": 0,
+      "line_pair_recall_legacy": "NA",
+      "n_gold_triples": 0,
+      "recalls_differ": false,
+      "source_id": "rs1-ini-gogs",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_precision": 1.0,
+      "atom_aware_recall": 1.0,
+      "gold_hits_pairs": 8,
+      "gold_n_pairs": 8,
+      "line_pair_recall_legacy": 1.0,
+      "n_gold_triples": 8,
+      "recalls_differ": false,
+      "source_id": "rs1-ini-tegra-common",
+      "split_role": "evaluation"
+    }
+  ],
+  "legacy_metric_id": "line_pair_recall_legacy",
+  "legacy_metric_preserved": true,
+  "revision": "phase4d-measurement-semantics-v0.1",
+  "schema": "bite-phase4d-legacy-vs-atom-aware/v0.1"
+}

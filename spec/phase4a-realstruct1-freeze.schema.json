@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4a-realstruct1-freeze.schema.json",
+  "title": "BITE Phase-4A REALSTRUCT-1 protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "corpus_name",
+    "no_bite_execution",
+    "p3f_evaluation_holdout_used",
+    "n_documents",
+    "families",
+    "a1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase4a-realstruct1-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4a-realstruct1-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE4A_REAL_CORPUS_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE3T_EXACT_REFERENCE_VALIDATED"
+    },
+    "corpus_name": { "type": "string", "const": "REALSTRUCT-1" },
+    "no_bite_execution": { "type": "boolean", "const": true },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "n_documents": { "type": "integer", "const": 12 },
+    "families": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "a1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE4A_REAL_CORPUS_FROZEN",
+          "PHASE4A_REAL_CORPUS_PARTIAL",
+          "PHASE4A_REAL_CORPUS_BLOCKED"
+        ]
+      }
+    }
+  }
+}

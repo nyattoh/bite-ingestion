@@ -1,0 +1,15 @@
+{
+  "do_not_compare_legacy_across_arms": true,
+  "legacy_fields": [
+    "arm_local_sidecar_bytes_legacy",
+    "arm_local_sidecar_tokens_legacy"
+  ],
+  "phase4f_metrics_remain_historical": true,
+  "schema": "bite-phase4g-legacy-vs-v2/v0.1",
+  "v2_fields": [
+    "recovery_bundle_bytes",
+    "recovery_bundle_tokens",
+    "visible_reference_retention_v2",
+    "unique_assignment_identity_retention_v2"
+  ]
+}

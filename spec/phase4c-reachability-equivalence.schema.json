@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4c-reachability-equivalence.schema.json",
+  "title": "BITE Phase-4C reachability equivalence v0.1",
+  "type": "object",
+  "required": ["schema", "revision", "claim", "n_max", "exact", "n_mismatches"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4c-reachability-equivalence/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4c-holdout-first-open-freeze-v0.1"
+    },
+    "claim": {
+      "type": "string",
+      "const": "semantics-preserving computational replacement for frozen _chain_span"
+    },
+    "n_max": { "type": "integer", "const": 4 },
+    "exact": { "type": "boolean", "const": true },
+    "n_mismatches": { "type": "integer", "const": 0 }
+  }
+}

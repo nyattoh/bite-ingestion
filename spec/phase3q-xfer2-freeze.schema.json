@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3q-xfer2-freeze.schema.json",
+  "title": "BITE Phase-3Q XFER-2 protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "n_surfaces",
+    "p3f_evaluation_holdout_used",
+    "no_xfer1_generator_import",
+    "no_p3p_generator_import",
+    "no_p3m_import",
+    "q1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3q-xfer2-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3q-xfer2-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE3Q_XFER2_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE3P_RECORD_ALIGNMENT_VALIDATED"
+    },
+    "n_surfaces": { "type": "integer", "const": 112 },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_xfer1_generator_import": { "type": "boolean", "const": true },
+    "no_p3p_generator_import": { "type": "boolean", "const": true },
+    "no_p3m_import": { "type": "boolean", "const": true },
+    "q1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE3Q_XFER2_TRANSFER_CONFIRMED",
+          "PHASE3Q_XFER2_TRANSFER_FAILED",
+          "PHASE3Q_XFER2_TRANSFER_BLOCKED"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4d-atom-aware-reference.schema.json",
+  "title": "BITE Phase-4D atom-aware reference artifact v0.1",
+  "type": "object",
+  "required": ["schema", "revision", "gold_identity", "prediction_identity", "documents"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4d-atom-aware-reference/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4d-measurement-semantics-v0.1"
+    },
+    "gold_identity": {
+      "type": "string",
+      "const": "(source_line, NAME, dest_line)"
+    },
+    "prediction_identity": {
+      "type": "string",
+      "const": "(source_line, atom, dest_line)"
+    },
+    "documents": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12
+    }
+  }
+}

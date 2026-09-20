@@ -1,0 +1,328 @@
+{
+  "ok": true,
+  "revision": "phase4e-full-key-reference-v0.1",
+  "rows": [
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d1-key_value",
+      "v3_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "v3_mean": 1.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "v4_mean": 1.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d1-compact_json",
+      "v3_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "v3_mean": 1.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "v4_mean": 1.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d1-pretty_json",
+      "v3_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "v3_mean": 1.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "v4_mean": 1.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d1-reversed_order_json",
+      "v3_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "v3_mean": 1.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "v4_mean": 1.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d3-key_value",
+      "v3_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "v3_mean": 3.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "v4_mean": 3.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d3-compact_json",
+      "v3_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "v3_mean": 3.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "v4_mean": 3.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d3-pretty_json",
+      "v3_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "v3_mean": 3.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "v4_mean": 3.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d3-reversed_order_json",
+      "v3_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "v3_mean": 3.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "v4_mean": 3.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d4-key_value",
+      "v3_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "v3_mean": 4.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "v4_mean": 4.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d4-compact_json",
+      "v3_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "v3_mean": 4.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "v4_mean": 4.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d4-pretty_json",
+      "v3_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "v3_mean": 4.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "v4_mean": 4.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d4-reversed_order_json",
+      "v3_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "v3_mean": 4.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "v4_mean": 4.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d9-key_value",
+      "v3_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "v3_mean": 9.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "v4_mean": 9.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d9-compact_json",
+      "v3_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "v3_mean": 9.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "v4_mean": 9.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d9-pretty_json",
+      "v3_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "v3_mean": 9.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "v4_mean": 9.0,
+      "v4_n": 1.0
+    },
+    {
+      "exact": true,
+      "surface_id": "p4e-ex-d9-reversed_order_json",
+      "v3_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "v3_mean": 9.0,
+      "v3_n": 1.0,
+      "v4_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "v4_mean": 9.0,
+      "v4_n": 1.0
+    }
+  ],
+  "schema": "bite-phase4e-threshold-bridge/v0.1",
+  "t_high_carry_forward": true
+}

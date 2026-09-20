@@ -1,0 +1,169 @@
+{
+  "n_ok": 12,
+  "phase3q_remains": "Phase3Q remains FAILED",
+  "phase3q_verdict": "PHASE3Q_XFER2_TRANSFER_FAILED",
+  "primary": false,
+  "rows": [
+    {
+      "case_id": "xfer2-q014",
+      "format": "key_value",
+      "gated": false,
+      "mean_reference_edge_distance": 3.0,
+      "n_reference_edges": 1.0,
+      "ok": true,
+      "primary": false,
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "xfer2-q014-key_value"
+    },
+    {
+      "case_id": "xfer2-q014",
+      "format": "compact_json",
+      "gated": false,
+      "mean_reference_edge_distance": 3.0,
+      "n_reference_edges": 1.0,
+      "ok": true,
+      "primary": false,
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "xfer2-q014-compact_json"
+    },
+    {
+      "case_id": "xfer2-q014",
+      "format": "pretty_json",
+      "gated": false,
+      "mean_reference_edge_distance": 3.0,
+      "n_reference_edges": 1.0,
+      "ok": true,
+      "primary": false,
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "xfer2-q014-pretty_json"
+    },
+    {
+      "case_id": "xfer2-q014",
+      "format": "reversed_order_json",
+      "gated": false,
+      "mean_reference_edge_distance": 3.0,
+      "n_reference_edges": 1.0,
+      "ok": true,
+      "primary": false,
+      "projected_sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "xfer2-q014-reversed_order_json"
+    },
+    {
+      "case_id": "xfer2-q027",
+      "format": "key_value",
+      "gated": true,
+      "mean_reference_edge_distance": 9.0,
+      "n_reference_edges": 1.0,
+      "ok": true,
+      "primary": false,
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "surface_id": "xfer2-q027-key_value"
+    },
+    {
+      "case_id": "xfer2-q027",
+      "format": "compact_json",
+      "gated": true,
+      "mean_reference_edge_distance": 9.0,
+      "n_reference_edges": 1.0,
+      "ok": true,
+      "primary": false,
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "surface_id": "xfer2-q027-compact_json"
+    },
+    {
+      "case_id": "xfer2-q027",
+      "format": "pretty_json",
+      "gated": true,
+      "mean_reference_edge_distance": 9.0,
+      "n_reference_edges": 1.0,
+      "ok": true,
+      "primary": false,
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "surface_id": "xfer2-q027-pretty_json"
+    },
+    {
+      "case_id": "xfer2-q027",
+      "format": "reversed_order_json",
+      "gated": true,
+      "mean_reference_edge_distance": 9.0,
+      "n_reference_edges": 1.0,
+      "ok": true,
+      "primary": false,
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "surface_id": "xfer2-q027-reversed_order_json"
+    },
+    {
+      "case_id": "xfer2-q028",
+      "format": "key_value",
+      "gated": true,
+      "mean_reference_edge_distance": 9.0,
+      "n_reference_edges": 1.0,
+      "ok": true,
+      "primary": false,
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "surface_id": "xfer2-q028-key_value"
+    },
+    {
+      "case_id": "xfer2-q028",
+      "format": "compact_json",
+      "gated": true,
+      "mean_reference_edge_distance": 9.0,
+      "n_reference_edges": 1.0,
+      "ok": true,
+      "primary": false,
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "surface_id": "xfer2-q028-compact_json"
+    },
+    {
+      "case_id": "xfer2-q028",
+      "format": "pretty_json",
+      "gated": true,
+      "mean_reference_edge_distance": 9.0,
+      "n_reference_edges": 1.0,
+      "ok": true,
+      "primary": false,
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "surface_id": "xfer2-q028-pretty_json"
+    },
+    {
+      "case_id": "xfer2-q028",
+      "format": "reversed_order_json",
+      "gated": true,
+      "mean_reference_edge_distance": 9.0,
+      "n_reference_edges": 1.0,
+      "ok": true,
+      "primary": false,
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "surface_id": "xfer2-q028-reversed_order_json"
+    }
+  ],
+  "schema": "bite-phase3r-xfer2-regression/v0.1"
+}

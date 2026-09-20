@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4h-realstruct2-corpus.schema.json",
+  "title": "BITE Phase-4H REALSTRUCT-2 corpus manifest v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "corpus_name",
+    "protocol_commit_sha",
+    "sources",
+    "secondary_never_pooled_with_primary"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4h-realstruct2-corpus/v0.1"
+    },
+    "revision": { "type": "string" },
+    "corpus_name": { "type": "string", "const": "REALSTRUCT-2" },
+    "protocol_commit_sha": { "type": "string" },
+    "sources": { "type": "array" },
+    "secondary_never_pooled_with_primary": { "type": "boolean", "const": true }
+  }
+}

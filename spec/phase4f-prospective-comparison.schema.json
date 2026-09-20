@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4f-prospective-comparison.schema.json",
+  "title": "BITE Phase-4F prospective comparison result v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "no_realstruct2",
+    "no_winner_score",
+    "claim_boundary",
+    "not_holdout"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4f-prospective-comparison/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4f-prospective-comparison-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "const": "ee8d190567e0ce055d7ffa2b7163cffa8d94912a"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE4F_COMPARISON_PROTOCOL_READY",
+        "PHASE4F_COMPARISON_PROTOCOL_PARTIAL",
+        "PHASE4F_COMPARISON_PROTOCOL_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_realstruct2": { "type": "boolean", "const": true },
+    "no_winner_score": { "type": "boolean", "const": true },
+    "claim_boundary": {
+      "type": "string",
+      "const": "prospective comparison protocol development only"
+    },
+    "not_holdout": { "type": "boolean", "const": true }
+  }
+}

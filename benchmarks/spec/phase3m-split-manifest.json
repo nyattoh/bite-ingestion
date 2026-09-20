@@ -1,0 +1,962 @@
+{
+  "calibration_replicas": [
+    0,
+    1
+  ],
+  "case_ids": [
+    "p3m-redundant-high-r0",
+    "p3m-redundant-high-r1",
+    "p3m-redundant-high-r2",
+    "p3m-redundant-high-r3",
+    "p3m-redundant-mid-r0",
+    "p3m-redundant-mid-r1",
+    "p3m-redundant-mid-r2",
+    "p3m-redundant-mid-r3",
+    "p3m-redundant-low-r0",
+    "p3m-redundant-low-r1",
+    "p3m-redundant-low-r2",
+    "p3m-redundant-low-r3",
+    "p3m-explicit_join-high-r0",
+    "p3m-explicit_join-high-r1",
+    "p3m-explicit_join-high-r2",
+    "p3m-explicit_join-high-r3",
+    "p3m-explicit_join-mid-r0",
+    "p3m-explicit_join-mid-r1",
+    "p3m-explicit_join-mid-r2",
+    "p3m-explicit_join-mid-r3",
+    "p3m-explicit_join-low-r0",
+    "p3m-explicit_join-low-r1",
+    "p3m-explicit_join-low-r2",
+    "p3m-explicit_join-low-r3",
+    "p3m-anomaly-high-r0",
+    "p3m-anomaly-high-r1",
+    "p3m-anomaly-high-r2",
+    "p3m-anomaly-high-r3",
+    "p3m-anomaly-mid-r0",
+    "p3m-anomaly-mid-r1",
+    "p3m-anomaly-mid-r2",
+    "p3m-anomaly-mid-r3",
+    "p3m-anomaly-low-r0",
+    "p3m-anomaly-low-r1",
+    "p3m-anomaly-low-r2",
+    "p3m-anomaly-low-r3",
+    "p3m-neutral-high-r0",
+    "p3m-neutral-high-r1",
+    "p3m-neutral-high-r2",
+    "p3m-neutral-high-r3",
+    "p3m-neutral-mid-r0",
+    "p3m-neutral-mid-r1",
+    "p3m-neutral-mid-r2",
+    "p3m-neutral-mid-r3",
+    "p3m-neutral-low-r0",
+    "p3m-neutral-low-r1",
+    "p3m-neutral-low-r2",
+    "p3m-neutral-low-r3",
+    "p3m-redundant_join-high-r0",
+    "p3m-redundant_join-high-r1",
+    "p3m-redundant_join-high-r2",
+    "p3m-redundant_join-high-r3",
+    "p3m-redundant_join-mid-r0",
+    "p3m-redundant_join-mid-r1",
+    "p3m-redundant_join-mid-r2",
+    "p3m-redundant_join-mid-r3",
+    "p3m-redundant_join-low-r0",
+    "p3m-redundant_join-low-r1",
+    "p3m-redundant_join-low-r2",
+    "p3m-redundant_join-low-r3",
+    "p3m-anomaly_redundant-high-r0",
+    "p3m-anomaly_redundant-high-r1",
+    "p3m-anomaly_redundant-high-r2",
+    "p3m-anomaly_redundant-high-r3",
+    "p3m-anomaly_redundant-mid-r0",
+    "p3m-anomaly_redundant-mid-r1",
+    "p3m-anomaly_redundant-mid-r2",
+    "p3m-anomaly_redundant-mid-r3",
+    "p3m-anomaly_redundant-low-r0",
+    "p3m-anomaly_redundant-low-r1",
+    "p3m-anomaly_redundant-low-r2",
+    "p3m-anomaly_redundant-low-r3",
+    "p3m-anomaly_join-high-r0",
+    "p3m-anomaly_join-high-r1",
+    "p3m-anomaly_join-high-r2",
+    "p3m-anomaly_join-high-r3",
+    "p3m-anomaly_join-mid-r0",
+    "p3m-anomaly_join-mid-r1",
+    "p3m-anomaly_join-mid-r2",
+    "p3m-anomaly_join-mid-r3",
+    "p3m-anomaly_join-low-r0",
+    "p3m-anomaly_join-low-r1",
+    "p3m-anomaly_join-low-r2",
+    "p3m-anomaly_join-low-r3",
+    "p3m-all_three-high-r0",
+    "p3m-all_three-high-r1",
+    "p3m-all_three-high-r2",
+    "p3m-all_three-high-r3",
+    "p3m-all_three-mid-r0",
+    "p3m-all_three-mid-r1",
+    "p3m-all_three-mid-r2",
+    "p3m-all_three-mid-r3",
+    "p3m-all_three-low-r0",
+    "p3m-all_three-low-r1",
+    "p3m-all_three-low-r2",
+    "p3m-all_three-low-r3"
+  ],
+  "cases": [
+    {
+      "case_id": "p3m-redundant-high-r0",
+      "dispersion": "high",
+      "expected_sequence": [
+        "REDUCE"
+      ],
+      "replica": 0,
+      "split": "development",
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-high-r1",
+      "dispersion": "high",
+      "expected_sequence": [
+        "REDUCE"
+      ],
+      "replica": 1,
+      "split": "development",
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-high-r2",
+      "dispersion": "high",
+      "expected_sequence": [
+        "REDUCE"
+      ],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-high-r3",
+      "dispersion": "high",
+      "expected_sequence": [
+        "REDUCE"
+      ],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-mid-r0",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-mid-r1",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-mid-r2",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-mid-r3",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-low-r0",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-low-r1",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-low-r2",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-low-r3",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-explicit_join-high-r0",
+      "dispersion": "high",
+      "expected_sequence": [
+        "INTEGRATE"
+      ],
+      "replica": 0,
+      "split": "development",
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-high-r1",
+      "dispersion": "high",
+      "expected_sequence": [
+        "INTEGRATE"
+      ],
+      "replica": 1,
+      "split": "development",
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-high-r2",
+      "dispersion": "high",
+      "expected_sequence": [
+        "INTEGRATE"
+      ],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-high-r3",
+      "dispersion": "high",
+      "expected_sequence": [
+        "INTEGRATE"
+      ],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-mid-r0",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-mid-r1",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-mid-r2",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-mid-r3",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-low-r0",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-low-r1",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-low-r2",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-low-r3",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-anomaly-high-r0",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "replica": 0,
+      "split": "development",
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-high-r1",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "replica": 1,
+      "split": "development",
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-high-r2",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-high-r3",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-mid-r0",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-mid-r1",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-mid-r2",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-mid-r3",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-low-r0",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-low-r1",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-low-r2",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-low-r3",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-neutral-high-r0",
+      "dispersion": "high",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-high-r1",
+      "dispersion": "high",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-high-r2",
+      "dispersion": "high",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-high-r3",
+      "dispersion": "high",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-mid-r0",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-mid-r1",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-mid-r2",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-mid-r3",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-low-r0",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-low-r1",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-low-r2",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-low-r3",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-redundant_join-high-r0",
+      "dispersion": "high",
+      "expected_sequence": [
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "replica": 0,
+      "split": "development",
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-high-r1",
+      "dispersion": "high",
+      "expected_sequence": [
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "replica": 1,
+      "split": "development",
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-high-r2",
+      "dispersion": "high",
+      "expected_sequence": [
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-high-r3",
+      "dispersion": "high",
+      "expected_sequence": [
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-mid-r0",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-mid-r1",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-mid-r2",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-mid-r3",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-low-r0",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-low-r1",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-low-r2",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-low-r3",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-high-r0",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE"
+      ],
+      "replica": 0,
+      "split": "development",
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-high-r1",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE"
+      ],
+      "replica": 1,
+      "split": "development",
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-high-r2",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE"
+      ],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-high-r3",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE"
+      ],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-mid-r0",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-mid-r1",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-mid-r2",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-mid-r3",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-low-r0",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-low-r1",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-low-r2",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-low-r3",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_join-high-r0",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "replica": 0,
+      "split": "development",
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-high-r1",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "replica": 1,
+      "split": "development",
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-high-r2",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-high-r3",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-mid-r0",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-mid-r1",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-mid-r2",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-mid-r3",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-low-r0",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-low-r1",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-low-r2",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-low-r3",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-all_three-high-r0",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "replica": 0,
+      "split": "development",
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-high-r1",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "replica": 1,
+      "split": "development",
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-high-r2",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-high-r3",
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-mid-r0",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-mid-r1",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-mid-r2",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-mid-r3",
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-low-r0",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 0,
+      "split": "development",
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-low-r1",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 1,
+      "split": "development",
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-low-r2",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 2,
+      "split": "evaluation",
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-low-r3",
+      "dispersion": "low",
+      "expected_sequence": [],
+      "replica": 3,
+      "split": "evaluation",
+      "texture": "all_three"
+    }
+  ],
+  "evaluation_replicas": [
+    2,
+    3
+  ],
+  "evaluation_sealed": true,
+  "generation": "p3m",
+  "n_cases": 96,
+  "p3f_evaluation_replicas_sealed": [
+    2,
+    3
+  ],
+  "schema": "bitebench-phase3m-split-manifest/v0.1"
+}

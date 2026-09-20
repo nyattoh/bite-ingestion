@@ -1,0 +1,54 @@
+[
+  {
+    "k": "src_accn_q018",
+    "v": "vitrine_lock_q018"
+  },
+  {
+    "k": "note_museum_q018_00",
+    "v": "blob_museum_q018_00"
+  },
+  {
+    "k": "note_museum_q018_01",
+    "v": "blob_museum_q018_01 観測"
+  },
+  {
+    "k": "note_museum_q018_02",
+    "v": "naïve blob_museum_q018_02"
+  },
+  {
+    "k": "note_museum_q018_03",
+    "v": "blob_museum_q018_03 shift = 1"
+  },
+  {
+    "k": "note_museum_q018_04",
+    "v": "blob_museum_q018_04 said \"ok\""
+  },
+  {
+    "k": "note_museum_q018_05",
+    "v": "α blob_museum_q018_05"
+  },
+  {
+    "k": "note_museum_q018_06",
+    "v": "NGC 1300 blob_museum_q018_06"
+  },
+  {
+    "k": "note_museum_q018_07",
+    "v": "blob_museum_q018_07"
+  },
+  {
+    "k": "dst_vitrine_lock_q018",
+    "v": "ack_vitrine_lock_q018"
+  },
+  {
+    "k": "copy_main_q018",
+    "v": "same_main_q018_row"
+  },
+  {
+    "k": "gap_main_q018",
+    "v": "void_main_q018"
+  },
+  {
+    "k": "copy_main_q018",
+    "v": "same_main_q018_row"
+  }
+]
