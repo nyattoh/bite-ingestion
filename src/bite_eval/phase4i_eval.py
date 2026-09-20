@@ -77,6 +77,7 @@ from bite_ingestion.profilers.dependency_dispersion_v4 import measure as measure
 
 SCHEMA_ID = "bite-phase4i-first-open/v0.1"
 REVISION = "phase4i-first-open-v0.1"
+I0_COMMIT_SHA = "435be913dab61e29077d49009602ef5e457ee621"
 I0_FREEZE_BLOB = "260c5ae4847776c33d27ea6718466d1dd814abdf"
 _REPO = Path(__file__).resolve().parents[2]
 ARTIFACT_DIR = _REPO / "artifacts" / "phase4i"
@@ -109,18 +110,7 @@ def _git_blob(path: str) -> str:
 
 
 def i0_commit_sha() -> str:
-    return subprocess.check_output(
-        [
-            "git",
-            "log",
-            "-1",
-            "--format=%H",
-            "--",
-            "benchmarks/spec/phase4i-first-open-freeze.json",
-        ],
-        cwd=_REPO,
-        text=True,
-    ).strip()
+    return I0_COMMIT_SHA
 
 
 def _dump(path: Path, doc: Mapping[str, Any]) -> None:
@@ -997,8 +987,7 @@ def _failure_classification(
 
 def validate_phase4i_result(doc: Mapping[str, Any]) -> list[str]:
     errs = _blob_errors()
-    committed_i0 = i0_commit_sha()
-    if committed_i0 and doc.get("protocol_commit_sha") != committed_i0:
+    if doc.get("protocol_commit_sha") != I0_COMMIT_SHA:
         errs.append("I0 commit drifted")
     if doc.get("p3f_evaluation_holdout_used") is not False:
         errs.append("p3f opened")

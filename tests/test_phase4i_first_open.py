@@ -28,10 +28,10 @@ from bite_bench.phase4i import (
 )
 from bite_bench.realstruct1 import sha256_bytes
 from bite_eval.phase4i_eval import (
+    I0_COMMIT_SHA,
     I0_FREEZE_BLOB,
     RESULT_PATH,
     _document_row,
-    i0_commit_sha,
     paired_summary,
     validate_phase4i_result,
 )
@@ -176,7 +176,7 @@ def test_i1_first_open_measured() -> None:
     assert result["no_winner_score"] is True
     assert result["no_wave1_vs_wave2_outcome"] is True
     assert result["p3f_evaluation_holdout_used"] is False
-    assert result["protocol_commit_sha"] == i0_commit_sha()
+    assert result["protocol_commit_sha"] == I0_COMMIT_SHA
     assert result["i0_freeze_blob"] == I0_FREEZE_BLOB
     assert "overall_score" not in result
     assert "best_arm" not in result
