@@ -1,0 +1,52 @@
+{
+  "allowed": [
+    "unsupported_loss",
+    "silent_loss",
+    "provenance_failure",
+    "planner_mismatch",
+    "unrelated_overmerge",
+    "execution_failure",
+    "lock_drift"
+  ],
+  "by_document": [
+    {
+      "failure_class": null,
+      "source_id": "rs1-dotenv-koel"
+    },
+    {
+      "failure_class": null,
+      "source_id": "rs1-dotenv-bookstack"
+    },
+    {
+      "failure_class": null,
+      "source_id": "rs1-dotenv-laravel"
+    },
+    {
+      "failure_class": null,
+      "source_id": "rs1-props-ratis-log4j"
+    },
+    {
+      "failure_class": null,
+      "source_id": "rs1-props-kafka-server"
+    },
+    {
+      "failure_class": null,
+      "source_id": "rs1-props-tomcat-logging"
+    },
+    {
+      "failure_class": null,
+      "source_id": "rs1-ini-polybar"
+    },
+    {
+      "failure_class": null,
+      "source_id": "rs1-ini-gogs"
+    },
+    {
+      "failure_class": null,
+      "source_id": "rs1-ini-tegra-common"
+    }
+  ],
+  "classes": [],
+  "revision": "phase4c-real-holdout-v0.1",
+  "schema": "bite-phase4c-failure-classification/v0.1"
+}

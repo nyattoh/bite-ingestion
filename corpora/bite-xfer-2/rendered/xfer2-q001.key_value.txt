@@ -1,0 +1,8 @@
+src_scope_q001=star_lock_q001
+src2_scope_q001=moon_lock_q001
+dst_star_lock_q001=ack_star_lock_q001
+dst_moon_lock_q001=ack_moon_lock_q001
+note_astro_q001_20=NGC 1300 blob_astro_q001_20
+note_astro_q001_21=blob_astro_q001_21
+note_astro_q001_22=blob_astro_q001_22 観測
+note_astro_q001_23=naïve blob_astro_q001_23

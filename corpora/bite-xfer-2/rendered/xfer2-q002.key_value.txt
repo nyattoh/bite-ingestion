@@ -1,0 +1,6 @@
+src_accn_q002=vitrine_lock_q002
+dst_vitrine_lock_q002=ack_vitrine_lock_q002
+copy_main_q002=same_main_q002_row
+copy_main_q002=same_main_q002_row
+note_museum_q002_20=NGC 1300 blob_museum_q002_20
+note_museum_q002_21=blob_museum_q002_21

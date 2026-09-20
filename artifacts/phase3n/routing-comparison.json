@@ -1,0 +1,706 @@
+{
+  "n_ok": 48,
+  "rows": [
+    {
+      "case_id": "p3m-redundant-high-r2",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "REDUCE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [
+        "REDUCE"
+      ],
+      "sequence_ok": true,
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-high-r3",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "REDUCE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [
+        "REDUCE"
+      ],
+      "sequence_ok": true,
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-mid-r2",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-mid-r3",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-low-r2",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-redundant-low-r3",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "redundant"
+    },
+    {
+      "case_id": "p3m-explicit_join-high-r2",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "INTEGRATE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-high-r3",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "INTEGRATE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-mid-r2",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-mid-r3",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-low-r2",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-explicit_join-low-r3",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "explicit_join"
+    },
+    {
+      "case_id": "p3m-anomaly-high-r2",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [
+        "UNTANGLE"
+      ],
+      "sequence_ok": true,
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-high-r3",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [
+        "UNTANGLE"
+      ],
+      "sequence_ok": true,
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-mid-r2",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-mid-r3",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-low-r2",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-anomaly-low-r3",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "anomaly"
+    },
+    {
+      "case_id": "p3m-neutral-high-r2",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-high-r3",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-mid-r2",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-mid-r3",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-low-r2",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-neutral-low-r3",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "neutral"
+    },
+    {
+      "case_id": "p3m-redundant_join-high-r2",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-high-r3",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-mid-r2",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-mid-r3",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-low-r2",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-redundant_join-low-r3",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "redundant_join"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-high-r2",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE"
+      ],
+      "sequence_ok": true,
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-high-r3",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE"
+      ],
+      "sequence_ok": true,
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-mid-r2",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-mid-r3",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-low-r2",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_redundant-low-r3",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "anomaly_redundant"
+    },
+    {
+      "case_id": "p3m-anomaly_join-high-r2",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-high-r3",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-mid-r2",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-mid-r3",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-low-r2",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-anomaly_join-low-r3",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "anomaly_join"
+    },
+    {
+      "case_id": "p3m-all_three-high-r2",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-high-r3",
+      "cut_present": false,
+      "dispersion": "high",
+      "expected_sequence": [
+        "UNTANGLE",
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "gated": true,
+      "mean_edge_distance": 25.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [
+        "UNTANGLE",
+        "REDUCE",
+        "INTEGRATE"
+      ],
+      "sequence_ok": true,
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-mid-r2",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-mid-r3",
+      "cut_present": false,
+      "dispersion": "mid",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 3.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-low-r2",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 2,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "all_three"
+    },
+    {
+      "case_id": "p3m-all_three-low-r3",
+      "cut_present": false,
+      "dispersion": "low",
+      "expected_sequence": [],
+      "gated": false,
+      "mean_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "replica": 3,
+      "sequence": [],
+      "sequence_ok": true,
+      "texture": "all_three"
+    }
+  ],
+  "schema": "bite-phase3n-routing-comparison/v0.1"
+}

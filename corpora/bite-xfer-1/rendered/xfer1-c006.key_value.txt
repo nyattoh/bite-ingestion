@@ -1,0 +1,6 @@
+gate_bui_c006=node_bui_c006 key=batch_c006
+bin_node_bui_c006=ack_bui_c006 key=batch_c006
+copy_c006=same_c006_row
+copy_c006=same_c006_row
+note_build_c006_20=blob_build_c006_20
+note_build_c006_21=blob_build_c006_21

@@ -1,0 +1,1207 @@
+{
+  "candidates": {
+    "A_mean_edge_distance": {
+      "best": {
+        "T_high": 4,
+        "T_low": 1,
+        "bin_distribution": {
+          "high": 60,
+          "low": 24,
+          "mid": 24
+        },
+        "bin_ordering_coverage": 1.0,
+        "format_consistency": 1.0,
+        "negative_adversarial_elevated_bin_rate": 0.0,
+        "non_collapse": true
+      },
+      "n_eligible": 32,
+      "n_points": 32,
+      "points": [
+        {
+          "T_high": 4,
+          "T_low": 1,
+          "bin_distribution": {
+            "high": 60,
+            "low": 24,
+            "mid": 24
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 5,
+          "T_low": 1,
+          "bin_distribution": {
+            "high": 36,
+            "low": 24,
+            "mid": 48
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 6,
+          "T_low": 1,
+          "bin_distribution": {
+            "high": 32,
+            "low": 24,
+            "mid": 52
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 7,
+          "T_low": 1,
+          "bin_distribution": {
+            "high": 32,
+            "low": 24,
+            "mid": 52
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 8,
+          "T_low": 1,
+          "bin_distribution": {
+            "high": 32,
+            "low": 24,
+            "mid": 52
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 9,
+          "T_low": 1,
+          "bin_distribution": {
+            "high": 32,
+            "low": 24,
+            "mid": 52
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 10,
+          "T_low": 1,
+          "bin_distribution": {
+            "high": 24,
+            "low": 24,
+            "mid": 60
+          },
+          "bin_ordering_coverage": 0.8888888888888888,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 4,
+          "T_low": 2,
+          "bin_distribution": {
+            "high": 60,
+            "low": 36,
+            "mid": 12
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 5,
+          "T_low": 2,
+          "bin_distribution": {
+            "high": 36,
+            "low": 36,
+            "mid": 36
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 6,
+          "T_low": 2,
+          "bin_distribution": {
+            "high": 32,
+            "low": 36,
+            "mid": 40
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 7,
+          "T_low": 2,
+          "bin_distribution": {
+            "high": 32,
+            "low": 36,
+            "mid": 40
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 8,
+          "T_low": 2,
+          "bin_distribution": {
+            "high": 32,
+            "low": 36,
+            "mid": 40
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 9,
+          "T_low": 2,
+          "bin_distribution": {
+            "high": 32,
+            "low": 36,
+            "mid": 40
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 10,
+          "T_low": 2,
+          "bin_distribution": {
+            "high": 24,
+            "low": 36,
+            "mid": 48
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 4,
+          "T_low": 3,
+          "bin_distribution": {
+            "high": 60,
+            "low": 48,
+            "mid": 0
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 5,
+          "T_low": 3,
+          "bin_distribution": {
+            "high": 36,
+            "low": 48,
+            "mid": 24
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 6,
+          "T_low": 3,
+          "bin_distribution": {
+            "high": 32,
+            "low": 48,
+            "mid": 28
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 7,
+          "T_low": 3,
+          "bin_distribution": {
+            "high": 32,
+            "low": 48,
+            "mid": 28
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 8,
+          "T_low": 3,
+          "bin_distribution": {
+            "high": 32,
+            "low": 48,
+            "mid": 28
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 9,
+          "T_low": 3,
+          "bin_distribution": {
+            "high": 32,
+            "low": 48,
+            "mid": 28
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 10,
+          "T_low": 3,
+          "bin_distribution": {
+            "high": 24,
+            "low": 48,
+            "mid": 36
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 5,
+          "T_low": 4,
+          "bin_distribution": {
+            "high": 36,
+            "low": 60,
+            "mid": 12
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 6,
+          "T_low": 4,
+          "bin_distribution": {
+            "high": 32,
+            "low": 60,
+            "mid": 16
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 7,
+          "T_low": 4,
+          "bin_distribution": {
+            "high": 32,
+            "low": 60,
+            "mid": 16
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 8,
+          "T_low": 4,
+          "bin_distribution": {
+            "high": 32,
+            "low": 60,
+            "mid": 16
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 9,
+          "T_low": 4,
+          "bin_distribution": {
+            "high": 32,
+            "low": 60,
+            "mid": 16
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 10,
+          "T_low": 4,
+          "bin_distribution": {
+            "high": 24,
+            "low": 60,
+            "mid": 24
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 6,
+          "T_low": 5,
+          "bin_distribution": {
+            "high": 32,
+            "low": 76,
+            "mid": 0
+          },
+          "bin_ordering_coverage": 0.8888888888888888,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 7,
+          "T_low": 5,
+          "bin_distribution": {
+            "high": 32,
+            "low": 76,
+            "mid": 0
+          },
+          "bin_ordering_coverage": 0.8888888888888888,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 8,
+          "T_low": 5,
+          "bin_distribution": {
+            "high": 32,
+            "low": 76,
+            "mid": 0
+          },
+          "bin_ordering_coverage": 0.8888888888888888,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 9,
+          "T_low": 5,
+          "bin_distribution": {
+            "high": 32,
+            "low": 76,
+            "mid": 0
+          },
+          "bin_ordering_coverage": 0.8888888888888888,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        },
+        {
+          "T_high": 10,
+          "T_low": 5,
+          "bin_distribution": {
+            "high": 24,
+            "low": 76,
+            "mid": 8
+          },
+          "bin_ordering_coverage": 0.8888888888888888,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.0,
+          "non_collapse": true
+        }
+      ],
+      "pre_threshold": {
+        "continuous_dispersion_ordering_coverage": 1.0,
+        "continuous_score": "mean_edge_distance",
+        "id": "A_mean_edge_distance",
+        "n_ordering_cells": 18,
+        "n_scale_replicas": 2,
+        "scale_stability": 1.0
+      },
+      "status": "eligible"
+    },
+    "B_mean_edge_distance_norm": {
+      "best": {
+        "T_high": 0.3,
+        "T_low": 0.05,
+        "bin_distribution": {
+          "high": 48,
+          "low": 20,
+          "mid": 40
+        },
+        "bin_ordering_coverage": 1.0,
+        "format_consistency": 1.0,
+        "negative_adversarial_elevated_bin_rate": 0.2,
+        "non_collapse": true
+      },
+      "n_eligible": 30,
+      "n_points": 30,
+      "points": [
+        {
+          "T_high": 0.3,
+          "T_low": 0.05,
+          "bin_distribution": {
+            "high": 48,
+            "low": 20,
+            "mid": 40
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.4,
+          "T_low": 0.05,
+          "bin_distribution": {
+            "high": 44,
+            "low": 20,
+            "mid": 44
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.5,
+          "T_low": 0.05,
+          "bin_distribution": {
+            "high": 36,
+            "low": 20,
+            "mid": 52
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.6,
+          "T_low": 0.05,
+          "bin_distribution": {
+            "high": 24,
+            "low": 20,
+            "mid": 64
+          },
+          "bin_ordering_coverage": 0.8888888888888888,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.75,
+          "T_low": 0.05,
+          "bin_distribution": {
+            "high": 24,
+            "low": 20,
+            "mid": 64
+          },
+          "bin_ordering_coverage": 0.8888888888888888,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.9,
+          "T_low": 0.05,
+          "bin_distribution": {
+            "high": 24,
+            "low": 20,
+            "mid": 64
+          },
+          "bin_ordering_coverage": 0.8888888888888888,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.3,
+          "T_low": 0.1,
+          "bin_distribution": {
+            "high": 48,
+            "low": 40,
+            "mid": 20
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.4,
+          "T_low": 0.1,
+          "bin_distribution": {
+            "high": 44,
+            "low": 40,
+            "mid": 24
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.5,
+          "T_low": 0.1,
+          "bin_distribution": {
+            "high": 36,
+            "low": 40,
+            "mid": 32
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.6,
+          "T_low": 0.1,
+          "bin_distribution": {
+            "high": 24,
+            "low": 40,
+            "mid": 44
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.75,
+          "T_low": 0.1,
+          "bin_distribution": {
+            "high": 24,
+            "low": 40,
+            "mid": 44
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.9,
+          "T_low": 0.1,
+          "bin_distribution": {
+            "high": 24,
+            "low": 40,
+            "mid": 44
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.3,
+          "T_low": 0.15,
+          "bin_distribution": {
+            "high": 48,
+            "low": 52,
+            "mid": 8
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.4,
+          "T_low": 0.15,
+          "bin_distribution": {
+            "high": 44,
+            "low": 52,
+            "mid": 12
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.5,
+          "T_low": 0.15,
+          "bin_distribution": {
+            "high": 36,
+            "low": 52,
+            "mid": 20
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.6,
+          "T_low": 0.15,
+          "bin_distribution": {
+            "high": 24,
+            "low": 52,
+            "mid": 32
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.75,
+          "T_low": 0.15,
+          "bin_distribution": {
+            "high": 24,
+            "low": 52,
+            "mid": 32
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.9,
+          "T_low": 0.15,
+          "bin_distribution": {
+            "high": 24,
+            "low": 52,
+            "mid": 32
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.3,
+          "T_low": 0.2,
+          "bin_distribution": {
+            "high": 48,
+            "low": 60,
+            "mid": 0
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.4,
+          "T_low": 0.2,
+          "bin_distribution": {
+            "high": 44,
+            "low": 60,
+            "mid": 4
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.5,
+          "T_low": 0.2,
+          "bin_distribution": {
+            "high": 36,
+            "low": 60,
+            "mid": 12
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.6,
+          "T_low": 0.2,
+          "bin_distribution": {
+            "high": 24,
+            "low": 60,
+            "mid": 24
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.75,
+          "T_low": 0.2,
+          "bin_distribution": {
+            "high": 24,
+            "low": 60,
+            "mid": 24
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.9,
+          "T_low": 0.2,
+          "bin_distribution": {
+            "high": 24,
+            "low": 60,
+            "mid": 24
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.3,
+          "T_low": 0.25,
+          "bin_distribution": {
+            "high": 48,
+            "low": 60,
+            "mid": 0
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.4,
+          "T_low": 0.25,
+          "bin_distribution": {
+            "high": 44,
+            "low": 60,
+            "mid": 4
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.5,
+          "T_low": 0.25,
+          "bin_distribution": {
+            "high": 36,
+            "low": 60,
+            "mid": 12
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.6,
+          "T_low": 0.25,
+          "bin_distribution": {
+            "high": 24,
+            "low": 60,
+            "mid": 24
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.75,
+          "T_low": 0.25,
+          "bin_distribution": {
+            "high": 24,
+            "low": 60,
+            "mid": 24
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_high": 0.9,
+          "T_low": 0.25,
+          "bin_distribution": {
+            "high": 24,
+            "low": 60,
+            "mid": 24
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        }
+      ],
+      "pre_threshold": {
+        "continuous_dispersion_ordering_coverage": 1.0,
+        "continuous_score": "mean_edge_distance_norm",
+        "id": "B_mean_edge_distance_norm",
+        "n_ordering_cells": 18,
+        "n_scale_replicas": 2,
+        "scale_stability": 1.0
+      },
+      "status": "eligible"
+    },
+    "C_raw_and_norm": {
+      "best": {
+        "T_norm_high": 0.5,
+        "T_norm_low": 0.1,
+        "T_raw_high": 4,
+        "T_raw_low": 1,
+        "bin_distribution": {
+          "high": 36,
+          "low": 20,
+          "mid": 52
+        },
+        "bin_ordering_coverage": 1.0,
+        "format_consistency": 1.0,
+        "negative_adversarial_elevated_bin_rate": 0.2,
+        "non_collapse": true
+      },
+      "n_eligible": 20,
+      "n_points": 20,
+      "points": [
+        {
+          "T_norm_high": 0.5,
+          "T_norm_low": 0.1,
+          "T_raw_high": 4,
+          "T_raw_low": 1,
+          "bin_distribution": {
+            "high": 36,
+            "low": 20,
+            "mid": 52
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.75,
+          "T_norm_low": 0.1,
+          "T_raw_high": 4,
+          "T_raw_low": 1,
+          "bin_distribution": {
+            "high": 24,
+            "low": 20,
+            "mid": 64
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.5,
+          "T_norm_low": 0.25,
+          "T_raw_high": 4,
+          "T_raw_low": 1,
+          "bin_distribution": {
+            "high": 36,
+            "low": 24,
+            "mid": 48
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.75,
+          "T_norm_low": 0.25,
+          "T_raw_high": 4,
+          "T_raw_low": 1,
+          "bin_distribution": {
+            "high": 24,
+            "low": 24,
+            "mid": 60
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.5,
+          "T_norm_low": 0.1,
+          "T_raw_high": 9,
+          "T_raw_low": 1,
+          "bin_distribution": {
+            "high": 32,
+            "low": 20,
+            "mid": 56
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.75,
+          "T_norm_low": 0.1,
+          "T_raw_high": 9,
+          "T_raw_low": 1,
+          "bin_distribution": {
+            "high": 24,
+            "low": 20,
+            "mid": 64
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.5,
+          "T_norm_low": 0.25,
+          "T_raw_high": 9,
+          "T_raw_low": 1,
+          "bin_distribution": {
+            "high": 32,
+            "low": 24,
+            "mid": 52
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.75,
+          "T_norm_low": 0.25,
+          "T_raw_high": 9,
+          "T_raw_low": 1,
+          "bin_distribution": {
+            "high": 24,
+            "low": 24,
+            "mid": 60
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.5,
+          "T_norm_low": 0.1,
+          "T_raw_high": 4,
+          "T_raw_low": 2,
+          "bin_distribution": {
+            "high": 36,
+            "low": 28,
+            "mid": 44
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.75,
+          "T_norm_low": 0.1,
+          "T_raw_high": 4,
+          "T_raw_low": 2,
+          "bin_distribution": {
+            "high": 24,
+            "low": 28,
+            "mid": 56
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.5,
+          "T_norm_low": 0.25,
+          "T_raw_high": 4,
+          "T_raw_low": 2,
+          "bin_distribution": {
+            "high": 36,
+            "low": 36,
+            "mid": 36
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.75,
+          "T_norm_low": 0.25,
+          "T_raw_high": 4,
+          "T_raw_low": 2,
+          "bin_distribution": {
+            "high": 24,
+            "low": 36,
+            "mid": 48
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.5,
+          "T_norm_low": 0.1,
+          "T_raw_high": 9,
+          "T_raw_low": 2,
+          "bin_distribution": {
+            "high": 32,
+            "low": 28,
+            "mid": 48
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.75,
+          "T_norm_low": 0.1,
+          "T_raw_high": 9,
+          "T_raw_low": 2,
+          "bin_distribution": {
+            "high": 24,
+            "low": 28,
+            "mid": 56
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.5,
+          "T_norm_low": 0.25,
+          "T_raw_high": 9,
+          "T_raw_low": 2,
+          "bin_distribution": {
+            "high": 32,
+            "low": 36,
+            "mid": 40
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.75,
+          "T_norm_low": 0.25,
+          "T_raw_high": 9,
+          "T_raw_low": 2,
+          "bin_distribution": {
+            "high": 24,
+            "low": 36,
+            "mid": 48
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.5,
+          "T_norm_low": 0.1,
+          "T_raw_high": 9,
+          "T_raw_low": 4,
+          "bin_distribution": {
+            "high": 32,
+            "low": 36,
+            "mid": 40
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.75,
+          "T_norm_low": 0.1,
+          "T_raw_high": 9,
+          "T_raw_low": 4,
+          "bin_distribution": {
+            "high": 24,
+            "low": 36,
+            "mid": 48
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.5,
+          "T_norm_low": 0.25,
+          "T_raw_high": 9,
+          "T_raw_low": 4,
+          "bin_distribution": {
+            "high": 32,
+            "low": 52,
+            "mid": 24
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        },
+        {
+          "T_norm_high": 0.75,
+          "T_norm_low": 0.25,
+          "T_raw_high": 9,
+          "T_raw_low": 4,
+          "bin_distribution": {
+            "high": 24,
+            "low": 52,
+            "mid": 32
+          },
+          "bin_ordering_coverage": 1.0,
+          "format_consistency": 1.0,
+          "negative_adversarial_elevated_bin_rate": 0.2,
+          "non_collapse": true
+        }
+      ],
+      "pre_threshold": {
+        "continuous_dispersion_ordering_coverage": 1.0,
+        "continuous_score": null,
+        "id": "C_raw_and_norm",
+        "n_ordering_cells": 18,
+        "n_scale_replicas": 2,
+        "scale_stability": 1.0,
+        "weighted_sum": false
+      },
+      "status": "eligible"
+    }
+  },
+  "comparable_ids": [
+    "A_mean_edge_distance",
+    "B_mean_edge_distance_norm",
+    "C_raw_and_norm"
+  ],
+  "freeze_revision": "phase3f-routing-calibration-freeze-v0.3",
+  "grids_extended": false,
+  "schema": "bite-phase3g-calibration-grid-search/v0.1",
+  "selected_id": "A_mean_edge_distance",
+  "tolerance_added": false
+}

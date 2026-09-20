@@ -1,0 +1,6 @@
+src_scope_q005=star_lock_q005
+dst_star_lock_q005=ack_star_lock_q005
+copy_main_q005=same_main_q005_row
+copy_main_q005=same_main_q005_row
+alert_q005=CCD readout FATAL
+note_astro_q005_20=NGC 1300 blob_astro_q005_20

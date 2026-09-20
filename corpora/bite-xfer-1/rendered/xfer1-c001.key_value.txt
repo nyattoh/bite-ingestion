@@ -1,0 +1,8 @@
+gate_cat_c001=node_cat_c001
+bin_node_cat_c001=ack_cat_c001
+gate2_catz_c001=node_catz_c001
+bin2_node_catz_c001=ack_catz_c001
+note_catalog_c001_20=blob_catalog_c001_20
+note_catalog_c001_21=blob_catalog_c001_21
+note_catalog_c001_22=blob_catalog_c001_22
+note_catalog_c001_23=blob_catalog_c001_23

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4b-scorer-addendum-freeze.schema.json",
+  "title": "BITE Phase-4B scorer addendum freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "no_eval_execution",
+    "p3f_evaluation_holdout_used",
+    "dev_source_ids",
+    "eval_source_ids",
+    "overlay_v2_sha256",
+    "b1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase4b-scorer-addendum-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4b-scorer-addendum-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE4B_SCORER_ADDENDUM_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE4A_REAL_CORPUS_FROZEN"
+    },
+    "no_eval_execution": { "type": "boolean", "const": true },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "dev_source_ids": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "eval_source_ids": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9
+    },
+    "overlay_v2_sha256": { "type": "string", "minLength": 64, "maxLength": 64 },
+    "b1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE4B_REAL_ADAPTER_READY",
+          "PHASE4B_REAL_ADAPTER_PARTIAL",
+          "PHASE4B_REAL_ADAPTER_BLOCKED"
+        ]
+      }
+    }
+  }
+}

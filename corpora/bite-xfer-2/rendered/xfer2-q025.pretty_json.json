@@ -1,0 +1,78 @@
+[
+  {
+    "k": "src_scope_q025",
+    "v": "star_lock_q025"
+  },
+  {
+    "k": "src2_scope_q025",
+    "v": "moon_lock_q025"
+  },
+  {
+    "k": "note_astro_q025_00",
+    "v": "blob_astro_q025_00"
+  },
+  {
+    "k": "note_astro_q025_01",
+    "v": "blob_astro_q025_01 観測"
+  },
+  {
+    "k": "note_astro_q025_02",
+    "v": "naïve blob_astro_q025_02"
+  },
+  {
+    "k": "note_astro_q025_03",
+    "v": "blob_astro_q025_03 shift = 1"
+  },
+  {
+    "k": "note_astro_q025_04",
+    "v": "blob_astro_q025_04 said \"ok\""
+  },
+  {
+    "k": "note_astro_q025_05",
+    "v": "α blob_astro_q025_05"
+  },
+  {
+    "k": "note_astro_q025_06",
+    "v": "NGC 1300 blob_astro_q025_06"
+  },
+  {
+    "k": "note_astro_q025_07",
+    "v": "blob_astro_q025_07"
+  },
+  {
+    "k": "dst_star_lock_q025",
+    "v": "ack_star_lock_q025"
+  },
+  {
+    "k": "dst_moon_lock_q025",
+    "v": "ack_moon_lock_q025"
+  },
+  {
+    "k": "copy_alpha_q025",
+    "v": "same_alpha_q025_row"
+  },
+  {
+    "k": "copy_alpha_q025",
+    "v": "same_alpha_q025_row"
+  },
+  {
+    "k": "copy_beta_q025",
+    "v": "same_beta_q025_row"
+  },
+  {
+    "k": "gap_beta_q025",
+    "v": "void_beta_q025"
+  },
+  {
+    "k": "copy_beta_q025",
+    "v": "same_beta_q025_row"
+  },
+  {
+    "k": "mate_a_q025",
+    "v": "crate_a_q025 id=plate_q025"
+  },
+  {
+    "k": "mate_b_q025",
+    "v": "crate_b_q025 id=plate_q025"
+  }
+]

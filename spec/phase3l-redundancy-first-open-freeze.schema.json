@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3l-redundancy-first-open-freeze.schema.json",
+  "title": "BITE Phase-3L redundancy first-open protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "k0_commit_sha",
+    "p3f_evaluation_holdout_used",
+    "no_threshold",
+    "n_evaluation_surfaces",
+    "l1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3l-redundancy-first-open-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3l-redundancy-first-open-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE3L_REDUNDANCY_HOLDOUT_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE3K_REDUNDANCY_SENSOR_READY"
+    },
+    "k0_commit_sha": {
+      "type": "string",
+      "const": "526601b68a0eec9861b012ef5ddc67078447bf36"
+    },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_threshold": { "type": "boolean", "const": true },
+    "n_evaluation_surfaces": { "type": "integer", "const": 60 },
+    "l1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE3L_REDUNDANCY_HOLDOUT_CONFIRMED",
+          "PHASE3L_REDUNDANCY_HOLDOUT_FAILED",
+          "PHASE3L_REDUNDANCY_HOLDOUT_BLOCKED"
+        ]
+      }
+    }
+  }
+}

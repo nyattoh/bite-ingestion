@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4b-evaluation-lock.schema.json",
+  "title": "BITE Phase-4B evaluation lock v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "b0_commit_sha",
+    "adapter_blob",
+    "overlay_v2_blob",
+    "t_high_reference",
+    "eval_unopened",
+    "p3f_unopened",
+    "no_baseline_execution",
+    "dev_source_ids",
+    "eval_source_ids"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4b-evaluation-lock/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4b-real-adapter-v0.1"
+    },
+    "b0_commit_sha": {
+      "type": "string",
+      "const": "70fa0ce678611db122a74a5fbe730fccf5bf12fb"
+    },
+    "t_high_reference": { "type": "integer", "const": 4 },
+    "eval_unopened": { "type": "boolean", "const": true },
+    "p3f_unopened": { "type": "boolean", "const": true },
+    "no_baseline_execution": { "type": "boolean", "const": true }
+  }
+}

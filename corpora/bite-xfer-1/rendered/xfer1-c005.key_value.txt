@@ -1,0 +1,6 @@
+gate_cat_c005=node_cat_c005
+bin_node_cat_c005=ack_cat_c005
+copy_c005=same_c005_row
+copy_c005=same_c005_row
+alert_c005=rack overheat FATAL
+note_catalog_c005_20=blob_catalog_c005_20
