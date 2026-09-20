@@ -1,0 +1,31 @@
+[tox]
+envlist = lint, cov, py38, py39
+skip_missing_interpreters = True
+
+[testenv]
+setenv =
+    LANG=en_US.UTF-8
+    PYTHONPATH = {toxinidir}
+deps =
+     -r{toxinidir}/test-requirements.txt
+commands =
+     pytest tests {posargs}
+
+[testenv:lint]
+setenv =
+    LANG=en_US.UTF-8
+    PYTHONPATH = {toxinidir}
+deps =
+     -r{toxinidir}/test-requirements.txt
+commands =
+     isort tests pyavreceiver --check-only
+     black tests pyavreceiver --check --fast --quiet
+     pylint pyavreceiver tests
+[testenv:cov]
+setenv =
+    LANG=en_US.UTF-8
+    PYTHONPATH = {toxinidir}
+deps =
+     -r{toxinidir}/test-requirements.txt
+commands =
+     pytest tests --cov {posargs}

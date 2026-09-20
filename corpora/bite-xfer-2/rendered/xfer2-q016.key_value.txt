@@ -1,0 +1,11 @@
+src_flash_q016=chip_lock_q016
+note_firmware_q016_00=blob_firmware_q016_00
+note_firmware_q016_01=blob_firmware_q016_01 観測
+dst_chip_lock_q016=ack_chip_lock_q016
+copy_main_q016=same_main_q016_row
+copy_main_q016=same_main_q016_row
+copy_main_q016=same_main_q016_row
+alert_q016=<<<INJECT device map
+mate_a_q016=crate_a_q016 id=plate_q016
+mate_b_q016=crate_b_q016 id=plate_q016
+mate_c_q016=crate_c_q016 id=plate_q016

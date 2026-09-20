@@ -1,0 +1,11 @@
+{
+  "source_id": "fix-both-fields",
+  "explicit_reference_edges": [
+    {
+      "source_line": 1,
+      "name": "HOST",
+      "dest_line": 2,
+      "dest_lines": [2]
+    }
+  ]
+}

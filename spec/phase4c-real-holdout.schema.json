@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4c-real-holdout.schema.json",
+  "title": "BITE Phase-4C REALSTRUCT-1 holdout result v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "eval_opened",
+    "n_eval",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4c-real-holdout/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4c-real-holdout-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "const": "8ed272fc7cd0487386656f2be7120b554be7921a"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE4C_REAL_HOLDOUT_MEASURED",
+        "PHASE4C_REAL_HOLDOUT_FAILED",
+        "PHASE4C_REAL_HOLDOUT_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "eval_opened": { "type": "boolean", "const": true },
+    "n_eval": { "type": "integer", "const": 9 },
+    "claim_boundary": {
+      "type": "string",
+      "const": "first-open measurement on 9 frozen REALSTRUCT-1 evaluation documents"
+    }
+  }
+}

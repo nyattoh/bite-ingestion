@@ -1,0 +1,858 @@
+{
+  "h1_commit_sha": "b50e36d2916ff8de7eaae37055fef6bf114d2008",
+  "n_rejections": 170,
+  "rejections": [
+    {
+      "candidate": "JohnRSim/0xTr.ee:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "license 'BSD-3-Clause' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "JCOMAIA/AiraHub2:.ENV.Example",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "N5GEH/n5geh.tools.mqtt-gateway:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "license 'BSD-3-Clause' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "sannjayy/django-startproject:.env.Example",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "netlify/explorers:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "Rebuild-Black-Business/RBB-Website:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "chronicle/logstory:.env.example.rest",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "shopsmart/github-actions:.env.example",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "MuhammadIndar/MCP-RLM:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "AlexandreDresch/98.portfolio:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "rodneylab/sveltekit-blog-mdx:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "license 'BSD-3-Clause' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "rodneylab/sveltekit-hcaptcha-form:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "license 'BSD-3-Clause' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "rafi/notebook:.env.example",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "oslabs-beta/stitch:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "iva2k/total-app:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "danielsogl/lol-api-wrapper:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "JosueIsOffline/finance-platform:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "DeviantRacoon/Flask-Core-Python:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "sridhar-sp/task-scheduler:.env.Example",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "CyggnusDevTeam/ShuffleGenie:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "yashkathe/F1-API-JSON:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "license 'GPL-3.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "StephanyBatista/EmailN:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "bramforth-ai/voice_agent_kb_builder:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "ansanloms/mirakc-ui:.env.example",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "jlengstorf/sanity-gatsby-portfolio:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "jlengstorf/gatsby-feedback-widget:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "ZigZagExchange/market-maker-v3:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "c100k/ddot:.env.example.2",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "Cucuteanu-Tudor-912/WLAN-vulnerability-scanner:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "rodneylab/narcissus-blog:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "license 'BSD-3-Clause' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "juancaalcaraz/automatizacion-de-reportes-de-ventas:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "zainulabedeen123/best-saas-kit:.env.Example",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "GabrielCarames/grammar-gate:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "TeamMrWeb/parches-chat:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "fahdaguenouz/mister-quiz:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "tizerk/hal9000:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "rodneylab/sveltekit-faq-page-seo:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "license 'BSD-3-Clause' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "modred84/the-operator:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "Draichi/formula1-AI:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "license 'GPL-3.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "Canopix/hermes-expense-tracker:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "deerwan/nav:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "bonsite/bonsite:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "jlengstorf/gatsby-auth0-app:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "prismhead26/Patient-Portal-App-Team-Colab:.env.Example",
+      "family": "dotenv-like",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "Yi-Xuan-122/dc-update-track-bot:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ahmedmusawir/ts-node-langchain-openai-v1-2023:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "Ashot72/AI-Chatbot:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "JefeThePug/Practical-Python-Code-Adventure:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "newtritious/Newtritious-v1:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "luizomf/vps_deploy_template:.env.example",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "c100k/ddot:.env.example.1",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "gatsbyjs/gatsby-starter-kontent-ai-homepage-ts:.env.EXAMPLE",
+      "family": "dotenv-like",
+      "reason": "license '0BSD' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "lfarssi/mister-quiz:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "mophos/covid-api:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "dhruvpatel16120/UdaanSetu.AI:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "Purva-D-Shah/proton-privoxy:.env.example.txt",
+      "family": "dotenv-like",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:common/common.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "vals-productions/sqlighter:demo/ios-demo-prj/ios-demo-prj/script/prefixes.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "kowalcj0/gee:secrets.properties",
+      "family": "properties",
+      "reason": "license 'GPL-3.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "devsuperior/jdbc-postgres:db.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "jiangxin/freemind-mmx:freemind/freemind.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "BeelGroup/Docear-Desktop:freeplane/viewer-resources/freeplane.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:alfresco-dev/common.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:delius-mis-dev/mis-common.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "aws-solutions-library-samples/guidance-for-machine-learning-inference-on-aws:config.properties",
+      "family": "properties",
+      "reason": "license 'MIT-0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "lxsang/PTerm:.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "X0Ken/FreeMind:freemind.properties",
+      "family": "properties",
+      "reason": "license 'GPL-2.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:delius-training/delius-training.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "aterai/java-swing-tips:examples/ResourceMenuBar/src/resources/example/Main.properties",
+      "family": "properties",
+      "reason": "repository overlap with another primary document"
+    },
+    {
+      "candidate": "aws-samples/best-practices-for-fastapi-on-inferentia:fast-api/docker.properties",
+      "family": "properties",
+      "reason": "license 'MIT-0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ltrr-arizona-edu/tellervo:src/main/resources/prefs.properties",
+      "family": "properties",
+      "reason": "license 'GPL-3.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "oliverlloyd/jmeter-ec2:jmeter-ec2.properties",
+      "family": "properties",
+      "reason": "license 'GPL-3.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "joekoolade/JOE:classpath-0.98/resource/gnu/java/awt/peer/gtk/font.properties",
+      "family": "properties",
+      "reason": "license 'EPL-2.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "wso2/performance-common:distribution/scripts/jmeter/user.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "wso2/ob-conformance-suite:db.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:delius-prod/delius-prod.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "pekepeke/dotfiles:.freemind/user.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "Lotame/DataStream_Cookbook:Recipes/lib/lotame.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:delius-mis-dev/delius-mis-dev.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "SiliconLabs/simplicity_sdk:.properties",
+      "family": "properties",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "rhuitl/uClinux:lib/classpath/resource/gnu/java/awt/peer/gtk/font.properties",
+      "family": "properties",
+      "reason": "license 'GPL-2.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "onap/archived-logging-analytics:pylog/version.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "threerings/game-gardens:server/src/main/resources/messages.properties",
+      "family": "properties",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "gptankit/serviceq:sq.properties",
+      "family": "properties",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:delius-training/common.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:cr-jira-prod/cr-jira-prod.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "gwanted/fabric-gm:ci.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:alfresco-dev/alfresco-dev.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "Zoomdata/zoomdata-formula:zoomdata/templates/service.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "hypertrace/hypertrace:kubernetes/config/hypertrace.properties",
+      "family": "properties",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "WebEducationPlatform/CRM:vk.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "kbase/kb_sdk:src/java/us/kbase/templates/python_server.vm.properties",
+      "family": "properties",
+      "reason": "live credentials / private keys / obvious real secrets"
+    },
+    {
+      "candidate": "boussouira/android-arabic-reader:ant.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "Kotlin/kotlin-jupyter-libraries:.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "andrewssobral/bgslibrary:.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "onap/archived-logging-analytics:version.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "yinchengtsinghua/Fabric-Chinese:ci.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:alfresco-sbx/alfresco-sbx.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "labos/locanda:h2.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "kbase/kb_sdk:src/java/us/kbase/templates/module_run_docker.vm.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "WebEducationPlatform/CRM:ip.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:delius-pre-prod/delius-pre-prod.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "aws-samples/best-practices-for-fastapi-on-inferentia:config.properties",
+      "family": "properties",
+      "reason": "license 'MIT-0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:common-prod/common.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:alfresco-sbx/common.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "OraOpenSource/apexbackup:custom.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "reagle/thunderdell:freeplane-config/user.properties",
+      "family": "properties",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ministryofjustice/hmpps-env-configs:delius-stage/delius-stage.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "aterai/java-swing-tips:examples/FileHistory/src/resources/example/Main.properties",
+      "family": "properties",
+      "reason": "repository overlap with another primary document"
+    },
+    {
+      "candidate": "SiliconLabs/gecko_sdk:.properties",
+      "family": "properties",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "kbase/kb_sdk:src/java/us/kbase/templates/module_run_bash.vm.properties",
+      "family": "properties",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "aws-samples/best-practices-for-fastapi-on-inferentia:trace-model/docker.properties",
+      "family": "properties",
+      "reason": "license 'MIT-0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "javapathfinder/jpf-core:jpf.properties",
+      "family": "properties",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "maddev-engenuity/AdversaryEmulation:labs/lab_4.2/PyFuscation/PSconfig.ini",
+      "family": "ini_cfg",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/speech/cfg_rvae_Causal.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/speech/cfg_storn.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/motion/cfg_storn.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/motion/cfg_dsae.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/motion/cfg_rvae-Causal.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/speech/cfg_dkf.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "rehlds/Metamod-R:metamod/extra/config.ini",
+      "family": "ini_cfg",
+      "reason": "license 'GPL-3.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "xmd5a2/qgis-xtopo:config.ini",
+      "family": "ini_cfg",
+      "reason": "license 'GPL-3.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/speech/cfg_vae.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "phreda4/r4:r4.ini",
+      "family": "ini_cfg",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "ICGC-TCGA-PanCancer/dkfz_dockered_workflows:testConfigPC58_29.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "aws-samples/aws-research-workshops:notebooks/parallelcluster/config/batch_athena_sh.ini",
+      "family": "ini_cfg",
+      "reason": "license 'MIT-0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ldelossa/dotfiles:config/wob/wob-dark.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "maddev-engenuity/AdversaryEmulation:labs/lab_4.3/tools/PSconfig.ini",
+      "family": "ini_cfg",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/speech/cfg_dsae.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "heynemann/tornado-angular:tox.ini",
+      "family": "ini_cfg",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "HL7/smart-web-messaging:ig.ini",
+      "family": "ini_cfg",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "plone/plone.app.tiles:mx.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/motion/cfg_srnn.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/motion/cfg_rvae_NonCausal.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ICGC-TCGA-PanCancer/dkfz_dockered_workflows:testConfig.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/speech/cfg_srnn.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ryanmrestivo/red-team:Evasion-&-Obfuscation/PyFuscation/PSconfig.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "Bots-United/metamod-p:doc/plugins.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/motion/cfg_vrnn.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ldelossa/dotfiles:config/wob/wob-light.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "arvados/arvados:tools/cluster-activity/pytest.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "jinghuazhao/INF:cardio/fm.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/speech/cfg_vrnn.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "RajeshSivadasan/alice-blue-futures:ab.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ryanmrestivo/red-team:Evasion-&-Obfuscation/PyFuscation/util/PSconfig.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "munin-monitoring/muninlite:examples/post-muninlite.ini",
+      "family": "ini_cfg",
+      "reason": "license 'GPL-2.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/motion/cfg_vae.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "HL7/bulk-data:ig.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "Bots-United/metamod-p:doc/config.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ahuacate/pve-medialab:src/geterr/config/cookbook/cookbook.ini",
+      "family": "ini_cfg",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/motion/cfg_dkf.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "alliedmodders/metamod-hl1:doc/plugins.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "koto/xsschef:tools/config.ini",
+      "family": "ini_cfg",
+      "reason": "license 'GPL-3.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "CBHue/PyFuscation:util/PSconfig.ini",
+      "family": "ini_cfg",
+      "reason": "license 'BSD-3-Clause' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "alliedmodders/metamod-hl1:doc/config.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "snesrev/sm:sm.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "PDP-10/panda:files/maclisp/ccload.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "plone/plone.formwidget.hcaptcha:mx.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "PDP-10/panda:files/maclisp/nilaid.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "maddev-engenuity/AdversaryEmulation:labs/lab_4.2/PyFuscation/util/PSconfig.ini",
+      "family": "ini_cfg",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "XiaoyuBIE1994/DVAE:config/speech/cfg_rvae_NonCausal.ini",
+      "family": "ini_cfg",
+      "reason": "license 'NOASSERTION' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "hacktoolspack/hack-tools:koto-xsschef-2f69e1b/tools/config.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "ICGC-TCGA-PanCancer/dkfz_dockered_workflows:testConfigPC58_01.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "Ultraschall/ultraschall-portable:BR.ini",
+      "family": "ini_cfg",
+      "reason": "fewer than 10 assignment records"
+    },
+    {
+      "candidate": "JoelGMSec/Invoke-Stealth:Resources/PyFuscation/PSconfig.ini",
+      "family": "ini_cfg",
+      "reason": "license 'GPL-3.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "thcp/pi_kube:config.ini",
+      "family": "ini_cfg",
+      "reason": "license None not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "AMXX-pl/BasePack:cstrike/addons/metamod/config.ini",
+      "family": "ini_cfg",
+      "reason": "license 'GPL-3.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "taamarin/box_for_magisk:box/settings.ini",
+      "family": "ini_cfg",
+      "reason": "license 'GPL-3.0' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "CBHue/PyFuscation:PSconfig.ini",
+      "family": "ini_cfg",
+      "reason": "license 'BSD-3-Clause' not MIT or Apache-2.0"
+    },
+    {
+      "candidate": "Chth1z/Flux:conf/settings.ini",
+      "family": "ini_cfg",
+      "reason": "license 'GPL-3.0' not MIT or Apache-2.0"
+    }
+  ],
+  "revision": "phase4h-realstruct2-v0.1",
+  "schema": "bite-phase4h-realstruct2-rejections/v0.1"
+}

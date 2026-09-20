@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3s-policy-consequence.schema.json",
+  "title": "BITE Phase-3S policy consequence v0.1",
+  "type": "object",
+  "required": ["schema", "primary_family", "n_ok", "rows"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3s-policy-consequence/v0.1"
+    },
+    "primary_family": {
+      "type": "string",
+      "const": "suffix_collision_plus_actionability"
+    },
+    "n_ok": { "type": "integer", "minimum": 0 },
+    "rows": { "type": "array" }
+  }
+}

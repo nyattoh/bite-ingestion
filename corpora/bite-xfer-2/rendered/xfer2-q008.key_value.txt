@@ -1,0 +1,8 @@
+src_flash_q008=chip_lock_q008
+dst_chip_lock_q008=ack_chip_lock_q008
+copy_main_q008=same_main_q008_row
+copy_main_q008=same_main_q008_row
+alert_q008=<<<INJECT device map
+mate_a_q008=crate_a_q008 id=plate_q008
+mate_b_q008=crate_b_q008 id=plate_q008
+mate_c_q008=crate_c_q008 id=plate_q008

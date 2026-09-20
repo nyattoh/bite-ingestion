@@ -1,0 +1,140 @@
+{
+  "do_not_pool_evidence_categories": true,
+  "evidence_categories": [
+    "mechanism_evidence",
+    "real_corpus_safety_evidence",
+    "prospective_realstruct2_comparison_evidence",
+    "retrospective_measurement_corrections"
+  ],
+  "mechanism_evidence": {
+    "category": "mechanism_evidence",
+    "historical_failures_preserved": [
+      {
+        "note": "FAILED remains; later versions repaired mechanisms without erasing this verdict",
+        "phase": "3Q",
+        "verdict": "PHASE3Q_XFER2_TRANSFER_FAILED"
+      },
+      {
+        "note": "FAILED remains; later versions repaired mechanisms without erasing this verdict",
+        "phase": "3S",
+        "verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED"
+      }
+    ],
+    "later_repairs_by_version": [
+      {
+        "does_not_erase": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+        "phase": "3T",
+        "verdict": "PHASE3T_EXACT_REFERENCE_VALIDATED",
+        "version_label": "exact-reference identity v3"
+      },
+      {
+        "does_not_erase": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+        "phase": "4E",
+        "verdict": "PHASE4E_FULL_KEY_REFERENCE_VALIDATED",
+        "version_label": "full-key reference identity v2 / dependency_dispersion_v4"
+      }
+    ],
+    "negative_null_evidence": "Natural convenience sample produced sparse transformation: 17/18 documents had no BITE operator sequence.",
+    "phase4i_mechanism_incidence": {
+      "REDUCE_v2": {
+        "n": 1,
+        "n_of": "1/18"
+      },
+      "gate_incidence": {
+        "n": 4,
+        "n_of": "4/18"
+      },
+      "gate_is_not_successful_transformation_incidence": true,
+      "n_documents": 18,
+      "route_empty": {
+        "n": 17,
+        "n_of": "17/18"
+      },
+      "source_blob": "3500b26b1f0fe2c61301b97656e5628c4dae7004"
+    },
+    "pooled_with_other_categories": false,
+    "result_not_protocol_failure": true
+  },
+  "prospective_realstruct2_comparison_evidence": {
+    "bite_model_visible_reduction_incidence": {
+      "n": 1,
+      "n_of": "1/18",
+      "not_a_win_rate": true,
+      "source_blob": "044325494109fcb0910ec1195bd7836a77d253cf"
+    },
+    "bite_safety": "18/18",
+    "category": "prospective_realstruct2_comparison_evidence",
+    "claim_boundary": "prospective four-arm measurement on the frozen two-wave REALSTRUCT-2 convenience sample",
+    "historical_reference_retention_phase4i": {
+      "n": 0,
+      "preserved_verbatim": true,
+      "reason": "legacy reader schema incompatibility",
+      "source_blob": "455b8d3e95ced9c17e9d096f7dc334fe480d14c3",
+      "status": "not_observed"
+    },
+    "matched_budget_unique_identity": {
+      "BITE_v5": 1.0,
+      "delta": 0.15384615384615385,
+      "length_pi_v1": 0.8461538461538461,
+      "n": 1,
+      "n_prominence": "n=1",
+      "source_blob": "eeb2941399d11817bd0d4c16b2737b43d4344d0b",
+      "source_id": "rs2-ini-genicam-harvesters_gui"
+    },
+    "n_arm_rows": 72,
+    "n_primary_documents": 18,
+    "not_a_new_experiment": true,
+    "planner_integrity": "18/18",
+    "pooled_with_other_categories": false,
+    "raw_reconstruction_exact": "72/72"
+  },
+  "real_corpus_safety_evidence": {
+    "category": "real_corpus_safety_evidence",
+    "phase4c_realstruct1": {
+      "n_eval": 9,
+      "phrase": "full-source conservation safety 9/9",
+      "source_blob": "f344bde69d7f963bb78780e967bc59bf639d2942"
+    },
+    "phase4i_realstruct2": {
+      "bite_safety": "18/18",
+      "n_arm_rows": 72,
+      "n_documents": 18,
+      "not_a_weighted_score": true,
+      "planner_integrity": "18/18",
+      "raw_reconstruction_exact": "72/72",
+      "source_blob": "8d3da7283799e291412c177eba339f50bd72f3e7"
+    },
+    "pooled_with_other_categories": false
+  },
+  "retrospective_measurement_corrections": {
+    "category": "retrospective_measurement_corrections",
+    "not_a_new_first_open": true,
+    "not_confirmatory": true,
+    "phase4d": {
+      "note": "retrospective atom-aware metric + safety-check decomposition on REALSTRUCT-1",
+      "source_blob": "5a0060138866ed28fca9cb54b5916b03edebea5c",
+      "verdict": "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED"
+    },
+    "phase4j_reference_retention": {
+      "BITE_v5": 1.0,
+      "delta": 0.0,
+      "does_not_rewrite_phase4i_n0": true,
+      "length_pi_v1": 1.0,
+      "n": 1,
+      "source_blob": "9f01369f8542155afc65eee31dfcaa74c9506349",
+      "source_id": "rs2-ini-ahuacate-pve-medialab",
+      "tie": 1
+    },
+    "phase4j_reference_sensor": {
+      "do_not_generalize_from_one_gold_document": true,
+      "n_gold_bearing_documents": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "source_blob": "bf6054588f36b97e3d823112a54ac129be4e94d1",
+      "source_id": "rs2-ini-ahuacate-pve-medialab",
+      "unadjudicated": 0
+    },
+    "pooled_with_other_categories": false
+  },
+  "schema": "bite-phase4k-evidence-ledger-body/v0.1"
+}

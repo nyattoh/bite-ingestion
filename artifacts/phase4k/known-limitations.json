@@ -1,0 +1,14 @@
+{
+  "items": [
+    "REALSTRUCT-2 is a frozen convenience sample, not a representative population.",
+    "Natural convenience sample produced sparse transformation: 17/18 documents had no BITE operator sequence.",
+    "Reference-retention comparison was effectively n=1.",
+    "Matched-budget evidence comparison was effectively n=1.",
+    "Corrected atom-aware diagnostic rests on one gold-bearing document; do not generalize.",
+    "These sparse-n observations are results, not protocol failures.",
+    "Phase3Q FAILED and Phase3S FAILED remain; later versioned repairs do not erase them.",
+    "p3f stays sealed and is not used to strengthen Phase 4 claims.",
+    "Phase 4 does not support production-readiness, RAG superiority, or answer-quality claims."
+  ],
+  "schema": "bite-phase4k-known-limitations/v0.1"
+}

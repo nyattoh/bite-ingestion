@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4h-realstruct2-licenses.schema.json",
+  "title": "BITE Phase-4H REALSTRUCT-2 license attribution v0.1",
+  "type": "object",
+  "required": ["schema", "allowed_spdx", "documents"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4h-realstruct2-licenses/v0.1"
+    },
+    "allowed_spdx": { "type": "array" },
+    "documents": { "type": "array" }
+  }
+}

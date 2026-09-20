@@ -1,0 +1,15 @@
+{
+  "delta": "BITE_v5 - length_pi_v1",
+  "documents": [],
+  "eligible": "primary documents with reference gold > 0",
+  "mean": "not_observed",
+  "median": "not_observed",
+  "metric": "visible_reference_retention_v2",
+  "n": 0,
+  "negative": 0,
+  "positive": 0,
+  "schema": "bite-phase4i-paired-reference-retention/v0.1",
+  "status": "not_observed",
+  "tie": 0,
+  "wave_is_provenance_only": true
+}

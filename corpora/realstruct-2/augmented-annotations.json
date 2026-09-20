@@ -1,0 +1,5768 @@
+{
+  "documents": [
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [
+        {
+          "assignment_key": "DATABASE_URL",
+          "assignment_value": "\"\"",
+          "lines": [
+            3,
+            4
+          ]
+        }
+      ],
+      "explicit_reference_edges": [],
+      "n_assignments": 22,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 22,
+      "n_unsupported": 0,
+      "records": [
+        {
+          "assignment_key": "RESEND_API_KEY",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 1
+        },
+        {
+          "assignment_key": "RESEND_EMAIL_DOMAIN",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 2
+        },
+        {
+          "assignment_key": "DATABASE_URL",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 3
+        },
+        {
+          "assignment_key": "DATABASE_URL",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 4
+        },
+        {
+          "assignment_key": "JWT_SECRET",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 5
+        },
+        {
+          "assignment_key": "saltrounds",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 6
+        },
+        {
+          "assignment_key": "SECRET_SALT",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 7
+        },
+        {
+          "assignment_key": "ENCRYPTION_SECRET",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 8
+        },
+        {
+          "assignment_key": "SUPABASE_URL",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 9
+        },
+        {
+          "assignment_key": "SUPABASE_KEY",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 10
+        },
+        {
+          "assignment_key": "TICKET_SECRET_KEY",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 11
+        },
+        {
+          "assignment_key": "DATABASE_URL",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 12
+        },
+        {
+          "assignment_key": "METRICS_USER",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 13
+        },
+        {
+          "assignment_key": "METRICS_PASS",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 14
+        },
+        {
+          "assignment_key": "GF_SECURITY_ADMIN_PASSWORD",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 15
+        },
+        {
+          "assignment_key": "OMDB_API_KEY",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 16
+        },
+        {
+          "assignment_key": "VITE_API_URL",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 17
+        },
+        {
+          "assignment_key": "VITE_FRONTEND_URL",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 18
+        },
+        {
+          "assignment_key": "CLOUDFLARE_SITEKEY",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 19
+        },
+        {
+          "assignment_key": "CLOUDFLARE_SECRET",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 20
+        },
+        {
+          "assignment_key": "NEXT_PUBLIC_BACKEND_URL",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 21
+        },
+        {
+          "assignment_key": "API_BASE_URL",
+          "assignment_value": "\"\"",
+          "kind": "assignment",
+          "line": 22
+        }
+      ],
+      "repeated_key_different_value": [
+        {
+          "assignment_key": "DATABASE_URL",
+          "n_values": 2
+        }
+      ],
+      "source_id": "rs2-dotenv-ronakmaheshwari-capital",
+      "stratum": "primary",
+      "wave": 1
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 10,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 21,
+      "n_unsupported": 11,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "ASEPRITE_PATH",
+          "assignment_value": "\"C:/Program Files/Aseprite/Aseprite.exe\"",
+          "kind": "assignment",
+          "line": 2
+        },
+        {
+          "assignment_key": "BLOCKBENCH_PATH",
+          "assignment_value": "\"C:/Program Files/Blockbench/Blockbench.exe\"",
+          "kind": "assignment",
+          "line": 3
+        },
+        {
+          "assignment_key": "MINECRAFT_PATH",
+          "assignment_value": "\"C:/Users/afro/AppData/Roaming/.minecraft\"",
+          "kind": "assignment",
+          "line": 4
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "RESOURCEPACK_NAME",
+          "assignment_value": "\"omegaflowey-remastered-resourcepack-DEV\"",
+          "kind": "assignment",
+          "line": 6
+        },
+        {
+          "kind": "unsupported",
+          "line": 7,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "WORLD_NAME",
+          "assignment_value": "\"omegaflowey-remastered\"",
+          "kind": "assignment",
+          "line": 8
+        },
+        {
+          "kind": "unsupported",
+          "line": 9,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 10,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 11,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "COPY_COMMAND_ALIASES",
+          "assignment_value": "0",
+          "kind": "assignment",
+          "line": 12
+        },
+        {
+          "kind": "unsupported",
+          "line": 13,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 14,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 15,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "ASSETS_DIR",
+          "assignment_value": "\"C:/Users/afro/AppData/Roaming/.minecraft/versions/1.20.1/1.20.1\"",
+          "kind": "assignment",
+          "line": 16
+        },
+        {
+          "kind": "unsupported",
+          "line": 17,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "DATAPACK",
+          "assignment_value": "\"G:/Coding/omegaflowey-minecraft-remastered/datapacks/omegaflowey\"",
+          "kind": "assignment",
+          "line": 18
+        },
+        {
+          "assignment_key": "RESOURCEPACK",
+          "assignment_value": "\"G:/Coding/omegaflowey-minecraft-remastered/resourcepack\"",
+          "kind": "assignment",
+          "line": 19
+        },
+        {
+          "kind": "unsupported",
+          "line": 20,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "ELECTRON_ENABLE_LOGGING",
+          "assignment_value": "1",
+          "kind": "assignment",
+          "line": 21
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+      "stratum": "primary",
+      "wave": 1
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 11,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 44,
+      "n_unsupported": 33,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 2,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 3,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 4,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 6,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "CURRENT_ENV",
+          "assignment_value": "development",
+          "kind": "assignment",
+          "line": 7
+        },
+        {
+          "kind": "unsupported",
+          "line": 8,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 9,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 10,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "EMAIL",
+          "assignment_value": "\"seu_email@email.com\"",
+          "kind": "assignment",
+          "line": 11
+        },
+        {
+          "kind": "unsupported",
+          "line": 12,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 13,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "APP_DOMAIN",
+          "assignment_value": "\"app.myswarm.cloud\"",
+          "kind": "assignment",
+          "line": 14
+        },
+        {
+          "kind": "unsupported",
+          "line": 15,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 16,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "POSTGRES_DB",
+          "assignment_value": "\"dockerswarmp1\"",
+          "kind": "assignment",
+          "line": 17
+        },
+        {
+          "assignment_key": "POSTGRES_USER",
+          "assignment_value": "\"dockerswarmp1\"",
+          "kind": "assignment",
+          "line": 18
+        },
+        {
+          "kind": "unsupported",
+          "line": 19,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 20,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 21,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 22,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "POSTGRES_PASSWORD",
+          "assignment_value": "\"ANY_VALUE\"",
+          "kind": "assignment",
+          "line": 23
+        },
+        {
+          "kind": "unsupported",
+          "line": 24,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 25,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 26,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 27,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 28,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 29,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "VISIT_SALT",
+          "assignment_value": "\"ANY_VALUE\"",
+          "kind": "assignment",
+          "line": 30
+        },
+        {
+          "kind": "unsupported",
+          "line": 31,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 32,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 33,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 34,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "GITHUB_WEBHOOK_SECRET",
+          "assignment_value": "'ANY_VALUE'",
+          "kind": "assignment",
+          "line": 35
+        },
+        {
+          "kind": "unsupported",
+          "line": 36,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 37,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "DEPLOY_BRANCH",
+          "assignment_value": "\"main\"",
+          "kind": "assignment",
+          "line": 38
+        },
+        {
+          "kind": "unsupported",
+          "line": 39,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 40,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "APP_UID",
+          "assignment_value": "1011",
+          "kind": "assignment",
+          "line": 41
+        },
+        {
+          "assignment_key": "APP_GID",
+          "assignment_value": "1011",
+          "kind": "assignment",
+          "line": 42
+        },
+        {
+          "kind": "unsupported",
+          "line": 43,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 44,
+          "reason": "comment"
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-dotenv-luizomf-dockerswarmp1",
+      "stratum": "primary",
+      "wave": 1
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 13,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 35,
+      "n_unsupported": 22,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "ANTHROPIC_API_KEY",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 2
+        },
+        {
+          "assignment_key": "OPENAI_API_KEY",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 3
+        },
+        {
+          "assignment_key": "OPENROUTER_API_KEY",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 4
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 6,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 7,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "CLAUDE_TRADING_SKILLS_REPO",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 8
+        },
+        {
+          "kind": "unsupported",
+          "line": 9,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 10,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "FMP_API_KEY",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 11
+        },
+        {
+          "assignment_key": "FINVIZ_API_KEY",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 12
+        },
+        {
+          "kind": "unsupported",
+          "line": 13,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 14,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "ALPACA_API_KEY",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 15
+        },
+        {
+          "assignment_key": "ALPACA_SECRET_KEY",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 16
+        },
+        {
+          "assignment_key": "ALPACA_PAPER",
+          "assignment_value": "true",
+          "kind": "assignment",
+          "line": 17
+        },
+        {
+          "kind": "unsupported",
+          "line": 18,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 19,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "HERMES_CRON_DELIVER",
+          "assignment_value": "local",
+          "kind": "assignment",
+          "line": 20
+        },
+        {
+          "kind": "unsupported",
+          "line": 21,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 22,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "HERMES_TRADING_TIMEZONE",
+          "assignment_value": "America/Los_Angeles",
+          "kind": "assignment",
+          "line": 23
+        },
+        {
+          "assignment_key": "HERMES_TRADING_REPORT_DIR",
+          "assignment_value": "reports",
+          "kind": "assignment",
+          "line": 24
+        },
+        {
+          "kind": "unsupported",
+          "line": 25,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 26,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 27,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 28,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 29,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 30,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 31,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 32,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 33,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 34,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "HERMES_TRADE_TICKET_DIR",
+          "assignment_value": "${HOME}/trading-research/tickets",
+          "kind": "assignment",
+          "line": 35
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+      "stratum": "primary",
+      "wave": 1
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 11,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 13,
+      "n_unsupported": 2,
+      "records": [
+        {
+          "assignment_key": "git.repository.name",
+          "assignment_value": "poco_restful_webservice",
+          "kind": "assignment",
+          "line": 1
+        },
+        {
+          "assignment_key": "git.repository.url",
+          "assignment_value": "https://github.com/edson-a-soares/poco_restful_webservice.git",
+          "kind": "assignment",
+          "line": 2
+        },
+        {
+          "kind": "unsupported",
+          "line": 3,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "dbms.name",
+          "assignment_value": "mysql",
+          "kind": "assignment",
+          "line": 4
+        },
+        {
+          "assignment_key": "dbms.url",
+          "assignment_value": "jdbc:mysql://127.0.0.1:3306",
+          "kind": "assignment",
+          "line": 5
+        },
+        {
+          "kind": "unsupported",
+          "line": 6,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "db.username",
+          "assignment_value": "ci_environment",
+          "kind": "assignment",
+          "line": 7
+        },
+        {
+          "assignment_key": "db.password",
+          "assignment_value": "abc12345",
+          "kind": "assignment",
+          "line": 8
+        },
+        {
+          "assignment_key": "db.schema.charset",
+          "assignment_value": "utf8",
+          "kind": "assignment",
+          "line": 9
+        },
+        {
+          "assignment_key": "db.schema.collate",
+          "assignment_value": "utf8_bin",
+          "kind": "assignment",
+          "line": 10
+        },
+        {
+          "assignment_key": "db.schema",
+          "assignment_value": "poco_webservice_schema",
+          "kind": "assignment",
+          "line": 11
+        },
+        {
+          "assignment_key": "db.driver.name",
+          "assignment_value": "com.mysql.jdbc.Driver",
+          "kind": "assignment",
+          "line": 12
+        },
+        {
+          "assignment_key": "db.url",
+          "assignment_value": "jdbc:mysql://127.0.0.1:3306/poco_webservice_schema",
+          "kind": "assignment",
+          "line": 13
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-props-edson-a-soares-poco_restful_webservice",
+      "stratum": "primary",
+      "wave": 1
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 50,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 64,
+      "n_unsupported": 14,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 2,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "min_width",
+          "assignment_value": "570",
+          "kind": "assignment",
+          "line": 3
+        },
+        {
+          "assignment_key": "min_height",
+          "assignment_value": "560",
+          "kind": "assignment",
+          "line": 4
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "menubar",
+          "assignment_value": "file edit setup help",
+          "kind": "assignment",
+          "line": 6
+        },
+        {
+          "kind": "unsupported",
+          "line": 7,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "file",
+          "assignment_value": "new open - save saveAs - exit",
+          "kind": "assignment",
+          "line": 8
+        },
+        {
+          "assignment_key": "fileLabel",
+          "assignment_value": "\u30d5\u30a1\u30a4\u30eb",
+          "kind": "assignment",
+          "line": 9
+        },
+        {
+          "assignment_key": "fileMnemonic",
+          "assignment_value": "F",
+          "kind": "assignment",
+          "line": 10
+        },
+        {
+          "assignment_key": "newLabel",
+          "assignment_value": "\u65b0\u898f\u30d5\u30a1\u30a4\u30eb",
+          "kind": "assignment",
+          "line": 11
+        },
+        {
+          "assignment_key": "newMnemonic",
+          "assignment_value": "N",
+          "kind": "assignment",
+          "line": 12
+        },
+        {
+          "assignment_key": "openLabel",
+          "assignment_value": "\u958b\u304f",
+          "kind": "assignment",
+          "line": 13
+        },
+        {
+          "assignment_key": "openMnemonic",
+          "assignment_value": "O",
+          "kind": "assignment",
+          "line": 14
+        },
+        {
+          "assignment_key": "saveLabel",
+          "assignment_value": "\u4e0a\u66f8\u304d\u4fdd\u5b58",
+          "kind": "assignment",
+          "line": 15
+        },
+        {
+          "assignment_key": "saveMnemonic",
+          "assignment_value": "S",
+          "kind": "assignment",
+          "line": 16
+        },
+        {
+          "assignment_key": "saveAsLabel",
+          "assignment_value": "\u540d\u524d\u3092\u4ed8\u3051\u3066\u4fdd\u5b58",
+          "kind": "assignment",
+          "line": 17
+        },
+        {
+          "assignment_key": "saveAsMnemonic",
+          "assignment_value": "A",
+          "kind": "assignment",
+          "line": 18
+        },
+        {
+          "assignment_key": "exitLabel",
+          "assignment_value": "\u7d42\u4e86",
+          "kind": "assignment",
+          "line": 19
+        },
+        {
+          "assignment_key": "exitMnemonic",
+          "assignment_value": "E",
+          "kind": "assignment",
+          "line": 20
+        },
+        {
+          "assignment_key": "newImage",
+          "assignment_value": "/example/images/icon_new-file.png",
+          "kind": "assignment",
+          "line": 21
+        },
+        {
+          "assignment_key": "openImage",
+          "assignment_value": "/example/images/icon_open-file.png",
+          "kind": "assignment",
+          "line": 22
+        },
+        {
+          "kind": "unsupported",
+          "line": 23,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "saveImage",
+          "assignment_value": "/example/images/icon_save-file.png",
+          "kind": "assignment",
+          "line": 24
+        },
+        {
+          "kind": "unsupported",
+          "line": 25,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 26,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 27,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "edit",
+          "assignment_value": "cut copy paste - undo redo",
+          "kind": "assignment",
+          "line": 28
+        },
+        {
+          "assignment_key": "editLabel",
+          "assignment_value": "\u7de8\u96c6",
+          "kind": "assignment",
+          "line": 29
+        },
+        {
+          "assignment_key": "editMnemonic",
+          "assignment_value": "E",
+          "kind": "assignment",
+          "line": 30
+        },
+        {
+          "assignment_key": "cutLabel",
+          "assignment_value": "\u5207\u308a\u53d6\u308a",
+          "kind": "assignment",
+          "line": 31
+        },
+        {
+          "assignment_key": "cutAction",
+          "assignment_value": "cut-to-clipboard",
+          "kind": "assignment",
+          "line": 32
+        },
+        {
+          "assignment_key": "cutImage",
+          "assignment_value": "/example/images/icon_cut.png",
+          "kind": "assignment",
+          "line": 33
+        },
+        {
+          "assignment_key": "copyLabel",
+          "assignment_value": "\u30b3\u30d4\u30fc",
+          "kind": "assignment",
+          "line": 34
+        },
+        {
+          "assignment_key": "copyAction",
+          "assignment_value": "copy-to-clipboard",
+          "kind": "assignment",
+          "line": 35
+        },
+        {
+          "assignment_key": "copyImage",
+          "assignment_value": "/example/images/icon_copy.png",
+          "kind": "assignment",
+          "line": 36
+        },
+        {
+          "assignment_key": "pasteLabel",
+          "assignment_value": "\u8cbc\u308a\u4ed8\u3051",
+          "kind": "assignment",
+          "line": 37
+        },
+        {
+          "assignment_key": "pasteAction",
+          "assignment_value": "paste-from-clipboard",
+          "kind": "assignment",
+          "line": 38
+        },
+        {
+          "assignment_key": "pasteImage",
+          "assignment_value": "/example/images/icon_paste.png",
+          "kind": "assignment",
+          "line": 39
+        },
+        {
+          "assignment_key": "undoLabel",
+          "assignment_value": "\u30a2\u30f3\u30c9\u30a5",
+          "kind": "assignment",
+          "line": 40
+        },
+        {
+          "assignment_key": "undoAction",
+          "assignment_value": "Undo",
+          "kind": "assignment",
+          "line": 41
+        },
+        {
+          "assignment_key": "redoLabel",
+          "assignment_value": "\u30ea\u30c9\u30a5",
+          "kind": "assignment",
+          "line": 42
+        },
+        {
+          "assignment_key": "redoAction",
+          "assignment_value": "Redo",
+          "kind": "assignment",
+          "line": 43
+        },
+        {
+          "kind": "unsupported",
+          "line": 44,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 45,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "setup",
+          "assignment_value": "properties",
+          "kind": "assignment",
+          "line": 46
+        },
+        {
+          "assignment_key": "setupLabel",
+          "assignment_value": "\u8a2d\u5b9a",
+          "kind": "assignment",
+          "line": 47
+        },
+        {
+          "assignment_key": "setupMnemonic",
+          "assignment_value": "S",
+          "kind": "assignment",
+          "line": 48
+        },
+        {
+          "assignment_key": "propertiesLabel",
+          "assignment_value": "\u57fa\u672c\u8a2d\u5b9a",
+          "kind": "assignment",
+          "line": 49
+        },
+        {
+          "assignment_key": "propertiesMnemonic",
+          "assignment_value": "P",
+          "kind": "assignment",
+          "line": 50
+        },
+        {
+          "kind": "unsupported",
+          "line": 51,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 52,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "help",
+          "assignment_value": "help version",
+          "kind": "assignment",
+          "line": 53
+        },
+        {
+          "assignment_key": "helpLabel",
+          "assignment_value": "\u30d8\u30eb\u30d7",
+          "kind": "assignment",
+          "line": 54
+        },
+        {
+          "assignment_key": "helpMnemonic",
+          "assignment_value": "H",
+          "kind": "assignment",
+          "line": 55
+        },
+        {
+          "assignment_key": "versionLabel",
+          "assignment_value": "\u30d0\u30fc\u30b8\u30e7\u30f3",
+          "kind": "assignment",
+          "line": 56
+        },
+        {
+          "assignment_key": "versionMnemonic",
+          "assignment_value": "V",
+          "kind": "assignment",
+          "line": 57
+        },
+        {
+          "kind": "unsupported",
+          "line": 58,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 59,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "toolbar",
+          "assignment_value": "new open save - env",
+          "kind": "assignment",
+          "line": 60
+        },
+        {
+          "assignment_key": "newTooltip",
+          "assignment_value": "\u65b0\u898f\u30d5\u30a1\u30a4\u30eb\u3067\u521d\u671f\u5316\u3059\u308b",
+          "kind": "assignment",
+          "line": 61
+        },
+        {
+          "assignment_key": "openTooltip",
+          "assignment_value": "\u30d5\u30a1\u30a4\u30eb\u3092\u958b\u304f",
+          "kind": "assignment",
+          "line": 62
+        },
+        {
+          "assignment_key": "saveTooltip",
+          "assignment_value": "\u30d5\u30a1\u30a4\u30eb\u3092\u4e0a\u66f8\u304d\u4fdd\u5b58\u3059\u308b",
+          "kind": "assignment",
+          "line": 63
+        },
+        {
+          "assignment_key": "envTooltip",
+          "assignment_value": "\u74b0\u5883\u3092\u8a2d\u5b9a\u3059\u308b",
+          "kind": "assignment",
+          "line": 64
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-props-aterai-java-swing-tips",
+      "stratum": "primary",
+      "wave": 1
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 10,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 36,
+      "n_unsupported": 26,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 2,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 3,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 4,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 6,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 7,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 8,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 9,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 10,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 11,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "OOS_AB_ORACLE_SID",
+          "assignment_value": "XE",
+          "kind": "assignment",
+          "line": 12
+        },
+        {
+          "kind": "unsupported",
+          "line": 13,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "OOS_AB_ORACLE_USERNAME",
+          "assignment_value": "system",
+          "kind": "assignment",
+          "line": 14
+        },
+        {
+          "assignment_key": "OOS_AB_ORACLE_PASSWORD",
+          "assignment_value": "oracle",
+          "kind": "assignment",
+          "line": 15
+        },
+        {
+          "assignment_key": "OOS_AB_TNS_PORT",
+          "assignment_value": "1521",
+          "kind": "assignment",
+          "line": 16
+        },
+        {
+          "assignment_key": "OOS_AB_ORACLE_HOST",
+          "assignment_value": "localhost",
+          "kind": "assignment",
+          "line": 17
+        },
+        {
+          "kind": "unsupported",
+          "line": 18,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 19,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 20,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "OOS_AB_APEX_EXPORT_JAVA_DIR",
+          "assignment_value": "\"CHANGEME\"",
+          "kind": "assignment",
+          "line": 21
+        },
+        {
+          "kind": "unsupported",
+          "line": 22,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 23,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 24,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "OOS_AB_REPORT_FILENAME",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 25
+        },
+        {
+          "kind": "unsupported",
+          "line": 26,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 27,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 28,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "OOS_AB_BACKUP_DIR",
+          "assignment_value": "\"CHANGEME\"",
+          "kind": "assignment",
+          "line": 29
+        },
+        {
+          "kind": "unsupported",
+          "line": 30,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 31,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 32,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "OOS_AB_ORACLE_HOME",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 33
+        },
+        {
+          "kind": "unsupported",
+          "line": 34,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 35,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "OOS_AB_DEBUG_YN",
+          "assignment_value": "N",
+          "kind": "assignment",
+          "line": 36
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-props-oraopensource-apexbackup",
+      "stratum": "primary",
+      "wave": 1
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [
+        {
+          "dest_line": 10,
+          "gold_identity": [
+            17,
+            "APP_HOME",
+            10
+          ],
+          "name": "APP_HOME",
+          "source_line": 17,
+          "source_span": [
+            12,
+            23
+          ]
+        },
+        {
+          "dest_line": 51,
+          "gold_identity": [
+            53,
+            "DST_STREAM_MAXIMUM_BITRATE",
+            51
+          ],
+          "name": "DST_STREAM_MAXIMUM_BITRATE",
+          "source_line": 53,
+          "source_span": [
+            40,
+            69
+          ]
+        },
+        {
+          "dest_line": 51,
+          "gold_identity": [
+            54,
+            "DST_STREAM_MAXIMUM_BITRATE",
+            51
+          ],
+          "name": "DST_STREAM_MAXIMUM_BITRATE",
+          "source_line": 54,
+          "source_span": [
+            40,
+            69
+          ]
+        },
+        {
+          "dest_line": 51,
+          "gold_identity": [
+            55,
+            "DST_STREAM_MAXIMUM_BITRATE",
+            51
+          ],
+          "name": "DST_STREAM_MAXIMUM_BITRATE",
+          "source_line": 55,
+          "source_span": [
+            39,
+            68
+          ]
+        },
+        {
+          "dest_line": 51,
+          "gold_identity": [
+            56,
+            "DST_STREAM_MAXIMUM_BITRATE",
+            51
+          ],
+          "name": "DST_STREAM_MAXIMUM_BITRATE",
+          "source_line": 56,
+          "source_span": [
+            39,
+            68
+          ]
+        },
+        {
+          "dest_line": 53,
+          "gold_identity": [
+            64,
+            "DST_STREAM_BITRATE_2160",
+            53
+          ],
+          "name": "DST_STREAM_BITRATE_2160",
+          "source_line": 64,
+          "source_span": [
+            62,
+            88
+          ]
+        },
+        {
+          "dest_line": 54,
+          "gold_identity": [
+            64,
+            "DST_STREAM_BITRATE_1080",
+            54
+          ],
+          "name": "DST_STREAM_BITRATE_1080",
+          "source_line": 64,
+          "source_span": [
+            104,
+            130
+          ]
+        },
+        {
+          "dest_line": 55,
+          "gold_identity": [
+            64,
+            "DST_STREAM_BITRATE_720",
+            55
+          ],
+          "name": "DST_STREAM_BITRATE_720",
+          "source_line": 64,
+          "source_span": [
+            145,
+            170
+          ]
+        },
+        {
+          "dest_line": 56,
+          "gold_identity": [
+            64,
+            "DST_STREAM_BITRATE_480",
+            56
+          ],
+          "name": "DST_STREAM_BITRATE_480",
+          "source_line": 64,
+          "source_span": [
+            185,
+            210
+          ]
+        },
+        {
+          "dest_line": 61,
+          "gold_identity": [
+            66,
+            "DST_STREAM_AUDIO_CHANNELS",
+            61
+          ],
+          "name": "DST_STREAM_AUDIO_CHANNELS",
+          "source_line": 66,
+          "source_span": [
+            42,
+            70
+          ]
+        },
+        {
+          "dest_line": 60,
+          "gold_identity": [
+            66,
+            "DST_STREAM_AUDIO_BITRATE",
+            60
+          ],
+          "name": "DST_STREAM_AUDIO_BITRATE",
+          "source_line": 66,
+          "source_span": [
+            79,
+            106
+          ]
+        },
+        {
+          "dest_line": 53,
+          "gold_identity": [
+            66,
+            "DST_STREAM_BITRATE_2160",
+            53
+          ],
+          "name": "DST_STREAM_BITRATE_2160",
+          "source_line": 66,
+          "source_span": [
+            122,
+            148
+          ]
+        },
+        {
+          "dest_line": 54,
+          "gold_identity": [
+            66,
+            "DST_STREAM_BITRATE_1080",
+            54
+          ],
+          "name": "DST_STREAM_BITRATE_1080",
+          "source_line": 66,
+          "source_span": [
+            164,
+            190
+          ]
+        },
+        {
+          "dest_line": 55,
+          "gold_identity": [
+            66,
+            "DST_STREAM_BITRATE_720",
+            55
+          ],
+          "name": "DST_STREAM_BITRATE_720",
+          "source_line": 66,
+          "source_span": [
+            205,
+            230
+          ]
+        },
+        {
+          "dest_line": 56,
+          "gold_identity": [
+            66,
+            "DST_STREAM_BITRATE_480",
+            56
+          ],
+          "name": "DST_STREAM_BITRATE_480",
+          "source_line": 66,
+          "source_span": [
+            245,
+            270
+          ]
+        },
+        {
+          "dest_line": 64,
+          "gold_identity": [
+            69,
+            "TYPE01",
+            64
+          ],
+          "name": "TYPE01",
+          "source_line": 69,
+          "source_span": [
+            24,
+            33
+          ]
+        },
+        {
+          "dest_line": 66,
+          "gold_identity": [
+            70,
+            "TYPE03",
+            66
+          ],
+          "name": "TYPE03",
+          "source_line": 70,
+          "source_span": [
+            23,
+            32
+          ]
+        },
+        {
+          "dest_line": 66,
+          "gold_identity": [
+            71,
+            "TYPE03",
+            66
+          ],
+          "name": "TYPE03",
+          "source_line": 71,
+          "source_span": [
+            21,
+            30
+          ]
+        },
+        {
+          "dest_line": 69,
+          "gold_identity": [
+            150,
+            "IN_HOMEVIDEO_ENCODE_ARG",
+            69
+          ],
+          "name": "IN_HOMEVIDEO_ENCODE_ARG",
+          "source_line": 150,
+          "source_span": [
+            110,
+            136
+          ]
+        },
+        {
+          "dest_line": 70,
+          "gold_identity": [
+            151,
+            "IN_UNSORTED_ENCODE_ARG",
+            70
+          ],
+          "name": "IN_UNSORTED_ENCODE_ARG",
+          "source_line": 151,
+          "source_span": [
+            129,
+            154
+          ]
+        },
+        {
+          "dest_line": 71,
+          "gold_identity": [
+            153,
+            "IN_STREAM_ENCODE_ARG",
+            71
+          ],
+          "name": "IN_STREAM_ENCODE_ARG",
+          "source_line": 153,
+          "source_span": [
+            106,
+            129
+          ]
+        },
+        {
+          "dest_line": 71,
+          "gold_identity": [
+            154,
+            "IN_STREAM_ENCODE_ARG",
+            71
+          ],
+          "name": "IN_STREAM_ENCODE_ARG",
+          "source_line": 154,
+          "source_span": [
+            86,
+            109
+          ]
+        },
+        {
+          "dest_line": 71,
+          "gold_identity": [
+            155,
+            "IN_STREAM_ENCODE_ARG",
+            71
+          ],
+          "name": "IN_STREAM_ENCODE_ARG",
+          "source_line": 155,
+          "source_span": [
+            102,
+            125
+          ]
+        },
+        {
+          "dest_line": 71,
+          "gold_identity": [
+            156,
+            "IN_STREAM_ENCODE_ARG",
+            71
+          ],
+          "name": "IN_STREAM_ENCODE_ARG",
+          "source_line": 156,
+          "source_span": [
+            78,
+            101
+          ]
+        },
+        {
+          "dest_line": 71,
+          "gold_identity": [
+            157,
+            "IN_STREAM_ENCODE_ARG",
+            71
+          ],
+          "name": "IN_STREAM_ENCODE_ARG",
+          "source_line": 157,
+          "source_span": [
+            86,
+            109
+          ]
+        }
+      ],
+      "n_assignments": 47,
+      "n_explicit_reference_edges": 25,
+      "n_lines": 158,
+      "n_unsupported": 111,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 2,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 3,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 4,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 6,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 7,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 8,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 9,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "APP_HOME",
+          "assignment_value": "'/usr/local/bin/vidcoderr'",
+          "kind": "assignment",
+          "line": 10
+        },
+        {
+          "kind": "unsupported",
+          "line": 11,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 12,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 13,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "TRANSCODE_DIR",
+          "assignment_value": "'/mnt/transcode/vidcoderr'",
+          "kind": "assignment",
+          "line": 14
+        },
+        {
+          "kind": "unsupported",
+          "line": 15,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 16,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "QUEUE_FILE",
+          "assignment_value": "\"${APP_HOME}/queue.txt\"",
+          "kind": "assignment",
+          "line": 17
+        },
+        {
+          "kind": "unsupported",
+          "line": 18,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 19,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 20,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 21,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "LANG_DEFAULT",
+          "assignment_value": "eng",
+          "kind": "assignment",
+          "line": 22
+        },
+        {
+          "kind": "unsupported",
+          "line": 23,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 24,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "HTTPSERVER_PORT",
+          "assignment_value": "8000",
+          "kind": "assignment",
+          "line": 25
+        },
+        {
+          "kind": "unsupported",
+          "line": 26,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 27,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 28,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 29,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 30,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 31,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "ENCODE_HDR_CONTENT",
+          "assignment_value": "1",
+          "kind": "assignment",
+          "line": 32
+        },
+        {
+          "kind": "unsupported",
+          "line": 33,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 34,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "CONVERT_HDR_TO_SDR",
+          "assignment_value": "1",
+          "kind": "assignment",
+          "line": 35
+        },
+        {
+          "kind": "unsupported",
+          "line": 36,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 37,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "SDR_FILTER",
+          "assignment_value": "\"--x265-params t=linear:npl=100:format=gbrpf32le:p=bt709:tonemap=hable:desat=0:t=bt709:m=bt709:r=tv:format=yuv420p10le\"",
+          "kind": "assignment",
+          "line": 38
+        },
+        {
+          "kind": "unsupported",
+          "line": 39,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 40,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 41,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 42,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "ENABLE_RESIZE_LIMIT",
+          "assignment_value": "1",
+          "kind": "assignment",
+          "line": 43
+        },
+        {
+          "kind": "unsupported",
+          "line": 44,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "ENCODE_RESIZE_LIMIT",
+          "assignment_value": "'--1080p'",
+          "kind": "assignment",
+          "line": 45
+        },
+        {
+          "kind": "unsupported",
+          "line": 46,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 47,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 48,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 49,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 50,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "DST_STREAM_MAXIMUM_BITRATE",
+          "assignment_value": "15 # Edit Mbps - maximum bitrate for streaming content. Default is 15",
+          "kind": "assignment",
+          "line": 51
+        },
+        {
+          "kind": "unsupported",
+          "line": 52,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "DST_STREAM_BITRATE_2160",
+          "assignment_value": "$(echo \"scale=4;${DST_STREAM_MAXIMUM_BITRATE}/1*1000\" | bc | awk '{print int($1+0.5)}') # Do not edit",
+          "kind": "assignment",
+          "line": 53
+        },
+        {
+          "assignment_key": "DST_STREAM_BITRATE_1080",
+          "assignment_value": "$(echo \"scale=4;${DST_STREAM_MAXIMUM_BITRATE}/4*1000\" | bc | awk '{print int($1+0.5)}') # Do not edit",
+          "kind": "assignment",
+          "line": 54
+        },
+        {
+          "assignment_key": "DST_STREAM_BITRATE_720",
+          "assignment_value": "$(echo \"scale=4;${DST_STREAM_MAXIMUM_BITRATE}/5*1000\" | bc | awk '{print int($1+0.5)}') # Do not edit",
+          "kind": "assignment",
+          "line": 55
+        },
+        {
+          "assignment_key": "DST_STREAM_BITRATE_480",
+          "assignment_value": "$(echo \"scale=4;${DST_STREAM_MAXIMUM_BITRATE}/6*1000\" | bc | awk '{print int($1+0.5)}') # Do not edit",
+          "kind": "assignment",
+          "line": 56
+        },
+        {
+          "kind": "unsupported",
+          "line": 57,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 58,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 59,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "DST_STREAM_AUDIO_BITRATE",
+          "assignment_value": "192",
+          "kind": "assignment",
+          "line": 60
+        },
+        {
+          "assignment_key": "DST_STREAM_AUDIO_CHANNELS",
+          "assignment_value": "stereo",
+          "kind": "assignment",
+          "line": 61
+        },
+        {
+          "kind": "unsupported",
+          "line": 62,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 63,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "TYPE01",
+          "assignment_value": "\"--add-subtitle auto --crop auto --eac3 --target 2160p=${DST_STREAM_BITRATE_2160} --target 1080p=${DST_STREAM_BITRATE_1080} --target 720p=${DST_STREAM_BITRATE_720} --target 480p=${DST_STREAM_BITRATE_480}\"",
+          "kind": "assignment",
+          "line": 64
+        },
+        {
+          "assignment_key": "TYPE02",
+          "assignment_value": "\"--add-subtitle auto --crop auto --eac3\"",
+          "kind": "assignment",
+          "line": 65
+        },
+        {
+          "assignment_key": "TYPE03",
+          "assignment_value": "\"--add-subtitle auto --crop auto --${DST_STREAM_AUDIO_CHANNELS}-bitrate ${DST_STREAM_AUDIO_BITRATE} --target 2160p=${DST_STREAM_BITRATE_2160} --target 1080p=${DST_STREAM_BITRATE_1080} --target 720p=${DST_STREAM_BITRATE_720} --target 480p=${DST_STREAM_BITRATE_480}\"",
+          "kind": "assignment",
+          "line": 66
+        },
+        {
+          "kind": "unsupported",
+          "line": 67,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 68,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "IN_HOMEVIDEO_ENCODE_ARG",
+          "assignment_value": "${TYPE01}",
+          "kind": "assignment",
+          "line": 69
+        },
+        {
+          "assignment_key": "IN_UNSORTED_ENCODE_ARG",
+          "assignment_value": "${TYPE03}",
+          "kind": "assignment",
+          "line": 70
+        },
+        {
+          "assignment_key": "IN_STREAM_ENCODE_ARG",
+          "assignment_value": "${TYPE03}",
+          "kind": "assignment",
+          "line": 71
+        },
+        {
+          "kind": "unsupported",
+          "line": 72,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 73,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "SRC_STREAM_MIN_SIZE",
+          "assignment_value": "1024 # Do not edit",
+          "kind": "assignment",
+          "line": 74
+        },
+        {
+          "kind": "unsupported",
+          "line": 75,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 76,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 77,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 78,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 79,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 80,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 81,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "RSYNC_CUTOFF_START",
+          "assignment_value": "1",
+          "kind": "assignment",
+          "line": 82
+        },
+        {
+          "assignment_key": "RSYNC_CUTOFF_END",
+          "assignment_value": "30",
+          "kind": "assignment",
+          "line": 83
+        },
+        {
+          "kind": "unsupported",
+          "line": 84,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 85,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 86,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "DST_STREAM_AGE",
+          "assignment_value": "30",
+          "kind": "assignment",
+          "line": 87
+        },
+        {
+          "kind": "unsupported",
+          "line": 88,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 89,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "DST_STREAM_DIR_MINSIZE",
+          "assignment_value": "10000 # Do not edit",
+          "kind": "assignment",
+          "line": 90
+        },
+        {
+          "kind": "unsupported",
+          "line": 91,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 92,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 93,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 94,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 95,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 96,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "NVIDIA_GPU_ARG",
+          "assignment_value": "0",
+          "kind": "assignment",
+          "line": 97
+        },
+        {
+          "assignment_key": "NVIDIA_AQ_ARG",
+          "assignment_value": "0",
+          "kind": "assignment",
+          "line": 98
+        },
+        {
+          "assignment_key": "NVIDIA_NVENC_ARG",
+          "assignment_value": "0",
+          "kind": "assignment",
+          "line": 99
+        },
+        {
+          "kind": "unsupported",
+          "line": 100,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "INTEL_QSV_ARG",
+          "assignment_value": "0",
+          "kind": "assignment",
+          "line": 101
+        },
+        {
+          "kind": "unsupported",
+          "line": 102,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "AMD_AMF_ARG",
+          "assignment_value": "0",
+          "kind": "assignment",
+          "line": 103
+        },
+        {
+          "kind": "unsupported",
+          "line": 104,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "VAAPI_ARG",
+          "assignment_value": "1",
+          "kind": "assignment",
+          "line": 105
+        },
+        {
+          "kind": "unsupported",
+          "line": 106,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 107,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 108,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 109,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 110,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 111,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "HW_HEVC",
+          "assignment_value": "0",
+          "kind": "assignment",
+          "line": 112
+        },
+        {
+          "kind": "unsupported",
+          "line": 113,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "HW_H264",
+          "assignment_value": "0",
+          "kind": "assignment",
+          "line": 114
+        },
+        {
+          "kind": "unsupported",
+          "line": 115,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 116,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 117,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 118,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 119,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 120,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 121,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 122,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 123,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "X264_ARG",
+          "assignment_value": "0",
+          "kind": "assignment",
+          "line": 124
+        },
+        {
+          "kind": "unsupported",
+          "line": 125,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "X265_ARG",
+          "assignment_value": "0",
+          "kind": "assignment",
+          "line": 126
+        },
+        {
+          "kind": "unsupported",
+          "line": 127,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 128,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 129,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 130,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 131,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 132,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 133,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 134,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 135,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 136,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 137,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 138,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 139,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 140,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 141,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 142,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "HV_SW_ENCODER",
+          "assignment_value": "\"--x265\"",
+          "kind": "assignment",
+          "line": 143
+        },
+        {
+          "assignment_key": "HV_HW_ENCODER",
+          "assignment_value": "\"--hevc\"",
+          "kind": "assignment",
+          "line": 144
+        },
+        {
+          "kind": "unsupported",
+          "line": 145,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 146,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 147,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 148,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 149,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "INPUT_WATCH_IN_HOMEVIDEO",
+          "assignment_value": "in_homevideo,autoadd,/mnt/public/autoadd/vidcoderr/in_homevideo,/mnt/video/homevideo,${IN_HOMEVIDEO_ENCODE_ARG},1",
+          "kind": "assignment",
+          "line": 150
+        },
+        {
+          "assignment_key": "INPUT_WATCH_IN_UNSORTED",
+          "assignment_value": "in_unsorted,autoadd,/mnt/public/autoadd/vidcoderr/in_unsorted,/mnt/public/autoadd/vidcoderr/out_unsorted,${IN_UNSORTED_ENCODE_ARG},1",
+          "kind": "assignment",
+          "line": 151
+        },
+        {
+          "kind": "unsupported",
+          "line": 152,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "INPUT_WATCH_STREAM_DOCUMENTARY",
+          "assignment_value": "in_stream,documentary,/mnt/video/documentary,/mnt/video/stream/documentary,${IN_STREAM_ENCODE_ARG},0",
+          "kind": "assignment",
+          "line": 153
+        },
+        {
+          "assignment_key": "INPUT_WATCH_STREAM_MOVIES",
+          "assignment_value": "in_stream,movies,/mnt/video/movies,/mnt/video/stream/movies,${IN_STREAM_ENCODE_ARG},0",
+          "kind": "assignment",
+          "line": 154
+        },
+        {
+          "assignment_key": "INPUT_WATCH_STREAM_MUSICVIDEO",
+          "assignment_value": "in_stream,musicvideo,/mnt/video/musicvideo,/mnt/video/stream/musicvideo,${IN_STREAM_ENCODE_ARG},0",
+          "kind": "assignment",
+          "line": 155
+        },
+        {
+          "assignment_key": "INPUT_WATCH_STREAM_PRON",
+          "assignment_value": "in_stream,pron,/mnt/video/pron,/mnt/video/stream/pron,${IN_STREAM_ENCODE_ARG},0",
+          "kind": "assignment",
+          "line": 156
+        },
+        {
+          "assignment_key": "INPUT_WATCH_STREAM_SERIES",
+          "assignment_value": "in_stream,series,/mnt/video/series,/mnt/video/stream/series,${IN_STREAM_ENCODE_ARG},0",
+          "kind": "assignment",
+          "line": 157
+        },
+        {
+          "kind": "unsupported",
+          "line": 158,
+          "reason": "comment"
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-ini-ahuacate-pve-medialab",
+      "stratum": "primary",
+      "wave": 1
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [
+        {
+          "assignment_key": "formatter",
+          "assignment_value": "formatter",
+          "lines": [
+            44,
+            50
+          ]
+        },
+        {
+          "assignment_key": "handlers",
+          "assignment_value": "stream_handler",
+          "lines": [
+            32,
+            36
+          ]
+        },
+        {
+          "assignment_key": "level",
+          "assignment_value": "DEBUG",
+          "lines": [
+            31,
+            35,
+            43,
+            49
+          ]
+        }
+      ],
+      "explicit_reference_edges": [],
+      "n_assignments": 18,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 54,
+      "n_unsupported": 36,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 2,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 3,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 4,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 6,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 7,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 8,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 9,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 10,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 11,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 12,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 13,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 14,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 15,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 16,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 17,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 18,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 19,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 20,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "keys",
+          "assignment_value": "root,harvesters",
+          "kind": "assignment",
+          "line": 21
+        },
+        {
+          "kind": "unsupported",
+          "line": 22,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 23,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "keys",
+          "assignment_value": "stream_handler",
+          "kind": "assignment",
+          "line": 24
+        },
+        {
+          "kind": "unsupported",
+          "line": 25,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 26,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 27,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "keys",
+          "assignment_value": "formatter",
+          "kind": "assignment",
+          "line": 28
+        },
+        {
+          "kind": "unsupported",
+          "line": 29,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 30,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "level",
+          "assignment_value": "DEBUG",
+          "kind": "assignment",
+          "line": 31
+        },
+        {
+          "assignment_key": "handlers",
+          "assignment_value": "stream_handler",
+          "kind": "assignment",
+          "line": 32
+        },
+        {
+          "kind": "unsupported",
+          "line": 33,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 34,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "level",
+          "assignment_value": "DEBUG",
+          "kind": "assignment",
+          "line": 35
+        },
+        {
+          "assignment_key": "handlers",
+          "assignment_value": "stream_handler",
+          "kind": "assignment",
+          "line": 36
+        },
+        {
+          "kind": "unsupported",
+          "line": 37,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "qualname",
+          "assignment_value": "harvesters",
+          "kind": "assignment",
+          "line": 38
+        },
+        {
+          "assignment_key": "propagate",
+          "assignment_value": "0",
+          "kind": "assignment",
+          "line": 39
+        },
+        {
+          "kind": "unsupported",
+          "line": 40,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 41,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "class",
+          "assignment_value": "StreamHandler",
+          "kind": "assignment",
+          "line": 42
+        },
+        {
+          "assignment_key": "level",
+          "assignment_value": "DEBUG",
+          "kind": "assignment",
+          "line": 43
+        },
+        {
+          "assignment_key": "formatter",
+          "assignment_value": "formatter",
+          "kind": "assignment",
+          "line": 44
+        },
+        {
+          "assignment_key": "args",
+          "assignment_value": "(sys.stderr,)",
+          "kind": "assignment",
+          "line": 45
+        },
+        {
+          "kind": "unsupported",
+          "line": 46,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 47,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "class",
+          "assignment_value": "FileHandler",
+          "kind": "assignment",
+          "line": 48
+        },
+        {
+          "assignment_key": "level",
+          "assignment_value": "DEBUG",
+          "kind": "assignment",
+          "line": 49
+        },
+        {
+          "assignment_key": "formatter",
+          "assignment_value": "formatter",
+          "kind": "assignment",
+          "line": 50
+        },
+        {
+          "assignment_key": "args",
+          "assignment_value": "('harvesters.log', 'a', 'utf-8', 'False')",
+          "kind": "assignment",
+          "line": 51
+        },
+        {
+          "kind": "unsupported",
+          "line": 52,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 53,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "format",
+          "assignment_value": "%(asctime)s :: %(name)s :: %(levelname)s :: %(message)s",
+          "kind": "assignment",
+          "line": 54
+        }
+      ],
+      "repeated_key_different_value": [
+        {
+          "assignment_key": "args",
+          "n_values": 2
+        },
+        {
+          "assignment_key": "class",
+          "n_values": 2
+        },
+        {
+          "assignment_key": "keys",
+          "n_values": 3
+        }
+      ],
+      "source_id": "rs2-ini-genicam-harvesters_gui",
+      "stratum": "primary",
+      "wave": 1
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 27,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 52,
+      "n_unsupported": 25,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 2,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 3,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 4,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 6,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 7,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 8,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 9,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 10,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 11,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 12,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 13,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 14,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 15,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 16,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 17,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 18,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "LXC_PREFIX",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 19
+        },
+        {
+          "assignment_key": "LXC_IMAGE",
+          "assignment_value": "beluganos-base-lxc.tar.gz",
+          "kind": "assignment",
+          "line": 20
+        },
+        {
+          "kind": "unsupported",
+          "line": 21,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 22,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "DIRS",
+          "assignment_value": "\"etc/netplan/\"",
+          "kind": "assignment",
+          "line": 23
+        },
+        {
+          "assignment_key": "DIRS+",
+          "assignment_value": "\" etc/sysctl.d\"",
+          "kind": "assignment",
+          "line": 24
+        },
+        {
+          "assignment_key": "DIRS+",
+          "assignment_value": "\" etc/snmp\"",
+          "kind": "assignment",
+          "line": 25
+        },
+        {
+          "assignment_key": "DIRS+",
+          "assignment_value": "\" etc/beluganos\"",
+          "kind": "assignment",
+          "line": 26
+        },
+        {
+          "assignment_key": "DIRS+",
+          "assignment_value": "\" etc/frr\"",
+          "kind": "assignment",
+          "line": 27
+        },
+        {
+          "kind": "unsupported",
+          "line": 28,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 29,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 30,
+          "reason": "other"
+        },
+        {
+          "assignment_key": "COPY_FILES[\"netplan.yaml\"]",
+          "assignment_value": "root@etc/netplan/20-beluganos.yaml",
+          "kind": "assignment",
+          "line": 31
+        },
+        {
+          "assignment_key": "COPY_FILES[\"sysctl.conf\"]",
+          "assignment_value": "root@etc/sysctl.d/30-beluganos.conf",
+          "kind": "assignment",
+          "line": 32
+        },
+        {
+          "assignment_key": "COPY_FILES[\"ribxd.conf\"]",
+          "assignment_value": "beluganos@etc/beluganos/",
+          "kind": "assignment",
+          "line": 33
+        },
+        {
+          "assignment_key": "COPY_FILES[\"ribtd.conf\"]",
+          "assignment_value": "beluganos@etc/beluganos/",
+          "kind": "assignment",
+          "line": 34
+        },
+        {
+          "assignment_key": "COPY_FILES[\"snmpproxyd.conf\"]",
+          "assignment_value": "beluganos@etc/beluganos/",
+          "kind": "assignment",
+          "line": 35
+        },
+        {
+          "assignment_key": "COPY_FILES[\"bridge_vlan.yaml\"]",
+          "assignment_value": "beluganos@etc/beluganos/",
+          "kind": "assignment",
+          "line": 36
+        },
+        {
+          "assignment_key": "COPY_FILES[\"daemons\"]",
+          "assignment_value": "frr@etc/frr/",
+          "kind": "assignment",
+          "line": 37
+        },
+        {
+          "assignment_key": "COPY_FILES[\"frr.conf\"]",
+          "assignment_value": "frr@etc/frr/",
+          "kind": "assignment",
+          "line": 38
+        },
+        {
+          "assignment_key": "COPY_FILES[\"gobgpd.conf\"]",
+          "assignment_value": "frr@etc/frr/gobgpd.toml",
+          "kind": "assignment",
+          "line": 39
+        },
+        {
+          "assignment_key": "COPY_FILES[\"nftables.conf\"]",
+          "assignment_value": "root@etc/nftables.conf",
+          "kind": "assignment",
+          "line": 40
+        },
+        {
+          "kind": "unsupported",
+          "line": 41,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 42,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "SERVICES",
+          "assignment_value": "\"beluganos.service\"",
+          "kind": "assignment",
+          "line": 43
+        },
+        {
+          "assignment_key": "SERVICES+",
+          "assignment_value": "\" nlad.service\"",
+          "kind": "assignment",
+          "line": 44
+        },
+        {
+          "assignment_key": "SERVICES+",
+          "assignment_value": "\" ribcd.service\"",
+          "kind": "assignment",
+          "line": 45
+        },
+        {
+          "assignment_key": "SERVICES+",
+          "assignment_value": "\" ribsd.service\"",
+          "kind": "assignment",
+          "line": 46
+        },
+        {
+          "assignment_key": "SERVICES+",
+          "assignment_value": "\" ribpd.service\"",
+          "kind": "assignment",
+          "line": 47
+        },
+        {
+          "assignment_key": "SERVICES+",
+          "assignment_value": "\" ribtd.service\"",
+          "kind": "assignment",
+          "line": 48
+        },
+        {
+          "assignment_key": "SERVICES+",
+          "assignment_value": "\" ribbr.service\"",
+          "kind": "assignment",
+          "line": 49
+        },
+        {
+          "assignment_key": "SERVICES+",
+          "assignment_value": "\" frr.service\"",
+          "kind": "assignment",
+          "line": 50
+        },
+        {
+          "assignment_key": "SERVICES+",
+          "assignment_value": "\" gobgpd.service\"",
+          "kind": "assignment",
+          "line": 51
+        },
+        {
+          "assignment_key": "SERVICES+",
+          "assignment_value": "\" snmpifmond.service\"",
+          "kind": "assignment",
+          "line": 52
+        }
+      ],
+      "repeated_key_different_value": [
+        {
+          "assignment_key": "DIRS+",
+          "n_values": 4
+        },
+        {
+          "assignment_key": "SERVICES+",
+          "n_values": 9
+        }
+      ],
+      "source_id": "rs2-ini-beluganos-beluganos",
+      "stratum": "primary",
+      "wave": 1
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 11,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 11,
+      "n_unsupported": 0,
+      "records": [
+        {
+          "assignment_key": "GITHUB_TOKEN",
+          "assignment_value": "example",
+          "kind": "assignment",
+          "line": 1
+        },
+        {
+          "assignment_key": "S3_URL",
+          "assignment_value": "http://localhost:9000",
+          "kind": "assignment",
+          "line": 2
+        },
+        {
+          "assignment_key": "KEY_S3",
+          "assignment_value": "rustfsadmin",
+          "kind": "assignment",
+          "line": 3
+        },
+        {
+          "assignment_key": "TOKEN_S3",
+          "assignment_value": "rustfsadmin",
+          "kind": "assignment",
+          "line": 4
+        },
+        {
+          "assignment_key": "VERSION_S3",
+          "assignment_value": "s3v4",
+          "kind": "assignment",
+          "line": 5
+        },
+        {
+          "assignment_key": "BUCKET_NAME",
+          "assignment_value": "pomoyka",
+          "kind": "assignment",
+          "line": 6
+        },
+        {
+          "assignment_key": "LOG_LEVEL",
+          "assignment_value": "INFO",
+          "kind": "assignment",
+          "line": 7
+        },
+        {
+          "assignment_key": "RUSTFS_ACCESS_KEY",
+          "assignment_value": "rustfsadmin",
+          "kind": "assignment",
+          "line": 8
+        },
+        {
+          "assignment_key": "RUSTFS_SECRET_KEY",
+          "assignment_value": "rustfsadmin",
+          "kind": "assignment",
+          "line": 9
+        },
+        {
+          "assignment_key": "USERNAME_API",
+          "assignment_value": "admin",
+          "kind": "assignment",
+          "line": 10
+        },
+        {
+          "assignment_key": "PASSWORD_API",
+          "assignment_value": "admin",
+          "kind": "assignment",
+          "line": 11
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-dotenv-s1nro-granatapfel",
+      "stratum": "primary",
+      "wave": 2
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 22,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 33,
+      "n_unsupported": 11,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "DB_NAME",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 2
+        },
+        {
+          "assignment_key": "DB_PORT",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 3
+        },
+        {
+          "assignment_key": "DB_USERNAME",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 4
+        },
+        {
+          "assignment_key": "DB_PASSWORD",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 5
+        },
+        {
+          "assignment_key": "DB_ENDPOINT",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 6
+        },
+        {
+          "assignment_key": "DATABASE_URL",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 7
+        },
+        {
+          "kind": "unsupported",
+          "line": 8,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 9,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "GOOGLE_CLIENT_ID",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 10
+        },
+        {
+          "assignment_key": "GOOGLE_CLIENT_SECRET",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 11
+        },
+        {
+          "assignment_key": "AUTH_SECRET",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 12
+        },
+        {
+          "assignment_key": "OAUTH_BASE_URL",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 13
+        },
+        {
+          "kind": "unsupported",
+          "line": 14,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 15,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "NEXT_PUBLIC_FULL_URL",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 16
+        },
+        {
+          "assignment_key": "NEXT_PUBLIC_SHORT_URL",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 17
+        },
+        {
+          "kind": "unsupported",
+          "line": 18,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 19,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "AWS_REGION",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 20
+        },
+        {
+          "assignment_key": "AWS_ACCESS_KEY_ID",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 21
+        },
+        {
+          "assignment_key": "AWS_SECRET_ACCESS_KEY",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 22
+        },
+        {
+          "assignment_key": "AWS_SESSION_TOKEN",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 23
+        },
+        {
+          "assignment_key": "S3_BUCKET_NAME",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 24
+        },
+        {
+          "kind": "unsupported",
+          "line": 25,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 26,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "ABLY_API_KEY",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 27
+        },
+        {
+          "kind": "unsupported",
+          "line": 28,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 29,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "SMTP_HOST",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 30
+        },
+        {
+          "assignment_key": "SMTP_PORT",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 31
+        },
+        {
+          "assignment_key": "SMTP_USER",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 32
+        },
+        {
+          "assignment_key": "SMTP_PASS",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 33
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-dotenv-johnsonchin1009-pulse",
+      "stratum": "primary",
+      "wave": 2
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 31,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 85,
+      "n_unsupported": 54,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 2,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 3,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 4,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 6,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 7,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 8,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 9,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 10,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 11,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 12,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 13,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 14,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 15,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 16,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 17,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 18,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 19,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 20,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 21,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 22,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 23,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 24,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 25,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "alfresco.context",
+          "assignment_value": "alfresco",
+          "kind": "assignment",
+          "line": 26
+        },
+        {
+          "assignment_key": "alfresco.host",
+          "assignment_value": "localhost",
+          "kind": "assignment",
+          "line": 27
+        },
+        {
+          "assignment_key": "alfresco.port",
+          "assignment_value": "8080",
+          "kind": "assignment",
+          "line": 28
+        },
+        {
+          "assignment_key": "alfresco.protocol",
+          "assignment_value": "http",
+          "kind": "assignment",
+          "line": 29
+        },
+        {
+          "kind": "unsupported",
+          "line": 30,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 31,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "share.context",
+          "assignment_value": "share",
+          "kind": "assignment",
+          "line": 32
+        },
+        {
+          "assignment_key": "share.host",
+          "assignment_value": "localhost",
+          "kind": "assignment",
+          "line": 33
+        },
+        {
+          "assignment_key": "share.port",
+          "assignment_value": "8180",
+          "kind": "assignment",
+          "line": 34
+        },
+        {
+          "assignment_key": "share.protocol",
+          "assignment_value": "http",
+          "kind": "assignment",
+          "line": 35
+        },
+        {
+          "kind": "unsupported",
+          "line": 36,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 37,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "index.recovery.mode",
+          "assignment_value": "NONE",
+          "kind": "assignment",
+          "line": 38
+        },
+        {
+          "kind": "unsupported",
+          "line": 39,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 40,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 41,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 42,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "wcmqs.dynamicCollectionProcessor.schedule",
+          "assignment_value": "0 30 2 * * ? 2060",
+          "kind": "assignment",
+          "line": 43
+        },
+        {
+          "assignment_key": "wcmqs.feedbackProcessor.schedule",
+          "assignment_value": "0 40 2 * * ? 2060",
+          "kind": "assignment",
+          "line": 44
+        },
+        {
+          "assignment_key": "wcmqs.publishQueueProcessor.schedule",
+          "assignment_value": "0 50 2 * * ? 2060",
+          "kind": "assignment",
+          "line": 45
+        },
+        {
+          "kind": "unsupported",
+          "line": 46,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 47,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "integrity.failOnError",
+          "assignment_value": "true",
+          "kind": "assignment",
+          "line": 48
+        },
+        {
+          "kind": "unsupported",
+          "line": 49,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 50,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 51,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "db.driver",
+          "assignment_value": "org.postgresql.Driver",
+          "kind": "assignment",
+          "line": 52
+        },
+        {
+          "kind": "unsupported",
+          "line": 53,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 54,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 55,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 56,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 57,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 58,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "index.subsystem.name",
+          "assignment_value": "solr6",
+          "kind": "assignment",
+          "line": 59
+        },
+        {
+          "assignment_key": "solr.host",
+          "assignment_value": "alfresco-jobs-ass",
+          "kind": "assignment",
+          "line": 60
+        },
+        {
+          "assignment_key": "solr.port",
+          "assignment_value": "8983",
+          "kind": "assignment",
+          "line": 61
+        },
+        {
+          "assignment_key": "solr.secureComms",
+          "assignment_value": "secret",
+          "kind": "assignment",
+          "line": 62
+        },
+        {
+          "assignment_key": "solr.sharedSecret",
+          "assignment_value": "secret",
+          "kind": "assignment",
+          "line": 63
+        },
+        {
+          "kind": "unsupported",
+          "line": 64,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "db.username",
+          "assignment_value": "alfresco",
+          "kind": "assignment",
+          "line": 65
+        },
+        {
+          "assignment_key": "db.password",
+          "assignment_value": "alfresco",
+          "kind": "assignment",
+          "line": 66
+        },
+        {
+          "assignment_key": "db.pool.initial",
+          "assignment_value": "10",
+          "kind": "assignment",
+          "line": 67
+        },
+        {
+          "assignment_key": "db.pool.max",
+          "assignment_value": "100",
+          "kind": "assignment",
+          "line": 68
+        },
+        {
+          "kind": "unsupported",
+          "line": 69,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "db.url",
+          "assignment_value": "jdbc:postgresql://alfresco-jobs-postgres:5432/alfresco",
+          "kind": "assignment",
+          "line": 70
+        },
+        {
+          "kind": "unsupported",
+          "line": 71,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 72,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 73,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "cifs.enabled",
+          "assignment_value": "false",
+          "kind": "assignment",
+          "line": 74
+        },
+        {
+          "assignment_key": "ftp.enabled",
+          "assignment_value": "false",
+          "kind": "assignment",
+          "line": 75
+        },
+        {
+          "kind": "unsupported",
+          "line": 76,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "csrf.filter.enabled",
+          "assignment_value": "false",
+          "kind": "assignment",
+          "line": 77
+        },
+        {
+          "kind": "unsupported",
+          "line": 78,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 79,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "messaging.broker.url",
+          "assignment_value": "vm://localhost?broker.persistent=false",
+          "kind": "assignment",
+          "line": 80
+        },
+        {
+          "kind": "unsupported",
+          "line": 81,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 82,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "transform.service.enabled",
+          "assignment_value": "false",
+          "kind": "assignment",
+          "line": 83
+        },
+        {
+          "assignment_key": "local.transform.service.enabled",
+          "assignment_value": "false",
+          "kind": "assignment",
+          "line": 84
+        },
+        {
+          "assignment_key": "legacy.transform.service.enabled",
+          "assignment_value": "false",
+          "kind": "assignment",
+          "line": 85
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-props-redpill-linpro-alfresco-jobs",
+      "stratum": "primary",
+      "wave": 2
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 18,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 26,
+      "n_unsupported": 8,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.log.messages",
+          "assignment_value": "\u65e5\u8a8c\u6d88\u606f",
+          "kind": "assignment",
+          "line": 2
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.about.version",
+          "assignment_value": "\u7248\u672c {0}",
+          "kind": "assignment",
+          "line": 3
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.about.copyright",
+          "assignment_value": "{0} ({1})",
+          "kind": "assignment",
+          "line": 4
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 6,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.locale.name",
+          "assignment_value": "\u5340\u57df",
+          "kind": "assignment",
+          "line": 7
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.locale.description",
+          "assignment_value": "\u8a2d\u7f6e\u5340\u57df\u3002",
+          "kind": "assignment",
+          "line": 8
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.help.name",
+          "assignment_value": "\u5e6b\u52a9",
+          "kind": "assignment",
+          "line": 9
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.help.description",
+          "assignment_value": "\u986f\u793a\u5e6b\u52a9\u4e26\u9000\u51fa\u3002",
+          "kind": "assignment",
+          "line": 10
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.assertions.name",
+          "assignment_value": "\u904b\u884c\u6642\u6aa2\u67e5",
+          "kind": "assignment",
+          "line": 11
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.assertions.description",
+          "assignment_value": "\u555f\u7528\u904b\u884c\u6642\u6aa2\u67e5\u3002",
+          "kind": "assignment",
+          "line": 12
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.log_window.name",
+          "assignment_value": "\u986f\u793a\u65e5\u8a8c\u7a97\u53e3",
+          "kind": "assignment",
+          "line": 13
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.log_window.description",
+          "assignment_value": "\u5728\u55ae\u7368\u7684\u7a97\u53e3\u4e2d\u986f\u793a\u65e5\u8a8c\u6d88\u606f\u3002",
+          "kind": "assignment",
+          "line": 14
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.debug.name",
+          "assignment_value": "\u555f\u7528\u5075\u932f\u529f\u80fd",
+          "kind": "assignment",
+          "line": 15
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.debug.description",
+          "assignment_value": "\u555f\u7528\u5075\u932f\u529f\u80fd\u3002",
+          "kind": "assignment",
+          "line": 16
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.log_level.name",
+          "assignment_value": "\u65e5\u8a8c\u7d1a\u5225",
+          "kind": "assignment",
+          "line": 17
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.log_level.description",
+          "assignment_value": "\u8a2d\u7f6e\u5168\u57df\u65e5\u8a8c\u7d1a\u5225\u6216\u6240\u9078\u8a18\u9304\u5668\u7684\u65e5\u8a8c\u7d1a\u5225\u3002\\n\\",
+          "kind": "assignment",
+          "line": 18
+        },
+        {
+          "kind": "unsupported",
+          "line": 19,
+          "reason": "other"
+        },
+        {
+          "assignment_key": "\u70ba\u5305\u8a2d\u7f6e\u65e5\u8a8c\u7d1a\u5225\u7684\u683c\u5f0f\u70ba <prefix>",
+          "assignment_value": "<level>\uff0c\\n\\",
+          "kind": "assignment",
+          "line": 20
+        },
+        {
+          "kind": "unsupported",
+          "line": 21,
+          "reason": "other"
+        },
+        {
+          "kind": "unsupported",
+          "line": 22,
+          "reason": "other"
+        },
+        {
+          "kind": "unsupported",
+          "line": 23,
+          "reason": "other"
+        },
+        {
+          "kind": "unsupported",
+          "line": 24,
+          "reason": "other"
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.log_buffer_size.name",
+          "assignment_value": "\u65e5\u8a8c\u7de9\u885d\u5340\u5927\u5c0f",
+          "kind": "assignment",
+          "line": 25
+        },
+        {
+          "assignment_key": "dua3.utility.fx.launcher.arg.log_buffer_size.description",
+          "assignment_value": "\u8a2d\u7f6e\u65e5\u8a8c\u7de9\u885d\u5340\u7684\u5927\u5c0f\u3002",
+          "kind": "assignment",
+          "line": 26
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-props-xzel23-utility",
+      "stratum": "primary",
+      "wave": 2
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 45,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 64,
+      "n_unsupported": 19,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 2,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "min_width",
+          "assignment_value": "570",
+          "kind": "assignment",
+          "line": 3
+        },
+        {
+          "assignment_key": "min_height",
+          "assignment_value": "560",
+          "kind": "assignment",
+          "line": 4
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "menubar",
+          "assignment_value": "file edit setup help",
+          "kind": "assignment",
+          "line": 6
+        },
+        {
+          "kind": "unsupported",
+          "line": 7,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "file",
+          "assignment_value": "new open - save saveAs - exit",
+          "kind": "assignment",
+          "line": 8
+        },
+        {
+          "assignment_key": "fileLabel",
+          "assignment_value": "File",
+          "kind": "assignment",
+          "line": 9
+        },
+        {
+          "assignment_key": "fileMnemonic",
+          "assignment_value": "F",
+          "kind": "assignment",
+          "line": 10
+        },
+        {
+          "assignment_key": "newLabel",
+          "assignment_value": "New File",
+          "kind": "assignment",
+          "line": 11
+        },
+        {
+          "assignment_key": "newMnemonic",
+          "assignment_value": "N",
+          "kind": "assignment",
+          "line": 12
+        },
+        {
+          "assignment_key": "openLabel",
+          "assignment_value": "Open",
+          "kind": "assignment",
+          "line": 13
+        },
+        {
+          "assignment_key": "openMnemonic",
+          "assignment_value": "O",
+          "kind": "assignment",
+          "line": 14
+        },
+        {
+          "assignment_key": "saveLabel",
+          "assignment_value": "Save",
+          "kind": "assignment",
+          "line": 15
+        },
+        {
+          "assignment_key": "saveMnemonic",
+          "assignment_value": "S",
+          "kind": "assignment",
+          "line": 16
+        },
+        {
+          "assignment_key": "saveAsLabel",
+          "assignment_value": "Save as",
+          "kind": "assignment",
+          "line": 17
+        },
+        {
+          "assignment_key": "saveAsMnemonic",
+          "assignment_value": "A",
+          "kind": "assignment",
+          "line": 18
+        },
+        {
+          "assignment_key": "exitLabel",
+          "assignment_value": "Exit",
+          "kind": "assignment",
+          "line": 19
+        },
+        {
+          "assignment_key": "exitMnemonic",
+          "assignment_value": "E",
+          "kind": "assignment",
+          "line": 20
+        },
+        {
+          "assignment_key": "newImage",
+          "assignment_value": "/example/images/icon_new-file.png",
+          "kind": "assignment",
+          "line": 21
+        },
+        {
+          "assignment_key": "openImage",
+          "assignment_value": "/example/images/icon_open-file.png",
+          "kind": "assignment",
+          "line": 22
+        },
+        {
+          "kind": "unsupported",
+          "line": 23,
+          "reason": "comment"
+        },
+        {
+          "assignment_key": "saveImage",
+          "assignment_value": "/example/images/icon_save-file.png",
+          "kind": "assignment",
+          "line": 24
+        },
+        {
+          "kind": "unsupported",
+          "line": 25,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 26,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 27,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "edit",
+          "assignment_value": "cut copy paste - undo redo",
+          "kind": "assignment",
+          "line": 28
+        },
+        {
+          "assignment_key": "editLabel",
+          "assignment_value": "Edit",
+          "kind": "assignment",
+          "line": 29
+        },
+        {
+          "assignment_key": "editMnemonic",
+          "assignment_value": "E",
+          "kind": "assignment",
+          "line": 30
+        },
+        {
+          "assignment_key": "cutLabel",
+          "assignment_value": "Cut",
+          "kind": "assignment",
+          "line": 31
+        },
+        {
+          "assignment_key": "cutAction",
+          "assignment_value": "cut-to-clipboard",
+          "kind": "assignment",
+          "line": 32
+        },
+        {
+          "assignment_key": "cutImage",
+          "assignment_value": "/example/images/icon_cut.png",
+          "kind": "assignment",
+          "line": 33
+        },
+        {
+          "assignment_key": "copyLabel",
+          "assignment_value": "Copy",
+          "kind": "assignment",
+          "line": 34
+        },
+        {
+          "assignment_key": "copyAction",
+          "assignment_value": "copy-to-clipboard",
+          "kind": "assignment",
+          "line": 35
+        },
+        {
+          "assignment_key": "copyImage",
+          "assignment_value": "/example/images/icon_copy.png",
+          "kind": "assignment",
+          "line": 36
+        },
+        {
+          "assignment_key": "pasteLabel",
+          "assignment_value": "Paste",
+          "kind": "assignment",
+          "line": 37
+        },
+        {
+          "assignment_key": "pasteAction",
+          "assignment_value": "paste-from-clipboard",
+          "kind": "assignment",
+          "line": 38
+        },
+        {
+          "assignment_key": "pasteImage",
+          "assignment_value": "/example/images/icon_paste.png",
+          "kind": "assignment",
+          "line": 39
+        },
+        {
+          "assignment_key": "undoLabel",
+          "assignment_value": "Undo",
+          "kind": "assignment",
+          "line": 40
+        },
+        {
+          "assignment_key": "undoAction",
+          "assignment_value": "Undo",
+          "kind": "assignment",
+          "line": 41
+        },
+        {
+          "assignment_key": "redoLabel",
+          "assignment_value": "Redo",
+          "kind": "assignment",
+          "line": 42
+        },
+        {
+          "assignment_key": "redoAction",
+          "assignment_value": "Redo",
+          "kind": "assignment",
+          "line": 43
+        },
+        {
+          "kind": "unsupported",
+          "line": 44,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 45,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "setup",
+          "assignment_value": "properties",
+          "kind": "assignment",
+          "line": 46
+        },
+        {
+          "assignment_key": "setupLabel",
+          "assignment_value": "Setup",
+          "kind": "assignment",
+          "line": 47
+        },
+        {
+          "assignment_key": "setupMnemonic",
+          "assignment_value": "S",
+          "kind": "assignment",
+          "line": 48
+        },
+        {
+          "assignment_key": "propertiesLabel",
+          "assignment_value": "Properties",
+          "kind": "assignment",
+          "line": 49
+        },
+        {
+          "assignment_key": "propertiesMnemonic",
+          "assignment_value": "P",
+          "kind": "assignment",
+          "line": 50
+        },
+        {
+          "kind": "unsupported",
+          "line": 51,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 52,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "help",
+          "assignment_value": "help version",
+          "kind": "assignment",
+          "line": 53
+        },
+        {
+          "assignment_key": "helpLabel",
+          "assignment_value": "Help",
+          "kind": "assignment",
+          "line": 54
+        },
+        {
+          "assignment_key": "helpMnemonic",
+          "assignment_value": "H",
+          "kind": "assignment",
+          "line": 55
+        },
+        {
+          "assignment_key": "versionLabel",
+          "assignment_value": "Version",
+          "kind": "assignment",
+          "line": 56
+        },
+        {
+          "assignment_key": "versionMnemonic",
+          "assignment_value": "V",
+          "kind": "assignment",
+          "line": 57
+        },
+        {
+          "kind": "unsupported",
+          "line": 58,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 59,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 60,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 61,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 62,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 63,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 64,
+          "reason": "comment"
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-props-aterai-kotlin-swing-tips",
+      "stratum": "primary",
+      "wave": 2
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [
+        {
+          "assignment_key": "LANG",
+          "assignment_value": "en_US.UTF-8",
+          "lines": [
+            7,
+            16,
+            26
+          ]
+        },
+        {
+          "assignment_key": "PYTHONPATH",
+          "assignment_value": "{toxinidir}",
+          "lines": [
+            8,
+            17,
+            27
+          ]
+        },
+        {
+          "assignment_key": "commands",
+          "assignment_value": "",
+          "lines": [
+            11,
+            20,
+            30
+          ]
+        },
+        {
+          "assignment_key": "deps",
+          "assignment_value": "",
+          "lines": [
+            9,
+            18,
+            28
+          ]
+        },
+        {
+          "assignment_key": "setenv",
+          "assignment_value": "",
+          "lines": [
+            6,
+            15,
+            25
+          ]
+        }
+      ],
+      "explicit_reference_edges": [],
+      "n_assignments": 17,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 31,
+      "n_unsupported": 14,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "envlist",
+          "assignment_value": "lint, cov, py38, py39",
+          "kind": "assignment",
+          "line": 2
+        },
+        {
+          "assignment_key": "skip_missing_interpreters",
+          "assignment_value": "True",
+          "kind": "assignment",
+          "line": 3
+        },
+        {
+          "kind": "unsupported",
+          "line": 4,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "setenv",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 6
+        },
+        {
+          "assignment_key": "LANG",
+          "assignment_value": "en_US.UTF-8",
+          "kind": "assignment",
+          "line": 7
+        },
+        {
+          "assignment_key": "PYTHONPATH",
+          "assignment_value": "{toxinidir}",
+          "kind": "assignment",
+          "line": 8
+        },
+        {
+          "assignment_key": "deps",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 9
+        },
+        {
+          "kind": "unsupported",
+          "line": 10,
+          "reason": "other"
+        },
+        {
+          "assignment_key": "commands",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 11
+        },
+        {
+          "kind": "unsupported",
+          "line": 12,
+          "reason": "other"
+        },
+        {
+          "kind": "unsupported",
+          "line": 13,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 14,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "setenv",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 15
+        },
+        {
+          "assignment_key": "LANG",
+          "assignment_value": "en_US.UTF-8",
+          "kind": "assignment",
+          "line": 16
+        },
+        {
+          "assignment_key": "PYTHONPATH",
+          "assignment_value": "{toxinidir}",
+          "kind": "assignment",
+          "line": 17
+        },
+        {
+          "assignment_key": "deps",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 18
+        },
+        {
+          "kind": "unsupported",
+          "line": 19,
+          "reason": "other"
+        },
+        {
+          "assignment_key": "commands",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 20
+        },
+        {
+          "kind": "unsupported",
+          "line": 21,
+          "reason": "other"
+        },
+        {
+          "kind": "unsupported",
+          "line": 22,
+          "reason": "other"
+        },
+        {
+          "kind": "unsupported",
+          "line": 23,
+          "reason": "other"
+        },
+        {
+          "kind": "unsupported",
+          "line": 24,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "setenv",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 25
+        },
+        {
+          "assignment_key": "LANG",
+          "assignment_value": "en_US.UTF-8",
+          "kind": "assignment",
+          "line": 26
+        },
+        {
+          "assignment_key": "PYTHONPATH",
+          "assignment_value": "{toxinidir}",
+          "kind": "assignment",
+          "line": 27
+        },
+        {
+          "assignment_key": "deps",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 28
+        },
+        {
+          "kind": "unsupported",
+          "line": 29,
+          "reason": "other"
+        },
+        {
+          "assignment_key": "commands",
+          "assignment_value": "",
+          "kind": "assignment",
+          "line": 30
+        },
+        {
+          "kind": "unsupported",
+          "line": 31,
+          "reason": "other"
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-ini-jphutchins-pyavreceiver",
+      "stratum": "primary",
+      "wave": 2
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [
+        {
+          "assignment_key": "en",
+          "assignment_value": "Supernovae",
+          "lines": [
+            2,
+            9,
+            14
+          ]
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Supernovae",
+          "lines": [
+            4,
+            11,
+            16
+          ]
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0421\u0432\u0435\u0440\u0445\u043d\u043e\u0432\u044b\u0435 \u0437\u0432\u0451\u0437\u0434\u044b",
+          "lines": [
+            3,
+            10,
+            15
+          ]
+        }
+      ],
+      "explicit_reference_edges": [],
+      "n_assignments": 81,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 138,
+      "n_unsupported": 57,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "other"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Supernovae",
+          "kind": "assignment",
+          "line": 2
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0421\u0432\u0435\u0440\u0445\u043d\u043e\u0432\u044b\u0435 \u0437\u0432\u0451\u0437\u0434\u044b",
+          "kind": "assignment",
+          "line": 3
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Supernovae",
+          "kind": "assignment",
+          "line": 4
+        },
+        {
+          "kind": "unsupported",
+          "line": 5,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 6,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 7,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 8,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Supernovae",
+          "kind": "assignment",
+          "line": 9
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0421\u0432\u0435\u0440\u0445\u043d\u043e\u0432\u044b\u0435 \u0437\u0432\u0451\u0437\u0434\u044b",
+          "kind": "assignment",
+          "line": 10
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Supernovae",
+          "kind": "assignment",
+          "line": 11
+        },
+        {
+          "kind": "unsupported",
+          "line": 12,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 13,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Supernovae",
+          "kind": "assignment",
+          "line": 14
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0421\u0432\u0435\u0440\u0445\u043d\u043e\u0432\u044b\u0435 \u0437\u0432\u0451\u0437\u0434\u044b",
+          "kind": "assignment",
+          "line": 15
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Supernovae",
+          "kind": "assignment",
+          "line": 16
+        },
+        {
+          "kind": "unsupported",
+          "line": 17,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 18,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Supernovae Labels",
+          "kind": "assignment",
+          "line": 19
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u044f c\u0432\u0435\u0440\u0445\u043d\u043e\u0432\u044b\u0445 \u0437\u0432\u0451\u0437\u0434",
+          "kind": "assignment",
+          "line": 20
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "\u00c9tiquettes des supernovae",
+          "kind": "assignment",
+          "line": 21
+        },
+        {
+          "kind": "unsupported",
+          "line": 22,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 23,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Display supernovae regarding zoom level",
+          "kind": "assignment",
+          "line": 24
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u041f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u0441\u0432\u0435\u0440\u0445\u043d\u043e\u0432\u044b\u0435 \u0437\u0432\u0451\u0437\u0434\u044b \u0432\u043d\u0435 \u0437\u0430\u0432\u0438\u0441\u0438\u043c\u043e\u0441\u0442\u0438 \u043e\u0442 \u043c\u0430\u0441\u0448\u0442\u0430\u0431\u0430 \u043a\u0430\u0440\u0442\u044b",
+          "kind": "assignment",
+          "line": 25
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Afficher les supernovae quel que soit le niveau de zoom",
+          "kind": "assignment",
+          "line": 26
+        },
+        {
+          "kind": "unsupported",
+          "line": 27,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 28,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 29,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 30,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Supernova",
+          "kind": "assignment",
+          "line": 31
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0421\u0432\u0435\u0440\u0445\u043d\u043e\u0432\u0430\u044f \u0437\u0432\u0435\u0437\u0434\u0430",
+          "kind": "assignment",
+          "line": 32
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Supernova",
+          "kind": "assignment",
+          "line": 33
+        },
+        {
+          "kind": "unsupported",
+          "line": 34,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 35,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Constellation",
+          "kind": "assignment",
+          "line": 36
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0421\u043e\u0437\u0432\u0435\u0437\u0434\u0438\u0435",
+          "kind": "assignment",
+          "line": 37
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Constellation",
+          "kind": "assignment",
+          "line": 38
+        },
+        {
+          "kind": "unsupported",
+          "line": 39,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 40,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Equatorial coordinates (current epoch)",
+          "kind": "assignment",
+          "line": 41
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u042d\u043a\u0432\u0430\u0442\u043e\u0440\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u044b (\u043d\u0430 \u0442\u0435\u043a\u0443\u0449\u0443\u044e \u044d\u043f\u043e\u0445\u0443)",
+          "kind": "assignment",
+          "line": 42
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Coordonn\u00e9es \u00e9quatoriales (\u00e9poque actuelle)",
+          "kind": "assignment",
+          "line": 43
+        },
+        {
+          "kind": "unsupported",
+          "line": 44,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 45,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Right Ascension (\u03b1)",
+          "kind": "assignment",
+          "line": 46
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u041f\u0440\u044f\u043c\u043e\u0435 \u0432\u043e\u0441\u0445\u043e\u0436\u0434\u0435\u043d\u0438\u0435 (\u03b1)",
+          "kind": "assignment",
+          "line": 47
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Ascension droite (\u03b1)",
+          "kind": "assignment",
+          "line": 48
+        },
+        {
+          "kind": "unsupported",
+          "line": 49,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 50,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Declination (\u03b4)",
+          "kind": "assignment",
+          "line": 51
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0421\u043a\u043b\u043e\u043d\u0435\u043d\u0438\u0435 (\u03b4)",
+          "kind": "assignment",
+          "line": 52
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "D\u00e9clinaison (\u03b4)",
+          "kind": "assignment",
+          "line": 53
+        },
+        {
+          "kind": "unsupported",
+          "line": 54,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 55,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Equatorial coordinates (J2000.0 epoch)",
+          "kind": "assignment",
+          "line": 56
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u042d\u043a\u0432\u0430\u0442\u043e\u0440\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u044b (\u043d\u0430 \u044d\u043f\u043e\u0445\u0443 J2000.0)",
+          "kind": "assignment",
+          "line": 57
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Coordonn\u00e9es \u00e9quatoriales (\u00e9poque J2000.0)",
+          "kind": "assignment",
+          "line": 58
+        },
+        {
+          "kind": "unsupported",
+          "line": 59,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 60,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Right Ascension (\u03b1\u2080)",
+          "kind": "assignment",
+          "line": 61
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u041f\u0440\u044f\u043c\u043e\u0435 \u0432\u043e\u0441\u0445\u043e\u0436\u0434\u0435\u043d\u0438\u0435 (\u03b1\u2080)",
+          "kind": "assignment",
+          "line": 62
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Ascension droite (\u03b1\u2080)",
+          "kind": "assignment",
+          "line": 63
+        },
+        {
+          "kind": "unsupported",
+          "line": 64,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 65,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Declination (\u03b4\u2080)",
+          "kind": "assignment",
+          "line": 66
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0421\u043a\u043b\u043e\u043d\u0435\u043d\u0438\u0435 (\u03b4\u2080)",
+          "kind": "assignment",
+          "line": 67
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "D\u00e9clinaison (\u03b4\u2080)",
+          "kind": "assignment",
+          "line": 68
+        },
+        {
+          "kind": "unsupported",
+          "line": 69,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 70,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Horizontal coordinates",
+          "kind": "assignment",
+          "line": 71
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0413\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0430\u043b\u044c\u043d\u044b\u0435 \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u044b",
+          "kind": "assignment",
+          "line": 72
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Coordonn\u00e9es horizontales",
+          "kind": "assignment",
+          "line": 73
+        },
+        {
+          "kind": "unsupported",
+          "line": 74,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 75,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Altitude (h)",
+          "kind": "assignment",
+          "line": 76
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0412\u044b\u0441\u043e\u0442\u0430 (h)",
+          "kind": "assignment",
+          "line": 77
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Altitude (h)",
+          "kind": "assignment",
+          "line": 78
+        },
+        {
+          "kind": "unsupported",
+          "line": 79,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 80,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Azimuth (A)",
+          "kind": "assignment",
+          "line": 81
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0410\u0437\u0438\u043c\u0443\u0442 (A)",
+          "kind": "assignment",
+          "line": 82
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Azimut (A)",
+          "kind": "assignment",
+          "line": 83
+        },
+        {
+          "kind": "unsupported",
+          "line": 84,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 85,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Visibility",
+          "kind": "assignment",
+          "line": 86
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0412\u0438\u0434\u0438\u043c\u043e\u0441\u0442\u044c",
+          "kind": "assignment",
+          "line": 87
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Visibilit\u00e9",
+          "kind": "assignment",
+          "line": 88
+        },
+        {
+          "kind": "unsupported",
+          "line": 89,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 90,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Rise",
+          "kind": "assignment",
+          "line": 91
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0412\u043e\u0441\u0445\u043e\u0434",
+          "kind": "assignment",
+          "line": 92
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Lever",
+          "kind": "assignment",
+          "line": 93
+        },
+        {
+          "kind": "unsupported",
+          "line": 94,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 95,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Transit",
+          "kind": "assignment",
+          "line": 96
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u041a\u0443\u043b\u044c\u043c\u0438\u043d\u0430\u0446\u0438\u044f",
+          "kind": "assignment",
+          "line": 97
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Transit",
+          "kind": "assignment",
+          "line": 98
+        },
+        {
+          "kind": "unsupported",
+          "line": 99,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 100,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Set",
+          "kind": "assignment",
+          "line": 101
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0417\u0430\u0445\u043e\u0434",
+          "kind": "assignment",
+          "line": 102
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Coucher",
+          "kind": "assignment",
+          "line": 103
+        },
+        {
+          "kind": "unsupported",
+          "line": 104,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 105,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Duration",
+          "kind": "assignment",
+          "line": 106
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u041d\u0430\u0434 \u0433\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u043e\u043c",
+          "kind": "assignment",
+          "line": 107
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Dur\u00e9e",
+          "kind": "assignment",
+          "line": 108
+        },
+        {
+          "kind": "unsupported",
+          "line": 109,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 110,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Properties",
+          "kind": "assignment",
+          "line": 111
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0425\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a\u0438",
+          "kind": "assignment",
+          "line": 112
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Propri\u00e9t\u00e9s",
+          "kind": "assignment",
+          "line": 113
+        },
+        {
+          "kind": "unsupported",
+          "line": 114,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 115,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Type",
+          "kind": "assignment",
+          "line": 116
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0422\u0438\u043f",
+          "kind": "assignment",
+          "line": 117
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Type",
+          "kind": "assignment",
+          "line": 118
+        },
+        {
+          "kind": "unsupported",
+          "line": 119,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 120,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Magnitude",
+          "kind": "assignment",
+          "line": 121
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0417\u0432\u0451\u0437\u0434\u043d\u0430\u044f \u0432\u0435\u043b\u0438\u0447\u0438\u043d\u0430",
+          "kind": "assignment",
+          "line": 122
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Magnitude",
+          "kind": "assignment",
+          "line": 123
+        },
+        {
+          "kind": "unsupported",
+          "line": 124,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 125,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Peak date",
+          "kind": "assignment",
+          "line": 126
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u041f\u0438\u043a \u0431\u043b\u0435\u0441\u043a\u0430",
+          "kind": "assignment",
+          "line": 127
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Date du pic",
+          "kind": "assignment",
+          "line": 128
+        },
+        {
+          "kind": "unsupported",
+          "line": 129,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 130,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Max magnitude",
+          "kind": "assignment",
+          "line": 131
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0411\u043b\u0435\u0441\u043a \u0432 \u043c\u0430\u043a\u0441\u0438\u043c\u0443\u043c\u0435",
+          "kind": "assignment",
+          "line": 132
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Magnitude maximale",
+          "kind": "assignment",
+          "line": 133
+        },
+        {
+          "kind": "unsupported",
+          "line": 134,
+          "reason": "blank"
+        },
+        {
+          "kind": "unsupported",
+          "line": 135,
+          "reason": "section"
+        },
+        {
+          "assignment_key": "en",
+          "assignment_value": "Supernova type",
+          "kind": "assignment",
+          "line": 136
+        },
+        {
+          "assignment_key": "ru",
+          "assignment_value": "\u0422\u0438\u043f \u0441\u0432\u0435\u0440\u0445\u043d\u043e\u0432\u043e\u0439",
+          "kind": "assignment",
+          "line": 137
+        },
+        {
+          "assignment_key": "fr",
+          "assignment_value": "Type de supernova",
+          "kind": "assignment",
+          "line": 138
+        }
+      ],
+      "repeated_key_different_value": [
+        {
+          "assignment_key": "en",
+          "n_values": 25
+        },
+        {
+          "assignment_key": "fr",
+          "n_values": 25
+        },
+        {
+          "assignment_key": "ru",
+          "n_values": 25
+        }
+      ],
+      "source_id": "rs2-ini-astrarium-astrarium",
+      "stratum": "primary",
+      "wave": 2
+    },
+    {
+      "encoding": "utf-8",
+      "exact_duplicate_groups": [],
+      "explicit_reference_edges": [],
+      "n_assignments": 14,
+      "n_explicit_reference_edges": 0,
+      "n_lines": 17,
+      "n_unsupported": 3,
+      "records": [
+        {
+          "kind": "unsupported",
+          "line": 1,
+          "reason": "comment"
+        },
+        {
+          "kind": "unsupported",
+          "line": 2,
+          "reason": "blank"
+        },
+        {
+          "assignment_key": "ZSH_ALIAS",
+          "assignment_value": "(",
+          "kind": "assignment",
+          "line": 3
+        },
+        {
+          "assignment_key": "\"alias dps",
+          "assignment_value": "'sudo docker ps'\"",
+          "kind": "assignment",
+          "line": 4
+        },
+        {
+          "assignment_key": "\"alias dpsa",
+          "assignment_value": "'sudo docker ps -a'\"",
+          "kind": "assignment",
+          "line": 5
+        },
+        {
+          "assignment_key": "\"alias dcu",
+          "assignment_value": "'sudo docker-compose up'\"",
+          "kind": "assignment",
+          "line": 6
+        },
+        {
+          "assignment_key": "\"alias dcd",
+          "assignment_value": "'sudo docker-compose down'\"",
+          "kind": "assignment",
+          "line": 7
+        },
+        {
+          "assignment_key": "\"alias dimg",
+          "assignment_value": "'sudo docker images'\"",
+          "kind": "assignment",
+          "line": 8
+        },
+        {
+          "assignment_key": "\"alias dimgr",
+          "assignment_value": "'sudo docker rmi'\"",
+          "kind": "assignment",
+          "line": 9
+        },
+        {
+          "assignment_key": "\"alias drmc",
+          "assignment_value": "'sudo docker rm -f'\"",
+          "kind": "assignment",
+          "line": 10
+        },
+        {
+          "assignment_key": "\"alias bupdate",
+          "assignment_value": "'~/.dotfiles/bin/scripts/main -bupdate'\"",
+          "kind": "assignment",
+          "line": 11
+        },
+        {
+          "assignment_key": "\"alias bclone",
+          "assignment_value": "'~/.dotfiles/bin/scripts/main -bclone'\"",
+          "kind": "assignment",
+          "line": 12
+        },
+        {
+          "assignment_key": "\"alias supdate",
+          "assignment_value": "'~/.dotfiles/bin/scripts/main -supdate'\"",
+          "kind": "assignment",
+          "line": 13
+        },
+        {
+          "assignment_key": "\"alias sclone",
+          "assignment_value": "'~/.dotfiles/bin/scripts/main -sclone'\"",
+          "kind": "assignment",
+          "line": 14
+        },
+        {
+          "assignment_key": "\"alias updateOS",
+          "assignment_value": "'~/.dotfiles/bin/scripts/main -updateos'\"",
+          "kind": "assignment",
+          "line": 15
+        },
+        {
+          "assignment_key": "\"alias pbuild",
+          "assignment_value": "'~/.dotfiles/bin/scripts/main -build'\"",
+          "kind": "assignment",
+          "line": 16
+        },
+        {
+          "kind": "unsupported",
+          "line": 17,
+          "reason": "other"
+        }
+      ],
+      "repeated_key_different_value": [],
+      "source_id": "rs2-ini-waltenne-ubuntu-post-install",
+      "stratum": "primary",
+      "wave": 2
+    }
+  ],
+  "exact_duplicate_identity": "(key, value)",
+  "explicit_reference_gold": "${NAME} only",
+  "forbidden_scorer_fields": [
+    "expected route",
+    "expected operator sequence",
+    "expected BITE edge",
+    "expected arm winner"
+  ],
+  "gold_identity": "(source_line, NAME, dest_line)",
+  "independent_of_bite_implementation": true,
+  "missing_annotation_is_not_non_reference": true,
+  "raw_syntax_only": true,
+  "revision": "phase4h2-realstruct2-v0.1",
+  "schema": "bite-phase4h2-augmented-annotations/v0.1",
+  "two_pass_whole_document_key_index": true
+}

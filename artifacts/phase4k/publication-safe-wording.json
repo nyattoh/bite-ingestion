@@ -1,0 +1,24 @@
+{
+  "allowed": [
+    "On the frozen 18-document REALSTRUCT-2 convenience sample, BITE preserved the frozen safety invariants on all documents.",
+    "BITE reduced model-visible tokens relative to adapter_only on 1 of 18 documents.",
+    "On the single matched-budget document, BITE retained all unique assignment identities while prefix truncation retained 84.6%.",
+    "On the single reference-gold document, retrospectively corrected reference retention was 1.0 for both BITE and the matched length arm."
+  ],
+  "do_not_add_winner_conclusion": true,
+  "do_not_call_reduction_incidence_win_rate": true,
+  "do_not_state_p3f_result": true,
+  "forbidden": [
+    "BITE superiority",
+    "general real-world effectiveness",
+    "population-level frequency",
+    "answer-quality improvement",
+    "RAG superiority",
+    "production-readiness",
+    "statistical superiority",
+    "reference-retention advantage"
+  ],
+  "phase4_conclusion": "Phase 4 established a reproducible real-structured evaluation path, full-source safety under the frozen protocol, and one prospective four-arm convenience-sample measurement. The sample provided limited opportunity to evaluate BITE transformations because operator activation was sparse.",
+  "schema": "bite-phase4k-publication-safe-wording/v0.1",
+  "show_n_beside_every_comparative_result": true
+}

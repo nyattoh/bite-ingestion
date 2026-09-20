@@ -1,0 +1,135 @@
+{
+  "n_ok": 8,
+  "primary_family": "suffix_collision_plus_actionability",
+  "rows": [
+    {
+      "gate_observed": false,
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3s-act-d1-key_value"
+    },
+    {
+      "gate_observed": false,
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3s-act-d1-compact_json"
+    },
+    {
+      "gate_observed": false,
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3s-act-d1-pretty_json"
+    },
+    {
+      "gate_observed": false,
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3s-act-d1-reversed_order_json"
+    },
+    {
+      "gate_observed": false,
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3s-act-d3-key_value"
+    },
+    {
+      "gate_observed": false,
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3s-act-d3-compact_json"
+    },
+    {
+      "gate_observed": false,
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3s-act-d3-pretty_json"
+    },
+    {
+      "gate_observed": false,
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3s-act-d3-reversed_order_json"
+    },
+    {
+      "gate_observed": true,
+      "ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "p3s-act-d4-key_value"
+    },
+    {
+      "gate_observed": true,
+      "ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "p3s-act-d4-compact_json"
+    },
+    {
+      "gate_observed": true,
+      "ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "p3s-act-d4-pretty_json"
+    },
+    {
+      "gate_observed": true,
+      "ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "p3s-act-d4-reversed_order_json"
+    },
+    {
+      "gate_observed": true,
+      "ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "p3s-act-d9-key_value"
+    },
+    {
+      "gate_observed": true,
+      "ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "p3s-act-d9-compact_json"
+    },
+    {
+      "gate_observed": true,
+      "ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "p3s-act-d9-pretty_json"
+    },
+    {
+      "gate_observed": true,
+      "ok": false,
+      "policy_sequence": [
+        "UNTANGLE",
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "surface_id": "p3s-act-d9-reversed_order_json"
+    }
+  ],
+  "schema": "bite-phase3s-policy-consequence/v0.1"
+}

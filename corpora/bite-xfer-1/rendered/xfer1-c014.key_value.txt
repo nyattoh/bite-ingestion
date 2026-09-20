@@ -1,0 +1,7 @@
+gate_bui_c014=node_bui_c014 key=batch_c014
+note_build_c014_00=blob_build_c014_00
+note_build_c014_01=blob_build_c014_01
+bin_node_bui_c014=ack_bui_c014 key=batch_c014
+copy_c014=same_c014_row
+copy_c014=same_c014_row
+copy_c014=same_c014_row

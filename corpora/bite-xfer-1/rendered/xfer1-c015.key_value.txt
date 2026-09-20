@@ -1,0 +1,6 @@
+gate_inc_c015=node_inc_c015 id=lot_c015
+note_incident_c015_00=blob_incident_c015_00
+note_incident_c015_01=blob_incident_c015_01
+bin_node_inc_c015=ack_inc_c015 id=lot_c015
+alert_c015=worker dump TRACEBACK
+mate_c015=crate_c015 id=lot_c015

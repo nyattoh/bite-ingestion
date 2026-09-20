@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4j-reference-schema-freeze.schema.json",
+  "title": "BITE Phase-4J reference-schema audit freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "phase4i_head_sha",
+    "p3f_evaluation_holdout_used",
+    "no_arm_rerun",
+    "no_phase4i_rewrite",
+    "historical_gold_reader_blob",
+    "j1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase4j-reference-schema-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4j-reference-schema-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE4J_REFERENCE_SCHEMA_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE4I_PROSPECTIVE_COMPARISON_MEASURED"
+    },
+    "phase4i_head_sha": {
+      "type": "string",
+      "const": "88f3b26d32c96e17cbb001179953a7ad0c235068"
+    },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_arm_rerun": { "type": "boolean", "const": true },
+    "no_phase4i_rewrite": { "type": "boolean", "const": true },
+    "historical_gold_reader_blob": {
+      "type": "string",
+      "const": "1c24b419cba83adb205eb1bce16d60ad451ffa17"
+    },
+    "j1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE4J_REFERENCE_SCHEMA_AUDITED",
+          "PHASE4J_REFERENCE_SCHEMA_PARTIAL",
+          "PHASE4J_REFERENCE_SCHEMA_BLOCKED"
+        ]
+      }
+    }
+  }
+}

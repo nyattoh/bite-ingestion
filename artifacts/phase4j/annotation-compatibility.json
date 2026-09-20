@@ -1,0 +1,155 @@
+{
+  "documents": [
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-dotenv-ronakmaheshwari-capital"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-dotenv-luizomf-dockerswarmp1"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-props-edson-a-soares-poco_restful_webservice"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-props-aterai-java-swing-tips"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-props-oraopensource-apexbackup"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 25,
+      "n_explicit_reference_edges": 25,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-ini-ahuacate-pve-medialab"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-ini-genicam-harvesters_gui"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-ini-beluganos-beluganos"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-dotenv-s1nro-granatapfel"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-dotenv-johnsonchin1009-pulse"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-props-redpill-linpro-alfresco-jobs"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-props-xzel23-utility"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-props-aterai-kotlin-swing-tips"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-ini-jphutchins-pyavreceiver"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-ini-astrarium-astrarium"
+    },
+    {
+      "canonicalized": true,
+      "invariant_ok": true,
+      "n_canonical_triples": 0,
+      "n_explicit_reference_edges": 0,
+      "n_historical_gold_triples": 0,
+      "source_id": "rs2-ini-waltenne-ubuntu-post-install"
+    }
+  ],
+  "errors": [],
+  "gold_reader": "gold_triples_v2",
+  "historical_gold_reader": "gold_triples",
+  "invariant_ok": true,
+  "n_canonicalized": 18,
+  "n_documents": 18,
+  "schema": "bite-phase4j-annotation-compatibility/v0.1"
+}

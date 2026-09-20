@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4h2-acquisition-extension-freeze.schema.json",
+  "title": "BITE Phase-4H2 acquisition-extension freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "h0_commit_sha",
+    "h1_commit_sha",
+    "h2_commit_sha",
+    "p3f_evaluation_holdout_used",
+    "no_arm_execution",
+    "no_h1_pool_rewrite",
+    "no_license_inference",
+    "wave1_primary_ids",
+    "remaining_primary",
+    "h5_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase4h2-acquisition-extension-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4h2-acquisition-extension-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE4H2_ACQUISITION_EXTENSION_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE4H_REALSTRUCT2_PARTIAL"
+    },
+    "h0_commit_sha": {
+      "type": "string",
+      "const": "29dd6c91d02edcca6b486e74bac9bdf50259b149"
+    },
+    "h1_commit_sha": {
+      "type": "string",
+      "const": "b50e36d2916ff8de7eaae37055fef6bf114d2008"
+    },
+    "h2_commit_sha": {
+      "type": "string",
+      "const": "5acaa887725325098c24b637aa09716de464425f"
+    },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_arm_execution": { "type": "boolean", "const": true },
+    "no_h1_pool_rewrite": { "type": "boolean", "const": true },
+    "no_license_inference": { "type": "boolean", "const": true },
+    "wave1_primary_ids": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10
+    },
+    "remaining_primary": { "type": "object" },
+    "h5_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE4H2_REALSTRUCT2_AUGMENTED_FROZEN",
+          "PHASE4H2_REALSTRUCT2_AUGMENTED_PARTIAL",
+          "PHASE4H2_REALSTRUCT2_AUGMENTED_BLOCKED"
+        ]
+      }
+    }
+  }
+}

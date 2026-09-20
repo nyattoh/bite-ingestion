@@ -1,0 +1,106 @@
+{
+  "entries": [
+    {
+      "blob": "47ede9cab9619bc66dace5738e1f523b87a35f63",
+      "label": "historical failure; later versions repaired mechanisms without erasing this verdict",
+      "path": "artifacts/phase3q/xfer2-transfer.json",
+      "phase": "3Q",
+      "verdict": "PHASE3Q_XFER2_TRANSFER_FAILED"
+    },
+    {
+      "blob": "f4bcaae86586c5f738954b78fda8427f3bb78694",
+      "label": "historical failure; later versions repaired mechanisms without erasing this verdict",
+      "path": "artifacts/phase3s/reference-specificity.json",
+      "phase": "3S",
+      "verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED"
+    },
+    {
+      "blob": "5892ad925152e8cac32319e243c2e85f67ae2a0c",
+      "label": "v3 exact-reference repair; does not erase Phase3S FAILED",
+      "path": "artifacts/phase3t/exact-reference.json",
+      "phase": "3T",
+      "verdict": "PHASE3T_EXACT_REFERENCE_VALIDATED"
+    },
+    {
+      "blob": "7a7b0834e9b66c599492a06dbe116e773eca6320",
+      "label": "REALSTRUCT-1 corpus freeze",
+      "path": "artifacts/phase4a/realstruct-1.json",
+      "phase": "4A",
+      "verdict": "PHASE4A_REAL_CORPUS_FROZEN"
+    },
+    {
+      "blob": "137312ddb8b19396cc48c992ebd75bfc1ed8f585",
+      "label": "REALSTRUCT-1 development adapter",
+      "path": "artifacts/phase4b/real-adapter.json",
+      "phase": "4B",
+      "verdict": "PHASE4B_REAL_ADAPTER_READY"
+    },
+    {
+      "blob": "f344bde69d7f963bb78780e967bc59bf639d2942",
+      "label": "REALSTRUCT-1 holdout first-open",
+      "path": "artifacts/phase4c/real-holdout.json",
+      "phase": "4C",
+      "verdict": "PHASE4C_REAL_HOLDOUT_MEASURED"
+    },
+    {
+      "blob": "5a0060138866ed28fca9cb54b5916b03edebea5c",
+      "label": "retrospective measurement-semantics audit",
+      "path": "artifacts/phase4d/measurement-semantics.json",
+      "phase": "4D",
+      "verdict": "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED"
+    },
+    {
+      "blob": "5f3681439d37dd44df2e74299b3c1ad7fc95bce2",
+      "label": "v2 full-key / v4 sensor repair; does not erase Phase3S FAILED",
+      "path": "artifacts/phase4e/full-key-reference.json",
+      "phase": "4E",
+      "verdict": "PHASE4E_FULL_KEY_REFERENCE_VALIDATED"
+    },
+    {
+      "blob": "28bfd7ea8b131b72ba55bb3f84a7126f99c96578",
+      "label": "prospective comparison protocol",
+      "path": "artifacts/phase4f/prospective-comparison.json",
+      "phase": "4F",
+      "verdict": "PHASE4F_COMPARISON_PROTOCOL_READY"
+    },
+    {
+      "blob": "2635401558d27b2a2781ee53ff7465b877f39b37",
+      "label": "comparison accounting v2",
+      "path": "artifacts/phase4g/comparison-accounting.json",
+      "phase": "4G",
+      "verdict": "PHASE4G_COMPARISON_ACCOUNTING_VALIDATED"
+    },
+    {
+      "blob": "666eed454c3dba6dd2cfa2a73e5989004380f177",
+      "label": "REALSTRUCT-2 corpus freeze PARTIAL",
+      "path": "artifacts/phase4h/realstruct-2.json",
+      "phase": "4H",
+      "verdict": "PHASE4H_REALSTRUCT2_PARTIAL"
+    },
+    {
+      "blob": "095bb18a206842c813e8f47c165528743c9f6210",
+      "label": "REALSTRUCT-2 two-wave fill to 18/18",
+      "path": "artifacts/phase4h2/realstruct-2-augmented.json",
+      "phase": "4H2",
+      "verdict": "PHASE4H2_REALSTRUCT2_AUGMENTED_FROZEN"
+    },
+    {
+      "blob": "144a4ca3c2e44d8f0abbd32d0bb8b2f2b5b7b149",
+      "label": "prospective four-arm first-open",
+      "path": "artifacts/phase4i/first-open.json",
+      "phase": "4I",
+      "verdict": "PHASE4I_PROSPECTIVE_COMPARISON_MEASURED"
+    },
+    {
+      "blob": "b4ccdff3860c643630a292d16ea4428c6d480e06",
+      "label": "retrospective reference-schema compatibility audit",
+      "path": "artifacts/phase4j/reference-schema-audit.json",
+      "phase": "4J",
+      "verdict": "PHASE4J_REFERENCE_SCHEMA_AUDITED"
+    }
+  ],
+  "later_repairs_do_not_erase_failures": true,
+  "phase3q_remains": "PHASE3Q_XFER2_TRANSFER_FAILED",
+  "phase3s_remains": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "schema": "bite-phase4k-historical-verdict-timeline/v0.1"
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4g-comparison-accounting.schema.json",
+  "title": "BITE Phase-4G comparison accounting result v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "no_realstruct2",
+    "claim_boundary",
+    "not_holdout"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4g-comparison-accounting/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4g-comparison-accounting-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "const": "df096829d7178e6d33094494e93712fde37580b5"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE4G_COMPARISON_ACCOUNTING_VALIDATED",
+        "PHASE4G_COMPARISON_ACCOUNTING_PARTIAL",
+        "PHASE4G_COMPARISON_ACCOUNTING_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_realstruct2": { "type": "boolean", "const": true },
+    "claim_boundary": {
+      "type": "string",
+      "const": "comparison-measurement amendment before prospective corpus acquisition"
+    },
+    "not_holdout": { "type": "boolean", "const": true }
+  }
+}

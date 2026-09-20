@@ -1,0 +1,207 @@
+{
+  "cases": [
+    {
+      "case_id": "p4e-ex-d1",
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-ex-d3",
+      "edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-ex-d4",
+      "edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "gate": true,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-ex-d9",
+      "edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "gate": true,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-dot-d1",
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-dot-d3",
+      "edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-dot-d4",
+      "edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "gate": true,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-dot-d9",
+      "edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "gate": true,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-hyp-d1",
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-hyp-d9",
+      "edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "gate": true,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-mix-d1",
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-mix-d9",
+      "edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "gate": true,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-npr-d3",
+      "edges": [],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-nsf-d3",
+      "edges": [],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-nsb-d3",
+      "edges": [],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-nlg-d3",
+      "edges": [],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-nhs-d3",
+      "edges": [],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-hst-d3",
+      "edges": [],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-jsn-d3",
+      "edges": [],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    },
+    {
+      "case_id": "p4e-act-d3",
+      "edges": [],
+      "gate": false,
+      "n_formats": 4,
+      "ok": true
+    }
+  ],
+  "ok": true,
+  "revision": "phase4e-full-key-reference-v0.1",
+  "schema": "bite-phase4e-format-invariance/v0.1"
+}

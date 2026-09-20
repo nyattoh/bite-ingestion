@@ -1,0 +1,180 @@
+{
+  "allowed_spdx": [
+    "MIT",
+    "Apache-2.0"
+  ],
+  "documents": [
+    {
+      "commit_sha": "7c744a3c219e6b030ea1b5f9c49808bd2514083b",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/ronakmaheshwari/capital",
+      "redistributable": true,
+      "repository_url": "https://github.com/ronakmaheshwari/capital",
+      "source_id": "rs2-dotenv-ronakmaheshwari-capital",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "92e65f08e2dc699ea8a32bf794d9a08dcce813bc",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/TheAfroOfDoom/omegaflowey-minecraft-remastered",
+      "redistributable": true,
+      "repository_url": "https://github.com/TheAfroOfDoom/omegaflowey-minecraft-remastered",
+      "source_id": "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "2522263f590f51125d5f01cb9a22273c14d10363",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/luizomf/dockerswarmp1",
+      "redistributable": true,
+      "repository_url": "https://github.com/luizomf/dockerswarmp1",
+      "source_id": "rs2-dotenv-luizomf-dockerswarmp1",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "9598a9cc21e465438b194e43f35b52d4adf7fe3d",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/tradermonty/hermes-trading-research-agent-work-package",
+      "redistributable": true,
+      "repository_url": "https://github.com/tradermonty/hermes-trading-research-agent-work-package",
+      "source_id": "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "dc9794d619963c6ec990e1764df0de4c72e34aa0",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/edson-a-soares/poco_restful_webservice",
+      "redistributable": true,
+      "repository_url": "https://github.com/edson-a-soares/poco_restful_webservice",
+      "source_id": "rs2-props-edson-a-soares-poco_restful_webservice",
+      "spdx": "Apache-2.0"
+    },
+    {
+      "commit_sha": "d644fae8ad278343c6c20be2a8ead6180300d879",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/aterai/java-swing-tips",
+      "redistributable": true,
+      "repository_url": "https://github.com/aterai/java-swing-tips",
+      "source_id": "rs2-props-aterai-java-swing-tips",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "75bdad3af32ebe5c355018b24f29f924c2f68a34",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/OraOpenSource/apexbackup",
+      "redistributable": true,
+      "repository_url": "https://github.com/OraOpenSource/apexbackup",
+      "source_id": "rs2-props-oraopensource-apexbackup",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "1ab88ca2119c55afb0bff420b8fbfed710eccccd",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/ahuacate/pve-medialab",
+      "redistributable": true,
+      "repository_url": "https://github.com/ahuacate/pve-medialab",
+      "source_id": "rs2-ini-ahuacate-pve-medialab",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "eff28d966e4cde40444e24313b15e3a6b5e1b927",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/genicam/harvesters_gui",
+      "redistributable": true,
+      "repository_url": "https://github.com/genicam/harvesters_gui",
+      "source_id": "rs2-ini-genicam-harvesters_gui",
+      "spdx": "Apache-2.0"
+    },
+    {
+      "commit_sha": "94d61ea577d4766c227b575cf3ebf13b757daf65",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/beluganos/beluganos",
+      "redistributable": true,
+      "repository_url": "https://github.com/beluganos/beluganos",
+      "source_id": "rs2-ini-beluganos-beluganos",
+      "spdx": "Apache-2.0"
+    },
+    {
+      "commit_sha": "2f21086a72a89ef23c37425f149f739f6993a7bf",
+      "license_note": "GitHub license API SPDX recorded at H4",
+      "license_url": "https://github.com/s1nRo/Granatapfel",
+      "redistributable": true,
+      "repository_url": "https://github.com/s1nRo/Granatapfel",
+      "source_id": "rs2-dotenv-s1nro-granatapfel",
+      "spdx": "Apache-2.0",
+      "wave": 2
+    },
+    {
+      "commit_sha": "61f39f241392e21ce4e436a890cba1114ab632db",
+      "license_note": "GitHub license API SPDX recorded at H4",
+      "license_url": "https://github.com/JohnsonChin1009/pulse",
+      "redistributable": true,
+      "repository_url": "https://github.com/JohnsonChin1009/pulse",
+      "source_id": "rs2-dotenv-johnsonchin1009-pulse",
+      "spdx": "MIT",
+      "wave": 2
+    },
+    {
+      "commit_sha": "4c84e8ef79e895d7cadef62d60bf1ec91b02a476",
+      "license_note": "GitHub license API SPDX recorded at H4",
+      "license_url": "https://github.com/Redpill-Linpro/alfresco-jobs",
+      "redistributable": true,
+      "repository_url": "https://github.com/Redpill-Linpro/alfresco-jobs",
+      "source_id": "rs2-props-redpill-linpro-alfresco-jobs",
+      "spdx": "Apache-2.0",
+      "wave": 2
+    },
+    {
+      "commit_sha": "177109e2570384e5df839ad3714c4bf8bba8af19",
+      "license_note": "GitHub license API SPDX recorded at H4",
+      "license_url": "https://github.com/xzel23/utility",
+      "redistributable": true,
+      "repository_url": "https://github.com/xzel23/utility",
+      "source_id": "rs2-props-xzel23-utility",
+      "spdx": "MIT",
+      "wave": 2
+    },
+    {
+      "commit_sha": "47bbd824600b2e4c6d9ed85c3f36780c755575db",
+      "license_note": "GitHub license API SPDX recorded at H4",
+      "license_url": "https://github.com/aterai/kotlin-swing-tips",
+      "redistributable": true,
+      "repository_url": "https://github.com/aterai/kotlin-swing-tips",
+      "source_id": "rs2-props-aterai-kotlin-swing-tips",
+      "spdx": "MIT",
+      "wave": 2
+    },
+    {
+      "commit_sha": "2c86d0ab1f3bca886d2a876096ac760ffb1dcd5f",
+      "license_note": "GitHub license API SPDX recorded at H4",
+      "license_url": "https://github.com/JPHutchins/pyavreceiver",
+      "redistributable": true,
+      "repository_url": "https://github.com/JPHutchins/pyavreceiver",
+      "source_id": "rs2-ini-jphutchins-pyavreceiver",
+      "spdx": "Apache-2.0",
+      "wave": 2
+    },
+    {
+      "commit_sha": "75cbdda75b0e6a51bbf601d08ab89bc471e6038a",
+      "license_note": "GitHub license API SPDX recorded at H4",
+      "license_url": "https://github.com/Astrarium/Astrarium",
+      "redistributable": true,
+      "repository_url": "https://github.com/Astrarium/Astrarium",
+      "source_id": "rs2-ini-astrarium-astrarium",
+      "spdx": "MIT",
+      "wave": 2
+    },
+    {
+      "commit_sha": "87d5b78076ab6b224f31eaaf05be2c3493be8f8e",
+      "license_note": "GitHub license API SPDX recorded at H4",
+      "license_url": "https://github.com/waltenne/ubuntu-post-install",
+      "redistributable": true,
+      "repository_url": "https://github.com/waltenne/ubuntu-post-install",
+      "source_id": "rs2-ini-waltenne-ubuntu-post-install",
+      "spdx": "MIT",
+      "wave": 2
+    }
+  ],
+  "revision": "phase4h2-realstruct2-v0.1",
+  "schema": "bite-phase4h2-augmented-licenses/v0.1"
+}

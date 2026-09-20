@@ -1,0 +1,236 @@
+{
+  "adapter_blob": "2ef34b0486efb4badcdc29402ef5a9c4dc359565",
+  "adapter_id": "realstruct1_adapter_v1",
+  "arm_order": [
+    "raw_full",
+    "adapter_only",
+    "length_pi_v1",
+    "BITE_v5"
+  ],
+  "arms": {
+    "BITE_v5": {
+      "audit_recovery": "R / provenance / original source plane",
+      "model_visible": "post-policy routing visible units"
+    },
+    "adapter_only": {
+      "model_visible": "all routing assignment units",
+      "operator": false,
+      "planner": false,
+      "policy": false
+    },
+    "length_pi_v1": {
+      "budget": "BITE model-visible payload tokens for the same document",
+      "budget_matching_is_not_tuning": true,
+      "forbidden_inspect": [
+        "keys",
+        "values",
+        "reference identities",
+        "duplicates",
+        "anomalies",
+        "joinability",
+        "BITE features",
+        "gold annotations"
+      ],
+      "if_bite_tokens_ge_adapter_only": "return full adapter_only; do not pad",
+      "input": "exact adapter_only model-visible payload",
+      "inspects": [
+        "token length",
+        "position"
+      ],
+      "never_rewrite_retained_text": true,
+      "offset_mapping": true,
+      "selection": "longest source-exact prefix that fits the token budget",
+      "sidecar": "omitted source-exact suffix; not model-visible"
+    },
+    "raw_full": {
+      "model_visible": "entire original decoded source document",
+      "role": "identity reference, not a competitor winner",
+      "transformation": false
+    }
+  },
+  "bite_candidate": {
+    "conditional_texture_policy_v5": "50180c1254efcc0d082c2cb36d2738200af9f8f5",
+    "dependency_dispersion_v4": "e2dffa51e07af160ff64ab1d2b3983fac69f07be",
+    "operators": [
+      "UNTANGLE",
+      "REDUCE_v2",
+      "INTEGRATE"
+    ],
+    "planner": "projected_actionability_plan_v1",
+    "reference_identity_v2": "3524097e33a123ad4180ee4818dbf8d4ab980627",
+    "t_high_reference": 4
+  },
+  "claim_boundary": "prospective comparison protocol development only",
+  "e0_commit_sha": "9349087ab4fd5bb095a4904646243665c4464b52",
+  "e0_freeze_blob": "911a22ff9d210de05ae799fce5c90f09c65c1029",
+  "f1_verdicts": [
+    "PHASE4F_COMPARISON_PROTOCOL_READY",
+    "PHASE4F_COMPARISON_PROTOCOL_PARTIAL",
+    "PHASE4F_COMPARISON_PROTOCOL_BLOCKED"
+  ],
+  "forbidden": [
+    "single aggregate score",
+    "weighted overall ranking",
+    "post-hoc best arm",
+    "BITE superiority verdict",
+    "REALSTRUCT-2 acquisition",
+    "BITE sensor/policy/operator/threshold tuning after F0"
+  ],
+  "locked_blobs": {
+    "artifacts/phase4c/full-source-provenance.json": "b22d290d1d8f89276c923439b62f5ae1102a9fbb",
+    "artifacts/phase4c/real-holdout.json": "f344bde69d7f963bb78780e967bc59bf639d2942",
+    "artifacts/phase4c/reference-coverage.json": "9d0fd974d72d923f97f7c9dc6f325d7ea1e8a032",
+    "artifacts/phase4d/atom-aware-reference.json": "8092ad6a61c9407b892fcb42fec5dc89f6fe7348",
+    "artifacts/phase4d/measurement-semantics.json": "5a0060138866ed28fca9cb54b5916b03edebea5c",
+    "artifacts/phase4e/full-key-reference.json": "5f3681439d37dd44df2e74299b3c1ad7fc95bce2",
+    "benchmarks/spec/phase4e-full-key-reference-freeze.json": "911a22ff9d210de05ae799fce5c90f09c65c1029",
+    "src/bite_eval/composition_safety_v2.py": "85560279375b30f737eb3825cce72373be70488e",
+    "src/bite_ingestion/adapters/realstruct1_adapter_v1.py": "2ef34b0486efb4badcdc29402ef5a9c4dc359565",
+    "src/bite_ingestion/operators/integrate.py": "68e34becd80e7e803f511ec57ea7a23c2aaa1240",
+    "src/bite_ingestion/operators/reduce_v2.py": "d4bafba7dfdd048a0ccad404a8f706202e2157b5",
+    "src/bite_ingestion/operators/untangle.py": "2951b7542f96674930e750e438891ca772b46896",
+    "src/bite_ingestion/policies/conditional_texture_policy_v4.py": "04d46b15424ccbaf02694d7e7ae056b0b6715686",
+    "src/bite_ingestion/policies/conditional_texture_policy_v5.py": "50180c1254efcc0d082c2cb36d2738200af9f8f5",
+    "src/bite_ingestion/policies/projected_actionability_plan_v1.py": "af3737f078a6d91da38999885aea13860350526a",
+    "src/bite_ingestion/profilers/dependency_dispersion_v3.py": "9ec1c46a68d685210898552c879098bf0416e56d",
+    "src/bite_ingestion/profilers/dependency_dispersion_v4.py": "e2dffa51e07af160ff64ab1d2b3983fac69f07be",
+    "src/bite_ingestion/profilers/reference_identity_v1.py": "49dcd367eccdece7a1bd90df0a3f44f0c24ded65",
+    "src/bite_ingestion/profilers/reference_identity_v2.py": "3524097e33a123ad4180ee4818dbf8d4ab980627"
+  },
+  "metrics": {
+    "bite_sensor_capability_separate": [
+      "atom-aware reference precision",
+      "atom-aware reference recall",
+      "unadjudicated extra edges"
+    ],
+    "duplicate_diagnostic": [
+      "source_exact_duplicate_groups",
+      "visible_duplicate_excess",
+      "duplicate_groups_collapsed"
+    ],
+    "primary_for_future_realstruct2": [
+      "model_visible_tokens",
+      "model_visible_chars",
+      "audit_sidecar_bytes",
+      "audit_sidecar_tokens",
+      "full_source_recoverable",
+      "provenance completeness / traceability where applicable"
+    ],
+    "unique_assignment_identity_retention": {
+      "collapse_source_duplicates_in_denominator": true,
+      "identity": "(key, value)",
+      "retained_iff": "at least one complete visible representative"
+    },
+    "visible_reference_retention": {
+      "gold": "(source_line, NAME, dest_line)",
+      "gold_zero": "NA",
+      "not_sensor_accuracy": true,
+      "retained_iff": "both source and destination assignment records completely model-visible"
+    }
+  },
+  "no_bite_retune_after_f0": true,
+  "no_realstruct2": true,
+  "no_realstruct2_acquisition": true,
+  "no_threshold_search": true,
+  "no_winner_score": true,
+  "no_xfer3": true,
+  "not_claimed": [
+    "REALSTRUCT-2 evidence",
+    "confirmatory comparison",
+    "real-world generalization",
+    "BITE superiority"
+  ],
+  "offline_core_tests": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3q_verdict": "PHASE3Q_XFER2_TRANSFER_FAILED",
+  "phase3s_verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "phase3t_verdict": "PHASE3T_EXACT_REFERENCE_VALIDATED",
+  "phase4c_verdict": "PHASE4C_REAL_HOLDOUT_MEASURED",
+  "phase4d_verdict": "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED",
+  "phase4e_head_sha": "03bc883b1e3ef0d1ab0c0332f544ce8c82613bfd",
+  "phase4e_result_blob": "5f3681439d37dd44df2e74299b3c1ad7fc95bce2",
+  "phase4e_verdict": "PHASE4E_FULL_KEY_REFERENCE_VALIDATED",
+  "planes": {
+    "audit_recovery": "source document, provenance, R, recoverable omitted material",
+    "do_not_count_audit_as_model_visible": true,
+    "model_visible": "text that would actually be supplied downstream",
+    "report_audit_overhead_separately": true
+  },
+  "premise": "PHASE4E_FULL_KEY_REFERENCE_VALIDATED",
+  "realstruct1_development": {
+    "dev_source_ids": [
+      "rs1-dotenv-linkding",
+      "rs1-props-hadoop-log4j",
+      "rs1-ini-oe-bitbake"
+    ],
+    "eval_source_ids": [
+      "rs1-dotenv-koel",
+      "rs1-dotenv-bookstack",
+      "rs1-dotenv-laravel",
+      "rs1-props-ratis-log4j",
+      "rs1-props-kafka-server",
+      "rs1-props-tomcat-logging",
+      "rs1-ini-polybar",
+      "rs1-ini-gogs",
+      "rs1-ini-tegra-common"
+    ],
+    "not_confirmatory": true,
+    "not_for_retuning": true,
+    "not_generalization": true,
+    "not_holdout": true,
+    "role": "post-open implementation/test of tokenizer, serializer, length_pi_v1, sidecar, metrics",
+    "source_ids": [
+      "rs1-dotenv-linkding",
+      "rs1-props-hadoop-log4j",
+      "rs1-ini-oe-bitbake",
+      "rs1-dotenv-koel",
+      "rs1-dotenv-bookstack",
+      "rs1-dotenv-laravel",
+      "rs1-props-ratis-log4j",
+      "rs1-props-kafka-server",
+      "rs1-props-tomcat-logging",
+      "rs1-ini-polybar",
+      "rs1-ini-gogs",
+      "rs1-ini-tegra-common"
+    ]
+  },
+  "research_conclusion": false,
+  "revision": "phase4f-prospective-comparison-freeze-v0.1",
+  "safety": {
+    "BITE_v5": [
+      "full source recoverability",
+      "provenance_completeness == 1",
+      "lineage_recall == 1",
+      "silent_loss == 0",
+      "conservation_untraced == []",
+      "unsupported loss == 0",
+      "no unrelated overmerge"
+    ],
+    "do_not_declare_bite_better_for_different_safety_mechanisms": true,
+    "length_pi_v1": [
+      "visible prefix traceable to source",
+      "dropped suffix recoverable exactly",
+      "visible + sidecar reconstruct original adapter payload exactly"
+    ]
+  },
+  "schema": "bitebench-phase4f-prospective-comparison-freeze/v0.1",
+  "serializer": {
+    "adapter_routing_contract": "Phase4B source-exact routing units",
+    "bite_visible": "post-policy routing visible units only",
+    "do_not_merge_passthrough_into_bite_visible": true,
+    "full_source_reconstruction": "audit/safety only",
+    "structured_arms": "source-exact routing unit texts in adapter order, joined by newline"
+  },
+  "t_high_reference": 4,
+  "tokenizer_reference": {
+    "forbidden_cost_metric": "local_char4_proxy",
+    "library": "transformers==4.54.0",
+    "primary_cost_unit": "reference-tokenizer payload tokens",
+    "relationship_to_provider_model": "GLM-4.5 family reference tokenizer. Exact hosted glm-4.5-flash tokenizer equivalence is not asserted here.",
+    "repo": "zai-org/GLM-4.5",
+    "revision": "cbb2c7cfb52fa128a9660cb1a7a78e017899e115",
+    "tokenizer_json_sha256": "9340665016419c825c4bdabbcc9acc43b7ca2c68ce142724afa829abb1be5efd"
+  },
+  "verdict": "PHASE4F_COMPARISON_PROTOCOL_FROZEN"
+}

@@ -1,0 +1,275 @@
+{
+  "analysis_contract": {
+    "allowed_claim_form": "On the frozen REALSTRUCT-2 primary corpus, BITE retained X versus Y under the matched-budget protocol.",
+    "forbidden_claims": [
+      "BITE is generally superior",
+      "works better on real-world configuration files",
+      "statistically proves superiority"
+    ],
+    "matched_budget_subset": "primary documents where length_pi_v1.budget_match_applicable == true; do not redefine after results",
+    "no_winner_score": true,
+    "paired_A_visible_reference_retention_v2": "documents with reference gold > 0; BITE_v5 - length_pi_v1 per document; n / mean / median / positive-tie-negative; n=0 => not_observed",
+    "paired_B_unique_assignment_identity_retention_v2": "on matched_budget_subset",
+    "paired_C_recovery_bundle_bytes_and_tokens": "report separately; do not combine with visible token cost",
+    "paired_D_model_visible_cost": "raw_full / adapter_only / BITE_v5 / length_pi_v1 tokens; BITE reduction incidence = count of primary docs where BITE_v5 tokens < adapter_only tokens; not an overall score",
+    "paired_E_safety": "every arm: raw reconstruction exact; BITE additionally provenance completeness, lineage recall, silent loss, conservation_untraced, unsupported loss, no unrelated overmerge",
+    "paired_F_bite_mechanism_diagnostic": "route-sequence frequencies, atom-aware sensor precision/recall, unadjudicated edges; report separately from comparison outcome",
+    "primary_only_for_headline": true,
+    "report_all_four_arms_per_document": true,
+    "secondary_label": "mechanism-enriched diagnostic",
+    "secondary_never_pooled_with_primary": true,
+    "secondary_not_representative_evidence": true,
+    "statistical_claim_boundary": "fixed convenience sample; no population-generalization p-values"
+  },
+  "arms": [
+    "raw_full",
+    "adapter_only",
+    "length_pi_v1",
+    "BITE_v5"
+  ],
+  "augmented_annotations_blob": "dbb0f20bef4d76dd1d8bfc8b3edee946ad088eb7",
+  "augmented_licenses_blob": "6fb39a036501f54dea137d54d274ce5ea28b0701",
+  "augmented_manifest_blob": "0180ebf385beb6870a8c5a7ae860deedc0b107f4",
+  "claim_boundary": "prospective four-arm measurement on the frozen two-wave REALSTRUCT-2 convenience sample",
+  "comparison_implementation": {
+    "adapter_planner_operators_t_high": "inherit exact Phase4F/H2 locked values",
+    "conditional_texture_policy_v5": "50180c1254efcc0d082c2cb36d2738200af9f8f5",
+    "dependency_dispersion_v4": "e2dffa51e07af160ff64ab1d2b3983fac69f07be",
+    "length_pi_v1.py": "2de74b1b21c466aaa20858a2066e011f14a0fe20",
+    "recovery_bundle_v1.py": "d0e974bcb2cbedd22ba3c6396daa345a178aa208",
+    "reference_identity_v2": "3524097e33a123ad4180ee4818dbf8d4ab980627",
+    "reference_tokenizer.py": "6f95df67723fe8ee2e572e589f6ca3e864de37bc",
+    "visibility_metrics_v2.py": "32c3c84ce14fa2add582145b0069b58328e4caf1"
+  },
+  "do_not_use_historical_10_document_manifest": true,
+  "extension_pool_blob": "b8e41a93ba38baabced1b62b5cb8f4a041a54e53",
+  "first_open": {
+    "documents": "all 18 frozen primary documents exactly once",
+    "no_per_document_rerun_to_replace_result": true,
+    "no_same_pr_arm_policy_metric_repair_after_results": true,
+    "no_source_exclusion_after_start": true
+  },
+  "h3_freeze_blob": "b3823492dc987b0c2489fa8785cd0b8d813f4b53",
+  "i1_verdicts": [
+    "PHASE4I_PROSPECTIVE_COMPARISON_MEASURED",
+    "PHASE4I_PROSPECTIVE_COMPARISON_FAILED",
+    "PHASE4I_PROSPECTIVE_COMPARISON_BLOCKED"
+  ],
+  "locked_blobs": {
+    "artifacts/phase4c/full-source-provenance.json": "b22d290d1d8f89276c923439b62f5ae1102a9fbb",
+    "artifacts/phase4c/real-holdout.json": "f344bde69d7f963bb78780e967bc59bf639d2942",
+    "artifacts/phase4c/reference-coverage.json": "9d0fd974d72d923f97f7c9dc6f325d7ea1e8a032",
+    "artifacts/phase4d/atom-aware-reference.json": "8092ad6a61c9407b892fcb42fec5dc89f6fe7348",
+    "artifacts/phase4d/measurement-semantics.json": "5a0060138866ed28fca9cb54b5916b03edebea5c",
+    "artifacts/phase4e/full-key-reference.json": "5f3681439d37dd44df2e74299b3c1ad7fc95bce2",
+    "artifacts/phase4f/prospective-comparison.json": "28bfd7ea8b131b72ba55bb3f84a7126f99c96578",
+    "artifacts/phase4g/comparison-accounting.json": "2635401558d27b2a2781ee53ff7465b877f39b37",
+    "artifacts/phase4h/candidate-pool.json": "7f45295f0ffe2880516f9f8ccbfa2c20b942a002",
+    "artifacts/phase4h/realstruct-2.json": "666eed454c3dba6dd2cfa2a73e5989004380f177",
+    "artifacts/phase4h2/extension-pool.json": "b8e41a93ba38baabced1b62b5cb8f4a041a54e53",
+    "artifacts/phase4h2/realstruct-2-augmented.json": "095bb18a206842c813e8f47c165528743c9f6210",
+    "benchmarks/spec/phase4e-full-key-reference-freeze.json": "911a22ff9d210de05ae799fce5c90f09c65c1029",
+    "benchmarks/spec/phase4f-prospective-comparison-freeze.json": "9f4e957af859432036e9d150c85b5066892dad8f",
+    "benchmarks/spec/phase4g-comparison-accounting-freeze.json": "b74b591f61a030134fb35272e20f01bceea295bf",
+    "benchmarks/spec/phase4h-realstruct2-freeze.json": "4c48c198456babe2f5d0e652aefe831f8dacd3bc",
+    "benchmarks/spec/phase4h2-acquisition-extension-freeze.json": "b3823492dc987b0c2489fa8785cd0b8d813f4b53",
+    "corpora/realstruct-2/augmented-annotations.json": "dbb0f20bef4d76dd1d8bfc8b3edee946ad088eb7",
+    "corpora/realstruct-2/augmented-licenses.json": "6fb39a036501f54dea137d54d274ce5ea28b0701",
+    "corpora/realstruct-2/augmented-manifest.json": "0180ebf385beb6870a8c5a7ae860deedc0b107f4",
+    "corpora/realstruct-2/manifest.json": "e7c2d2291cdd62c1d6feff59c7d7870db6878350",
+    "corpora/realstruct-2/rejections.json": "a93f49ca54fdae11ddde58d25adaae9ed8db1af5",
+    "corpora/realstruct-2/wave-provenance.json": "f3f2743035480abf36c4f872ff1327b139676f5c",
+    "src/bite_eval/composition_safety_v2.py": "85560279375b30f737eb3825cce72373be70488e",
+    "src/bite_eval/length_pi_v1.py": "2de74b1b21c466aaa20858a2066e011f14a0fe20",
+    "src/bite_eval/phase4f_metrics.py": "d58a2f3729423d79731cb081e8d64b0204fdfa6f",
+    "src/bite_eval/recovery_bundle_v1.py": "d0e974bcb2cbedd22ba3c6396daa345a178aa208",
+    "src/bite_eval/reference_tokenizer.py": "6f95df67723fe8ee2e572e589f6ca3e864de37bc",
+    "src/bite_eval/visibility_metrics_v2.py": "32c3c84ce14fa2add582145b0069b58328e4caf1",
+    "src/bite_ingestion/adapters/realstruct1_adapter_v1.py": "2ef34b0486efb4badcdc29402ef5a9c4dc359565",
+    "src/bite_ingestion/operators/integrate.py": "68e34becd80e7e803f511ec57ea7a23c2aaa1240",
+    "src/bite_ingestion/operators/reduce_v2.py": "d4bafba7dfdd048a0ccad404a8f706202e2157b5",
+    "src/bite_ingestion/operators/untangle.py": "2951b7542f96674930e750e438891ca772b46896",
+    "src/bite_ingestion/policies/conditional_texture_policy_v4.py": "04d46b15424ccbaf02694d7e7ae056b0b6715686",
+    "src/bite_ingestion/policies/conditional_texture_policy_v5.py": "50180c1254efcc0d082c2cb36d2738200af9f8f5",
+    "src/bite_ingestion/policies/projected_actionability_plan_v1.py": "af3737f078a6d91da38999885aea13860350526a",
+    "src/bite_ingestion/profilers/dependency_dispersion_v3.py": "9ec1c46a68d685210898552c879098bf0416e56d",
+    "src/bite_ingestion/profilers/dependency_dispersion_v4.py": "e2dffa51e07af160ff64ab1d2b3983fac69f07be",
+    "src/bite_ingestion/profilers/reference_identity_v1.py": "49dcd367eccdece7a1bd90df0a3f44f0c24ded65",
+    "src/bite_ingestion/profilers/reference_identity_v2.py": "3524097e33a123ad4180ee4818dbf8d4ab980627"
+  },
+  "n_primary": 18,
+  "no_bite_retune": true,
+  "no_harness_modification_after_i0": true,
+  "no_length_pi_retune": true,
+  "no_license_change": true,
+  "no_more_acquisition": true,
+  "no_realstruct2_arm_before_i0": true,
+  "no_realstruct2_tokenizer_before_i0": true,
+  "no_secondary_corpus_addition": true,
+  "no_source_replacement": true,
+  "no_wave1_vs_wave2_outcome": true,
+  "no_winner_score": true,
+  "no_xfer3": true,
+  "not_claimed": [
+    "representative real-world sample",
+    "population generalization",
+    "downstream answer-quality evidence",
+    "BITE superiority"
+  ],
+  "offline_core_tests": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase4h2_head_sha": "461ae71e646728018890e87e5d0cada5af25906e",
+  "phase4h2_result_blob": "095bb18a206842c813e8f47c165528743c9f6210",
+  "planned_preflight_cases": [
+    {
+      "case_id": "p4i-pass-through",
+      "family": "pass_through",
+      "gold_edges": [],
+      "mode": "operators",
+      "records": [
+        [
+          "west_alpha",
+          "ridge_one"
+        ],
+        [
+          "east_beta",
+          "ridge_two"
+        ]
+      ]
+    },
+    {
+      "case_id": "p4i-reduce-duplicate",
+      "family": "reduce_duplicate",
+      "gold_edges": [],
+      "mode": "operators",
+      "records": [
+        [
+          "copy_key",
+          "same_val"
+        ],
+        [
+          "copy_key",
+          "same_val"
+        ]
+      ]
+    },
+    {
+      "case_id": "p4i-integrate-2way",
+      "family": "integrate_2way",
+      "gold_edges": [],
+      "mode": "operators",
+      "records": [
+        [
+          "join_left",
+          "one id=join_p4i"
+        ],
+        [
+          "join_right",
+          "two id=join_p4i"
+        ]
+      ]
+    },
+    {
+      "case_id": "p4i-ref-gold",
+      "family": "reference_gold",
+      "gold_edges": [
+        {
+          "dest_lines": [
+            2
+          ],
+          "name": "ORIGIN",
+          "source_line": 1
+        }
+      ],
+      "mode": "operators",
+      "records": [
+        [
+          "ORIGIN",
+          "plain_origin"
+        ],
+        [
+          "USE",
+          "${ORIGIN}"
+        ]
+      ]
+    },
+    {
+      "case_id": "p4i-untangle-quarantine",
+      "family": "untangle_quarantine",
+      "gold_edges": [],
+      "mode": "operators",
+      "records": [
+        [
+          "keep_ok",
+          "plain_weft"
+        ],
+        [
+          "drop_bad",
+          "shuttle jam FATAL"
+        ]
+      ]
+    }
+  ],
+  "preflight_allowed": [
+    "fresh synthetic unit fixtures",
+    "REALSTRUCT-1"
+  ],
+  "preflight_forbidden": [
+    "REALSTRUCT-2 tokenizer",
+    "REALSTRUCT-2 arms"
+  ],
+  "premise": "PHASE4H2_REALSTRUCT2_AUGMENTED_FROZEN",
+  "primary_ids": [
+    "rs2-dotenv-ronakmaheshwari-capital",
+    "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+    "rs2-dotenv-luizomf-dockerswarmp1",
+    "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+    "rs2-props-edson-a-soares-poco_restful_webservice",
+    "rs2-props-aterai-java-swing-tips",
+    "rs2-props-oraopensource-apexbackup",
+    "rs2-ini-ahuacate-pve-medialab",
+    "rs2-ini-genicam-harvesters_gui",
+    "rs2-ini-beluganos-beluganos",
+    "rs2-dotenv-s1nro-granatapfel",
+    "rs2-dotenv-johnsonchin1009-pulse",
+    "rs2-props-redpill-linpro-alfresco-jobs",
+    "rs2-props-xzel23-utility",
+    "rs2-props-aterai-kotlin-swing-tips",
+    "rs2-ini-jphutchins-pyavreceiver",
+    "rs2-ini-astrarium-astrarium",
+    "rs2-ini-waltenne-ubuntu-post-install"
+  ],
+  "primary_source": "corpora/realstruct-2/augmented-manifest.json",
+  "research_conclusion": false,
+  "revision": "phase4i-first-open-freeze-v0.1",
+  "schema": "bitebench-phase4i-first-open-freeze/v0.1",
+  "t_high_reference": 4,
+  "tokenizer_reference": {
+    "forbidden_cost_metric": "local_char4_proxy",
+    "library": "transformers==4.54.0",
+    "primary_cost_unit": "reference-tokenizer payload tokens",
+    "repo": "zai-org/GLM-4.5",
+    "revision": "cbb2c7cfb52fa128a9660cb1a7a78e017899e115",
+    "tokenizer_json_sha256": "9340665016419c825c4bdabbcc9acc43b7ca2c68ce142724afa829abb1be5efd"
+  },
+  "verdict": "PHASE4I_EXECUTION_PROTOCOL_FROZEN",
+  "verdict_rule": {
+    "PHASE4I_PROSPECTIVE_COMPARISON_BLOCKED": "pre-first-open lock drift, corpus mutation, tokenizer mismatch, arm/metric mutation, REALSTRUCT-2 leakage before I0, or protocol violation",
+    "PHASE4I_PROSPECTIVE_COMPARISON_FAILED": "execution completes but a frozen safety / reconstruction / planner invariant fails, or an arm cannot complete. Do not repair in this PR.",
+    "PHASE4I_PROSPECTIVE_COMPARISON_MEASURED": "18/18 frozen primary executed; four arms completed; tokenizer lock verified; raw reconstruction exact; BITE safety invariants pass; planner integrity passes; frozen summaries emitted; locked corpus/components unchanged; no same-PR retune; p3f unopened. Performance does not determine this verdict."
+  },
+  "wave1_primary_ids": [
+    "rs2-dotenv-ronakmaheshwari-capital",
+    "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+    "rs2-dotenv-luizomf-dockerswarmp1",
+    "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+    "rs2-props-edson-a-soares-poco_restful_webservice",
+    "rs2-props-aterai-java-swing-tips",
+    "rs2-props-oraopensource-apexbackup",
+    "rs2-ini-ahuacate-pve-medialab",
+    "rs2-ini-genicam-harvesters_gui",
+    "rs2-ini-beluganos-beluganos"
+  ],
+  "wave_provenance_blob": "f3f2743035480abf36c4f872ff1327b139676f5c"
+}

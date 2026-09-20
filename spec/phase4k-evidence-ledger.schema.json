@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4k-evidence-ledger.schema.json",
+  "title": "BITE Phase-4K evidence-ledger result v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "k0_freeze_blob",
+    "verdict",
+    "paid_api",
+    "documentation_only",
+    "no_new_experiment",
+    "p3f_evaluation_holdout_used",
+    "no_arm_rerun",
+    "no_phase4a_to_4j_rewrite",
+    "no_merge",
+    "no_winner_score",
+    "phase4_conclusion",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4k-evidence-ledger/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4k-evidence-ledger-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "const": "4b2adc2523f8eec73888cfbec75fbf413fa21631"
+    },
+    "k0_freeze_blob": {
+      "type": "string",
+      "const": "86e83ff7f43e45721c7a436f1f21865f4342362e"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE4K_EVIDENCE_LEDGER_FROZEN",
+        "PHASE4K_EVIDENCE_LEDGER_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "documentation_only": { "type": "boolean", "const": true },
+    "no_new_experiment": { "type": "boolean", "const": true },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_arm_rerun": { "type": "boolean", "const": true },
+    "no_phase4a_to_4j_rewrite": { "type": "boolean", "const": true },
+    "no_merge": { "type": "boolean", "const": true },
+    "no_winner_score": { "type": "boolean", "const": true },
+    "phase4_conclusion": { "type": "string" },
+    "claim_boundary": {
+      "type": "string",
+      "const": "Phase-4 documentation-only evidence ledger; no new experiment"
+    }
+  }
+}

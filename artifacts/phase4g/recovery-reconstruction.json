@@ -1,0 +1,514 @@
+{
+  "documents": [
+    {
+      "arms": {
+        "BITE_v5": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 5426,
+          "recovery_bundle_tokens": 1526,
+          "recovery_content_bytes": 1787,
+          "recovery_metadata_bytes": 3628
+        },
+        "adapter_only": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 5426,
+          "recovery_bundle_tokens": 1526,
+          "recovery_content_bytes": 1787,
+          "recovery_metadata_bytes": 3628
+        },
+        "length_pi_v1": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 5426,
+          "recovery_bundle_tokens": 1526,
+          "recovery_content_bytes": 1787,
+          "recovery_metadata_bytes": 3628
+        },
+        "raw_full": {
+          "bundle_empty": true,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "reconstruct_ok": true,
+      "source_id": "rs1-dotenv-linkding"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 32604,
+          "recovery_bundle_tokens": 10872,
+          "recovery_content_bytes": 8354,
+          "recovery_metadata_bytes": 24239
+        },
+        "adapter_only": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 32582,
+          "recovery_bundle_tokens": 10867,
+          "recovery_content_bytes": 8295,
+          "recovery_metadata_bytes": 24276
+        },
+        "length_pi_v1": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 32632,
+          "recovery_bundle_tokens": 10883,
+          "recovery_content_bytes": 8419,
+          "recovery_metadata_bytes": 24202
+        },
+        "raw_full": {
+          "bundle_empty": true,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "reconstruct_ok": true,
+      "source_id": "rs1-props-hadoop-log4j"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 91265,
+          "recovery_bundle_tokens": 31213,
+          "recovery_content_bytes": 18669,
+          "recovery_metadata_bytes": 72585
+        },
+        "adapter_only": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 91246,
+          "recovery_bundle_tokens": 31204,
+          "recovery_content_bytes": 18613,
+          "recovery_metadata_bytes": 72622
+        },
+        "length_pi_v1": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 91240,
+          "recovery_bundle_tokens": 31209,
+          "recovery_content_bytes": 18681,
+          "recovery_metadata_bytes": 72548
+        },
+        "raw_full": {
+          "bundle_empty": true,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "reconstruct_ok": true,
+      "source_id": "rs1-ini-oe-bitbake"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 34299,
+          "recovery_bundle_tokens": 11017,
+          "recovery_content_bytes": 11642,
+          "recovery_metadata_bytes": 22646
+        },
+        "adapter_only": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 34311,
+          "recovery_bundle_tokens": 11020,
+          "recovery_content_bytes": 11617,
+          "recovery_metadata_bytes": 22683
+        },
+        "length_pi_v1": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 34299,
+          "recovery_bundle_tokens": 11018,
+          "recovery_content_bytes": 11642,
+          "recovery_metadata_bytes": 22646
+        },
+        "raw_full": {
+          "bundle_empty": true,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "reconstruct_ok": true,
+      "source_id": "rs1-dotenv-koel"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 5440,
+          "recovery_bundle_tokens": 1555,
+          "recovery_content_bytes": 1816,
+          "recovery_metadata_bytes": 3613
+        },
+        "adapter_only": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 5440,
+          "recovery_bundle_tokens": 1555,
+          "recovery_content_bytes": 1816,
+          "recovery_metadata_bytes": 3613
+        },
+        "length_pi_v1": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 5440,
+          "recovery_bundle_tokens": 1555,
+          "recovery_content_bytes": 1816,
+          "recovery_metadata_bytes": 3613
+        },
+        "raw_full": {
+          "bundle_empty": true,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "reconstruct_ok": true,
+      "source_id": "rs1-dotenv-bookstack"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 5456,
+          "recovery_bundle_tokens": 1745,
+          "recovery_content_bytes": 270,
+          "recovery_metadata_bytes": 5175
+        },
+        "adapter_only": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 5456,
+          "recovery_bundle_tokens": 1745,
+          "recovery_content_bytes": 270,
+          "recovery_metadata_bytes": 5175
+        },
+        "length_pi_v1": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 5456,
+          "recovery_bundle_tokens": 1745,
+          "recovery_content_bytes": 270,
+          "recovery_metadata_bytes": 5175
+        },
+        "raw_full": {
+          "bundle_empty": true,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "reconstruct_ok": true,
+      "source_id": "rs1-dotenv-laravel"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 6895,
+          "recovery_bundle_tokens": 2272,
+          "recovery_content_bytes": 1712,
+          "recovery_metadata_bytes": 5172
+        },
+        "adapter_only": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 6895,
+          "recovery_bundle_tokens": 2272,
+          "recovery_content_bytes": 1712,
+          "recovery_metadata_bytes": 5172
+        },
+        "length_pi_v1": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 6895,
+          "recovery_bundle_tokens": 2272,
+          "recovery_content_bytes": 1712,
+          "recovery_metadata_bytes": 5172
+        },
+        "raw_full": {
+          "bundle_empty": true,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "reconstruct_ok": true,
+      "source_id": "rs1-props-ratis-log4j"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 14397,
+          "recovery_bundle_tokens": 4025,
+          "recovery_content_bytes": 5859,
+          "recovery_metadata_bytes": 8527
+        },
+        "adapter_only": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 14397,
+          "recovery_bundle_tokens": 4025,
+          "recovery_content_bytes": 5859,
+          "recovery_metadata_bytes": 8527
+        },
+        "length_pi_v1": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 14397,
+          "recovery_bundle_tokens": 4025,
+          "recovery_content_bytes": 5859,
+          "recovery_metadata_bytes": 8527
+        },
+        "raw_full": {
+          "bundle_empty": true,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "reconstruct_ok": true,
+      "source_id": "rs1-props-kafka-server"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 7622,
+          "recovery_bundle_tokens": 2322,
+          "recovery_content_bytes": 1807,
+          "recovery_metadata_bytes": 5804
+        },
+        "adapter_only": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 7622,
+          "recovery_bundle_tokens": 2322,
+          "recovery_content_bytes": 1807,
+          "recovery_metadata_bytes": 5804
+        },
+        "length_pi_v1": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 7622,
+          "recovery_bundle_tokens": 2322,
+          "recovery_content_bytes": 1807,
+          "recovery_metadata_bytes": 5804
+        },
+        "raw_full": {
+          "bundle_empty": true,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "reconstruct_ok": true,
+      "source_id": "rs1-props-tomcat-logging"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 15411,
+          "recovery_bundle_tokens": 5265,
+          "recovery_content_bytes": 2504,
+          "recovery_metadata_bytes": 12896
+        },
+        "adapter_only": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 15426,
+          "recovery_bundle_tokens": 5272,
+          "recovery_content_bytes": 2411,
+          "recovery_metadata_bytes": 13004
+        },
+        "length_pi_v1": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 15421,
+          "recovery_bundle_tokens": 5267,
+          "recovery_content_bytes": 2514,
+          "recovery_metadata_bytes": 12896
+        },
+        "raw_full": {
+          "bundle_empty": true,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "reconstruct_ok": true,
+      "source_id": "rs1-ini-polybar"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 52041,
+          "recovery_bundle_tokens": 17055,
+          "recovery_content_bytes": 16327,
+          "recovery_metadata_bytes": 35703
+        },
+        "adapter_only": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 52313,
+          "recovery_bundle_tokens": 17114,
+          "recovery_content_bytes": 16007,
+          "recovery_metadata_bytes": 36295
+        },
+        "length_pi_v1": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 52035,
+          "recovery_bundle_tokens": 17069,
+          "recovery_content_bytes": 16247,
+          "recovery_metadata_bytes": 35777
+        },
+        "raw_full": {
+          "bundle_empty": true,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "reconstruct_ok": true,
+      "source_id": "rs1-ini-gogs"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 16005,
+          "recovery_bundle_tokens": 5183,
+          "recovery_content_bytes": 1495,
+          "recovery_metadata_bytes": 14499
+        },
+        "adapter_only": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 16005,
+          "recovery_bundle_tokens": 5183,
+          "recovery_content_bytes": 1495,
+          "recovery_metadata_bytes": 14499
+        },
+        "length_pi_v1": {
+          "bundle_empty": false,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 16005,
+          "recovery_bundle_tokens": 5183,
+          "recovery_content_bytes": 1495,
+          "recovery_metadata_bytes": 14499
+        },
+        "raw_full": {
+          "bundle_empty": true,
+          "reconstruct_ok": true,
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "reconstruct_ok": true,
+      "source_id": "rs1-ini-tegra-common"
+    }
+  ],
+  "fixtures": [
+    {
+      "case_id": "p4g-pass-through",
+      "raw_sha256": "de35786338fc1e6f3ff9dbbfb003b591dfac5b38231d43236a00f463d8fa3c4e",
+      "reconstruct_ok": true
+    },
+    {
+      "case_id": "p4g-reduce-duplicate",
+      "raw_sha256": "21ba49871e9810d49bf19aecbf2bfce45cbddd010cbbdf40bbdce149cae30ea9",
+      "reconstruct_ok": true
+    },
+    {
+      "case_id": "p4g-untangle-quarantine",
+      "raw_sha256": "538fe5b2e2ff277f0e092f646e7a268353e5038f6e04c7366b88faa6b9d42cbe",
+      "reconstruct_ok": true
+    },
+    {
+      "case_id": "p4g-integrate-2way",
+      "raw_sha256": "0de2112edf811dc31c093be6ad60437a39c1bd375c6062d741b8468aee487874",
+      "reconstruct_ok": true
+    },
+    {
+      "case_id": "p4g-integrate-3way",
+      "raw_sha256": "4cc67cba09054e086d4a4a41271019923b34c4c3559f225468d12cc71d3bfba5",
+      "reconstruct_ok": true
+    },
+    {
+      "case_id": "p4g-reduce-then-integrate",
+      "raw_sha256": "489b8dd779d0598a3864e6c6745165601798e04036067227e138a16c60ee3409",
+      "reconstruct_ok": true
+    },
+    {
+      "case_id": "p4g-untangle-then-integrate",
+      "raw_sha256": "d577b29033ec029fbfc3f7cc1b914b6df0c27bb1f8633370539e348a7715a476",
+      "reconstruct_ok": true
+    },
+    {
+      "case_id": "p4g-neg-partial-text",
+      "raw_sha256": "5abc30adbc7149d641656fca0b84396391efacd2d579ba922de267d754077694",
+      "reconstruct_ok": true
+    },
+    {
+      "case_id": "p4g-neg-lineage-without-text",
+      "raw_sha256": "32635aaa7e16e9e743ba1b616db4b6271f859d8573c8220039a5a96b1a06868b",
+      "reconstruct_ok": true
+    },
+    {
+      "case_id": "p4g-neg-text-without-lineage",
+      "raw_sha256": "32635aaa7e16e9e743ba1b616db4b6271f859d8573c8220039a5a96b1a06868b",
+      "reconstruct_ok": true
+    }
+  ],
+  "ok": true,
+  "schema": "bite-phase4g-recovery-reconstruction/v0.1"
+}

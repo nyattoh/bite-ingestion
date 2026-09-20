@@ -1,0 +1,10 @@
+{
+  "source_id": "fix-rs2-single",
+  "explicit_reference_edges": [
+    {
+      "source_line": 17,
+      "name": "CT_ISO",
+      "dest_line": 10
+    }
+  ]
+}
