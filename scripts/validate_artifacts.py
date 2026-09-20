@@ -1786,6 +1786,31 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase4e_freeze} verdict={data.get('verdict')}")
 
+    from bite_bench.phase4f import validate_phase4f_freeze
+
+    phase4f_freeze = args.root / "benchmarks" / "spec" / "phase4f-prospective-comparison-freeze.json"
+    if phase4f_freeze.is_file():
+        n_checked += 1
+        data = json.loads(phase4f_freeze.read_text(encoding="utf-8"))
+        errs = list(validate_phase4f_freeze(data))
+        schema_path = args.root / "spec" / "phase4f-prospective-comparison-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase4f freeze jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase4f_freeze}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase4f_freeze} verdict={data.get('verdict')}")
+
     from bite_eval.phase4e_eval import validate_phase4e_result
 
     phase4e = args.root / "artifacts" / "phase4e" / "full-key-reference.json"
