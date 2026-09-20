@@ -1,0 +1,74 @@
+{
+  "adapter_blob": "2ef34b0486efb4badcdc29402ef5a9c4dc359565",
+  "adapter_id": "realstruct1_adapter_v1",
+  "baselines": [
+    "raw_full",
+    "adapter_only"
+  ],
+  "c0_freeze_blob": "8e7dc9196bb5c98e79198263b0d4eeadc6254ff2",
+  "claim_boundary": "first-open measurement on 9 frozen REALSTRUCT-1 evaluation documents",
+  "errors": [],
+  "eval_opened": true,
+  "n_eval": 9,
+  "n_ok": 9,
+  "no_winner_score": true,
+  "no_xfer3": true,
+  "not_claimed": [
+    "representative sample",
+    "real-world generalization",
+    "downstream answer-quality evidence",
+    "BITE superiority"
+  ],
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3q_verdict": "PHASE3Q_XFER2_TRANSFER_FAILED",
+  "phase3s_verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "phase3t_verdict": "PHASE3T_EXACT_REFERENCE_VALIDATED",
+  "phase4a_verdict": "PHASE4A_REAL_CORPUS_FROZEN",
+  "phase4b_head_sha": "8dd13d20cc06339ef07811d0d9438f0da8718106",
+  "premise": "PHASE4B_REAL_ADAPTER_READY",
+  "protocol_commit_sha": "8ed272fc7cd0487386656f2be7120b554be7921a",
+  "research_conclusion": false,
+  "revision": "phase4c-real-holdout-v0.1",
+  "rows": [
+    {
+      "ok": true,
+      "source_id": "rs1-dotenv-koel"
+    },
+    {
+      "ok": true,
+      "source_id": "rs1-dotenv-bookstack"
+    },
+    {
+      "ok": true,
+      "source_id": "rs1-dotenv-laravel"
+    },
+    {
+      "ok": true,
+      "source_id": "rs1-props-ratis-log4j"
+    },
+    {
+      "ok": true,
+      "source_id": "rs1-props-kafka-server"
+    },
+    {
+      "ok": true,
+      "source_id": "rs1-props-tomcat-logging"
+    },
+    {
+      "ok": true,
+      "source_id": "rs1-ini-polybar"
+    },
+    {
+      "ok": true,
+      "source_id": "rs1-ini-gogs"
+    },
+    {
+      "ok": true,
+      "source_id": "rs1-ini-tegra-common"
+    }
+  ],
+  "schema": "bite-phase4c-real-holdout/v0.1",
+  "t_high_reference": 4,
+  "verdict": "PHASE4C_REAL_HOLDOUT_MEASURED"
+}

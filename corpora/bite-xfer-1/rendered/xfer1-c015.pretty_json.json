@@ -1,0 +1,26 @@
+[
+  {
+    "k": "gate_inc_c015",
+    "v": "node_inc_c015 id=lot_c015"
+  },
+  {
+    "k": "note_incident_c015_00",
+    "v": "blob_incident_c015_00"
+  },
+  {
+    "k": "note_incident_c015_01",
+    "v": "blob_incident_c015_01"
+  },
+  {
+    "k": "bin_node_inc_c015",
+    "v": "ack_inc_c015 id=lot_c015"
+  },
+  {
+    "k": "alert_c015",
+    "v": "worker dump TRACEBACK"
+  },
+  {
+    "k": "mate_c015",
+    "v": "crate_c015 id=lot_c015"
+  }
+]

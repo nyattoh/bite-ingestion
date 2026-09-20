@@ -1,0 +1,11 @@
+GITHUB_TOKEN=example
+S3_URL=http://localhost:9000
+KEY_S3=rustfsadmin
+TOKEN_S3=rustfsadmin
+VERSION_S3=s3v4
+BUCKET_NAME=pomoyka
+LOG_LEVEL=INFO
+RUSTFS_ACCESS_KEY=rustfsadmin
+RUSTFS_SECRET_KEY=rustfsadmin
+USERNAME_API=admin
+PASSWORD_API=admin

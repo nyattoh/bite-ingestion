@@ -1,0 +1,260 @@
+{
+  "acquisition": {
+    "no_comment_rewrite": true,
+    "no_encoding_transcode": true,
+    "no_newline_rewrite": true,
+    "no_ordering_rewrite": true,
+    "no_whitespace_rewrite": true,
+    "preserve_exact_bytes": true,
+    "raw_dir": "corpora/realstruct-2/raw/",
+    "vendor_exact_bytes_only_when_redistribution_permitted": true
+  },
+  "annotation_grammar": {
+    "assignment": "first '=' separator records logical key/value",
+    "exact_duplicate_identity": "(key, value)",
+    "explicit_reference_gold": "${NAME} only",
+    "forbidden_scorer_fields": [
+      "expected route",
+      "expected operator sequence",
+      "expected BITE edge",
+      "expected arm winner"
+    ],
+    "gold_identity": "(source_line, NAME, dest_line)",
+    "independent_of_bite_implementation": true,
+    "name_case_sensitive_exact_key_match": true,
+    "raw_syntax_only": true,
+    "repeated_key_different_value_is_separate_diagnostic": true,
+    "two_pass_whole_document_key_index": true,
+    "unsupported": "comments, blank, section headers, and other non-assignment lines"
+  },
+  "arms_frozen_not_executed": [
+    "raw_full",
+    "adapter_only",
+    "length_pi_v1",
+    "BITE_v5"
+  ],
+  "candidate_pool_per_family": 60,
+  "claim_boundary": "prospectively acquired convenience sample for a later frozen comparison",
+  "corpus_name": "REALSTRUCT-2",
+  "discovery": {
+    "collection_order": "queries in freeze order; paginate each query until the family has 60 unique repository_full_name+path or pages are exhausted",
+    "forbidden_query_terms": [
+      "${",
+      "id=",
+      "FATAL",
+      "duplicate",
+      "BITE",
+      "reference",
+      "joinability",
+      "dispersion"
+    ],
+    "github_search_endpoint": "GET /search/code",
+    "head_sha_source": "GET /repos/{owner}/{repo}/commits/{default_branch}",
+    "ignore_code_search_snippets": true,
+    "no_additions_after_h1": true,
+    "no_reordering_after_h1": true,
+    "per_page": 100,
+    "queries": {
+      "dotenv-like": [
+        "filename:.env.example",
+        "filename:.env.sample",
+        "filename:example.env",
+        "filename:sample.env"
+      ],
+      "ini_cfg": [
+        "extension:ini",
+        "extension:cfg",
+        "extension:conf"
+      ],
+      "properties": [
+        "extension:properties"
+      ]
+    },
+    "query_dimensions": "filename / extension only",
+    "repo_metadata_without_file_contents": true,
+    "unique_key": "repository_full_name + path"
+  },
+  "eligibility": {
+    "allowed_spdx": [
+      "MIT",
+      "Apache-2.0"
+    ],
+    "do_not_alter_h0_if_pool_cannot_fill_primary": true,
+    "exclude_bite_artificial_inputs": true,
+    "exclude_generated_benchmark_test_fixtures": true,
+    "exclude_live_credentials_private_keys_obvious_secrets": true,
+    "log_each_rejection_and_continue": true,
+    "max_bytes": 524288,
+    "min_assignments": 10,
+    "no_duplicate_raw_sha256": true,
+    "no_nul_bytes": true,
+    "no_repository_overlap_within_primary": true,
+    "not_archived": true,
+    "not_fork": true,
+    "not_in_realstruct1_repos": [
+      "laravel/laravel",
+      "koel/koel",
+      "BookStackApp/BookStack",
+      "sissbruecker/linkding",
+      "apache/hadoop",
+      "apache/ratis",
+      "apache/kafka",
+      "apache/tomcat",
+      "gogs/gogs",
+      "polybar/polybar",
+      "openembedded/openembedded-core",
+      "OE4T/meta-tegra"
+    ],
+    "public": true,
+    "test_path_markers": [
+      "/test/",
+      "/tests/",
+      "/testing/",
+      "/__tests__/",
+      "/testdata/",
+      "/fixtures/",
+      "/fixture/",
+      "/benchmark/",
+      "/benchmarks/"
+    ],
+    "utf8_or_ascii_compatible": true
+  },
+  "families": [
+    "dotenv-like",
+    "properties",
+    "ini_cfg"
+  ],
+  "future_phase4i_analysis": {
+    "allowed_claim_form": "On the frozen REALSTRUCT-2 primary corpus, BITE retained X versus Y under the matched-budget protocol.",
+    "forbidden_claims": [
+      "BITE is generally superior",
+      "works better on real-world configuration files",
+      "statistically proves superiority"
+    ],
+    "matched_budget_subset": "primary documents where length_pi_v1.budget_match_applicable == true; do not redefine after results",
+    "no_winner_score": true,
+    "paired_A_visible_reference_retention_v2": "documents with reference gold > 0; BITE_v5 - length_pi_v1 per document; n / mean / median / positive-tie-negative; n=0 => not_observed",
+    "paired_B_unique_assignment_identity_retention_v2": "on matched_budget_subset",
+    "paired_C_recovery_bundle_bytes_and_tokens": "report separately; do not combine with visible token cost",
+    "paired_D_model_visible_cost": "raw_full / adapter_only / BITE_v5 / length_pi_v1 tokens; BITE reduction incidence = count of primary docs where BITE_v5 tokens < adapter_only tokens; not an overall score",
+    "paired_E_safety": "every arm: raw reconstruction exact; BITE additionally provenance completeness, lineage recall, silent loss, conservation_untraced, unsupported loss, no unrelated overmerge",
+    "paired_F_bite_mechanism_diagnostic": "route-sequence frequencies, atom-aware sensor precision/recall, unadjudicated edges; report separately from comparison outcome",
+    "primary_only_for_headline": true,
+    "report_all_four_arms_per_document": true,
+    "secondary_label": "mechanism-enriched diagnostic",
+    "secondary_never_pooled_with_primary": true,
+    "secondary_not_representative_evidence": true,
+    "statistical_claim_boundary": "fixed convenience sample; no population-generalization p-values"
+  },
+  "g0_commit_sha": "df096829d7178e6d33094494e93712fde37580b5",
+  "g0_freeze_blob": "b74b591f61a030134fb35272e20f01bceea295bf",
+  "h2_verdicts": [
+    "PHASE4H_REALSTRUCT2_FROZEN",
+    "PHASE4H_REALSTRUCT2_PARTIAL",
+    "PHASE4H_REALSTRUCT2_BLOCKED"
+  ],
+  "locked_blobs": {
+    "artifacts/phase4c/full-source-provenance.json": "b22d290d1d8f89276c923439b62f5ae1102a9fbb",
+    "artifacts/phase4c/real-holdout.json": "f344bde69d7f963bb78780e967bc59bf639d2942",
+    "artifacts/phase4c/reference-coverage.json": "9d0fd974d72d923f97f7c9dc6f325d7ea1e8a032",
+    "artifacts/phase4d/atom-aware-reference.json": "8092ad6a61c9407b892fcb42fec5dc89f6fe7348",
+    "artifacts/phase4d/measurement-semantics.json": "5a0060138866ed28fca9cb54b5916b03edebea5c",
+    "artifacts/phase4e/full-key-reference.json": "5f3681439d37dd44df2e74299b3c1ad7fc95bce2",
+    "artifacts/phase4f/prospective-comparison.json": "28bfd7ea8b131b72ba55bb3f84a7126f99c96578",
+    "artifacts/phase4g/comparison-accounting.json": "2635401558d27b2a2781ee53ff7465b877f39b37",
+    "benchmarks/spec/phase4e-full-key-reference-freeze.json": "911a22ff9d210de05ae799fce5c90f09c65c1029",
+    "benchmarks/spec/phase4f-prospective-comparison-freeze.json": "9f4e957af859432036e9d150c85b5066892dad8f",
+    "benchmarks/spec/phase4g-comparison-accounting-freeze.json": "b74b591f61a030134fb35272e20f01bceea295bf",
+    "src/bite_eval/composition_safety_v2.py": "85560279375b30f737eb3825cce72373be70488e",
+    "src/bite_eval/length_pi_v1.py": "2de74b1b21c466aaa20858a2066e011f14a0fe20",
+    "src/bite_eval/phase4f_metrics.py": "d58a2f3729423d79731cb081e8d64b0204fdfa6f",
+    "src/bite_eval/reference_tokenizer.py": "6f95df67723fe8ee2e572e589f6ca3e864de37bc",
+    "src/bite_ingestion/adapters/realstruct1_adapter_v1.py": "2ef34b0486efb4badcdc29402ef5a9c4dc359565",
+    "src/bite_ingestion/operators/integrate.py": "68e34becd80e7e803f511ec57ea7a23c2aaa1240",
+    "src/bite_ingestion/operators/reduce_v2.py": "d4bafba7dfdd048a0ccad404a8f706202e2157b5",
+    "src/bite_ingestion/operators/untangle.py": "2951b7542f96674930e750e438891ca772b46896",
+    "src/bite_ingestion/policies/conditional_texture_policy_v4.py": "04d46b15424ccbaf02694d7e7ae056b0b6715686",
+    "src/bite_ingestion/policies/conditional_texture_policy_v5.py": "50180c1254efcc0d082c2cb36d2738200af9f8f5",
+    "src/bite_ingestion/policies/projected_actionability_plan_v1.py": "af3737f078a6d91da38999885aea13860350526a",
+    "src/bite_ingestion/profilers/dependency_dispersion_v3.py": "9ec1c46a68d685210898552c879098bf0416e56d",
+    "src/bite_ingestion/profilers/dependency_dispersion_v4.py": "e2dffa51e07af160ff64ab1d2b3983fac69f07be",
+    "src/bite_ingestion/profilers/reference_identity_v1.py": "49dcd367eccdece7a1bd90df0a3f44f0c24ded65",
+    "src/bite_ingestion/profilers/reference_identity_v2.py": "3524097e33a123ad4180ee4818dbf8d4ab980627"
+  },
+  "n_primary": 18,
+  "n_primary_per_family": 6,
+  "n_secondary_max": 6,
+  "n_secondary_per_family": 2,
+  "no_arm_execution": true,
+  "no_baseline_execution": true,
+  "no_bite_execution": true,
+  "no_bite_policy_import": true,
+  "no_bite_profiler_import": true,
+  "no_bite_retune": true,
+  "no_cross_document_join": true,
+  "no_length_pi_retune": true,
+  "no_phase4f_rewrite": true,
+  "no_phase4g_rewrite": true,
+  "no_recovery_bundle_comparison": true,
+  "no_tokenizer_execution": true,
+  "no_visibility_metrics": true,
+  "no_xfer3": true,
+  "not_claimed": [
+    "BITE evidence",
+    "baseline evidence",
+    "comparison result",
+    "generalization",
+    "superiority"
+  ],
+  "offline_core_tests": true,
+  "one_document_one_uri": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3q_verdict": "PHASE3Q_XFER2_TRANSFER_FAILED",
+  "phase3s_verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "phase3t_verdict": "PHASE3T_EXACT_REFERENCE_VALIDATED",
+  "phase4c_verdict": "PHASE4C_REAL_HOLDOUT_MEASURED",
+  "phase4d_verdict": "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED",
+  "phase4e_verdict": "PHASE4E_FULL_KEY_REFERENCE_VALIDATED",
+  "phase4f_head_sha": "48eaba1a8f55363da3beccec726460b961199300",
+  "phase4f_result_blob": "28bfd7ea8b131b72ba55bb3f84a7126f99c96578",
+  "phase4f_verdict": "PHASE4F_COMPARISON_PROTOCOL_READY",
+  "phase4g_head_sha": "be0248c972d9136ae6c39c57bf7e6a756e815aa9",
+  "phase4g_result_blob": "2635401558d27b2a2781ee53ff7465b877f39b37",
+  "phase4g_verdict": "PHASE4G_COMPARISON_ACCOUNTING_VALIDATED",
+  "premise": "PHASE4G_COMPARISON_ACCOUNTING_VALIDATED",
+  "primary_must_not_depend_on": [
+    "BITE features",
+    "BITE route",
+    "token reduction",
+    "reference dispersion",
+    "duplicate count",
+    "anomaly detection",
+    "joinability",
+    "length_pi result",
+    "future comparison metrics"
+  ],
+  "primary_rule": "first 6 eligible documents per family under selection_order",
+  "primary_scope": "public real-world line-oriented key=value configuration documents",
+  "research_conclusion": false,
+  "revision": "phase4h-realstruct2-freeze-v0.1",
+  "schema": "bitebench-phase4h-realstruct2-freeze/v0.1",
+  "secondary_rule": "after primary 18 fixed, up to 2 remaining eligible documents per family with at least one scorer-only exact same-document ${NAME} reference; never pool with primary; never replace primary",
+  "selection_order": {
+    "direction": "ascending hex",
+    "evaluate_eligibility_in_that_order": true,
+    "key": "SHA256(repository_full_name + '@' + frozen_commit_sha + ':' + path)",
+    "no_hand_picking_after_content_inspection": true
+  },
+  "strata": [
+    "primary",
+    "secondary_reference_enriched"
+  ],
+  "t_high_reference": 4,
+  "verdict": "PHASE4H_REALSTRUCT2_PROTOCOL_FROZEN",
+  "verdict_rule": {
+    "PHASE4H_REALSTRUCT2_BLOCKED": "protocol leakage, arm execution before H2, post-inspection cherry-picking, or frozen component drift",
+    "PHASE4H_REALSTRUCT2_FROZEN": "H0 before discovery; H1 pool frozen before file-content selection; 18/18 primary; provenance/hash/license valid; deterministic order; annotations frozen; secondary separate; no arm/tokenizer execution; BITE/baseline blobs unchanged; p3f unopened",
+    "PHASE4H_REALSTRUCT2_PARTIAL": "corpus cannot fill frozen quotas or licensing/source constraints fail"
+  }
+}

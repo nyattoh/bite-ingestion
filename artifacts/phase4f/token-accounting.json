@@ -1,0 +1,14 @@
+{
+  "error": null,
+  "forbidden_cost_metric": "local_char4_proxy",
+  "hash_verified": true,
+  "hosted_glm_45_flash_byte_identical": false,
+  "library": "transformers==4.54.0",
+  "n_documents": 12,
+  "observed_sha256": "9340665016419c825c4bdabbcc9acc43b7ca2c68ce142724afa829abb1be5efd",
+  "primary_cost_unit": "reference-tokenizer payload tokens",
+  "repo": "zai-org/GLM-4.5",
+  "revision": "cbb2c7cfb52fa128a9660cb1a7a78e017899e115",
+  "schema": "bite-phase4f-token-accounting/v0.1",
+  "tokenizer_json_sha256": "9340665016419c825c4bdabbcc9acc43b7ca2c68ce142724afa829abb1be5efd"
+}

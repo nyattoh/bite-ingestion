@@ -1,0 +1,761 @@
+{
+  "n_ok": 32,
+  "phase3s_remains": "Phase3S remains FAILED",
+  "phase3s_verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "primary": false,
+  "rows": [
+    {
+      "case_id": "p3s-suf-d1",
+      "family": "suffix_collision_only",
+      "format": "key_value",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d1-key_value"
+    },
+    {
+      "case_id": "p3s-suf-d1",
+      "family": "suffix_collision_only",
+      "format": "compact_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d1-compact_json"
+    },
+    {
+      "case_id": "p3s-suf-d1",
+      "family": "suffix_collision_only",
+      "format": "pretty_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d1-pretty_json"
+    },
+    {
+      "case_id": "p3s-suf-d1",
+      "family": "suffix_collision_only",
+      "format": "reversed_order_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d1-reversed_order_json"
+    },
+    {
+      "case_id": "p3s-suf-d3",
+      "family": "suffix_collision_only",
+      "format": "key_value",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d3-key_value"
+    },
+    {
+      "case_id": "p3s-suf-d3",
+      "family": "suffix_collision_only",
+      "format": "compact_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d3-compact_json"
+    },
+    {
+      "case_id": "p3s-suf-d3",
+      "family": "suffix_collision_only",
+      "format": "pretty_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d3-pretty_json"
+    },
+    {
+      "case_id": "p3s-suf-d3",
+      "family": "suffix_collision_only",
+      "format": "reversed_order_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d3-reversed_order_json"
+    },
+    {
+      "case_id": "p3s-suf-d4",
+      "family": "suffix_collision_only",
+      "format": "key_value",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d4-key_value"
+    },
+    {
+      "case_id": "p3s-suf-d4",
+      "family": "suffix_collision_only",
+      "format": "compact_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d4-compact_json"
+    },
+    {
+      "case_id": "p3s-suf-d4",
+      "family": "suffix_collision_only",
+      "format": "pretty_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d4-pretty_json"
+    },
+    {
+      "case_id": "p3s-suf-d4",
+      "family": "suffix_collision_only",
+      "format": "reversed_order_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d4-reversed_order_json"
+    },
+    {
+      "case_id": "p3s-suf-d9",
+      "family": "suffix_collision_only",
+      "format": "key_value",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d9-key_value"
+    },
+    {
+      "case_id": "p3s-suf-d9",
+      "family": "suffix_collision_only",
+      "format": "compact_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d9-compact_json"
+    },
+    {
+      "case_id": "p3s-suf-d9",
+      "family": "suffix_collision_only",
+      "format": "pretty_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d9-pretty_json"
+    },
+    {
+      "case_id": "p3s-suf-d9",
+      "family": "suffix_collision_only",
+      "format": "reversed_order_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-suf-d9-reversed_order_json"
+    },
+    {
+      "case_id": "p3s-mix-d1",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "key_value",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d1-key_value"
+    },
+    {
+      "case_id": "p3s-mix-d1",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "compact_json",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d1-compact_json"
+    },
+    {
+      "case_id": "p3s-mix-d1",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "pretty_json",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d1-pretty_json"
+    },
+    {
+      "case_id": "p3s-mix-d1",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "reversed_order_json",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d1-reversed_order_json"
+    },
+    {
+      "case_id": "p3s-mix-d3",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "key_value",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d3-key_value"
+    },
+    {
+      "case_id": "p3s-mix-d3",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "compact_json",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d3-compact_json"
+    },
+    {
+      "case_id": "p3s-mix-d3",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "pretty_json",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d3-pretty_json"
+    },
+    {
+      "case_id": "p3s-mix-d3",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "reversed_order_json",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d3-reversed_order_json"
+    },
+    {
+      "case_id": "p3s-mix-d4",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "key_value",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d4-key_value"
+    },
+    {
+      "case_id": "p3s-mix-d4",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "compact_json",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d4-compact_json"
+    },
+    {
+      "case_id": "p3s-mix-d4",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "pretty_json",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d4-pretty_json"
+    },
+    {
+      "case_id": "p3s-mix-d4",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "reversed_order_json",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d4-reversed_order_json"
+    },
+    {
+      "case_id": "p3s-mix-d9",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "key_value",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d9-key_value"
+    },
+    {
+      "case_id": "p3s-mix-d9",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "compact_json",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d9-compact_json"
+    },
+    {
+      "case_id": "p3s-mix-d9",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "pretty_json",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d9-pretty_json"
+    },
+    {
+      "case_id": "p3s-mix-d9",
+      "family": "true_reference_plus_suffix_collision",
+      "format": "reversed_order_json",
+      "gated": false,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": false,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-mix-d9-reversed_order_json"
+    },
+    {
+      "case_id": "p3s-act-d1",
+      "family": "suffix_collision_plus_actionability",
+      "format": "key_value",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d1-key_value"
+    },
+    {
+      "case_id": "p3s-act-d1",
+      "family": "suffix_collision_plus_actionability",
+      "format": "compact_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d1-compact_json"
+    },
+    {
+      "case_id": "p3s-act-d1",
+      "family": "suffix_collision_plus_actionability",
+      "format": "pretty_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d1-pretty_json"
+    },
+    {
+      "case_id": "p3s-act-d1",
+      "family": "suffix_collision_plus_actionability",
+      "format": "reversed_order_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d1-reversed_order_json"
+    },
+    {
+      "case_id": "p3s-act-d3",
+      "family": "suffix_collision_plus_actionability",
+      "format": "key_value",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d3-key_value"
+    },
+    {
+      "case_id": "p3s-act-d3",
+      "family": "suffix_collision_plus_actionability",
+      "format": "compact_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d3-compact_json"
+    },
+    {
+      "case_id": "p3s-act-d3",
+      "family": "suffix_collision_plus_actionability",
+      "format": "pretty_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d3-pretty_json"
+    },
+    {
+      "case_id": "p3s-act-d3",
+      "family": "suffix_collision_plus_actionability",
+      "format": "reversed_order_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d3-reversed_order_json"
+    },
+    {
+      "case_id": "p3s-act-d4",
+      "family": "suffix_collision_plus_actionability",
+      "format": "key_value",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d4-key_value"
+    },
+    {
+      "case_id": "p3s-act-d4",
+      "family": "suffix_collision_plus_actionability",
+      "format": "compact_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d4-compact_json"
+    },
+    {
+      "case_id": "p3s-act-d4",
+      "family": "suffix_collision_plus_actionability",
+      "format": "pretty_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d4-pretty_json"
+    },
+    {
+      "case_id": "p3s-act-d4",
+      "family": "suffix_collision_plus_actionability",
+      "format": "reversed_order_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d4-reversed_order_json"
+    },
+    {
+      "case_id": "p3s-act-d9",
+      "family": "suffix_collision_plus_actionability",
+      "format": "key_value",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d9-key_value"
+    },
+    {
+      "case_id": "p3s-act-d9",
+      "family": "suffix_collision_plus_actionability",
+      "format": "compact_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d9-compact_json"
+    },
+    {
+      "case_id": "p3s-act-d9",
+      "family": "suffix_collision_plus_actionability",
+      "format": "pretty_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d9-pretty_json"
+    },
+    {
+      "case_id": "p3s-act-d9",
+      "family": "suffix_collision_plus_actionability",
+      "format": "reversed_order_json",
+      "gated": false,
+      "intended_reference_edges": [],
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "observed_edges": [],
+      "ok": true,
+      "policy_sequence": [],
+      "primary": false,
+      "surface_id": "p3s-act-d9-reversed_order_json"
+    }
+  ],
+  "schema": "bite-phase3t-phase3s-regression/v0.1"
+}

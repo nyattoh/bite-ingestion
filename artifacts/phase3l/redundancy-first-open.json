@@ -1,0 +1,2108 @@
+{
+  "a_unchanged": true,
+  "blocked_reasons": [],
+  "checks": {
+    "format_invariance": true,
+    "frozen_expects": true,
+    "locked_blobs_unchanged": true,
+    "n_60": true,
+    "negative_controls": true,
+    "reorder_invariance": true
+  },
+  "claim_boundary": "same frozen families / new replica values",
+  "contract_fail_closed_scored": false,
+  "family_expect_unchanged": true,
+  "format_invariance": [
+    {
+      "family": "exact_dup_pairs",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 3,
+          "n_records": 6,
+          "n_unique_records": 3
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 3,
+          "n_records": 6,
+          "n_unique_records": 3
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 3,
+          "n_records": 6,
+          "n_unique_records": 3
+        }
+      },
+      "replica": 2
+    },
+    {
+      "family": "exact_dup_pairs",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 3,
+          "n_records": 6,
+          "n_unique_records": 3
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 3,
+          "n_records": 6,
+          "n_unique_records": 3
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 3,
+          "n_records": 6,
+          "n_unique_records": 3
+        }
+      },
+      "replica": 3
+    },
+    {
+      "family": "all_unique",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 4,
+          "n_unique_records": 4
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 4,
+          "n_unique_records": 4
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 4,
+          "n_unique_records": 4
+        }
+      },
+      "replica": 2
+    },
+    {
+      "family": "all_unique",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 4,
+          "n_unique_records": 4
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 4,
+          "n_unique_records": 4
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 4,
+          "n_unique_records": 4
+        }
+      },
+      "replica": 3
+    },
+    {
+      "family": "same_key_diff_value",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 3,
+          "n_unique_records": 3
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 3,
+          "n_unique_records": 3
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 3,
+          "n_unique_records": 3
+        }
+      },
+      "replica": 2
+    },
+    {
+      "family": "same_key_diff_value",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 3,
+          "n_unique_records": 3
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 3,
+          "n_unique_records": 3
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 3,
+          "n_unique_records": 3
+        }
+      },
+      "replica": 3
+    },
+    {
+      "family": "same_value_diff_key",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 3,
+          "n_unique_records": 3
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 3,
+          "n_unique_records": 3
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 3,
+          "n_unique_records": 3
+        }
+      },
+      "replica": 2
+    },
+    {
+      "family": "same_value_diff_key",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 3,
+          "n_unique_records": 3
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 3,
+          "n_unique_records": 3
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 3,
+          "n_unique_records": 3
+        }
+      },
+      "replica": 3
+    },
+    {
+      "family": "reordered_duplicates",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 3,
+          "n_records": 6,
+          "n_unique_records": 3
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 3,
+          "n_records": 6,
+          "n_unique_records": 3
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 3,
+          "n_records": 6,
+          "n_unique_records": 3
+        }
+      },
+      "replica": 2
+    },
+    {
+      "family": "reordered_duplicates",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 3,
+          "n_records": 6,
+          "n_unique_records": 3
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 3,
+          "n_records": 6,
+          "n_unique_records": 3
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 3,
+          "n_records": 6,
+          "n_unique_records": 3
+        }
+      },
+      "replica": 3
+    },
+    {
+      "family": "multiplicity_2",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.25,
+          "n_duplicate_records": 1,
+          "n_records": 4,
+          "n_unique_records": 3
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.25,
+          "n_duplicate_records": 1,
+          "n_records": 4,
+          "n_unique_records": 3
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.25,
+          "n_duplicate_records": 1,
+          "n_records": 4,
+          "n_unique_records": 3
+        }
+      },
+      "replica": 2
+    },
+    {
+      "family": "multiplicity_2",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.25,
+          "n_duplicate_records": 1,
+          "n_records": 4,
+          "n_unique_records": 3
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.25,
+          "n_duplicate_records": 1,
+          "n_records": 4,
+          "n_unique_records": 3
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.25,
+          "n_duplicate_records": 1,
+          "n_records": 4,
+          "n_unique_records": 3
+        }
+      },
+      "replica": 3
+    },
+    {
+      "family": "multiplicity_3",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 2,
+          "n_records": 4,
+          "n_unique_records": 2
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 2,
+          "n_records": 4,
+          "n_unique_records": 2
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 2,
+          "n_records": 4,
+          "n_unique_records": 2
+        }
+      },
+      "replica": 2
+    },
+    {
+      "family": "multiplicity_3",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 2,
+          "n_records": 4,
+          "n_unique_records": 2
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 2,
+          "n_records": 4,
+          "n_unique_records": 2
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.5,
+          "n_duplicate_records": 2,
+          "n_records": 4,
+          "n_unique_records": 2
+        }
+      },
+      "replica": 3
+    },
+    {
+      "family": "common_prefix",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        }
+      },
+      "replica": 2
+    },
+    {
+      "family": "common_prefix",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        }
+      },
+      "replica": 3
+    },
+    {
+      "family": "common_suffix",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        }
+      },
+      "replica": 2
+    },
+    {
+      "family": "common_suffix",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        }
+      },
+      "replica": 3
+    },
+    {
+      "family": "identifier_substring",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        }
+      },
+      "replica": 2
+    },
+    {
+      "family": "identifier_substring",
+      "ok": true,
+      "per_format": {
+        "compact_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        },
+        "key_value": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        },
+        "pretty_json": {
+          "duplicate_unit_ratio": 0.0,
+          "n_duplicate_records": 0,
+          "n_records": 2,
+          "n_unique_records": 2
+        }
+      },
+      "replica": 3
+    }
+  ],
+  "k0_commit_sha": "526601b68a0eec9861b012ef5ddc67078447bf36",
+  "k_unchanged": true,
+  "n_matched": 60,
+  "n_rows": 60,
+  "no_threshold": true,
+  "not_claimed": [
+    "unseen morphology",
+    "external generalization"
+  ],
+  "offline": true,
+  "p3f_evaluation_holdout_used": false,
+  "p3k_generation_unchanged": true,
+  "p3k_split_unchanged": true,
+  "paid_api": false,
+  "phase3k_verdict_unchanged": "PHASE3K_REDUNDANCY_SENSOR_READY",
+  "protocol_commit_sha": "d365d0b1bd4cb3dcdad617ed4e78df19fdf23ce6",
+  "protocol_revision": "phase3l-redundancy-first-open-freeze-v0.1",
+  "redundancy_threshold_set": false,
+  "research_conclusion": false,
+  "revision": "phase3l-redundancy-first-open-v0.1",
+  "routing_connected": false,
+  "rows": [
+    {
+      "case_id": "p3k-exact_dup_pairs-r2-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "family": "exact_dup_pairs",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r2-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "family": "exact_dup_pairs",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r2-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "family": "exact_dup_pairs",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r3-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "family": "exact_dup_pairs",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r3-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "family": "exact_dup_pairs",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r3-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "family": "exact_dup_pairs",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-all_unique-r2-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 4,
+        "n_unique_records": 4
+      },
+      "family": "all_unique",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 4,
+        "n_unique_records": 4
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-all_unique-r2-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 4,
+        "n_unique_records": 4
+      },
+      "family": "all_unique",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 4,
+        "n_unique_records": 4
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-all_unique-r2-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 4,
+        "n_unique_records": 4
+      },
+      "family": "all_unique",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 4,
+        "n_unique_records": 4
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-all_unique-r3-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 4,
+        "n_unique_records": 4
+      },
+      "family": "all_unique",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 4,
+        "n_unique_records": 4
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-all_unique-r3-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 4,
+        "n_unique_records": 4
+      },
+      "family": "all_unique",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 4,
+        "n_unique_records": 4
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-all_unique-r3-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 4,
+        "n_unique_records": 4
+      },
+      "family": "all_unique",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 4,
+        "n_unique_records": 4
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r2-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "family": "same_key_diff_value",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r2-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "family": "same_key_diff_value",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r2-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "family": "same_key_diff_value",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r3-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "family": "same_key_diff_value",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r3-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "family": "same_key_diff_value",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r3-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "family": "same_key_diff_value",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r2-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "family": "same_value_diff_key",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r2-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "family": "same_value_diff_key",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r2-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "family": "same_value_diff_key",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r3-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "family": "same_value_diff_key",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r3-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "family": "same_value_diff_key",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r3-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "family": "same_value_diff_key",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 3,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r2-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "family": "reordered_duplicates",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r2-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "family": "reordered_duplicates",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r2-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "family": "reordered_duplicates",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r3-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "family": "reordered_duplicates",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r3-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "family": "reordered_duplicates",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r3-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "family": "reordered_duplicates",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 3,
+        "n_records": 6,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r2-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.25,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 1,
+        "n_records": 4,
+        "n_unique_records": 3
+      },
+      "family": "multiplicity_2",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.25,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 1,
+        "n_records": 4,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r2-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.25,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 1,
+        "n_records": 4,
+        "n_unique_records": 3
+      },
+      "family": "multiplicity_2",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.25,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 1,
+        "n_records": 4,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r2-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.25,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 1,
+        "n_records": 4,
+        "n_unique_records": 3
+      },
+      "family": "multiplicity_2",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.25,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 1,
+        "n_records": 4,
+        "n_unique_records": 3
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r3-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.25,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 1,
+        "n_records": 4,
+        "n_unique_records": 3
+      },
+      "family": "multiplicity_2",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.25,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 1,
+        "n_records": 4,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r3-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.25,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 1,
+        "n_records": 4,
+        "n_unique_records": 3
+      },
+      "family": "multiplicity_2",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.25,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 1,
+        "n_records": 4,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r3-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.25,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 1,
+        "n_records": 4,
+        "n_unique_records": 3
+      },
+      "family": "multiplicity_2",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.25,
+        "fail_closed": false,
+        "max_multiplicity": 2,
+        "n_duplicate_records": 1,
+        "n_records": 4,
+        "n_unique_records": 3
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r2-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 3,
+        "n_duplicate_records": 2,
+        "n_records": 4,
+        "n_unique_records": 2
+      },
+      "family": "multiplicity_3",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 3,
+        "n_duplicate_records": 2,
+        "n_records": 4,
+        "n_unique_records": 2
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r2-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 3,
+        "n_duplicate_records": 2,
+        "n_records": 4,
+        "n_unique_records": 2
+      },
+      "family": "multiplicity_3",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 3,
+        "n_duplicate_records": 2,
+        "n_records": 4,
+        "n_unique_records": 2
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r2-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 3,
+        "n_duplicate_records": 2,
+        "n_records": 4,
+        "n_unique_records": 2
+      },
+      "family": "multiplicity_3",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 3,
+        "n_duplicate_records": 2,
+        "n_records": 4,
+        "n_unique_records": 2
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r3-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 3,
+        "n_duplicate_records": 2,
+        "n_records": 4,
+        "n_unique_records": 2
+      },
+      "family": "multiplicity_3",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 3,
+        "n_duplicate_records": 2,
+        "n_records": 4,
+        "n_unique_records": 2
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r3-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 3,
+        "n_duplicate_records": 2,
+        "n_records": 4,
+        "n_unique_records": 2
+      },
+      "family": "multiplicity_3",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 3,
+        "n_duplicate_records": 2,
+        "n_records": 4,
+        "n_unique_records": 2
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r3-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 3,
+        "n_duplicate_records": 2,
+        "n_records": 4,
+        "n_unique_records": 2
+      },
+      "family": "multiplicity_3",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.5,
+        "fail_closed": false,
+        "max_multiplicity": 3,
+        "n_duplicate_records": 2,
+        "n_records": 4,
+        "n_unique_records": 2
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_prefix-r2-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "common_prefix",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_prefix-r2-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "common_prefix",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_prefix-r2-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "common_prefix",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_prefix-r3-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "common_prefix",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_prefix-r3-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "common_prefix",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_prefix-r3-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "common_prefix",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_suffix-r2-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "common_suffix",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_suffix-r2-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "common_suffix",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_suffix-r2-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "common_suffix",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_suffix-r3-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "common_suffix",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_suffix-r3-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "common_suffix",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_suffix-r3-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "common_suffix",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r2-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "identifier_substring",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r2-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "identifier_substring",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r2-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "identifier_substring",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r3-key_value",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "identifier_substring",
+      "format": "key_value",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r3-compact_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "identifier_substring",
+      "format": "compact_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r3-pretty_json",
+      "expect": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "family": "identifier_substring",
+      "format": "pretty_json",
+      "generation": "p3k",
+      "match": true,
+      "mismatches": {},
+      "observed": {
+        "duplicate_unit_ratio": 0.0,
+        "fail_closed": false,
+        "max_multiplicity": 1,
+        "n_duplicate_records": 0,
+        "n_records": 2,
+        "n_unique_records": 2
+      },
+      "replica": 3,
+      "split": "evaluation"
+    }
+  ],
+  "rule_policy_changed": false,
+  "rule_policy_executed": false,
+  "schema": "bite-phase3l-redundancy-first-open/v0.1",
+  "sensor_unchanged": true,
+  "synthetic": true,
+  "v0_overwritten": false,
+  "v1_unchanged": true,
+  "verdict": "PHASE3L_REDUNDANCY_HOLDOUT_CONFIRMED"
+}

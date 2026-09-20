@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3t-phase3s-regression.schema.json",
+  "title": "BITE Phase-3T Phase-3S secondary regression v0.1",
+  "type": "object",
+  "required": ["schema", "primary", "phase3s_verdict", "n_ok", "rows"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3t-phase3s-regression/v0.1"
+    },
+    "primary": { "type": "boolean", "const": false },
+    "phase3s_verdict": {
+      "type": "string",
+      "const": "PHASE3S_REFERENCE_SPECIFICITY_FAILED"
+    },
+    "n_ok": { "type": "integer", "minimum": 0 },
+    "rows": { "type": "array" }
+  }
+}

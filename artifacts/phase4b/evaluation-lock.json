@@ -1,0 +1,74 @@
+{
+  "adapter_blob": "2ef34b0486efb4badcdc29402ef5a9c4dc359565",
+  "adapter_id": "realstruct1_adapter_v1",
+  "b0_commit_sha": "70fa0ce678611db122a74a5fbe730fccf5bf12fb",
+  "b0_freeze_blob": "51af36d70b29ef74c797ed3f547b8f848319184d",
+  "dev_source_ids": [
+    "rs1-dotenv-linkding",
+    "rs1-props-hadoop-log4j",
+    "rs1-ini-oe-bitbake"
+  ],
+  "eval_source_ids": [
+    "rs1-dotenv-koel",
+    "rs1-dotenv-bookstack",
+    "rs1-dotenv-laravel",
+    "rs1-props-ratis-log4j",
+    "rs1-props-kafka-server",
+    "rs1-props-tomcat-logging",
+    "rs1-ini-polybar",
+    "rs1-ini-gogs",
+    "rs1-ini-tegra-common"
+  ],
+  "eval_unopened": true,
+  "locked_bite_blobs": {
+    "src/bite_eval/composition_safety_v2.py": "85560279375b30f737eb3825cce72373be70488e",
+    "src/bite_ingestion/logical_record.py": "c6f8cdd455cbc6814141fdb95458a72cc47b7af0",
+    "src/bite_ingestion/operators/integrate.py": "68e34becd80e7e803f511ec57ea7a23c2aaa1240",
+    "src/bite_ingestion/operators/reduce_v2.py": "d4bafba7dfdd048a0ccad404a8f706202e2157b5",
+    "src/bite_ingestion/operators/untangle.py": "2951b7542f96674930e750e438891ca772b46896",
+    "src/bite_ingestion/policies/conditional_texture_policy_v4.py": "04d46b15424ccbaf02694d7e7ae056b0b6715686",
+    "src/bite_ingestion/policies/projected_actionability_plan_v1.py": "af3737f078a6d91da38999885aea13860350526a",
+    "src/bite_ingestion/profilers/dependency_dispersion_v3.py": "9ec1c46a68d685210898552c879098bf0416e56d",
+    "src/bite_ingestion/profilers/reference_identity_v1.py": "49dcd367eccdece7a1bd90df0a3f44f0c24ded65",
+    "src/bite_ingestion/profilers/structural_redundancy_v2.py": "8960396c9a91872a1bfb0ccdaeae834d872cf12e"
+  },
+  "locked_phase4a_blobs": {
+    "artifacts/phase4a/realstruct-1.json": "7a7b0834e9b66c599492a06dbe116e773eca6320",
+    "benchmarks/spec/phase4a-realstruct1-freeze.json": "6e009fb6cf1cb239b8449e402301be15ffd7ed86",
+    "corpora/realstruct-1/annotations.json": "956da0205dcd034a40413ccf3f728b9897d3c49e",
+    "corpora/realstruct-1/licenses.json": "55eda51460fc8ac02c576c3d956210cda8959c71",
+    "corpora/realstruct-1/manifest.json": "636b7c51d637fdb6ea8cf83546baa7f61bde2ae8",
+    "corpora/realstruct-1/split.json": "2be516a478a683b16847536fbbe24c93ee93cdf1"
+  },
+  "measurement_definitions": {
+    "exact_duplicate_gold": "exact (assignment_key, assignment_value)",
+    "full_source_conservation": "provenance_completeness=1; lineage_recall=1; silent_loss=0; conservation_untraced=[]",
+    "gold_reference_recall": "hits / gold directed ${NAME} pairs; NA if gold_n=0",
+    "unadjudicated_extra_edges": "sensor edges not in gold; not called false positives"
+  },
+  "no_baseline_execution": true,
+  "overlay_v2_blob": "0d1388b89bf2c5c2e062472ea2b78a1b1923ad9b",
+  "overlay_v2_sha256": "dfcff8d9117918a56d77d31ee46c32c45b085f39b3337584abfc40fe03d0cab8",
+  "p3f_unopened": true,
+  "provenance_invariants": [
+    "every source unit is passthrough, visible descendant, or recoverable R",
+    "unsupported source lines must remain"
+  ],
+  "raw_sha256": {
+    "rs1-dotenv-bookstack": "5a602970513267c2a60eaaf9dd6a59f7cf8bb69394d936f220794bb7a764fdd1",
+    "rs1-dotenv-koel": "4ef7a22cc292ae8422cdb41dd3ca0565ad088b89910cadd59283ca503010365a",
+    "rs1-dotenv-laravel": "cc816d67d5b55939f8f282b56d46445c148fc96262eb6eb19ff8ae9d437676da",
+    "rs1-dotenv-linkding": "12a0e13fc1b005ea484b96c666813d1a601de5ad85c9db82262b67950dcb10bf",
+    "rs1-ini-gogs": "5f9fafb733a153c85bf5d1759ba7663cd53b5f98bb3265703e2769e374453b4f",
+    "rs1-ini-oe-bitbake": "12f345f878f9084a02e13145cdc4d8fdfc52c54454af1011848ff214912429f5",
+    "rs1-ini-polybar": "292ec12a9034cd514776b597427c9deecd76efedfefec3a2e3fb8188b621d324",
+    "rs1-ini-tegra-common": "e1a1cf73e118c8e1f49591e7d98181a46ef7536dc2bed6c7f0b99e10ee49b5f6",
+    "rs1-props-hadoop-log4j": "220c1cc06b1d7802052a9ab2959f66f875f664e25f4f98e05ab86120af34e644",
+    "rs1-props-kafka-server": "a20896da0834c1baf0271760d726ec06420b12767690a1f340e758d02c39b0db",
+    "rs1-props-ratis-log4j": "7e18b252adff25f9762a0dacd6914b75b1f4db43b7be5599f337937b3cc41151",
+    "rs1-props-tomcat-logging": "a891154c70e5ba42f2f82e72d209d70a1763962aee21d08fc592e595a1f273db"
+  },
+  "revision": "phase4b-real-adapter-v0.1",
+  "schema": "bite-phase4b-evaluation-lock/v0.1",
+  "t_high_reference": 4
+}

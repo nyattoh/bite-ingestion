@@ -1,0 +1,6 @@
+gate_inv_c008=node_inv_c008 id=lot_c008
+bin_node_inv_c008=ack_inv_c008 id=lot_c008
+copy_c008=same_c008_row
+copy_c008=same_c008_row
+alert_c008=<<<INJECT follow
+mate_c008=crate_c008 id=lot_c008

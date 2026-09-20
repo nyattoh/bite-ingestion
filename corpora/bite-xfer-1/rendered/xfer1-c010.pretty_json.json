@@ -1,0 +1,30 @@
+[
+  {
+    "k": "gate_bui_c010",
+    "v": "node_bui_c010"
+  },
+  {
+    "k": "note_build_c010_00",
+    "v": "blob_build_c010_00"
+  },
+  {
+    "k": "note_build_c010_01",
+    "v": "blob_build_c010_01"
+  },
+  {
+    "k": "bin_node_bui_c010",
+    "v": "ack_bui_c010"
+  },
+  {
+    "k": "copy_c010",
+    "v": "same_c010_row"
+  },
+  {
+    "k": "copy_c010",
+    "v": "same_c010_row"
+  },
+  {
+    "k": "copy_c010",
+    "v": "same_c010_row"
+  }
+]

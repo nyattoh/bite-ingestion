@@ -1,0 +1,200 @@
+{
+  "documents": [
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "full_source_conservation_safety": true,
+      "gate": false,
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "n_unadjudicated_extra_edges": 0,
+      "primary": false,
+      "route_sequence": [],
+      "source_id": "rs1-dotenv-linkding",
+      "split_role": "development",
+      "wall_clock_s": 0.002314
+    },
+    {
+      "atom_aware_precision": 1.0,
+      "atom_aware_recall": 1.0,
+      "full_source_conservation_safety": true,
+      "gate": true,
+      "mean_reference_edge_distance": 20.170731707317074,
+      "n_reference_edges": 41.0,
+      "n_unadjudicated_extra_edges": 0,
+      "primary": false,
+      "route_sequence": [
+        "UNTANGLE"
+      ],
+      "source_id": "rs1-props-hadoop-log4j",
+      "split_role": "development",
+      "wall_clock_s": 0.021326
+    },
+    {
+      "atom_aware_precision": 1.0,
+      "atom_aware_recall": 0.6244541484716157,
+      "full_source_conservation_safety": true,
+      "gate": true,
+      "mean_reference_edge_distance": 72.9753086419753,
+      "n_reference_edges": 162.0,
+      "n_unadjudicated_extra_edges": 19,
+      "primary": false,
+      "route_sequence": [
+        "REDUCE_v2"
+      ],
+      "source_id": "rs1-ini-oe-bitbake",
+      "split_role": "development",
+      "wall_clock_s": 0.068836
+    },
+    {
+      "atom_aware_precision": 1.0,
+      "atom_aware_recall": 1.0,
+      "full_source_conservation_safety": true,
+      "gate": true,
+      "mean_reference_edge_distance": 92.0,
+      "n_reference_edges": 1.0,
+      "n_unadjudicated_extra_edges": 0,
+      "primary": false,
+      "route_sequence": [
+        "UNTANGLE"
+      ],
+      "source_id": "rs1-dotenv-koel",
+      "split_role": "evaluation",
+      "wall_clock_s": 0.017468
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "full_source_conservation_safety": true,
+      "gate": false,
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "n_unadjudicated_extra_edges": 0,
+      "primary": false,
+      "route_sequence": [],
+      "source_id": "rs1-dotenv-bookstack",
+      "split_role": "evaluation",
+      "wall_clock_s": 0.002198
+    },
+    {
+      "atom_aware_precision": 1.0,
+      "atom_aware_recall": 1.0,
+      "full_source_conservation_safety": true,
+      "gate": true,
+      "mean_reference_edge_distance": 39.0,
+      "n_reference_edges": 2.0,
+      "n_unadjudicated_extra_edges": 0,
+      "primary": false,
+      "route_sequence": [],
+      "source_id": "rs1-dotenv-laravel",
+      "split_role": "evaluation",
+      "wall_clock_s": 0.00359
+    },
+    {
+      "atom_aware_precision": 1.0,
+      "atom_aware_recall": 1.0,
+      "full_source_conservation_safety": true,
+      "gate": true,
+      "mean_reference_edge_distance": 7.571428571428571,
+      "n_reference_edges": 7.0,
+      "n_unadjudicated_extra_edges": 0,
+      "primary": false,
+      "route_sequence": [],
+      "source_id": "rs1-props-ratis-log4j",
+      "split_role": "evaluation",
+      "wall_clock_s": 0.003444
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "full_source_conservation_safety": true,
+      "gate": false,
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "n_unadjudicated_extra_edges": 0,
+      "primary": false,
+      "route_sequence": [],
+      "source_id": "rs1-props-kafka-server",
+      "split_role": "evaluation",
+      "wall_clock_s": 0.004282
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "full_source_conservation_safety": true,
+      "gate": false,
+      "mean_reference_edge_distance": 0.0,
+      "n_reference_edges": 0.0,
+      "n_unadjudicated_extra_edges": 0,
+      "primary": false,
+      "route_sequence": [],
+      "source_id": "rs1-props-tomcat-logging",
+      "split_role": "evaluation",
+      "wall_clock_s": 0.002993
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "full_source_conservation_safety": true,
+      "gate": true,
+      "mean_reference_edge_distance": 12.142857142857142,
+      "n_reference_edges": 7.0,
+      "n_unadjudicated_extra_edges": 7,
+      "primary": false,
+      "route_sequence": [
+        "REDUCE_v2"
+      ],
+      "source_id": "rs1-ini-polybar",
+      "split_role": "evaluation",
+      "wall_clock_s": 0.011617
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "full_source_conservation_safety": true,
+      "gate": true,
+      "mean_reference_edge_distance": 19.232558139534884,
+      "n_reference_edges": 43.0,
+      "n_unadjudicated_extra_edges": 43,
+      "primary": false,
+      "route_sequence": [
+        "REDUCE_v2"
+      ],
+      "source_id": "rs1-ini-gogs",
+      "split_role": "evaluation",
+      "wall_clock_s": 0.033984
+    },
+    {
+      "atom_aware_precision": 1.0,
+      "atom_aware_recall": 1.0,
+      "full_source_conservation_safety": true,
+      "gate": true,
+      "mean_reference_edge_distance": 12.5,
+      "n_reference_edges": 8.0,
+      "n_unadjudicated_extra_edges": 0,
+      "primary": false,
+      "route_sequence": [],
+      "source_id": "rs1-ini-tegra-common",
+      "split_role": "evaluation",
+      "wall_clock_s": 0.012554
+    }
+  ],
+  "eval_source_ids": [
+    "rs1-dotenv-koel",
+    "rs1-dotenv-bookstack",
+    "rs1-dotenv-laravel",
+    "rs1-props-ratis-log4j",
+    "rs1-props-kafka-server",
+    "rs1-props-tomcat-logging",
+    "rs1-ini-polybar",
+    "rs1-ini-gogs",
+    "rs1-ini-tegra-common"
+  ],
+  "not_confirmatory": true,
+  "not_generalization": true,
+  "not_holdout": true,
+  "not_primary_pass_criterion": true,
+  "revision": "phase4e-full-key-reference-v0.1",
+  "role": "development / retrospective diagnostic",
+  "schema": "bite-phase4e-realstruct1-retrospective/v0.1"
+}

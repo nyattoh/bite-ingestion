@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3g-calibration-lock.schema.json",
+  "title": "BITE Phase-3G calibration lock v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "routing_connected",
+    "rule_policy_changed",
+    "v1_sensor_changed",
+    "evaluation_holdout_used",
+    "evaluation_outcomes_open",
+    "freeze_revision",
+    "operator_map_selected",
+    "selected_operator_map",
+    "high_bin_mapped_to_operator",
+    "selected_candidate",
+    "selected_thresholds"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3g-calibration-lock/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3g-calibration-lock-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE3G_CALIBRATION_LOCKED",
+        "PHASE3G_CALIBRATION_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "routing_connected": { "type": "boolean", "const": false },
+    "rule_policy_changed": { "type": "boolean", "const": false },
+    "v1_sensor_changed": { "type": "boolean", "const": false },
+    "evaluation_holdout_used": { "type": "boolean", "const": false },
+    "evaluation_outcomes_open": { "type": "boolean", "const": false },
+    "freeze_revision": {
+      "type": "string",
+      "const": "phase3f-routing-calibration-freeze-v0.3"
+    },
+    "operator_map_selected": { "type": "boolean", "const": false },
+    "selected_operator_map": { "type": "null" },
+    "high_bin_mapped_to_operator": { "type": "boolean", "const": false }
+  }
+}

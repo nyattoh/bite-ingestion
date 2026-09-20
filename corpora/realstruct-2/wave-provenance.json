@@ -1,0 +1,50 @@
+{
+  "acquisition_design": "two-wave prospective acquisition; wave 2 added after quota shortfall, before any comparison-arm or tokenizer execution",
+  "extension_pool_path": "artifacts/phase4h2/extension-pool.json",
+  "final_primary_source_ids": [
+    "rs2-dotenv-ronakmaheshwari-capital",
+    "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+    "rs2-dotenv-luizomf-dockerswarmp1",
+    "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+    "rs2-props-edson-a-soares-poco_restful_webservice",
+    "rs2-props-aterai-java-swing-tips",
+    "rs2-props-oraopensource-apexbackup",
+    "rs2-ini-ahuacate-pve-medialab",
+    "rs2-ini-genicam-harvesters_gui",
+    "rs2-ini-beluganos-beluganos",
+    "rs2-dotenv-s1nro-granatapfel",
+    "rs2-dotenv-johnsonchin1009-pulse",
+    "rs2-props-redpill-linpro-alfresco-jobs",
+    "rs2-props-xzel23-utility",
+    "rs2-props-aterai-kotlin-swing-tips",
+    "rs2-ini-jphutchins-pyavreceiver",
+    "rs2-ini-astrarium-astrarium",
+    "rs2-ini-waltenne-ubuntu-post-install"
+  ],
+  "final_secondary_source_ids": [],
+  "h1_pool_unchanged": true,
+  "revision": "phase4h2-realstruct2-v0.1",
+  "schema": "bite-phase4h2-wave-provenance/v0.1",
+  "wave1_source_ids": [
+    "rs2-dotenv-ronakmaheshwari-capital",
+    "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+    "rs2-dotenv-luizomf-dockerswarmp1",
+    "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+    "rs2-props-edson-a-soares-poco_restful_webservice",
+    "rs2-props-aterai-java-swing-tips",
+    "rs2-props-oraopensource-apexbackup",
+    "rs2-ini-ahuacate-pve-medialab",
+    "rs2-ini-genicam-harvesters_gui",
+    "rs2-ini-beluganos-beluganos"
+  ],
+  "wave2_source_ids": [
+    "rs2-dotenv-s1nro-granatapfel",
+    "rs2-dotenv-johnsonchin1009-pulse",
+    "rs2-props-redpill-linpro-alfresco-jobs",
+    "rs2-props-xzel23-utility",
+    "rs2-props-aterai-kotlin-swing-tips",
+    "rs2-ini-jphutchins-pyavreceiver",
+    "rs2-ini-astrarium-astrarium",
+    "rs2-ini-waltenne-ubuntu-post-install"
+  ]
+}

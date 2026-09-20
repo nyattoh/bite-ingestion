@@ -1,0 +1,10 @@
+{
+  "label": "mechanism-enriched diagnostic",
+  "n_secondary": 0,
+  "never_pooled_with_primary": true,
+  "not_representative_evidence": true,
+  "revision": "phase4h-realstruct2-v0.1",
+  "schema": "bite-phase4h-realstruct2-secondary/v0.1",
+  "source_ids": [],
+  "sources": []
+}

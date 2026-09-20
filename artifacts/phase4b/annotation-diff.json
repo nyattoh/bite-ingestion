@@ -1,0 +1,128 @@
+{
+  "documents": [
+    {
+      "n_edges_added": 0,
+      "n_edges_v1": 2,
+      "n_edges_v2": 2,
+      "n_exact_duplicate_groups_v2": 0,
+      "n_forward_capable_edges": 0,
+      "n_repeated_key_groups_v1": 0,
+      "n_repeated_key_groups_v2": 0,
+      "source_id": "rs1-dotenv-laravel"
+    },
+    {
+      "n_edges_added": 0,
+      "n_edges_v1": 1,
+      "n_edges_v2": 1,
+      "n_exact_duplicate_groups_v2": 0,
+      "n_forward_capable_edges": 0,
+      "n_repeated_key_groups_v1": 0,
+      "n_repeated_key_groups_v2": 0,
+      "source_id": "rs1-dotenv-koel"
+    },
+    {
+      "n_edges_added": 0,
+      "n_edges_v1": 0,
+      "n_edges_v2": 0,
+      "n_exact_duplicate_groups_v2": 0,
+      "n_forward_capable_edges": 0,
+      "n_repeated_key_groups_v1": 0,
+      "n_repeated_key_groups_v2": 0,
+      "source_id": "rs1-dotenv-bookstack"
+    },
+    {
+      "n_edges_added": 0,
+      "n_edges_v1": 0,
+      "n_edges_v2": 0,
+      "n_exact_duplicate_groups_v2": 0,
+      "n_forward_capable_edges": 0,
+      "n_repeated_key_groups_v1": 0,
+      "n_repeated_key_groups_v2": 0,
+      "source_id": "rs1-dotenv-linkding"
+    },
+    {
+      "n_edges_added": 0,
+      "n_edges_v1": 41,
+      "n_edges_v2": 41,
+      "n_exact_duplicate_groups_v2": 0,
+      "n_forward_capable_edges": 0,
+      "n_repeated_key_groups_v1": 0,
+      "n_repeated_key_groups_v2": 0,
+      "source_id": "rs1-props-hadoop-log4j"
+    },
+    {
+      "n_edges_added": 0,
+      "n_edges_v1": 7,
+      "n_edges_v2": 7,
+      "n_exact_duplicate_groups_v2": 0,
+      "n_forward_capable_edges": 0,
+      "n_repeated_key_groups_v1": 0,
+      "n_repeated_key_groups_v2": 0,
+      "source_id": "rs1-props-ratis-log4j"
+    },
+    {
+      "n_edges_added": 0,
+      "n_edges_v1": 0,
+      "n_edges_v2": 0,
+      "n_exact_duplicate_groups_v2": 0,
+      "n_forward_capable_edges": 0,
+      "n_repeated_key_groups_v1": 0,
+      "n_repeated_key_groups_v2": 0,
+      "source_id": "rs1-props-kafka-server"
+    },
+    {
+      "n_edges_added": 0,
+      "n_edges_v1": 0,
+      "n_edges_v2": 0,
+      "n_exact_duplicate_groups_v2": 0,
+      "n_forward_capable_edges": 0,
+      "n_repeated_key_groups_v1": 0,
+      "n_repeated_key_groups_v2": 0,
+      "source_id": "rs1-props-tomcat-logging"
+    },
+    {
+      "n_edges_added": 0,
+      "n_edges_v1": 0,
+      "n_edges_v2": 0,
+      "n_exact_duplicate_groups_v2": 12,
+      "n_forward_capable_edges": 0,
+      "n_repeated_key_groups_v1": 18,
+      "n_repeated_key_groups_v2": 18,
+      "source_id": "rs1-ini-gogs"
+    },
+    {
+      "n_edges_added": 0,
+      "n_edges_v1": 0,
+      "n_edges_v2": 0,
+      "n_exact_duplicate_groups_v2": 3,
+      "n_forward_capable_edges": 0,
+      "n_repeated_key_groups_v1": 10,
+      "n_repeated_key_groups_v2": 10,
+      "source_id": "rs1-ini-polybar"
+    },
+    {
+      "n_edges_added": 18,
+      "n_edges_v1": 230,
+      "n_edges_v2": 248,
+      "n_exact_duplicate_groups_v2": 1,
+      "n_forward_capable_edges": 18,
+      "n_repeated_key_groups_v1": 4,
+      "n_repeated_key_groups_v2": 4,
+      "source_id": "rs1-ini-oe-bitbake"
+    },
+    {
+      "n_edges_added": 0,
+      "n_edges_v1": 8,
+      "n_edges_v2": 8,
+      "n_exact_duplicate_groups_v2": 0,
+      "n_forward_capable_edges": 0,
+      "n_repeated_key_groups_v1": 1,
+      "n_repeated_key_groups_v2": 1,
+      "source_id": "rs1-ini-tegra-common"
+    }
+  ],
+  "overlay_v2_path": "corpora/realstruct-1/annotations-v2.json",
+  "phase4a_legacy_path": "corpora/realstruct-1/annotations.json",
+  "revision": "phase4b-annotations-v2-v0.1",
+  "schema": "bite-phase4b-annotation-diff/v0.1"
+}
