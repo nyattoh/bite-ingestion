@@ -1,0 +1,44 @@
+{
+  "do_not_pool": true,
+  "do_not_rewrite_historical_phase4i": true,
+  "matched_budget_unique_identity": {
+    "BITE_v5": 1.0,
+    "delta": 0.15384615384615385,
+    "kind": "prospective_only",
+    "length_pi_v1": 0.8461538461538461,
+    "n": 1,
+    "n_prominence": "n=1",
+    "not_recomputed_in_phase4j": true,
+    "source_id": "rs2-ini-genicam-harvesters_gui"
+  },
+  "reference_retention": {
+    "prospective_phase4i": {
+      "n": 0,
+      "reason": "legacy reader schema incompatibility",
+      "status": "not_observed"
+    },
+    "retrospective_phase4j": {
+      "BITE_v5": 1.0,
+      "delta": 0.0,
+      "length_pi_v1": 1.0,
+      "n": 1,
+      "not_a_new_first_open": true,
+      "source_id": "rs2-ini-ahuacate-pve-medialab",
+      "tie": 1
+    }
+  },
+  "reference_sensor_ahuacate": {
+    "prospective_phase4i_recorded": {
+      "atom_aware_precision": 0.0,
+      "atom_aware_recall": "NA",
+      "note": "legacy dest_lines reader; n_gold=0 under Phase4I scorer"
+    },
+    "retrospective_phase4j_corrected": {
+      "not_a_new_first_open": true,
+      "precision": 1.0,
+      "recall": 1.0,
+      "unadjudicated": 0
+    }
+  },
+  "schema": "bite-phase4k-prospective-vs-retrospective/v0.1"
+}

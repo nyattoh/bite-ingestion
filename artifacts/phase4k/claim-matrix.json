@@ -1,0 +1,64 @@
+{
+  "do_not_infer_unsupported_from_supported": true,
+  "schema": "bite-phase4k-claim-matrix/v0.1",
+  "supported": [
+    {
+      "claim": "On the frozen 18-document REALSTRUCT-2 convenience sample, BITE preserved the frozen safety invariants on all documents.",
+      "evidence_category": "real_corpus_safety_evidence",
+      "n": "18/18"
+    },
+    {
+      "claim": "BITE reduced model-visible tokens relative to adapter_only on 1 of 18 documents.",
+      "evidence_category": "prospective_realstruct2_comparison_evidence",
+      "n": "1/18",
+      "not_a_win_rate": true
+    },
+    {
+      "claim": "On the single matched-budget document, BITE retained all unique assignment identities while prefix truncation retained 84.6%.",
+      "evidence_category": "prospective_realstruct2_comparison_evidence",
+      "n": 1,
+      "n_prominence": "n=1"
+    },
+    {
+      "claim": "On the single reference-gold document, retrospectively corrected reference retention was 1.0 for both BITE and the matched length arm.",
+      "evidence_category": "retrospective_measurement_corrections",
+      "n": 1,
+      "n_prominence": "n=1",
+      "not_a_new_first_open": true
+    }
+  ],
+  "unsupported": [
+    {
+      "allowed": false,
+      "claim": "BITE superiority"
+    },
+    {
+      "allowed": false,
+      "claim": "general real-world effectiveness"
+    },
+    {
+      "allowed": false,
+      "claim": "population-level frequency"
+    },
+    {
+      "allowed": false,
+      "claim": "answer-quality improvement"
+    },
+    {
+      "allowed": false,
+      "claim": "RAG superiority"
+    },
+    {
+      "allowed": false,
+      "claim": "production-readiness"
+    },
+    {
+      "allowed": false,
+      "claim": "statistical superiority"
+    },
+    {
+      "allowed": false,
+      "claim": "reference-retention advantage"
+    }
+  ]
+}

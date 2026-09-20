@@ -88,7 +88,8 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 4H2 REALSTRUCT-2 acquisition extension: **PHASE4H2_REALSTRUCT2_AUGMENTED_FROZEN** (coverage-only two-wave fill to 18/18; license policy unchanged; no arms; p3f sealed)
 - Phase 4I REALSTRUCT-2 prospective four-arm first-open: **PHASE4I_PROSPECTIVE_COMPARISON_MEASURED** (18×4 frozen primary; tokenizer lock verified; reconstruction/safety/planner pass; no winner score; p3f sealed)
 - Phase 4J REALSTRUCT-2 reference-schema compatibility audit: **PHASE4J_REFERENCE_SCHEMA_AUDITED** (gold_triples_v2 fail-closed RS1/RS2 reader; Track A/F retrospective rescore; Phase 4I artifacts unchanged; p3f sealed)
-- **Next**: do not retune BITE/length_pi; do not invent XFER-3; do not retune T_high; do not merge to main; do not open p3f
+- Phase 4K evidence ledger & Phase-4 closure: **PHASE4K_EVIDENCE_LEDGER_FROZEN** (documentation-only; 4A–4J verdicts preserved; no new experiment; p3f sealed)
+- **Next**: do not retune BITE/length_pi; do not invent XFER-3; do not merge to main; do not open p3f
 
 See:
 - [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
@@ -196,3 +197,6 @@ See:
 - [`docs/hand_over/PHASE4J-REFERENCE-SCHEMA-AUDIT.md`](docs/hand_over/PHASE4J-REFERENCE-SCHEMA-AUDIT.md)
 - [`benchmarks/spec/phase4j-reference-schema-freeze.json`](benchmarks/spec/phase4j-reference-schema-freeze.json)
 - [`artifacts/phase4j/reference-schema-audit.json`](artifacts/phase4j/reference-schema-audit.json)
+- [`docs/hand_over/PHASE4K-EVIDENCE-LEDGER.md`](docs/hand_over/PHASE4K-EVIDENCE-LEDGER.md)
+- [`benchmarks/spec/phase4k-evidence-ledger-freeze.json`](benchmarks/spec/phase4k-evidence-ledger-freeze.json)
+- [`artifacts/phase4k/phase4-closure.json`](artifacts/phase4k/phase4-closure.json)
