@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4h2-realstruct2-augmented.schema.json",
+  "title": "BITE Phase-4H2 augmented REALSTRUCT-2 freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "h3_freeze_blob",
+    "h2_result_blob",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "no_arm_execution",
+    "no_tokenizer_execution",
+    "no_license_inference",
+    "n_primary",
+    "acquisition_design",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4h2-realstruct2-augmented/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4h2-realstruct2-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "const": "3441f3524891fc772ce8751f75b22d32755d58da"
+    },
+    "h3_freeze_blob": {
+      "type": "string",
+      "const": "b3823492dc987b0c2489fa8785cd0b8d813f4b53"
+    },
+    "h2_result_blob": {
+      "type": "string",
+      "const": "666eed454c3dba6dd2cfa2a73e5989004380f177"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE4H2_REALSTRUCT2_AUGMENTED_FROZEN",
+        "PHASE4H2_REALSTRUCT2_AUGMENTED_PARTIAL",
+        "PHASE4H2_REALSTRUCT2_AUGMENTED_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_arm_execution": { "type": "boolean", "const": true },
+    "no_tokenizer_execution": { "type": "boolean", "const": true },
+    "no_license_inference": { "type": "boolean", "const": true },
+    "n_primary": { "type": "integer", "minimum": 0 },
+    "acquisition_design": { "type": "string" },
+    "claim_boundary": { "type": "string" }
+  }
+}

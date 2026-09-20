@@ -1,0 +1,10 @@
+{
+  "source_id": "fix-rs1-single",
+  "explicit_reference_edges": [
+    {
+      "source_line": 1,
+      "name": "HOST",
+      "dest_lines": [2]
+    }
+  ]
+}

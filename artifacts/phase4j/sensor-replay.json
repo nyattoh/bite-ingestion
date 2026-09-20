@@ -1,0 +1,192 @@
+{
+  "documents": [
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-dotenv-ronakmaheshwari-capital"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-dotenv-luizomf-dockerswarmp1"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-props-edson-a-soares-poco_restful_webservice"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": true,
+      "recorded_mean_reference_edge_distance": 22.25,
+      "recorded_n_reference_edges": 4.0,
+      "replay_gate_result": true,
+      "replay_mean_reference_edge_distance": 22.25,
+      "replay_n_reference_edges": 4.0,
+      "source_id": "rs2-props-aterai-java-swing-tips"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-props-oraopensource-apexbackup"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": true,
+      "recorded_mean_reference_edge_distance": 8.84,
+      "recorded_n_reference_edges": 25.0,
+      "replay_gate_result": true,
+      "replay_mean_reference_edge_distance": 8.84,
+      "replay_n_reference_edges": 25.0,
+      "source_id": "rs2-ini-ahuacate-pve-medialab"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": true,
+      "recorded_mean_reference_edge_distance": 11.0,
+      "recorded_n_reference_edges": 2.0,
+      "replay_gate_result": true,
+      "replay_mean_reference_edge_distance": 11.0,
+      "replay_n_reference_edges": 2.0,
+      "source_id": "rs2-ini-genicam-harvesters_gui"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-ini-beluganos-beluganos"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-dotenv-s1nro-granatapfel"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-dotenv-johnsonchin1009-pulse"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-props-redpill-linpro-alfresco-jobs"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-props-xzel23-utility"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": true,
+      "recorded_mean_reference_edge_distance": 22.25,
+      "recorded_n_reference_edges": 4.0,
+      "replay_gate_result": true,
+      "replay_mean_reference_edge_distance": 22.25,
+      "replay_n_reference_edges": 4.0,
+      "source_id": "rs2-props-aterai-kotlin-swing-tips"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-ini-jphutchins-pyavreceiver"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-ini-astrarium-astrarium"
+    },
+    {
+      "match": true,
+      "recorded_gate_result": false,
+      "recorded_mean_reference_edge_distance": 0.0,
+      "recorded_n_reference_edges": 0.0,
+      "replay_gate_result": false,
+      "replay_mean_reference_edge_distance": 0.0,
+      "replay_n_reference_edges": 0.0,
+      "source_id": "rs2-ini-waltenne-ubuntu-post-install"
+    }
+  ],
+  "exact": true,
+  "n_documents": 18,
+  "n_exact": 18,
+  "no_operators": true,
+  "no_policy": true,
+  "no_tokenizer": true,
+  "schema": "bite-phase4j-sensor-replay/v0.1",
+  "sensor": "dependency_dispersion_v4"
+}

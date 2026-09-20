@@ -1,0 +1,172 @@
+{
+  "bite_reduction_incidence": 1,
+  "bite_reduction_incidence_definition": "count of primary documents where BITE_v5 tokens < adapter_only tokens",
+  "documents": [
+    {
+      "BITE_v5": 124,
+      "adapter_only": 124,
+      "family": "dotenv-like",
+      "length_pi_v1": 124,
+      "raw_full": 124,
+      "source_id": "rs2-dotenv-ronakmaheshwari-capital",
+      "wave": 1
+    },
+    {
+      "BITE_v5": 171,
+      "adapter_only": 171,
+      "family": "dotenv-like",
+      "length_pi_v1": 171,
+      "raw_full": 344,
+      "source_id": "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+      "wave": 1
+    },
+    {
+      "BITE_v5": 84,
+      "adapter_only": 84,
+      "family": "dotenv-like",
+      "length_pi_v1": 84,
+      "raw_full": 412,
+      "source_id": "rs2-dotenv-luizomf-dockerswarmp1",
+      "wave": 1
+    },
+    {
+      "BITE_v5": 105,
+      "adapter_only": 105,
+      "family": "dotenv-like",
+      "length_pi_v1": 105,
+      "raw_full": 343,
+      "source_id": "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+      "wave": 1
+    },
+    {
+      "BITE_v5": 123,
+      "adapter_only": 123,
+      "family": "properties",
+      "length_pi_v1": 123,
+      "raw_full": 124,
+      "source_id": "rs2-props-edson-a-soares-poco_restful_webservice",
+      "wave": 1
+    },
+    {
+      "BITE_v5": 439,
+      "adapter_only": 439,
+      "family": "properties",
+      "length_pi_v1": 439,
+      "raw_full": 492,
+      "source_id": "rs2-props-aterai-java-swing-tips",
+      "wave": 1
+    },
+    {
+      "BITE_v5": 93,
+      "adapter_only": 93,
+      "family": "properties",
+      "length_pi_v1": 93,
+      "raw_full": 347,
+      "source_id": "rs2-props-oraopensource-apexbackup",
+      "wave": 1
+    },
+    {
+      "BITE_v5": 946,
+      "adapter_only": 946,
+      "family": "ini_cfg",
+      "length_pi_v1": 946,
+      "raw_full": 2105,
+      "source_id": "rs2-ini-ahuacate-pve-medialab",
+      "wave": 1
+    },
+    {
+      "BITE_v5": 91,
+      "adapter_only": 112,
+      "family": "ini_cfg",
+      "length_pi_v1": 91,
+      "raw_full": 308,
+      "source_id": "rs2-ini-genicam-harvesters_gui",
+      "wave": 1
+    },
+    {
+      "BITE_v5": 304,
+      "adapter_only": 304,
+      "family": "ini_cfg",
+      "length_pi_v1": 304,
+      "raw_full": 488,
+      "source_id": "rs2-ini-beluganos-beluganos",
+      "wave": 1
+    },
+    {
+      "BITE_v5": 80,
+      "adapter_only": 80,
+      "family": "dotenv-like",
+      "length_pi_v1": 80,
+      "raw_full": 80,
+      "source_id": "rs2-dotenv-s1nro-granatapfel",
+      "wave": 2
+    },
+    {
+      "BITE_v5": 85,
+      "adapter_only": 85,
+      "family": "dotenv-like",
+      "length_pi_v1": 85,
+      "raw_full": 117,
+      "source_id": "rs2-dotenv-johnsonchin1009-pulse",
+      "wave": 2
+    },
+    {
+      "BITE_v5": 257,
+      "adapter_only": 257,
+      "family": "properties",
+      "length_pi_v1": 257,
+      "raw_full": 723,
+      "source_id": "rs2-props-redpill-linpro-alfresco-jobs",
+      "wave": 2
+    },
+    {
+      "BITE_v5": 362,
+      "adapter_only": 362,
+      "family": "properties",
+      "length_pi_v1": 362,
+      "raw_full": 464,
+      "source_id": "rs2-props-xzel23-utility",
+      "wave": 2
+    },
+    {
+      "BITE_v5": 339,
+      "adapter_only": 339,
+      "family": "properties",
+      "length_pi_v1": 339,
+      "raw_full": 431,
+      "source_id": "rs2-props-aterai-kotlin-swing-tips",
+      "wave": 2
+    },
+    {
+      "BITE_v5": 93,
+      "adapter_only": 93,
+      "family": "ini_cfg",
+      "length_pi_v1": 93,
+      "raw_full": 195,
+      "source_id": "rs2-ini-jphutchins-pyavreceiver",
+      "wave": 2
+    },
+    {
+      "BITE_v5": 621,
+      "adapter_only": 621,
+      "family": "ini_cfg",
+      "length_pi_v1": 621,
+      "raw_full": 860,
+      "source_id": "rs2-ini-astrarium-astrarium",
+      "wave": 2
+    },
+    {
+      "BITE_v5": 181,
+      "adapter_only": 181,
+      "family": "ini_cfg",
+      "length_pi_v1": 181,
+      "raw_full": 186,
+      "source_id": "rs2-ini-waltenne-ubuntu-post-install",
+      "wave": 2
+    }
+  ],
+  "n_primary": 18,
+  "not_a_win_rate": true,
+  "schema": "bite-phase4i-model-visible-cost/v0.1",
+  "unit": "reference-tokenizer payload tokens"
+}

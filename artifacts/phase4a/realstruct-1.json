@@ -1,0 +1,40 @@
+{
+  "a0_freeze_blob": "6e009fb6cf1cb239b8449e402301be15ffd7ed86",
+  "claim_boundary": "small convenience sample of public real-world key=value configuration artifacts",
+  "errors": [],
+  "locked_blobs": {
+    "artifacts/phase3q/xfer2-transfer.json": "47ede9cab9619bc66dace5738e1f523b87a35f63",
+    "artifacts/phase3s/reference-specificity.json": "f4bcaae86586c5f738954b78fda8427f3bb78694",
+    "artifacts/phase3t/exact-reference.json": "5892ad925152e8cac32319e243c2e85f67ae2a0c",
+    "benchmarks/spec/phase3t-exact-reference-freeze.json": "7c03641aba310d6808480451e88624cbe7e1a2a2"
+  },
+  "n_development": 3,
+  "n_documents": 12,
+  "n_evaluation": 9,
+  "no_baseline_execution": true,
+  "no_bite_execution": true,
+  "no_bite_policy_import": true,
+  "no_bite_profiler_import": true,
+  "no_xfer3": true,
+  "not_claimed": [
+    "representative sample",
+    "real-world generalization",
+    "BITE superiority"
+  ],
+  "offline_core_tests": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3q_verdict": "PHASE3Q_XFER2_TRANSFER_FAILED",
+  "phase3s_verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "phase3t_verdict": "PHASE3T_EXACT_REFERENCE_VALIDATED",
+  "premise": "PHASE3T_EXACT_REFERENCE_VALIDATED",
+  "protocol_commit_sha": "3e5d2d7c9cd0a07346e90401496df042aa956bf7",
+  "research_conclusion": false,
+  "revision": "phase4a-realstruct1-v0.1",
+  "schema": "bite-phase4a-realstruct1/v0.1",
+  "synthetic_controls": {
+    "do_not_mix_real_and_synthetic_accuracy": true,
+    "phase3t_frozen_artifacts_secondary_only": true
+  },
+  "verdict": "PHASE4A_REAL_CORPUS_FROZEN"
+}

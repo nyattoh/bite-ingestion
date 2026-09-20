@@ -1,0 +1,136 @@
+{
+  "c0_commit_sha": "8ed272fc7cd0487386656f2be7120b554be7921a",
+  "c0_freeze_blob": "8e7dc9196bb5c98e79198263b0d4eeadc6254ff2",
+  "claim_boundary": "retrospective measurement-semantics audit on REALSTRUCT-1",
+  "d0_freeze_blob": "5e4c252963b3898ff7665e880a77777f66547320",
+  "errors": [],
+  "eval_conservation_safety_9_of_9": true,
+  "forbidden_phase4c_safety_phrasing": "composition_safety_v2 aggregate ok 9/9",
+  "n_audit": 12,
+  "n_ok": 12,
+  "no_bite_retune": true,
+  "no_phase4c_rewrite": true,
+  "no_winner_score": true,
+  "not_claimed": [
+    "new holdout result",
+    "real-world generalization",
+    "BITE superiority",
+    "second holdout evaluation",
+    "confirmatory"
+  ],
+  "not_confirmatory": true,
+  "not_second_holdout_evaluation": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3q_verdict": "PHASE3Q_XFER2_TRANSFER_FAILED",
+  "phase3s_verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "phase3t_verdict": "PHASE3T_EXACT_REFERENCE_VALIDATED",
+  "phase4a_verdict": "PHASE4A_REAL_CORPUS_FROZEN",
+  "phase4c_head_sha": "21035872a377e23ad2c5bd01030e312330de005a",
+  "phase4c_safety_phrasing": "full-source conservation safety 9/9",
+  "premise": "PHASE4C_REAL_HOLDOUT_MEASURED",
+  "protocol_commit_sha": "45748770815016439aeb11d2ac052b3b19946136",
+  "research_conclusion": false,
+  "revision": "phase4d-measurement-semantics-v0.1",
+  "rows": [
+    {
+      "atom_aware_recall": "NA",
+      "failure_class": null,
+      "line_pair_recall_legacy": "NA",
+      "ok": true,
+      "source_id": "rs1-dotenv-linkding",
+      "split_role": "development"
+    },
+    {
+      "atom_aware_recall": 0.0,
+      "failure_class": null,
+      "line_pair_recall_legacy": 1.0,
+      "ok": true,
+      "source_id": "rs1-props-hadoop-log4j",
+      "split_role": "development"
+    },
+    {
+      "atom_aware_recall": 0.851528384279476,
+      "failure_class": null,
+      "line_pair_recall_legacy": 0.8387096774193549,
+      "ok": true,
+      "source_id": "rs1-ini-oe-bitbake",
+      "split_role": "development"
+    },
+    {
+      "atom_aware_recall": 1.0,
+      "failure_class": null,
+      "line_pair_recall_legacy": 1.0,
+      "ok": true,
+      "source_id": "rs1-dotenv-koel",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_recall": "NA",
+      "failure_class": null,
+      "line_pair_recall_legacy": "NA",
+      "ok": true,
+      "source_id": "rs1-dotenv-bookstack",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_recall": 1.0,
+      "failure_class": null,
+      "line_pair_recall_legacy": 1.0,
+      "ok": true,
+      "source_id": "rs1-dotenv-laravel",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_recall": 0.0,
+      "failure_class": null,
+      "line_pair_recall_legacy": 1.0,
+      "ok": true,
+      "source_id": "rs1-props-ratis-log4j",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_recall": "NA",
+      "failure_class": null,
+      "line_pair_recall_legacy": "NA",
+      "ok": true,
+      "source_id": "rs1-props-kafka-server",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_recall": "NA",
+      "failure_class": null,
+      "line_pair_recall_legacy": "NA",
+      "ok": true,
+      "source_id": "rs1-props-tomcat-logging",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_recall": "NA",
+      "failure_class": "full_source_merge_interaction",
+      "line_pair_recall_legacy": "NA",
+      "ok": true,
+      "source_id": "rs1-ini-polybar",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_recall": "NA",
+      "failure_class": "full_source_merge_interaction",
+      "line_pair_recall_legacy": "NA",
+      "ok": true,
+      "source_id": "rs1-ini-gogs",
+      "split_role": "evaluation"
+    },
+    {
+      "atom_aware_recall": 1.0,
+      "failure_class": null,
+      "line_pair_recall_legacy": 1.0,
+      "ok": true,
+      "source_id": "rs1-ini-tegra-common",
+      "split_role": "evaluation"
+    }
+  ],
+  "schema": "bite-phase4d-measurement-semantics/v0.1",
+  "t_high_reference": 4,
+  "verdict": "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED"
+}

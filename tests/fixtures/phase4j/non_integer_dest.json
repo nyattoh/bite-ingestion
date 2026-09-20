@@ -1,0 +1,10 @@
+{
+  "source_id": "fix-non-integer-dest",
+  "explicit_reference_edges": [
+    {
+      "source_line": 1,
+      "name": "HOST",
+      "dest_line": "2"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "allowed_spdx": [
+    "MIT",
+    "Apache-2.0"
+  ],
+  "documents": [
+    {
+      "commit_sha": "7c744a3c219e6b030ea1b5f9c49808bd2514083b",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/ronakmaheshwari/capital",
+      "redistributable": true,
+      "repository_url": "https://github.com/ronakmaheshwari/capital",
+      "source_id": "rs2-dotenv-ronakmaheshwari-capital",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "92e65f08e2dc699ea8a32bf794d9a08dcce813bc",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/TheAfroOfDoom/omegaflowey-minecraft-remastered",
+      "redistributable": true,
+      "repository_url": "https://github.com/TheAfroOfDoom/omegaflowey-minecraft-remastered",
+      "source_id": "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "2522263f590f51125d5f01cb9a22273c14d10363",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/luizomf/dockerswarmp1",
+      "redistributable": true,
+      "repository_url": "https://github.com/luizomf/dockerswarmp1",
+      "source_id": "rs2-dotenv-luizomf-dockerswarmp1",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "9598a9cc21e465438b194e43f35b52d4adf7fe3d",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/tradermonty/hermes-trading-research-agent-work-package",
+      "redistributable": true,
+      "repository_url": "https://github.com/tradermonty/hermes-trading-research-agent-work-package",
+      "source_id": "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "dc9794d619963c6ec990e1764df0de4c72e34aa0",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/edson-a-soares/poco_restful_webservice",
+      "redistributable": true,
+      "repository_url": "https://github.com/edson-a-soares/poco_restful_webservice",
+      "source_id": "rs2-props-edson-a-soares-poco_restful_webservice",
+      "spdx": "Apache-2.0"
+    },
+    {
+      "commit_sha": "d644fae8ad278343c6c20be2a8ead6180300d879",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/aterai/java-swing-tips",
+      "redistributable": true,
+      "repository_url": "https://github.com/aterai/java-swing-tips",
+      "source_id": "rs2-props-aterai-java-swing-tips",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "75bdad3af32ebe5c355018b24f29f924c2f68a34",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/OraOpenSource/apexbackup",
+      "redistributable": true,
+      "repository_url": "https://github.com/OraOpenSource/apexbackup",
+      "source_id": "rs2-props-oraopensource-apexbackup",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "1ab88ca2119c55afb0bff420b8fbfed710eccccd",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/ahuacate/pve-medialab",
+      "redistributable": true,
+      "repository_url": "https://github.com/ahuacate/pve-medialab",
+      "source_id": "rs2-ini-ahuacate-pve-medialab",
+      "spdx": "MIT"
+    },
+    {
+      "commit_sha": "eff28d966e4cde40444e24313b15e3a6b5e1b927",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/genicam/harvesters_gui",
+      "redistributable": true,
+      "repository_url": "https://github.com/genicam/harvesters_gui",
+      "source_id": "rs2-ini-genicam-harvesters_gui",
+      "spdx": "Apache-2.0"
+    },
+    {
+      "commit_sha": "94d61ea577d4766c227b575cf3ebf13b757daf65",
+      "license_note": "GitHub license API SPDX recorded at H1",
+      "license_url": "https://github.com/beluganos/beluganos",
+      "redistributable": true,
+      "repository_url": "https://github.com/beluganos/beluganos",
+      "source_id": "rs2-ini-beluganos-beluganos",
+      "spdx": "Apache-2.0"
+    }
+  ],
+  "revision": "phase4h-realstruct2-v0.1",
+  "schema": "bite-phase4h-realstruct2-licenses/v0.1"
+}

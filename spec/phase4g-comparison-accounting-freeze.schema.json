@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4g-comparison-accounting-freeze.schema.json",
+  "title": "BITE Phase-4G comparison accounting freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "phase4f_head_sha",
+    "p3f_evaluation_holdout_used",
+    "no_realstruct2",
+    "no_phase4f_rewrite",
+    "no_bite_retune",
+    "planned_cases",
+    "g1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase4g-comparison-accounting-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4g-comparison-accounting-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE4G_COMPARISON_ACCOUNTING_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE4F_COMPARISON_PROTOCOL_READY"
+    },
+    "phase4f_head_sha": {
+      "type": "string",
+      "const": "48eaba1a8f55363da3beccec726460b961199300"
+    },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_realstruct2": { "type": "boolean", "const": true },
+    "no_phase4f_rewrite": { "type": "boolean", "const": true },
+    "no_bite_retune": { "type": "boolean", "const": true },
+    "planned_cases": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10
+    },
+    "g1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE4G_COMPARISON_ACCOUNTING_VALIDATED",
+          "PHASE4G_COMPARISON_ACCOUNTING_PARTIAL",
+          "PHASE4G_COMPARISON_ACCOUNTING_BLOCKED"
+        ]
+      }
+    }
+  }
+}

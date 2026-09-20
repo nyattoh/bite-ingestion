@@ -1,0 +1,19 @@
+src_flash_q024=chip_lock_q024
+src2_flash_q024=rom_lock_q024
+note_firmware_q024_00=blob_firmware_q024_00
+note_firmware_q024_01=blob_firmware_q024_01 観測
+note_firmware_q024_02=naïve blob_firmware_q024_02
+note_firmware_q024_03=blob_firmware_q024_03 shift = 1
+note_firmware_q024_04=blob_firmware_q024_04 said "ok"
+note_firmware_q024_05=α blob_firmware_q024_05
+note_firmware_q024_06=NGC 1300 blob_firmware_q024_06
+note_firmware_q024_07=blob_firmware_q024_07
+dst_chip_lock_q024=ack_chip_lock_q024
+dst_rom_lock_q024=ack_rom_lock_q024
+copy_main_q024=same_main_q024_row
+gap_main_q024=void_main_q024
+copy_main_q024=same_main_q024_row
+alert_q024=<<<INJECT device map
+mate_a_q024=crate_a_q024 id=plate_q024
+mate_b_q024=crate_b_q024 id=plate_q024
+mate_c_q024=crate_c_q024 id=plate_q024

@@ -1,0 +1,1030 @@
+{
+  "calibration_replicas": [
+    0,
+    1
+  ],
+  "case_ids": [
+    "p3k-exact_dup_pairs-r0-key_value",
+    "p3k-exact_dup_pairs-r0-compact_json",
+    "p3k-exact_dup_pairs-r0-pretty_json",
+    "p3k-exact_dup_pairs-r1-key_value",
+    "p3k-exact_dup_pairs-r1-compact_json",
+    "p3k-exact_dup_pairs-r1-pretty_json",
+    "p3k-exact_dup_pairs-r2-key_value",
+    "p3k-exact_dup_pairs-r2-compact_json",
+    "p3k-exact_dup_pairs-r2-pretty_json",
+    "p3k-exact_dup_pairs-r3-key_value",
+    "p3k-exact_dup_pairs-r3-compact_json",
+    "p3k-exact_dup_pairs-r3-pretty_json",
+    "p3k-all_unique-r0-key_value",
+    "p3k-all_unique-r0-compact_json",
+    "p3k-all_unique-r0-pretty_json",
+    "p3k-all_unique-r1-key_value",
+    "p3k-all_unique-r1-compact_json",
+    "p3k-all_unique-r1-pretty_json",
+    "p3k-all_unique-r2-key_value",
+    "p3k-all_unique-r2-compact_json",
+    "p3k-all_unique-r2-pretty_json",
+    "p3k-all_unique-r3-key_value",
+    "p3k-all_unique-r3-compact_json",
+    "p3k-all_unique-r3-pretty_json",
+    "p3k-same_key_diff_value-r0-key_value",
+    "p3k-same_key_diff_value-r0-compact_json",
+    "p3k-same_key_diff_value-r0-pretty_json",
+    "p3k-same_key_diff_value-r1-key_value",
+    "p3k-same_key_diff_value-r1-compact_json",
+    "p3k-same_key_diff_value-r1-pretty_json",
+    "p3k-same_key_diff_value-r2-key_value",
+    "p3k-same_key_diff_value-r2-compact_json",
+    "p3k-same_key_diff_value-r2-pretty_json",
+    "p3k-same_key_diff_value-r3-key_value",
+    "p3k-same_key_diff_value-r3-compact_json",
+    "p3k-same_key_diff_value-r3-pretty_json",
+    "p3k-same_value_diff_key-r0-key_value",
+    "p3k-same_value_diff_key-r0-compact_json",
+    "p3k-same_value_diff_key-r0-pretty_json",
+    "p3k-same_value_diff_key-r1-key_value",
+    "p3k-same_value_diff_key-r1-compact_json",
+    "p3k-same_value_diff_key-r1-pretty_json",
+    "p3k-same_value_diff_key-r2-key_value",
+    "p3k-same_value_diff_key-r2-compact_json",
+    "p3k-same_value_diff_key-r2-pretty_json",
+    "p3k-same_value_diff_key-r3-key_value",
+    "p3k-same_value_diff_key-r3-compact_json",
+    "p3k-same_value_diff_key-r3-pretty_json",
+    "p3k-reordered_duplicates-r0-key_value",
+    "p3k-reordered_duplicates-r0-compact_json",
+    "p3k-reordered_duplicates-r0-pretty_json",
+    "p3k-reordered_duplicates-r1-key_value",
+    "p3k-reordered_duplicates-r1-compact_json",
+    "p3k-reordered_duplicates-r1-pretty_json",
+    "p3k-reordered_duplicates-r2-key_value",
+    "p3k-reordered_duplicates-r2-compact_json",
+    "p3k-reordered_duplicates-r2-pretty_json",
+    "p3k-reordered_duplicates-r3-key_value",
+    "p3k-reordered_duplicates-r3-compact_json",
+    "p3k-reordered_duplicates-r3-pretty_json",
+    "p3k-multiplicity_2-r0-key_value",
+    "p3k-multiplicity_2-r0-compact_json",
+    "p3k-multiplicity_2-r0-pretty_json",
+    "p3k-multiplicity_2-r1-key_value",
+    "p3k-multiplicity_2-r1-compact_json",
+    "p3k-multiplicity_2-r1-pretty_json",
+    "p3k-multiplicity_2-r2-key_value",
+    "p3k-multiplicity_2-r2-compact_json",
+    "p3k-multiplicity_2-r2-pretty_json",
+    "p3k-multiplicity_2-r3-key_value",
+    "p3k-multiplicity_2-r3-compact_json",
+    "p3k-multiplicity_2-r3-pretty_json",
+    "p3k-multiplicity_3-r0-key_value",
+    "p3k-multiplicity_3-r0-compact_json",
+    "p3k-multiplicity_3-r0-pretty_json",
+    "p3k-multiplicity_3-r1-key_value",
+    "p3k-multiplicity_3-r1-compact_json",
+    "p3k-multiplicity_3-r1-pretty_json",
+    "p3k-multiplicity_3-r2-key_value",
+    "p3k-multiplicity_3-r2-compact_json",
+    "p3k-multiplicity_3-r2-pretty_json",
+    "p3k-multiplicity_3-r3-key_value",
+    "p3k-multiplicity_3-r3-compact_json",
+    "p3k-multiplicity_3-r3-pretty_json",
+    "p3k-common_prefix-r0-key_value",
+    "p3k-common_prefix-r0-compact_json",
+    "p3k-common_prefix-r0-pretty_json",
+    "p3k-common_prefix-r1-key_value",
+    "p3k-common_prefix-r1-compact_json",
+    "p3k-common_prefix-r1-pretty_json",
+    "p3k-common_prefix-r2-key_value",
+    "p3k-common_prefix-r2-compact_json",
+    "p3k-common_prefix-r2-pretty_json",
+    "p3k-common_prefix-r3-key_value",
+    "p3k-common_prefix-r3-compact_json",
+    "p3k-common_prefix-r3-pretty_json",
+    "p3k-common_suffix-r0-key_value",
+    "p3k-common_suffix-r0-compact_json",
+    "p3k-common_suffix-r0-pretty_json",
+    "p3k-common_suffix-r1-key_value",
+    "p3k-common_suffix-r1-compact_json",
+    "p3k-common_suffix-r1-pretty_json",
+    "p3k-common_suffix-r2-key_value",
+    "p3k-common_suffix-r2-compact_json",
+    "p3k-common_suffix-r2-pretty_json",
+    "p3k-common_suffix-r3-key_value",
+    "p3k-common_suffix-r3-compact_json",
+    "p3k-common_suffix-r3-pretty_json",
+    "p3k-identifier_substring-r0-key_value",
+    "p3k-identifier_substring-r0-compact_json",
+    "p3k-identifier_substring-r0-pretty_json",
+    "p3k-identifier_substring-r1-key_value",
+    "p3k-identifier_substring-r1-compact_json",
+    "p3k-identifier_substring-r1-pretty_json",
+    "p3k-identifier_substring-r2-key_value",
+    "p3k-identifier_substring-r2-compact_json",
+    "p3k-identifier_substring-r2-pretty_json",
+    "p3k-identifier_substring-r3-key_value",
+    "p3k-identifier_substring-r3-compact_json",
+    "p3k-identifier_substring-r3-pretty_json",
+    "p3k-malformed_json-r0",
+    "p3k-malformed_json-r1",
+    "p3k-nul-r0",
+    "p3k-nul-r1",
+    "p3k-json_object-r0",
+    "p3k-json_object-r1"
+  ],
+  "cases": [
+    {
+      "case_id": "p3k-exact_dup_pairs-r0-key_value",
+      "family": "exact_dup_pairs",
+      "format": "key_value",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r0-compact_json",
+      "family": "exact_dup_pairs",
+      "format": "compact_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r0-pretty_json",
+      "family": "exact_dup_pairs",
+      "format": "pretty_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r1-key_value",
+      "family": "exact_dup_pairs",
+      "format": "key_value",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r1-compact_json",
+      "family": "exact_dup_pairs",
+      "format": "compact_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r1-pretty_json",
+      "family": "exact_dup_pairs",
+      "format": "pretty_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r2-key_value",
+      "family": "exact_dup_pairs",
+      "format": "key_value",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r2-compact_json",
+      "family": "exact_dup_pairs",
+      "format": "compact_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r2-pretty_json",
+      "family": "exact_dup_pairs",
+      "format": "pretty_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r3-key_value",
+      "family": "exact_dup_pairs",
+      "format": "key_value",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r3-compact_json",
+      "family": "exact_dup_pairs",
+      "format": "compact_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-exact_dup_pairs-r3-pretty_json",
+      "family": "exact_dup_pairs",
+      "format": "pretty_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-all_unique-r0-key_value",
+      "family": "all_unique",
+      "format": "key_value",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-all_unique-r0-compact_json",
+      "family": "all_unique",
+      "format": "compact_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-all_unique-r0-pretty_json",
+      "family": "all_unique",
+      "format": "pretty_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-all_unique-r1-key_value",
+      "family": "all_unique",
+      "format": "key_value",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-all_unique-r1-compact_json",
+      "family": "all_unique",
+      "format": "compact_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-all_unique-r1-pretty_json",
+      "family": "all_unique",
+      "format": "pretty_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-all_unique-r2-key_value",
+      "family": "all_unique",
+      "format": "key_value",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-all_unique-r2-compact_json",
+      "family": "all_unique",
+      "format": "compact_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-all_unique-r2-pretty_json",
+      "family": "all_unique",
+      "format": "pretty_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-all_unique-r3-key_value",
+      "family": "all_unique",
+      "format": "key_value",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-all_unique-r3-compact_json",
+      "family": "all_unique",
+      "format": "compact_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-all_unique-r3-pretty_json",
+      "family": "all_unique",
+      "format": "pretty_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r0-key_value",
+      "family": "same_key_diff_value",
+      "format": "key_value",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r0-compact_json",
+      "family": "same_key_diff_value",
+      "format": "compact_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r0-pretty_json",
+      "family": "same_key_diff_value",
+      "format": "pretty_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r1-key_value",
+      "family": "same_key_diff_value",
+      "format": "key_value",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r1-compact_json",
+      "family": "same_key_diff_value",
+      "format": "compact_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r1-pretty_json",
+      "family": "same_key_diff_value",
+      "format": "pretty_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r2-key_value",
+      "family": "same_key_diff_value",
+      "format": "key_value",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r2-compact_json",
+      "family": "same_key_diff_value",
+      "format": "compact_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r2-pretty_json",
+      "family": "same_key_diff_value",
+      "format": "pretty_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r3-key_value",
+      "family": "same_key_diff_value",
+      "format": "key_value",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r3-compact_json",
+      "family": "same_key_diff_value",
+      "format": "compact_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_key_diff_value-r3-pretty_json",
+      "family": "same_key_diff_value",
+      "format": "pretty_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r0-key_value",
+      "family": "same_value_diff_key",
+      "format": "key_value",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r0-compact_json",
+      "family": "same_value_diff_key",
+      "format": "compact_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r0-pretty_json",
+      "family": "same_value_diff_key",
+      "format": "pretty_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r1-key_value",
+      "family": "same_value_diff_key",
+      "format": "key_value",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r1-compact_json",
+      "family": "same_value_diff_key",
+      "format": "compact_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r1-pretty_json",
+      "family": "same_value_diff_key",
+      "format": "pretty_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r2-key_value",
+      "family": "same_value_diff_key",
+      "format": "key_value",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r2-compact_json",
+      "family": "same_value_diff_key",
+      "format": "compact_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r2-pretty_json",
+      "family": "same_value_diff_key",
+      "format": "pretty_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r3-key_value",
+      "family": "same_value_diff_key",
+      "format": "key_value",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r3-compact_json",
+      "family": "same_value_diff_key",
+      "format": "compact_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-same_value_diff_key-r3-pretty_json",
+      "family": "same_value_diff_key",
+      "format": "pretty_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r0-key_value",
+      "family": "reordered_duplicates",
+      "format": "key_value",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r0-compact_json",
+      "family": "reordered_duplicates",
+      "format": "compact_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r0-pretty_json",
+      "family": "reordered_duplicates",
+      "format": "pretty_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r1-key_value",
+      "family": "reordered_duplicates",
+      "format": "key_value",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r1-compact_json",
+      "family": "reordered_duplicates",
+      "format": "compact_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r1-pretty_json",
+      "family": "reordered_duplicates",
+      "format": "pretty_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r2-key_value",
+      "family": "reordered_duplicates",
+      "format": "key_value",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r2-compact_json",
+      "family": "reordered_duplicates",
+      "format": "compact_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r2-pretty_json",
+      "family": "reordered_duplicates",
+      "format": "pretty_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r3-key_value",
+      "family": "reordered_duplicates",
+      "format": "key_value",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r3-compact_json",
+      "family": "reordered_duplicates",
+      "format": "compact_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-reordered_duplicates-r3-pretty_json",
+      "family": "reordered_duplicates",
+      "format": "pretty_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r0-key_value",
+      "family": "multiplicity_2",
+      "format": "key_value",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r0-compact_json",
+      "family": "multiplicity_2",
+      "format": "compact_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r0-pretty_json",
+      "family": "multiplicity_2",
+      "format": "pretty_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r1-key_value",
+      "family": "multiplicity_2",
+      "format": "key_value",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r1-compact_json",
+      "family": "multiplicity_2",
+      "format": "compact_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r1-pretty_json",
+      "family": "multiplicity_2",
+      "format": "pretty_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r2-key_value",
+      "family": "multiplicity_2",
+      "format": "key_value",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r2-compact_json",
+      "family": "multiplicity_2",
+      "format": "compact_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r2-pretty_json",
+      "family": "multiplicity_2",
+      "format": "pretty_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r3-key_value",
+      "family": "multiplicity_2",
+      "format": "key_value",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r3-compact_json",
+      "family": "multiplicity_2",
+      "format": "compact_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_2-r3-pretty_json",
+      "family": "multiplicity_2",
+      "format": "pretty_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r0-key_value",
+      "family": "multiplicity_3",
+      "format": "key_value",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r0-compact_json",
+      "family": "multiplicity_3",
+      "format": "compact_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r0-pretty_json",
+      "family": "multiplicity_3",
+      "format": "pretty_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r1-key_value",
+      "family": "multiplicity_3",
+      "format": "key_value",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r1-compact_json",
+      "family": "multiplicity_3",
+      "format": "compact_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r1-pretty_json",
+      "family": "multiplicity_3",
+      "format": "pretty_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r2-key_value",
+      "family": "multiplicity_3",
+      "format": "key_value",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r2-compact_json",
+      "family": "multiplicity_3",
+      "format": "compact_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r2-pretty_json",
+      "family": "multiplicity_3",
+      "format": "pretty_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r3-key_value",
+      "family": "multiplicity_3",
+      "format": "key_value",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r3-compact_json",
+      "family": "multiplicity_3",
+      "format": "compact_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-multiplicity_3-r3-pretty_json",
+      "family": "multiplicity_3",
+      "format": "pretty_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_prefix-r0-key_value",
+      "family": "common_prefix",
+      "format": "key_value",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-common_prefix-r0-compact_json",
+      "family": "common_prefix",
+      "format": "compact_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-common_prefix-r0-pretty_json",
+      "family": "common_prefix",
+      "format": "pretty_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-common_prefix-r1-key_value",
+      "family": "common_prefix",
+      "format": "key_value",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-common_prefix-r1-compact_json",
+      "family": "common_prefix",
+      "format": "compact_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-common_prefix-r1-pretty_json",
+      "family": "common_prefix",
+      "format": "pretty_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-common_prefix-r2-key_value",
+      "family": "common_prefix",
+      "format": "key_value",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_prefix-r2-compact_json",
+      "family": "common_prefix",
+      "format": "compact_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_prefix-r2-pretty_json",
+      "family": "common_prefix",
+      "format": "pretty_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_prefix-r3-key_value",
+      "family": "common_prefix",
+      "format": "key_value",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_prefix-r3-compact_json",
+      "family": "common_prefix",
+      "format": "compact_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_prefix-r3-pretty_json",
+      "family": "common_prefix",
+      "format": "pretty_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_suffix-r0-key_value",
+      "family": "common_suffix",
+      "format": "key_value",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-common_suffix-r0-compact_json",
+      "family": "common_suffix",
+      "format": "compact_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-common_suffix-r0-pretty_json",
+      "family": "common_suffix",
+      "format": "pretty_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-common_suffix-r1-key_value",
+      "family": "common_suffix",
+      "format": "key_value",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-common_suffix-r1-compact_json",
+      "family": "common_suffix",
+      "format": "compact_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-common_suffix-r1-pretty_json",
+      "family": "common_suffix",
+      "format": "pretty_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-common_suffix-r2-key_value",
+      "family": "common_suffix",
+      "format": "key_value",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_suffix-r2-compact_json",
+      "family": "common_suffix",
+      "format": "compact_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_suffix-r2-pretty_json",
+      "family": "common_suffix",
+      "format": "pretty_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_suffix-r3-key_value",
+      "family": "common_suffix",
+      "format": "key_value",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_suffix-r3-compact_json",
+      "family": "common_suffix",
+      "format": "compact_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-common_suffix-r3-pretty_json",
+      "family": "common_suffix",
+      "format": "pretty_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r0-key_value",
+      "family": "identifier_substring",
+      "format": "key_value",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r0-compact_json",
+      "family": "identifier_substring",
+      "format": "compact_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r0-pretty_json",
+      "family": "identifier_substring",
+      "format": "pretty_json",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r1-key_value",
+      "family": "identifier_substring",
+      "format": "key_value",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r1-compact_json",
+      "family": "identifier_substring",
+      "format": "compact_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r1-pretty_json",
+      "family": "identifier_substring",
+      "format": "pretty_json",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r2-key_value",
+      "family": "identifier_substring",
+      "format": "key_value",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r2-compact_json",
+      "family": "identifier_substring",
+      "format": "compact_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r2-pretty_json",
+      "family": "identifier_substring",
+      "format": "pretty_json",
+      "replica": 2,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r3-key_value",
+      "family": "identifier_substring",
+      "format": "key_value",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r3-compact_json",
+      "family": "identifier_substring",
+      "format": "compact_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-identifier_substring-r3-pretty_json",
+      "family": "identifier_substring",
+      "format": "pretty_json",
+      "replica": 3,
+      "split": "evaluation"
+    },
+    {
+      "case_id": "p3k-malformed_json-r0",
+      "family": "malformed_json",
+      "format": "contract",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-malformed_json-r1",
+      "family": "malformed_json",
+      "format": "contract",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-nul-r0",
+      "family": "nul",
+      "format": "contract",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-nul-r1",
+      "family": "nul",
+      "format": "contract",
+      "replica": 1,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-json_object-r0",
+      "family": "json_object",
+      "format": "contract",
+      "replica": 0,
+      "split": "development"
+    },
+    {
+      "case_id": "p3k-json_object-r1",
+      "family": "json_object",
+      "format": "contract",
+      "replica": 1,
+      "split": "development"
+    }
+  ],
+  "evaluation_replicas": [
+    2,
+    3
+  ],
+  "evaluation_sealed": true,
+  "generation": "p3k",
+  "n_cases": 126,
+  "p3f_evaluation_replicas_sealed": [
+    2,
+    3
+  ],
+  "schema": "bitebench-phase3k-split-manifest/v0.1"
+}

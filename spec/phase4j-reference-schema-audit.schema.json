@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4j-reference-schema-audit.schema.json",
+  "title": "BITE Phase-4J reference-schema audit result v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "j0_freeze_blob",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "no_arm_rerun",
+    "no_phase4i_rewrite",
+    "no_winner_score",
+    "claim_boundary",
+    "track_a_rescored",
+    "sensor_replay_exact"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4j-reference-schema-audit/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4j-reference-schema-audit-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "const": "8e0ed24213238ae089fdba937b56082c02ad72be"
+    },
+    "j0_freeze_blob": {
+      "type": "string",
+      "const": "731ffbc7db9652ad03928c3defdb775ca0b83c8e"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE4J_REFERENCE_SCHEMA_AUDITED",
+        "PHASE4J_REFERENCE_SCHEMA_PARTIAL",
+        "PHASE4J_REFERENCE_SCHEMA_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_arm_rerun": { "type": "boolean", "const": true },
+    "no_phase4i_rewrite": { "type": "boolean", "const": true },
+    "no_winner_score": { "type": "boolean", "const": true },
+    "claim_boundary": {
+      "type": "string",
+      "const": "retrospective correction of annotation-schema compatibility for Phase4I reference metrics"
+    },
+    "track_a_rescored": { "type": "boolean" },
+    "sensor_replay_exact": { "type": "boolean" }
+  }
+}

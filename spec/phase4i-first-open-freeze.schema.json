@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4i-first-open-freeze.schema.json",
+  "title": "BITE Phase-4I first-open execution freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "phase4h2_head_sha",
+    "p3f_evaluation_holdout_used",
+    "no_realstruct2_tokenizer_before_i0",
+    "no_realstruct2_arm_before_i0",
+    "no_winner_score",
+    "no_wave1_vs_wave2_outcome",
+    "do_not_use_historical_10_document_manifest",
+    "primary_ids",
+    "analysis_contract",
+    "i1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase4i-first-open-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4i-first-open-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE4I_EXECUTION_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE4H2_REALSTRUCT2_AUGMENTED_FROZEN"
+    },
+    "phase4h2_head_sha": {
+      "type": "string",
+      "const": "461ae71e646728018890e87e5d0cada5af25906e"
+    },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_realstruct2_tokenizer_before_i0": { "type": "boolean", "const": true },
+    "no_realstruct2_arm_before_i0": { "type": "boolean", "const": true },
+    "no_winner_score": { "type": "boolean", "const": true },
+    "no_wave1_vs_wave2_outcome": { "type": "boolean", "const": true },
+    "do_not_use_historical_10_document_manifest": { "type": "boolean", "const": true },
+    "primary_ids": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18
+    },
+    "analysis_contract": { "type": "object" },
+    "i1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE4I_PROSPECTIVE_COMPARISON_MEASURED",
+          "PHASE4I_PROSPECTIVE_COMPARISON_FAILED",
+          "PHASE4I_PROSPECTIVE_COMPARISON_BLOCKED"
+        ]
+      }
+    }
+  }
+}

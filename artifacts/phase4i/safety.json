@@ -1,0 +1,442 @@
+{
+  "documents": [
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-dotenv-ronakmaheshwari-capital"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-dotenv-luizomf-dockerswarmp1"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-props-edson-a-soares-poco_restful_webservice"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-props-aterai-java-swing-tips"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-props-oraopensource-apexbackup"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-ini-ahuacate-pve-medialab"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-ini-genicam-harvesters_gui"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-ini-beluganos-beluganos"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-dotenv-s1nro-granatapfel"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-dotenv-johnsonchin1009-pulse"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-props-redpill-linpro-alfresco-jobs"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-props-xzel23-utility"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-props-aterai-kotlin-swing-tips"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-ini-jphutchins-pyavreceiver"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-ini-astrarium-astrarium"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "conservation_untraced": [],
+          "lineage_recall": 1.0,
+          "no_unrelated_overmerge": true,
+          "planner_integrity": true,
+          "provenance_completeness": 1.0,
+          "raw_reconstruction_exact": true,
+          "silent_loss": 0,
+          "unsupported_loss": 0
+        },
+        "adapter_only": {
+          "raw_reconstruction_exact": true
+        },
+        "length_pi_v1": {
+          "raw_reconstruction_exact": true
+        },
+        "raw_full": {
+          "raw_reconstruction_exact": true
+        }
+      },
+      "source_id": "rs2-ini-waltenne-ubuntu-post-install"
+    }
+  ],
+  "n_arm_reconstruction_exact": 72,
+  "n_arm_slots": 72,
+  "n_bite_safety_pass": 18,
+  "n_planner_integrity_pass": 18,
+  "not_a_weighted_score": true,
+  "schema": "bite-phase4i-safety/v0.1"
+}

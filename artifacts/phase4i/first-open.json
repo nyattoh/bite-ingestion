@@ -1,0 +1,44 @@
+{
+  "acquisition_design": "two-wave prospective acquisition; wave 2 added after quota shortfall, before any comparison-arm or tokenizer execution",
+  "arms": [
+    "raw_full",
+    "adapter_only",
+    "length_pi_v1",
+    "BITE_v5"
+  ],
+  "bite_safety_ok": true,
+  "claim_boundary": "prospective four-arm measurement on the frozen two-wave REALSTRUCT-2 convenience sample",
+  "errors": [],
+  "factual_statements": [
+    "BITE used fewer model-visible tokens on 1/18 documents.",
+    "On the n eligible reference-gold documents, the observed retention delta was not_observed.",
+    "At matched budget, unique identity retention differed by n=1 mean=0.15384615384615385 median=0.15384615384615385 positive=1 tie=0 negative=0."
+  ],
+  "i0_freeze_blob": "260c5ae4847776c33d27ea6718466d1dd814abdf",
+  "n_arm_rows": 72,
+  "n_documents": 18,
+  "no_bite_retune": true,
+  "no_harness_modification_after_i0": true,
+  "no_wave1_vs_wave2_outcome": true,
+  "no_winner_score": true,
+  "not_claimed": [
+    "representative real-world sample",
+    "population generalization",
+    "downstream answer-quality evidence",
+    "BITE superiority"
+  ],
+  "offline": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase4h2_head_sha": "461ae71e646728018890e87e5d0cada5af25906e",
+  "planner_integrity_ok": true,
+  "premise": "PHASE4H2_REALSTRUCT2_AUGMENTED_FROZEN",
+  "protocol_commit_sha": "435be913dab61e29077d49009602ef5e457ee621",
+  "raw_reconstruction_exact": true,
+  "research_conclusion": false,
+  "revision": "phase4i-first-open-v0.1",
+  "schema": "bite-phase4i-first-open/v0.1",
+  "t_high_reference": 4,
+  "tokenizer_hash_verified": true,
+  "verdict": "PHASE4I_PROSPECTIVE_COMPARISON_MEASURED"
+}

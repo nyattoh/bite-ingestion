@@ -1,0 +1,270 @@
+{
+  "claim_boundary": "small convenience sample of public real-world key=value configuration artifacts",
+  "corpus_name": "REALSTRUCT-1",
+  "exclusions": [
+    {
+      "candidate": "Magisk settings.ini family",
+      "reason": "GPL-3.0 not in allowed SPDX"
+    },
+    {
+      "candidate": "immich .env",
+      "reason": "AGPL-3.0 not in allowed SPDX"
+    },
+    {
+      "candidate": "hoppscotch .env.example DATABASE_URL",
+      "reason": "credential-like postgres:testpass value"
+    },
+    {
+      "candidate": "apache/superset .env",
+      "reason": "SUPERSET_SECRET_KEY=TEST_NON_DEV_SECRET live-secret-like"
+    },
+    {
+      "candidate": "appwrite .env",
+      "reason": "rootsecretpassword live-secret-like"
+    },
+    {
+      "candidate": "netbox.env",
+      "reason": "fewer than 10 first-= assignments"
+    },
+    {
+      "candidate": "zookeeper zoo_sample.cfg",
+      "reason": "fewer than 10 first-= assignments"
+    },
+    {
+      "candidate": "tomcat catalina.properties",
+      "reason": "fewer than 10 first-= assignments"
+    },
+    {
+      "candidate": "pkg-config .pc.in templates",
+      "reason": "Name:/Libs: colon keys are unsupported under first-= grammar"
+    },
+    {
+      "candidate": "openssl.pc.in",
+      "reason": "perl generator, not a runtime key=value config"
+    },
+    {
+      "candidate": "gitea custom/conf/app.example.ini",
+      "reason": "almost all comments; replaced by gogs conf/app.ini"
+    },
+    {
+      "candidate": "openbmc phosphor-defaults.inc",
+      "reason": "hashed password value plus license NOASSERTION"
+    },
+    {
+      "candidate": "yoctoproject/poky",
+      "reason": "pinned tree lacked usable distro conf paths"
+    }
+  ],
+  "n_documents": 12,
+  "no_cross_document_join": true,
+  "one_document_one_uri": true,
+  "protocol_commit_sha": "3e5d2d7c9cd0a07346e90401496df042aa956bf7",
+  "revision": "phase4a-realstruct1-v0.1",
+  "schema": "bite-phase4a-realstruct1-corpus/v0.1",
+  "sources": [
+    {
+      "byte_length": 1091,
+      "commit_sha": "aa0cf127fc365a56ee016867144ddffabc2290ae",
+      "encoding": "utf-8",
+      "family": "dotenv-like",
+      "line_count": 65,
+      "n_assignments": 43,
+      "n_explicit_reference_edges": 2,
+      "path": ".env.example",
+      "raw_file": "corpora/realstruct-1/raw/rs1-dotenv-laravel",
+      "repository_url": "https://github.com/laravel/laravel",
+      "sha256": "cc816d67d5b55939f8f282b56d46445c148fc96262eb6eb19ff8ae9d437676da",
+      "source_id": "rs1-dotenv-laravel",
+      "source_url": "https://github.com/laravel/laravel/blob/aa0cf127fc365a56ee016867144ddffabc2290ae/.env.example",
+      "spdx": "MIT",
+      "stratum": "explicit-reference-enriched"
+    },
+    {
+      "byte_length": 12877,
+      "commit_sha": "51698046353dfc7dd4ee466580f9120d5a1f6762",
+      "encoding": "utf-8",
+      "family": "dotenv-like",
+      "line_count": 356,
+      "n_assignments": 114,
+      "n_explicit_reference_edges": 1,
+      "path": ".env.example",
+      "raw_file": "corpora/realstruct-1/raw/rs1-dotenv-koel",
+      "repository_url": "https://github.com/koel/koel",
+      "sha256": "4ef7a22cc292ae8422cdb41dd3ca0565ad088b89910cadd59283ca503010365a",
+      "source_id": "rs1-dotenv-koel",
+      "source_url": "https://github.com/koel/koel/blob/51698046353dfc7dd4ee466580f9120d5a1f6762/.env.example",
+      "spdx": "MIT",
+      "stratum": "explicit-reference-enriched"
+    },
+    {
+      "byte_length": 2009,
+      "commit_sha": "cf133540b13073e18e08f10b65a2aff2be0f155e",
+      "encoding": "utf-8",
+      "family": "dotenv-like",
+      "line_count": 53,
+      "n_assignments": 15,
+      "n_explicit_reference_edges": 0,
+      "path": ".env.example",
+      "raw_file": "corpora/realstruct-1/raw/rs1-dotenv-bookstack",
+      "repository_url": "https://github.com/BookStackApp/BookStack",
+      "sha256": "5a602970513267c2a60eaaf9dd6a59f7cf8bb69394d936f220794bb7a764fdd1",
+      "source_id": "rs1-dotenv-bookstack",
+      "source_url": "https://github.com/BookStackApp/BookStack/blob/cf133540b13073e18e08f10b65a2aff2be0f155e/.env.example",
+      "spdx": "MIT",
+      "stratum": "natural"
+    },
+    {
+      "byte_length": 2090,
+      "commit_sha": "27b7303baf41bb28babc610ac8eaa486e1ddfab5",
+      "encoding": "utf-8",
+      "family": "dotenv-like",
+      "line_count": 51,
+      "n_assignments": 20,
+      "n_explicit_reference_edges": 0,
+      "path": ".env.sample",
+      "raw_file": "corpora/realstruct-1/raw/rs1-dotenv-linkding",
+      "repository_url": "https://github.com/sissbruecker/linkding",
+      "sha256": "12a0e13fc1b005ea484b96c666813d1a601de5ad85c9db82262b67950dcb10bf",
+      "source_id": "rs1-dotenv-linkding",
+      "source_url": "https://github.com/sissbruecker/linkding/blob/27b7303baf41bb28babc610ac8eaa486e1ddfab5/.env.sample",
+      "spdx": "MIT",
+      "stratum": "natural"
+    },
+    {
+      "byte_length": 14451,
+      "commit_sha": "a3febb258a28c1023a09ba29bc41c1b98a2c2cc7",
+      "encoding": "utf-8",
+      "family": "java_properties",
+      "line_count": 337,
+      "n_assignments": 120,
+      "n_explicit_reference_edges": 41,
+      "path": "hadoop-common-project/hadoop-common/src/main/conf/log4j.properties",
+      "raw_file": "corpora/realstruct-1/raw/rs1-props-hadoop-log4j",
+      "repository_url": "https://github.com/apache/hadoop",
+      "sha256": "220c1cc06b1d7802052a9ab2959f66f875f664e25f4f98e05ab86120af34e644",
+      "source_id": "rs1-props-hadoop-log4j",
+      "source_url": "https://github.com/apache/hadoop/blob/a3febb258a28c1023a09ba29bc41c1b98a2c2cc7/hadoop-common-project/hadoop-common/src/main/conf/log4j.properties",
+      "spdx": "Apache-2.0",
+      "stratum": "explicit-reference-enriched"
+    },
+    {
+      "byte_length": 2643,
+      "commit_sha": "959ee33d8231deb798a876ecd9fa8f66b252cf71",
+      "encoding": "utf-8",
+      "family": "java_properties",
+      "line_count": 74,
+      "n_assignments": 23,
+      "n_explicit_reference_edges": 7,
+      "path": "ratis-common/src/main/conf/log4j.properties",
+      "raw_file": "corpora/realstruct-1/raw/rs1-props-ratis-log4j",
+      "repository_url": "https://github.com/apache/ratis",
+      "sha256": "7e18b252adff25f9762a0dacd6914b75b1f4db43b7be5599f337937b3cc41151",
+      "source_id": "rs1-props-ratis-log4j",
+      "source_url": "https://github.com/apache/ratis/blob/959ee33d8231deb798a876ecd9fa8f66b252cf71/ratis-common/src/main/conf/log4j.properties",
+      "spdx": "Apache-2.0",
+      "stratum": "explicit-reference-enriched"
+    },
+    {
+      "byte_length": 6365,
+      "commit_sha": "995cfcf99f7917403e030428c00b5c51808ddc61",
+      "encoding": "utf-8",
+      "family": "java_properties",
+      "line_count": 129,
+      "n_assignments": 24,
+      "n_explicit_reference_edges": 0,
+      "path": "config/server.properties",
+      "raw_file": "corpora/realstruct-1/raw/rs1-props-kafka-server",
+      "repository_url": "https://github.com/apache/kafka",
+      "sha256": "a20896da0834c1baf0271760d726ec06420b12767690a1f340e758d02c39b0db",
+      "source_id": "rs1-props-kafka-server",
+      "source_url": "https://github.com/apache/kafka/blob/995cfcf99f7917403e030428c00b5c51808ddc61/config/server.properties",
+      "spdx": "Apache-2.0",
+      "stratum": "natural"
+    },
+    {
+      "byte_length": 4003,
+      "commit_sha": "e7604b9f63c86a9e88bc569bd19d4f57739c6768",
+      "encoding": "utf-8",
+      "family": "java_properties",
+      "line_count": 76,
+      "n_assignments": 31,
+      "n_explicit_reference_edges": 0,
+      "path": "conf/logging.properties",
+      "raw_file": "corpora/realstruct-1/raw/rs1-props-tomcat-logging",
+      "repository_url": "https://github.com/apache/tomcat",
+      "sha256": "a891154c70e5ba42f2f82e72d209d70a1763962aee21d08fc592e595a1f273db",
+      "source_id": "rs1-props-tomcat-logging",
+      "source_url": "https://github.com/apache/tomcat/blob/e7604b9f63c86a9e88bc569bd19d4f57739c6768/conf/logging.properties",
+      "spdx": "Apache-2.0",
+      "stratum": "natural"
+    },
+    {
+      "byte_length": 20199,
+      "commit_sha": "dbbd717e923694c36f41b0360515b4374bbe6ee0",
+      "encoding": "utf-8",
+      "family": "ini_cfg",
+      "line_count": 568,
+      "n_assignments": 230,
+      "n_explicit_reference_edges": 0,
+      "path": "conf/app.ini",
+      "raw_file": "corpora/realstruct-1/raw/rs1-ini-gogs",
+      "repository_url": "https://github.com/gogs/gogs",
+      "sha256": "5f9fafb733a153c85bf5d1759ba7663cd53b5f98bb3265703e2769e374453b4f",
+      "source_id": "rs1-ini-gogs",
+      "source_url": "https://github.com/gogs/gogs/blob/dbbd717e923694c36f41b0360515b4374bbe6ee0/conf/app.ini",
+      "spdx": "MIT",
+      "stratum": "natural"
+    },
+    {
+      "byte_length": 4704,
+      "commit_sha": "f99e0b1c7a5b094f5a04b14101899d0cb4ece69d",
+      "encoding": "utf-8",
+      "family": "ini_cfg",
+      "line_count": 184,
+      "n_assignments": 94,
+      "n_explicit_reference_edges": 0,
+      "path": "doc/config.ini",
+      "raw_file": "corpora/realstruct-1/raw/rs1-ini-polybar",
+      "repository_url": "https://github.com/polybar/polybar",
+      "sha256": "292ec12a9034cd514776b597427c9deecd76efedfefec3a2e3fb8188b621d324",
+      "source_id": "rs1-ini-polybar",
+      "source_url": "https://github.com/polybar/polybar/blob/f99e0b1c7a5b094f5a04b14101899d0cb4ece69d/doc/config.ini",
+      "spdx": "MIT",
+      "stratum": "natural"
+    },
+    {
+      "byte_length": 40113,
+      "commit_sha": "4171f85bbc60cd8cbb95b768438b6b670cd276e0",
+      "encoding": "utf-8",
+      "family": "ini_cfg",
+      "line_count": 997,
+      "n_assignments": 482,
+      "n_explicit_reference_edges": 230,
+      "path": "meta/conf/bitbake.conf",
+      "raw_file": "corpora/realstruct-1/raw/rs1-ini-oe-bitbake",
+      "repository_url": "https://github.com/openembedded/openembedded-core",
+      "sha256": "12f345f878f9084a02e13145cdc4d8fdfc52c54454af1011848ff214912429f5",
+      "source_id": "rs1-ini-oe-bitbake",
+      "source_url": "https://github.com/openembedded/openembedded-core/blob/4171f85bbc60cd8cbb95b768438b6b670cd276e0/meta/conf/bitbake.conf",
+      "spdx": "MIT",
+      "stratum": "explicit-reference-enriched"
+    },
+    {
+      "byte_length": 11092,
+      "commit_sha": "8f741d06e6975ead6c710a8b5cb43ddd0be18ddb",
+      "encoding": "utf-8",
+      "family": "ini_cfg",
+      "line_count": 176,
+      "n_assignments": 122,
+      "n_explicit_reference_edges": 8,
+      "path": "conf/machine/include/tegra-common.inc",
+      "raw_file": "corpora/realstruct-1/raw/rs1-ini-tegra-common",
+      "repository_url": "https://github.com/OE4T/meta-tegra",
+      "sha256": "e1a1cf73e118c8e1f49591e7d98181a46ef7536dc2bed6c7f0b99e10ee49b5f6",
+      "source_id": "rs1-ini-tegra-common",
+      "source_url": "https://github.com/OE4T/meta-tegra/blob/8f741d06e6975ead6c710a8b5cb43ddd0be18ddb/conf/machine/include/tegra-common.inc",
+      "spdx": "MIT",
+      "stratum": "explicit-reference-enriched"
+    }
+  ]
+}

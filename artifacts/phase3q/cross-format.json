@@ -1,0 +1,1320 @@
+{
+  "failure_classes": [],
+  "n_cases": 28,
+  "n_ok": 28,
+  "rows": [
+    {
+      "case_id": "xfer2-q001",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q002",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q003",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q004",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q005",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q006",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q007",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q008",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q009",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q010",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q011",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q012",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q013",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q014",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "key_value": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "pretty_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "reversed_order_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ]
+      }
+    },
+    {
+      "case_id": "xfer2-q015",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q016",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": false,
+        "key_value": false,
+        "pretty_json": false,
+        "reversed_order_json": false
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q017",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [],
+        "key_value": [],
+        "pretty_json": [],
+        "reversed_order_json": []
+      }
+    },
+    {
+      "case_id": "xfer2-q018",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [
+          "REDUCE_v2"
+        ],
+        "key_value": [
+          "REDUCE_v2"
+        ],
+        "pretty_json": [
+          "REDUCE_v2"
+        ],
+        "reversed_order_json": [
+          "REDUCE_v2"
+        ]
+      }
+    },
+    {
+      "case_id": "xfer2-q019",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": true
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": true
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": true
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": false,
+          "UNTANGLE": true
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [
+          "UNTANGLE"
+        ],
+        "key_value": [
+          "UNTANGLE"
+        ],
+        "pretty_json": [
+          "UNTANGLE"
+        ],
+        "reversed_order_json": [
+          "UNTANGLE"
+        ]
+      }
+    },
+    {
+      "case_id": "xfer2-q020",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": true,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": false,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [
+          "INTEGRATE"
+        ],
+        "key_value": [
+          "INTEGRATE"
+        ],
+        "pretty_json": [
+          "INTEGRATE"
+        ],
+        "reversed_order_json": [
+          "INTEGRATE"
+        ]
+      }
+    },
+    {
+      "case_id": "xfer2-q021",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": true,
+          "UNTANGLE": true
+        },
+        "key_value": {
+          "INTEGRATE": false,
+          "REDUCE_v2": true,
+          "UNTANGLE": true
+        },
+        "pretty_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": true,
+          "UNTANGLE": true
+        },
+        "reversed_order_json": {
+          "INTEGRATE": false,
+          "REDUCE_v2": true,
+          "UNTANGLE": true
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [
+          "UNTANGLE",
+          "REDUCE_v2"
+        ],
+        "key_value": [
+          "UNTANGLE",
+          "REDUCE_v2"
+        ],
+        "pretty_json": [
+          "UNTANGLE",
+          "REDUCE_v2"
+        ],
+        "reversed_order_json": [
+          "UNTANGLE",
+          "REDUCE_v2"
+        ]
+      }
+    },
+    {
+      "case_id": "xfer2-q022",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "key_value": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "pretty_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "reversed_order_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ]
+      }
+    },
+    {
+      "case_id": "xfer2-q023",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": false,
+          "UNTANGLE": true
+        },
+        "key_value": {
+          "INTEGRATE": true,
+          "REDUCE_v2": false,
+          "UNTANGLE": true
+        },
+        "pretty_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": false,
+          "UNTANGLE": true
+        },
+        "reversed_order_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": false,
+          "UNTANGLE": true
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [
+          "UNTANGLE",
+          "INTEGRATE"
+        ],
+        "key_value": [
+          "UNTANGLE",
+          "INTEGRATE"
+        ],
+        "pretty_json": [
+          "UNTANGLE",
+          "INTEGRATE"
+        ],
+        "reversed_order_json": [
+          "UNTANGLE",
+          "INTEGRATE"
+        ]
+      }
+    },
+    {
+      "case_id": "xfer2-q024",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": true
+        },
+        "key_value": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": true
+        },
+        "pretty_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": true
+        },
+        "reversed_order_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": true
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [
+          "UNTANGLE",
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "key_value": [
+          "UNTANGLE",
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "pretty_json": [
+          "UNTANGLE",
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "reversed_order_json": [
+          "UNTANGLE",
+          "REDUCE_v2",
+          "INTEGRATE"
+        ]
+      }
+    },
+    {
+      "case_id": "xfer2-q025",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "key_value": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "pretty_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "reversed_order_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ]
+      }
+    },
+    {
+      "case_id": "xfer2-q026",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "key_value": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "pretty_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "reversed_order_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ]
+      }
+    },
+    {
+      "case_id": "xfer2-q027",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "key_value": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "pretty_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        },
+        "reversed_order_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": true,
+          "UNTANGLE": false
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "key_value": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "pretty_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ],
+        "reversed_order_json": [
+          "REDUCE_v2",
+          "INTEGRATE"
+        ]
+      }
+    },
+    {
+      "case_id": "xfer2-q028",
+      "failure_classes": [],
+      "gate_identity": true,
+      "gated": {
+        "compact_json": true,
+        "key_value": true,
+        "pretty_json": true,
+        "reversed_order_json": true
+      },
+      "ok": true,
+      "predicate_identity": true,
+      "predicates": {
+        "compact_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": false,
+          "UNTANGLE": true
+        },
+        "key_value": {
+          "INTEGRATE": true,
+          "REDUCE_v2": false,
+          "UNTANGLE": true
+        },
+        "pretty_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": false,
+          "UNTANGLE": true
+        },
+        "reversed_order_json": {
+          "INTEGRATE": true,
+          "REDUCE_v2": false,
+          "UNTANGLE": true
+        }
+      },
+      "sequence_identity": true,
+      "sequences": {
+        "compact_json": [
+          "UNTANGLE",
+          "INTEGRATE"
+        ],
+        "key_value": [
+          "UNTANGLE",
+          "INTEGRATE"
+        ],
+        "pretty_json": [
+          "UNTANGLE",
+          "INTEGRATE"
+        ],
+        "reversed_order_json": [
+          "UNTANGLE",
+          "INTEGRATE"
+        ]
+      }
+    }
+  ],
+  "schema": "bite-phase3q-cross-format/v0.1"
+}

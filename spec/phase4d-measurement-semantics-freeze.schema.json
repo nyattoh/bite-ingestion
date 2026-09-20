@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4d-measurement-semantics-freeze.schema.json",
+  "title": "BITE Phase-4D measurement-semantics freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "phase4c_head_sha",
+    "c0_commit_sha",
+    "c0_freeze_blob",
+    "phase4c_result_blob",
+    "p3f_evaluation_holdout_used",
+    "not_second_holdout_evaluation",
+    "not_confirmatory",
+    "no_phase4c_rewrite",
+    "audit_source_ids",
+    "d1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase4d-measurement-semantics-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4d-measurement-semantics-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE4D_MEASUREMENT_SEMANTICS_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE4C_REAL_HOLDOUT_MEASURED"
+    },
+    "phase4c_head_sha": {
+      "type": "string",
+      "const": "21035872a377e23ad2c5bd01030e312330de005a"
+    },
+    "c0_commit_sha": {
+      "type": "string",
+      "const": "8ed272fc7cd0487386656f2be7120b554be7921a"
+    },
+    "c0_freeze_blob": {
+      "type": "string",
+      "const": "8e7dc9196bb5c98e79198263b0d4eeadc6254ff2"
+    },
+    "phase4c_result_blob": {
+      "type": "string",
+      "const": "f344bde69d7f963bb78780e967bc59bf639d2942"
+    },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "not_second_holdout_evaluation": { "type": "boolean", "const": true },
+    "not_confirmatory": { "type": "boolean", "const": true },
+    "no_phase4c_rewrite": { "type": "boolean", "const": true },
+    "audit_source_ids": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12
+    },
+    "d1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED",
+          "PHASE4D_MEASUREMENT_SEMANTICS_PARTIAL",
+          "PHASE4D_MEASUREMENT_SEMANTICS_BLOCKED"
+        ]
+      }
+    }
+  }
+}

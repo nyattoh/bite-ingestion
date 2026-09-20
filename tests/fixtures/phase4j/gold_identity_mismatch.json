@@ -1,0 +1,11 @@
+{
+  "source_id": "fix-gold-mismatch",
+  "explicit_reference_edges": [
+    {
+      "source_line": 17,
+      "name": "CT_ISO",
+      "dest_line": 10,
+      "gold_identity": [17, "CT_ISO", 99]
+    }
+  ]
+}

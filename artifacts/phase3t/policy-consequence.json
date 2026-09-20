@@ -1,0 +1,198 @@
+{
+  "n_ok": 128,
+  "rows": [
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d1-key_value"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d1-compact_json"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d1-pretty_json"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d1-reversed_order_json"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d3-key_value"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d3-compact_json"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d3-pretty_json"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d3-reversed_order_json"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d4-key_value"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d4-compact_json"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d4-pretty_json"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d4-reversed_order_json"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d9-key_value"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d9-compact_json"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d9-pretty_json"
+    },
+    {
+      "family": "exact_reference_plus_suffix_collision",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-mix-d9-reversed_order_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d1-key_value"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d1-compact_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d1-pretty_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d1-reversed_order_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d3-key_value"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d3-compact_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d3-pretty_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d3-reversed_order_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d4-key_value"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d4-compact_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d4-pretty_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d4-reversed_order_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d9-key_value"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d9-compact_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d9-pretty_json"
+    },
+    {
+      "family": "suffix_collision_plus_actionability",
+      "ok": true,
+      "policy_sequence": [],
+      "surface_id": "p3t-act-d9-reversed_order_json"
+    }
+  ],
+  "schema": "bite-phase3t-policy-consequence/v0.1"
+}

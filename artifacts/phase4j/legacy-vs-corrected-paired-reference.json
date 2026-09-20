@@ -1,0 +1,248 @@
+{
+  "corrected": {
+    "delta": "BITE_v5 - length_pi_v1",
+    "documents": [
+      {
+        "bite_v5": 1.0,
+        "delta": 0.0,
+        "length_pi_v1": 1.0,
+        "source_id": "rs2-ini-ahuacate-pve-medialab",
+        "wave": 1
+      }
+    ],
+    "eligible": "primary documents with gold_triples_v2 count > 0",
+    "kind": "retrospective corrected reference-retention audit",
+    "mean": 0.0,
+    "median": 0.0,
+    "metric": "visible_reference_retention_v2",
+    "n": 1,
+    "negative": 0,
+    "not_confirmatory": true,
+    "not_new_first_open": true,
+    "positive": 0,
+    "schema": "bite-phase4j-corrected-paired-reference-retention/v0.1",
+    "status": "observed",
+    "tie": 1,
+    "wave_is_provenance_only": true
+  },
+  "kind": "retrospective corrected reference-retention audit",
+  "not_confirmatory": true,
+  "not_new_first_open": true,
+  "per_document": [
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-dotenv-ronakmaheshwari-capital",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 1
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 1
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-dotenv-luizomf-dockerswarmp1",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 1
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 1
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-props-edson-a-soares-poco_restful_webservice",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 1
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-props-aterai-java-swing-tips",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 1
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-props-oraopensource-apexbackup",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 1
+    },
+    {
+      "n_gold_triples": 25,
+      "source_id": "rs2-ini-ahuacate-pve-medialab",
+      "visible_reference_retention_v2": {
+        "BITE_v5": 1.0,
+        "adapter_only": 1.0,
+        "length_pi_v1": 1.0,
+        "raw_full": 1.0
+      },
+      "wave": 1
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-ini-genicam-harvesters_gui",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 1
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-ini-beluganos-beluganos",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 1
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-dotenv-s1nro-granatapfel",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 2
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-dotenv-johnsonchin1009-pulse",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 2
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-props-redpill-linpro-alfresco-jobs",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 2
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-props-xzel23-utility",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 2
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-props-aterai-kotlin-swing-tips",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 2
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-ini-jphutchins-pyavreceiver",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 2
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-ini-astrarium-astrarium",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 2
+    },
+    {
+      "n_gold_triples": 0,
+      "source_id": "rs2-ini-waltenne-ubuntu-post-install",
+      "visible_reference_retention_v2": {
+        "BITE_v5": "NA",
+        "adapter_only": "NA",
+        "length_pi_v1": "NA",
+        "raw_full": "NA"
+      },
+      "wave": 2
+    }
+  ],
+  "phase4i_legacy_schema_reader_result": {
+    "delta": "BITE_v5 - length_pi_v1",
+    "documents": [],
+    "eligible": "primary documents with reference gold > 0",
+    "mean": "not_observed",
+    "median": "not_observed",
+    "metric": "visible_reference_retention_v2",
+    "n": 0,
+    "negative": 0,
+    "positive": 0,
+    "schema": "bite-phase4i-paired-reference-retention/v0.1",
+    "status": "not_observed",
+    "tie": 0,
+    "wave_is_provenance_only": true
+  },
+  "schema": "bite-phase4j-legacy-vs-corrected-paired-reference/v0.1",
+  "why": "Phase4D reader expected dest_lines; REALSTRUCT-2 annotation uses dest_line."
+}
