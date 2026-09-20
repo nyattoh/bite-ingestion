@@ -1911,6 +1911,31 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase4g} verdict={data.get('verdict')}")
 
+    from bite_bench.phase4h import validate_phase4h_freeze
+
+    phase4h_freeze = args.root / "benchmarks" / "spec" / "phase4h-realstruct2-freeze.json"
+    if phase4h_freeze.is_file():
+        n_checked += 1
+        data = json.loads(phase4h_freeze.read_text(encoding="utf-8"))
+        errs = list(validate_phase4h_freeze(data))
+        schema_path = args.root / "spec" / "phase4h-realstruct2-freeze.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase4h freeze jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase4h_freeze}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase4h_freeze} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
