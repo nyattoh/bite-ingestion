@@ -23,7 +23,13 @@ from bite_bench.phase4h2 import (
     freeze_manifest,
     validate_phase4h2_freeze,
 )
-from bite_bench.realstruct2_ext import EXT_POOL_PATH, validate_extension_pool
+from bite_bench.realstruct2_ext import (
+    EXT_POOL_PATH,
+    RESULT_PATH,
+    WAVE_PROVENANCE,
+    validate_augmented,
+    validate_extension_pool,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 FREEZE = ROOT / "benchmarks" / "spec" / "phase4h2-acquisition-extension-freeze.json"
@@ -86,9 +92,42 @@ def test_h4_extension_pool_frozen_without_file_contents() -> None:
     )
     assert pool["file_contents_opened"] is False
     assert pool["exclude_h1_repo_path"] is True
-    for family, rows in pool["families"].items():
+    for rows in pool["families"].values():
         assert 1 <= len(rows) <= 180
         for row in rows:
             assert "raw" not in row
             assert "content" not in row
             assert row["selection_key"]
+
+
+def test_h5_augmented_corpus_preserves_wave1() -> None:
+    result = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+    assert validate_augmented(result) == []
+    jsonschema.validate(
+        result,
+        json.loads(
+            (ROOT / "spec" / "phase4h2-realstruct2-augmented.schema.json").read_text(
+                encoding="utf-8"
+            )
+        ),
+    )
+    assert result["verdict"] == "PHASE4H2_REALSTRUCT2_AUGMENTED_FROZEN"
+    assert result["n_primary"] == 18
+    assert result["errors"] == []
+    assert result["no_arm_execution"] is True
+    assert result["no_license_inference"] is True
+    assert result["p3f_evaluation_holdout_used"] is False
+    prov = json.loads(WAVE_PROVENANCE.read_text(encoding="utf-8"))
+    assert prov["wave1_source_ids"] == list(WAVE1_PRIMARY_IDS)
+    assert len(prov["final_primary_source_ids"]) == 18
+    assert set(WAVE1_PRIMARY_IDS).issubset(set(prov["final_primary_source_ids"]))
+    hist = json.loads(
+        (ROOT / "artifacts" / "phase4h" / "realstruct-2.json").read_text(encoding="utf-8")
+    )
+    assert hist["verdict"] == PREMISE
+    assert hist["n_primary"] == 10
+    imports = _import_lines(ROOT / "src" / "bite_bench" / "realstruct2_ext.py")
+    assert "reference_tokenizer" not in imports
+    assert "length_pi_v1" not in imports
+    assert "recovery_bundle" not in imports
+    assert "bite_ingestion.policies" not in imports
