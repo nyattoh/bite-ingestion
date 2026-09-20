@@ -1,0 +1,1287 @@
+{
+  "documents": [
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "key_value",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d1-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "compact_json",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d1-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "pretty_json",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d1-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d1-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "key_value",
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d3-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "compact_json",
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d3-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "pretty_json",
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d3-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d3-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "key_value",
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d4-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "compact_json",
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d4-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "pretty_json",
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d4-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d4-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "key_value",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d9-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "compact_json",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d9-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "pretty_json",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d9-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "simple_exact",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-ex-d9-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "key_value",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d1-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "compact_json",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d1-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "pretty_json",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d1-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d1-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "key_value",
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d3-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "compact_json",
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d3-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "pretty_json",
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d3-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d3-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "key_value",
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d4-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "compact_json",
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d4-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "pretty_json",
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d4-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d4-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "key_value",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d9-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "compact_json",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d9-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "pretty_json",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d9-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "dotted_exact",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-dot-d9-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "hyphenated_exact",
+      "format": "key_value",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-hyp-d1-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "hyphenated_exact",
+      "format": "compact_json",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-hyp-d1-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "hyphenated_exact",
+      "format": "pretty_json",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-hyp-d1-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "hyphenated_exact",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-hyp-d1-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "hyphenated_exact",
+      "format": "key_value",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-hyp-d9-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "hyphenated_exact",
+      "format": "compact_json",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-hyp-d9-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "hyphenated_exact",
+      "format": "pretty_json",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-hyp-d9-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "hyphenated_exact",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-hyp-d9-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "mixed_exact",
+      "format": "key_value",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-mix-d1-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "mixed_exact",
+      "format": "compact_json",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-mix-d1-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "mixed_exact",
+      "format": "pretty_json",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-mix-d1-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "mixed_exact",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-mix-d1-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "mixed_exact",
+      "format": "key_value",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-mix-d9-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "mixed_exact",
+      "format": "compact_json",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-mix-d9-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "mixed_exact",
+      "format": "pretty_json",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-mix-d9-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "mixed_exact",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "observed_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "ok": true,
+      "surface_id": "p4e-mix-d9-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_prefix",
+      "format": "key_value",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-npr-d3-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_prefix",
+      "format": "compact_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-npr-d3-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_prefix",
+      "format": "pretty_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-npr-d3-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_prefix",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-npr-d3-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_suffix",
+      "format": "key_value",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nsf-d3-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_suffix",
+      "format": "compact_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nsf-d3-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_suffix",
+      "format": "pretty_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nsf-d3-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_suffix",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nsf-d3-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_substring",
+      "format": "key_value",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nsb-d3-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_substring",
+      "format": "compact_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nsb-d3-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_substring",
+      "format": "pretty_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nsb-d3-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_substring",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nsb-d3-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_longer",
+      "format": "key_value",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nlg-d3-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_longer",
+      "format": "compact_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nlg-d3-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_longer",
+      "format": "pretty_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nlg-d3-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_longer",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nlg-d3-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_hyphen_suffix",
+      "format": "key_value",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nhs-d3-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_hyphen_suffix",
+      "format": "compact_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nhs-d3-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_hyphen_suffix",
+      "format": "pretty_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nhs-d3-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "neg_hyphen_suffix",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-nhs-d3-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "hostname_version",
+      "format": "key_value",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-hst-d3-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "hostname_version",
+      "format": "compact_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-hst-d3-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "hostname_version",
+      "format": "pretty_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-hst-d3-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "hostname_version",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-hst-d3-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "join_span",
+      "format": "key_value",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-jsn-d3-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "join_span",
+      "format": "compact_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-jsn-d3-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "join_span",
+      "format": "pretty_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-jsn-d3-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "join_span",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-jsn-d3-reversed_order_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "actionability_control",
+      "format": "key_value",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-act-d3-key_value"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "actionability_control",
+      "format": "compact_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-act-d3-compact_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "actionability_control",
+      "format": "pretty_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-act-d3-pretty_json"
+    },
+    {
+      "edge_set_exact": true,
+      "false_reference_edges": 0,
+      "family": "actionability_control",
+      "format": "reversed_order_json",
+      "intended_reference_edges": [],
+      "observed_edges": [],
+      "ok": true,
+      "surface_id": "p4e-act-d3-reversed_order_json"
+    }
+  ],
+  "n_ok": 80,
+  "revision": "phase4e-full-key-reference-v0.1",
+  "schema": "bite-phase4e-exact-edge/v0.1"
+}

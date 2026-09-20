@@ -81,6 +81,7 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 4B REALSTRUCT-1 development adapter: **PHASE4B_REAL_ADAPTER_READY** (dev 3 only; source-exact dual-plane adapter; eval 9 sealed; no baseline; Phase 3S/3Q remain FAILED; p3f sealed)
 - Phase 4C REALSTRUCT-1 holdout first-open: **PHASE4C_REAL_HOLDOUT_MEASURED** (frozen eval 9 once; full-source conservation safety 9/9; raw_full/adapter_only ablation; no retune; Phase 3S/3Q remain FAILED; p3f sealed)
 - Phase 4D REALSTRUCT-1 measurement-semantics audit: **PHASE4D_MEASUREMENT_SEMANTICS_AUDITED** (retrospective atom-aware metric + safety-check decomposition; not a new holdout; no retune; p3f sealed)
+- Phase 4E full-key reference identity v2: **PHASE4E_FULL_KEY_REFERENCE_VALIDATED** (fresh 80 surfaces; v3/v4 bridge exact; T=4 carry-forward; REALSTRUCT-1 retrospective only; p3f sealed)
 - **Next**: do not invent XFER-3; do not swap REALSTRUCT-1 sources; do not retune T_high on this holdout
 
 See:
@@ -168,3 +169,6 @@ See:
 - [`docs/hand_over/PHASE4D-MEASUREMENT-SEMANTICS.md`](docs/hand_over/PHASE4D-MEASUREMENT-SEMANTICS.md)
 - [`benchmarks/spec/phase4d-measurement-semantics-freeze.json`](benchmarks/spec/phase4d-measurement-semantics-freeze.json)
 - [`artifacts/phase4d/measurement-semantics.json`](artifacts/phase4d/measurement-semantics.json)
+- [`docs/hand_over/PHASE4E-FULL-KEY-REFERENCE.md`](docs/hand_over/PHASE4E-FULL-KEY-REFERENCE.md)
+- [`benchmarks/spec/phase4e-full-key-reference-freeze.json`](benchmarks/spec/phase4e-full-key-reference-freeze.json)
+- [`artifacts/phase4e/full-key-reference.json`](artifacts/phase4e/full-key-reference.json)
