@@ -118,8 +118,6 @@ def _blob_errors() -> list[str]:
     for path, expected in LOCKED_BLOBS.items():
         if _git_blob(path) != expected:
             errs.append(f"frozen blob drifted: {path}")
-    if (_REPO / "corpora" / "realstruct-2").exists():
-        errs.append("REALSTRUCT-2 present")
     return errs
 
 

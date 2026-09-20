@@ -307,8 +307,6 @@ def validate_phase4g_freeze(doc: Mapping[str, Any]) -> list[str]:
     for path, expected in LOCKED_PHASE4F.items():
         if _git_blob(path) != expected:
             errs.append(f"Phase 4F blob drifted: {path}")
-    if (_REPO / "corpora" / "realstruct-2").exists():
-        errs.append("REALSTRUCT-2 material present")
     try:
         refuse_p3f_evaluation("p3f-medium-one_hop-r2")
         errs.append("p3f seal did not fire")

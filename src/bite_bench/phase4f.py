@@ -309,8 +309,6 @@ def validate_phase4f_freeze(doc: Mapping[str, Any]) -> list[str]:
         errs.append("Phase 3S verdict rewritten")
     if json.loads(PHASE3Q_PATH.read_text(encoding="utf-8")).get("verdict") != PHASE3Q_VERDICT:
         errs.append("Phase 3Q verdict rewritten")
-    if (_REPO / "corpora" / "realstruct-2").exists() or (_REPO / "artifacts" / "phase4f-realstruct2").exists():
-        errs.append("REALSTRUCT-2 material present")
     try:
         refuse_p3f_evaluation("p3f-medium-one_hop-r2")
         errs.append("p3f seal did not fire")

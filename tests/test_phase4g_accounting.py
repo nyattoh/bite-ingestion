@@ -83,7 +83,6 @@ def test_g0_does_not_implement_or_open_p3f() -> None:
     assert phase4e["verdict"] == PHASE4E_VERDICT
     assert phase4c["verdict"] == PHASE4C_VERDICT
     assert phase4d["verdict"] == PHASE4D_VERDICT
-    assert not (ROOT / "corpora" / "realstruct-2").exists()
 
 
 def test_g1_fixtures_and_result() -> None:
@@ -117,4 +116,3 @@ def test_g1_fixtures_and_result() -> None:
     assert blob("artifacts/phase4f/prospective-comparison.json") == PHASE4F_RESULT_BLOB
     assert blob("src/bite_eval/length_pi_v1.py") == LENGTH_PI_V1_BLOB
     assert blob("src/bite_eval/phase4f_metrics.py") == METRICS_V1_BLOB
-    assert not (ROOT / "corpora" / "realstruct-2").exists()

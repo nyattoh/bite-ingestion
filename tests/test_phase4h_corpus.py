@@ -14,6 +14,7 @@ import pytest
 
 from bite_bench.phase4a import EvaluationSealError, refuse_p3f_evaluation
 from bite_bench.phase4h import (
+    CANDIDATE_POOL_PER_FAMILY,
     DISCOVERY_QUERIES,
     FAMILIES,
     FORBIDDEN_QUERY_TERMS,
@@ -23,6 +24,7 @@ from bite_bench.phase4h import (
     freeze_manifest,
     validate_phase4h_freeze,
 )
+from bite_bench.realstruct2 import POOL_PATH, validate_candidate_pool
 
 ROOT = Path(__file__).resolve().parents[1]
 FREEZE = ROOT / "benchmarks" / "spec" / "phase4h-realstruct2-freeze.json"
@@ -73,3 +75,24 @@ def test_h0_does_not_discover_or_open_p3f() -> None:
     assert "/search/code" in json.dumps(freeze_manifest()["discovery"])
     with pytest.raises(EvaluationSealError, match="p3f evaluation sealed"):
         refuse_p3f_evaluation("p3f-medium-one_hop-r2")
+
+
+def test_h1_candidate_pool_frozen_without_file_contents() -> None:
+    pool = json.loads(POOL_PATH.read_text(encoding="utf-8"))
+    assert validate_candidate_pool(pool) == []
+    jsonschema.validate(
+        pool,
+        json.loads((ROOT / "spec" / "phase4h-candidate-pool.schema.json").read_text(encoding="utf-8")),
+    )
+    assert pool["file_contents_opened"] is False
+    assert pool["no_arm_execution"] is True
+    assert pool["no_tokenizer_execution"] is True
+    for family in FAMILIES:
+        rows = pool["families"][family]
+        assert 1 <= len(rows) <= CANDIDATE_POOL_PER_FAMILY
+        for row in rows:
+            assert "raw" not in row
+            assert "text" not in row
+            assert "content" not in row
+            assert row["head_commit_sha"]
+            assert row["selection_key"]

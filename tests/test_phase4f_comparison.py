@@ -90,7 +90,6 @@ def test_f0_does_not_implement_or_open_p3f() -> None:
     assert phase4e["verdict"] == PREMISE
     assert phase4c["verdict"] == PHASE4C_VERDICT
     assert phase4d["verdict"] == PHASE4D_VERDICT
-    assert not (ROOT / "corpora" / "realstruct-2").exists()
 
 
 def _count(text: str) -> int:
@@ -161,4 +160,3 @@ def test_f1_protocol_ready_and_frozen_blobs() -> None:
     assert blob("src/bite_ingestion/profilers/reference_identity_v2.py") == IDENTITY_V2_BLOB
     assert blob("src/bite_ingestion/policies/conditional_texture_policy_v5.py") == POLICY_V5_BLOB
     assert blob("artifacts/phase4e/full-key-reference.json") == PHASE4E_RESULT_BLOB
-    assert not (ROOT / "corpora" / "realstruct-2").exists()
