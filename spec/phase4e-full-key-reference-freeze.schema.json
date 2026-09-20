@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4e-full-key-reference-freeze.schema.json",
+  "title": "BITE Phase-4E full-key reference protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "generation",
+    "copy_realstruct1_identifiers",
+    "p3f_evaluation_holdout_used",
+    "no_threshold_grid",
+    "n_surfaces",
+    "planned_cases",
+    "e1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase4e-full-key-reference-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4e-full-key-reference-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE4E_FULL_KEY_REFERENCE_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED"
+    },
+    "generation": { "type": "string", "const": "p4e" },
+    "copy_realstruct1_identifiers": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_threshold_grid": { "type": "boolean", "const": true },
+    "n_surfaces": { "type": "integer", "const": 80 },
+    "planned_cases": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "e1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE4E_FULL_KEY_REFERENCE_VALIDATED",
+          "PHASE4E_FULL_KEY_REFERENCE_PARTIAL",
+          "PHASE4E_FULL_KEY_REFERENCE_BLOCKED"
+        ]
+      }
+    }
+  }
+}
