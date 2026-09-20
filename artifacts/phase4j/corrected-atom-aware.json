@@ -1,0 +1,244 @@
+{
+  "documents": [
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-dotenv-ronakmaheshwari-capital",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-dotenv-luizomf-dockerswarmp1",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-props-edson-a-soares-poco_restful_webservice",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 4
+      },
+      "source_id": "rs2-props-aterai-java-swing-tips",
+      "unadjudicated_extra_edges": 4
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-props-oraopensource-apexbackup",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": 1.0,
+      "atom_aware_recall": 1.0,
+      "n_adjudicated_predictions": 25,
+      "n_gold_triples": 25,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": 0.0,
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-ini-ahuacate-pve-medialab",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 2
+      },
+      "source_id": "rs2-ini-genicam-harvesters_gui",
+      "unadjudicated_extra_edges": 2
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-ini-beluganos-beluganos",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-dotenv-s1nro-granatapfel",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-dotenv-johnsonchin1009-pulse",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-props-redpill-linpro-alfresco-jobs",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-props-xzel23-utility",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 4
+      },
+      "source_id": "rs2-props-aterai-kotlin-swing-tips",
+      "unadjudicated_extra_edges": 4
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-ini-jphutchins-pyavreceiver",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-ini-astrarium-astrarium",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "n_adjudicated_predictions": 0,
+      "n_gold_triples": 0,
+      "phase4i_legacy_atom_aware": {
+        "atom_aware_precision": "NA",
+        "atom_aware_recall": "NA",
+        "unadjudicated_extra_edges": 0
+      },
+      "source_id": "rs2-ini-waltenne-ubuntu-post-install",
+      "unadjudicated_extra_edges": 0
+    }
+  ],
+  "gold_reader": "gold_triples_v2",
+  "kind": "retrospective corrected atom-aware diagnostic",
+  "not_new_first_open": true,
+  "produced": true,
+  "schema": "bite-phase4j-corrected-atom-aware/v0.1",
+  "sensor_replay_exact": true
+}

@@ -1,0 +1,10 @@
+{
+  "source_id": "fix-rs1-multi",
+  "explicit_reference_edges": [
+    {
+      "source_line": 4,
+      "name": "BASE",
+      "dest_lines": [1, 2]
+    }
+  ]
+}

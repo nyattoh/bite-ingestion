@@ -1,0 +1,32 @@
+{
+  "atom_aware_corrected_produced": true,
+  "claim_boundary": "retrospective correction of annotation-schema compatibility for Phase4I reference metrics",
+  "errors": [],
+  "j0_freeze_blob": "731ffbc7db9652ad03928c3defdb775ca0b83c8e",
+  "no_arm_rerun": true,
+  "no_bite_retune": true,
+  "no_corpus_change": true,
+  "no_length_pi_retune": true,
+  "no_phase4i_rewrite": true,
+  "no_tokenizer_rerun": true,
+  "no_winner_score": true,
+  "not_claimed": [
+    "new holdout",
+    "confirmatory comparison",
+    "generalization",
+    "BITE superiority"
+  ],
+  "offline": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase4i_artifacts_unchanged": true,
+  "phase4i_head_sha": "88f3b26d32c96e17cbb001179953a7ad0c235068",
+  "premise": "PHASE4I_PROSPECTIVE_COMPARISON_MEASURED",
+  "protocol_commit_sha": "8e0ed24213238ae089fdba937b56082c02ad72be",
+  "research_conclusion": false,
+  "revision": "phase4j-reference-schema-audit-v0.1",
+  "schema": "bite-phase4j-reference-schema-audit/v0.1",
+  "sensor_replay_exact": true,
+  "track_a_rescored": true,
+  "verdict": "PHASE4J_REFERENCE_SCHEMA_AUDITED"
+}

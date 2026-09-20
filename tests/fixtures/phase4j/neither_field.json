@@ -1,0 +1,9 @@
+{
+  "source_id": "fix-neither-field",
+  "explicit_reference_edges": [
+    {
+      "source_line": 1,
+      "name": "HOST"
+    }
+  ]
+}

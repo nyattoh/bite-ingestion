@@ -2136,6 +2136,31 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase4j_freeze} verdict={data.get('verdict')}")
 
+    from bite_eval.phase4j_audit import validate_phase4j_result
+
+    phase4j = args.root / "artifacts" / "phase4j" / "reference-schema-audit.json"
+    if phase4j.is_file():
+        n_checked += 1
+        data = json.loads(phase4j.read_text(encoding="utf-8"))
+        errs = list(validate_phase4j_result(data))
+        schema_path = args.root / "spec" / "phase4j-reference-schema-audit.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase4j jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase4j}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase4j} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1
