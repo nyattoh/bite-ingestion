@@ -83,6 +83,7 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 4D REALSTRUCT-1 measurement-semantics audit: **PHASE4D_MEASUREMENT_SEMANTICS_AUDITED** (retrospective atom-aware metric + safety-check decomposition; not a new holdout; no retune; p3f sealed)
 - Phase 4E full-key reference identity v2: **PHASE4E_FULL_KEY_REFERENCE_VALIDATED** (fresh 80 surfaces; v3/v4 bridge exact; T=4 carry-forward; REALSTRUCT-1 retrospective only; p3f sealed)
 - Phase 4F prospective comparison protocol: **PHASE4F_COMPARISON_PROTOCOL_READY** (length_pi_v1 + pinned tokenizer; four arms; no winner score; REALSTRUCT-1 development only; REALSTRUCT-2 untouched; p3f sealed)
+- Phase 4G comparison accounting v2: **PHASE4G_COMPARISON_ACCOUNTING_VALIDATED** (canonical recovery bundle; provenance-aware visibility; 4F artifacts unchanged; REALSTRUCT-2 untouched; p3f sealed)
 - **Next**: do not acquire REALSTRUCT-2 yet; do not invent XFER-3; do not retune T_high; do not merge to main
 
 See:
@@ -176,3 +177,6 @@ See:
 - [`docs/hand_over/PHASE4F-PROSPECTIVE-COMPARISON.md`](docs/hand_over/PHASE4F-PROSPECTIVE-COMPARISON.md)
 - [`benchmarks/spec/phase4f-prospective-comparison-freeze.json`](benchmarks/spec/phase4f-prospective-comparison-freeze.json)
 - [`artifacts/phase4f/prospective-comparison.json`](artifacts/phase4f/prospective-comparison.json)
+- [`docs/hand_over/PHASE4G-COMPARISON-ACCOUNTING.md`](docs/hand_over/PHASE4G-COMPARISON-ACCOUNTING.md)
+- [`benchmarks/spec/phase4g-comparison-accounting-freeze.json`](benchmarks/spec/phase4g-comparison-accounting-freeze.json)
+- [`artifacts/phase4g/comparison-accounting.json`](artifacts/phase4g/comparison-accounting.json)
