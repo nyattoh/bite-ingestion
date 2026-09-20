@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4b-real-adapter.schema.json",
+  "title": "BITE Phase-4B REALSTRUCT-1 adapter result v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "eval_unopened",
+    "n_dev",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4b-real-adapter/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4b-real-adapter-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "const": "70fa0ce678611db122a74a5fbe730fccf5bf12fb"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE4B_REAL_ADAPTER_READY",
+        "PHASE4B_REAL_ADAPTER_PARTIAL",
+        "PHASE4B_REAL_ADAPTER_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "eval_unopened": { "type": "boolean", "const": true },
+    "n_dev": { "type": "integer", "const": 3 },
+    "claim_boundary": {
+      "type": "string",
+      "const": "development evidence on 3 fixed REALSTRUCT-1 documents only"
+    }
+  }
+}

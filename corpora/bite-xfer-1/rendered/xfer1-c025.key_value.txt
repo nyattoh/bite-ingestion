@@ -1,0 +1,6 @@
+note_build_c025_00=blob_build_c025_00
+note_build_c025_01=blob_build_c025_01
+note_build_c025_02=blob_build_c025_02
+note_build_c025_03=blob_build_c025_03
+note_build_c025_04=blob_build_c025_04
+note_build_c025_05=blob_build_c025_05

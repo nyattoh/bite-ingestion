@@ -1,0 +1,371 @@
+{
+  "arms": [
+    "raw_full",
+    "adapter_only",
+    "length_pi_v1",
+    "BITE_v5"
+  ],
+  "claim_boundary": "comparison-measurement amendment before prospective corpus acquisition",
+  "f0_commit_sha": "ee8d190567e0ce055d7ffa2b7163cffa8d94912a",
+  "f0_freeze_blob": "9f4e957af859432036e9d150c85b5066892dad8f",
+  "fixture_families": [
+    "pass_through",
+    "reduce_duplicate",
+    "untangle_quarantine",
+    "integrate_2way",
+    "integrate_3way",
+    "reduce_then_integrate",
+    "untangle_then_integrate",
+    "neg_partial_text",
+    "neg_lineage_without_text",
+    "neg_text_without_lineage"
+  ],
+  "g1_verdicts": [
+    "PHASE4G_COMPARISON_ACCOUNTING_VALIDATED",
+    "PHASE4G_COMPARISON_ACCOUNTING_PARTIAL",
+    "PHASE4G_COMPARISON_ACCOUNTING_BLOCKED"
+  ],
+  "length_pi_v1_blob": "2de74b1b21c466aaa20858a2066e011f14a0fe20",
+  "locked_blobs": {
+    "artifacts/phase4c/full-source-provenance.json": "b22d290d1d8f89276c923439b62f5ae1102a9fbb",
+    "artifacts/phase4c/real-holdout.json": "f344bde69d7f963bb78780e967bc59bf639d2942",
+    "artifacts/phase4c/reference-coverage.json": "9d0fd974d72d923f97f7c9dc6f325d7ea1e8a032",
+    "artifacts/phase4d/atom-aware-reference.json": "8092ad6a61c9407b892fcb42fec5dc89f6fe7348",
+    "artifacts/phase4d/measurement-semantics.json": "5a0060138866ed28fca9cb54b5916b03edebea5c",
+    "artifacts/phase4e/full-key-reference.json": "5f3681439d37dd44df2e74299b3c1ad7fc95bce2",
+    "artifacts/phase4f/prospective-comparison.json": "28bfd7ea8b131b72ba55bb3f84a7126f99c96578",
+    "benchmarks/spec/phase4e-full-key-reference-freeze.json": "911a22ff9d210de05ae799fce5c90f09c65c1029",
+    "benchmarks/spec/phase4f-prospective-comparison-freeze.json": "9f4e957af859432036e9d150c85b5066892dad8f",
+    "src/bite_eval/composition_safety_v2.py": "85560279375b30f737eb3825cce72373be70488e",
+    "src/bite_eval/length_pi_v1.py": "2de74b1b21c466aaa20858a2066e011f14a0fe20",
+    "src/bite_eval/phase4f_metrics.py": "d58a2f3729423d79731cb081e8d64b0204fdfa6f",
+    "src/bite_eval/reference_tokenizer.py": "6f95df67723fe8ee2e572e589f6ca3e864de37bc",
+    "src/bite_ingestion/adapters/realstruct1_adapter_v1.py": "2ef34b0486efb4badcdc29402ef5a9c4dc359565",
+    "src/bite_ingestion/operators/integrate.py": "68e34becd80e7e803f511ec57ea7a23c2aaa1240",
+    "src/bite_ingestion/operators/reduce_v2.py": "d4bafba7dfdd048a0ccad404a8f706202e2157b5",
+    "src/bite_ingestion/operators/untangle.py": "2951b7542f96674930e750e438891ca772b46896",
+    "src/bite_ingestion/policies/conditional_texture_policy_v4.py": "04d46b15424ccbaf02694d7e7ae056b0b6715686",
+    "src/bite_ingestion/policies/conditional_texture_policy_v5.py": "50180c1254efcc0d082c2cb36d2738200af9f8f5",
+    "src/bite_ingestion/policies/projected_actionability_plan_v1.py": "af3737f078a6d91da38999885aea13860350526a",
+    "src/bite_ingestion/profilers/dependency_dispersion_v3.py": "9ec1c46a68d685210898552c879098bf0416e56d",
+    "src/bite_ingestion/profilers/dependency_dispersion_v4.py": "e2dffa51e07af160ff64ab1d2b3983fac69f07be",
+    "src/bite_ingestion/profilers/reference_identity_v1.py": "49dcd367eccdece7a1bd90df0a3f44f0c24ded65",
+    "src/bite_ingestion/profilers/reference_identity_v2.py": "3524097e33a123ad4180ee4818dbf8d4ab980627"
+  },
+  "metrics_v1_blob": "d58a2f3729423d79731cb081e8d64b0204fdfa6f",
+  "no_bite_retune": true,
+  "no_length_pi_retune": true,
+  "no_phase4f_rewrite": true,
+  "no_realstruct2": true,
+  "no_realstruct2_acquisition": true,
+  "no_winner_score": true,
+  "not_claimed": [
+    "new BITE evidence",
+    "new baseline evidence",
+    "holdout",
+    "confirmatory comparison",
+    "generalization",
+    "BITE superiority"
+  ],
+  "offline_core_tests": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3q_verdict": "PHASE3Q_XFER2_TRANSFER_FAILED",
+  "phase3s_verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "phase3t_verdict": "PHASE3T_EXACT_REFERENCE_VALIDATED",
+  "phase4c_verdict": "PHASE4C_REAL_HOLDOUT_MEASURED",
+  "phase4d_verdict": "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED",
+  "phase4e_verdict": "PHASE4E_FULL_KEY_REFERENCE_VALIDATED",
+  "phase4f_head_sha": "48eaba1a8f55363da3beccec726460b961199300",
+  "phase4f_result_blob": "28bfd7ea8b131b72ba55bb3f84a7126f99c96578",
+  "phase4f_verdict": "PHASE4F_COMPARISON_PROTOCOL_READY",
+  "planned_cases": [
+    {
+      "case_id": "p4g-pass-through",
+      "expected_visible_indices": [
+        0,
+        1
+      ],
+      "family": "pass_through",
+      "mode": "operators",
+      "records": [
+        [
+          "cairn_west",
+          "ridge_alpha"
+        ],
+        [
+          "ridge_mark",
+          "weft_beta"
+        ]
+      ],
+      "sequence": []
+    },
+    {
+      "case_id": "p4g-reduce-duplicate",
+      "expected_visible_indices": [
+        0
+      ],
+      "family": "reduce_duplicate",
+      "mode": "operators",
+      "records": [
+        [
+          "cairn_copy",
+          "same_weft"
+        ],
+        [
+          "cairn_copy",
+          "same_weft"
+        ]
+      ],
+      "sequence": [
+        "REDUCE_v2"
+      ]
+    },
+    {
+      "case_id": "p4g-untangle-quarantine",
+      "expected_visible_indices": [
+        0
+      ],
+      "family": "untangle_quarantine",
+      "mode": "operators",
+      "records": [
+        [
+          "cairn_ok",
+          "plain_weft"
+        ],
+        [
+          "cairn_bad",
+          "shuttle jam FATAL"
+        ]
+      ],
+      "sequence": [
+        "UNTANGLE"
+      ]
+    },
+    {
+      "case_id": "p4g-integrate-2way",
+      "expected_visible_indices": [
+        0,
+        1
+      ],
+      "family": "integrate_2way",
+      "mode": "operators",
+      "records": [
+        [
+          "cairn_left",
+          "ridge_one id=join_west"
+        ],
+        [
+          "cairn_right",
+          "ridge_two id=join_west"
+        ]
+      ],
+      "sequence": [
+        "INTEGRATE"
+      ]
+    },
+    {
+      "case_id": "p4g-integrate-3way",
+      "expected_visible_indices": [
+        0,
+        1,
+        2
+      ],
+      "family": "integrate_3way",
+      "mode": "operators",
+      "records": [
+        [
+          "cairn_a",
+          "one id=join_tri"
+        ],
+        [
+          "cairn_b",
+          "two id=join_tri"
+        ],
+        [
+          "cairn_c",
+          "three id=join_tri"
+        ]
+      ],
+      "sequence": [
+        "INTEGRATE"
+      ]
+    },
+    {
+      "case_id": "p4g-reduce-then-integrate",
+      "expected_visible_indices": [
+        0,
+        2
+      ],
+      "family": "reduce_then_integrate",
+      "mode": "operators",
+      "records": [
+        [
+          "cairn_dup",
+          "same id=join_mix"
+        ],
+        [
+          "cairn_dup",
+          "same id=join_mix"
+        ],
+        [
+          "cairn_mate",
+          "other id=join_mix"
+        ]
+      ],
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ]
+    },
+    {
+      "case_id": "p4g-untangle-then-integrate",
+      "expected_visible_indices": [
+        0,
+        2
+      ],
+      "family": "untangle_then_integrate",
+      "mode": "operators",
+      "records": [
+        [
+          "cairn_keep",
+          "ok id=join_iso"
+        ],
+        [
+          "cairn_iso",
+          "bad FATAL"
+        ],
+        [
+          "cairn_mate",
+          "pair id=join_iso"
+        ]
+      ],
+      "sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ]
+    },
+    {
+      "case_id": "p4g-neg-partial-text",
+      "expected_visible_indices": [],
+      "family": "neg_partial_text",
+      "mode": "synthetic_visible",
+      "records": [
+        [
+          "cairn_full",
+          "ridge_complete"
+        ]
+      ],
+      "visible_text": "ridge_complete"
+    },
+    {
+      "case_id": "p4g-neg-lineage-without-text",
+      "expected_visible_indices": [],
+      "family": "neg_lineage_without_text",
+      "mode": "synthetic_visible",
+      "records": [
+        [
+          "cairn_left",
+          "alpha_one"
+        ],
+        [
+          "cairn_right",
+          "beta_two"
+        ]
+      ]
+    },
+    {
+      "case_id": "p4g-neg-text-without-lineage",
+      "expected_visible_indices": [],
+      "family": "neg_text_without_lineage",
+      "mode": "synthetic_visible",
+      "records": [
+        [
+          "cairn_left",
+          "alpha_one"
+        ],
+        [
+          "cairn_right",
+          "beta_two"
+        ]
+      ]
+    }
+  ],
+  "premise": "PHASE4F_COMPARISON_PROTOCOL_READY",
+  "realstruct1_retrospective": {
+    "dev_source_ids": [
+      "rs1-dotenv-linkding",
+      "rs1-props-hadoop-log4j",
+      "rs1-ini-oe-bitbake"
+    ],
+    "eval_source_ids": [
+      "rs1-dotenv-koel",
+      "rs1-dotenv-bookstack",
+      "rs1-dotenv-laravel",
+      "rs1-props-ratis-log4j",
+      "rs1-props-kafka-server",
+      "rs1-props-tomcat-logging",
+      "rs1-ini-polybar",
+      "rs1-ini-gogs",
+      "rs1-ini-tegra-common"
+    ],
+    "integrate_absence_does_not_void_track_b": true,
+    "not_confirmatory": true,
+    "not_for_retuning": true,
+    "not_generalization": true,
+    "not_holdout": true,
+    "role": "development / retrospective diagnostic",
+    "source_ids": [
+      "rs1-dotenv-linkding",
+      "rs1-props-hadoop-log4j",
+      "rs1-ini-oe-bitbake",
+      "rs1-dotenv-koel",
+      "rs1-dotenv-bookstack",
+      "rs1-dotenv-laravel",
+      "rs1-props-ratis-log4j",
+      "rs1-props-kafka-server",
+      "rs1-props-tomcat-logging",
+      "rs1-ini-polybar",
+      "rs1-ini-gogs",
+      "rs1-ini-tegra-common"
+    ]
+  },
+  "research_conclusion": false,
+  "revision": "phase4g-comparison-accounting-freeze-v0.1",
+  "schema": "bitebench-phase4g-comparison-accounting-freeze/v0.1",
+  "t_high_reference": 4,
+  "tokenizer_blob": "6f95df67723fe8ee2e572e589f6ca3e864de37bc",
+  "track_a": {
+    "canonical_recovery_bundle": true,
+    "do_not_compare_legacy_across_arms": true,
+    "do_not_count_uncounted_original_source_copy": true,
+    "invariant": "raw_sha256 == sha256(reconstruct(visible, recovery_bundle))",
+    "length_pi_bundle_includes_adapter_and_truncation_omissions": true,
+    "metrics": [
+      "recovery_bundle_bytes",
+      "recovery_bundle_tokens",
+      "recovery_metadata_bytes",
+      "recovery_content_bytes"
+    ],
+    "preserve_legacy_as": [
+      "arm_local_sidecar_bytes_legacy",
+      "arm_local_sidecar_tokens_legacy"
+    ],
+    "raw_full_empty_iff_visible_bytes_equal_raw": true
+  },
+  "track_b": {
+    "do_not_change_bite_output": true,
+    "integrate": "lineage AND exact newline-separated complete component",
+    "lineage_alone_insufficient": true,
+    "metric_id": "visible_source_record_ids_v2",
+    "pass_through": "original unit_id + exact text",
+    "recomputed": [
+      "visible_reference_retention_v2",
+      "unique_assignment_identity_retention_v2",
+      "duplicate diagnostics v2"
+    ],
+    "substring_is_not_visibility": true,
+    "text_alone_insufficient": true
+  },
+  "verdict": "PHASE4G_COMPARISON_ACCOUNTING_PROTOCOL_FROZEN"
+}

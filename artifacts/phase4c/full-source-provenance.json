@@ -1,0 +1,87 @@
+{
+  "documents": [
+    {
+      "conservation_untraced": [],
+      "lineage_recall": 1.0,
+      "overmerge_ok": true,
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "source_id": "rs1-dotenv-koel",
+      "unsupported_lost": 0
+    },
+    {
+      "conservation_untraced": [],
+      "lineage_recall": 1.0,
+      "overmerge_ok": true,
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "source_id": "rs1-dotenv-bookstack",
+      "unsupported_lost": 0
+    },
+    {
+      "conservation_untraced": [],
+      "lineage_recall": 1.0,
+      "overmerge_ok": true,
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "source_id": "rs1-dotenv-laravel",
+      "unsupported_lost": 0
+    },
+    {
+      "conservation_untraced": [],
+      "lineage_recall": 1.0,
+      "overmerge_ok": true,
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "source_id": "rs1-props-ratis-log4j",
+      "unsupported_lost": 0
+    },
+    {
+      "conservation_untraced": [],
+      "lineage_recall": 1.0,
+      "overmerge_ok": true,
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "source_id": "rs1-props-kafka-server",
+      "unsupported_lost": 0
+    },
+    {
+      "conservation_untraced": [],
+      "lineage_recall": 1.0,
+      "overmerge_ok": true,
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "source_id": "rs1-props-tomcat-logging",
+      "unsupported_lost": 0
+    },
+    {
+      "conservation_untraced": [],
+      "lineage_recall": 1.0,
+      "overmerge_ok": true,
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "source_id": "rs1-ini-polybar",
+      "unsupported_lost": 0
+    },
+    {
+      "conservation_untraced": [],
+      "lineage_recall": 1.0,
+      "overmerge_ok": true,
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "source_id": "rs1-ini-gogs",
+      "unsupported_lost": 0
+    },
+    {
+      "conservation_untraced": [],
+      "lineage_recall": 1.0,
+      "overmerge_ok": true,
+      "provenance_completeness": 1.0,
+      "silent_loss": 0,
+      "source_id": "rs1-ini-tegra-common",
+      "unsupported_lost": 0
+    }
+  ],
+  "revision": "phase4c-real-holdout-v0.1",
+  "schema": "bite-phase4c-full-source-provenance/v0.1"
+}

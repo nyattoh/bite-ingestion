@@ -1,0 +1,42 @@
+[
+  {
+    "k": "gate_bui_c022",
+    "v": "node_bui_c022 key=batch_c022"
+  },
+  {
+    "k": "copy_c022",
+    "v": "same_c022_row"
+  },
+  {
+    "k": "note_build_c022_00",
+    "v": "blob_build_c022_00"
+  },
+  {
+    "k": "note_build_c022_01",
+    "v": "blob_build_c022_01"
+  },
+  {
+    "k": "note_build_c022_02",
+    "v": "blob_build_c022_02"
+  },
+  {
+    "k": "note_build_c022_03",
+    "v": "blob_build_c022_03"
+  },
+  {
+    "k": "note_build_c022_04",
+    "v": "blob_build_c022_04"
+  },
+  {
+    "k": "note_build_c022_05",
+    "v": "blob_build_c022_05"
+  },
+  {
+    "k": "copy_c022",
+    "v": "same_c022_row"
+  },
+  {
+    "k": "bin_node_bui_c022",
+    "v": "ack_bui_c022 key=batch_c022"
+  }
+]

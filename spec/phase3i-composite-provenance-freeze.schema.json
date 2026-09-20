@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3i-composite-provenance-freeze.schema.json",
+  "title": "BITE Phase-3I composite provenance protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "generation",
+    "split",
+    "p3f_evaluation_holdout_used",
+    "phase3h_verdict_unchanged",
+    "reuse_p3h_to_strengthen_conclusion",
+    "routing",
+    "fields",
+    "completeness",
+    "i1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3i-composite-provenance-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3i-composite-provenance-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE3I_COMPOSITE_PROVENANCE_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "generation": { "type": "string", "const": "p3i" },
+    "split": { "type": "string", "const": "development" },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "phase3h_verdict_unchanged": {
+      "type": "string",
+      "const": "PHASE3H_CONDITIONAL_MAP_REQUIRED"
+    },
+    "reuse_p3h_to_strengthen_conclusion": { "type": "boolean", "const": false },
+    "i1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE3I_COMPOSITE_PROVENANCE_VALIDATED",
+          "PHASE3I_COMPOSITE_PROVENANCE_PARTIAL",
+          "PHASE3I_COMPOSITE_PROVENANCE_BLOCKED"
+        ]
+      }
+    }
+  }
+}

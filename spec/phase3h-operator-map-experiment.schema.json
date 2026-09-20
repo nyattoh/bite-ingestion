@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3h-operator-map-experiment.schema.json",
+  "title": "BITE Phase-3H operator-map experiment v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "locked_candidate",
+    "locked_thresholds",
+    "v1_sensor_changed",
+    "rule_policy_changed",
+    "rule_policy_implemented",
+    "token_reduction_used_for_verdict",
+    "must_pick_m1_or_m2",
+    "operator_map_selected",
+    "selected_operator_map",
+    "high_bin_mapped_to_operator"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3h-operator-map-experiment/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3h-operator-map-experiment-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 40
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE3H_M1_SUPPORTED",
+        "PHASE3H_M2_SUPPORTED",
+        "PHASE3H_CONDITIONAL_MAP_REQUIRED",
+        "PHASE3H_MAP_UNRESOLVED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "locked_candidate": {
+      "type": "string",
+      "const": "A_mean_edge_distance"
+    },
+    "v1_sensor_changed": { "type": "boolean", "const": false },
+    "rule_policy_changed": { "type": "boolean", "const": false },
+    "rule_policy_implemented": { "type": "boolean", "const": false },
+    "token_reduction_used_for_verdict": { "type": "boolean", "const": false },
+    "must_pick_m1_or_m2": { "type": "boolean", "const": false },
+    "operator_map_selected": { "type": "boolean", "const": false },
+    "selected_operator_map": { "type": "null" },
+    "high_bin_mapped_to_operator": { "type": "boolean", "const": false }
+  }
+}

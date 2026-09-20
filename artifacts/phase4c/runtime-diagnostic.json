@@ -1,0 +1,42 @@
+{
+  "documents": [
+    {
+      "source_id": "rs1-dotenv-koel",
+      "wall_clock_s": 0.018947
+    },
+    {
+      "source_id": "rs1-dotenv-bookstack",
+      "wall_clock_s": 0.002429
+    },
+    {
+      "source_id": "rs1-dotenv-laravel",
+      "wall_clock_s": 0.003792
+    },
+    {
+      "source_id": "rs1-props-ratis-log4j",
+      "wall_clock_s": 0.004286
+    },
+    {
+      "source_id": "rs1-props-kafka-server",
+      "wall_clock_s": 0.004954
+    },
+    {
+      "source_id": "rs1-props-tomcat-logging",
+      "wall_clock_s": 0.008158
+    },
+    {
+      "source_id": "rs1-ini-polybar",
+      "wall_clock_s": 0.016696
+    },
+    {
+      "source_id": "rs1-ini-gogs",
+      "wall_clock_s": 0.04595
+    },
+    {
+      "source_id": "rs1-ini-tegra-common",
+      "wall_clock_s": 0.015832
+    }
+  ],
+  "revision": "phase4c-real-holdout-v0.1",
+  "schema": "bite-phase4c-runtime-diagnostic/v0.1"
+}

@@ -9,6 +9,7 @@ class OperatorId(str, Enum):
     CUT = "CUT"
     UNTANGLE = "UNTANGLE"
     REDUCE = "REDUCE"
+    REDUCE_V2 = "REDUCE_v2"
     INTEGRATE = "INTEGRATE"
 
 

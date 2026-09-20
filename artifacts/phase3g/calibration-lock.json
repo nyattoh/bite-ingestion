@@ -1,0 +1,68 @@
+{
+  "blocked_reasons": [],
+  "edge_fp_not_used_for_selection": true,
+  "evaluation_holdout_used": false,
+  "evaluation_outcomes_open": false,
+  "freeze_revision": "phase3f-routing-calibration-freeze-v0.3",
+  "high_bin_mapped_to_operator": false,
+  "integrate_rate_not_used": true,
+  "n_signal_not_used": true,
+  "offline": true,
+  "operator_map_selected": false,
+  "paid_api": false,
+  "phase3g_does_not_select": [
+    "M1_locality_for_integrate",
+    "M2_spread_needs_gather"
+  ],
+  "phase3g_selects": [
+    "feature_candidate_A_B_C",
+    "threshold_values"
+  ],
+  "pre_threshold_metrics": {
+    "A_mean_edge_distance": {
+      "continuous_dispersion_ordering_coverage": 1.0,
+      "continuous_score": "mean_edge_distance",
+      "id": "A_mean_edge_distance",
+      "n_ordering_cells": 18,
+      "n_scale_replicas": 2,
+      "scale_stability": 1.0
+    },
+    "B_mean_edge_distance_norm": {
+      "continuous_dispersion_ordering_coverage": 1.0,
+      "continuous_score": "mean_edge_distance_norm",
+      "id": "B_mean_edge_distance_norm",
+      "n_ordering_cells": 18,
+      "n_scale_replicas": 2,
+      "scale_stability": 1.0
+    },
+    "C_raw_and_norm": {
+      "continuous_dispersion_ordering_coverage": 1.0,
+      "continuous_score": null,
+      "id": "C_raw_and_norm",
+      "n_ordering_cells": 18,
+      "n_scale_replicas": 2,
+      "scale_stability": 1.0,
+      "weighted_sum": false
+    }
+  },
+  "research_conclusion": false,
+  "revision": "phase3g-calibration-lock-v0.1",
+  "routing_connected": false,
+  "rule_policy_changed": false,
+  "schema": "bite-phase3g-calibration-lock/v0.1",
+  "selected_candidate": "A_mean_edge_distance",
+  "selected_operator_map": null,
+  "selected_thresholds": {
+    "T_high": 4,
+    "T_low": 1
+  },
+  "sensor_diagnostics": {
+    "edge_false_positive_rate": 0.041666666666666664,
+    "sensor_revised": false,
+    "used_in_candidate_selection": false,
+    "used_in_threshold_grid_objective": false
+  },
+  "synthetic": true,
+  "v1_sensor_changed": false,
+  "verdict": "PHASE3G_CALIBRATION_LOCKED"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3p-xfer1-reproduction.schema.json",
+  "title": "BITE Phase-3P XFER-1 reproduction (secondary) v0.1",
+  "type": "object",
+  "required": ["schema", "primary", "phase3o_verdict"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3p-xfer1-reproduction/v0.1"
+    },
+    "primary": { "type": "boolean", "const": false },
+    "phase3o_verdict": {
+      "type": "string",
+      "const": "PHASE3O_XFER1_TRANSFER_FAILED"
+    }
+  }
+}
