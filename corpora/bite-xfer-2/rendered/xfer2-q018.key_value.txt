@@ -1,0 +1,13 @@
+src_accn_q018=vitrine_lock_q018
+note_museum_q018_00=blob_museum_q018_00
+note_museum_q018_01=blob_museum_q018_01 観測
+note_museum_q018_02=naïve blob_museum_q018_02
+note_museum_q018_03=blob_museum_q018_03 shift = 1
+note_museum_q018_04=blob_museum_q018_04 said "ok"
+note_museum_q018_05=α blob_museum_q018_05
+note_museum_q018_06=NGC 1300 blob_museum_q018_06
+note_museum_q018_07=blob_museum_q018_07
+dst_vitrine_lock_q018=ack_vitrine_lock_q018
+copy_main_q018=same_main_q018_row
+gap_main_q018=void_main_q018
+copy_main_q018=same_main_q018_row

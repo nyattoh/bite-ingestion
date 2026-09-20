@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3s-edge-precision.schema.json",
+  "title": "BITE Phase-3S edge precision / extra-edge v0.1",
+  "type": "object",
+  "required": ["schema", "n_extra", "n_missing", "rows"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3s-edge-precision/v0.1"
+    },
+    "n_extra": { "type": "integer", "minimum": 0 },
+    "n_missing": { "type": "integer", "minimum": 0 },
+    "rows": { "type": "array" }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3n-conditional-routing-first-open-freeze.schema.json",
+  "title": "BITE Phase-3N conditional routing first-open protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "m0_commit_sha",
+    "m1_commit_sha",
+    "p3f_evaluation_holdout_used",
+    "n_evaluation_surfaces",
+    "n1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3n-conditional-routing-first-open-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3n-conditional-routing-first-open-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE3M_CONDITIONAL_ROUTING_READY"
+    },
+    "m0_commit_sha": {
+      "type": "string",
+      "const": "ad95ed8bb0a60ec6c3a10c4a9ccc96f395bcf702"
+    },
+    "m1_commit_sha": {
+      "type": "string",
+      "const": "5adf1637906874394fb9a89285cf373638a29e37"
+    },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "n_evaluation_surfaces": { "type": "integer", "const": 48 },
+    "n1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_CONFIRMED",
+          "PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_FAILED",
+          "PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_BLOCKED"
+        ]
+      }
+    }
+  }
+}

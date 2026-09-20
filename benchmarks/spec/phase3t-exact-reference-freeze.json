@@ -1,0 +1,1725 @@
+{
+  "bridge": {
+    "candidate": 4.0,
+    "family": "exact_reference_only",
+    "not_a_new_calibration": true,
+    "requires_v2_v3_edge_set_n_and_mean_exact": true
+  },
+  "calibration": false,
+  "claim_boundary": "last synthetic-only mechanism repair: exact reference identity",
+  "copy_p3f_cases": false,
+  "copy_p3s_content": false,
+  "cut_forbidden": true,
+  "distances": [
+    1,
+    3,
+    4,
+    9
+  ],
+  "families": [
+    "exact_reference_only",
+    "underscore_suffix_collision_only",
+    "exact_reference_plus_suffix_collision",
+    "suffix_collision_plus_actionability",
+    "prefix_only",
+    "suffix_text_only",
+    "substring_only",
+    "shared_generic_text"
+  ],
+  "formats": [
+    "key_value",
+    "compact_json",
+    "pretty_json",
+    "reversed_order_json"
+  ],
+  "generation": "p3t",
+  "locked_blobs": {
+    "artifacts/phase3s/reference-specificity.json": "f4bcaae86586c5f738954b78fda8427f3bb78694",
+    "benchmarks/spec/phase3s-reference-specificity-freeze.json": "78939ff84dd26dc53e7821d93b0fcea2b484a03d",
+    "src/bite_eval/composition_safety_v2.py": "85560279375b30f737eb3825cce72373be70488e",
+    "src/bite_ingestion/policies/conditional_texture_policy_v3.py": "dd8b24d0cb7f0e6c4d26834d3663044cbdb9e074",
+    "src/bite_ingestion/policies/projected_actionability_plan_v1.py": "af3737f078a6d91da38999885aea13860350526a",
+    "src/bite_ingestion/profilers/dependency_dispersion_v2.py": "32c9016c86379561b1e915ee322184a19fe927cd"
+  },
+  "locked_t_high": 4.0,
+  "n_canonical": 32,
+  "n_surfaces": 128,
+  "next_if_validated": "Phase 4 real-structured corpus; do not invent XFER-3",
+  "no_mean_only_success": true,
+  "no_new_ak_threshold": true,
+  "no_operator_semantic_change": true,
+  "no_planner_change": true,
+  "no_threshold_grid": true,
+  "no_winner_score": true,
+  "not_claimed": [
+    "routing generalization",
+    "real-world corpus generalization",
+    "BITE superiority",
+    "Phase3S CONFIRMED",
+    "Phase3Q TRANSFER_CONFIRMED"
+  ],
+  "offline": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3q_q0_sha": "67bfd22f782c6663de6e977848a5a381cd62ae51",
+  "phase3q_remains": "Phase3Q remains FAILED",
+  "phase3q_verdict_unchanged": true,
+  "phase3s_artifact_unchanged": true,
+  "phase3s_head_sha": "738d61f02fbd393ea4a24a3d04c4ab4784c00e4f",
+  "phase3s_remains": "Phase3S remains FAILED",
+  "phase3s_s0_sha": "3525506c4601f4471489a15f78d013900c05eda1",
+  "phase3s_verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "planned_cases": [
+    {
+      "bridge": true,
+      "case_id": "p3t-ex-d1",
+      "distance": 1,
+      "family": "exact_reference_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_ex_d1",
+          "loom_heddle_p3t_ex_d1"
+        ],
+        [
+          "loom_heddle_p3t_ex_d1",
+          "weft_p3t_ex_d1"
+        ]
+      ]
+    },
+    {
+      "bridge": true,
+      "case_id": "p3t-ex-d3",
+      "distance": 3,
+      "family": "exact_reference_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_ex_d3",
+          "loom_heddle_p3t_ex_d3"
+        ],
+        [
+          "note_mill_p3t_ex_d3_00",
+          "yarn_mill_p3t_ex_d3_00"
+        ],
+        [
+          "note_mill_p3t_ex_d3_01",
+          "yarn_mill_p3t_ex_d3_01"
+        ],
+        [
+          "loom_heddle_p3t_ex_d3",
+          "weft_p3t_ex_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": true,
+      "case_id": "p3t-ex-d4",
+      "distance": 4,
+      "family": "exact_reference_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_ex_d4",
+          "loom_heddle_p3t_ex_d4"
+        ],
+        [
+          "note_mill_p3t_ex_d4_00",
+          "yarn_mill_p3t_ex_d4_00"
+        ],
+        [
+          "note_mill_p3t_ex_d4_01",
+          "yarn_mill_p3t_ex_d4_01"
+        ],
+        [
+          "note_mill_p3t_ex_d4_02",
+          "yarn_mill_p3t_ex_d4_02"
+        ],
+        [
+          "loom_heddle_p3t_ex_d4",
+          "weft_p3t_ex_d4"
+        ]
+      ]
+    },
+    {
+      "bridge": true,
+      "case_id": "p3t-ex-d9",
+      "distance": 9,
+      "family": "exact_reference_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_ex_d9",
+          "loom_heddle_p3t_ex_d9"
+        ],
+        [
+          "note_mill_p3t_ex_d9_00",
+          "yarn_mill_p3t_ex_d9_00"
+        ],
+        [
+          "note_mill_p3t_ex_d9_01",
+          "yarn_mill_p3t_ex_d9_01"
+        ],
+        [
+          "note_mill_p3t_ex_d9_02",
+          "yarn_mill_p3t_ex_d9_02"
+        ],
+        [
+          "note_mill_p3t_ex_d9_03",
+          "yarn_mill_p3t_ex_d9_03"
+        ],
+        [
+          "note_mill_p3t_ex_d9_04",
+          "yarn_mill_p3t_ex_d9_04"
+        ],
+        [
+          "note_mill_p3t_ex_d9_05",
+          "yarn_mill_p3t_ex_d9_05"
+        ],
+        [
+          "note_mill_p3t_ex_d9_06",
+          "yarn_mill_p3t_ex_d9_06"
+        ],
+        [
+          "note_mill_p3t_ex_d9_07",
+          "yarn_mill_p3t_ex_d9_07"
+        ],
+        [
+          "loom_heddle_p3t_ex_d9",
+          "weft_p3t_ex_d9"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-suf-d1",
+      "distance": 1,
+      "family": "underscore_suffix_collision_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_suf_d1",
+          "heddle_p3t_suf_d1"
+        ],
+        [
+          "bin_shed_heddle_p3t_suf_d1",
+          "yarn_p3t_suf_d1"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-suf-d3",
+      "distance": 3,
+      "family": "underscore_suffix_collision_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_suf_d3",
+          "heddle_p3t_suf_d3"
+        ],
+        [
+          "note_mill_p3t_suf_d3_00",
+          "yarn_mill_p3t_suf_d3_00"
+        ],
+        [
+          "note_mill_p3t_suf_d3_01",
+          "yarn_mill_p3t_suf_d3_01"
+        ],
+        [
+          "bin_shed_heddle_p3t_suf_d3",
+          "yarn_p3t_suf_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-suf-d4",
+      "distance": 4,
+      "family": "underscore_suffix_collision_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_suf_d4",
+          "heddle_p3t_suf_d4"
+        ],
+        [
+          "note_mill_p3t_suf_d4_00",
+          "yarn_mill_p3t_suf_d4_00"
+        ],
+        [
+          "note_mill_p3t_suf_d4_01",
+          "yarn_mill_p3t_suf_d4_01"
+        ],
+        [
+          "note_mill_p3t_suf_d4_02",
+          "yarn_mill_p3t_suf_d4_02"
+        ],
+        [
+          "bin_shed_heddle_p3t_suf_d4",
+          "yarn_p3t_suf_d4"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-suf-d9",
+      "distance": 9,
+      "family": "underscore_suffix_collision_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_suf_d9",
+          "heddle_p3t_suf_d9"
+        ],
+        [
+          "note_mill_p3t_suf_d9_00",
+          "yarn_mill_p3t_suf_d9_00"
+        ],
+        [
+          "note_mill_p3t_suf_d9_01",
+          "yarn_mill_p3t_suf_d9_01"
+        ],
+        [
+          "note_mill_p3t_suf_d9_02",
+          "yarn_mill_p3t_suf_d9_02"
+        ],
+        [
+          "note_mill_p3t_suf_d9_03",
+          "yarn_mill_p3t_suf_d9_03"
+        ],
+        [
+          "note_mill_p3t_suf_d9_04",
+          "yarn_mill_p3t_suf_d9_04"
+        ],
+        [
+          "note_mill_p3t_suf_d9_05",
+          "yarn_mill_p3t_suf_d9_05"
+        ],
+        [
+          "note_mill_p3t_suf_d9_06",
+          "yarn_mill_p3t_suf_d9_06"
+        ],
+        [
+          "note_mill_p3t_suf_d9_07",
+          "yarn_mill_p3t_suf_d9_07"
+        ],
+        [
+          "bin_shed_heddle_p3t_suf_d9",
+          "yarn_p3t_suf_d9"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-mix-d1",
+      "distance": 1,
+      "family": "exact_reference_plus_suffix_collision",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n_records": 12,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_mix_d1",
+          "loom_heddle_p3t_mix_d1"
+        ],
+        [
+          "loom_heddle_p3t_mix_d1",
+          "weft_p3t_mix_d1"
+        ],
+        [
+          "note_mill_p3t_mix_d1_40",
+          "yarn_mill_p3t_mix_d1_40"
+        ],
+        [
+          "note_mill_p3t_mix_d1_41",
+          "yarn_mill_p3t_mix_d1_41"
+        ],
+        [
+          "note_mill_p3t_mix_d1_42",
+          "yarn_mill_p3t_mix_d1_42"
+        ],
+        [
+          "note_mill_p3t_mix_d1_43",
+          "yarn_mill_p3t_mix_d1_43"
+        ],
+        [
+          "note_mill_p3t_mix_d1_44",
+          "yarn_mill_p3t_mix_d1_44"
+        ],
+        [
+          "note_mill_p3t_mix_d1_45",
+          "yarn_mill_p3t_mix_d1_45"
+        ],
+        [
+          "note_mill_p3t_mix_d1_46",
+          "yarn_mill_p3t_mix_d1_46"
+        ],
+        [
+          "note_mill_p3t_mix_d1_47",
+          "yarn_mill_p3t_mix_d1_47"
+        ],
+        [
+          "aux_warp_p3t_mix_d1",
+          "heddle_p3t_mix_d1"
+        ],
+        [
+          "bin_shed_heddle_p3t_mix_d1",
+          "yarn_aux_p3t_mix_d1"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-mix-d3",
+      "distance": 3,
+      "family": "exact_reference_plus_suffix_collision",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "n_records": 14,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_mix_d3",
+          "loom_heddle_p3t_mix_d3"
+        ],
+        [
+          "note_mill_p3t_mix_d3_00",
+          "yarn_mill_p3t_mix_d3_00"
+        ],
+        [
+          "note_mill_p3t_mix_d3_01",
+          "yarn_mill_p3t_mix_d3_01"
+        ],
+        [
+          "loom_heddle_p3t_mix_d3",
+          "weft_p3t_mix_d3"
+        ],
+        [
+          "note_mill_p3t_mix_d3_40",
+          "yarn_mill_p3t_mix_d3_40"
+        ],
+        [
+          "note_mill_p3t_mix_d3_41",
+          "yarn_mill_p3t_mix_d3_41"
+        ],
+        [
+          "note_mill_p3t_mix_d3_42",
+          "yarn_mill_p3t_mix_d3_42"
+        ],
+        [
+          "note_mill_p3t_mix_d3_43",
+          "yarn_mill_p3t_mix_d3_43"
+        ],
+        [
+          "note_mill_p3t_mix_d3_44",
+          "yarn_mill_p3t_mix_d3_44"
+        ],
+        [
+          "note_mill_p3t_mix_d3_45",
+          "yarn_mill_p3t_mix_d3_45"
+        ],
+        [
+          "note_mill_p3t_mix_d3_46",
+          "yarn_mill_p3t_mix_d3_46"
+        ],
+        [
+          "note_mill_p3t_mix_d3_47",
+          "yarn_mill_p3t_mix_d3_47"
+        ],
+        [
+          "aux_warp_p3t_mix_d3",
+          "heddle_p3t_mix_d3"
+        ],
+        [
+          "bin_shed_heddle_p3t_mix_d3",
+          "yarn_aux_p3t_mix_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-mix-d4",
+      "distance": 4,
+      "family": "exact_reference_plus_suffix_collision",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "n_records": 15,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_mix_d4",
+          "loom_heddle_p3t_mix_d4"
+        ],
+        [
+          "note_mill_p3t_mix_d4_00",
+          "yarn_mill_p3t_mix_d4_00"
+        ],
+        [
+          "note_mill_p3t_mix_d4_01",
+          "yarn_mill_p3t_mix_d4_01"
+        ],
+        [
+          "note_mill_p3t_mix_d4_02",
+          "yarn_mill_p3t_mix_d4_02"
+        ],
+        [
+          "loom_heddle_p3t_mix_d4",
+          "weft_p3t_mix_d4"
+        ],
+        [
+          "note_mill_p3t_mix_d4_40",
+          "yarn_mill_p3t_mix_d4_40"
+        ],
+        [
+          "note_mill_p3t_mix_d4_41",
+          "yarn_mill_p3t_mix_d4_41"
+        ],
+        [
+          "note_mill_p3t_mix_d4_42",
+          "yarn_mill_p3t_mix_d4_42"
+        ],
+        [
+          "note_mill_p3t_mix_d4_43",
+          "yarn_mill_p3t_mix_d4_43"
+        ],
+        [
+          "note_mill_p3t_mix_d4_44",
+          "yarn_mill_p3t_mix_d4_44"
+        ],
+        [
+          "note_mill_p3t_mix_d4_45",
+          "yarn_mill_p3t_mix_d4_45"
+        ],
+        [
+          "note_mill_p3t_mix_d4_46",
+          "yarn_mill_p3t_mix_d4_46"
+        ],
+        [
+          "note_mill_p3t_mix_d4_47",
+          "yarn_mill_p3t_mix_d4_47"
+        ],
+        [
+          "aux_warp_p3t_mix_d4",
+          "heddle_p3t_mix_d4"
+        ],
+        [
+          "bin_shed_heddle_p3t_mix_d4",
+          "yarn_aux_p3t_mix_d4"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-mix-d9",
+      "distance": 9,
+      "family": "exact_reference_plus_suffix_collision",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "n_records": 20,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_mix_d9",
+          "loom_heddle_p3t_mix_d9"
+        ],
+        [
+          "note_mill_p3t_mix_d9_00",
+          "yarn_mill_p3t_mix_d9_00"
+        ],
+        [
+          "note_mill_p3t_mix_d9_01",
+          "yarn_mill_p3t_mix_d9_01"
+        ],
+        [
+          "note_mill_p3t_mix_d9_02",
+          "yarn_mill_p3t_mix_d9_02"
+        ],
+        [
+          "note_mill_p3t_mix_d9_03",
+          "yarn_mill_p3t_mix_d9_03"
+        ],
+        [
+          "note_mill_p3t_mix_d9_04",
+          "yarn_mill_p3t_mix_d9_04"
+        ],
+        [
+          "note_mill_p3t_mix_d9_05",
+          "yarn_mill_p3t_mix_d9_05"
+        ],
+        [
+          "note_mill_p3t_mix_d9_06",
+          "yarn_mill_p3t_mix_d9_06"
+        ],
+        [
+          "note_mill_p3t_mix_d9_07",
+          "yarn_mill_p3t_mix_d9_07"
+        ],
+        [
+          "loom_heddle_p3t_mix_d9",
+          "weft_p3t_mix_d9"
+        ],
+        [
+          "note_mill_p3t_mix_d9_40",
+          "yarn_mill_p3t_mix_d9_40"
+        ],
+        [
+          "note_mill_p3t_mix_d9_41",
+          "yarn_mill_p3t_mix_d9_41"
+        ],
+        [
+          "note_mill_p3t_mix_d9_42",
+          "yarn_mill_p3t_mix_d9_42"
+        ],
+        [
+          "note_mill_p3t_mix_d9_43",
+          "yarn_mill_p3t_mix_d9_43"
+        ],
+        [
+          "note_mill_p3t_mix_d9_44",
+          "yarn_mill_p3t_mix_d9_44"
+        ],
+        [
+          "note_mill_p3t_mix_d9_45",
+          "yarn_mill_p3t_mix_d9_45"
+        ],
+        [
+          "note_mill_p3t_mix_d9_46",
+          "yarn_mill_p3t_mix_d9_46"
+        ],
+        [
+          "note_mill_p3t_mix_d9_47",
+          "yarn_mill_p3t_mix_d9_47"
+        ],
+        [
+          "aux_warp_p3t_mix_d9",
+          "heddle_p3t_mix_d9"
+        ],
+        [
+          "bin_shed_heddle_p3t_mix_d9",
+          "yarn_aux_p3t_mix_d9"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-act-d1",
+      "distance": 1,
+      "family": "suffix_collision_plus_actionability",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 7,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_act_d1",
+          "heddle_p3t_act_d1"
+        ],
+        [
+          "bin_shed_heddle_p3t_act_d1",
+          "yarn_p3t_act_d1"
+        ],
+        [
+          "copy_reed_p3t_act_d1",
+          "same_reed_p3t_act_d1_row"
+        ],
+        [
+          "copy_reed_p3t_act_d1",
+          "same_reed_p3t_act_d1_row"
+        ],
+        [
+          "alert_p3t_act_d1",
+          "shuttle jam FATAL"
+        ],
+        [
+          "mate_a_p3t_act_d1",
+          "bobbin_a_p3t_act_d1 id=spool_p3t_act_d1"
+        ],
+        [
+          "mate_b_p3t_act_d1",
+          "bobbin_b_p3t_act_d1 id=spool_p3t_act_d1"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-act-d3",
+      "distance": 3,
+      "family": "suffix_collision_plus_actionability",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 9,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_act_d3",
+          "heddle_p3t_act_d3"
+        ],
+        [
+          "note_mill_p3t_act_d3_00",
+          "yarn_mill_p3t_act_d3_00"
+        ],
+        [
+          "note_mill_p3t_act_d3_01",
+          "yarn_mill_p3t_act_d3_01"
+        ],
+        [
+          "bin_shed_heddle_p3t_act_d3",
+          "yarn_p3t_act_d3"
+        ],
+        [
+          "copy_reed_p3t_act_d3",
+          "same_reed_p3t_act_d3_row"
+        ],
+        [
+          "copy_reed_p3t_act_d3",
+          "same_reed_p3t_act_d3_row"
+        ],
+        [
+          "alert_p3t_act_d3",
+          "shuttle jam FATAL"
+        ],
+        [
+          "mate_a_p3t_act_d3",
+          "bobbin_a_p3t_act_d3 id=spool_p3t_act_d3"
+        ],
+        [
+          "mate_b_p3t_act_d3",
+          "bobbin_b_p3t_act_d3 id=spool_p3t_act_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-act-d4",
+      "distance": 4,
+      "family": "suffix_collision_plus_actionability",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_act_d4",
+          "heddle_p3t_act_d4"
+        ],
+        [
+          "note_mill_p3t_act_d4_00",
+          "yarn_mill_p3t_act_d4_00"
+        ],
+        [
+          "note_mill_p3t_act_d4_01",
+          "yarn_mill_p3t_act_d4_01"
+        ],
+        [
+          "note_mill_p3t_act_d4_02",
+          "yarn_mill_p3t_act_d4_02"
+        ],
+        [
+          "bin_shed_heddle_p3t_act_d4",
+          "yarn_p3t_act_d4"
+        ],
+        [
+          "copy_reed_p3t_act_d4",
+          "same_reed_p3t_act_d4_row"
+        ],
+        [
+          "copy_reed_p3t_act_d4",
+          "same_reed_p3t_act_d4_row"
+        ],
+        [
+          "alert_p3t_act_d4",
+          "shuttle jam FATAL"
+        ],
+        [
+          "mate_a_p3t_act_d4",
+          "bobbin_a_p3t_act_d4 id=spool_p3t_act_d4"
+        ],
+        [
+          "mate_b_p3t_act_d4",
+          "bobbin_b_p3t_act_d4 id=spool_p3t_act_d4"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-act-d9",
+      "distance": 9,
+      "family": "suffix_collision_plus_actionability",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 15,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_act_d9",
+          "heddle_p3t_act_d9"
+        ],
+        [
+          "note_mill_p3t_act_d9_00",
+          "yarn_mill_p3t_act_d9_00"
+        ],
+        [
+          "note_mill_p3t_act_d9_01",
+          "yarn_mill_p3t_act_d9_01"
+        ],
+        [
+          "note_mill_p3t_act_d9_02",
+          "yarn_mill_p3t_act_d9_02"
+        ],
+        [
+          "note_mill_p3t_act_d9_03",
+          "yarn_mill_p3t_act_d9_03"
+        ],
+        [
+          "note_mill_p3t_act_d9_04",
+          "yarn_mill_p3t_act_d9_04"
+        ],
+        [
+          "note_mill_p3t_act_d9_05",
+          "yarn_mill_p3t_act_d9_05"
+        ],
+        [
+          "note_mill_p3t_act_d9_06",
+          "yarn_mill_p3t_act_d9_06"
+        ],
+        [
+          "note_mill_p3t_act_d9_07",
+          "yarn_mill_p3t_act_d9_07"
+        ],
+        [
+          "bin_shed_heddle_p3t_act_d9",
+          "yarn_p3t_act_d9"
+        ],
+        [
+          "copy_reed_p3t_act_d9",
+          "same_reed_p3t_act_d9_row"
+        ],
+        [
+          "copy_reed_p3t_act_d9",
+          "same_reed_p3t_act_d9_row"
+        ],
+        [
+          "alert_p3t_act_d9",
+          "shuttle jam FATAL"
+        ],
+        [
+          "mate_a_p3t_act_d9",
+          "bobbin_a_p3t_act_d9 id=spool_p3t_act_d9"
+        ],
+        [
+          "mate_b_p3t_act_d9",
+          "bobbin_b_p3t_act_d9 id=spool_p3t_act_d9"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-pre-d1",
+      "distance": 1,
+      "family": "prefix_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_pre_d1",
+          "loom_heddle_west_p3t_pre_d1"
+        ],
+        [
+          "loom_heddle_p3t_pre_d1",
+          "weft_p3t_pre_d1"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-pre-d3",
+      "distance": 3,
+      "family": "prefix_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_pre_d3",
+          "loom_heddle_west_p3t_pre_d3"
+        ],
+        [
+          "note_mill_p3t_pre_d3_00",
+          "yarn_mill_p3t_pre_d3_00"
+        ],
+        [
+          "note_mill_p3t_pre_d3_01",
+          "yarn_mill_p3t_pre_d3_01"
+        ],
+        [
+          "loom_heddle_p3t_pre_d3",
+          "weft_p3t_pre_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-pre-d4",
+      "distance": 4,
+      "family": "prefix_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_pre_d4",
+          "loom_heddle_west_p3t_pre_d4"
+        ],
+        [
+          "note_mill_p3t_pre_d4_00",
+          "yarn_mill_p3t_pre_d4_00"
+        ],
+        [
+          "note_mill_p3t_pre_d4_01",
+          "yarn_mill_p3t_pre_d4_01"
+        ],
+        [
+          "note_mill_p3t_pre_d4_02",
+          "yarn_mill_p3t_pre_d4_02"
+        ],
+        [
+          "loom_heddle_p3t_pre_d4",
+          "weft_p3t_pre_d4"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-pre-d9",
+      "distance": 9,
+      "family": "prefix_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_pre_d9",
+          "loom_heddle_west_p3t_pre_d9"
+        ],
+        [
+          "note_mill_p3t_pre_d9_00",
+          "yarn_mill_p3t_pre_d9_00"
+        ],
+        [
+          "note_mill_p3t_pre_d9_01",
+          "yarn_mill_p3t_pre_d9_01"
+        ],
+        [
+          "note_mill_p3t_pre_d9_02",
+          "yarn_mill_p3t_pre_d9_02"
+        ],
+        [
+          "note_mill_p3t_pre_d9_03",
+          "yarn_mill_p3t_pre_d9_03"
+        ],
+        [
+          "note_mill_p3t_pre_d9_04",
+          "yarn_mill_p3t_pre_d9_04"
+        ],
+        [
+          "note_mill_p3t_pre_d9_05",
+          "yarn_mill_p3t_pre_d9_05"
+        ],
+        [
+          "note_mill_p3t_pre_d9_06",
+          "yarn_mill_p3t_pre_d9_06"
+        ],
+        [
+          "note_mill_p3t_pre_d9_07",
+          "yarn_mill_p3t_pre_d9_07"
+        ],
+        [
+          "loom_heddle_p3t_pre_d9",
+          "weft_p3t_pre_d9"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-sst-d1",
+      "distance": 1,
+      "family": "suffix_text_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_sst_d1",
+          "ownheddle_p3t_sst_d1"
+        ],
+        [
+          "bin_shed_heddle_p3t_sst_d1",
+          "yarn_p3t_sst_d1"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-sst-d3",
+      "distance": 3,
+      "family": "suffix_text_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_sst_d3",
+          "ownheddle_p3t_sst_d3"
+        ],
+        [
+          "note_mill_p3t_sst_d3_00",
+          "yarn_mill_p3t_sst_d3_00"
+        ],
+        [
+          "note_mill_p3t_sst_d3_01",
+          "yarn_mill_p3t_sst_d3_01"
+        ],
+        [
+          "bin_shed_heddle_p3t_sst_d3",
+          "yarn_p3t_sst_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-sst-d4",
+      "distance": 4,
+      "family": "suffix_text_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_sst_d4",
+          "ownheddle_p3t_sst_d4"
+        ],
+        [
+          "note_mill_p3t_sst_d4_00",
+          "yarn_mill_p3t_sst_d4_00"
+        ],
+        [
+          "note_mill_p3t_sst_d4_01",
+          "yarn_mill_p3t_sst_d4_01"
+        ],
+        [
+          "note_mill_p3t_sst_d4_02",
+          "yarn_mill_p3t_sst_d4_02"
+        ],
+        [
+          "bin_shed_heddle_p3t_sst_d4",
+          "yarn_p3t_sst_d4"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-sst-d9",
+      "distance": 9,
+      "family": "suffix_text_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_sst_d9",
+          "ownheddle_p3t_sst_d9"
+        ],
+        [
+          "note_mill_p3t_sst_d9_00",
+          "yarn_mill_p3t_sst_d9_00"
+        ],
+        [
+          "note_mill_p3t_sst_d9_01",
+          "yarn_mill_p3t_sst_d9_01"
+        ],
+        [
+          "note_mill_p3t_sst_d9_02",
+          "yarn_mill_p3t_sst_d9_02"
+        ],
+        [
+          "note_mill_p3t_sst_d9_03",
+          "yarn_mill_p3t_sst_d9_03"
+        ],
+        [
+          "note_mill_p3t_sst_d9_04",
+          "yarn_mill_p3t_sst_d9_04"
+        ],
+        [
+          "note_mill_p3t_sst_d9_05",
+          "yarn_mill_p3t_sst_d9_05"
+        ],
+        [
+          "note_mill_p3t_sst_d9_06",
+          "yarn_mill_p3t_sst_d9_06"
+        ],
+        [
+          "note_mill_p3t_sst_d9_07",
+          "yarn_mill_p3t_sst_d9_07"
+        ],
+        [
+          "bin_shed_heddle_p3t_sst_d9",
+          "yarn_p3t_sst_d9"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-sub-d1",
+      "distance": 1,
+      "family": "substring_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_sub_d1",
+          "heddle"
+        ],
+        [
+          "slot_heddle_p3t_sub_d1",
+          "weft_p3t_sub_d1"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-sub-d3",
+      "distance": 3,
+      "family": "substring_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_sub_d3",
+          "heddle"
+        ],
+        [
+          "note_mill_p3t_sub_d3_00",
+          "yarn_mill_p3t_sub_d3_00"
+        ],
+        [
+          "note_mill_p3t_sub_d3_01",
+          "yarn_mill_p3t_sub_d3_01"
+        ],
+        [
+          "slot_heddle_p3t_sub_d3",
+          "weft_p3t_sub_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-sub-d4",
+      "distance": 4,
+      "family": "substring_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_sub_d4",
+          "heddle"
+        ],
+        [
+          "note_mill_p3t_sub_d4_00",
+          "yarn_mill_p3t_sub_d4_00"
+        ],
+        [
+          "note_mill_p3t_sub_d4_01",
+          "yarn_mill_p3t_sub_d4_01"
+        ],
+        [
+          "note_mill_p3t_sub_d4_02",
+          "yarn_mill_p3t_sub_d4_02"
+        ],
+        [
+          "slot_heddle_p3t_sub_d4",
+          "weft_p3t_sub_d4"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-sub-d9",
+      "distance": 9,
+      "family": "substring_only",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_sub_d9",
+          "heddle"
+        ],
+        [
+          "note_mill_p3t_sub_d9_00",
+          "yarn_mill_p3t_sub_d9_00"
+        ],
+        [
+          "note_mill_p3t_sub_d9_01",
+          "yarn_mill_p3t_sub_d9_01"
+        ],
+        [
+          "note_mill_p3t_sub_d9_02",
+          "yarn_mill_p3t_sub_d9_02"
+        ],
+        [
+          "note_mill_p3t_sub_d9_03",
+          "yarn_mill_p3t_sub_d9_03"
+        ],
+        [
+          "note_mill_p3t_sub_d9_04",
+          "yarn_mill_p3t_sub_d9_04"
+        ],
+        [
+          "note_mill_p3t_sub_d9_05",
+          "yarn_mill_p3t_sub_d9_05"
+        ],
+        [
+          "note_mill_p3t_sub_d9_06",
+          "yarn_mill_p3t_sub_d9_06"
+        ],
+        [
+          "note_mill_p3t_sub_d9_07",
+          "yarn_mill_p3t_sub_d9_07"
+        ],
+        [
+          "slot_heddle_p3t_sub_d9",
+          "weft_p3t_sub_d9"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-gen-d1",
+      "distance": 1,
+      "family": "shared_generic_text",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_gen_d1",
+          "spindle"
+        ],
+        [
+          "slot_other_p3t_gen_d1",
+          "spindle"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-gen-d3",
+      "distance": 3,
+      "family": "shared_generic_text",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_gen_d3",
+          "spindle"
+        ],
+        [
+          "note_mill_p3t_gen_d3_00",
+          "yarn_mill_p3t_gen_d3_00"
+        ],
+        [
+          "note_mill_p3t_gen_d3_01",
+          "yarn_mill_p3t_gen_d3_01"
+        ],
+        [
+          "slot_other_p3t_gen_d3",
+          "spindle"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-gen-d4",
+      "distance": 4,
+      "family": "shared_generic_text",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_gen_d4",
+          "spindle"
+        ],
+        [
+          "note_mill_p3t_gen_d4_00",
+          "yarn_mill_p3t_gen_d4_00"
+        ],
+        [
+          "note_mill_p3t_gen_d4_01",
+          "yarn_mill_p3t_gen_d4_01"
+        ],
+        [
+          "note_mill_p3t_gen_d4_02",
+          "yarn_mill_p3t_gen_d4_02"
+        ],
+        [
+          "slot_other_p3t_gen_d4",
+          "spindle"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p3t-gen-d9",
+      "distance": 9,
+      "family": "shared_generic_text",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_warp_p3t_gen_d9",
+          "spindle"
+        ],
+        [
+          "note_mill_p3t_gen_d9_00",
+          "yarn_mill_p3t_gen_d9_00"
+        ],
+        [
+          "note_mill_p3t_gen_d9_01",
+          "yarn_mill_p3t_gen_d9_01"
+        ],
+        [
+          "note_mill_p3t_gen_d9_02",
+          "yarn_mill_p3t_gen_d9_02"
+        ],
+        [
+          "note_mill_p3t_gen_d9_03",
+          "yarn_mill_p3t_gen_d9_03"
+        ],
+        [
+          "note_mill_p3t_gen_d9_04",
+          "yarn_mill_p3t_gen_d9_04"
+        ],
+        [
+          "note_mill_p3t_gen_d9_05",
+          "yarn_mill_p3t_gen_d9_05"
+        ],
+        [
+          "note_mill_p3t_gen_d9_06",
+          "yarn_mill_p3t_gen_d9_06"
+        ],
+        [
+          "note_mill_p3t_gen_d9_07",
+          "yarn_mill_p3t_gen_d9_07"
+        ],
+        [
+          "slot_other_p3t_gen_d9",
+          "spindle"
+        ]
+      ]
+    }
+  ],
+  "premise": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "primary_truth": "scorer-only intended_reference_edges; observed undirected set must match exactly",
+  "relation_contract": {
+    "edge": "exact equality only",
+    "join_mask": "id=<token> and key=<token> in values",
+    "no_fuzzy": true,
+    "no_suffix_expansion": true,
+    "source": "maximal identifier tokens of masked value",
+    "target": "maximal full identifier token of KV key / JSON k only"
+  },
+  "repair_target": "remove_underscore_suffix_expansion_from_reference_targets",
+  "reproduction_expect": {
+    "suffix_collision_only": {
+      "false_edge": false,
+      "n_reference_edges": 0
+    },
+    "suffix_collision_plus_actionability_d4_d9": {
+      "gate": false,
+      "policy_sequence": []
+    },
+    "true_reference_plus_suffix_collision": {
+      "observed": "intended_true_edge_only"
+    }
+  },
+  "reproduction_not_primary_evidence": true,
+  "reproduction_only_surfaces": [
+    "p3s-suf-d1-key_value",
+    "p3s-suf-d1-compact_json",
+    "p3s-suf-d1-pretty_json",
+    "p3s-suf-d1-reversed_order_json",
+    "p3s-suf-d3-key_value",
+    "p3s-suf-d3-compact_json",
+    "p3s-suf-d3-pretty_json",
+    "p3s-suf-d3-reversed_order_json",
+    "p3s-suf-d4-key_value",
+    "p3s-suf-d4-compact_json",
+    "p3s-suf-d4-pretty_json",
+    "p3s-suf-d4-reversed_order_json",
+    "p3s-suf-d9-key_value",
+    "p3s-suf-d9-compact_json",
+    "p3s-suf-d9-pretty_json",
+    "p3s-suf-d9-reversed_order_json",
+    "p3s-mix-d1-key_value",
+    "p3s-mix-d1-compact_json",
+    "p3s-mix-d1-pretty_json",
+    "p3s-mix-d1-reversed_order_json",
+    "p3s-mix-d3-key_value",
+    "p3s-mix-d3-compact_json",
+    "p3s-mix-d3-pretty_json",
+    "p3s-mix-d3-reversed_order_json",
+    "p3s-mix-d4-key_value",
+    "p3s-mix-d4-compact_json",
+    "p3s-mix-d4-pretty_json",
+    "p3s-mix-d4-reversed_order_json",
+    "p3s-mix-d9-key_value",
+    "p3s-mix-d9-compact_json",
+    "p3s-mix-d9-pretty_json",
+    "p3s-mix-d9-reversed_order_json",
+    "p3s-act-d1-key_value",
+    "p3s-act-d1-compact_json",
+    "p3s-act-d1-pretty_json",
+    "p3s-act-d1-reversed_order_json",
+    "p3s-act-d3-key_value",
+    "p3s-act-d3-compact_json",
+    "p3s-act-d3-pretty_json",
+    "p3s-act-d3-reversed_order_json",
+    "p3s-act-d4-key_value",
+    "p3s-act-d4-compact_json",
+    "p3s-act-d4-pretty_json",
+    "p3s-act-d4-reversed_order_json",
+    "p3s-act-d9-key_value",
+    "p3s-act-d9-compact_json",
+    "p3s-act-d9-pretty_json",
+    "p3s-act-d9-reversed_order_json"
+  ],
+  "research_conclusion": false,
+  "revision": "phase3t-exact-reference-freeze-v0.1",
+  "schema": "bitebench-phase3t-exact-reference-freeze/v0.1",
+  "synthetic": true,
+  "t1_verdicts": [
+    "PHASE3T_EXACT_REFERENCE_VALIDATED",
+    "PHASE3T_EXACT_REFERENCE_PARTIAL",
+    "PHASE3T_EXACT_REFERENCE_BLOCKED"
+  ],
+  "token_reduction": "diagnostic_only",
+  "verdict": "PHASE3T_EXACT_REFERENCE_PROTOCOL_FROZEN",
+  "verdict_rule": {
+    "PHASE3T_EXACT_REFERENCE_BLOCKED": "protocol drift / leak / fair validation cannot run",
+    "PHASE3T_EXACT_REFERENCE_PARTIAL": "specificity repaired but bridge / format / safety incomplete",
+    "PHASE3T_EXACT_REFERENCE_VALIDATED": "fresh p3t: all edge/gate/policy/safety pass; v2/v3 bridge exact; T=4 carry-forward"
+  }
+}

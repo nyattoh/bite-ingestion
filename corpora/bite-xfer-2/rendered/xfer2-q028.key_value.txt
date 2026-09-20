@@ -1,0 +1,12 @@
+src_flash_q028=chip_lock_q028
+note_firmware_q028_00=blob_firmware_q028_00
+note_firmware_q028_01=blob_firmware_q028_01 観測
+note_firmware_q028_02=naïve blob_firmware_q028_02
+note_firmware_q028_03=blob_firmware_q028_03 shift = 1
+note_firmware_q028_04=blob_firmware_q028_04 said "ok"
+note_firmware_q028_05=α blob_firmware_q028_05
+note_firmware_q028_06=NGC 1300 blob_firmware_q028_06
+note_firmware_q028_07=blob_firmware_q028_07
+dst_chip_lock_q028=ack_chip_lock_q028
+alert_q028=id=plate_q028 CCD readout FATAL
+mate_a_q028=crate_a_q028 id=plate_q028

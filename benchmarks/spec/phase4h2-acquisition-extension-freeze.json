@@ -1,0 +1,161 @@
+{
+  "allowed_spdx": [
+    "MIT",
+    "Apache-2.0"
+  ],
+  "changed_dimension": "candidate-pool coverage",
+  "claim_boundary": "acquisition-amended, prospectively frozen convenience sample before comparison execution",
+  "discovery": {
+    "exclude": "every repository_full_name+path in original H1",
+    "extension_pool_per_family": 180,
+    "forbidden_query_terms": [
+      "${",
+      "id=",
+      "FATAL",
+      "duplicate",
+      "BITE",
+      "reference",
+      "joinability",
+      "dispersion"
+    ],
+    "h1_pool_per_family": 60,
+    "ignore_code_search_snippets": true,
+    "max_coverage_per_family": 240,
+    "queries": {
+      "dotenv-like": [
+        "filename:.env.example",
+        "filename:.env.sample",
+        "filename:example.env",
+        "filename:sample.env"
+      ],
+      "ini_cfg": [
+        "extension:ini",
+        "extension:cfg",
+        "extension:conf"
+      ],
+      "properties": [
+        "extension:properties"
+      ]
+    },
+    "query_order": "Phase4H freeze order, unchanged"
+  },
+  "do_not_reconsider_h1_rejections": true,
+  "families": [
+    "dotenv-like",
+    "properties",
+    "ini_cfg"
+  ],
+  "h0_commit_sha": "29dd6c91d02edcca6b486e74bac9bdf50259b149",
+  "h0_freeze_blob": "4c48c198456babe2f5d0e652aefe831f8dacd3bc",
+  "h1_commit_sha": "b50e36d2916ff8de7eaae37055fef6bf114d2008",
+  "h1_pool_blob": "7f45295f0ffe2880516f9f8ccbfa2c20b942a002",
+  "h2_commit_sha": "5acaa887725325098c24b637aa09716de464425f",
+  "h2_result_blob": "666eed454c3dba6dd2cfa2a73e5989004380f177",
+  "h5_verdicts": [
+    "PHASE4H2_REALSTRUCT2_AUGMENTED_FROZEN",
+    "PHASE4H2_REALSTRUCT2_AUGMENTED_PARTIAL",
+    "PHASE4H2_REALSTRUCT2_AUGMENTED_BLOCKED"
+  ],
+  "locked_blobs": {
+    "artifacts/phase4c/full-source-provenance.json": "b22d290d1d8f89276c923439b62f5ae1102a9fbb",
+    "artifacts/phase4c/real-holdout.json": "f344bde69d7f963bb78780e967bc59bf639d2942",
+    "artifacts/phase4c/reference-coverage.json": "9d0fd974d72d923f97f7c9dc6f325d7ea1e8a032",
+    "artifacts/phase4d/atom-aware-reference.json": "8092ad6a61c9407b892fcb42fec5dc89f6fe7348",
+    "artifacts/phase4d/measurement-semantics.json": "5a0060138866ed28fca9cb54b5916b03edebea5c",
+    "artifacts/phase4e/full-key-reference.json": "5f3681439d37dd44df2e74299b3c1ad7fc95bce2",
+    "artifacts/phase4f/prospective-comparison.json": "28bfd7ea8b131b72ba55bb3f84a7126f99c96578",
+    "artifacts/phase4g/comparison-accounting.json": "2635401558d27b2a2781ee53ff7465b877f39b37",
+    "artifacts/phase4h/candidate-pool.json": "7f45295f0ffe2880516f9f8ccbfa2c20b942a002",
+    "artifacts/phase4h/realstruct-2.json": "666eed454c3dba6dd2cfa2a73e5989004380f177",
+    "benchmarks/spec/phase4e-full-key-reference-freeze.json": "911a22ff9d210de05ae799fce5c90f09c65c1029",
+    "benchmarks/spec/phase4f-prospective-comparison-freeze.json": "9f4e957af859432036e9d150c85b5066892dad8f",
+    "benchmarks/spec/phase4g-comparison-accounting-freeze.json": "b74b591f61a030134fb35272e20f01bceea295bf",
+    "benchmarks/spec/phase4h-realstruct2-freeze.json": "4c48c198456babe2f5d0e652aefe831f8dacd3bc",
+    "corpora/realstruct-2/manifest.json": "e7c2d2291cdd62c1d6feff59c7d7870db6878350",
+    "corpora/realstruct-2/rejections.json": "a93f49ca54fdae11ddde58d25adaae9ed8db1af5",
+    "src/bite_eval/composition_safety_v2.py": "85560279375b30f737eb3825cce72373be70488e",
+    "src/bite_eval/length_pi_v1.py": "2de74b1b21c466aaa20858a2066e011f14a0fe20",
+    "src/bite_eval/phase4f_metrics.py": "d58a2f3729423d79731cb081e8d64b0204fdfa6f",
+    "src/bite_eval/reference_tokenizer.py": "6f95df67723fe8ee2e572e589f6ca3e864de37bc",
+    "src/bite_ingestion/adapters/realstruct1_adapter_v1.py": "2ef34b0486efb4badcdc29402ef5a9c4dc359565",
+    "src/bite_ingestion/operators/integrate.py": "68e34becd80e7e803f511ec57ea7a23c2aaa1240",
+    "src/bite_ingestion/operators/reduce_v2.py": "d4bafba7dfdd048a0ccad404a8f706202e2157b5",
+    "src/bite_ingestion/operators/untangle.py": "2951b7542f96674930e750e438891ca772b46896",
+    "src/bite_ingestion/policies/conditional_texture_policy_v4.py": "04d46b15424ccbaf02694d7e7ae056b0b6715686",
+    "src/bite_ingestion/policies/conditional_texture_policy_v5.py": "50180c1254efcc0d082c2cb36d2738200af9f8f5",
+    "src/bite_ingestion/policies/projected_actionability_plan_v1.py": "af3737f078a6d91da38999885aea13860350526a",
+    "src/bite_ingestion/profilers/dependency_dispersion_v3.py": "9ec1c46a68d685210898552c879098bf0416e56d",
+    "src/bite_ingestion/profilers/dependency_dispersion_v4.py": "e2dffa51e07af160ff64ab1d2b3983fac69f07be",
+    "src/bite_ingestion/profilers/reference_identity_v1.py": "49dcd367eccdece7a1bd90df0a3f44f0c24ded65",
+    "src/bite_ingestion/profilers/reference_identity_v2.py": "3524097e33a123ad4180ee4818dbf8d4ab980627"
+  },
+  "min_assignments": 10,
+  "n_primary": 18,
+  "n_primary_per_family": 6,
+  "n_secondary_per_family": 2,
+  "n_wave1_primary": 10,
+  "no_arm_execution": true,
+  "no_bite_execution": true,
+  "no_h1_pool_rewrite": true,
+  "no_license_file_rescue": true,
+  "no_license_inference": true,
+  "no_phase4h_rewrite": true,
+  "no_tokenizer_execution": true,
+  "no_xfer3": true,
+  "not_claimed": [
+    "comparison evidence",
+    "confirmatory result",
+    "generalization",
+    "BITE superiority"
+  ],
+  "offline_core_tests": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "premise": "PHASE4H_REALSTRUCT2_PARTIAL",
+  "remaining_primary": {
+    "dotenv-like": 2,
+    "ini_cfg": 3,
+    "properties": 3
+  },
+  "research_conclusion": false,
+  "revision": "phase4h2-acquisition-extension-freeze-v0.1",
+  "schema": "bitebench-phase4h2-acquisition-extension-freeze/v0.1",
+  "secondary_after_family_primary_reaches_6": true,
+  "selection": {
+    "acquisition_design": "two-wave prospective acquisition; wave 2 added after quota shortfall, before any comparison-arm or tokenizer execution",
+    "do_not_replace_wave1_even_if_lower_global_key": true,
+    "key": "SHA256(repository_full_name + '@' + frozen_commit_sha + ':' + path)",
+    "sort_extension_candidates_only": true,
+    "wave1_documents_immutable": true
+  },
+  "unchanged": [
+    "discovery query strings",
+    "license eligibility",
+    "minimum assignments",
+    "secret rejection",
+    "family definitions",
+    "selection-key formula",
+    "annotation grammar",
+    "primary quota",
+    "secondary semantics",
+    "future Phase4I analysis contract"
+  ],
+  "verdict": "PHASE4H2_ACQUISITION_EXTENSION_PROTOCOL_FROZEN",
+  "verdict_rule": {
+    "PHASE4H2_REALSTRUCT2_AUGMENTED_BLOCKED": "protocol leakage, old corpus rewritten, content before H4, arm/tokenizer execution, hand-picking, or frozen drift",
+    "PHASE4H2_REALSTRUCT2_AUGMENTED_FROZEN": "H3 before discovery; H4 pool before new content; wave1 10 preserved; final primary 18 with 6/family; same eligibility; secondary separate; no arms/tokenizer; blobs unchanged; p3f unopened",
+    "PHASE4H2_REALSTRUCT2_AUGMENTED_PARTIAL": "extension pool exhausted or cannot fill original quotas"
+  },
+  "wave1_primary_ids": [
+    "rs2-dotenv-ronakmaheshwari-capital",
+    "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+    "rs2-dotenv-luizomf-dockerswarmp1",
+    "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+    "rs2-props-edson-a-soares-poco_restful_webservice",
+    "rs2-props-aterai-java-swing-tips",
+    "rs2-props-oraopensource-apexbackup",
+    "rs2-ini-ahuacate-pve-medialab",
+    "rs2-ini-genicam-harvesters_gui",
+    "rs2-ini-beluganos-beluganos"
+  ]
+}

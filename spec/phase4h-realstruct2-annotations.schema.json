@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4h-realstruct2-annotations.schema.json",
+  "title": "BITE Phase-4H REALSTRUCT-2 scorer-only annotations v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "independent_of_bite_implementation",
+    "two_pass_whole_document_key_index",
+    "documents"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4h-realstruct2-annotations/v0.1"
+    },
+    "independent_of_bite_implementation": { "type": "boolean", "const": true },
+    "two_pass_whole_document_key_index": { "type": "boolean", "const": true },
+    "documents": { "type": "array" }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3k-structural-redundancy-freeze.schema.json",
+  "title": "BITE Phase-3K structural redundancy protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "generation",
+    "reuse_p3j_surfaces",
+    "p3f_evaluation_holdout_used",
+    "no_threshold",
+    "does_not_overwrite_deterministic_v0_r",
+    "k1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3k-structural-redundancy-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3k-structural-redundancy-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE3K_REDUNDANCY_SENSOR_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "generation": { "type": "string", "const": "p3k" },
+    "reuse_p3j_surfaces": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_threshold": { "type": "boolean", "const": true },
+    "does_not_overwrite_deterministic_v0_r": { "type": "boolean", "const": true },
+    "k1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE3K_REDUNDANCY_SENSOR_READY",
+          "PHASE3K_REDUNDANCY_SENSOR_PARTIAL",
+          "PHASE3K_REDUNDANCY_SENSOR_BLOCKED"
+        ]
+      }
+    }
+  }
+}

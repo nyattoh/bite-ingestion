@@ -1,0 +1,139 @@
+{
+  "adapter_blob": "2ef34b0486efb4badcdc29402ef5a9c4dc359565",
+  "audit_source_ids": [
+    "rs1-dotenv-linkding",
+    "rs1-props-hadoop-log4j",
+    "rs1-ini-oe-bitbake",
+    "rs1-dotenv-koel",
+    "rs1-dotenv-bookstack",
+    "rs1-dotenv-laravel",
+    "rs1-props-ratis-log4j",
+    "rs1-props-kafka-server",
+    "rs1-props-tomcat-logging",
+    "rs1-ini-polybar",
+    "rs1-ini-gogs",
+    "rs1-ini-tegra-common"
+  ],
+  "c0_commit_sha": "8ed272fc7cd0487386656f2be7120b554be7921a",
+  "c0_freeze_blob": "8e7dc9196bb5c98e79198263b0d4eeadc6254ff2",
+  "claim_boundary": "retrospective measurement-semantics audit on REALSTRUCT-1",
+  "d1_verdicts": [
+    "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED",
+    "PHASE4D_MEASUREMENT_SEMANTICS_PARTIAL",
+    "PHASE4D_MEASUREMENT_SEMANTICS_BLOCKED"
+  ],
+  "dev_source_ids": [
+    "rs1-dotenv-linkding",
+    "rs1-props-hadoop-log4j",
+    "rs1-ini-oe-bitbake"
+  ],
+  "eval_source_ids": [
+    "rs1-dotenv-koel",
+    "rs1-dotenv-bookstack",
+    "rs1-dotenv-laravel",
+    "rs1-props-ratis-log4j",
+    "rs1-props-kafka-server",
+    "rs1-props-tomcat-logging",
+    "rs1-ini-polybar",
+    "rs1-ini-gogs",
+    "rs1-ini-tegra-common"
+  ],
+  "locked_bite_blobs": {
+    "src/bite_eval/composition_safety_v2.py": "85560279375b30f737eb3825cce72373be70488e",
+    "src/bite_ingestion/logical_record.py": "c6f8cdd455cbc6814141fdb95458a72cc47b7af0",
+    "src/bite_ingestion/operators/integrate.py": "68e34becd80e7e803f511ec57ea7a23c2aaa1240",
+    "src/bite_ingestion/operators/reduce_v2.py": "d4bafba7dfdd048a0ccad404a8f706202e2157b5",
+    "src/bite_ingestion/operators/untangle.py": "2951b7542f96674930e750e438891ca772b46896",
+    "src/bite_ingestion/policies/conditional_texture_policy_v4.py": "04d46b15424ccbaf02694d7e7ae056b0b6715686",
+    "src/bite_ingestion/policies/projected_actionability_plan_v1.py": "af3737f078a6d91da38999885aea13860350526a",
+    "src/bite_ingestion/profilers/dependency_dispersion_v3.py": "9ec1c46a68d685210898552c879098bf0416e56d",
+    "src/bite_ingestion/profilers/reference_identity_v1.py": "49dcd367eccdece7a1bd90df0a3f44f0c24ded65",
+    "src/bite_ingestion/profilers/structural_redundancy_v2.py": "8960396c9a91872a1bfb0ccdaeae834d872cf12e"
+  },
+  "locked_phase4a_blobs": {
+    "artifacts/phase4a/realstruct-1.json": "7a7b0834e9b66c599492a06dbe116e773eca6320",
+    "benchmarks/spec/phase4a-realstruct1-freeze.json": "6e009fb6cf1cb239b8449e402301be15ffd7ed86",
+    "corpora/realstruct-1/annotations.json": "956da0205dcd034a40413ccf3f728b9897d3c49e",
+    "corpora/realstruct-1/licenses.json": "55eda51460fc8ac02c576c3d956210cda8959c71",
+    "corpora/realstruct-1/manifest.json": "636b7c51d637fdb6ea8cf83546baa7f61bde2ae8",
+    "corpora/realstruct-1/split.json": "2be516a478a683b16847536fbbe24c93ee93cdf1"
+  },
+  "no_baseline_added": true,
+  "no_bite_retune": true,
+  "no_phase4c_rewrite": true,
+  "no_xfer3": true,
+  "not_claimed": [
+    "new holdout result",
+    "real-world generalization",
+    "BITE superiority",
+    "second holdout evaluation",
+    "confirmatory"
+  ],
+  "not_confirmatory": true,
+  "not_second_holdout_evaluation": true,
+  "offline_core_tests": true,
+  "overlay_v2_blob": "0d1388b89bf2c5c2e062472ea2b78a1b1923ad9b",
+  "overlay_v2_sha256": "dfcff8d9117918a56d77d31ee46c32c45b085f39b3337584abfc40fe03d0cab8",
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3q_verdict": "PHASE3Q_XFER2_TRANSFER_FAILED",
+  "phase3s_verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "phase3t_verdict": "PHASE3T_EXACT_REFERENCE_VALIDATED",
+  "phase4a_verdict": "PHASE4A_REAL_CORPUS_FROZEN",
+  "phase4b_eval_harness_blob": "b48ad1f3ab98003f6cd4a1add39127f34a079f8f",
+  "phase4b_evaluation_lock_blob": "9bb0f743f575ba298fdc63414032a2621c28aec2",
+  "phase4b_head_sha": "8dd13d20cc06339ef07811d0d9438f0da8718106",
+  "phase4c_head_sha": "21035872a377e23ad2c5bd01030e312330de005a",
+  "phase4c_preservation": {
+    "forbidden_safety_phrasing": "composition_safety_v2 aggregate ok 9/9",
+    "safety_phrasing": "full-source conservation safety 9/9",
+    "verdict": "PHASE4C_REAL_HOLDOUT_MEASURED"
+  },
+  "phase4c_provenance_blob": "b22d290d1d8f89276c923439b62f5ae1102a9fbb",
+  "phase4c_reference_blob": "9d0fd974d72d923f97f7c9dc6f325d7ea1e8a032",
+  "phase4c_result_blob": "f344bde69d7f963bb78780e967bc59bf639d2942",
+  "premise": "PHASE4C_REAL_HOLDOUT_MEASURED",
+  "research_conclusion": false,
+  "revision": "phase4d-measurement-semantics-freeze-v0.1",
+  "schema": "bitebench-phase4d-measurement-semantics-freeze/v0.1",
+  "t_high_reference": 4,
+  "track_a": {
+    "adjudication": [
+      "source assignment value contains literal ${atom}",
+      "destination assignment key equals atom case-sensitive exact"
+    ],
+    "do_not_assume_ratis_atom_aware_equals_legacy": true,
+    "gold_identity": "(source_line, NAME, dest_line)",
+    "legacy_metric_id": "line_pair_recall_legacy",
+    "legacy_metric_preserved": true,
+    "no_f1": true,
+    "no_winner_score": true,
+    "prediction_identity": "(source_line, atom, dest_line)",
+    "unadjudicated_extra_edges_are_not_fp": true
+  },
+  "track_b": {
+    "discrepancy_targets": [
+      "rs1-ini-polybar",
+      "rs1-ini-gogs"
+    ],
+    "failure_classes": [
+      "scorer_scope_mismatch",
+      "operator_semantic_failure",
+      "full_source_merge_interaction",
+      "other"
+    ],
+    "layer_a": "full_source_conservation_safety",
+    "layer_a_required": [
+      "provenance_completeness == 1",
+      "lineage_recall == 1",
+      "silent_loss == 0",
+      "conservation_untraced == []",
+      "unsupported_lost == 0",
+      "no_unrelated_overmerge == true"
+    ],
+    "layer_b": "composition_operator_checks",
+    "production_operator_code_unchanged": true,
+    "routing_plane_diagnostic": true
+  },
+  "verdict": "PHASE4D_MEASUREMENT_SEMANTICS_PROTOCOL_FROZEN"
+}

@@ -1,0 +1,261 @@
+{
+  "documents": [
+    {
+      "actual_sequence": [],
+      "composition_operator_checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "composition_safety_v2_ok": true,
+      "failed_composition_checks": [],
+      "failure_class": null,
+      "full_source_conservation_safety": true,
+      "source_id": "rs1-dotenv-linkding",
+      "split_role": "development",
+      "unsupported_lost": 0
+    },
+    {
+      "actual_sequence": [
+        "UNTANGLE"
+      ],
+      "composition_operator_checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "composition_safety_v2_ok": true,
+      "failed_composition_checks": [],
+      "failure_class": null,
+      "full_source_conservation_safety": true,
+      "source_id": "rs1-props-hadoop-log4j",
+      "split_role": "development",
+      "unsupported_lost": 0
+    },
+    {
+      "actual_sequence": [
+        "REDUCE_v2"
+      ],
+      "composition_operator_checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "composition_safety_v2_ok": true,
+      "failed_composition_checks": [],
+      "failure_class": null,
+      "full_source_conservation_safety": true,
+      "source_id": "rs1-ini-oe-bitbake",
+      "split_role": "development",
+      "unsupported_lost": 0
+    },
+    {
+      "actual_sequence": [
+        "UNTANGLE"
+      ],
+      "composition_operator_checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "composition_safety_v2_ok": true,
+      "failed_composition_checks": [],
+      "failure_class": null,
+      "full_source_conservation_safety": true,
+      "source_id": "rs1-dotenv-koel",
+      "split_role": "evaluation",
+      "unsupported_lost": 0
+    },
+    {
+      "actual_sequence": [],
+      "composition_operator_checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "composition_safety_v2_ok": true,
+      "failed_composition_checks": [],
+      "failure_class": null,
+      "full_source_conservation_safety": true,
+      "source_id": "rs1-dotenv-bookstack",
+      "split_role": "evaluation",
+      "unsupported_lost": 0
+    },
+    {
+      "actual_sequence": [],
+      "composition_operator_checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "composition_safety_v2_ok": true,
+      "failed_composition_checks": [],
+      "failure_class": null,
+      "full_source_conservation_safety": true,
+      "source_id": "rs1-dotenv-laravel",
+      "split_role": "evaluation",
+      "unsupported_lost": 0
+    },
+    {
+      "actual_sequence": [],
+      "composition_operator_checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "composition_safety_v2_ok": true,
+      "failed_composition_checks": [],
+      "failure_class": null,
+      "full_source_conservation_safety": true,
+      "source_id": "rs1-props-ratis-log4j",
+      "split_role": "evaluation",
+      "unsupported_lost": 0
+    },
+    {
+      "actual_sequence": [],
+      "composition_operator_checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "composition_safety_v2_ok": true,
+      "failed_composition_checks": [],
+      "failure_class": null,
+      "full_source_conservation_safety": true,
+      "source_id": "rs1-props-kafka-server",
+      "split_role": "evaluation",
+      "unsupported_lost": 0
+    },
+    {
+      "actual_sequence": [],
+      "composition_operator_checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "composition_safety_v2_ok": true,
+      "failed_composition_checks": [],
+      "failure_class": null,
+      "full_source_conservation_safety": true,
+      "source_id": "rs1-props-tomcat-logging",
+      "split_role": "evaluation",
+      "unsupported_lost": 0
+    },
+    {
+      "actual_sequence": [
+        "REDUCE_v2"
+      ],
+      "composition_operator_checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": false,
+        "silent_loss": true
+      },
+      "composition_safety_v2_ok": false,
+      "failed_composition_checks": [
+        "reduce_only_logical_duplicates"
+      ],
+      "failure_class": "full_source_merge_interaction",
+      "full_source_conservation_safety": true,
+      "source_id": "rs1-ini-polybar",
+      "split_role": "evaluation",
+      "unsupported_lost": 0
+    },
+    {
+      "actual_sequence": [
+        "REDUCE_v2"
+      ],
+      "composition_operator_checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": false,
+        "silent_loss": true
+      },
+      "composition_safety_v2_ok": false,
+      "failed_composition_checks": [
+        "reduce_only_logical_duplicates"
+      ],
+      "failure_class": "full_source_merge_interaction",
+      "full_source_conservation_safety": true,
+      "source_id": "rs1-ini-gogs",
+      "split_role": "evaluation",
+      "unsupported_lost": 0
+    },
+    {
+      "actual_sequence": [],
+      "composition_operator_checks": {
+        "conservation_untraced": true,
+        "integrate_explicit_join_composite": true,
+        "lineage_recall": true,
+        "no_unrelated_overmerge": true,
+        "provenance_completeness": true,
+        "quarantine_recoverable": true,
+        "reduce_only_logical_duplicates": true,
+        "silent_loss": true
+      },
+      "composition_safety_v2_ok": true,
+      "failed_composition_checks": [],
+      "failure_class": null,
+      "full_source_conservation_safety": true,
+      "source_id": "rs1-ini-tegra-common",
+      "split_role": "evaluation",
+      "unsupported_lost": 0
+    }
+  ],
+  "phase4c_safety_phrasing": "full-source conservation safety 9/9",
+  "revision": "phase4d-measurement-semantics-v0.1",
+  "schema": "bite-phase4d-safety-check-decomposition/v0.1"
+}

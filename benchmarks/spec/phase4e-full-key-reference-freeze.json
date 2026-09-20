@@ -1,0 +1,950 @@
+{
+  "bridge": {
+    "candidate": 4.0,
+    "family": "simple_exact",
+    "identifiers_have_neither_dot_nor_hyphen": true,
+    "not_a_new_calibration": true,
+    "requires_v3_v4_edge_set_n_and_mean_exact": true
+  },
+  "calibration": false,
+  "claim_boundary": "development validation of full-key reference identity v2",
+  "copy_realstruct1_identifiers": false,
+  "cut_forbidden": true,
+  "e1_verdicts": [
+    "PHASE4E_FULL_KEY_REFERENCE_VALIDATED",
+    "PHASE4E_FULL_KEY_REFERENCE_PARTIAL",
+    "PHASE4E_FULL_KEY_REFERENCE_BLOCKED"
+  ],
+  "families": [
+    "simple_exact",
+    "dotted_exact",
+    "hyphenated_exact",
+    "mixed_exact",
+    "neg_prefix",
+    "neg_suffix",
+    "neg_substring",
+    "neg_longer",
+    "neg_hyphen_suffix",
+    "hostname_version",
+    "join_span",
+    "actionability_control"
+  ],
+  "formats": [
+    "key_value",
+    "compact_json",
+    "pretty_json",
+    "reversed_order_json"
+  ],
+  "full_key_grammar": "[A-Za-z_][A-Za-z0-9_]*(?:[.-][A-Za-z0-9_]+)*",
+  "generation": "p4e",
+  "locked_blobs": {
+    "artifacts/phase4c/full-source-provenance.json": "b22d290d1d8f89276c923439b62f5ae1102a9fbb",
+    "artifacts/phase4c/real-holdout.json": "f344bde69d7f963bb78780e967bc59bf639d2942",
+    "artifacts/phase4c/reference-coverage.json": "9d0fd974d72d923f97f7c9dc6f325d7ea1e8a032",
+    "artifacts/phase4d/atom-aware-reference.json": "8092ad6a61c9407b892fcb42fec5dc89f6fe7348",
+    "artifacts/phase4d/measurement-semantics.json": "5a0060138866ed28fca9cb54b5916b03edebea5c",
+    "src/bite_eval/composition_safety_v2.py": "85560279375b30f737eb3825cce72373be70488e",
+    "src/bite_ingestion/operators/integrate.py": "68e34becd80e7e803f511ec57ea7a23c2aaa1240",
+    "src/bite_ingestion/operators/reduce_v2.py": "d4bafba7dfdd048a0ccad404a8f706202e2157b5",
+    "src/bite_ingestion/operators/untangle.py": "2951b7542f96674930e750e438891ca772b46896",
+    "src/bite_ingestion/policies/conditional_texture_policy_v4.py": "04d46b15424ccbaf02694d7e7ae056b0b6715686",
+    "src/bite_ingestion/policies/projected_actionability_plan_v1.py": "af3737f078a6d91da38999885aea13860350526a",
+    "src/bite_ingestion/profilers/dependency_dispersion_v3.py": "9ec1c46a68d685210898552c879098bf0416e56d",
+    "src/bite_ingestion/profilers/reference_identity_v1.py": "49dcd367eccdece7a1bd90df0a3f44f0c24ded65"
+  },
+  "locked_t_high": 4.0,
+  "n_canonical": 20,
+  "n_surfaces": 80,
+  "no_baseline_added": true,
+  "no_mean_only_success": true,
+  "no_operator_semantic_change": true,
+  "no_planner_change": true,
+  "no_realstruct2": true,
+  "no_threshold_grid": true,
+  "no_winner_score": true,
+  "not_claimed": [
+    "new holdout evidence",
+    "real-world generalization",
+    "BITE superiority",
+    "confirmatory",
+    "second holdout evaluation"
+  ],
+  "offline": true,
+  "p3f_evaluation_holdout_used": false,
+  "paid_api": false,
+  "phase3q_verdict": "PHASE3Q_XFER2_TRANSFER_FAILED",
+  "phase3s_verdict": "PHASE3S_REFERENCE_SPECIFICITY_FAILED",
+  "phase3t_verdict": "PHASE3T_EXACT_REFERENCE_VALIDATED",
+  "phase4c_verdict": "PHASE4C_REAL_HOLDOUT_MEASURED",
+  "phase4d_head_sha": "8a585d2f0552541478bca5c691e4c051f5d626f3",
+  "phase4d_verdict": "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED",
+  "planned_cases": [
+    {
+      "bridge": true,
+      "case_id": "p4e-ex-d1",
+      "distance": 1,
+      "family": "simple_exact",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_ex_d1",
+          "cairn_mark_p4e_ex_d1"
+        ],
+        [
+          "cairn_mark_p4e_ex_d1",
+          "weft_p4e_ex_d1"
+        ]
+      ]
+    },
+    {
+      "bridge": true,
+      "case_id": "p4e-ex-d3",
+      "distance": 3,
+      "family": "simple_exact",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_ex_d3",
+          "cairn_mark_p4e_ex_d3"
+        ],
+        [
+          "note_cairn_p4e_ex_d3_00",
+          "scree_p4e_ex_d3_00"
+        ],
+        [
+          "note_cairn_p4e_ex_d3_01",
+          "scree_p4e_ex_d3_01"
+        ],
+        [
+          "cairn_mark_p4e_ex_d3",
+          "weft_p4e_ex_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": true,
+      "case_id": "p4e-ex-d4",
+      "distance": 4,
+      "family": "simple_exact",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_ex_d4",
+          "cairn_mark_p4e_ex_d4"
+        ],
+        [
+          "note_cairn_p4e_ex_d4_00",
+          "scree_p4e_ex_d4_00"
+        ],
+        [
+          "note_cairn_p4e_ex_d4_01",
+          "scree_p4e_ex_d4_01"
+        ],
+        [
+          "note_cairn_p4e_ex_d4_02",
+          "scree_p4e_ex_d4_02"
+        ],
+        [
+          "cairn_mark_p4e_ex_d4",
+          "weft_p4e_ex_d4"
+        ]
+      ]
+    },
+    {
+      "bridge": true,
+      "case_id": "p4e-ex-d9",
+      "distance": 9,
+      "family": "simple_exact",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_ex_d9",
+          "cairn_mark_p4e_ex_d9"
+        ],
+        [
+          "note_cairn_p4e_ex_d9_00",
+          "scree_p4e_ex_d9_00"
+        ],
+        [
+          "note_cairn_p4e_ex_d9_01",
+          "scree_p4e_ex_d9_01"
+        ],
+        [
+          "note_cairn_p4e_ex_d9_02",
+          "scree_p4e_ex_d9_02"
+        ],
+        [
+          "note_cairn_p4e_ex_d9_03",
+          "scree_p4e_ex_d9_03"
+        ],
+        [
+          "note_cairn_p4e_ex_d9_04",
+          "scree_p4e_ex_d9_04"
+        ],
+        [
+          "note_cairn_p4e_ex_d9_05",
+          "scree_p4e_ex_d9_05"
+        ],
+        [
+          "note_cairn_p4e_ex_d9_06",
+          "scree_p4e_ex_d9_06"
+        ],
+        [
+          "note_cairn_p4e_ex_d9_07",
+          "scree_p4e_ex_d9_07"
+        ],
+        [
+          "cairn_mark_p4e_ex_d9",
+          "weft_p4e_ex_d9"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-dot-d1",
+      "distance": 1,
+      "family": "dotted_exact",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_dot_d1",
+          "${ridge.cairn.atlas_p4e_dot_d1}"
+        ],
+        [
+          "ridge.cairn.atlas_p4e_dot_d1",
+          "weft_p4e_dot_d1"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-dot-d3",
+      "distance": 3,
+      "family": "dotted_exact",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 3.0,
+      "intended_reference_edges": [
+        [
+          0,
+          3
+        ]
+      ],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_dot_d3",
+          "${ridge.cairn.atlas_p4e_dot_d3}"
+        ],
+        [
+          "note_cairn_p4e_dot_d3_00",
+          "scree_p4e_dot_d3_00"
+        ],
+        [
+          "note_cairn_p4e_dot_d3_01",
+          "scree_p4e_dot_d3_01"
+        ],
+        [
+          "ridge.cairn.atlas_p4e_dot_d3",
+          "weft_p4e_dot_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-dot-d4",
+      "distance": 4,
+      "family": "dotted_exact",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 4.0,
+      "intended_reference_edges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "n_records": 5,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_dot_d4",
+          "${ridge.cairn.atlas_p4e_dot_d4}"
+        ],
+        [
+          "note_cairn_p4e_dot_d4_00",
+          "scree_p4e_dot_d4_00"
+        ],
+        [
+          "note_cairn_p4e_dot_d4_01",
+          "scree_p4e_dot_d4_01"
+        ],
+        [
+          "note_cairn_p4e_dot_d4_02",
+          "scree_p4e_dot_d4_02"
+        ],
+        [
+          "ridge.cairn.atlas_p4e_dot_d4",
+          "weft_p4e_dot_d4"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-dot-d9",
+      "distance": 9,
+      "family": "dotted_exact",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_dot_d9",
+          "${ridge.cairn.atlas_p4e_dot_d9}"
+        ],
+        [
+          "note_cairn_p4e_dot_d9_00",
+          "scree_p4e_dot_d9_00"
+        ],
+        [
+          "note_cairn_p4e_dot_d9_01",
+          "scree_p4e_dot_d9_01"
+        ],
+        [
+          "note_cairn_p4e_dot_d9_02",
+          "scree_p4e_dot_d9_02"
+        ],
+        [
+          "note_cairn_p4e_dot_d9_03",
+          "scree_p4e_dot_d9_03"
+        ],
+        [
+          "note_cairn_p4e_dot_d9_04",
+          "scree_p4e_dot_d9_04"
+        ],
+        [
+          "note_cairn_p4e_dot_d9_05",
+          "scree_p4e_dot_d9_05"
+        ],
+        [
+          "note_cairn_p4e_dot_d9_06",
+          "scree_p4e_dot_d9_06"
+        ],
+        [
+          "note_cairn_p4e_dot_d9_07",
+          "scree_p4e_dot_d9_07"
+        ],
+        [
+          "ridge.cairn.atlas_p4e_dot_d9",
+          "weft_p4e_dot_d9"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-hyp-d1",
+      "distance": 1,
+      "family": "hyphenated_exact",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_hyp_d1",
+          "ware-kiln_p4e_hyp_d1"
+        ],
+        [
+          "ware-kiln_p4e_hyp_d1",
+          "weft_p4e_hyp_d1"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-hyp-d9",
+      "distance": 9,
+      "family": "hyphenated_exact",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_hyp_d9",
+          "ware-kiln_p4e_hyp_d9"
+        ],
+        [
+          "note_cairn_p4e_hyp_d9_00",
+          "scree_p4e_hyp_d9_00"
+        ],
+        [
+          "note_cairn_p4e_hyp_d9_01",
+          "scree_p4e_hyp_d9_01"
+        ],
+        [
+          "note_cairn_p4e_hyp_d9_02",
+          "scree_p4e_hyp_d9_02"
+        ],
+        [
+          "note_cairn_p4e_hyp_d9_03",
+          "scree_p4e_hyp_d9_03"
+        ],
+        [
+          "note_cairn_p4e_hyp_d9_04",
+          "scree_p4e_hyp_d9_04"
+        ],
+        [
+          "note_cairn_p4e_hyp_d9_05",
+          "scree_p4e_hyp_d9_05"
+        ],
+        [
+          "note_cairn_p4e_hyp_d9_06",
+          "scree_p4e_hyp_d9_06"
+        ],
+        [
+          "note_cairn_p4e_hyp_d9_07",
+          "scree_p4e_hyp_d9_07"
+        ],
+        [
+          "ware-kiln_p4e_hyp_d9",
+          "weft_p4e_hyp_d9"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-mix-d1",
+      "distance": 1,
+      "family": "mixed_exact",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 1.0,
+      "intended_reference_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "n_records": 2,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_mix_d1",
+          "${ridge.mark-west_p4e_mix_d1}"
+        ],
+        [
+          "ridge.mark-west_p4e_mix_d1",
+          "weft_p4e_mix_d1"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-mix-d9",
+      "distance": 9,
+      "family": "mixed_exact",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": true,
+      "intended_mean": 9.0,
+      "intended_reference_edges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "n_records": 10,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_mix_d9",
+          "${ridge.mark-west_p4e_mix_d9}"
+        ],
+        [
+          "note_cairn_p4e_mix_d9_00",
+          "scree_p4e_mix_d9_00"
+        ],
+        [
+          "note_cairn_p4e_mix_d9_01",
+          "scree_p4e_mix_d9_01"
+        ],
+        [
+          "note_cairn_p4e_mix_d9_02",
+          "scree_p4e_mix_d9_02"
+        ],
+        [
+          "note_cairn_p4e_mix_d9_03",
+          "scree_p4e_mix_d9_03"
+        ],
+        [
+          "note_cairn_p4e_mix_d9_04",
+          "scree_p4e_mix_d9_04"
+        ],
+        [
+          "note_cairn_p4e_mix_d9_05",
+          "scree_p4e_mix_d9_05"
+        ],
+        [
+          "note_cairn_p4e_mix_d9_06",
+          "scree_p4e_mix_d9_06"
+        ],
+        [
+          "note_cairn_p4e_mix_d9_07",
+          "scree_p4e_mix_d9_07"
+        ],
+        [
+          "ridge.mark-west_p4e_mix_d9",
+          "weft_p4e_mix_d9"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-npr-d3",
+      "distance": 3,
+      "family": "neg_prefix",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_npr_d3",
+          "ridge.cairn"
+        ],
+        [
+          "note_cairn_p4e_npr_d3_00",
+          "scree_p4e_npr_d3_00"
+        ],
+        [
+          "note_cairn_p4e_npr_d3_01",
+          "scree_p4e_npr_d3_01"
+        ],
+        [
+          "ridge.cairn.atlas",
+          "weft_p4e_npr_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-nsf-d3",
+      "distance": 3,
+      "family": "neg_suffix",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_nsf_d3",
+          "cairn.atlas"
+        ],
+        [
+          "note_cairn_p4e_nsf_d3_00",
+          "scree_p4e_nsf_d3_00"
+        ],
+        [
+          "note_cairn_p4e_nsf_d3_01",
+          "scree_p4e_nsf_d3_01"
+        ],
+        [
+          "ridge.cairn.atlas",
+          "weft_p4e_nsf_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-nsb-d3",
+      "distance": 3,
+      "family": "neg_substring",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_nsb_d3",
+          "cairn"
+        ],
+        [
+          "note_cairn_p4e_nsb_d3_00",
+          "scree_p4e_nsb_d3_00"
+        ],
+        [
+          "note_cairn_p4e_nsb_d3_01",
+          "scree_p4e_nsb_d3_01"
+        ],
+        [
+          "ridge.cairn.atlas",
+          "weft_p4e_nsb_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-nlg-d3",
+      "distance": 3,
+      "family": "neg_longer",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_nlg_d3",
+          "volt.bus.spare"
+        ],
+        [
+          "note_cairn_p4e_nlg_d3_00",
+          "scree_p4e_nlg_d3_00"
+        ],
+        [
+          "note_cairn_p4e_nlg_d3_01",
+          "scree_p4e_nlg_d3_01"
+        ],
+        [
+          "volt.bus",
+          "weft_p4e_nlg_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-nhs-d3",
+      "distance": 3,
+      "family": "neg_hyphen_suffix",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "src_ridge_p4e_nhs_d3",
+          "kiln"
+        ],
+        [
+          "note_cairn_p4e_nhs_d3_00",
+          "scree_p4e_nhs_d3_00"
+        ],
+        [
+          "note_cairn_p4e_nhs_d3_01",
+          "scree_p4e_nhs_d3_01"
+        ],
+        [
+          "ware-kiln",
+          "weft_p4e_nhs_d3"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-hst-d3",
+      "distance": 3,
+      "family": "hostname_version",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "note_cairn_p4e_hst_d3_00",
+          "maps.atlas.net"
+        ],
+        [
+          "note_cairn_p4e_hst_d3_01",
+          "rel.v2.4.1"
+        ],
+        [
+          "note_cairn_p4e_hst_d3_02",
+          "scree.local"
+        ],
+        [
+          "src_ridge_p4e_hst_d3",
+          "Build.1.0.0"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-jsn-d3",
+      "distance": 3,
+      "family": "join_span",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 4,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "mate_a_p4e_jsn_d3",
+          "bobbin_a_p4e_jsn_d3 id=spool_p4e_jsn_d3"
+        ],
+        [
+          "mate_b_p4e_jsn_d3",
+          "bobbin_b_p4e_jsn_d3 key=spool_p4e_jsn_d3"
+        ],
+        [
+          "spool_p4e_jsn_d3",
+          "kept_p4e_jsn_d3"
+        ],
+        [
+          "note_cairn_p4e_jsn_d3_00",
+          "scree_p4e_jsn_d3_00"
+        ]
+      ]
+    },
+    {
+      "bridge": false,
+      "case_id": "p4e-act-d3",
+      "distance": 3,
+      "family": "actionability_control",
+      "formats": [
+        "key_value",
+        "compact_json",
+        "pretty_json",
+        "reversed_order_json"
+      ],
+      "gate_expected": false,
+      "intended_mean": 0.0,
+      "intended_reference_edges": [],
+      "n_records": 6,
+      "policy_sequence_expected": [],
+      "records": [
+        [
+          "copy_reed_p4e_act_d3",
+          "same_reed_p4e_act_d3_row"
+        ],
+        [
+          "copy_reed_p4e_act_d3",
+          "same_reed_p4e_act_d3_row"
+        ],
+        [
+          "alert_p4e_act_d3",
+          "shuttle jam FATAL"
+        ],
+        [
+          "mate_a_p4e_act_d3",
+          "bobbin_a_p4e_act_d3 id=spool_p4e_act_d3"
+        ],
+        [
+          "mate_b_p4e_act_d3",
+          "bobbin_b_p4e_act_d3 id=spool_p4e_act_d3"
+        ],
+        [
+          "src_ridge_p4e_act_d3",
+          "maps.atlas.net"
+        ]
+      ]
+    }
+  ],
+  "premise": "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED",
+  "primary_truth": "scorer-only intended_reference_edges; observed undirected set must match exactly",
+  "relation_contract": {
+    "chain_span": "evaluator-validated reachability replacement, not new semantics",
+    "dollar_brace_not_the_only_relation": true,
+    "edge": "exact source full identity == exact target full identity",
+    "join_mask": "id=<token> and key=<token> in values",
+    "keep_reference_identity_v1": true,
+    "no_case_folding": true,
+    "no_component_identities": true,
+    "no_prefix_suffix_substring_fuzzy": true,
+    "source": "maximal full-key identifiers from masked value",
+    "target": "complete logical key when it matches full-key grammar"
+  },
+  "repair_target": "preserve_exact_identity_for_dotted_and_hyphenated_full_keys",
+  "research_conclusion": false,
+  "revision": "phase4e-full-key-reference-freeze-v0.1",
+  "schema": "bitebench-phase4e-full-key-reference-freeze/v0.1",
+  "secondary_realstruct1": {
+    "not_confirmatory": true,
+    "not_generalization": true,
+    "not_holdout": true,
+    "not_primary_pass_criterion": true,
+    "role": "development / retrospective diagnostic"
+  },
+  "synthetic": true,
+  "verdict": "PHASE4E_FULL_KEY_REFERENCE_PROTOCOL_FROZEN"
+}

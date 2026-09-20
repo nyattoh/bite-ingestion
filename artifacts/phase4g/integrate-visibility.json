@@ -1,0 +1,209 @@
+{
+  "documents": [
+    {
+      "case_id": "p4g-pass-through",
+      "expected_visible_indices": [
+        0,
+        1
+      ],
+      "family": "pass_through",
+      "n_visible": 2,
+      "observed_visible_ids": [
+        "p4g-pass-through-s0001",
+        "p4g-pass-through-s0002"
+      ],
+      "raw_sha256": "de35786338fc1e6f3ff9dbbfb003b591dfac5b38231d43236a00f463d8fa3c4e",
+      "reconstruct_ok": true,
+      "reconstruct_sha256": "de35786338fc1e6f3ff9dbbfb003b591dfac5b38231d43236a00f463d8fa3c4e",
+      "recovery_bundle_bytes": 250,
+      "recovery_bundle_tokens": 75,
+      "sequence": [],
+      "visibility_ok": true
+    },
+    {
+      "case_id": "p4g-reduce-duplicate",
+      "expected_visible_indices": [
+        0
+      ],
+      "family": "reduce_duplicate",
+      "n_visible": 1,
+      "observed_visible_ids": [
+        "p4g-reduce-duplicate-s0001"
+      ],
+      "raw_sha256": "21ba49871e9810d49bf19aecbf2bfce45cbddd010cbbdf40bbdce149cae30ea9",
+      "reconstruct_ok": true,
+      "reconstruct_sha256": "21ba49871e9810d49bf19aecbf2bfce45cbddd010cbbdf40bbdce149cae30ea9",
+      "recovery_bundle_bytes": 247,
+      "recovery_bundle_tokens": 78,
+      "sequence": [
+        "REDUCE_v2"
+      ],
+      "visibility_ok": true
+    },
+    {
+      "case_id": "p4g-untangle-quarantine",
+      "expected_visible_indices": [
+        0
+      ],
+      "family": "untangle_quarantine",
+      "n_visible": 1,
+      "observed_visible_ids": [
+        "p4g-untangle-quarantine-s0001"
+      ],
+      "raw_sha256": "538fe5b2e2ff277f0e092f646e7a268353e5038f6e04c7366b88faa6b9d42cbe",
+      "reconstruct_ok": true,
+      "reconstruct_sha256": "538fe5b2e2ff277f0e092f646e7a268353e5038f6e04c7366b88faa6b9d42cbe",
+      "recovery_bundle_bytes": 260,
+      "recovery_bundle_tokens": 84,
+      "sequence": [
+        "UNTANGLE"
+      ],
+      "visibility_ok": true
+    },
+    {
+      "case_id": "p4g-integrate-2way",
+      "expected_visible_indices": [
+        0,
+        1
+      ],
+      "family": "integrate_2way",
+      "n_visible": 2,
+      "observed_visible_ids": [
+        "p4g-integrate-2way-s0001",
+        "p4g-integrate-2way-s0002"
+      ],
+      "raw_sha256": "0de2112edf811dc31c093be6ad60437a39c1bd375c6062d741b8468aee487874",
+      "reconstruct_ok": true,
+      "reconstruct_sha256": "0de2112edf811dc31c093be6ad60437a39c1bd375c6062d741b8468aee487874",
+      "recovery_bundle_bytes": 254,
+      "recovery_bundle_tokens": 81,
+      "sequence": [
+        "INTEGRATE"
+      ],
+      "visibility_ok": true
+    },
+    {
+      "case_id": "p4g-integrate-3way",
+      "expected_visible_indices": [
+        0,
+        1,
+        2
+      ],
+      "family": "integrate_3way",
+      "n_visible": 3,
+      "observed_visible_ids": [
+        "p4g-integrate-3way-s0001",
+        "p4g-integrate-3way-s0002",
+        "p4g-integrate-3way-s0003"
+      ],
+      "raw_sha256": "4cc67cba09054e086d4a4a41271019923b34c4c3559f225468d12cc71d3bfba5",
+      "reconstruct_ok": true,
+      "reconstruct_sha256": "4cc67cba09054e086d4a4a41271019923b34c4c3559f225468d12cc71d3bfba5",
+      "recovery_bundle_bytes": 344,
+      "recovery_bundle_tokens": 111,
+      "sequence": [
+        "INTEGRATE"
+      ],
+      "visibility_ok": true
+    },
+    {
+      "case_id": "p4g-reduce-then-integrate",
+      "expected_visible_indices": [
+        0,
+        2
+      ],
+      "family": "reduce_then_integrate",
+      "n_visible": 2,
+      "observed_visible_ids": [
+        "p4g-reduce-then-integrate-s0001",
+        "p4g-reduce-then-integrate-s0003"
+      ],
+      "raw_sha256": "489b8dd779d0598a3864e6c6745165601798e04036067227e138a16c60ee3409",
+      "reconstruct_ok": true,
+      "reconstruct_sha256": "489b8dd779d0598a3864e6c6745165601798e04036067227e138a16c60ee3409",
+      "recovery_bundle_bytes": 360,
+      "recovery_bundle_tokens": 115,
+      "sequence": [
+        "REDUCE_v2",
+        "INTEGRATE"
+      ],
+      "visibility_ok": true
+    },
+    {
+      "case_id": "p4g-untangle-then-integrate",
+      "expected_visible_indices": [
+        0,
+        2
+      ],
+      "family": "untangle_then_integrate",
+      "n_visible": 2,
+      "observed_visible_ids": [
+        "p4g-untangle-then-integrate-s0001",
+        "p4g-untangle-then-integrate-s0003"
+      ],
+      "raw_sha256": "d577b29033ec029fbfc3f7cc1b914b6df0c27bb1f8633370539e348a7715a476",
+      "reconstruct_ok": true,
+      "reconstruct_sha256": "d577b29033ec029fbfc3f7cc1b914b6df0c27bb1f8633370539e348a7715a476",
+      "recovery_bundle_bytes": 359,
+      "recovery_bundle_tokens": 116,
+      "sequence": [
+        "UNTANGLE",
+        "INTEGRATE"
+      ],
+      "visibility_ok": true
+    },
+    {
+      "case_id": "p4g-neg-partial-text",
+      "expected_visible_indices": [],
+      "family": "neg_partial_text",
+      "n_visible": 0,
+      "observed_visible_ids": [],
+      "raw_sha256": "5abc30adbc7149d641656fca0b84396391efacd2d579ba922de267d754077694",
+      "reconstruct_ok": true,
+      "reconstruct_sha256": "5abc30adbc7149d641656fca0b84396391efacd2d579ba922de267d754077694",
+      "recovery_bundle_bytes": 160,
+      "recovery_bundle_tokens": 49,
+      "sequence": [],
+      "visibility_ok": true
+    },
+    {
+      "case_id": "p4g-neg-lineage-without-text",
+      "expected_visible_indices": [],
+      "family": "neg_lineage_without_text",
+      "n_visible": 0,
+      "observed_visible_ids": [],
+      "raw_sha256": "32635aaa7e16e9e743ba1b616db4b6271f859d8573c8220039a5a96b1a06868b",
+      "reconstruct_ok": true,
+      "reconstruct_sha256": "32635aaa7e16e9e743ba1b616db4b6271f859d8573c8220039a5a96b1a06868b",
+      "recovery_bundle_bytes": 253,
+      "recovery_bundle_tokens": 82,
+      "sequence": [],
+      "visibility_ok": true
+    },
+    {
+      "case_id": "p4g-neg-text-without-lineage",
+      "expected_visible_indices": [],
+      "family": "neg_text_without_lineage",
+      "n_visible": 0,
+      "observed_visible_ids": [],
+      "raw_sha256": "32635aaa7e16e9e743ba1b616db4b6271f859d8573c8220039a5a96b1a06868b",
+      "reconstruct_ok": true,
+      "reconstruct_sha256": "32635aaa7e16e9e743ba1b616db4b6271f859d8573c8220039a5a96b1a06868b",
+      "recovery_bundle_bytes": 253,
+      "recovery_bundle_tokens": 82,
+      "sequence": [],
+      "visibility_ok": true
+    }
+  ],
+  "families": [
+    "integrate_2way",
+    "integrate_3way",
+    "reduce_then_integrate",
+    "untangle_then_integrate",
+    "neg_partial_text",
+    "neg_lineage_without_text",
+    "neg_text_without_lineage"
+  ],
+  "primary_for_track_b": true,
+  "schema": "bite-phase4g-integrate-visibility/v0.1"
+}

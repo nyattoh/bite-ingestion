@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4f-prospective-comparison-freeze.schema.json",
+  "title": "BITE Phase-4F prospective comparison protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "phase4e_head_sha",
+    "p3f_evaluation_holdout_used",
+    "no_realstruct2",
+    "no_realstruct2_acquisition",
+    "no_bite_retune_after_f0",
+    "no_winner_score",
+    "t_high_reference",
+    "arm_order",
+    "tokenizer_reference",
+    "f1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase4f-prospective-comparison-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4f-prospective-comparison-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE4F_COMPARISON_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE4E_FULL_KEY_REFERENCE_VALIDATED"
+    },
+    "phase4e_head_sha": {
+      "type": "string",
+      "const": "03bc883b1e3ef0d1ab0c0332f544ce8c82613bfd"
+    },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_realstruct2": { "type": "boolean", "const": true },
+    "no_realstruct2_acquisition": { "type": "boolean", "const": true },
+    "no_bite_retune_after_f0": { "type": "boolean", "const": true },
+    "no_winner_score": { "type": "boolean", "const": true },
+    "t_high_reference": { "type": "integer", "const": 4 },
+    "arm_order": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "tokenizer_reference": { "type": "object" },
+    "f1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE4F_COMPARISON_PROTOCOL_READY",
+          "PHASE4F_COMPARISON_PROTOCOL_PARTIAL",
+          "PHASE4F_COMPARISON_PROTOCOL_BLOCKED"
+        ]
+      }
+    }
+  }
+}

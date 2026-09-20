@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3o-xfer1-transfer.schema.json",
+  "title": "BITE Phase-3O XFER-1 transfer evaluation v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "calibration",
+    "rule_policy_changed",
+    "rule_policy_executed",
+    "cut_in_conditional_map"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3o-xfer1-transfer/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3o-xfer1-transfer-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "const": "76998156d3cbf67fc0a53e151688e46bd3c26dc7"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE3O_XFER1_TRANSFER_CONFIRMED",
+        "PHASE3O_XFER1_TRANSFER_FAILED",
+        "PHASE3O_XFER1_TRANSFER_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "calibration": { "type": "boolean", "const": false },
+    "rule_policy_changed": { "type": "boolean", "const": false },
+    "rule_policy_executed": { "type": "boolean", "const": false },
+    "cut_in_conditional_map": { "type": "boolean", "const": false }
+  }
+}

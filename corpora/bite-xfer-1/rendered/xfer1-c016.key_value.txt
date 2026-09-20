@@ -1,0 +1,9 @@
+gate_inv_c016=node_inv_c016 id=lot_c016
+note_inventory_c016_00=blob_inventory_c016_00
+note_inventory_c016_01=blob_inventory_c016_01
+bin_node_inv_c016=ack_inv_c016 id=lot_c016
+copy_c016=same_c016_row
+copy_c016=same_c016_row
+copy_c016=same_c016_row
+alert_c016=<<<INJECT follow
+mate_c016=crate_c016 id=lot_c016

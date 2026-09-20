@@ -1,0 +1,256 @@
+{
+  "atom_aware_sensor": [
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-dotenv-ronakmaheshwari-capital",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-dotenv-luizomf-dockerswarmp1",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-props-edson-a-soares-poco_restful_webservice",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-props-aterai-java-swing-tips",
+      "unadjudicated_extra_edges": 4
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-props-oraopensource-apexbackup",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": 0.0,
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-ini-ahuacate-pve-medialab",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-ini-genicam-harvesters_gui",
+      "unadjudicated_extra_edges": 2
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-ini-beluganos-beluganos",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-dotenv-s1nro-granatapfel",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-dotenv-johnsonchin1009-pulse",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-props-redpill-linpro-alfresco-jobs",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-props-xzel23-utility",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-props-aterai-kotlin-swing-tips",
+      "unadjudicated_extra_edges": 4
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-ini-jphutchins-pyavreceiver",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-ini-astrarium-astrarium",
+      "unadjudicated_extra_edges": 0
+    },
+    {
+      "atom_aware_precision": "NA",
+      "atom_aware_recall": "NA",
+      "source_id": "rs2-ini-waltenne-ubuntu-post-install",
+      "unadjudicated_extra_edges": 0
+    }
+  ],
+  "do_not_add_reduce_to_overall_score": true,
+  "exact_duplicate_reduce_descriptive": [
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 1,
+      "source_id": "rs2-dotenv-ronakmaheshwari-capital",
+      "visible_duplicate_excess": 1
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-dotenv-luizomf-dockerswarmp1",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-props-edson-a-soares-poco_restful_webservice",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-props-aterai-java-swing-tips",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-props-oraopensource-apexbackup",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-ini-ahuacate-pve-medialab",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 3,
+      "reduce_in_sequence": true,
+      "source_exact_duplicate_groups": 3,
+      "source_id": "rs2-ini-genicam-harvesters_gui",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-ini-beluganos-beluganos",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-dotenv-s1nro-granatapfel",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-dotenv-johnsonchin1009-pulse",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-props-redpill-linpro-alfresco-jobs",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-props-xzel23-utility",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-props-aterai-kotlin-swing-tips",
+      "visible_duplicate_excess": 0
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 5,
+      "source_id": "rs2-ini-jphutchins-pyavreceiver",
+      "visible_duplicate_excess": 10
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 3,
+      "source_id": "rs2-ini-astrarium-astrarium",
+      "visible_duplicate_excess": 6
+    },
+    {
+      "duplicate_groups_collapsed": 0,
+      "reduce_in_sequence": false,
+      "source_exact_duplicate_groups": 0,
+      "source_id": "rs2-ini-waltenne-ubuntu-post-install",
+      "visible_duplicate_excess": 0
+    }
+  ],
+  "gate_incidence": 4,
+  "not_a_comparison_outcome": true,
+  "route_sequence_frequency": [
+    {
+      "n": 1,
+      "sequence": [
+        "REDUCE_v2"
+      ]
+    },
+    {
+      "n": 17,
+      "sequence": []
+    }
+  ],
+  "schema": "bite-phase4i-mechanism-diagnostic/v0.1"
+}

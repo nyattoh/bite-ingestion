@@ -1,0 +1,528 @@
+{
+  "do_not_combine_with_visible_cost": true,
+  "documents": [
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-dotenv-ronakmaheshwari-capital"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 3156,
+          "recovery_bundle_tokens": 933,
+          "recovery_content_bytes": 759,
+          "recovery_metadata_bytes": 2386
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 3156,
+          "recovery_bundle_tokens": 933,
+          "recovery_content_bytes": 759,
+          "recovery_metadata_bytes": 2386
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 3156,
+          "recovery_bundle_tokens": 933,
+          "recovery_content_bytes": 759,
+          "recovery_metadata_bytes": 2386
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-dotenv-theafroofdoom-omegaflowey-minecraft-remastered"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 4827,
+          "recovery_bundle_tokens": 1697,
+          "recovery_content_bytes": 1332,
+          "recovery_metadata_bytes": 3484
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 4827,
+          "recovery_bundle_tokens": 1697,
+          "recovery_content_bytes": 1332,
+          "recovery_metadata_bytes": 3484
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 4827,
+          "recovery_bundle_tokens": 1697,
+          "recovery_content_bytes": 1332,
+          "recovery_metadata_bytes": 3484
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-dotenv-luizomf-dockerswarmp1"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 5258,
+          "recovery_bundle_tokens": 1464,
+          "recovery_content_bytes": 1157,
+          "recovery_metadata_bytes": 4090
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 5258,
+          "recovery_bundle_tokens": 1464,
+          "recovery_content_bytes": 1157,
+          "recovery_metadata_bytes": 4090
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 5258,
+          "recovery_bundle_tokens": 1464,
+          "recovery_content_bytes": 1157,
+          "recovery_metadata_bytes": 4090
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-dotenv-tradermonty-hermes-trading-research-agent-work-package"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 1575,
+          "recovery_bundle_tokens": 486,
+          "recovery_content_bytes": 11,
+          "recovery_metadata_bytes": 1553
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 1575,
+          "recovery_bundle_tokens": 486,
+          "recovery_content_bytes": 11,
+          "recovery_metadata_bytes": 1553
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 1575,
+          "recovery_bundle_tokens": 486,
+          "recovery_content_bytes": 11,
+          "recovery_metadata_bytes": 1553
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-props-edson-a-soares-poco_restful_webservice"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 6528,
+          "recovery_bundle_tokens": 2167,
+          "recovery_content_bytes": 249,
+          "recovery_metadata_bytes": 6268
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 6528,
+          "recovery_bundle_tokens": 2167,
+          "recovery_content_bytes": 249,
+          "recovery_metadata_bytes": 6268
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 6528,
+          "recovery_bundle_tokens": 2167,
+          "recovery_content_bytes": 249,
+          "recovery_metadata_bytes": 6268
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-props-aterai-java-swing-tips"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 4141,
+          "recovery_bundle_tokens": 1196,
+          "recovery_content_bytes": 1162,
+          "recovery_metadata_bytes": 2968
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 4141,
+          "recovery_bundle_tokens": 1196,
+          "recovery_content_bytes": 1162,
+          "recovery_metadata_bytes": 2968
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 4141,
+          "recovery_bundle_tokens": 1196,
+          "recovery_content_bytes": 1162,
+          "recovery_metadata_bytes": 2968
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-props-oraopensource-apexbackup"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 17624,
+          "recovery_bundle_tokens": 5853,
+          "recovery_content_bytes": 5441,
+          "recovery_metadata_bytes": 12172
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 17624,
+          "recovery_bundle_tokens": 5853,
+          "recovery_content_bytes": 5441,
+          "recovery_metadata_bytes": 12172
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 17624,
+          "recovery_bundle_tokens": 5853,
+          "recovery_content_bytes": 5441,
+          "recovery_metadata_bytes": 12172
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-ini-ahuacate-pve-medialab"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 5365,
+          "recovery_bundle_tokens": 1743,
+          "recovery_content_bytes": 1216,
+          "recovery_metadata_bytes": 4138
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 5445,
+          "recovery_bundle_tokens": 1767,
+          "recovery_content_bytes": 1116,
+          "recovery_metadata_bytes": 4318
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 5491,
+          "recovery_bundle_tokens": 1787,
+          "recovery_content_bytes": 1234,
+          "recovery_metadata_bytes": 4246
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-ini-genicam-harvesters_gui"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 5234,
+          "recovery_bundle_tokens": 1673,
+          "recovery_content_bytes": 871,
+          "recovery_metadata_bytes": 4352
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 5234,
+          "recovery_bundle_tokens": 1673,
+          "recovery_content_bytes": 871,
+          "recovery_metadata_bytes": 4352
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 5234,
+          "recovery_bundle_tokens": 1673,
+          "recovery_content_bytes": 871,
+          "recovery_metadata_bytes": 4352
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-ini-beluganos-beluganos"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-dotenv-s1nro-granatapfel"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 3302,
+          "recovery_bundle_tokens": 1077,
+          "recovery_content_bytes": 172,
+          "recovery_metadata_bytes": 3119
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 3302,
+          "recovery_bundle_tokens": 1077,
+          "recovery_content_bytes": 172,
+          "recovery_metadata_bytes": 3119
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 3302,
+          "recovery_bundle_tokens": 1077,
+          "recovery_content_bytes": 172,
+          "recovery_metadata_bytes": 3119
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-dotenv-johnsonchin1009-pulse"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 9924,
+          "recovery_bundle_tokens": 3106,
+          "recovery_content_bytes": 2370,
+          "recovery_metadata_bytes": 7543
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 9924,
+          "recovery_bundle_tokens": 3106,
+          "recovery_content_bytes": 2370,
+          "recovery_metadata_bytes": 7543
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 9924,
+          "recovery_bundle_tokens": 3106,
+          "recovery_content_bytes": 2370,
+          "recovery_metadata_bytes": 7543
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-props-redpill-linpro-alfresco-jobs"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 2680,
+          "recovery_bundle_tokens": 867,
+          "recovery_content_bytes": 383,
+          "recovery_metadata_bytes": 2286
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 2680,
+          "recovery_bundle_tokens": 867,
+          "recovery_content_bytes": 383,
+          "recovery_metadata_bytes": 2286
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 2680,
+          "recovery_bundle_tokens": 867,
+          "recovery_content_bytes": 383,
+          "recovery_metadata_bytes": 2286
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-props-xzel23-utility"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 6627,
+          "recovery_bundle_tokens": 2220,
+          "recovery_content_bytes": 400,
+          "recovery_metadata_bytes": 6216
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 6627,
+          "recovery_bundle_tokens": 2220,
+          "recovery_content_bytes": 400,
+          "recovery_metadata_bytes": 6216
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 6627,
+          "recovery_bundle_tokens": 2220,
+          "recovery_content_bytes": 400,
+          "recovery_metadata_bytes": 6216
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-props-aterai-kotlin-swing-tips"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 3197,
+          "recovery_bundle_tokens": 1063,
+          "recovery_content_bytes": 414,
+          "recovery_metadata_bytes": 2772
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 3197,
+          "recovery_bundle_tokens": 1063,
+          "recovery_content_bytes": 414,
+          "recovery_metadata_bytes": 2772
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 3197,
+          "recovery_bundle_tokens": 1063,
+          "recovery_content_bytes": 414,
+          "recovery_metadata_bytes": 2772
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-ini-jphutchins-pyavreceiver"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 12790,
+          "recovery_bundle_tokens": 4301,
+          "recovery_content_bytes": 981,
+          "recovery_metadata_bytes": 11798
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 12790,
+          "recovery_bundle_tokens": 4301,
+          "recovery_content_bytes": 981,
+          "recovery_metadata_bytes": 11798
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 12790,
+          "recovery_bundle_tokens": 4301,
+          "recovery_content_bytes": 981,
+          "recovery_metadata_bytes": 11798
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-ini-astrarium-astrarium"
+    },
+    {
+      "arms": {
+        "BITE_v5": {
+          "recovery_bundle_bytes": 1834,
+          "recovery_bundle_tokens": 560,
+          "recovery_content_bytes": 26,
+          "recovery_metadata_bytes": 1797
+        },
+        "adapter_only": {
+          "recovery_bundle_bytes": 1834,
+          "recovery_bundle_tokens": 560,
+          "recovery_content_bytes": 26,
+          "recovery_metadata_bytes": 1797
+        },
+        "length_pi_v1": {
+          "recovery_bundle_bytes": 1834,
+          "recovery_bundle_tokens": 560,
+          "recovery_content_bytes": 26,
+          "recovery_metadata_bytes": 1797
+        },
+        "raw_full": {
+          "recovery_bundle_bytes": 0,
+          "recovery_bundle_tokens": 0,
+          "recovery_content_bytes": 0,
+          "recovery_metadata_bytes": 0
+        }
+      },
+      "source_id": "rs2-ini-waltenne-ubuntu-post-install"
+    }
+  ],
+  "schema": "bite-phase4i-recovery-accounting/v0.1"
+}

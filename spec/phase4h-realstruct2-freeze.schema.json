@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4h-realstruct2-freeze.schema.json",
+  "title": "BITE Phase-4H REALSTRUCT-2 protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "premise",
+    "phase4g_head_sha",
+    "p3f_evaluation_holdout_used",
+    "no_arm_execution",
+    "no_tokenizer_execution",
+    "no_phase4f_rewrite",
+    "no_phase4g_rewrite",
+    "n_primary",
+    "families",
+    "discovery",
+    "h2_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase4h-realstruct2-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4h-realstruct2-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE4H_REALSTRUCT2_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "premise": {
+      "type": "string",
+      "const": "PHASE4G_COMPARISON_ACCOUNTING_VALIDATED"
+    },
+    "phase4g_head_sha": {
+      "type": "string",
+      "const": "be0248c972d9136ae6c39c57bf7e6a756e815aa9"
+    },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "no_arm_execution": { "type": "boolean", "const": true },
+    "no_tokenizer_execution": { "type": "boolean", "const": true },
+    "no_phase4f_rewrite": { "type": "boolean", "const": true },
+    "no_phase4g_rewrite": { "type": "boolean", "const": true },
+    "n_primary": { "type": "integer", "const": 18 },
+    "families": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "discovery": { "type": "object" },
+    "h2_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE4H_REALSTRUCT2_FROZEN",
+          "PHASE4H_REALSTRUCT2_PARTIAL",
+          "PHASE4H_REALSTRUCT2_BLOCKED"
+        ]
+      }
+    }
+  }
+}

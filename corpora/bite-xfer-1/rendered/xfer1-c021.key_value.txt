@@ -1,0 +1,11 @@
+gate_cat_c021=node_cat_c021
+copy_c021=same_c021_row
+note_catalog_c021_00=blob_catalog_c021_00
+note_catalog_c021_01=blob_catalog_c021_01
+note_catalog_c021_02=blob_catalog_c021_02
+note_catalog_c021_03=blob_catalog_c021_03
+note_catalog_c021_04=blob_catalog_c021_04
+note_catalog_c021_05=blob_catalog_c021_05
+copy_c021=same_c021_row
+bin_node_cat_c021=ack_cat_c021
+alert_c021=rack overheat FATAL
