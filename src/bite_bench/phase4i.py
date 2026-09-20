@@ -277,7 +277,8 @@ def validate_phase4i_freeze(doc: Mapping[str, Any]) -> list[str]:
         errs.append("primary IDs drifted")
     if int(doc.get("n_primary") or 0) != N_PRIMARY:
         errs.append("n_primary drifted")
-    tok = doc.get("tokenizer_reference") if isinstance(doc.get("tokenizer_reference"), Mapping) else {}
+    raw_tok = doc.get("tokenizer_reference")
+    tok: Mapping[str, Any] = raw_tok if isinstance(raw_tok, Mapping) else {}
     if tok.get("tokenizer_json_sha256") != TOKENIZER_JSON_SHA256:
         errs.append("tokenizer hash drifted")
     if tok.get("forbidden_cost_metric") != "local_char4_proxy":

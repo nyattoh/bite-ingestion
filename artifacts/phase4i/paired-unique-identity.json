@@ -1,0 +1,26 @@
+{
+  "delta": "BITE_v5 - length_pi_v1",
+  "documents": [
+    {
+      "bite_v5": 1.0,
+      "delta": 0.15384615384615385,
+      "length_pi_v1": 0.8461538461538461,
+      "source_id": "rs2-ini-genicam-harvesters_gui",
+      "wave": 1
+    }
+  ],
+  "matched_budget_definition": "primary documents where length_pi_v1.budget_match_applicable == true; do not redefine after results",
+  "matched_budget_subset": [
+    "rs2-ini-genicam-harvesters_gui"
+  ],
+  "mean": 0.15384615384615385,
+  "median": 0.15384615384615385,
+  "metric": "unique_assignment_identity_retention_v2",
+  "n": 1,
+  "negative": 0,
+  "positive": 1,
+  "schema": "bite-phase4i-paired-unique-identity/v0.1",
+  "status": "observed",
+  "tie": 0,
+  "wave_is_provenance_only": true
+}

@@ -86,7 +86,8 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 4G comparison accounting v2: **PHASE4G_COMPARISON_ACCOUNTING_VALIDATED** (canonical recovery bundle; provenance-aware visibility; 4F artifacts unchanged; REALSTRUCT-2 untouched; p3f sealed)
 - Phase 4H REALSTRUCT-2 corpus freeze: **PHASE4H_REALSTRUCT2_PARTIAL** (H0/H1 frozen first; 10/18 primary under frozen MIT/Apache + 60-candidate pool; no arms; p3f sealed)
 - Phase 4H2 REALSTRUCT-2 acquisition extension: **PHASE4H2_REALSTRUCT2_AUGMENTED_FROZEN** (coverage-only two-wave fill to 18/18; license policy unchanged; no arms; p3f sealed)
-- **Next**: do not execute comparison arms; do not invent XFER-3; do not retune T_high; do not merge to main
+- Phase 4I REALSTRUCT-2 prospective four-arm first-open: **PHASE4I_PROSPECTIVE_COMPARISON_MEASURED** (18×4 frozen primary; tokenizer lock verified; reconstruction/safety/planner pass; no winner score; p3f sealed)
+- **Next**: do not retune after this measurement; do not invent XFER-3; do not retune T_high; do not merge to main; do not open p3f
 
 See:
 - [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
@@ -188,3 +189,6 @@ See:
 - [`docs/hand_over/PHASE4H2-REALSTRUCT2-EXTENSION.md`](docs/hand_over/PHASE4H2-REALSTRUCT2-EXTENSION.md)
 - [`benchmarks/spec/phase4h2-acquisition-extension-freeze.json`](benchmarks/spec/phase4h2-acquisition-extension-freeze.json)
 - [`artifacts/phase4h2/realstruct-2-augmented.json`](artifacts/phase4h2/realstruct-2-augmented.json)
+- [`docs/hand_over/PHASE4I-REALSTRUCT2-FIRST-OPEN.md`](docs/hand_over/PHASE4I-REALSTRUCT2-FIRST-OPEN.md)
+- [`benchmarks/spec/phase4i-first-open-freeze.json`](benchmarks/spec/phase4i-first-open-freeze.json)
+- [`artifacts/phase4i/first-open.json`](artifacts/phase4i/first-open.json)

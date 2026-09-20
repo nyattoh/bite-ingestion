@@ -876,7 +876,7 @@ def _summaries(
         "documents": safety_docs,
     }
 
-    routes = Counter()
+    routes: Counter[str] = Counter()
     gates = 0
     reduce_descriptive = []
     sensor_rows = []
