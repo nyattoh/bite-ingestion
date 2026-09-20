@@ -1,0 +1,9 @@
+src_accn_q014=vitrine_lock_q014
+note_museum_q014_00=blob_museum_q014_00
+note_museum_q014_01=blob_museum_q014_01 観測
+dst_vitrine_lock_q014=ack_vitrine_lock_q014
+copy_main_q014=same_main_q014_row
+copy_main_q014=same_main_q014_row
+copy_main_q014=same_main_q014_row
+mate_a_q014=crate_a_q014 key=accn_q014
+mate_b_q014=crate_b_q014 key=accn_q014

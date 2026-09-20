@@ -1,0 +1,78 @@
+{
+  "documents": [
+    {
+      "n_exact_duplicate_groups": 0,
+      "post_reduce_multiplicity": 0,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "source_id": "rs1-dotenv-koel"
+    },
+    {
+      "n_exact_duplicate_groups": 0,
+      "post_reduce_multiplicity": 0,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "source_id": "rs1-dotenv-bookstack"
+    },
+    {
+      "n_exact_duplicate_groups": 0,
+      "post_reduce_multiplicity": 0,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "source_id": "rs1-dotenv-laravel"
+    },
+    {
+      "n_exact_duplicate_groups": 0,
+      "post_reduce_multiplicity": 0,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "source_id": "rs1-props-ratis-log4j"
+    },
+    {
+      "n_exact_duplicate_groups": 0,
+      "post_reduce_multiplicity": 0,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "source_id": "rs1-props-kafka-server"
+    },
+    {
+      "n_exact_duplicate_groups": 0,
+      "post_reduce_multiplicity": 0,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "source_id": "rs1-props-tomcat-logging"
+    },
+    {
+      "n_exact_duplicate_groups": 3,
+      "post_reduce_multiplicity": 0,
+      "reduce_in_sequence": true,
+      "redundancy_n_duplicate_records": 3,
+      "redundancy_status": "observed",
+      "source_id": "rs1-ini-polybar"
+    },
+    {
+      "n_exact_duplicate_groups": 12,
+      "post_reduce_multiplicity": 0,
+      "reduce_in_sequence": true,
+      "redundancy_n_duplicate_records": 16,
+      "redundancy_status": "observed",
+      "source_id": "rs1-ini-gogs"
+    },
+    {
+      "n_exact_duplicate_groups": 0,
+      "post_reduce_multiplicity": 0,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "source_id": "rs1-ini-tegra-common"
+    }
+  ],
+  "revision": "phase4c-real-holdout-v0.1",
+  "schema": "bite-phase4c-exact-duplicate/v0.1"
+}

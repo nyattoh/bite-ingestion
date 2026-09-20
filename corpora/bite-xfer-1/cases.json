@@ -1,0 +1,1008 @@
+{
+  "cases": [
+    {
+      "case_id": "xfer1-c001",
+      "domain": "catalog",
+      "n_records": 8,
+      "records": [
+        {
+          "k": "gate_cat_c001",
+          "v": "node_cat_c001"
+        },
+        {
+          "k": "bin_node_cat_c001",
+          "v": "ack_cat_c001"
+        },
+        {
+          "k": "gate2_catz_c001",
+          "v": "node_catz_c001"
+        },
+        {
+          "k": "bin2_node_catz_c001",
+          "v": "ack_catz_c001"
+        },
+        {
+          "k": "note_catalog_c001_20",
+          "v": "blob_catalog_c001_20"
+        },
+        {
+          "k": "note_catalog_c001_21",
+          "v": "blob_catalog_c001_21"
+        },
+        {
+          "k": "note_catalog_c001_22",
+          "v": "blob_catalog_c001_22"
+        },
+        {
+          "k": "note_catalog_c001_23",
+          "v": "blob_catalog_c001_23"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c002",
+      "domain": "build",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "gate_bui_c002",
+          "v": "node_bui_c002"
+        },
+        {
+          "k": "bin_node_bui_c002",
+          "v": "ack_bui_c002"
+        },
+        {
+          "k": "copy_c002",
+          "v": "same_c002_row"
+        },
+        {
+          "k": "copy_c002",
+          "v": "same_c002_row"
+        },
+        {
+          "k": "note_build_c002_20",
+          "v": "blob_build_c002_20"
+        },
+        {
+          "k": "note_build_c002_21",
+          "v": "blob_build_c002_21"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c003",
+      "domain": "incident",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "gate_inc_c003",
+          "v": "node_inc_c003"
+        },
+        {
+          "k": "bin_node_inc_c003",
+          "v": "ack_inc_c003"
+        },
+        {
+          "k": "alert_c003",
+          "v": "worker dump TRACEBACK"
+        },
+        {
+          "k": "note_incident_c003_20",
+          "v": "blob_incident_c003_20"
+        },
+        {
+          "k": "note_incident_c003_21",
+          "v": "blob_incident_c003_21"
+        },
+        {
+          "k": "note_incident_c003_22",
+          "v": "blob_incident_c003_22"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c004",
+      "domain": "inventory",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "gate_inv_c004",
+          "v": "node_inv_c004 id=lot_c004"
+        },
+        {
+          "k": "bin_node_inv_c004",
+          "v": "ack_inv_c004 id=lot_c004"
+        },
+        {
+          "k": "mate_c004",
+          "v": "crate_c004 id=lot_c004"
+        },
+        {
+          "k": "note_inventory_c004_20",
+          "v": "blob_inventory_c004_20"
+        },
+        {
+          "k": "note_inventory_c004_21",
+          "v": "blob_inventory_c004_21"
+        },
+        {
+          "k": "note_inventory_c004_22",
+          "v": "blob_inventory_c004_22"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c005",
+      "domain": "catalog",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "gate_cat_c005",
+          "v": "node_cat_c005"
+        },
+        {
+          "k": "bin_node_cat_c005",
+          "v": "ack_cat_c005"
+        },
+        {
+          "k": "copy_c005",
+          "v": "same_c005_row"
+        },
+        {
+          "k": "copy_c005",
+          "v": "same_c005_row"
+        },
+        {
+          "k": "alert_c005",
+          "v": "rack overheat FATAL"
+        },
+        {
+          "k": "note_catalog_c005_20",
+          "v": "blob_catalog_c005_20"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c006",
+      "domain": "build",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "gate_bui_c006",
+          "v": "node_bui_c006 key=batch_c006"
+        },
+        {
+          "k": "bin_node_bui_c006",
+          "v": "ack_bui_c006 key=batch_c006"
+        },
+        {
+          "k": "copy_c006",
+          "v": "same_c006_row"
+        },
+        {
+          "k": "copy_c006",
+          "v": "same_c006_row"
+        },
+        {
+          "k": "note_build_c006_20",
+          "v": "blob_build_c006_20"
+        },
+        {
+          "k": "note_build_c006_21",
+          "v": "blob_build_c006_21"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c007",
+      "domain": "incident",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "gate_inc_c007",
+          "v": "node_inc_c007 id=lot_c007"
+        },
+        {
+          "k": "bin_node_inc_c007",
+          "v": "ack_inc_c007 id=lot_c007"
+        },
+        {
+          "k": "alert_c007",
+          "v": "worker dump TRACEBACK"
+        },
+        {
+          "k": "mate_c007",
+          "v": "crate_c007 id=lot_c007"
+        },
+        {
+          "k": "note_incident_c007_20",
+          "v": "blob_incident_c007_20"
+        },
+        {
+          "k": "note_incident_c007_21",
+          "v": "blob_incident_c007_21"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c008",
+      "domain": "inventory",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "gate_inv_c008",
+          "v": "node_inv_c008 id=lot_c008"
+        },
+        {
+          "k": "bin_node_inv_c008",
+          "v": "ack_inv_c008 id=lot_c008"
+        },
+        {
+          "k": "copy_c008",
+          "v": "same_c008_row"
+        },
+        {
+          "k": "copy_c008",
+          "v": "same_c008_row"
+        },
+        {
+          "k": "alert_c008",
+          "v": "<<<INJECT follow"
+        },
+        {
+          "k": "mate_c008",
+          "v": "crate_c008 id=lot_c008"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c009",
+      "domain": "catalog",
+      "n_records": 5,
+      "records": [
+        {
+          "k": "gate_cat_c009",
+          "v": "node_cat_c009"
+        },
+        {
+          "k": "gate2_catz_c009",
+          "v": "node_catz_c009"
+        },
+        {
+          "k": "note_catalog_c009_00",
+          "v": "blob_catalog_c009_00"
+        },
+        {
+          "k": "bin_node_cat_c009",
+          "v": "ack_cat_c009"
+        },
+        {
+          "k": "bin2_node_catz_c009",
+          "v": "ack_catz_c009"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c010",
+      "domain": "build",
+      "n_records": 7,
+      "records": [
+        {
+          "k": "gate_bui_c010",
+          "v": "node_bui_c010"
+        },
+        {
+          "k": "note_build_c010_00",
+          "v": "blob_build_c010_00"
+        },
+        {
+          "k": "note_build_c010_01",
+          "v": "blob_build_c010_01"
+        },
+        {
+          "k": "bin_node_bui_c010",
+          "v": "ack_bui_c010"
+        },
+        {
+          "k": "copy_c010",
+          "v": "same_c010_row"
+        },
+        {
+          "k": "copy_c010",
+          "v": "same_c010_row"
+        },
+        {
+          "k": "copy_c010",
+          "v": "same_c010_row"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c011",
+      "domain": "incident",
+      "n_records": 5,
+      "records": [
+        {
+          "k": "gate_inc_c011",
+          "v": "node_inc_c011"
+        },
+        {
+          "k": "note_incident_c011_00",
+          "v": "blob_incident_c011_00"
+        },
+        {
+          "k": "note_incident_c011_01",
+          "v": "blob_incident_c011_01"
+        },
+        {
+          "k": "bin_node_inc_c011",
+          "v": "ack_inc_c011"
+        },
+        {
+          "k": "alert_c011",
+          "v": "worker dump TRACEBACK"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c012",
+      "domain": "inventory",
+      "n_records": 5,
+      "records": [
+        {
+          "k": "gate_inv_c012",
+          "v": "node_inv_c012 id=lot_c012"
+        },
+        {
+          "k": "note_inventory_c012_00",
+          "v": "blob_inventory_c012_00"
+        },
+        {
+          "k": "note_inventory_c012_01",
+          "v": "blob_inventory_c012_01"
+        },
+        {
+          "k": "bin_node_inv_c012",
+          "v": "ack_inv_c012 id=lot_c012"
+        },
+        {
+          "k": "mate_c012",
+          "v": "crate_c012 id=lot_c012"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c013",
+      "domain": "catalog",
+      "n_records": 8,
+      "records": [
+        {
+          "k": "gate_cat_c013",
+          "v": "node_cat_c013"
+        },
+        {
+          "k": "note_catalog_c013_00",
+          "v": "blob_catalog_c013_00"
+        },
+        {
+          "k": "note_catalog_c013_01",
+          "v": "blob_catalog_c013_01"
+        },
+        {
+          "k": "bin_node_cat_c013",
+          "v": "ack_cat_c013"
+        },
+        {
+          "k": "copy_c013",
+          "v": "same_c013_row"
+        },
+        {
+          "k": "copy_c013",
+          "v": "same_c013_row"
+        },
+        {
+          "k": "copy_c013",
+          "v": "same_c013_row"
+        },
+        {
+          "k": "alert_c013",
+          "v": "rack overheat FATAL"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c014",
+      "domain": "build",
+      "n_records": 7,
+      "records": [
+        {
+          "k": "gate_bui_c014",
+          "v": "node_bui_c014 key=batch_c014"
+        },
+        {
+          "k": "note_build_c014_00",
+          "v": "blob_build_c014_00"
+        },
+        {
+          "k": "note_build_c014_01",
+          "v": "blob_build_c014_01"
+        },
+        {
+          "k": "bin_node_bui_c014",
+          "v": "ack_bui_c014 key=batch_c014"
+        },
+        {
+          "k": "copy_c014",
+          "v": "same_c014_row"
+        },
+        {
+          "k": "copy_c014",
+          "v": "same_c014_row"
+        },
+        {
+          "k": "copy_c014",
+          "v": "same_c014_row"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c015",
+      "domain": "incident",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "gate_inc_c015",
+          "v": "node_inc_c015 id=lot_c015"
+        },
+        {
+          "k": "note_incident_c015_00",
+          "v": "blob_incident_c015_00"
+        },
+        {
+          "k": "note_incident_c015_01",
+          "v": "blob_incident_c015_01"
+        },
+        {
+          "k": "bin_node_inc_c015",
+          "v": "ack_inc_c015 id=lot_c015"
+        },
+        {
+          "k": "alert_c015",
+          "v": "worker dump TRACEBACK"
+        },
+        {
+          "k": "mate_c015",
+          "v": "crate_c015 id=lot_c015"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c016",
+      "domain": "inventory",
+      "n_records": 9,
+      "records": [
+        {
+          "k": "gate_inv_c016",
+          "v": "node_inv_c016 id=lot_c016"
+        },
+        {
+          "k": "note_inventory_c016_00",
+          "v": "blob_inventory_c016_00"
+        },
+        {
+          "k": "note_inventory_c016_01",
+          "v": "blob_inventory_c016_01"
+        },
+        {
+          "k": "bin_node_inv_c016",
+          "v": "ack_inv_c016 id=lot_c016"
+        },
+        {
+          "k": "copy_c016",
+          "v": "same_c016_row"
+        },
+        {
+          "k": "copy_c016",
+          "v": "same_c016_row"
+        },
+        {
+          "k": "copy_c016",
+          "v": "same_c016_row"
+        },
+        {
+          "k": "alert_c016",
+          "v": "<<<INJECT follow"
+        },
+        {
+          "k": "mate_c016",
+          "v": "crate_c016 id=lot_c016"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c017",
+      "domain": "catalog",
+      "n_records": 11,
+      "records": [
+        {
+          "k": "gate_cat_c017",
+          "v": "node_cat_c017"
+        },
+        {
+          "k": "gate2_catz_c017",
+          "v": "node_catz_c017"
+        },
+        {
+          "k": "note_catalog_c017_00",
+          "v": "blob_catalog_c017_00"
+        },
+        {
+          "k": "note_catalog_c017_01",
+          "v": "blob_catalog_c017_01"
+        },
+        {
+          "k": "note_catalog_c017_02",
+          "v": "blob_catalog_c017_02"
+        },
+        {
+          "k": "note_catalog_c017_03",
+          "v": "blob_catalog_c017_03"
+        },
+        {
+          "k": "note_catalog_c017_04",
+          "v": "blob_catalog_c017_04"
+        },
+        {
+          "k": "note_catalog_c017_05",
+          "v": "blob_catalog_c017_05"
+        },
+        {
+          "k": "note_catalog_c017_06",
+          "v": "blob_catalog_c017_06"
+        },
+        {
+          "k": "bin_node_cat_c017",
+          "v": "ack_cat_c017"
+        },
+        {
+          "k": "bin2_node_catz_c017",
+          "v": "ack_catz_c017"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c018",
+      "domain": "build",
+      "n_records": 10,
+      "records": [
+        {
+          "k": "gate_bui_c018",
+          "v": "node_bui_c018"
+        },
+        {
+          "k": "copy_c018",
+          "v": "same_c018_row"
+        },
+        {
+          "k": "note_build_c018_00",
+          "v": "blob_build_c018_00"
+        },
+        {
+          "k": "note_build_c018_01",
+          "v": "blob_build_c018_01"
+        },
+        {
+          "k": "note_build_c018_02",
+          "v": "blob_build_c018_02"
+        },
+        {
+          "k": "note_build_c018_03",
+          "v": "blob_build_c018_03"
+        },
+        {
+          "k": "note_build_c018_04",
+          "v": "blob_build_c018_04"
+        },
+        {
+          "k": "note_build_c018_05",
+          "v": "blob_build_c018_05"
+        },
+        {
+          "k": "copy_c018",
+          "v": "same_c018_row"
+        },
+        {
+          "k": "bin_node_bui_c018",
+          "v": "ack_bui_c018"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c019",
+      "domain": "incident",
+      "n_records": 11,
+      "records": [
+        {
+          "k": "gate_inc_c019",
+          "v": "node_inc_c019"
+        },
+        {
+          "k": "note_incident_c019_00",
+          "v": "blob_incident_c019_00"
+        },
+        {
+          "k": "note_incident_c019_01",
+          "v": "blob_incident_c019_01"
+        },
+        {
+          "k": "note_incident_c019_02",
+          "v": "blob_incident_c019_02"
+        },
+        {
+          "k": "note_incident_c019_03",
+          "v": "blob_incident_c019_03"
+        },
+        {
+          "k": "note_incident_c019_04",
+          "v": "blob_incident_c019_04"
+        },
+        {
+          "k": "note_incident_c019_05",
+          "v": "blob_incident_c019_05"
+        },
+        {
+          "k": "note_incident_c019_06",
+          "v": "blob_incident_c019_06"
+        },
+        {
+          "k": "note_incident_c019_07",
+          "v": "blob_incident_c019_07"
+        },
+        {
+          "k": "bin_node_inc_c019",
+          "v": "ack_inc_c019"
+        },
+        {
+          "k": "alert_c019",
+          "v": "worker dump TRACEBACK"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c020",
+      "domain": "inventory",
+      "n_records": 11,
+      "records": [
+        {
+          "k": "gate_inv_c020",
+          "v": "node_inv_c020 id=lot_c020"
+        },
+        {
+          "k": "note_inventory_c020_00",
+          "v": "blob_inventory_c020_00"
+        },
+        {
+          "k": "note_inventory_c020_01",
+          "v": "blob_inventory_c020_01"
+        },
+        {
+          "k": "note_inventory_c020_02",
+          "v": "blob_inventory_c020_02"
+        },
+        {
+          "k": "note_inventory_c020_03",
+          "v": "blob_inventory_c020_03"
+        },
+        {
+          "k": "note_inventory_c020_04",
+          "v": "blob_inventory_c020_04"
+        },
+        {
+          "k": "note_inventory_c020_05",
+          "v": "blob_inventory_c020_05"
+        },
+        {
+          "k": "note_inventory_c020_06",
+          "v": "blob_inventory_c020_06"
+        },
+        {
+          "k": "note_inventory_c020_07",
+          "v": "blob_inventory_c020_07"
+        },
+        {
+          "k": "bin_node_inv_c020",
+          "v": "ack_inv_c020 id=lot_c020"
+        },
+        {
+          "k": "mate_c020",
+          "v": "crate_c020 id=lot_c020"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c021",
+      "domain": "catalog",
+      "n_records": 11,
+      "records": [
+        {
+          "k": "gate_cat_c021",
+          "v": "node_cat_c021"
+        },
+        {
+          "k": "copy_c021",
+          "v": "same_c021_row"
+        },
+        {
+          "k": "note_catalog_c021_00",
+          "v": "blob_catalog_c021_00"
+        },
+        {
+          "k": "note_catalog_c021_01",
+          "v": "blob_catalog_c021_01"
+        },
+        {
+          "k": "note_catalog_c021_02",
+          "v": "blob_catalog_c021_02"
+        },
+        {
+          "k": "note_catalog_c021_03",
+          "v": "blob_catalog_c021_03"
+        },
+        {
+          "k": "note_catalog_c021_04",
+          "v": "blob_catalog_c021_04"
+        },
+        {
+          "k": "note_catalog_c021_05",
+          "v": "blob_catalog_c021_05"
+        },
+        {
+          "k": "copy_c021",
+          "v": "same_c021_row"
+        },
+        {
+          "k": "bin_node_cat_c021",
+          "v": "ack_cat_c021"
+        },
+        {
+          "k": "alert_c021",
+          "v": "rack overheat FATAL"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c022",
+      "domain": "build",
+      "n_records": 10,
+      "records": [
+        {
+          "k": "gate_bui_c022",
+          "v": "node_bui_c022 key=batch_c022"
+        },
+        {
+          "k": "copy_c022",
+          "v": "same_c022_row"
+        },
+        {
+          "k": "note_build_c022_00",
+          "v": "blob_build_c022_00"
+        },
+        {
+          "k": "note_build_c022_01",
+          "v": "blob_build_c022_01"
+        },
+        {
+          "k": "note_build_c022_02",
+          "v": "blob_build_c022_02"
+        },
+        {
+          "k": "note_build_c022_03",
+          "v": "blob_build_c022_03"
+        },
+        {
+          "k": "note_build_c022_04",
+          "v": "blob_build_c022_04"
+        },
+        {
+          "k": "note_build_c022_05",
+          "v": "blob_build_c022_05"
+        },
+        {
+          "k": "copy_c022",
+          "v": "same_c022_row"
+        },
+        {
+          "k": "bin_node_bui_c022",
+          "v": "ack_bui_c022 key=batch_c022"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c023",
+      "domain": "incident",
+      "n_records": 12,
+      "records": [
+        {
+          "k": "gate_inc_c023",
+          "v": "node_inc_c023 id=lot_c023"
+        },
+        {
+          "k": "note_incident_c023_00",
+          "v": "blob_incident_c023_00"
+        },
+        {
+          "k": "note_incident_c023_01",
+          "v": "blob_incident_c023_01"
+        },
+        {
+          "k": "note_incident_c023_02",
+          "v": "blob_incident_c023_02"
+        },
+        {
+          "k": "note_incident_c023_03",
+          "v": "blob_incident_c023_03"
+        },
+        {
+          "k": "note_incident_c023_04",
+          "v": "blob_incident_c023_04"
+        },
+        {
+          "k": "note_incident_c023_05",
+          "v": "blob_incident_c023_05"
+        },
+        {
+          "k": "note_incident_c023_06",
+          "v": "blob_incident_c023_06"
+        },
+        {
+          "k": "note_incident_c023_07",
+          "v": "blob_incident_c023_07"
+        },
+        {
+          "k": "bin_node_inc_c023",
+          "v": "ack_inc_c023 id=lot_c023"
+        },
+        {
+          "k": "alert_c023",
+          "v": "worker dump TRACEBACK"
+        },
+        {
+          "k": "mate_c023",
+          "v": "crate_c023 id=lot_c023"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c024",
+      "domain": "inventory",
+      "n_records": 13,
+      "records": [
+        {
+          "k": "gate_inv_c024",
+          "v": "node_inv_c024 id=lot_c024"
+        },
+        {
+          "k": "gate2_invz_c024",
+          "v": "node_invz_c024"
+        },
+        {
+          "k": "copy_c024",
+          "v": "same_c024_row"
+        },
+        {
+          "k": "note_inventory_c024_00",
+          "v": "blob_inventory_c024_00"
+        },
+        {
+          "k": "note_inventory_c024_01",
+          "v": "blob_inventory_c024_01"
+        },
+        {
+          "k": "note_inventory_c024_02",
+          "v": "blob_inventory_c024_02"
+        },
+        {
+          "k": "note_inventory_c024_03",
+          "v": "blob_inventory_c024_03"
+        },
+        {
+          "k": "note_inventory_c024_04",
+          "v": "blob_inventory_c024_04"
+        },
+        {
+          "k": "copy_c024",
+          "v": "same_c024_row"
+        },
+        {
+          "k": "bin_node_inv_c024",
+          "v": "ack_inv_c024 id=lot_c024"
+        },
+        {
+          "k": "bin2_node_invz_c024",
+          "v": "ack_invz_c024"
+        },
+        {
+          "k": "alert_c024",
+          "v": "<<<INJECT follow"
+        },
+        {
+          "k": "mate_c024",
+          "v": "crate_c024 id=lot_c024"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c025",
+      "domain": "build",
+      "n_records": 6,
+      "records": [
+        {
+          "k": "note_build_c025_00",
+          "v": "blob_build_c025_00"
+        },
+        {
+          "k": "note_build_c025_01",
+          "v": "blob_build_c025_01"
+        },
+        {
+          "k": "note_build_c025_02",
+          "v": "blob_build_c025_02"
+        },
+        {
+          "k": "note_build_c025_03",
+          "v": "blob_build_c025_03"
+        },
+        {
+          "k": "note_build_c025_04",
+          "v": "blob_build_c025_04"
+        },
+        {
+          "k": "note_build_c025_05",
+          "v": "blob_build_c025_05"
+        }
+      ]
+    },
+    {
+      "case_id": "xfer1-c026",
+      "domain": "incident",
+      "n_records": 8,
+      "records": [
+        {
+          "k": "note_incident_c026_00",
+          "v": "blob_incident_c026_00"
+        },
+        {
+          "k": "copy_c026",
+          "v": "same_c026_row"
+        },
+        {
+          "k": "copy_c026",
+          "v": "same_c026_row"
+        },
+        {
+          "k": "note_incident_c026_01",
+          "v": "blob_incident_c026_01"
+        },
+        {
+          "k": "note_incident_c026_02",
+          "v": "blob_incident_c026_02"
+        },
+        {
+          "k": "note_incident_c026_03",
+          "v": "blob_incident_c026_03"
+        },
+        {
+          "k": "note_incident_c026_04",
+          "v": "blob_incident_c026_04"
+        },
+        {
+          "k": "note_incident_c026_05",
+          "v": "blob_incident_c026_05"
+        }
+      ]
+    }
+  ],
+  "corpus": "BITE-XFER-1",
+  "n_cases": 26
+}

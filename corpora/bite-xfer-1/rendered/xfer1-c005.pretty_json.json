@@ -1,0 +1,26 @@
+[
+  {
+    "k": "gate_cat_c005",
+    "v": "node_cat_c005"
+  },
+  {
+    "k": "bin_node_cat_c005",
+    "v": "ack_cat_c005"
+  },
+  {
+    "k": "copy_c005",
+    "v": "same_c005_row"
+  },
+  {
+    "k": "copy_c005",
+    "v": "same_c005_row"
+  },
+  {
+    "k": "alert_c005",
+    "v": "rack overheat FATAL"
+  },
+  {
+    "k": "note_catalog_c005_20",
+    "v": "blob_catalog_c005_20"
+  }
+]

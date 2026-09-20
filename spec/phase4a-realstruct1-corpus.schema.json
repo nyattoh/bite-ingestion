@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4a-realstruct1-corpus.schema.json",
+  "title": "BITE Phase-4A REALSTRUCT-1 corpus manifest v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "corpus_name",
+    "protocol_commit_sha",
+    "n_documents",
+    "sources",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4a-realstruct1-corpus/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4a-realstruct1-v0.1"
+    },
+    "corpus_name": { "type": "string", "const": "REALSTRUCT-1" },
+    "protocol_commit_sha": {
+      "type": "string",
+      "const": "3e5d2d7c9cd0a07346e90401496df042aa956bf7"
+    },
+    "n_documents": { "type": "integer", "const": 12 },
+    "sources": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12
+    },
+    "claim_boundary": { "type": "string" }
+  }
+}

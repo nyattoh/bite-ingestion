@@ -1,0 +1,32 @@
+{
+  "development": [
+    "rs1-dotenv-linkding",
+    "rs1-props-hadoop-log4j",
+    "rs1-ini-oe-bitbake"
+  ],
+  "development_per_family": 1,
+  "evaluation": [
+    "rs1-dotenv-koel",
+    "rs1-dotenv-bookstack",
+    "rs1-dotenv-laravel",
+    "rs1-props-ratis-log4j",
+    "rs1-props-kafka-server",
+    "rs1-props-tomcat-logging",
+    "rs1-ini-polybar",
+    "rs1-ini-gogs",
+    "rs1-ini-tegra-common"
+  ],
+  "evaluation_may_not_be_measured_by_bite": true,
+  "future_comparison_preregistration": {
+    "no_baseline_in_phase4a": true,
+    "no_baseline_tuning_on_evaluation": true,
+    "same_bytes_for_bite_and_baseline": true
+  },
+  "n_development": 3,
+  "n_evaluation": 9,
+  "no_swap_after_split": true,
+  "order": "within family, lexicographic sha256 of exact raw bytes",
+  "protocol_commit_sha": "3e5d2d7c9cd0a07346e90401496df042aa956bf7",
+  "revision": "phase4a-realstruct1-v0.1",
+  "schema": "bite-phase4a-realstruct1-split/v0.1"
+}

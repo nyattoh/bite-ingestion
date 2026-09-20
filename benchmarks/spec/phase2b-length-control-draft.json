@@ -1,0 +1,190 @@
+{
+  "axis_summaries": {
+    "dispersion": {
+      "by_dependency": {
+        "chain3": {
+          "match_rate": 1.0,
+          "n_contrasts": 24,
+          "n_matched": 24
+        },
+        "direct": {
+          "match_rate": 1.0,
+          "n_contrasts": 24,
+          "n_matched": 24
+        }
+      },
+      "by_scale": {
+        "large": {
+          "match_rate": 1.0,
+          "n_contrasts": 16,
+          "n_matched": 16
+        },
+        "medium": {
+          "match_rate": 1.0,
+          "n_contrasts": 16,
+          "n_matched": 16
+        },
+        "small": {
+          "match_rate": 1.0,
+          "n_contrasts": 16,
+          "n_matched": 16
+        }
+      },
+      "match_rate": 1.0,
+      "max_abs_delta": 0,
+      "max_relative_delta": 0.0,
+      "mean_abs_delta": 0.0,
+      "mean_relative_delta": 0.0,
+      "median_abs_delta": 0.0,
+      "median_relative_delta": 0.0,
+      "n_contrasts": 48,
+      "n_matched": 48
+    },
+    "redundancy": {
+      "by_dependency": {
+        "chain3": {
+          "match_rate": 0.0,
+          "n_contrasts": 24,
+          "n_matched": 0
+        },
+        "direct": {
+          "match_rate": 0.0,
+          "n_contrasts": 24,
+          "n_matched": 0
+        }
+      },
+      "by_scale": {
+        "large": {
+          "match_rate": 0.0,
+          "n_contrasts": 16,
+          "n_matched": 0
+        },
+        "medium": {
+          "match_rate": 0.0,
+          "n_contrasts": 16,
+          "n_matched": 0
+        },
+        "small": {
+          "match_rate": 0.0,
+          "n_contrasts": 16,
+          "n_matched": 0
+        }
+      },
+      "match_rate": 0.0,
+      "max_abs_delta": 4588,
+      "max_relative_delta": 0.9755881047492233,
+      "mean_abs_delta": 1794.6666666666667,
+      "mean_relative_delta": 0.8629789292912209,
+      "median_abs_delta": 1260.0,
+      "median_relative_delta": 0.9103994763750736,
+      "n_contrasts": 48,
+      "n_matched": 0
+    },
+    "structure": {
+      "by_dependency": {
+        "chain3": {
+          "match_rate": 0.0,
+          "n_contrasts": 24,
+          "n_matched": 0
+        },
+        "direct": {
+          "match_rate": 0.0,
+          "n_contrasts": 24,
+          "n_matched": 0
+        }
+      },
+      "by_scale": {
+        "large": {
+          "match_rate": 0.0,
+          "n_contrasts": 16,
+          "n_matched": 0
+        },
+        "medium": {
+          "match_rate": 0.0,
+          "n_contrasts": 16,
+          "n_matched": 0
+        },
+        "small": {
+          "match_rate": 0.0,
+          "n_contrasts": 16,
+          "n_matched": 0
+        }
+      },
+      "match_rate": 0.0,
+      "max_abs_delta": 2039,
+      "max_relative_delta": 0.35703612551639274,
+      "mean_abs_delta": 653.6666666666666,
+      "mean_relative_delta": 0.32536131564881954,
+      "median_abs_delta": 467.0,
+      "median_relative_delta": 0.3337298860680581,
+      "n_contrasts": 48,
+      "n_matched": 0
+    }
+  },
+  "base_main_sha": "dce759efbb94ae941a86c3358b1b717da3224c14",
+  "candidate_alternative_tolerance": [
+    {
+      "by_axis": {
+        "dispersion": {
+          "match_rate": 1.0,
+          "n_contrasts": 48,
+          "n_matched": 48
+        },
+        "redundancy": {
+          "match_rate": 0.0,
+          "n_contrasts": 48,
+          "n_matched": 0
+        },
+        "structure": {
+          "match_rate": 0.0,
+          "n_contrasts": 48,
+          "n_matched": 0
+        }
+      },
+      "label": "abs10_rel10pct",
+      "max_abs_delta": 10,
+      "max_relative_delta": 0.1,
+      "note": "calibration inspection only; not a freeze; not applied to evaluation"
+    },
+    {
+      "by_axis": {
+        "dispersion": {
+          "match_rate": 1.0,
+          "n_contrasts": 48,
+          "n_matched": 48
+        },
+        "redundancy": {
+          "match_rate": 0.0,
+          "n_contrasts": 48,
+          "n_matched": 0
+        },
+        "structure": {
+          "match_rate": 0.0,
+          "n_contrasts": 48,
+          "n_matched": 0
+        }
+      },
+      "label": "abs25_rel15pct",
+      "max_abs_delta": 25,
+      "max_relative_delta": 0.15,
+      "note": "calibration inspection only; not a freeze; not applied to evaluation"
+    }
+  ],
+  "evaluation_sealed": true,
+  "note": "Draft only. Do not treat this as an evaluation freeze. Do not apply candidate tolerances to holdout.",
+  "official_match_rule": {
+    "max_abs_delta": 3,
+    "max_relative_delta": 0.04,
+    "no_padding": true,
+    "source": "phase1c-token-match-v0.1",
+    "widened_after_seeing_results": false
+  },
+  "padding": false,
+  "paid_api": false,
+  "phase2a_revision": "phase2a-factorial-v0.1",
+  "research_conclusion": false,
+  "schema": "bitebench-phase2b-length-control-draft/v0.1",
+  "split": "calibration",
+  "status": "draft_calibration_only_not_frozen",
+  "verdict": "PHASE2B_LENGTH_CONTROL_PARTIAL"
+}

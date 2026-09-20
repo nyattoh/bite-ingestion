@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3t-threshold-bridge.schema.json",
+  "title": "BITE Phase-3T threshold bridge v0.1",
+  "type": "object",
+  "required": ["schema", "ok", "n_ok", "rows"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase3t-threshold-bridge/v0.1"
+    },
+    "ok": { "type": "boolean" },
+    "n_ok": { "type": "integer", "minimum": 0 },
+    "rows": { "type": "array" }
+  }
+}

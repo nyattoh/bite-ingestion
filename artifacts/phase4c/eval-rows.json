@@ -1,0 +1,1370 @@
+{
+  "documents": [
+    {
+      "actual_sequence": [
+        "UNTANGLE"
+      ],
+      "conservation_untraced": [],
+      "fail_closed": false,
+      "failure_class": null,
+      "gate": true,
+      "gold_hits": 1,
+      "gold_n": 1,
+      "gold_reference_recall": 1.0,
+      "integrate_in_sequence": false,
+      "lineage_recall": 1.0,
+      "mean_reference_edge_distance": 92.0,
+      "n_exact_duplicate_groups": 0,
+      "n_r_entries": 1,
+      "n_raw_edge_rows": 1,
+      "n_reference_edges": 1.0,
+      "n_routing_assignments": 114,
+      "n_sensor_directed_edges": 1,
+      "n_source_units": 356,
+      "n_unadjudicated_extra_edges": 0,
+      "n_units_after": 113,
+      "n_units_before": 114,
+      "n_unsupported_passthrough": 242,
+      "ok": true,
+      "operator_noop_hidden": false,
+      "overmerge_ok": true,
+      "planner_ok": true,
+      "post_reduce_multiplicity": 0,
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "provenance_completeness": 1.0,
+      "raw_edge_sample": [
+        {
+          "atom": "APP_NAME",
+          "distance": 92,
+          "dst": 0,
+          "src": 92
+        }
+      ],
+      "reconstruction_exact": true,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "reference_coverage_status": "complete",
+      "safety_ok": true,
+      "scoped_precision": 1.0,
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 1,
+      "silent_loss": 0,
+      "source_id": "rs1-dotenv-koel",
+      "source_sha256": "4ef7a22cc292ae8422cdb41dd3ca0565ad088b89910cadd59283ca503010365a",
+      "token_proxy_after": 3301,
+      "token_proxy_label": "local_char4_proxy",
+      "token_proxy_routing": 561,
+      "token_proxy_source": 3218,
+      "unsupported_lost": 0,
+      "untangle_in_sequence": true,
+      "visible_chars": 12848,
+      "wall_clock_s": 0.018947
+    },
+    {
+      "actual_sequence": [],
+      "conservation_untraced": [],
+      "fail_closed": false,
+      "failure_class": null,
+      "gate": false,
+      "gold_hits": 0,
+      "gold_n": 0,
+      "gold_reference_recall": "NA",
+      "integrate_in_sequence": false,
+      "lineage_recall": 1.0,
+      "mean_reference_edge_distance": 0.0,
+      "n_exact_duplicate_groups": 0,
+      "n_r_entries": 0,
+      "n_raw_edge_rows": 0,
+      "n_reference_edges": 0.0,
+      "n_routing_assignments": 15,
+      "n_sensor_directed_edges": 0,
+      "n_source_units": 53,
+      "n_unadjudicated_extra_edges": 0,
+      "n_units_after": 15,
+      "n_units_before": 15,
+      "n_unsupported_passthrough": 38,
+      "ok": true,
+      "operator_noop_hidden": false,
+      "overmerge_ok": true,
+      "planner_ok": true,
+      "post_reduce_multiplicity": 0,
+      "projected_sequence": [],
+      "provenance_completeness": 1.0,
+      "raw_edge_sample": [],
+      "reconstruction_exact": true,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "reference_coverage_status": "not_observed",
+      "safety_ok": true,
+      "scoped_precision": "NA",
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 0,
+      "silent_loss": 0,
+      "source_id": "rs1-dotenv-bookstack",
+      "source_sha256": "5a602970513267c2a60eaaf9dd6a59f7cf8bb69394d936f220794bb7a764fdd1",
+      "token_proxy_after": 516,
+      "token_proxy_label": "local_char4_proxy",
+      "token_proxy_routing": 89,
+      "token_proxy_source": 503,
+      "unsupported_lost": 0,
+      "untangle_in_sequence": false,
+      "visible_chars": 2009,
+      "wall_clock_s": 0.002429
+    },
+    {
+      "actual_sequence": [],
+      "conservation_untraced": [],
+      "fail_closed": false,
+      "failure_class": null,
+      "gate": true,
+      "gold_hits": 2,
+      "gold_n": 2,
+      "gold_reference_recall": 1.0,
+      "integrate_in_sequence": false,
+      "lineage_recall": 1.0,
+      "mean_reference_edge_distance": 39.0,
+      "n_exact_duplicate_groups": 0,
+      "n_r_entries": 0,
+      "n_raw_edge_rows": 2,
+      "n_reference_edges": 2.0,
+      "n_routing_assignments": 43,
+      "n_sensor_directed_edges": 2,
+      "n_source_units": 65,
+      "n_unadjudicated_extra_edges": 0,
+      "n_units_after": 43,
+      "n_units_before": 43,
+      "n_unsupported_passthrough": 22,
+      "ok": true,
+      "operator_noop_hidden": false,
+      "overmerge_ok": true,
+      "planner_ok": true,
+      "post_reduce_multiplicity": 0,
+      "projected_sequence": [],
+      "provenance_completeness": 1.0,
+      "raw_edge_sample": [
+        {
+          "atom": "APP_NAME",
+          "distance": 36,
+          "dst": 0,
+          "src": 36
+        },
+        {
+          "atom": "APP_NAME",
+          "distance": 42,
+          "dst": 0,
+          "src": 42
+        }
+      ],
+      "reconstruction_exact": true,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "reference_coverage_status": "complete",
+      "safety_ok": true,
+      "scoped_precision": 1.0,
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 2,
+      "silent_loss": 0,
+      "source_id": "rs1-dotenv-laravel",
+      "source_sha256": "cc816d67d5b55939f8f282b56d46445c148fc96262eb6eb19ff8ae9d437676da",
+      "token_proxy_after": 289,
+      "token_proxy_label": "local_char4_proxy",
+      "token_proxy_routing": 228,
+      "token_proxy_source": 273,
+      "unsupported_lost": 0,
+      "untangle_in_sequence": false,
+      "visible_chars": 1091,
+      "wall_clock_s": 0.003792
+    },
+    {
+      "actual_sequence": [],
+      "conservation_untraced": [],
+      "fail_closed": false,
+      "failure_class": null,
+      "gate": true,
+      "gold_hits": 7,
+      "gold_n": 7,
+      "gold_reference_recall": 1.0,
+      "integrate_in_sequence": false,
+      "lineage_recall": 1.0,
+      "mean_reference_edge_distance": 7.0458015267175576,
+      "n_exact_duplicate_groups": 0,
+      "n_r_entries": 0,
+      "n_raw_edge_rows": 158,
+      "n_reference_edges": 131.0,
+      "n_routing_assignments": 23,
+      "n_sensor_directed_edges": 158,
+      "n_source_units": 74,
+      "n_unadjudicated_extra_edges": 145,
+      "n_units_after": 23,
+      "n_units_before": 23,
+      "n_unsupported_passthrough": 51,
+      "ok": true,
+      "operator_noop_hidden": false,
+      "overmerge_ok": true,
+      "planner_ok": true,
+      "post_reduce_multiplicity": 0,
+      "projected_sequence": [],
+      "provenance_completeness": 1.0,
+      "raw_edge_sample": [
+        {
+          "atom": "console",
+          "distance": 19,
+          "dst": 19,
+          "src": 0
+        },
+        {
+          "atom": "console",
+          "distance": 20,
+          "dst": 20,
+          "src": 0
+        },
+        {
+          "atom": "console",
+          "distance": 21,
+          "dst": 21,
+          "src": 0
+        },
+        {
+          "atom": "console",
+          "distance": 22,
+          "dst": 22,
+          "src": 0
+        },
+        {
+          "atom": "ratis",
+          "distance": 2,
+          "dst": 0,
+          "src": 2
+        },
+        {
+          "atom": "ratis",
+          "distance": 1,
+          "dst": 1,
+          "src": 2
+        },
+        {
+          "atom": "ratis",
+          "distance": 4,
+          "dst": 6,
+          "src": 2
+        },
+        {
+          "atom": "ratis",
+          "distance": 5,
+          "dst": 7,
+          "src": 2
+        },
+        {
+          "atom": "ratis",
+          "distance": 3,
+          "dst": 0,
+          "src": 3
+        },
+        {
+          "atom": "ratis",
+          "distance": 2,
+          "dst": 1,
+          "src": 3
+        },
+        {
+          "atom": "ratis",
+          "distance": 1,
+          "dst": 2,
+          "src": 3
+        },
+        {
+          "atom": "ratis",
+          "distance": 3,
+          "dst": 6,
+          "src": 3
+        },
+        {
+          "atom": "ratis",
+          "distance": 4,
+          "dst": 7,
+          "src": 3
+        },
+        {
+          "atom": "root",
+          "distance": 3,
+          "dst": 0,
+          "src": 3
+        },
+        {
+          "atom": "logger",
+          "distance": 3,
+          "dst": 0,
+          "src": 3
+        },
+        {
+          "atom": "log4j",
+          "distance": 2,
+          "dst": 3,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 1,
+          "dst": 4,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 3,
+          "dst": 8,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 4,
+          "dst": 9,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 5,
+          "dst": 10,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 6,
+          "dst": 11,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 7,
+          "dst": 12,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 8,
+          "dst": 13,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 9,
+          "dst": 14,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 10,
+          "dst": 15,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 11,
+          "dst": 16,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 12,
+          "dst": 17,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 13,
+          "dst": 18,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 14,
+          "dst": 19,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 15,
+          "dst": 20,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 16,
+          "dst": 21,
+          "src": 5
+        },
+        {
+          "atom": "log4j",
+          "distance": 17,
+          "dst": 22,
+          "src": 5
+        }
+      ],
+      "reconstruction_exact": true,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "reference_coverage_status": "complete",
+      "safety_ok": true,
+      "scoped_precision": "NA",
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 0,
+      "silent_loss": 0,
+      "source_id": "rs1-props-ratis-log4j",
+      "source_sha256": "7e18b252adff25f9762a0dacd6914b75b1f4db43b7be5599f337937b3cc41151",
+      "token_proxy_after": 679,
+      "token_proxy_label": "local_char4_proxy",
+      "token_proxy_routing": 286,
+      "token_proxy_source": 661,
+      "unsupported_lost": 0,
+      "untangle_in_sequence": false,
+      "visible_chars": 2643,
+      "wall_clock_s": 0.004286
+    },
+    {
+      "actual_sequence": [],
+      "conservation_untraced": [],
+      "fail_closed": false,
+      "failure_class": null,
+      "gate": true,
+      "gold_hits": 0,
+      "gold_n": 0,
+      "gold_reference_recall": "NA",
+      "integrate_in_sequence": false,
+      "lineage_recall": 1.0,
+      "mean_reference_edge_distance": 4.0,
+      "n_exact_duplicate_groups": 0,
+      "n_r_entries": 0,
+      "n_raw_edge_rows": 3,
+      "n_reference_edges": 3.0,
+      "n_routing_assignments": 24,
+      "n_sensor_directed_edges": 3,
+      "n_source_units": 129,
+      "n_unadjudicated_extra_edges": 3,
+      "n_units_after": 24,
+      "n_units_before": 24,
+      "n_unsupported_passthrough": 105,
+      "ok": true,
+      "operator_noop_hidden": false,
+      "overmerge_ok": true,
+      "planner_ok": true,
+      "post_reduce_multiplicity": 0,
+      "projected_sequence": [],
+      "provenance_completeness": 1.0,
+      "raw_edge_sample": [
+        {
+          "atom": "broker",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        },
+        {
+          "atom": "controller",
+          "distance": 2,
+          "dst": 2,
+          "src": 0
+        },
+        {
+          "atom": "controller",
+          "distance": 6,
+          "dst": 6,
+          "src": 0
+        }
+      ],
+      "reconstruction_exact": true,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "reference_coverage_status": "not_observed",
+      "safety_ok": true,
+      "scoped_precision": "NA",
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 0,
+      "silent_loss": 0,
+      "source_id": "rs1-props-kafka-server",
+      "source_sha256": "a20896da0834c1baf0271760d726ec06420b12767690a1f340e758d02c39b0db",
+      "token_proxy_after": 1624,
+      "token_proxy_label": "local_char4_proxy",
+      "token_proxy_routing": 235,
+      "token_proxy_source": 1592,
+      "unsupported_lost": 0,
+      "untangle_in_sequence": false,
+      "visible_chars": 6365,
+      "wall_clock_s": 0.004954
+    },
+    {
+      "actual_sequence": [],
+      "conservation_untraced": [],
+      "fail_closed": false,
+      "failure_class": null,
+      "gate": true,
+      "gold_hits": 0,
+      "gold_n": 0,
+      "gold_reference_recall": "NA",
+      "integrate_in_sequence": false,
+      "lineage_recall": 1.0,
+      "mean_reference_edge_distance": 12.44343891402715,
+      "n_exact_duplicate_groups": 0,
+      "n_r_entries": 0,
+      "n_raw_edge_rows": 588,
+      "n_reference_edges": 221.0,
+      "n_routing_assignments": 31,
+      "n_sensor_directed_edges": 588,
+      "n_source_units": 76,
+      "n_unadjudicated_extra_edges": 588,
+      "n_units_after": 31,
+      "n_units_before": 31,
+      "n_unsupported_passthrough": 45,
+      "ok": true,
+      "operator_noop_hidden": false,
+      "overmerge_ok": true,
+      "planner_ok": true,
+      "post_reduce_multiplicity": 0,
+      "projected_sequence": [],
+      "provenance_completeness": 1.0,
+      "raw_edge_sample": [
+        {
+          "atom": "catalina",
+          "distance": 2,
+          "dst": 2,
+          "src": 0
+        },
+        {
+          "atom": "catalina",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        },
+        {
+          "atom": "catalina",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        },
+        {
+          "atom": "catalina",
+          "distance": 5,
+          "dst": 5,
+          "src": 0
+        },
+        {
+          "atom": "catalina",
+          "distance": 6,
+          "dst": 6,
+          "src": 0
+        },
+        {
+          "atom": "catalina",
+          "distance": 25,
+          "dst": 25,
+          "src": 0
+        },
+        {
+          "atom": "catalina",
+          "distance": 26,
+          "dst": 26,
+          "src": 0
+        },
+        {
+          "atom": "catalina",
+          "distance": 27,
+          "dst": 27,
+          "src": 0
+        },
+        {
+          "atom": "catalina",
+          "distance": 28,
+          "dst": 28,
+          "src": 0
+        },
+        {
+          "atom": "catalina",
+          "distance": 29,
+          "dst": 29,
+          "src": 0
+        },
+        {
+          "atom": "catalina",
+          "distance": 30,
+          "dst": 30,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 2,
+          "dst": 2,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 5,
+          "dst": 5,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 6,
+          "dst": 6,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 7,
+          "dst": 7,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 8,
+          "dst": 8,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 9,
+          "dst": 9,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 10,
+          "dst": 10,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 11,
+          "dst": 11,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 12,
+          "dst": 12,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 13,
+          "dst": 13,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 14,
+          "dst": 14,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 15,
+          "dst": 15,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 16,
+          "dst": 16,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 17,
+          "dst": 17,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 18,
+          "dst": 18,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 19,
+          "dst": 19,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 20,
+          "dst": 20,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 21,
+          "dst": 21,
+          "src": 0
+        },
+        {
+          "atom": "apache",
+          "distance": 25,
+          "dst": 25,
+          "src": 0
+        }
+      ],
+      "reconstruction_exact": true,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "reference_coverage_status": "not_observed",
+      "safety_ok": true,
+      "scoped_precision": "NA",
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 0,
+      "silent_loss": 0,
+      "source_id": "rs1-props-tomcat-logging",
+      "source_sha256": "a891154c70e5ba42f2f82e72d209d70a1763962aee21d08fc592e595a1f273db",
+      "token_proxy_after": 1020,
+      "token_proxy_label": "local_char4_proxy",
+      "token_proxy_routing": 595,
+      "token_proxy_source": 1001,
+      "unsupported_lost": 0,
+      "untangle_in_sequence": false,
+      "visible_chars": 4003,
+      "wall_clock_s": 0.008158
+    },
+    {
+      "actual_sequence": [
+        "REDUCE_v2"
+      ],
+      "conservation_untraced": [],
+      "fail_closed": false,
+      "failure_class": null,
+      "gate": true,
+      "gold_hits": 0,
+      "gold_n": 0,
+      "gold_reference_recall": "NA",
+      "integrate_in_sequence": false,
+      "lineage_recall": 1.0,
+      "mean_reference_edge_distance": 26.315068493150687,
+      "n_exact_duplicate_groups": 3,
+      "n_r_entries": 3,
+      "n_raw_edge_rows": 152,
+      "n_reference_edges": 146.0,
+      "n_routing_assignments": 94,
+      "n_sensor_directed_edges": 152,
+      "n_source_units": 184,
+      "n_unadjudicated_extra_edges": 152,
+      "n_units_after": 91,
+      "n_units_before": 94,
+      "n_unsupported_passthrough": 90,
+      "ok": true,
+      "operator_noop_hidden": false,
+      "overmerge_ok": true,
+      "planner_ok": true,
+      "post_reduce_multiplicity": 0,
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "provenance_completeness": 1.0,
+      "raw_edge_sample": [
+        {
+          "atom": "background",
+          "distance": 10,
+          "dst": 0,
+          "src": 10
+        },
+        {
+          "atom": "background",
+          "distance": 9,
+          "dst": 1,
+          "src": 10
+        },
+        {
+          "atom": "background",
+          "distance": 21,
+          "dst": 31,
+          "src": 10
+        },
+        {
+          "atom": "background",
+          "distance": 27,
+          "dst": 37,
+          "src": 10
+        },
+        {
+          "atom": "background",
+          "distance": 54,
+          "dst": 64,
+          "src": 10
+        },
+        {
+          "atom": "foreground",
+          "distance": 9,
+          "dst": 2,
+          "src": 11
+        },
+        {
+          "atom": "foreground",
+          "distance": 8,
+          "dst": 19,
+          "src": 11
+        },
+        {
+          "atom": "foreground",
+          "distance": 29,
+          "dst": 40,
+          "src": 11
+        },
+        {
+          "atom": "foreground",
+          "distance": 38,
+          "dst": 49,
+          "src": 11
+        },
+        {
+          "atom": "foreground",
+          "distance": 41,
+          "dst": 52,
+          "src": 11
+        },
+        {
+          "atom": "foreground",
+          "distance": 45,
+          "dst": 56,
+          "src": 11
+        },
+        {
+          "atom": "foreground",
+          "distance": 49,
+          "dst": 60,
+          "src": 11
+        },
+        {
+          "atom": "foreground",
+          "distance": 52,
+          "dst": 63,
+          "src": 11
+        },
+        {
+          "atom": "foreground",
+          "distance": 57,
+          "dst": 68,
+          "src": 11
+        },
+        {
+          "atom": "foreground",
+          "distance": 62,
+          "dst": 73,
+          "src": 11
+        },
+        {
+          "atom": "foreground",
+          "distance": 80,
+          "dst": 91,
+          "src": 11
+        },
+        {
+          "atom": "disabled",
+          "distance": 13,
+          "dst": 6,
+          "src": 19
+        },
+        {
+          "atom": "date",
+          "distance": 66,
+          "dst": 88,
+          "src": 22
+        },
+        {
+          "atom": "date",
+          "distance": 67,
+          "dst": 89,
+          "src": 22
+        },
+        {
+          "atom": "tray",
+          "distance": 2,
+          "dst": 28,
+          "src": 26
+        },
+        {
+          "atom": "background",
+          "distance": 31,
+          "dst": 0,
+          "src": 31
+        },
+        {
+          "atom": "background",
+          "distance": 30,
+          "dst": 1,
+          "src": 31
+        },
+        {
+          "atom": "background",
+          "distance": 21,
+          "dst": 10,
+          "src": 31
+        },
+        {
+          "atom": "background",
+          "distance": 6,
+          "dst": 37,
+          "src": 31
+        },
+        {
+          "atom": "background",
+          "distance": 33,
+          "dst": 64,
+          "src": 31
+        },
+        {
+          "atom": "primary",
+          "distance": 29,
+          "dst": 3,
+          "src": 32
+        },
+        {
+          "atom": "alert",
+          "distance": 32,
+          "dst": 5,
+          "src": 37
+        },
+        {
+          "atom": "disabled",
+          "distance": 34,
+          "dst": 6,
+          "src": 40
+        },
+        {
+          "atom": "mounted",
+          "distance": 1,
+          "dst": 47,
+          "src": 48
+        },
+        {
+          "atom": "disabled",
+          "distance": 43,
+          "dst": 6,
+          "src": 49
+        },
+        {
+          "atom": "primary",
+          "distance": 49,
+          "dst": 3,
+          "src": 52
+        },
+        {
+          "atom": "label",
+          "distance": 23,
+          "dst": 30,
+          "src": 53
+        }
+      ],
+      "reconstruction_exact": true,
+      "reduce_in_sequence": true,
+      "redundancy_n_duplicate_records": 3,
+      "redundancy_status": "observed",
+      "reference_coverage_status": "not_observed",
+      "safety_ok": false,
+      "scoped_precision": "NA",
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 0,
+      "silent_loss": 0,
+      "source_id": "rs1-ini-polybar",
+      "source_sha256": "292ec12a9034cd514776b597427c9deecd76efedfefec3a2e3fb8188b621d324",
+      "token_proxy_after": 1066,
+      "token_proxy_label": "local_char4_proxy",
+      "token_proxy_routing": 664,
+      "token_proxy_source": 1041,
+      "unsupported_lost": 0,
+      "untangle_in_sequence": false,
+      "visible_chars": 4081,
+      "wall_clock_s": 0.016696
+    },
+    {
+      "actual_sequence": [
+        "REDUCE_v2"
+      ],
+      "conservation_untraced": [],
+      "fail_closed": false,
+      "failure_class": null,
+      "gate": true,
+      "gold_hits": 0,
+      "gold_n": 0,
+      "gold_reference_recall": "NA",
+      "integrate_in_sequence": false,
+      "lineage_recall": 1.0,
+      "mean_reference_edge_distance": 26.416666666666668,
+      "n_exact_duplicate_groups": 12,
+      "n_r_entries": 16,
+      "n_raw_edge_rows": 12,
+      "n_reference_edges": 12.0,
+      "n_routing_assignments": 230,
+      "n_sensor_directed_edges": 12,
+      "n_source_units": 568,
+      "n_unadjudicated_extra_edges": 12,
+      "n_units_after": 214,
+      "n_units_before": 230,
+      "n_unsupported_passthrough": 338,
+      "ok": true,
+      "operator_noop_hidden": false,
+      "overmerge_ok": true,
+      "planner_ok": true,
+      "post_reduce_multiplicity": 0,
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "provenance_completeness": 1.0,
+      "raw_edge_sample": [
+        {
+          "atom": "PROTOCOL",
+          "distance": 2,
+          "dst": 5,
+          "src": 3
+        },
+        {
+          "atom": "DOMAIN",
+          "distance": 1,
+          "dst": 4,
+          "src": 3
+        },
+        {
+          "atom": "HTTP_PORT",
+          "distance": 4,
+          "dst": 7,
+          "src": 3
+        },
+        {
+          "atom": "PROTOCOL",
+          "distance": 7,
+          "dst": 5,
+          "src": 12
+        },
+        {
+          "atom": "HTTP_ADDR",
+          "distance": 6,
+          "dst": 6,
+          "src": 12
+        },
+        {
+          "atom": "HTTP_PORT",
+          "distance": 5,
+          "dst": 7,
+          "src": 12
+        },
+        {
+          "atom": "DOMAIN",
+          "distance": 16,
+          "dst": 4,
+          "src": 20
+        },
+        {
+          "atom": "SSH_PORT",
+          "distance": 8,
+          "dst": 21,
+          "src": 29
+        },
+        {
+          "atom": "BRAND_NAME",
+          "distance": 71,
+          "dst": 0,
+          "src": 71
+        },
+        {
+          "atom": "USER",
+          "distance": 34,
+          "dst": 57,
+          "src": 91
+        },
+        {
+          "atom": "USER",
+          "distance": 17,
+          "dst": 74,
+          "src": 91
+        },
+        {
+          "atom": "BRAND_NAME",
+          "distance": 146,
+          "dst": 0,
+          "src": 146
+        }
+      ],
+      "reconstruction_exact": true,
+      "reduce_in_sequence": true,
+      "redundancy_n_duplicate_records": 16,
+      "redundancy_status": "observed",
+      "reference_coverage_status": "not_observed",
+      "safety_ok": false,
+      "scoped_precision": "NA",
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 0,
+      "silent_loss": 0,
+      "source_id": "rs1-ini-gogs",
+      "source_sha256": "5f9fafb733a153c85bf5d1759ba7663cd53b5f98bb3265703e2769e374453b4f",
+      "token_proxy_after": 5098,
+      "token_proxy_label": "local_char4_proxy",
+      "token_proxy_routing": 1398,
+      "token_proxy_source": 5025,
+      "unsupported_lost": 0,
+      "untangle_in_sequence": false,
+      "visible_chars": 19841,
+      "wall_clock_s": 0.04595
+    },
+    {
+      "actual_sequence": [],
+      "conservation_untraced": [],
+      "fail_closed": false,
+      "failure_class": null,
+      "gate": true,
+      "gold_hits": 8,
+      "gold_n": 8,
+      "gold_reference_recall": 1.0,
+      "integrate_in_sequence": false,
+      "lineage_recall": 1.0,
+      "mean_reference_edge_distance": 20.044585987261147,
+      "n_exact_duplicate_groups": 0,
+      "n_r_entries": 0,
+      "n_raw_edge_rows": 183,
+      "n_reference_edges": 157.0,
+      "n_routing_assignments": 122,
+      "n_sensor_directed_edges": 183,
+      "n_source_units": 176,
+      "n_unadjudicated_extra_edges": 160,
+      "n_units_after": 122,
+      "n_units_before": 122,
+      "n_unsupported_passthrough": 54,
+      "ok": true,
+      "operator_noop_hidden": false,
+      "overmerge_ok": true,
+      "planner_ok": true,
+      "post_reduce_multiplicity": 0,
+      "projected_sequence": [],
+      "provenance_completeness": 1.0,
+      "raw_edge_sample": [
+        {
+          "atom": "tegra",
+          "distance": 26,
+          "dst": 26,
+          "src": 0
+        },
+        {
+          "atom": "tegra",
+          "distance": 78,
+          "dst": 78,
+          "src": 0
+        },
+        {
+          "atom": "tegra",
+          "distance": 79,
+          "dst": 79,
+          "src": 0
+        },
+        {
+          "atom": "TEGRA_PKGARCH",
+          "distance": 1,
+          "dst": 2,
+          "src": 3
+        },
+        {
+          "atom": "SOC_FAMILY_PKGARCH",
+          "distance": 2,
+          "dst": 1,
+          "src": 3
+        },
+        {
+          "atom": "L4T_EXTLINUX_BASEDIR",
+          "distance": 2,
+          "dst": 7,
+          "src": 9
+        },
+        {
+          "atom": "KERNEL_IMAGETYPE",
+          "distance": 4,
+          "dst": 5,
+          "src": 9
+        },
+        {
+          "atom": "KERNEL_ARGS",
+          "distance": 4,
+          "dst": 6,
+          "src": 10
+        },
+        {
+          "atom": "L4T_EXTLINUX_BASEDIR",
+          "distance": 4,
+          "dst": 7,
+          "src": 11
+        },
+        {
+          "atom": "INITRAMFS_IMAGE",
+          "distance": 47,
+          "dst": 58,
+          "src": 11
+        },
+        {
+          "atom": "INITRAMFS_IMAGE_BUNDLE",
+          "distance": 48,
+          "dst": 59,
+          "src": 11
+        },
+        {
+          "atom": "dtbo",
+          "distance": 3,
+          "dst": 16,
+          "src": 13
+        },
+        {
+          "atom": "dtbo",
+          "distance": 2,
+          "dst": 16,
+          "src": 14
+        },
+        {
+          "atom": "utils",
+          "distance": 21,
+          "dst": 35,
+          "src": 14
+        },
+        {
+          "atom": "USE_REDUNDANT_FLASH_LAYOUT",
+          "distance": 98,
+          "dst": 112,
+          "src": 14
+        },
+        {
+          "atom": "nvidia",
+          "distance": 9,
+          "dst": 25,
+          "src": 16
+        },
+        {
+          "atom": "kernel",
+          "distance": 5,
+          "dst": 21,
+          "src": 16
+        },
+        {
+          "atom": "TNSPEC_BOOTDEV_DEFAULT",
+          "distance": 1,
+          "dst": 19,
+          "src": 20
+        },
+        {
+          "atom": "nvidia",
+          "distance": 4,
+          "dst": 25,
+          "src": 21
+        },
+        {
+          "atom": "tegra",
+          "distance": 5,
+          "dst": 26,
+          "src": 21
+        },
+        {
+          "atom": "tegra",
+          "distance": 57,
+          "dst": 78,
+          "src": 21
+        },
+        {
+          "atom": "tegra",
+          "distance": 58,
+          "dst": 79,
+          "src": 21
+        },
+        {
+          "atom": "PREFERRED_PROVIDER_virtual",
+          "distance": 6,
+          "dst": 16,
+          "src": 22
+        },
+        {
+          "atom": "PREFERRED_PROVIDER_virtual",
+          "distance": 1,
+          "dst": 21,
+          "src": 22
+        },
+        {
+          "atom": "PREFERRED_PROVIDER_virtual",
+          "distance": 1,
+          "dst": 23,
+          "src": 22
+        },
+        {
+          "atom": "PREFERRED_PROVIDER_virtual",
+          "distance": 2,
+          "dst": 24,
+          "src": 22
+        },
+        {
+          "atom": "PREFERRED_PROVIDER_virtual",
+          "distance": 7,
+          "dst": 29,
+          "src": 22
+        },
+        {
+          "atom": "PREFERRED_PROVIDER_virtual",
+          "distance": 8,
+          "dst": 30,
+          "src": 22
+        },
+        {
+          "atom": "PREFERRED_PROVIDER_virtual",
+          "distance": 9,
+          "dst": 31,
+          "src": 22
+        },
+        {
+          "atom": "PREFERRED_PROVIDER_virtual",
+          "distance": 10,
+          "dst": 32,
+          "src": 22
+        },
+        {
+          "atom": "PREFERRED_PROVIDER_virtual",
+          "distance": 11,
+          "dst": 33,
+          "src": 22
+        },
+        {
+          "atom": "PREFERRED_PROVIDER_virtual",
+          "distance": 18,
+          "dst": 40,
+          "src": 22
+        }
+      ],
+      "reconstruction_exact": true,
+      "reduce_in_sequence": false,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "reference_coverage_status": "complete",
+      "safety_ok": true,
+      "scoped_precision": 0.34782608695652173,
+      "scoped_precision_fp": 15,
+      "scoped_precision_tp": 8,
+      "silent_loss": 0,
+      "source_id": "rs1-ini-tegra-common",
+      "source_sha256": "e1a1cf73e118c8e1f49591e7d98181a46ef7536dc2bed6c7f0b99e10ee49b5f6",
+      "token_proxy_after": 2817,
+      "token_proxy_label": "local_char4_proxy",
+      "token_proxy_routing": 2459,
+      "token_proxy_source": 2773,
+      "unsupported_lost": 0,
+      "untangle_in_sequence": false,
+      "visible_chars": 11092,
+      "wall_clock_s": 0.015832
+    }
+  ],
+  "revision": "phase4c-real-holdout-v0.1",
+  "schema": "bite-phase4c-eval-rows/v0.1"
+}

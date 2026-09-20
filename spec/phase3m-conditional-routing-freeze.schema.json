@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3m-conditional-routing-freeze.schema.json",
+  "title": "BITE Phase-3M conditional routing protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "generation",
+    "p3f_evaluation_holdout_used",
+    "cut_in_conditional_map",
+    "rule_policy_unchanged",
+    "m1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3m-conditional-routing-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3m-conditional-routing-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE3M_CONDITIONAL_ROUTING_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "generation": { "type": "string", "const": "p3m" },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "cut_in_conditional_map": { "type": "boolean", "const": false },
+    "rule_policy_unchanged": { "type": "boolean", "const": true },
+    "m1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE3M_CONDITIONAL_ROUTING_READY",
+          "PHASE3M_CONDITIONAL_ROUTING_PARTIAL",
+          "PHASE3M_CONDITIONAL_ROUTING_BLOCKED"
+        ]
+      }
+    }
+  }
+}

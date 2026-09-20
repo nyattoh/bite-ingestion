@@ -1,0 +1,22 @@
+[
+  {
+    "k": "src_scope_q009",
+    "v": "star_lock_q009"
+  },
+  {
+    "k": "src2_scope_q009",
+    "v": "moon_lock_q009"
+  },
+  {
+    "k": "note_astro_q009_00",
+    "v": "blob_astro_q009_00"
+  },
+  {
+    "k": "dst_star_lock_q009",
+    "v": "ack_star_lock_q009"
+  },
+  {
+    "k": "dst_moon_lock_q009",
+    "v": "ack_moon_lock_q009"
+  }
+]

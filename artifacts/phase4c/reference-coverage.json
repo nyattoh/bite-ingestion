@@ -1,0 +1,105 @@
+{
+  "documents": [
+    {
+      "gold_hits": 1,
+      "gold_n": 1,
+      "gold_reference_recall": 1.0,
+      "n_unadjudicated_extra_edges": 0,
+      "reference_coverage_status": "complete",
+      "scoped_precision": 1.0,
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 1,
+      "source_id": "rs1-dotenv-koel"
+    },
+    {
+      "gold_hits": 0,
+      "gold_n": 0,
+      "gold_reference_recall": "NA",
+      "n_unadjudicated_extra_edges": 0,
+      "reference_coverage_status": "not_observed",
+      "scoped_precision": "NA",
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 0,
+      "source_id": "rs1-dotenv-bookstack"
+    },
+    {
+      "gold_hits": 2,
+      "gold_n": 2,
+      "gold_reference_recall": 1.0,
+      "n_unadjudicated_extra_edges": 0,
+      "reference_coverage_status": "complete",
+      "scoped_precision": 1.0,
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 2,
+      "source_id": "rs1-dotenv-laravel"
+    },
+    {
+      "gold_hits": 7,
+      "gold_n": 7,
+      "gold_reference_recall": 1.0,
+      "n_unadjudicated_extra_edges": 145,
+      "reference_coverage_status": "complete",
+      "scoped_precision": "NA",
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 0,
+      "source_id": "rs1-props-ratis-log4j"
+    },
+    {
+      "gold_hits": 0,
+      "gold_n": 0,
+      "gold_reference_recall": "NA",
+      "n_unadjudicated_extra_edges": 3,
+      "reference_coverage_status": "not_observed",
+      "scoped_precision": "NA",
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 0,
+      "source_id": "rs1-props-kafka-server"
+    },
+    {
+      "gold_hits": 0,
+      "gold_n": 0,
+      "gold_reference_recall": "NA",
+      "n_unadjudicated_extra_edges": 588,
+      "reference_coverage_status": "not_observed",
+      "scoped_precision": "NA",
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 0,
+      "source_id": "rs1-props-tomcat-logging"
+    },
+    {
+      "gold_hits": 0,
+      "gold_n": 0,
+      "gold_reference_recall": "NA",
+      "n_unadjudicated_extra_edges": 152,
+      "reference_coverage_status": "not_observed",
+      "scoped_precision": "NA",
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 0,
+      "source_id": "rs1-ini-polybar"
+    },
+    {
+      "gold_hits": 0,
+      "gold_n": 0,
+      "gold_reference_recall": "NA",
+      "n_unadjudicated_extra_edges": 12,
+      "reference_coverage_status": "not_observed",
+      "scoped_precision": "NA",
+      "scoped_precision_fp": 0,
+      "scoped_precision_tp": 0,
+      "source_id": "rs1-ini-gogs"
+    },
+    {
+      "gold_hits": 8,
+      "gold_n": 8,
+      "gold_reference_recall": 1.0,
+      "n_unadjudicated_extra_edges": 160,
+      "reference_coverage_status": "complete",
+      "scoped_precision": 0.34782608695652173,
+      "scoped_precision_fp": 15,
+      "scoped_precision_tp": 8,
+      "source_id": "rs1-ini-tegra-common"
+    }
+  ],
+  "revision": "phase4c-real-holdout-v0.1",
+  "schema": "bite-phase4c-reference-coverage/v0.1"
+}

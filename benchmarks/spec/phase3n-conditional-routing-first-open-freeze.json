@@ -1,0 +1,205 @@
+{
+  "claim_boundary": "same frozen p3m texture families / new replica identifiers",
+  "composition_safety": [
+    "lineage_recall",
+    "provenance_completeness",
+    "conservation_untraced",
+    "silent_loss",
+    "quarantine_recoverable",
+    "reduce_only_exact_duplicates",
+    "integrate_explicit_join_composite",
+    "no_unrelated_overmerge"
+  ],
+  "cut_in_conditional_map": false,
+  "dispersions": [
+    "high",
+    "mid",
+    "low"
+  ],
+  "evaluation_case_ids": [
+    "p3m-redundant-high-r2",
+    "p3m-redundant-high-r3",
+    "p3m-redundant-mid-r2",
+    "p3m-redundant-mid-r3",
+    "p3m-redundant-low-r2",
+    "p3m-redundant-low-r3",
+    "p3m-explicit_join-high-r2",
+    "p3m-explicit_join-high-r3",
+    "p3m-explicit_join-mid-r2",
+    "p3m-explicit_join-mid-r3",
+    "p3m-explicit_join-low-r2",
+    "p3m-explicit_join-low-r3",
+    "p3m-anomaly-high-r2",
+    "p3m-anomaly-high-r3",
+    "p3m-anomaly-mid-r2",
+    "p3m-anomaly-mid-r3",
+    "p3m-anomaly-low-r2",
+    "p3m-anomaly-low-r3",
+    "p3m-neutral-high-r2",
+    "p3m-neutral-high-r3",
+    "p3m-neutral-mid-r2",
+    "p3m-neutral-mid-r3",
+    "p3m-neutral-low-r2",
+    "p3m-neutral-low-r3",
+    "p3m-redundant_join-high-r2",
+    "p3m-redundant_join-high-r3",
+    "p3m-redundant_join-mid-r2",
+    "p3m-redundant_join-mid-r3",
+    "p3m-redundant_join-low-r2",
+    "p3m-redundant_join-low-r3",
+    "p3m-anomaly_redundant-high-r2",
+    "p3m-anomaly_redundant-high-r3",
+    "p3m-anomaly_redundant-mid-r2",
+    "p3m-anomaly_redundant-mid-r3",
+    "p3m-anomaly_redundant-low-r2",
+    "p3m-anomaly_redundant-low-r3",
+    "p3m-anomaly_join-high-r2",
+    "p3m-anomaly_join-high-r3",
+    "p3m-anomaly_join-mid-r2",
+    "p3m-anomaly_join-mid-r3",
+    "p3m-anomaly_join-low-r2",
+    "p3m-anomaly_join-low-r3",
+    "p3m-all_three-high-r2",
+    "p3m-all_three-high-r3",
+    "p3m-all_three-mid-r2",
+    "p3m-all_three-mid-r3",
+    "p3m-all_three-low-r2",
+    "p3m-all_three-low-r3"
+  ],
+  "expected_sequence_unchanged": true,
+  "fixture_unchanged": true,
+  "formats": [
+    "key_value"
+  ],
+  "generation": "p3m",
+  "gold_isolation": {
+    "forbidden_on_sensors_preflight_policy": [
+      "texture",
+      "expected_sequence",
+      "gold_unit_ids",
+      "route",
+      "operator",
+      "answer"
+    ],
+    "scorer_only": [
+      "gold_unit_ids",
+      "expected_sequence",
+      "texture"
+    ]
+  },
+  "high_sequences": {
+    "all_three": [
+      "UNTANGLE",
+      "REDUCE",
+      "INTEGRATE"
+    ],
+    "anomaly": [
+      "UNTANGLE"
+    ],
+    "anomaly_join": [
+      "UNTANGLE",
+      "INTEGRATE"
+    ],
+    "anomaly_redundant": [
+      "UNTANGLE",
+      "REDUCE"
+    ],
+    "explicit_join": [
+      "INTEGRATE"
+    ],
+    "neutral": [],
+    "redundant": [
+      "REDUCE"
+    ],
+    "redundant_join": [
+      "REDUCE",
+      "INTEGRATE"
+    ]
+  },
+  "locked_git_blobs": {
+    "artifacts/phase3m/composition-safety.json": "665f00626aa99f2efe45611066484c1c9b5076e5",
+    "artifacts/phase3m/conditional-routing.json": "0efaae5704b9972906193c189fed1b63daa65882",
+    "benchmarks/spec/phase3m-conditional-routing-freeze.json": "62e8120f88c790b59bb2d9a3d65ddb8a0983549e",
+    "benchmarks/spec/phase3m-split-manifest.json": "8514cc515a2adeb32cb2840e6337e1042dcc6089",
+    "src/bite_ingestion/operators/integrate.py": "68e34becd80e7e803f511ec57ea7a23c2aaa1240",
+    "src/bite_ingestion/operators/preflight.py": "b3cc6946f515b3ca6f025500a4ffdad45c111eea",
+    "src/bite_ingestion/operators/untangle.py": "2951b7542f96674930e750e438891ca772b46896",
+    "src/bite_ingestion/policies/conditional_texture_policy_v1.py": "f592c2850e86beec68463dbac30a1910e057fb8b",
+    "src/bite_ingestion/policies/rule_policy.py": "06b77e35776e053ed66baf7e0fc0ef17ba639b89",
+    "src/bite_ingestion/profilers/dependency_dispersion_v1.py": "890d777bb8179df27c8aeba35f1efebc133dd8eb",
+    "src/bite_ingestion/profilers/structural_redundancy_v1.py": "aca6fcd6664f9942b9f72a0d2fd171bfbfe41a35"
+  },
+  "m0_commit_sha": "ad95ed8bb0a60ec6c3a10c4a9ccc96f395bcf702",
+  "m1_commit_sha": "5adf1637906874394fb9a89285cf373638a29e37",
+  "mid_low_sequence": [],
+  "n1_verdicts": [
+    "PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_CONFIRMED",
+    "PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_FAILED",
+    "PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_BLOCKED"
+  ],
+  "n_evaluation_surfaces": 48,
+  "no_new_cases": true,
+  "no_new_format": true,
+  "no_winner_score": true,
+  "not_claimed": [
+    "unseen texture",
+    "unseen serialization",
+    "external corpus generalization",
+    "BITE superiority"
+  ],
+  "offline": true,
+  "on_failed": "do not retune predicates or thresholds in this PR",
+  "operator_order": [
+    "UNTANGLE",
+    "REDUCE",
+    "INTEGRATE"
+  ],
+  "operator_unchanged": true,
+  "p3f_evaluation_holdout_used": false,
+  "p3m_generation_unchanged": true,
+  "p3m_split_unchanged": true,
+  "paid_api": false,
+  "policy_name": "conditional_texture_policy_v1",
+  "predicate_unchanged": true,
+  "preflight_unchanged": true,
+  "premise": "PHASE3M_CONDITIONAL_ROUTING_READY",
+  "remeasure_development": false,
+  "replicas": [
+    2,
+    3
+  ],
+  "research_conclusion": false,
+  "revision": "phase3n-conditional-routing-first-open-freeze-v0.1",
+  "routing": {
+    "cut_in_conditional_map": false,
+    "no_new_a_threshold": true,
+    "no_new_k_threshold": true,
+    "no_v1_edges_as_integrate_context": true,
+    "policy": "conditional_texture_policy_v1",
+    "rule_policy_changed": false,
+    "rule_policy_executed": false
+  },
+  "rule_policy_unchanged": true,
+  "schema": "bitebench-phase3n-conditional-routing-first-open-freeze/v0.1",
+  "sensor_unchanged": true,
+  "synthetic": true,
+  "textures": [
+    "redundant",
+    "explicit_join",
+    "anomaly",
+    "neutral",
+    "redundant_join",
+    "anomaly_redundant",
+    "anomaly_join",
+    "all_three"
+  ],
+  "threshold_unchanged": true,
+  "token_reduction": "diagnostic_only",
+  "tolerance": false,
+  "verdict": "PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_PROTOCOL_FROZEN",
+  "verdict_rule": {
+    "PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_BLOCKED": "protocol drift, set mismatch, leak, or measurement cannot run",
+    "PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_CONFIRMED": "48/48 expected sequence exact; 48/48 composition safety; locked blobs unchanged; evaluation set exact; no CUT; no leak; p3f unopened",
+    "PHASE3N_CONDITIONAL_ROUTING_HOLDOUT_FAILED": "one or more sequence or safety mismatches"
+  }
+}

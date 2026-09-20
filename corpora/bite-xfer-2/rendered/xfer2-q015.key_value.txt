@@ -1,0 +1,8 @@
+src_queue_q015=cron_lock_q015
+note_scheduler_q015_00=blob_scheduler_q015_00
+note_scheduler_q015_01=blob_scheduler_q015_01 観測
+dst_cron_lock_q015=ack_cron_lock_q015
+alert_q015=ingest dump TRACEBACK
+mate_a_q015=crate_a_q015 id=plate_q015
+mate_b_q015=crate_b_q015 id=plate_q015
+mate_c_q015=crate_c_q015 id=plate_q015

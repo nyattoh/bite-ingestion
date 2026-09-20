@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase3j-texture-observability-freeze.schema.json",
+  "title": "BITE Phase-3J texture observability protocol freeze v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "verdict",
+    "paid_api",
+    "generation",
+    "split",
+    "p3f_evaluation_holdout_used",
+    "reuse_p3h_fixtures",
+    "no_new_absolute_threshold",
+    "j1_verdicts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bitebench-phase3j-texture-observability-freeze/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase3j-texture-observability-freeze-v0.1"
+    },
+    "verdict": {
+      "type": "string",
+      "const": "PHASE3J_TEXTURE_OBSERVABILITY_PROTOCOL_FROZEN"
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "generation": { "type": "string", "const": "p3j" },
+    "split": { "type": "string", "const": "development" },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "reuse_p3h_fixtures": { "type": "boolean", "const": false },
+    "no_new_absolute_threshold": { "type": "boolean", "const": true },
+    "j1_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHASE3J_EXISTING_FEATURES_SUFFICIENT",
+          "PHASE3J_TEXTURE_SENSOR_REVISION_REQUIRED",
+          "PHASE3J_OBSERVABILITY_BLOCKED"
+        ]
+      }
+    }
+  }
+}

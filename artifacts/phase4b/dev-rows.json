@@ -1,0 +1,532 @@
+{
+  "documents": [
+    {
+      "actual_sequence": [],
+      "conservation_untraced": [],
+      "fail_closed": false,
+      "gate": false,
+      "gold_hits": 0,
+      "gold_n": 0,
+      "gold_reference_recall": "NA",
+      "integrate_in_sequence": false,
+      "lineage_recall": 1.0,
+      "mean_reference_edge_distance": 0.0,
+      "n_exact_duplicate_groups": 0,
+      "n_r_entries": 0,
+      "n_raw_edge_rows": 0,
+      "n_reference_edges": 0.0,
+      "n_routing_assignments": 20,
+      "n_sensor_directed_edges": 0,
+      "n_source_units": 51,
+      "n_unadjudicated_extra_edges": 0,
+      "n_units_after": 20,
+      "n_units_before": 20,
+      "n_unsupported_passthrough": 31,
+      "ok": true,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [],
+      "provenance_completeness": 1.0,
+      "raw_edge_sample": [],
+      "reconstruction_exact": true,
+      "reduce_in_sequence": false,
+      "redundancy_duplicate_unit_ratio": 0.0,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "reference_coverage_status": "not_observed",
+      "safety_ok": true,
+      "silent_loss": 0,
+      "source_id": "rs1-dotenv-linkding",
+      "source_sha256": "12a0e13fc1b005ea484b96c666813d1a601de5ad85c9db82262b67950dcb10bf",
+      "token_proxy_label": "local_char4_proxy",
+      "token_proxy_routing": 107,
+      "token_proxy_source": 523,
+      "unsupported_lost": 0,
+      "untangle_in_sequence": false
+    },
+    {
+      "actual_sequence": [
+        "UNTANGLE"
+      ],
+      "conservation_untraced": [],
+      "fail_closed": false,
+      "gate": true,
+      "gold_hits": 41,
+      "gold_n": 41,
+      "gold_reference_recall": 1.0,
+      "integrate_in_sequence": false,
+      "lineage_recall": 1.0,
+      "mean_reference_edge_distance": 38.332025677603426,
+      "n_exact_duplicate_groups": 0,
+      "n_r_entries": 1,
+      "n_raw_edge_rows": 3651,
+      "n_reference_edges": 2804.0,
+      "n_routing_assignments": 120,
+      "n_sensor_directed_edges": 3651,
+      "n_source_units": 337,
+      "n_unadjudicated_extra_edges": 3556,
+      "n_units_after": 119,
+      "n_units_before": 120,
+      "n_unsupported_passthrough": 217,
+      "ok": true,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [
+        "UNTANGLE"
+      ],
+      "provenance_completeness": 1.0,
+      "raw_edge_sample": [
+        {
+          "atom": "console",
+          "distance": 19,
+          "dst": 19,
+          "src": 0
+        },
+        {
+          "atom": "console",
+          "distance": 20,
+          "dst": 20,
+          "src": 0
+        },
+        {
+          "atom": "console",
+          "distance": 21,
+          "dst": 21,
+          "src": 0
+        },
+        {
+          "atom": "console",
+          "distance": 22,
+          "dst": 22,
+          "src": 0
+        },
+        {
+          "atom": "hadoop",
+          "distance": 2,
+          "dst": 0,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 1,
+          "dst": 1,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 4,
+          "dst": 6,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 5,
+          "dst": 7,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 21,
+          "dst": 23,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 22,
+          "dst": 24,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 23,
+          "dst": 25,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 25,
+          "dst": 27,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 40,
+          "dst": 42,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 41,
+          "dst": 43,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 69,
+          "dst": 71,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 70,
+          "dst": 72,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 80,
+          "dst": 82,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 81,
+          "dst": 83,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 91,
+          "dst": 93,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 92,
+          "dst": 94,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 102,
+          "dst": 104,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 103,
+          "dst": 105,
+          "src": 2
+        },
+        {
+          "atom": "hadoop",
+          "distance": 3,
+          "dst": 0,
+          "src": 3
+        },
+        {
+          "atom": "hadoop",
+          "distance": 2,
+          "dst": 1,
+          "src": 3
+        },
+        {
+          "atom": "hadoop",
+          "distance": 1,
+          "dst": 2,
+          "src": 3
+        },
+        {
+          "atom": "hadoop",
+          "distance": 3,
+          "dst": 6,
+          "src": 3
+        },
+        {
+          "atom": "hadoop",
+          "distance": 4,
+          "dst": 7,
+          "src": 3
+        },
+        {
+          "atom": "hadoop",
+          "distance": 20,
+          "dst": 23,
+          "src": 3
+        },
+        {
+          "atom": "hadoop",
+          "distance": 21,
+          "dst": 24,
+          "src": 3
+        },
+        {
+          "atom": "hadoop",
+          "distance": 22,
+          "dst": 25,
+          "src": 3
+        },
+        {
+          "atom": "hadoop",
+          "distance": 24,
+          "dst": 27,
+          "src": 3
+        },
+        {
+          "atom": "hadoop",
+          "distance": 39,
+          "dst": 42,
+          "src": 3
+        }
+      ],
+      "reconstruction_exact": true,
+      "reduce_in_sequence": false,
+      "redundancy_duplicate_unit_ratio": 0.0,
+      "redundancy_n_duplicate_records": 0,
+      "redundancy_status": "not_observed",
+      "reference_coverage_status": "complete",
+      "safety_ok": true,
+      "silent_loss": 0,
+      "source_id": "rs1-props-hadoop-log4j",
+      "source_sha256": "220c1cc06b1d7802052a9ab2959f66f875f664e25f4f98e05ab86120af34e644",
+      "token_proxy_label": "local_char4_proxy",
+      "token_proxy_routing": 1758,
+      "token_proxy_source": 3613,
+      "unsupported_lost": 0,
+      "untangle_in_sequence": true
+    },
+    {
+      "actual_sequence": [
+        "REDUCE_v2"
+      ],
+      "conservation_untraced": [],
+      "fail_closed": false,
+      "gate": true,
+      "gold_hits": 208,
+      "gold_n": 248,
+      "gold_reference_recall": 0.8387096774193549,
+      "integrate_in_sequence": false,
+      "lineage_recall": 1.0,
+      "mean_reference_edge_distance": 69.35714285714286,
+      "n_exact_duplicate_groups": 1,
+      "n_r_entries": 1,
+      "n_raw_edge_rows": 440,
+      "n_reference_edges": 420.0,
+      "n_routing_assignments": 482,
+      "n_sensor_directed_edges": 440,
+      "n_source_units": 997,
+      "n_unadjudicated_extra_edges": 245,
+      "n_units_after": 481,
+      "n_units_before": 482,
+      "n_unsupported_passthrough": 515,
+      "ok": true,
+      "operator_noop_hidden": false,
+      "planner_ok": true,
+      "projected_sequence": [
+        "REDUCE_v2"
+      ],
+      "provenance_completeness": 1.0,
+      "raw_edge_sample": [
+        {
+          "atom": "BASELIB",
+          "distance": 2,
+          "dst": 2,
+          "src": 0
+        },
+        {
+          "atom": "BASELIB",
+          "distance": 3,
+          "dst": 3,
+          "src": 0
+        },
+        {
+          "atom": "BASELIB",
+          "distance": 4,
+          "dst": 4,
+          "src": 0
+        },
+        {
+          "atom": "baselib",
+          "distance": 1,
+          "dst": 0,
+          "src": 1
+        },
+        {
+          "atom": "prefix",
+          "distance": 1,
+          "dst": 6,
+          "src": 7
+        },
+        {
+          "atom": "prefix",
+          "distance": 337,
+          "dst": 344,
+          "src": 7
+        },
+        {
+          "atom": "prefix",
+          "distance": 338,
+          "dst": 345,
+          "src": 7
+        },
+        {
+          "atom": "prefix",
+          "distance": 339,
+          "dst": 346,
+          "src": 7
+        },
+        {
+          "atom": "prefix",
+          "distance": 340,
+          "dst": 347,
+          "src": 7
+        },
+        {
+          "atom": "DISTRO_FEATURES",
+          "distance": 436,
+          "dst": 444,
+          "src": 8
+        },
+        {
+          "atom": "exec_prefix",
+          "distance": 1,
+          "dst": 7,
+          "src": 8
+        },
+        {
+          "atom": "base_prefix",
+          "distance": 3,
+          "dst": 5,
+          "src": 8
+        },
+        {
+          "atom": "root_prefix",
+          "distance": 1,
+          "dst": 8,
+          "src": 9
+        },
+        {
+          "atom": "root_prefix",
+          "distance": 2,
+          "dst": 8,
+          "src": 10
+        },
+        {
+          "atom": "root_prefix",
+          "distance": 3,
+          "dst": 8,
+          "src": 11
+        },
+        {
+          "atom": "baselib",
+          "distance": 11,
+          "dst": 0,
+          "src": 11
+        },
+        {
+          "atom": "baselib",
+          "distance": 10,
+          "dst": 1,
+          "src": 11
+        },
+        {
+          "atom": "root_prefix",
+          "distance": 4,
+          "dst": 8,
+          "src": 12
+        },
+        {
+          "atom": "base_prefix",
+          "distance": 8,
+          "dst": 5,
+          "src": 13
+        },
+        {
+          "atom": "base_prefix",
+          "distance": 9,
+          "dst": 5,
+          "src": 14
+        },
+        {
+          "atom": "base_prefix",
+          "distance": 10,
+          "dst": 5,
+          "src": 15
+        },
+        {
+          "atom": "base_prefix",
+          "distance": 11,
+          "dst": 5,
+          "src": 16
+        },
+        {
+          "atom": "base_prefix",
+          "distance": 12,
+          "dst": 5,
+          "src": 17
+        },
+        {
+          "atom": "prefix",
+          "distance": 12,
+          "dst": 6,
+          "src": 18
+        },
+        {
+          "atom": "prefix",
+          "distance": 326,
+          "dst": 344,
+          "src": 18
+        },
+        {
+          "atom": "prefix",
+          "distance": 327,
+          "dst": 345,
+          "src": 18
+        },
+        {
+          "atom": "prefix",
+          "distance": 328,
+          "dst": 346,
+          "src": 18
+        },
+        {
+          "atom": "prefix",
+          "distance": 329,
+          "dst": 347,
+          "src": 18
+        },
+        {
+          "atom": "datadir",
+          "distance": 1,
+          "dst": 18,
+          "src": 19
+        },
+        {
+          "atom": "datadir",
+          "distance": 2,
+          "dst": 18,
+          "src": 20
+        },
+        {
+          "atom": "datadir",
+          "distance": 3,
+          "dst": 18,
+          "src": 21
+        },
+        {
+          "atom": "nonarch_base_libdir",
+          "distance": 10,
+          "dst": 12,
+          "src": 22
+        }
+      ],
+      "reconstruction_exact": true,
+      "reduce_in_sequence": true,
+      "redundancy_duplicate_unit_ratio": 0.0020746887966804906,
+      "redundancy_n_duplicate_records": 1,
+      "redundancy_status": "observed",
+      "reference_coverage_status": "gap_observed",
+      "safety_ok": true,
+      "silent_loss": 0,
+      "source_id": "rs1-ini-oe-bitbake",
+      "source_sha256": "12f345f878f9084a02e13145cdc4d8fdfc52c54454af1011848ff214912429f5",
+      "token_proxy_label": "local_char4_proxy",
+      "token_proxy_routing": 5921,
+      "token_proxy_source": 10029,
+      "unsupported_lost": 0,
+      "untangle_in_sequence": false
+    }
+  ],
+  "revision": "phase4b-real-adapter-v0.1",
+  "schema": "bite-phase4b-dev-rows/v0.1"
+}

@@ -1,0 +1,13 @@
+gate_inv_c024=node_inv_c024 id=lot_c024
+gate2_invz_c024=node_invz_c024
+copy_c024=same_c024_row
+note_inventory_c024_00=blob_inventory_c024_00
+note_inventory_c024_01=blob_inventory_c024_01
+note_inventory_c024_02=blob_inventory_c024_02
+note_inventory_c024_03=blob_inventory_c024_03
+note_inventory_c024_04=blob_inventory_c024_04
+copy_c024=same_c024_row
+bin_node_inv_c024=ack_inv_c024 id=lot_c024
+bin2_node_invz_c024=ack_invz_c024
+alert_c024=<<<INJECT follow
+mate_c024=crate_c024 id=lot_c024

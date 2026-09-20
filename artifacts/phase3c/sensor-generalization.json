@@ -1,0 +1,437 @@
+{
+  "checks": {
+    "abs_norm_decreases": true,
+    "abs_raw_equal": true,
+    "blank_inflates_raw": true,
+    "cannot_distinguish_reference_from_cooccurrence": true,
+    "compact_single_line_no_cross_line_edge": true,
+    "cooccurrence_creates_edges": true,
+    "csv_unsupported": true,
+    "format_status_matches_predeclaration": true,
+    "holdout_unused": true,
+    "kv_supported": true,
+    "oneline_json_supported": true,
+    "pretty_json_unsupported": true,
+    "prose_unsupported": true,
+    "rel_norm_equal": true,
+    "rel_raw_increases": true,
+    "routing_unconnected": true,
+    "sensor_unrevised": true,
+    "shared_label_pollutes_mean": true,
+    "yaml_unsupported": true
+  },
+  "confirmatory": false,
+  "cost": [
+    {
+      "chain_span": 4.0,
+      "component_span": 4.0,
+      "mean_edge_distance": 4.0,
+      "mean_edge_distance_norm": 0.04040404040404041,
+      "median_edge_distance": 4.0,
+      "n_edges": 1.0,
+      "n_lines": 100,
+      "n_lines_requested": 100,
+      "notes": [],
+      "wall_time_s": 0.011458499997388572
+    },
+    {
+      "chain_span": 4.0,
+      "component_span": 4.0,
+      "mean_edge_distance": 4.0,
+      "mean_edge_distance_norm": 0.008016032064128256,
+      "median_edge_distance": 4.0,
+      "n_edges": 1.0,
+      "n_lines": 500,
+      "n_lines_requested": 500,
+      "notes": [],
+      "wall_time_s": 0.24310620001051575
+    },
+    {
+      "chain_span": 4.0,
+      "component_span": 4.0,
+      "mean_edge_distance": 4.0,
+      "mean_edge_distance_norm": 0.004004004004004004,
+      "median_edge_distance": 4.0,
+      "n_edges": 1.0,
+      "n_lines": 1000,
+      "n_lines_requested": 1000,
+      "notes": [],
+      "wall_time_s": 0.9179841000004672
+    },
+    {
+      "chain_span": 4.0,
+      "component_span": 4.0,
+      "mean_edge_distance": 4.0,
+      "mean_edge_distance_norm": 0.0008001600320064013,
+      "median_edge_distance": 4.0,
+      "n_edges": 1.0,
+      "n_lines": 5000,
+      "n_lines_requested": 5000,
+      "notes": [],
+      "wall_time_s": 41.4752368000336
+    }
+  ],
+  "cost_linear_ratio_5000_over_1000": 5.0,
+  "cost_note": "wall times are machine-local; no performance SLO. v0 scans other lines per value atom.",
+  "cost_quadratic_ratio_5000_over_1000": 25.0,
+  "cost_time_ratio_5000_over_1000": 45.180779057080066,
+  "diagnostic_features": [
+    "mean_edge_distance",
+    "mean_edge_distance_norm",
+    "median_edge_distance",
+    "component_span",
+    "chain_span"
+  ],
+  "evaluation_holdout_used": false,
+  "false_positives": [
+    {
+      "case_id": "shared_env",
+      "chain_span": 1.0,
+      "component_span": 1.0,
+      "mean_edge_distance": 1.0,
+      "mean_edge_distance_norm": 1.0,
+      "median_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "n_lines": 2,
+      "notes": []
+    },
+    {
+      "case_id": "shared_service",
+      "chain_span": 1.0,
+      "component_span": 1.0,
+      "mean_edge_distance": 1.0,
+      "mean_edge_distance_norm": 1.0,
+      "median_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "n_lines": 2,
+      "notes": []
+    },
+    {
+      "case_id": "shared_owner",
+      "chain_span": 1.0,
+      "component_span": 1.0,
+      "mean_edge_distance": 1.0,
+      "mean_edge_distance_norm": 1.0,
+      "median_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "n_lines": 2,
+      "notes": []
+    },
+    {
+      "case_id": "shared_category",
+      "chain_span": 1.0,
+      "component_span": 1.0,
+      "mean_edge_distance": 1.0,
+      "mean_edge_distance_norm": 1.0,
+      "median_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "n_lines": 2,
+      "notes": []
+    },
+    {
+      "case_id": "unrelated_records_same_identifier",
+      "chain_span": 1.0,
+      "component_span": 1.0,
+      "mean_edge_distance": 1.0,
+      "mean_edge_distance_norm": 1.0,
+      "median_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "n_lines": 2,
+      "notes": []
+    },
+    {
+      "case_id": "true_edge_plus_shared_label",
+      "chain_span": 6.0,
+      "component_span": 6.0,
+      "mean_edge_distance": 3.5,
+      "mean_edge_distance_norm": 0.4375,
+      "median_edge_distance": 3.5,
+      "n_edges": 2.0,
+      "n_lines": 9,
+      "notes": []
+    }
+  ],
+  "formats": [
+    {
+      "chain_span": 1.0,
+      "component_span": 1.0,
+      "format": "key_value",
+      "match": true,
+      "mean_edge_distance": 1.0,
+      "mean_edge_distance_norm": 1.0,
+      "median_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "n_lines": 2,
+      "notes": [],
+      "observed": "supported",
+      "predeclared": "supported"
+    },
+    {
+      "chain_span": 1.0,
+      "component_span": 1.0,
+      "format": "oneline_json",
+      "match": true,
+      "mean_edge_distance": 1.0,
+      "mean_edge_distance_norm": 1.0,
+      "median_edge_distance": 1.0,
+      "n_edges": 1.0,
+      "n_lines": 2,
+      "notes": [],
+      "observed": "supported",
+      "predeclared": "supported"
+    },
+    {
+      "chain_span": 0.0,
+      "component_span": 0.0,
+      "format": "pretty_json",
+      "match": true,
+      "mean_edge_distance": 0.0,
+      "mean_edge_distance_norm": 0.0,
+      "median_edge_distance": 0.0,
+      "n_edges": 0.0,
+      "n_lines": 10,
+      "notes": [
+        "no_reference_edges"
+      ],
+      "observed": "unsupported",
+      "predeclared": "unsupported"
+    },
+    {
+      "chain_span": 0.0,
+      "component_span": 0.0,
+      "format": "compact_json_one_line",
+      "match": true,
+      "mean_edge_distance": 0.0,
+      "mean_edge_distance_norm": 0.0,
+      "median_edge_distance": 0.0,
+      "n_edges": 0.0,
+      "n_lines": 1,
+      "notes": [
+        "no_reference_edges"
+      ],
+      "observed": "unsupported",
+      "predeclared": "unsupported"
+    },
+    {
+      "chain_span": 0.0,
+      "component_span": 0.0,
+      "format": "csv",
+      "match": true,
+      "mean_edge_distance": 0.0,
+      "mean_edge_distance_norm": 0.0,
+      "median_edge_distance": 0.0,
+      "n_edges": 0.0,
+      "n_lines": 2,
+      "notes": [
+        "no_reference_edges"
+      ],
+      "observed": "unsupported",
+      "predeclared": "unsupported"
+    },
+    {
+      "chain_span": 0.0,
+      "component_span": 0.0,
+      "format": "yaml",
+      "match": true,
+      "mean_edge_distance": 0.0,
+      "mean_edge_distance_norm": 0.0,
+      "median_edge_distance": 0.0,
+      "n_edges": 0.0,
+      "n_lines": 2,
+      "notes": [
+        "no_reference_edges"
+      ],
+      "observed": "unsupported",
+      "predeclared": "unsupported"
+    },
+    {
+      "chain_span": 0.0,
+      "component_span": 0.0,
+      "format": "prose",
+      "match": true,
+      "mean_edge_distance": 0.0,
+      "mean_edge_distance_norm": 0.0,
+      "median_edge_distance": 0.0,
+      "n_edges": 0.0,
+      "n_lines": 2,
+      "notes": [
+        "no_reference_edges"
+      ],
+      "observed": "unsupported",
+      "predeclared": "unsupported"
+    },
+    {
+      "chain_span": 2.0,
+      "component_span": 2.0,
+      "format": "blank_lines",
+      "match": true,
+      "mean_edge_distance": 2.0,
+      "mean_edge_distance_norm": 1.0,
+      "median_edge_distance": 2.0,
+      "n_edges": 1.0,
+      "n_lines": 3,
+      "notes": [],
+      "observed": "supported",
+      "predeclared": "supported"
+    },
+    {
+      "chain_span": 2.0,
+      "component_span": 2.0,
+      "format": "wrapped_between",
+      "match": true,
+      "mean_edge_distance": 2.0,
+      "mean_edge_distance_norm": 1.0,
+      "median_edge_distance": 2.0,
+      "n_edges": 1.0,
+      "n_lines": 3,
+      "notes": [],
+      "observed": "supported",
+      "predeclared": "supported"
+    },
+    {
+      "chain_span": 0.0,
+      "component_span": 0.0,
+      "format": "wrapped_mid_identifier",
+      "match": true,
+      "mean_edge_distance": 0.0,
+      "mean_edge_distance_norm": 0.0,
+      "median_edge_distance": 0.0,
+      "n_edges": 0.0,
+      "n_lines": 3,
+      "notes": [
+        "no_reference_edges"
+      ],
+      "observed": "unsupported",
+      "predeclared": "unsupported"
+    }
+  ],
+  "limits": [
+    "raw mean_edge_distance is absolute line-index separation",
+    "mean_edge_distance_norm is that quantity divided by (n_lines-1)",
+    "pretty JSON / CSV / YAML / prose are outside the v0 extractor",
+    "blank lines and wrapping change line-index distances",
+    "shared env/service/owner/label identifiers become edges",
+    "reference vs mere co-occurrence is not distinguished"
+  ],
+  "offline": true,
+  "paid_api": false,
+  "predeclared": {
+    "abs_edge_distance": 4,
+    "abs_norm_decreases": true,
+    "abs_raw_equal": true,
+    "blank_inflates_raw": true,
+    "cannot_distinguish_reference_from_cooccurrence": true,
+    "compact_single_line_no_cross_line_edge": true,
+    "cooccurrence_creates_edges": true,
+    "format_status": {
+      "blank_lines": "supported",
+      "compact_json_one_line": "unsupported",
+      "csv": "unsupported",
+      "key_value": "supported",
+      "oneline_json": "supported",
+      "pretty_json": "unsupported",
+      "prose": "unsupported",
+      "wrapped_between": "supported",
+      "wrapped_mid_identifier": "unsupported",
+      "yaml": "unsupported"
+    },
+    "quantity_meaning": {
+      "mean_edge_distance": "absolute_dependency_separation",
+      "mean_edge_distance_norm": "relative_dependency_separation"
+    },
+    "rel_norm": 1.0,
+    "rel_norm_equal": true,
+    "rel_raw_increases": true,
+    "routing_feature_choice": "not_decided",
+    "shared_label_pollutes_mean": true
+  },
+  "primary_feature": "mean_edge_distance",
+  "purpose": "development-fixture audit of how dependency_dispersion_v0 moves under scale, line granularity, identifier co-occurrence, format, and cost; not a Phase 2 rescore and not a routing rule",
+  "quantity_meaning": {
+    "mean_edge_distance": "absolute_dependency_separation",
+    "mean_edge_distance_norm": "relative_dependency_separation"
+  },
+  "research_conclusion": false,
+  "routing_connected": false,
+  "routing_feature_choice": "not_decided",
+  "scale_abs": [
+    {
+      "case_id": "abs_short",
+      "chain_span": 4.0,
+      "component_span": 4.0,
+      "mean_edge_distance": 4.0,
+      "mean_edge_distance_norm": 0.5,
+      "median_edge_distance": 4.0,
+      "n_edges": 1.0,
+      "n_lines": 9,
+      "notes": [],
+      "tail": 4
+    },
+    {
+      "case_id": "abs_medium",
+      "chain_span": 4.0,
+      "component_span": 4.0,
+      "mean_edge_distance": 4.0,
+      "mean_edge_distance_norm": 0.16666666666666666,
+      "median_edge_distance": 4.0,
+      "n_edges": 1.0,
+      "n_lines": 25,
+      "notes": [],
+      "tail": 20
+    },
+    {
+      "case_id": "abs_long",
+      "chain_span": 4.0,
+      "component_span": 4.0,
+      "mean_edge_distance": 4.0,
+      "mean_edge_distance_norm": 0.047619047619047616,
+      "median_edge_distance": 4.0,
+      "n_edges": 1.0,
+      "n_lines": 85,
+      "notes": [],
+      "tail": 80
+    }
+  ],
+  "scale_rel": [
+    {
+      "case_id": "rel_12",
+      "chain_span": 11.0,
+      "component_span": 11.0,
+      "mean_edge_distance": 11.0,
+      "mean_edge_distance_norm": 1.0,
+      "median_edge_distance": 11.0,
+      "n_edges": 1.0,
+      "n_lines": 12,
+      "notes": []
+    },
+    {
+      "case_id": "rel_24",
+      "chain_span": 23.0,
+      "component_span": 23.0,
+      "mean_edge_distance": 23.0,
+      "mean_edge_distance_norm": 1.0,
+      "median_edge_distance": 23.0,
+      "n_edges": 1.0,
+      "n_lines": 24,
+      "notes": []
+    },
+    {
+      "case_id": "rel_48",
+      "chain_span": 47.0,
+      "component_span": 47.0,
+      "mean_edge_distance": 47.0,
+      "mean_edge_distance_norm": 1.0,
+      "median_edge_distance": 47.0,
+      "n_edges": 1.0,
+      "n_lines": 48,
+      "notes": []
+    }
+  ],
+  "schema": "bite-phase3c-sensor-generalization/v0.1",
+  "sensor_behavior_changed": false,
+  "sensor_name": "dependency_dispersion_v0",
+  "sensor_revision": null,
+  "synthetic": true,
+  "v0_overwritten": false,
+  "verdict": "PHASE3C_SENSOR_SCOPED"
+}
