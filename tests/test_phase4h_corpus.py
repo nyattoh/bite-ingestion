@@ -24,7 +24,15 @@ from bite_bench.phase4h import (
     freeze_manifest,
     validate_phase4h_freeze,
 )
-from bite_bench.realstruct2 import POOL_PATH, validate_candidate_pool
+from bite_bench.realstruct2 import (
+    ANNOTATION_PATH,
+    MANIFEST_PATH,
+    POOL_PATH,
+    RESULT_PATH,
+    annotate_source,
+    validate_candidate_pool,
+    validate_phase4h_corpus,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 FREEZE = ROOT / "benchmarks" / "spec" / "phase4h-realstruct2-freeze.json"
@@ -96,3 +104,69 @@ def test_h1_candidate_pool_frozen_without_file_contents() -> None:
             assert "content" not in row
             assert row["head_commit_sha"]
             assert row["selection_key"]
+
+
+def test_annotation_two_pass_and_negative_gold() -> None:
+    gold = annotate_source(b"B=${A}\nA=1\nC=${A:-x}\nD=$A\nE=${missing}\n")
+    identities = [tuple(edge["gold_identity"]) for edge in gold["explicit_reference_edges"]]
+    assert identities == [(1, "A", 2)]
+    assert gold["n_assignments"] == 5
+    sectioned = annotate_source(b"[colors]\nbackground=1\nfoo=${colors.background}\n")
+    assert sectioned["explicit_reference_edges"] == []
+    mixed = annotate_source(b"# K=1\n\nK=1\n")
+    assert [row["kind"] for row in mixed["records"]] == [
+        "unsupported",
+        "unsupported",
+        "assignment",
+    ]
+    dups = annotate_source(b"K=1\nK=1\nK=2\n")
+    assert dups["exact_duplicate_groups"] == [
+        {"assignment_key": "K", "assignment_value": "1", "lines": [1, 2]}
+    ]
+    assert dups["repeated_key_different_value"] == [{"assignment_key": "K", "n_values": 2}]
+
+
+def test_h2_corpus_partial_or_frozen() -> None:
+    result = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+    assert validate_phase4h_corpus(result) == []
+    jsonschema.validate(
+        result,
+        json.loads((ROOT / "spec" / "phase4h-realstruct2.schema.json").read_text(encoding="utf-8")),
+    )
+    assert result["verdict"] in {
+        "PHASE4H_REALSTRUCT2_FROZEN",
+        "PHASE4H_REALSTRUCT2_PARTIAL",
+        "PHASE4H_REALSTRUCT2_BLOCKED",
+    }
+    assert result["no_arm_execution"] is True
+    assert result["no_tokenizer_execution"] is True
+    assert result["p3f_evaluation_holdout_used"] is False
+    corpus = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+    annotations = json.loads(ANNOTATION_PATH.read_text(encoding="utf-8"))
+    jsonschema.validate(
+        corpus,
+        json.loads((ROOT / "spec" / "phase4h-realstruct2-corpus.schema.json").read_text()),
+    )
+    jsonschema.validate(
+        annotations,
+        json.loads((ROOT / "spec" / "phase4h-realstruct2-annotations.schema.json").read_text()),
+    )
+    dumped = json.dumps([doc.get("records") for doc in annotations["documents"]])
+    assert "expected route" not in dumped
+    assert "expected operator sequence" not in dumped
+    assert "expected BITE edge" not in dumped
+    assert "expected arm winner" not in dumped
+    imports = _import_lines(ROOT / "src" / "bite_bench" / "realstruct2.py")
+    assert "reference_tokenizer" not in imports
+    assert "length_pi_v1" not in imports
+    assert "recovery_bundle" not in imports
+    assert "visibility_metrics_v2" not in imports
+    assert "bite_ingestion.policies" not in imports
+    assert "bite_ingestion.profilers" not in imports
+    with pytest.raises(EvaluationSealError, match="p3f evaluation sealed"):
+        refuse_p3f_evaluation("p3f-medium-one_hop-r2")
+    if result["verdict"] == "PHASE4H_REALSTRUCT2_FROZEN":
+        assert result["n_primary"] == 18
+        assert result["errors"] == []
+    else:
+        assert result["errors"]

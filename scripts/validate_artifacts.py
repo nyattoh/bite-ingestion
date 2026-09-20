@@ -1961,6 +1961,31 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"OK   {phase4h_pool} verdict={data.get('verdict')}")
 
+    from bite_bench.realstruct2 import validate_phase4h_corpus
+
+    phase4h = args.root / "artifacts" / "phase4h" / "realstruct-2.json"
+    if phase4h.is_file():
+        n_checked += 1
+        data = json.loads(phase4h.read_text(encoding="utf-8"))
+        errs = list(validate_phase4h_corpus(data))
+        schema_path = args.root / "spec" / "phase4h-realstruct2.schema.json"
+        if schema_path.is_file():
+            try:
+                import jsonschema  # type: ignore
+
+                jsonschema.validate(data, json.loads(schema_path.read_text(encoding="utf-8")))
+            except ImportError:
+                pass
+            except Exception as exc:  # noqa: BLE001
+                errs.append(f"phase4h jsonschema: {exc}")
+        if errs:
+            failed += 1
+            print(f"FAIL {phase4h}:")
+            for e in errs:
+                print(f"  - {e}")
+        else:
+            print(f"OK   {phase4h} verdict={data.get('verdict')}")
+
     if n_checked == 0:
         print("No artifacts to validate", file=sys.stderr)
         return 1

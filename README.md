@@ -84,7 +84,8 @@ No UI, no mandatory cloud DB, no unapproved learned models, no push/publish/purc
 - Phase 4E full-key reference identity v2: **PHASE4E_FULL_KEY_REFERENCE_VALIDATED** (fresh 80 surfaces; v3/v4 bridge exact; T=4 carry-forward; REALSTRUCT-1 retrospective only; p3f sealed)
 - Phase 4F prospective comparison protocol: **PHASE4F_COMPARISON_PROTOCOL_READY** (length_pi_v1 + pinned tokenizer; four arms; no winner score; REALSTRUCT-1 development only; REALSTRUCT-2 untouched; p3f sealed)
 - Phase 4G comparison accounting v2: **PHASE4G_COMPARISON_ACCOUNTING_VALIDATED** (canonical recovery bundle; provenance-aware visibility; 4F artifacts unchanged; REALSTRUCT-2 untouched; p3f sealed)
-- **Next**: do not acquire REALSTRUCT-2 yet; do not invent XFER-3; do not retune T_high; do not merge to main
+- Phase 4H REALSTRUCT-2 corpus freeze: **PHASE4H_REALSTRUCT2_PARTIAL** (H0/H1 frozen first; 10/18 primary under frozen MIT/Apache + 60-candidate pool; no arms; p3f sealed)
+- **Next**: do not execute comparison arms; do not alter H0 to fill quotas; do not invent XFER-3; do not retune T_high; do not merge to main
 
 See:
 - [`docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md`](docs/hand_over/PHASE1-NEGATIVE-CONTROLS.md)
@@ -180,3 +181,6 @@ See:
 - [`docs/hand_over/PHASE4G-COMPARISON-ACCOUNTING.md`](docs/hand_over/PHASE4G-COMPARISON-ACCOUNTING.md)
 - [`benchmarks/spec/phase4g-comparison-accounting-freeze.json`](benchmarks/spec/phase4g-comparison-accounting-freeze.json)
 - [`artifacts/phase4g/comparison-accounting.json`](artifacts/phase4g/comparison-accounting.json)
+- [`docs/hand_over/PHASE4H-REALSTRUCT2.md`](docs/hand_over/PHASE4H-REALSTRUCT2.md)
+- [`benchmarks/spec/phase4h-realstruct2-freeze.json`](benchmarks/spec/phase4h-realstruct2-freeze.json)
+- [`artifacts/phase4h/realstruct-2.json`](artifacts/phase4h/realstruct-2.json)
