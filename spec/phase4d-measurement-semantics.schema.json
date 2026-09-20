@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitebench.local/schemas/phase4d-measurement-semantics.schema.json",
+  "title": "BITE Phase-4D measurement-semantics audit result v0.1",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "protocol_commit_sha",
+    "verdict",
+    "paid_api",
+    "p3f_evaluation_holdout_used",
+    "not_second_holdout_evaluation",
+    "not_confirmatory",
+    "n_audit",
+    "claim_boundary",
+    "phase4c_safety_phrasing"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "bite-phase4d-measurement-semantics/v0.1"
+    },
+    "revision": {
+      "type": "string",
+      "const": "phase4d-measurement-semantics-v0.1"
+    },
+    "protocol_commit_sha": {
+      "type": "string",
+      "const": "45748770815016439aeb11d2ac052b3b19946136"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PHASE4D_MEASUREMENT_SEMANTICS_AUDITED",
+        "PHASE4D_MEASUREMENT_SEMANTICS_PARTIAL",
+        "PHASE4D_MEASUREMENT_SEMANTICS_BLOCKED"
+      ]
+    },
+    "paid_api": { "type": "boolean", "const": false },
+    "p3f_evaluation_holdout_used": { "type": "boolean", "const": false },
+    "not_second_holdout_evaluation": { "type": "boolean", "const": true },
+    "not_confirmatory": { "type": "boolean", "const": true },
+    "n_audit": { "type": "integer", "const": 12 },
+    "claim_boundary": {
+      "type": "string",
+      "const": "retrospective measurement-semantics audit on REALSTRUCT-1"
+    },
+    "phase4c_safety_phrasing": {
+      "type": "string",
+      "const": "full-source conservation safety 9/9"
+    }
+  }
+}
