@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1150" viewBox="0 0 1440 1150" role="img" aria-labelledby="title desc">
+<title id="title">BITE — Mastication Engine</title><desc id="desc">A conceptual mouth prepares information before an LLM, using incisors for CUT, canines for UNTANGLE, premolars for REDUCE, and molars for INTEGRATE. A proposed morphology-guided policy selects regions and ordered operations using intermediate state. Tongue and saliva are illustrative only. Model-visible payload is separated from recovery and provenance. A distinct evidence panel reports the restricted deterministic prototype: 18 files, four arms, 72 byte-exact reconstruction checks; only one file underwent REDUCE, from 112 to 91 visible payload tokens. No downstream LLM or end-to-end benefit was evaluated.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3058c9"/></marker><marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#147c78"/></marker></defs>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#172a3a}.title{font-size:44px;font-weight:700}.sub{font-size:21px;fill:#506374}.eyebrow{font-size:13px;font-weight:700;letter-spacing:1.5px;fill:#3058c9}.head{font-size:21px;font-weight:700}.body{font-size:17px}.small{font-size:15px;fill:#506374}.tiny{font-size:13px;fill:#506374}.metric{font-size:33px;font-weight:700;fill:#3058c9}.line{fill:none;stroke:#3058c9;stroke-width:2.8;marker-end:url(#arrow)}.dash{fill:none;stroke:#147c78;stroke-width:2.5;stroke-dasharray:7 6;marker-end:url(#teal)}</style>
+<rect width="1440" height="1150" rx="24" fill="#f8f7f2"/>
+<text x="42" y="67" class="title" text-anchor="start">BITE</text>
+<text x="178" y="65" class="title" text-anchor="start">Mastication Engine</text>
+<text x="43" y="102" class="sub" text-anchor="start">Prepare the information before the model takes a bite.</text>
+<rect x="36" y="132" width="1368" height="655" rx="20" fill="#ffffff" stroke="#dce4e8"/>
+<text x="60" y="164" class="eyebrow" text-anchor="start">01  /  THE PROPOSED MASTICATION PROGRAMME</text>
+<text x="60" y="190" class="small" text-anchor="start">A morphology-guided preparation layer; the mouth is a design metaphor.</text>
+<rect x="88" y="290" width="126" height="126" rx="8" fill="#f8f7f2" stroke="#9daebb"/>
+<rect x="79" y="299" width="126" height="126" rx="8" fill="#f8f7f2" stroke="#9daebb"/>
+<rect x="70" y="308" width="126" height="126" rx="8" fill="#f8f7f2" stroke="#9daebb"/>
+<rect x="87" y="332" width="83" height="4" rx="2" fill="#9eafb8" stroke="none"/>
+<rect x="87" y="347" width="61" height="4" rx="2" fill="#9eafb8" stroke="none"/>
+<rect x="87" y="362" width="83" height="4" rx="2" fill="#9eafb8" stroke="none"/>
+<rect x="87" y="387" width="53" height="4" rx="2" fill="#9eafb8" stroke="none"/>
+<rect x="87" y="402" width="76" height="4" rx="2" fill="#9eafb8" stroke="none"/>
+<text x="66" y="470" class="head" text-anchor="start">Source input D</text>
+<text x="66" y="497" class="small" text-anchor="start">Structure, repetition,</text>
+<text x="66" y="519" class="small" text-anchor="start">coupling, exceptions</text>
+<path d="M208 370H292" class="line" />
+<text x="225" y="345" class="tiny" text-anchor="start">assess</text>
+<path d="M327 282 C395 211 828 211 913 282 C975 334 981 511 895 579 C779 660 439 654 336 570 C281 523 279 337 327 282Z" fill="#eef2fb" stroke="#a4b8dc" stroke-width="3"/>
+<path d="M327 282 C446 237 801 237 913 282" fill="none" stroke="#c8d7f0" stroke-width="22" stroke-linecap="round"/>
+<g fill="#ffffff" stroke="#3058c9" stroke-width="2.5"><path d="M361 277H387L385 332Q374 347 363 332Z"/><path d="M393 277H419L417 332Q406 347 395 332Z"/></g>
+<path d="M507 276Q535 262 558 279L551 317L534 348L515 319Z" fill="#ffffff" stroke="#3058c9" stroke-width="2.5"/>
+<path d="M656 277Q667 263 680 276Q695 263 708 278L706 318L695 345L682 327L668 345L659 319Z" fill="#ffffff" stroke="#3058c9" stroke-width="2.5"/>
+<path d="M797 279Q809 260 823 275Q835 260 848 275Q862 263 874 280L871 315L859 345L844 326L827 345L812 323L802 341Z" fill="#ffffff" stroke="#3058c9" stroke-width="2.5"/>
+<text x="390" y="377" class="tiny" text-anchor="middle">INCISORS</text>
+<text x="390" y="404" class="head" text-anchor="middle">CUT</text>
+<text x="390" y="433" class="tiny" text-anchor="middle">Defensible</text>
+<text x="390" y="452" class="tiny" text-anchor="middle">boundaries</text>
+<text x="534" y="377" class="tiny" text-anchor="middle">CANINES</text>
+<text x="534" y="404" class="head" text-anchor="middle">UNTANGLE</text>
+<text x="534" y="433" class="tiny" text-anchor="middle">Problematic</text>
+<text x="534" y="452" class="tiny" text-anchor="middle">regions</text>
+<text x="682" y="377" class="tiny" text-anchor="middle">PREMOLARS</text>
+<text x="682" y="404" class="head" text-anchor="middle">REDUCE</text>
+<text x="682" y="433" class="tiny" text-anchor="middle">Consolidate</text>
+<text x="682" y="452" class="tiny" text-anchor="middle">repetition</text>
+<text x="836" y="377" class="tiny" text-anchor="middle">MOLARS</text>
+<text x="836" y="404" class="head" text-anchor="middle">INTEGRATE</text>
+<text x="836" y="433" class="tiny" text-anchor="middle">Assemble coupled</text>
+<text x="836" y="452" class="tiny" text-anchor="middle">evidence</text>
+<path d="M404 568C428 509 517 495 608 532C677 562 745 555 831 532C852 597 761 626 635 624C520 624 438 602 404 568Z" fill="#e1ebe8" stroke="#81b7af" stroke-width="2"/>
+<path d="M468 578C551 564 632 576 706 593" fill="none" stroke="#9bc6be" stroke-width="2"/>
+<rect x="500" y="492" width="270" height="69" rx="22" fill="#ffffff" stroke="#a4b8dc"/>
+<text x="635" y="519" class="body" text-anchor="middle">Intermediate workpiece</text>
+<text x="635" y="543" class="small" text-anchor="middle">Select region + next operation</text>
+<path d="M496 526H354V480" class="dash" />
+<path d="M777 526H902V479" class="dash" />
+<text x="635" y="652" class="small" text-anchor="middle">Ordered operations + state feedback (proposed)</text>
+<circle cx="852" cy="500" r="6" fill="#147c78" opacity=".45"/>
+<circle cx="873" cy="516" r="4" fill="#147c78" opacity=".45"/>
+<circle cx="828" cy="485" r="4" fill="#147c78" opacity=".45"/>
+<circle cx="461" cy="493" r="5" fill="#147c78" opacity=".45"/>
+<path d="M966 412H1000" class="line" />
+<ellipse cx="1060" cy="411" rx="49" ry="39" fill="#dbe8fc" stroke="#3058c9" stroke-width="2.5"/>
+<rect x="1034" y="398" width="43" height="4" rx="2" fill="#7595d9" stroke="none"/>
+<rect x="1041" y="410" width="45" height="4" rx="2" fill="#7595d9" stroke="none"/>
+<rect x="1034" y="422" width="39" height="4" rx="2" fill="#7595d9" stroke="none"/>
+<text x="1060" y="478" class="head" text-anchor="middle">Payload V</text>
+<text x="1060" y="504" class="small" text-anchor="middle">Model-visible</text>
+<path d="M1116 411H1172" class="line" />
+<path d="M1210 305V355C1210 381 1190 395 1192 430C1194 476 1249 510 1307 479C1355 453 1363 392 1332 367C1310 351 1288 360 1281 381C1268 413 1241 398 1241 365V305Z" fill="#dbeee9" stroke="#147c78" stroke-width="3"/>
+<path d="M1255 470C1238 506 1272 527 1304 529" fill="none" stroke="#147c78" stroke-width="3"/>
+<text x="1271" y="432" class="head" text-anchor="middle">LLM</text>
+<text x="1271" y="561" class="body" text-anchor="middle">Downstream model</text>
+<text x="1271" y="585" class="small" text-anchor="middle">“Stomach” metaphor</text>
+<text x="1271" y="611" class="small" text-anchor="middle">Not run in the trial</text>
+<path d="M133 537V709H333" class="dash" />
+<rect x="348" y="681" width="652" height="73" rx="14" fill="#eef7f4" stroke="#a6cfc6"/>
+<text x="369" y="708" class="head" text-anchor="start">Recovery + provenance B</text>
+<text x="369" y="734" class="small" text-anchor="start">Source spans, omitted material and placement information</text>
+<text x="1020" y="709" class="body" text-anchor="start">reconstruct(V, B) = D</text>
+<text x="1020" y="735" class="small" text-anchor="start">Byte-exact source recovery</text>
+<text x="61" y="772" class="tiny" text-anchor="start">Tongue + saliva: illustration only. Tooth roles follow the paper; no automatic routing by file type is claimed.</text>
+<rect x="36" y="810" width="1368" height="275" rx="20" fill="#edf1f5" stroke="#d5dee7"/>
+<text x="60" y="844" class="eyebrow" text-anchor="start">02  /  REPORTED FROZEN EVALUATION (PAPER v2.0)</text>
+<text x="60" y="875" class="body" text-anchor="start">Assignment projection → reference-dispersion gate → fixed-order actionable subset → payload + recovery</text>
+<text x="60" y="900" class="small" text-anchor="start">Frozen subset order: UNTANGLE → REDUCE → INTEGRATE. Only REDUCE executed in the retained trial.</text>
+<text x="60" y="952" class="metric" text-anchor="start">18 × 4</text>
+<text x="60" y="983" class="body" text-anchor="start">Files × evaluation arms</text>
+<text x="60" y="1008" class="tiny" text-anchor="start">Frozen structured-file trial</text>
+<text x="395" y="952" class="metric" text-anchor="start">72 / 72</text>
+<text x="395" y="983" class="body" text-anchor="start">Byte-exact reconstruction</text>
+<text x="395" y="1008" class="tiny" text-anchor="start">All arm–document combinations</text>
+<text x="750" y="952" class="metric" text-anchor="start">112 → 91</text>
+<text x="750" y="983" class="body" text-anchor="start">Visible payload tokens</text>
+<text x="750" y="1008" class="tiny" text-anchor="start">One file: D09, REDUCE only</text>
+<text x="1100" y="952" class="metric" text-anchor="start">17 / 18</text>
+<text x="1100" y="983" class="body" text-anchor="start">Files with no operation</text>
+<text x="1100" y="1008" class="tiny" text-anchor="start">Effective changed sample: n = 1</text>
+<text x="60" y="1054" class="body" text-anchor="start">No downstream quality, actual cost, latency or hallucination benefit established. Recovery ≠ payload sufficiency.</text>
+<text x="42" y="1117" class="small" text-anchor="start">Paper v2.0 evidence ≠ current repository snapshot (main dce759ef / Phase2A). See README for the version distinction.</text>
+</svg>
