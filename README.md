@@ -8,6 +8,18 @@ Offline-reproducible **repository scaffold** for Gate B (BITE-05).
 - Do **not** treat this README as a claim of architecture superiority.
 - Working folder name remains `bite-ingestion`. Prefer talking about **BITEBench** and a *morphology-aware ingestion candidate*; do not advertise a standalone product acronym as settled.
 
+## Mastication research concept
+
+![BITE mastication concept: incisors CUT, canines UNTANGLE, premolars REDUCE and molars INTEGRATE prepare model-visible input, with a separate recovery and provenance path. The lower panel shows the paper's reported frozen evaluation.](docs/images/architecture.svg)
+
+The mouth is a research metaphor: separate at defensible boundaries, isolate problematic regions, consolidate repetition, and assemble coupled evidence. The proposed programme selects regions, operations and order using input morphology and intermediate state. Tongue and saliva are illustrative, not verified software modules. This is not an automatic PDF/log router or a settled product architecture.
+
+The model-visible payload V and recovery/provenance bundle B have different roles. Byte-exact source reconstruction does not establish that V contains enough evidence for downstream answers.
+
+The lower panel refers to the [BITE v2.0 paper](https://doi.org/10.5281/zenodo.22925518): reconstruction was reported for all 72 arm–document combinations across 18 structured files and four arms. Only one file received REDUCE (112 to 91 visible-payload tokens); 17 received no operation. Downstream LLM quality, actual cost, latency and hallucination benefits were not established.
+
+**Version boundary:** this repository snapshot (`dce759ef`, Phase 2A) differs from the paper's frozen `conditional_texture_policy_v5`. Do not read the paper's results or reference-dispersion gate as this branch's implementation or a reproduction performed here. Existing Pivot-to-bench status below remains unchanged. Enlarge the SVG for fine detail.
+
 ## Layout
 
 | Area | Path | Status |
